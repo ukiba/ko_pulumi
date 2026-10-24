@@ -252,7 +252,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     /*
       Generate the following code
 
-        def SecurityGroup(name: String,
+        inline def SecurityGroup(name: String,
             resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
             (args: Endofunction[SecurityGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
           var argsBuilder = SecurityGroupArgs.builder
@@ -360,7 +360,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
         extension (builder: RoleArgs.Builder)
           ...
-          def inlinePolicies(args: Endofunction[RoleInlinePolicyArgs.Builder]*): RoleArgs.Builder =
+          inline def inlinePolicies(args: Endofunction[RoleInlinePolicyArgs.Builder]*): RoleArgs.Builder =
             def argsBuilder = RoleInlinePolicyArgs.builder
             builder.inlinePolicies(args.map(_(argsBuilder).build)*)
           ...
