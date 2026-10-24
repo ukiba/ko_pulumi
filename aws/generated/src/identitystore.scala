@@ -10,7 +10,7 @@ object identitystore:
     val argsBuilder = com.pulumi.aws.identitystore.GroupArgs.builder
     com.pulumi.aws.identitystore.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS IdentityStore Group Membership. */
   def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,7 +18,7 @@ object identitystore:
     val argsBuilder = com.pulumi.aws.identitystore.GroupMembershipArgs.builder
     com.pulumi.aws.identitystore.GroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IdentitystoreFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -100,4 +100,4 @@ object identitystore:
     val argsBuilder = com.pulumi.aws.identitystore.UserArgs.builder
     com.pulumi.aws.identitystore.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

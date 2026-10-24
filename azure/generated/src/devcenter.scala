@@ -13,7 +13,7 @@ object devcenter:
       case None               =>
     com.pulumi.azure.devcenter.AttachedNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Catalog. */
   def Catalog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object devcenter:
       case None               =>
     com.pulumi.azure.devcenter.Catalog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Dev Box Definition. */
   def DevBoxDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.DevBoxDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center. */
   def DevCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -60,7 +60,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.DevCenter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DevcenterFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -217,7 +217,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.EnvironmentType(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Gallery. */
   def Gallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -228,7 +228,7 @@ object devcenter:
       case None               =>
     com.pulumi.azure.devcenter.Gallery(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed DevOps Pool. */
   def ManagedDevOpsPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -246,7 +246,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.ManagedDevOpsPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Network Connection. */
   def NetworkConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -264,7 +264,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.NetworkConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project. */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -282,7 +282,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project Environment Type. */
   def ProjectEnvironmentType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -300,7 +300,7 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.ProjectEnvironmentType(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Center Project Pool. */
   def ProjectPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -318,4 +318,4 @@ object devcenter:
       case None =>
     com.pulumi.azure.devcenter.ProjectPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

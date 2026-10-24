@@ -20,7 +20,7 @@ object servicefabric:
       case None =>
     com.pulumi.azure.servicefabric.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group. */
   def ManagedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,4 +38,4 @@ object servicefabric:
       case None =>
     com.pulumi.azure.servicefabric.ManagedCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

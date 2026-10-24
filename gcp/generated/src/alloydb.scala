@@ -73,7 +73,7 @@ object alloydb:
     val argsBuilder = com.pulumi.gcp.alloydb.BackupArgs.builder
     com.pulumi.gcp.alloydb.Backup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A managed alloydb cluster.
@@ -103,7 +103,7 @@ object alloydb:
     val argsBuilder = com.pulumi.gcp.alloydb.ClusterArgs.builder
     com.pulumi.gcp.alloydb.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A managed alloydb cluster instance.
@@ -123,7 +123,7 @@ object alloydb:
     val argsBuilder = com.pulumi.gcp.alloydb.InstanceArgs.builder
     com.pulumi.gcp.alloydb.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A database user in an AlloyDB cluster.
@@ -142,4 +142,4 @@ object alloydb:
     val argsBuilder = com.pulumi.gcp.alloydb.UserArgs.builder
     com.pulumi.gcp.alloydb.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

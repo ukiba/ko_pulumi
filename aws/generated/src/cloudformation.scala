@@ -20,7 +20,7 @@ object cloudformation:
     val argsBuilder = com.pulumi.aws.cloudformation.CloudFormationTypeArgs.builder
     com.pulumi.aws.cloudformation.CloudFormationType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CloudformationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -97,7 +97,7 @@ object cloudformation:
       case None =>
     com.pulumi.aws.cloudformation.Stack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages CloudFormation stack instances for the specified accounts, within the specified regions. A stack instance refers to a stack in a specific account and region. Additional information about stacks can be found in the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
@@ -113,7 +113,7 @@ object cloudformation:
     val argsBuilder = com.pulumi.aws.cloudformation.StackInstancesArgs.builder
     com.pulumi.aws.cloudformation.StackInstances(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudFormation StackSet. StackSets allow CloudFormation templates to be easily deployed across multiple accounts and regions via StackSet Instances (`aws.cloudformation.StackSetInstance` resource). Additional information about StackSets can be found in the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html).
@@ -139,7 +139,7 @@ object cloudformation:
       case None =>
     com.pulumi.aws.cloudformation.StackSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudFormation StackSet Instance. Instances are managed in the account and region of the StackSet after the target account permissions have been configured. Additional information about StackSets can be found in the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html).
@@ -153,4 +153,4 @@ object cloudformation:
     val argsBuilder = com.pulumi.aws.cloudformation.StackSetInstanceArgs.builder
     com.pulumi.aws.cloudformation.StackSetInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

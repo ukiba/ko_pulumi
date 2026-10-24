@@ -17,7 +17,7 @@ object codepipeline:
       case None =>
     com.pulumi.aws.codepipeline.CustomActionType(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodePipeline. */
   def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object codepipeline:
       case None =>
     com.pulumi.aws.codepipeline.Pipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodePipeline Webhook. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,4 +53,4 @@ object codepipeline:
       case None =>
     com.pulumi.aws.codepipeline.Webhook(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

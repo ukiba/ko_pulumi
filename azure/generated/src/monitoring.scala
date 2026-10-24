@@ -17,7 +17,7 @@ object monitoring:
       case None               =>
     com.pulumi.azure.monitoring.AadDiagnosticSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Action Group within Azure Monitor. */
   def ActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.ActionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Activity Log Alert within Azure Monitor. */
   def ActivityLogAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.ActivityLogAlert(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Processing Rule which apply action group. */
   def AlertProcessingRuleActionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.AlertProcessingRuleActionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Processing Rule which suppress notifications. */
   def AlertProcessingRuleSuppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.AlertProcessingRuleSuppression(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Alert Management Prometheus Rule Group. */
   def AlertPrometheusRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,7 +107,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.AlertPrometheusRuleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AutoScale Setting which can be applied to Virtual Machine Scale Sets, App Services and other scalable resources. */
   def AutoscaleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -125,7 +125,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.AutoscaleSetting(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Collection Endpoint. */
   def DataCollectionEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -143,7 +143,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.DataCollectionEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Data Collection Rule.
@@ -171,7 +171,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.DataCollectionRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Collection Rule Association. */
   def DataCollectionRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -182,7 +182,7 @@ object monitoring:
       case None               =>
     com.pulumi.azure.monitoring.DataCollectionRuleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Diagnostic Setting for an existing Resource. */
   def DiagnosticSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -193,7 +193,7 @@ object monitoring:
       case None               =>
     com.pulumi.azure.monitoring.DiagnosticSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Metric Alert within Azure Monitor. */
   def MetricAlert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.MetricAlert(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MonitoringFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -320,7 +320,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.PrivateLinkScope(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Monitor Private Link Scoped Service. */
   def PrivateLinkScopedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -331,7 +331,7 @@ object monitoring:
       case None               =>
     com.pulumi.azure.monitoring.PrivateLinkScopedService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AlertingAction Scheduled Query Rules resource within Azure Monitor.
@@ -353,7 +353,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.ScheduledQueryRulesAlert(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AlertingAction Scheduled Query Rules Version 2 resource within Azure Monitor */
   def ScheduledQueryRulesAlertV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -371,7 +371,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.ScheduledQueryRulesAlertV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a LogToMetricAction Scheduled Query Rules resource within Azure Monitor. */
   def ScheduledQueryRulesLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -389,7 +389,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.ScheduledQueryRulesLog(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Monitor Smart Detector Alert Rule. */
   def SmartDetectorAlertRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -407,7 +407,7 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.SmartDetectorAlertRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Monitor Workspace. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -425,4 +425,4 @@ object monitoring:
       case None =>
     com.pulumi.azure.monitoring.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

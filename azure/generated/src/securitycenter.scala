@@ -10,7 +10,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.AdvancedThreatProtectionArgs.builder
     com.pulumi.azure.securitycenter.AdvancedThreatProtection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Security Center Assessment for Azure Security Center. */
   def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,7 +18,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.AssessmentArgs.builder
     com.pulumi.azure.securitycenter.Assessment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Security Center Assessment Metadata for Azure Security Center. */
   def AssessmentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -26,7 +26,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.AssessmentPolicyArgs.builder
     com.pulumi.azure.securitycenter.AssessmentPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables or disables the Security Center Auto Provisioning feature for the subscription
@@ -40,7 +40,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.AutoProvisioningArgs.builder
     com.pulumi.azure.securitycenter.AutoProvisioning(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Security Center Automation and Continuous Export. This resource supports three types of destination in the `action`, Logic Apps, Log Analytics and Event Hubs */
   def Automation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -58,7 +58,7 @@ object securitycenter:
       case None =>
     com.pulumi.azure.securitycenter.Automation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the subscription&#39;s Security Center Contact.
@@ -73,7 +73,7 @@ object securitycenter:
       case None               =>
     com.pulumi.azure.securitycenter.Contact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Server Vulnerability Assessment (Qualys) to a VM.
@@ -86,7 +86,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentVirtualMachineArgs.builder
     com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentVirtualMachine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Server Vulnerability Assesments Setting for Azure Security Center.
@@ -100,7 +100,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentsSettingArgs.builder
     com.pulumi.azure.securitycenter.ServerVulnerabilityAssessmentsSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Data Access Settings for Azure Security Center.
@@ -114,7 +114,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.SettingArgs.builder
     com.pulumi.azure.securitycenter.Setting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Defender for Storage. */
   def StorageDefender(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.StorageDefenderArgs.builder
     com.pulumi.azure.securitycenter.StorageDefender(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Pricing Tier for Azure Security Center in the current subscription.
@@ -134,7 +134,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.SubscriptionPricingArgs.builder
     com.pulumi.azure.securitycenter.SubscriptionPricing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the subscription&#39;s Security Center Workspace.
@@ -146,4 +146,4 @@ object securitycenter:
     val argsBuilder = com.pulumi.azure.securitycenter.WorkspaceArgs.builder
     com.pulumi.azure.securitycenter.Workspace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -15,4 +15,4 @@ object agentidentity:
     val argsBuilder = com.pulumi.gcp.agentidentity.AuthProviderArgs.builder
     com.pulumi.gcp.agentidentity.AuthProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

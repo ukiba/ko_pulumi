@@ -14,7 +14,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelAlexaArgs.builder
     com.pulumi.azure.bot.ChannelAlexa(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Directline integration for a Bot Channel */
   def ChannelDirectLine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -22,7 +22,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelDirectLineArgs.builder
     com.pulumi.azure.bot.ChannelDirectLine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Direct Line Speech integration for a Bot Channel */
   def ChannelDirectLineSpeech(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -30,7 +30,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelDirectLineSpeechArgs.builder
     com.pulumi.azure.bot.ChannelDirectLineSpeech(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Email integration for a Bot Channel
@@ -42,7 +42,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelEmailArgs.builder
     com.pulumi.azure.bot.ChannelEmail(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Facebook integration for a Bot Channel
@@ -54,7 +54,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelFacebookArgs.builder
     com.pulumi.azure.bot.ChannelFacebook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Line integration for a Bot Channel
@@ -66,7 +66,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelLineArgs.builder
     com.pulumi.azure.bot.ChannelLine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Slack integration for a Bot Channel
@@ -78,7 +78,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelSlackArgs.builder
     com.pulumi.azure.bot.ChannelSlack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a SMS integration for a Bot Channel
@@ -90,7 +90,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelSmsArgs.builder
     com.pulumi.azure.bot.ChannelSms(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a MS Teams integration for a Bot Channel
@@ -102,7 +102,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelTeamsArgs.builder
     com.pulumi.azure.bot.ChannelTeams(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web Chat integration for a Bot Channel */
   def ChannelWebChat(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -110,7 +110,7 @@ object bot:
     val argsBuilder = com.pulumi.azure.bot.ChannelWebChatArgs.builder
     com.pulumi.azure.bot.ChannelWebChat(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Bot Channels Registration.
@@ -132,7 +132,7 @@ object bot:
       case None =>
     com.pulumi.azure.bot.ChannelsRegistration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bot Connection. */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -143,7 +143,7 @@ object bot:
       case None               =>
     com.pulumi.azure.bot.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthbot Service. */
   def Healthbot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object bot:
       case None =>
     com.pulumi.azure.bot.Healthbot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Bot Service.
@@ -189,7 +189,7 @@ object bot:
       case None =>
     com.pulumi.azure.bot.ServiceAzureBot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bot Web App. */
   def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -207,4 +207,4 @@ object bot:
       case None =>
     com.pulumi.azure.bot.WebApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

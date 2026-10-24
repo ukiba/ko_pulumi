@@ -21,4 +21,4 @@ object drs:
       case None =>
     com.pulumi.aws.drs.ReplicationConfigurationTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

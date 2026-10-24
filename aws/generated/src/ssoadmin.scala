@@ -10,7 +10,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.AccountAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.AccountAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS SSO Admin Application.
@@ -34,7 +34,7 @@ object ssoadmin:
       case None =>
     com.pulumi.aws.ssoadmin.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSO Admin Application Access Scope. */
   def ApplicationAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAccessScopeArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAccessScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSO Admin Application Assignment. */
   def ApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS SSO Admin Application Assignment Configuration.
@@ -65,7 +65,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.ApplicationAssignmentConfigurationArgs.builder
     com.pulumi.aws.ssoadmin.ApplicationAssignmentConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a customer managed policy attachment for a Single Sign-On (SSO) Permission Set resource
@@ -79,7 +79,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing exclusive AWS SSO Admin Customer Managed Policy Attachments.
@@ -95,7 +95,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.CustomerManagedPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Single Sign-On (SSO) ABAC Resource: https://docs.aws.amazon.com/singlesignon/latest/userguide/abac.html */
   def InstanceAccessControlAttributes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.InstanceAccessControlAttributesArgs.builder
     com.pulumi.aws.ssoadmin.InstanceAccessControlAttributes(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM managed policy for a Single Sign-On (SSO) Permission Set resource
@@ -117,7 +117,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing exclusive AWS SSO Admin Managed Policy Attachments.
@@ -133,7 +133,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.ssoadmin.ManagedPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Single Sign-On (SSO) Permission Set resource
@@ -155,7 +155,7 @@ object ssoadmin:
       case None =>
     com.pulumi.aws.ssoadmin.PermissionSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM inline policy for a Single Sign-On (SSO) Permission Set resource
@@ -170,7 +170,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionSetInlinePolicyArgs.builder
     com.pulumi.aws.ssoadmin.PermissionSetInlinePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a permissions boundary policy to a Single Sign-On (SSO) Permission Set resource.
@@ -182,7 +182,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachmentArgs.builder
     com.pulumi.aws.ssoadmin.PermissionsBoundaryAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS SSO Admin Region.
@@ -198,7 +198,7 @@ object ssoadmin:
     val argsBuilder = com.pulumi.aws.ssoadmin.RegionArgs.builder
     com.pulumi.aws.ssoadmin.Region(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SsoadminFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -307,4 +307,4 @@ object ssoadmin:
       case None =>
     com.pulumi.aws.ssoadmin.TrustedTokenIssuer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -24,4 +24,4 @@ object msi:
       case None =>
     com.pulumi.azure.msi.UserAssignedIdentity(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

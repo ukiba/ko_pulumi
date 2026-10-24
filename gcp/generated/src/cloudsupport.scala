@@ -10,4 +10,4 @@ object cloudsupport:
     val argsBuilder = com.pulumi.gcp.cloudsupport.SupportEventSubscriptionArgs.builder
     com.pulumi.gcp.cloudsupport.SupportEventSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

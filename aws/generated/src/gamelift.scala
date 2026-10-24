@@ -20,7 +20,7 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.Alias(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Build resource. */
   def Build(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.Build(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a GameLift Fleet resource. */
   def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.Fleet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Game Server Group resource. */
   def GameServerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.GameServerGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Game Session Queue resource. */
   def GameSessionQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.GameSessionQueue(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Script resource. */
   def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,4 +107,4 @@ object gamelift:
       case None =>
     com.pulumi.aws.gamelift.Script(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

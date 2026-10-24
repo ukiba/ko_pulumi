@@ -20,7 +20,7 @@ object sfn:
       case None =>
     com.pulumi.aws.sfn.Activity(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Step Function State Machine Alias. */
   def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object sfn:
       case None               =>
     com.pulumi.aws.sfn.Alias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SfnFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -112,4 +112,4 @@ object sfn:
       case None =>
     com.pulumi.aws.sfn.StateMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

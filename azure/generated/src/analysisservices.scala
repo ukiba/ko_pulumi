@@ -20,4 +20,4 @@ object analysisservices:
       case None =>
     com.pulumi.azure.analysisservices.Server(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

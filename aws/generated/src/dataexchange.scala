@@ -20,7 +20,7 @@ object dataexchange:
       case None =>
     com.pulumi.aws.dataexchange.DataSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Data Exchange Event Action. */
   def EventAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object dataexchange:
     val argsBuilder = com.pulumi.aws.dataexchange.EventActionArgs.builder
     com.pulumi.aws.dataexchange.EventAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS Data Exchange Revisions. */
   def Revision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -43,7 +43,7 @@ object dataexchange:
       case None =>
     com.pulumi.aws.dataexchange.Revision(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing AWS Data Exchange Revision Assets.
@@ -62,4 +62,4 @@ object dataexchange:
       case None =>
     com.pulumi.aws.dataexchange.RevisionAssets(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

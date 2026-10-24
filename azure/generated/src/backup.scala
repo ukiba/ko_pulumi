@@ -41,7 +41,7 @@ object backup:
     val argsBuilder = com.pulumi.azure.backup.ContainerStorageAccountArgs.builder
     com.pulumi.azure.backup.ContainerStorageAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure File Share Backup Policy within a Recovery Services vault. */
   def PolicyFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -52,7 +52,7 @@ object backup:
       case None               =>
     com.pulumi.azure.backup.PolicyFileShare(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup VM Backup Policy. */
   def PolicyVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object backup:
       case None               =>
     com.pulumi.azure.backup.PolicyVM(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure VM Workload Backup Policy within a Recovery Services vault. */
   def PolicyVMWorkload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,7 +74,7 @@ object backup:
       case None               =>
     com.pulumi.azure.backup.PolicyVMWorkload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup Protected File Share to enable backups for file shares within an Azure Storage Account */
   def ProtectedFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object backup:
     val argsBuilder = com.pulumi.azure.backup.ProtectedFileShareArgs.builder
     com.pulumi.azure.backup.ProtectedFileShare(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Backup Protected Virtual Machine. */
   def ProtectedVM(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,4 +90,4 @@ object backup:
     val argsBuilder = com.pulumi.azure.backup.ProtectedVMArgs.builder
     com.pulumi.azure.backup.ProtectedVM(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -36,4 +36,4 @@ object aadb2c:
       case None =>
     com.pulumi.azure.aadb2c.Directory(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

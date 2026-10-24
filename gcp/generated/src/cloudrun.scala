@@ -90,7 +90,7 @@ object cloudrun:
       case None               =>
     com.pulumi.gcp.cloudrun.DomainMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Run Service. Each of these resources serves a different use case:
@@ -403,7 +403,7 @@ object cloudrun:
     val argsBuilder = com.pulumi.gcp.cloudrun.IamBindingArgs.builder
     com.pulumi.gcp.cloudrun.IamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Run Service. Each of these resources serves a different use case:
@@ -716,7 +716,7 @@ object cloudrun:
     val argsBuilder = com.pulumi.gcp.cloudrun.IamMemberArgs.builder
     com.pulumi.gcp.cloudrun.IamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Run Service. Each of these resources serves a different use case:
@@ -1029,7 +1029,7 @@ object cloudrun:
     val argsBuilder = com.pulumi.gcp.cloudrun.IamPolicyArgs.builder
     com.pulumi.gcp.cloudrun.IamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Run service has a unique endpoint and autoscales containers.
@@ -1051,4 +1051,4 @@ object cloudrun:
       case None               =>
     com.pulumi.gcp.cloudrun.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

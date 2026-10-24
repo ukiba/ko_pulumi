@@ -14,7 +14,7 @@ object costoptimizationhub:
     val argsBuilder = com.pulumi.aws.costoptimizationhub.EnrollmentStatusArgs.builder
     com.pulumi.aws.costoptimizationhub.EnrollmentStatus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing AWS Cost Optimization Hub Preferences. */
   def Preferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -22,4 +22,4 @@ object costoptimizationhub:
     val argsBuilder = com.pulumi.aws.costoptimizationhub.PreferencesArgs.builder
     com.pulumi.aws.costoptimizationhub.Preferences(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

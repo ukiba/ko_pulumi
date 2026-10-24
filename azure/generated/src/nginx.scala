@@ -13,7 +13,7 @@ object nginx:
       case None               =>
     com.pulumi.azure.nginx.ApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Certificate for an NGINX Deployment. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object nginx:
       case None               =>
     com.pulumi.azure.nginx.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the configuration for a Nginx Deployment. */
   def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object nginx:
     val argsBuilder = com.pulumi.azure.nginx.ConfigurationArgs.builder
     com.pulumi.azure.nginx.Configuration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an NGINX Deployment. */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object nginx:
       case None =>
     com.pulumi.azure.nginx.Deployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NginxFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -17,7 +17,7 @@ object efs:
       case None =>
     com.pulumi.aws.efs.AccessPoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic File System (EFS) Backup Policy resource.
@@ -28,7 +28,7 @@ object efs:
     val argsBuilder = com.pulumi.aws.efs.BackupPolicyArgs.builder
     com.pulumi.aws.efs.BackupPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EfsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -98,7 +98,7 @@ object efs:
       case None =>
     com.pulumi.aws.efs.FileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic File System (EFS) File System Policy resource. */
   def FileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -106,7 +106,7 @@ object efs:
     val argsBuilder = com.pulumi.aws.efs.FileSystemPolicyArgs.builder
     com.pulumi.aws.efs.FileSystemPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic File System (EFS) mount target. */
   def MountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -114,7 +114,7 @@ object efs:
     val argsBuilder = com.pulumi.aws.efs.MountTargetArgs.builder
     com.pulumi.aws.efs.MountTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a replica of an existing EFS file system in the same or another region. Creating this resource causes the source EFS file system to be replicated to a new read-only destination EFS file system (unless using the `destination.file_system_id` attribute). Deleting this resource will cause the replication from source to destination to stop and the destination file system will no longer be read only.
@@ -126,4 +126,4 @@ object efs:
     val argsBuilder = com.pulumi.aws.efs.ReplicationConfigurationArgs.builder
     com.pulumi.aws.efs.ReplicationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

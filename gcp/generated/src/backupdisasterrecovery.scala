@@ -24,7 +24,7 @@ object backupdisasterrecovery:
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicyArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.AutoProtectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A backup plan defines when and how to back up a resource, including the backup&#39;s schedule, retention, and location.
@@ -40,7 +40,7 @@ object backupdisasterrecovery:
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupPlanArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupPlan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Backup and DR BackupPlanAssociation.
@@ -56,7 +56,7 @@ object backupdisasterrecovery:
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupPlanAssociationArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupPlanAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Container to store and organize immutable and indelible backups. */
   def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,7 +64,7 @@ object backupdisasterrecovery:
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.BackupVaultArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.BackupVault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BackupdisasterrecoveryFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -218,7 +218,7 @@ object backupdisasterrecovery:
       case None               =>
     com.pulumi.gcp.backupdisasterrecovery.ManagementServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An imperative resource that triggers a GCBDR restoration event.
@@ -233,7 +233,7 @@ object backupdisasterrecovery:
       case None               =>
     com.pulumi.gcp.backupdisasterrecovery.RestoreWorkload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Initializes a Project-level default Backupdr config. It creates default Backupvault and default Backup Plan in same project for customers to protect instances.
@@ -247,4 +247,4 @@ object backupdisasterrecovery:
     val argsBuilder = com.pulumi.gcp.backupdisasterrecovery.ServiceConfigArgs.builder
     com.pulumi.gcp.backupdisasterrecovery.ServiceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

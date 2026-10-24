@@ -24,7 +24,7 @@ object codeconnections:
       case None =>
     com.pulumi.aws.codeconnections.Connection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS CodeConnections Host.
@@ -46,4 +46,4 @@ object codeconnections:
       case None =>
     com.pulumi.aws.codeconnections.Host(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

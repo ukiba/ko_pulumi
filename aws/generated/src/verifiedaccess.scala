@@ -17,7 +17,7 @@ object verifiedaccess:
       case None =>
     com.pulumi.aws.verifiedaccess.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Verified Access Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object verifiedaccess:
       case None =>
     com.pulumi.aws.verifiedaccess.Group(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Verified Access Instance. */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object verifiedaccess:
       case None =>
     com.pulumi.aws.verifiedaccess.Instance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing a Verified Access Logging Configuration.
@@ -59,7 +59,7 @@ object verifiedaccess:
     val argsBuilder = com.pulumi.aws.verifiedaccess.InstanceLoggingConfigurationArgs.builder
     com.pulumi.aws.verifiedaccess.InstanceLoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Verified Access Instance Trust Provider Attachment. */
   def InstanceTrustProviderAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object verifiedaccess:
     val argsBuilder = com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachmentArgs.builder
     com.pulumi.aws.verifiedaccess.InstanceTrustProviderAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Verified Access Trust Provider. */
   def TrustProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,4 +82,4 @@ object verifiedaccess:
       case None =>
     com.pulumi.aws.verifiedaccess.TrustProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

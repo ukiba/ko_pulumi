@@ -26,7 +26,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.AutomaticCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Deployment Safeguard for a Kubernetes Cluster. */
   def ClusterDeploymentSafeguard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -34,7 +34,7 @@ object containerservice:
     val argsBuilder = com.pulumi.azure.containerservice.ClusterDeploymentSafeguardArgs.builder
     com.pulumi.azure.containerservice.ClusterDeploymentSafeguard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ClusterTrustedAccessRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -44,7 +44,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.ClusterTrustedAccessRoleBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Connected Registry. */
   def ConnectedRegistry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.ConnectedRegistry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ContainerserviceFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -197,7 +197,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.FleetMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Update Run. */
   def FleetUpdateRun(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -208,7 +208,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.FleetUpdateRun(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Update Strategy. */
   def FleetUpdateStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -219,7 +219,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.FleetUpdateStrategy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Flux Configuration. */
   def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -230,7 +230,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.FluxConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages as an Azure Container Group instance. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -248,7 +248,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.Group(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Managed Kubernetes Cluster (also known as AKS / Azure Kubernetes Service)
@@ -270,7 +270,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.KubernetesCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Cluster Extension. */
   def KubernetesClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -281,7 +281,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.KubernetesClusterExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Node Pool within a Kubernetes Cluster
@@ -305,7 +305,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.KubernetesClusterNodePool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kubernetes Fleet Manager. */
   def KubernetesFleetManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -323,7 +323,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.KubernetesFleetManager(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry. */
   def Registry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -341,7 +341,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.Registry(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Agent Pool. */
   def RegistryAgentPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -359,7 +359,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.RegistryAgentPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Container Registry Cache Rule.
@@ -375,7 +375,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.RegistryCacheRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Credential Set. */
   def RegistryCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -386,7 +386,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.RegistryCredentialSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry scope map.  For more information on scope maps see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
   def RegistryScopeMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -397,7 +397,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.RegistryScopeMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Task. */
   def RegistryTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -415,7 +415,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.RegistryTask(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Runs a Container Registry Task Schedule. */
   def RegistryTaskScheduleRunNow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -423,7 +423,7 @@ object containerservice:
     val argsBuilder = com.pulumi.azure.containerservice.RegistryTaskScheduleRunNowArgs.builder
     com.pulumi.azure.containerservice.RegistryTaskScheduleRunNow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry token associated to a scope map. For more information on scope maps and their tokens see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
   def RegistryToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -434,7 +434,7 @@ object containerservice:
       case None               =>
     com.pulumi.azure.containerservice.RegistryToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Webhook. */
   def RegistryWebhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -452,7 +452,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.RegistryWebhook(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Container Registry Webhook. */
   @deprecated("azure.containerservice.RegistryWebook has been deprecated in favor of azure.containerservice.RegistryWebhook") def RegistryWebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -470,7 +470,7 @@ object containerservice:
       case None =>
     com.pulumi.azure.containerservice.RegistryWebook(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container Registry Token Password associated with a scope map.  For more information on scope maps and their tokens see the [product documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions). */
   def TokenPassword(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -478,4 +478,4 @@ object containerservice:
     val argsBuilder = com.pulumi.azure.containerservice.TokenPasswordArgs.builder
     com.pulumi.azure.containerservice.TokenPassword(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

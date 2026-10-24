@@ -23,7 +23,7 @@ object osconfig:
     val argsBuilder = com.pulumi.gcp.osconfig.GuestPoliciesArgs.builder
     com.pulumi.gcp.osconfig.GuestPolicies(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * OS policy assignment is an API resource that is used to apply a set of OS
@@ -48,7 +48,7 @@ object osconfig:
       case None               =>
     com.pulumi.gcp.osconfig.OsPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Patch deployments are configurations that individual patch jobs use to complete a patch.
@@ -65,7 +65,7 @@ object osconfig:
     val argsBuilder = com.pulumi.gcp.osconfig.PatchDeploymentArgs.builder
     com.pulumi.gcp.osconfig.PatchDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * PolicyOrchestrator helps managing project+zone level policy resources (e.g.
@@ -77,7 +77,7 @@ object osconfig:
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestrator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * PolicyOrchestrator helps managing project+zone level policy resources (e.g.
@@ -89,7 +89,7 @@ object osconfig:
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorForFolderArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestratorForFolder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * PolicyOrchestrator helps managing project+zone level policy resources (e.g.
@@ -101,4 +101,4 @@ object osconfig:
     val argsBuilder = com.pulumi.gcp.osconfig.V2PolicyOrchestratorForOrganizationArgs.builder
     com.pulumi.gcp.osconfig.V2PolicyOrchestratorForOrganization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

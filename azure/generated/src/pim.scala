@@ -10,7 +10,7 @@ object pim:
     val argsBuilder = com.pulumi.azure.pim.ActiveRoleAssignmentArgs.builder
     com.pulumi.azure.pim.ActiveRoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PIM Eligible Role Assignment. */
   def EligibleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,7 +18,7 @@ object pim:
     val argsBuilder = com.pulumi.azure.pim.EligibleRoleAssignmentArgs.builder
     com.pulumi.azure.pim.EligibleRoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PimFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -57,4 +57,4 @@ object pim:
     val argsBuilder = com.pulumi.azure.pim.RoleManagementPolicyArgs.builder
     com.pulumi.azure.pim.RoleManagementPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

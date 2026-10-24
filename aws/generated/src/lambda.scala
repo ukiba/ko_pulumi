@@ -17,7 +17,7 @@ object lambda:
       case None               =>
     com.pulumi.aws.lambda.Alias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lambda Capacity Provider. */
   def CapacityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object lambda:
       case None =>
     com.pulumi.aws.lambda.CapacityProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Code Signing Config. Use this resource to define allowed signing profiles and code-signing validation policies for Lambda functions to ensure code integrity and authenticity.
@@ -54,7 +54,7 @@ object lambda:
       case None =>
     com.pulumi.aws.lambda.CodeSigningConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lambda Network Connector. A network connector provisions elastic network interfaces (ENIs) in the subnets you specify, routing outbound traffic from [Lambda MicroVMs](https://docs.aws.amazon.com/lambda/latest/dg/microvms-networking.html) through your VPC \u2014 for example to reach private resources, or to give MicroVM traffic a stable source IP by exiting through your NAT gateway. */
   def CoreNetworkConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,7 +65,7 @@ object lambda:
       case None               =>
     com.pulumi.aws.lambda.CoreNetworkConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Event Source Mapping. Use this resource to connect Lambda functions to event sources like Kinesis, DynamoDB, SQS, Amazon MQ, and Managed Streaming for Apache Kafka (MSK).
@@ -84,7 +84,7 @@ object lambda:
       case None =>
     com.pulumi.aws.lambda.EventSourceMapping(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Function. Use this resource to create serverless functions that run code in response to events without provisioning or managing servers.
@@ -112,7 +112,7 @@ object lambda:
       case None =>
     com.pulumi.aws.lambda.Function(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Function Event Invoke Config. Use this resource to configure error handling and destinations for asynchronous Lambda function invocations.
@@ -124,7 +124,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.FunctionEventInvokeConfigArgs.builder
     com.pulumi.aws.lambda.FunctionEventInvokeConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Function Recursion Config. Use this resource to control how Lambda handles recursive function invocations to prevent infinite loops.
@@ -136,7 +136,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.FunctionRecursionConfigArgs.builder
     com.pulumi.aws.lambda.FunctionRecursionConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the scaling configuration for an AWS Lambda function. The scaling configuration defines the minimum and maximum number of execution environments that can be provisioned for the function, allowing you to control scaling behavior and resource allocation.
@@ -150,7 +150,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.FunctionScalingConfigArgs.builder
     com.pulumi.aws.lambda.FunctionScalingConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lambda function URL. Creates a dedicated HTTP(S) endpoint for a Lambda function to enable direct invocation via HTTP requests.
@@ -162,7 +162,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.FunctionUrlArgs.builder
     com.pulumi.aws.lambda.FunctionUrl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Function invocation. Use this resource to invoke a Lambda function with the [RequestResponse](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax) invocation type.
@@ -176,7 +176,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.InvocationArgs.builder
     com.pulumi.aws.lambda.Invocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LambdaFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -313,7 +313,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.LayerVersionArgs.builder
     com.pulumi.aws.lambda.LayerVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Layer Version Permission. Use this resource to share Lambda Layers with other AWS accounts, organizations, or make them publicly accessible.
@@ -327,7 +327,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.LayerVersionPermissionArgs.builder
     com.pulumi.aws.lambda.LayerVersionPermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lambda MicroVMs Image. Use this resource to define the base image, application code, and runtime configuration from which MicroVMs are launched. */
   @deprecated("aws.lambda/microvmsimage.MicrovmsImage has been deprecated in favor of aws.lambdamicrovms/image.Image") def MicrovmsImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -345,7 +345,7 @@ object lambda:
       case None =>
     com.pulumi.aws.lambda.MicrovmsImage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lambda permission. Use this resource to grant external sources (e.g., EventBridge Rules, SNS, or S3) permission to invoke Lambda functions. */
   def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -353,7 +353,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.PermissionArgs.builder
     com.pulumi.aws.lambda.Permission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Provisioned Concurrency Configuration. Use this resource to configure provisioned concurrency for Lambda functions.
@@ -365,7 +365,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.ProvisionedConcurrencyConfigArgs.builder
     com.pulumi.aws.lambda.ProvisionedConcurrencyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the complete IAM resource-based policy document for an AWS Lambda function, function version, or alias.
@@ -377,7 +377,7 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.ResourcePolicyArgs.builder
     com.pulumi.aws.lambda.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Lambda Runtime Management Config. Use this resource to control how Lambda updates the runtime for your function.
@@ -391,4 +391,4 @@ object lambda:
     val argsBuilder = com.pulumi.aws.lambda.RuntimeManagementConfigArgs.builder
     com.pulumi.aws.lambda.RuntimeManagementConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

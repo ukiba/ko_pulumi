@@ -13,7 +13,7 @@ object mongocluster:
       case None               =>
     com.pulumi.azure.mongocluster.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MongoDB Cluster using vCore Architecture. */
   def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object mongocluster:
       case None =>
     com.pulumi.azure.mongocluster.MongoCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Cluster User. */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -39,4 +39,4 @@ object mongocluster:
     val argsBuilder = com.pulumi.azure.mongocluster.UserArgs.builder
     com.pulumi.azure.mongocluster.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

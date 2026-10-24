@@ -39,4 +39,4 @@ object mediaconvert:
       case None =>
     com.pulumi.aws.mediaconvert.Queue(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

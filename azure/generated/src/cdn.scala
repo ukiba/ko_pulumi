@@ -173,7 +173,7 @@ object cdn:
       case None =>
     com.pulumi.azure.cdn.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Custom Domain for a CDN (classic) Endpoint.
@@ -192,7 +192,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.EndpointCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Batch Rule Set.
@@ -207,7 +207,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorBatchRuleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Custom Domain.
@@ -222,7 +222,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the association between a Front Door (standard/premium) Custom Domain and one or more Front Door (standard/premium) Routes.
@@ -234,7 +234,7 @@ object cdn:
     val argsBuilder = com.pulumi.azure.cdn.FrontdoorCustomDomainAssociationArgs.builder
     com.pulumi.azure.cdn.FrontdoorCustomDomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Endpoint. */
   def FrontdoorEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -252,7 +252,7 @@ object cdn:
       case None =>
     com.pulumi.azure.cdn.FrontdoorEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Firewall Policy instance. */
   def FrontdoorFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -270,7 +270,7 @@ object cdn:
       case None =>
     com.pulumi.azure.cdn.FrontdoorFirewallPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Origin.
@@ -285,7 +285,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorOrigin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Origin Group. */
   def FrontdoorOriginGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -296,7 +296,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorOriginGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Profile which contains a collection of endpoints and origin groups. */
   def FrontdoorProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -314,7 +314,7 @@ object cdn:
       case None =>
     com.pulumi.azure.cdn.FrontdoorProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Route.
@@ -329,7 +329,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Rule.
@@ -346,7 +346,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Rule Set.
@@ -361,7 +361,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorRuleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Front Door (standard/premium) Secret.
@@ -398,7 +398,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorSecret(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Front Door (standard/premium) Security Policy. */
   def FrontdoorSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -409,7 +409,7 @@ object cdn:
       case None               =>
     com.pulumi.azure.cdn.FrontdoorSecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CDN (classic) Profile to create a collection of CDN Endpoints.
@@ -437,4 +437,4 @@ object cdn:
       case None =>
     com.pulumi.azure.cdn.Profile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -28,7 +28,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.AccessPoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages S3 account-level Public Access Block configuration. For more information about these settings, see the [AWS S3 Block Public Access documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html).
@@ -42,7 +42,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.AccountPublicAccessBlockArgs.builder
     com.pulumi.aws.s3.AccountPublicAccessBlock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a S3 bucket [analytics configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html) resource.
@@ -57,7 +57,7 @@ object s3:
       case None               =>
     com.pulumi.aws.s3.AnalyticsConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a S3 bucket resource.
@@ -80,7 +80,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.Bucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages ABAC (Attribute Based Access Control) for an AWS S3 (Simple Storage) Bucket.
@@ -91,7 +91,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAbacArgs.builder
     com.pulumi.aws.s3.BucketAbac(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket accelerate configuration resource. See the [Requirements for using Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html#transfer-acceleration-requirements) for more details.
@@ -103,7 +103,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAccelerateConfigurationArgs.builder
     com.pulumi.aws.s3.BucketAccelerateConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket accelerate configuration resource. See the [Requirements for using Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html#transfer-acceleration-requirements) for more details.
@@ -115,7 +115,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAccelerateConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketAccelerateConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket ACL resource.
@@ -129,7 +129,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAclArgs.builder
     com.pulumi.aws.s3.BucketAcl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket ACL resource.
@@ -143,7 +143,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketAclV2Args.builder
     com.pulumi.aws.s3.BucketAclV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket CORS configuration resource. For more information about CORS, go to [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html) in the Amazon S3 User Guide.
@@ -157,7 +157,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketCorsConfigurationArgs.builder
     com.pulumi.aws.s3.BucketCorsConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket CORS configuration resource. For more information about CORS, go to [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cors.html) in the Amazon S3 User Guide.
@@ -171,7 +171,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketCorsConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketCorsConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an [S3 Intelligent-Tiering](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering.html) configuration resource.
@@ -186,7 +186,7 @@ object s3:
       case None               =>
     com.pulumi.aws.s3.BucketIntelligentTieringConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an independent configuration resource for S3 bucket [lifecycle configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html).
@@ -210,7 +210,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationArgs.builder
     com.pulumi.aws.s3.BucketLifecycleConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an independent configuration resource for S3 bucket [lifecycle configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html).
@@ -234,7 +234,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketLifecycleConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketLifecycleConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket (server access) logging resource. For more information, see [Logging requests using server access logging](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html)
@@ -250,7 +250,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketLoggingArgs.builder
     com.pulumi.aws.s3.BucketLogging(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket (server access) logging resource. For more information, see [Logging requests using server access logging](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html)
@@ -266,7 +266,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketLoggingV2Args.builder
     com.pulumi.aws.s3.BucketLoggingV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Metadata for a bucket. */
   def BucketMetadataConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -274,7 +274,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketMetadataConfigurationArgs.builder
     com.pulumi.aws.s3.BucketMetadataConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource. */
   def BucketMetric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -285,7 +285,7 @@ object s3:
       case None               =>
     com.pulumi.aws.s3.BucketMetric(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a S3 Bucket Notification Configuration. For additional information, see the [Configuring S3 Event Notifications section in the Amazon S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html).
@@ -299,7 +299,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketNotificationArgs.builder
     com.pulumi.aws.s3.BucketNotification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an S3 object resource. */
   def BucketObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -314,7 +314,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.BucketObject(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket Object Lock configuration resource. For more information about Object Locking, go to [Using S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) in the Amazon S3 User Guide.
@@ -328,7 +328,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationArgs.builder
     com.pulumi.aws.s3.BucketObjectLockConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket Object Lock configuration resource. For more information about Object Locking, go to [Using S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) in the Amazon S3 User Guide.
@@ -342,7 +342,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketObjectLockConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketObjectLockConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an S3 object resource. */
   def BucketObjectv2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -357,7 +357,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.BucketObjectv2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage S3 Bucket Ownership Controls. For more information, see the [S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html).
@@ -369,7 +369,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketOwnershipControlsArgs.builder
     com.pulumi.aws.s3.BucketOwnershipControls(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a policy to an S3 bucket resource.
@@ -381,7 +381,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketPolicyArgs.builder
     com.pulumi.aws.s3.BucketPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages S3 bucket-level Public Access Block configuration. For more information about these settings, see the [AWS S3 Block Public Access documentation](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html).
@@ -395,7 +395,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketPublicAccessBlockArgs.builder
     com.pulumi.aws.s3.BucketPublicAccessBlock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an independent configuration resource for S3 bucket [replication configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html).
@@ -409,7 +409,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketReplicationConfigArgs.builder
     com.pulumi.aws.s3.BucketReplicationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket request payment configuration resource. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html).
@@ -423,7 +423,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketRequestPaymentConfigurationArgs.builder
     com.pulumi.aws.s3.BucketRequestPaymentConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket request payment configuration resource. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html).
@@ -437,7 +437,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketRequestPaymentConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a S3 bucket server-side encryption configuration resource.
@@ -451,7 +451,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationArgs.builder
     com.pulumi.aws.s3.BucketServerSideEncryptionConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a S3 bucket server-side encryption configuration resource.
@@ -465,7 +465,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketServerSideEncryptionConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a S3 bucket resource.
@@ -488,7 +488,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.BucketV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource for controlling versioning on an S3 bucket.
@@ -506,7 +506,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketVersioningArgs.builder
     com.pulumi.aws.s3.BucketVersioning(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource for controlling versioning on an S3 bucket.
@@ -524,7 +524,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketVersioningV2Args.builder
     com.pulumi.aws.s3.BucketVersioningV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket website configuration resource. For more information, see [Hosting Websites on S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
@@ -536,7 +536,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketWebsiteConfigurationArgs.builder
     com.pulumi.aws.s3.BucketWebsiteConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an S3 bucket website configuration resource. For more information, see [Hosting Websites on S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
@@ -548,7 +548,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.BucketWebsiteConfigurationV2Args.builder
     com.pulumi.aws.s3.BucketWebsiteConfigurationV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon S3 Express directory bucket resource. */
   def DirectoryBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -563,7 +563,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.DirectoryBucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Access Point. */
   def FilesAccessPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -578,7 +578,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.FilesAccessPoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files File System. */
   def FilesFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -593,7 +593,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.FilesFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files File System Policy. */
   def FilesFileSystemPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -601,7 +601,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.FilesFileSystemPolicyArgs.builder
     com.pulumi.aws.s3.FilesFileSystemPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Mount Target. */
   def FilesMountTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -609,7 +609,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.FilesMountTargetArgs.builder
     com.pulumi.aws.s3.FilesMountTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Files Synchronization configuration. */
   def FilesSynchronizationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -617,7 +617,7 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.FilesSynchronizationConfigurationArgs.builder
     com.pulumi.aws.s3.FilesSynchronizationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource. */
   def Inventory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -628,7 +628,7 @@ object s3:
       case None               =>
     com.pulumi.aws.s3.Inventory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for copying an S3 object. */
   def ObjectCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -643,7 +643,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.ObjectCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object S3Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -985,7 +985,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.VectorsIndex(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Vectors Vector Bucket. */
   def VectorsVectorBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1000,7 +1000,7 @@ object s3:
       case None =>
     com.pulumi.aws.s3.VectorsVectorBucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Vectors Vector Bucket policy. */
   def VectorsVectorBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1008,4 +1008,4 @@ object s3:
     val argsBuilder = com.pulumi.aws.s3.VectorsVectorBucketPolicyArgs.builder
     com.pulumi.aws.s3.VectorsVectorBucketPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -108,7 +108,7 @@ object alb:
       case None =>
     com.pulumi.aws.alb.Listener(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer Listener Certificate resource.
@@ -122,7 +122,7 @@ object alb:
     val argsBuilder = com.pulumi.aws.alb.ListenerCertificateArgs.builder
     com.pulumi.aws.alb.ListenerCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer Listener Rule resource.
@@ -151,7 +151,7 @@ object alb:
       case None =>
     com.pulumi.aws.alb.ListenerRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer resource.
@@ -173,7 +173,7 @@ object alb:
       case None =>
     com.pulumi.aws.alb.LoadBalancer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Target Group resource for use with Load Balancer resources.
@@ -195,7 +195,7 @@ object alb:
       case None =>
     com.pulumi.aws.alb.TargetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides the ability to register instances and containers with an Application Load Balancer (ALB) or Network Load Balancer (NLB) target group. For attaching resources with Elastic Load Balancer (ELB), see the `aws.elb.Attachment` resource.
@@ -207,4 +207,4 @@ object alb:
     val argsBuilder = com.pulumi.aws.alb.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.alb.TargetGroupAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

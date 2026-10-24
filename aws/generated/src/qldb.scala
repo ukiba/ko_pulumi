@@ -24,7 +24,7 @@ object qldb:
       case None =>
     com.pulumi.aws.qldb.Ledger(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object QldbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -58,4 +58,4 @@ object qldb:
       case None =>
     com.pulumi.aws.qldb.Stream(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

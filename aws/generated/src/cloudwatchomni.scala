@@ -19,7 +19,7 @@ object cloudwatchomni:
       case None               =>
     com.pulumi.aws.cloudwatchomni.Domain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudWatch Omni Space. A space is the container that holds your observability data within a CloudWatch Omni domain.
@@ -36,4 +36,4 @@ object cloudwatchomni:
       case None               =>
     com.pulumi.aws.cloudwatchomni.Space(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

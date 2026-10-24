@@ -24,7 +24,7 @@ object timestreaminfluxdb:
       case None =>
     com.pulumi.aws.timestreaminfluxdb.DbCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Timestream for InfluxDB database instance. */
   def DbInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,4 +42,4 @@ object timestreaminfluxdb:
       case None =>
     com.pulumi.aws.timestreaminfluxdb.DbInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

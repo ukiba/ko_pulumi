@@ -10,7 +10,7 @@ object chaosstudio:
     val argsBuilder = com.pulumi.azure.chaosstudio.CapabilityArgs.builder
     com.pulumi.azure.chaosstudio.Capability(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Chaos Studio Experiment. */
   def Experiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,7 +21,7 @@ object chaosstudio:
       case None               =>
     com.pulumi.azure.chaosstudio.Experiment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &lt;!-- Note: This documentation is generated. Any manual changes will be overwritten --&gt;
@@ -33,4 +33,4 @@ object chaosstudio:
     val argsBuilder = com.pulumi.azure.chaosstudio.TargetArgs.builder
     com.pulumi.azure.chaosstudio.Target(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

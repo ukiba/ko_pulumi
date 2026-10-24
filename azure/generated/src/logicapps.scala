@@ -13,7 +13,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.ActionCustom(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an HTTP Action within a Logic App Workflow */
   def ActionHttp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.ActionHttp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account. */
   def IntegrationAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object logicapps:
       case None =>
     com.pulumi.azure.logicapps.IntegrationAccount(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Agreement. */
   def IntegrationAccountAgreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountAgreement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Assembly. */
   def IntegrationAccountAssembly(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,7 +64,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountAssembly(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Batch Configuration. */
   def IntegrationAccountBatchConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountBatchConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Certificate. */
   def IntegrationAccountCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -86,7 +86,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Map. */
   def IntegrationAccountMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -97,7 +97,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Partner. */
   def IntegrationAccountPartner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,7 +108,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountPartner(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Schema. */
   def IntegrationAccountSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountSchema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Integration Account Session. */
   def IntegrationAccountSession(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,7 +130,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.IntegrationAccountSession(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LogicappsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -191,7 +191,7 @@ object logicapps:
       case None =>
     com.pulumi.azure.logicapps.Standard(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Custom Trigger within a Logic App Workflow */
   def TriggerCustom(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -202,7 +202,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.TriggerCustom(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HTTP Request Trigger within a Logic App Workflow */
   def TriggerHttpRequest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -213,7 +213,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.TriggerHttpRequest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Recurrence Trigger within a Logic App Workflow */
   def TriggerRecurrence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -224,7 +224,7 @@ object logicapps:
       case None               =>
     com.pulumi.azure.logicapps.TriggerRecurrence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logic App Workflow. */
   def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -242,4 +242,4 @@ object logicapps:
       case None =>
     com.pulumi.azure.logicapps.Workflow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

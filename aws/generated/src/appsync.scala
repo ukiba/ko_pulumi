@@ -20,7 +20,7 @@ object appsync:
       case None =>
     com.pulumi.aws.appsync.Api(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Cache. */
   def ApiCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.ApiCacheArgs.builder
     com.pulumi.aws.appsync.ApiCache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Key. */
   def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.ApiKeyArgs.builder
     com.pulumi.aws.appsync.ApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an [AWS AppSync Channel Namespace](https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-concepts.html#namespace). */
   def ChannelNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object appsync:
       case None =>
     com.pulumi.aws.appsync.ChannelNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Data Source. */
   def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,7 +65,7 @@ object appsync:
       case None               =>
     com.pulumi.aws.appsync.DataSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Domain Name. */
   def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.DomainNameArgs.builder
     com.pulumi.aws.appsync.DomainName(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Association. */
   def DomainNameApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,7 +81,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.DomainNameApiAssociationArgs.builder
     com.pulumi.aws.appsync.DomainNameApiAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Function. */
   def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object appsync:
       case None               =>
     com.pulumi.aws.appsync.Function(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync GraphQL API. */
   def GraphQLApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -110,7 +110,7 @@ object appsync:
       case None =>
     com.pulumi.aws.appsync.GraphQLApi(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Resolver. */
   def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,7 +118,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.ResolverArgs.builder
     com.pulumi.aws.appsync.Resolver(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppSync Source API Association. */
   def SourceApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -126,7 +126,7 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.SourceApiAssociationArgs.builder
     com.pulumi.aws.appsync.SourceApiAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Type. */
   def Type(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -134,4 +134,4 @@ object appsync:
     val argsBuilder = com.pulumi.aws.appsync.TypeArgs.builder
     com.pulumi.aws.appsync.Type(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

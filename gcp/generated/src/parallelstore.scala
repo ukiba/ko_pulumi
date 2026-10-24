@@ -10,4 +10,4 @@ object parallelstore:
     val argsBuilder = com.pulumi.gcp.parallelstore.InstanceArgs.builder
     com.pulumi.gcp.parallelstore.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

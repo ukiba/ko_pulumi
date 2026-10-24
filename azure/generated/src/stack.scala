@@ -30,7 +30,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Stack HCI Deployment Setting.
@@ -52,7 +52,7 @@ object stack:
     val argsBuilder = com.pulumi.azure.stack.HciDeploymentSettingArgs.builder
     com.pulumi.azure.stack.HciDeploymentSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Extension. */
   def HciExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object stack:
       case None               =>
     com.pulumi.azure.stack.HciExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Logical Network. */
   def HciLogicalNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,7 +81,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciLogicalNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Stack HCI Marketplace Gallery Image.
@@ -109,7 +109,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciMarketplaceGalleryImage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Network Interface. */
   def HciNetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -127,7 +127,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciNetworkInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Storage Path. */
   def HciStoragePath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -145,7 +145,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciStoragePath(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Stack HCI Virtual Hard Disk. */
   def HciVirtualHardDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -163,7 +163,7 @@ object stack:
       case None =>
     com.pulumi.azure.stack.HciVirtualHardDisk(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object StackFunctions:
     // Pulumi methods are reproduced as Scala methods.

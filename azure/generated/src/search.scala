@@ -39,7 +39,7 @@ object search:
       case None =>
     com.pulumi.azure.search.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Shared Private Link Service for an Azure Search Service. */
   def SharedPrivateLinkService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,4 +50,4 @@ object search:
       case None               =>
     com.pulumi.azure.search.SharedPrivateLinkService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

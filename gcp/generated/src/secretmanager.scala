@@ -18,7 +18,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecret(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
@@ -607,7 +607,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamBindingArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
@@ -1196,7 +1196,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamMemberArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager RegionalSecret. Each of these resources serves a different use case:
@@ -1785,7 +1785,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretIamPolicyArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A regional secret version resource.
@@ -1810,7 +1810,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretVersionArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecretVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Secret is a logical secret whose value and versions can be accessed.
@@ -1826,7 +1826,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretArgs.builder
     com.pulumi.gcp.secretmanager.Secret(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
@@ -2402,7 +2402,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamBindingArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
@@ -2978,7 +2978,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamMemberArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secret Manager Secret. Each of these resources serves a different use case:
@@ -3554,7 +3554,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretIamPolicyArgs.builder
     com.pulumi.gcp.secretmanager.SecretIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A secret version resource.
@@ -3579,7 +3579,7 @@ object secretmanager:
     val argsBuilder = com.pulumi.gcp.secretmanager.SecretVersionArgs.builder
     com.pulumi.gcp.secretmanager.SecretVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SecretmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.

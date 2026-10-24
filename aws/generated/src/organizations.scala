@@ -26,7 +26,7 @@ object organizations:
       case None =>
     com.pulumi.aws.organizations.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages trusted access between an AWS service and AWS Organizations.
@@ -42,7 +42,7 @@ object organizations:
     val argsBuilder = com.pulumi.aws.organizations.AwsServiceAccessArgs.builder
     com.pulumi.aws.organizations.AwsServiceAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [AWS Organizations Delegated Administrator](https://docs.aws.amazon.com/organizations/latest/APIReference/API_RegisterDelegatedAdministrator.html). */
   def DelegatedAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object organizations:
     val argsBuilder = com.pulumi.aws.organizations.DelegatedAdministratorArgs.builder
     com.pulumi.aws.organizations.DelegatedAdministrator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an organization.
@@ -64,7 +64,7 @@ object organizations:
     val argsBuilder = com.pulumi.aws.organizations.OrganizationArgs.builder
     com.pulumi.aws.organizations.Organization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create an organizational unit. */
   def OrganizationalUnit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object organizations:
       case None =>
     com.pulumi.aws.organizations.OrganizationalUnit(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OrganizationsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -275,7 +275,7 @@ object organizations:
       case None =>
     com.pulumi.aws.organizations.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to attach an AWS Organizations policy to an organization account, root, or unit. */
   def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -283,7 +283,7 @@ object organizations:
     val argsBuilder = com.pulumi.aws.organizations.PolicyAttachmentArgs.builder
     com.pulumi.aws.organizations.PolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a resource-based delegation policy that can be used to delegate policy management for AWS Organizations to specified member accounts to perform policy actions that are by default available only to the management account. See the [_AWS Organizations User Guide_](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_delegate_policies.html) for more information. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -298,7 +298,7 @@ object organizations:
       case None =>
     com.pulumi.aws.organizations.ResourcePolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual Organizations resource tag. This resource should only be used in cases where Organizations resources are created outside Terraform (e.g., Organizations Accounts implicitly created by AWS Control Tower).
@@ -312,4 +312,4 @@ object organizations:
     val argsBuilder = com.pulumi.aws.organizations.TagArgs.builder
     com.pulumi.aws.organizations.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

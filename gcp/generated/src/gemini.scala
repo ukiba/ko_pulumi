@@ -18,7 +18,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.CodeRepositoryIndexArgs.builder
     com.pulumi.gcp.gemini.CodeRepositoryIndex(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing CodeTools settings for Admin Control. */
   def CodeToolsSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -26,7 +26,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.CodeToolsSettingArgs.builder
     com.pulumi.gcp.gemini.CodeToolsSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing CodeTools setting bindings for Admin Control.
@@ -40,7 +40,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.CodeToolsSettingBindingArgs.builder
     com.pulumi.gcp.gemini.CodeToolsSettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A DataAgent lets users interact with configured data sources by using
@@ -64,7 +64,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
@@ -377,7 +377,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBindingArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
@@ -690,7 +690,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMemberArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini Data Analytics DataAgent. Each of these resources serves a different use case:
@@ -1003,7 +1003,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicyArgs.builder
     com.pulumi.gcp.gemini.DataAnalyticsDataAgentIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing DataSharingWithGoogle settings for Admin Control. */
   def DataSharingWithGoogleSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1011,7 +1011,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataSharingWithGoogleSettingArgs.builder
     com.pulumi.gcp.gemini.DataSharingWithGoogleSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing DataSharingWithGoogle setting bindings for Admin Control.
@@ -1025,7 +1025,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.DataSharingWithGoogleSettingBindingArgs.builder
     com.pulumi.gcp.gemini.DataSharingWithGoogleSettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing GdaObservability settings for Admin Control.
@@ -1041,7 +1041,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingArgs.builder
     com.pulumi.gcp.gemini.GdaObservabilitySetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing GdaObservability setting bindings for Admin Control.
@@ -1057,7 +1057,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GdaObservabilitySettingBindingArgs.builder
     com.pulumi.gcp.gemini.GdaObservabilitySettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GeminiFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1096,7 +1096,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GeminiGcpEnablementSettingArgs.builder
     com.pulumi.gcp.gemini.GeminiGcpEnablementSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing GeminiGcpEnablementSetting setting bindings for Admin Control.
@@ -1110,7 +1110,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBindingArgs.builder
     com.pulumi.gcp.gemini.GeminiGcpEnablementSettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A setting that controls observability features for Gemini in BigQuery.
@@ -1126,7 +1126,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingArgs.builder
     com.pulumi.gcp.gemini.GibqObservabilitySetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing GibqObservabilitySetting setting bindings for Admin Control.
@@ -1140,7 +1140,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.GibqObservabilitySettingBindingArgs.builder
     com.pulumi.gcp.gemini.GibqObservabilitySettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing Logging settings for Admin Control. */
   def LoggingSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1148,7 +1148,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.LoggingSettingArgs.builder
     com.pulumi.gcp.gemini.LoggingSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing Logging setting bindings for Admin Control.
@@ -1162,7 +1162,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.LoggingSettingBindingArgs.builder
     com.pulumi.gcp.gemini.LoggingSettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The resource for managing ReleaseChannel settings for Admin Control. */
   def ReleaseChannelSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1170,7 +1170,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.ReleaseChannelSettingArgs.builder
     com.pulumi.gcp.gemini.ReleaseChannelSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing ReleaseChannel setting bindings for Admin Control.
@@ -1184,7 +1184,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.ReleaseChannelSettingBindingArgs.builder
     com.pulumi.gcp.gemini.ReleaseChannelSettingBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The resource for managing Repository Group for Gemini Code Assist.
@@ -1198,7 +1198,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
@@ -1517,7 +1517,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamBindingArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
@@ -1836,7 +1836,7 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamMemberArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Gemini for Google Cloud RepositoryGroup. Each of these resources serves a different use case:
@@ -2155,4 +2155,4 @@ object gemini:
     val argsBuilder = com.pulumi.gcp.gemini.RepositoryGroupIamPolicyArgs.builder
     com.pulumi.gcp.gemini.RepositoryGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

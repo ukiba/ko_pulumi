@@ -20,4 +20,4 @@ object videoindexer:
       case None =>
     com.pulumi.azure.videoindexer.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

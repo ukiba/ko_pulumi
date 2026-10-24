@@ -17,7 +17,7 @@ object opensearchingest:
       case None =>
     com.pulumi.aws.opensearchingest.Pipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Ingestion Pipeline Endpoint. */
   def PipelineEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object opensearchingest:
     val argsBuilder = com.pulumi.aws.opensearchingest.PipelineEndpointArgs.builder
     com.pulumi.aws.opensearchingest.PipelineEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Ingestion Resource Policy. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -33,4 +33,4 @@ object opensearchingest:
     val argsBuilder = com.pulumi.aws.opensearchingest.ResourcePolicyArgs.builder
     com.pulumi.aws.opensearchingest.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

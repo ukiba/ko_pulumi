@@ -39,7 +39,7 @@ object dynatrace:
       case None =>
     com.pulumi.azure.dynatrace.Monitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Dynatrace tag rules. */
   def TagRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,4 +50,4 @@ object dynatrace:
       case None               =>
     com.pulumi.azure.dynatrace.TagRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -14,7 +14,7 @@ object transfer:
     val argsBuilder = com.pulumi.aws.transfer.AccessArgs.builder
     com.pulumi.aws.transfer.Access(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Agreement resource. */
   def Agreement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -29,7 +29,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Agreement(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Certificate resource. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Connector resource. */
   def Connector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -59,7 +59,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Connector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a host key for a server. This is an [_additional server host key_](https://docs.aws.amazon.com/transfer/latest/userguide/server-host-key-add.html). */
   def HostKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,7 +74,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.HostKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer AS2 Profile resource. */
   def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Profile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a AWS Transfer Server resource.
@@ -110,7 +110,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Server(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer User SSH Key resource. */
   def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,7 +118,7 @@ object transfer:
     val argsBuilder = com.pulumi.aws.transfer.SshKeyArgs.builder
     com.pulumi.aws.transfer.SshKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual Transfer Family resource tag. This resource should only be used in cases where Transfer Family resources are created outside the provider (e.g., Servers without AWS Management Console) or the tag key has the `aws:` prefix.
@@ -132,7 +132,7 @@ object transfer:
     val argsBuilder = com.pulumi.aws.transfer.TagArgs.builder
     com.pulumi.aws.transfer.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object TransferFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -188,7 +188,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.User(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transfer Family Web App. */
   def WebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -203,7 +203,7 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.WebApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transfer Family Web App Customization. */
   def WebAppCustomization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object transfer:
     val argsBuilder = com.pulumi.aws.transfer.WebAppCustomizationArgs.builder
     com.pulumi.aws.transfer.WebAppCustomization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a AWS Transfer Workflow resource. */
   def Workflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -226,4 +226,4 @@ object transfer:
       case None =>
     com.pulumi.aws.transfer.Workflow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

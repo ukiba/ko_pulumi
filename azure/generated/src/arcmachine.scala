@@ -20,7 +20,7 @@ object arcmachine:
       case None =>
     com.pulumi.azure.arcmachine.ArcMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ArcmachineFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -47,7 +47,7 @@ object arcmachine:
     val argsBuilder = com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.arcmachine.AutomanageConfigurationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hybrid Compute Machine Extension. */
   def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,4 +65,4 @@ object arcmachine:
       case None =>
     com.pulumi.azure.arcmachine.Extension(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

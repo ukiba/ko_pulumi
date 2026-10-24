@@ -21,7 +21,7 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.Detector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a single Amazon GuardDuty [detector feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features).
@@ -36,7 +36,7 @@ object guardduty:
       case None               =>
     com.pulumi.aws.guardduty.DetectorFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a GuardDuty filter. */
   def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.Filter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GuarddutyFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -107,7 +107,7 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.IPSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to accept a pending GuardDuty invite on creation, ensure the detector has the correct primary account on read, and disassociate with the primary account upon removal. */
   def InviteAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -115,7 +115,7 @@ object guardduty:
     val argsBuilder = com.pulumi.aws.guardduty.InviteAccepterArgs.builder
     com.pulumi.aws.guardduty.InviteAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a GuardDuty malware protection plan. */
   def MalwareProtectionPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,7 +130,7 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.MalwareProtectionPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a GuardDuty member. To accept invitations in member accounts, see the `aws.guardduty.InviteAccepter` resource. */
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -138,7 +138,7 @@ object guardduty:
     val argsBuilder = com.pulumi.aws.guardduty.MemberArgs.builder
     com.pulumi.aws.guardduty.Member(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a single Amazon GuardDuty [detector feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features) for a member account.
@@ -153,7 +153,7 @@ object guardduty:
       case None               =>
     com.pulumi.aws.guardduty.MemberDetectorFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a GuardDuty Organization Admin Account. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in GuardDuty can be found in the [GuardDuty User Guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html). */
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object guardduty:
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationAdminAccountArgs.builder
     com.pulumi.aws.guardduty.OrganizationAdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the GuardDuty Organization Configuration in the current AWS Region. The AWS account utilizing this resource must have been assigned as a delegated Organization administrator account, e.g., via the `aws.guardduty.OrganizationAdminAccount` resource. More information about Organizations support in GuardDuty can be found in the [GuardDuty User Guide](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html).
@@ -173,7 +173,7 @@ object guardduty:
     val argsBuilder = com.pulumi.aws.guardduty.OrganizationConfigurationArgs.builder
     com.pulumi.aws.guardduty.OrganizationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a single Amazon GuardDuty [organization configuration feature](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-features-activation-model.html#guardduty-features).
@@ -188,7 +188,7 @@ object guardduty:
       case None               =>
     com.pulumi.aws.guardduty.OrganizationConfigurationFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a GuardDuty PublishingDestination. Requires an existing GuardDuty Detector. */
   def PublishingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -203,7 +203,7 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.PublishingDestination(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a GuardDuty ThreatIntelSet.
@@ -225,4 +225,4 @@ object guardduty:
       case None =>
     com.pulumi.aws.guardduty.ThreatIntelSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

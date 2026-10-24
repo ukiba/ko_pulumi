@@ -21,7 +21,7 @@ object parametermanager:
     val argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
     com.pulumi.gcp.parametermanager.Parameter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Parameter Version resource that stores the actual value of the parameter.
@@ -35,7 +35,7 @@ object parametermanager:
     val argsBuilder = com.pulumi.gcp.parametermanager.ParameterVersionArgs.builder
     com.pulumi.gcp.parametermanager.ParameterVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ParametermanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -165,7 +165,7 @@ object parametermanager:
     val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Regional Parameter Version resource that stores the actual value of the regional parameter.
@@ -179,7 +179,7 @@ object parametermanager:
     val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterVersionArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameterVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Template is a logical parameter template.
@@ -192,4 +192,4 @@ object parametermanager:
     val argsBuilder = com.pulumi.gcp.parametermanager.TemplateArgs.builder
     com.pulumi.gcp.parametermanager.Template(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

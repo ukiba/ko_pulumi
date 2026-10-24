@@ -18,7 +18,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.BranchRuleArgs.builder
     com.pulumi.gcp.securesourcemanager.BranchRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Hook is a user-defined HTTP callback triggered by an event.
@@ -32,7 +32,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.HookArgs.builder
     com.pulumi.gcp.securesourcemanager.Hook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Instances are deployed to an available Google Cloud region and are accessible via their web interface.
@@ -48,28 +48,28 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceArgs.builder
     com.pulumi.gcp.securesourcemanager.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamBindingArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamMemberArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.securesourcemanager.InstanceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securesourcemanager.InstanceIamPolicyArgs.builder
     com.pulumi.gcp.securesourcemanager.InstanceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Repositories store source code. It supports all Git SCM client commands and has built-in pull requests and issue tracking. Both HTTPS and SSH authentication are supported.
@@ -85,7 +85,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryArgs.builder
     com.pulumi.gcp.securesourcemanager.Repository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
@@ -398,7 +398,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
@@ -711,7 +711,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Secure Source Manager Repository. Each of these resources serves a different use case:
@@ -1024,7 +1024,7 @@ object securesourcemanager:
     val argsBuilder = com.pulumi.gcp.securesourcemanager.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.securesourcemanager.RepositoryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SecuresourcemanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.

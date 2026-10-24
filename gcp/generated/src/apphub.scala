@@ -53,7 +53,7 @@ object apphub:
     val argsBuilder = com.pulumi.gcp.apphub.ApplicationArgs.builder
     com.pulumi.gcp.apphub.Application(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Application management boundary.
@@ -69,7 +69,7 @@ object apphub:
     val argsBuilder = com.pulumi.gcp.apphub.BoundaryArgs.builder
     com.pulumi.gcp.apphub.Boundary(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Service is a network/api interface that exposes some functionality to clients for consumption over the network. Service typically has one or more Workloads behind it. It registers identified service to the Application. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -77,7 +77,7 @@ object apphub:
     val argsBuilder = com.pulumi.gcp.apphub.ServiceArgs.builder
     com.pulumi.gcp.apphub.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a Service project attachment to the Host Project. */
   def ServiceProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -85,7 +85,7 @@ object apphub:
     val argsBuilder = com.pulumi.gcp.apphub.ServiceProjectAttachmentArgs.builder
     com.pulumi.gcp.apphub.ServiceProjectAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Workload represents a binary deployment (such as Managed Instance Groups (MIGs), GKE deployments, etc.) that performs the smallest logical subset of business functionality. It registers identified workload to the Application. */
   def Workload(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -93,4 +93,4 @@ object apphub:
     val argsBuilder = com.pulumi.gcp.apphub.WorkloadArgs.builder
     com.pulumi.gcp.apphub.Workload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

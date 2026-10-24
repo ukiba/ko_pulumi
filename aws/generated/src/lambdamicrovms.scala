@@ -20,7 +20,7 @@ object lambdamicrovms:
       case None =>
     com.pulumi.aws.lambdamicrovms.Image(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LambdamicrovmsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -51,4 +51,4 @@ object lambdamicrovms:
     val argsBuilder = com.pulumi.aws.lambdamicrovms.MicrovmArgs.builder
     com.pulumi.aws.lambdamicrovms.Microvm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

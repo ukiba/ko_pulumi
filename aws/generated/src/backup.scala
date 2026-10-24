@@ -91,7 +91,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.Framework(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Backup Global Settings resource.
@@ -103,7 +103,7 @@ object backup:
     val argsBuilder = com.pulumi.aws.backup.GlobalSettingsArgs.builder
     com.pulumi.aws.backup.GlobalSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Logically Air Gapped Vault. */
   def LogicallyAirGappedVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -121,7 +121,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.LogicallyAirGappedVault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup plan resource. */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -139,7 +139,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.Plan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup Region Settings resource. */
   def RegionSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -147,7 +147,7 @@ object backup:
     val argsBuilder = com.pulumi.aws.backup.RegionSettingsArgs.builder
     com.pulumi.aws.backup.RegionSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup Report Plan resource. */
   def ReportPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -165,7 +165,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.ReportPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Restore Testing Plan. */
   def RestoreTestingPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -183,7 +183,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.RestoreTestingPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Backup Restore Testing Selection. */
   def RestoreTestingSelection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -194,7 +194,7 @@ object backup:
       case None               =>
     com.pulumi.aws.backup.RestoreTestingSelection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages selection conditions for AWS Backup plan resources. */
   def Selection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -205,7 +205,7 @@ object backup:
       case None               =>
     com.pulumi.aws.backup.Selection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault resource. */
   def Vault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -223,7 +223,7 @@ object backup:
       case None =>
     com.pulumi.aws.backup.Vault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault lock configuration resource. */
   def VaultLockConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -231,7 +231,7 @@ object backup:
     val argsBuilder = com.pulumi.aws.backup.VaultLockConfigurationArgs.builder
     com.pulumi.aws.backup.VaultLockConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault notifications resource. */
   def VaultNotifications(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -239,7 +239,7 @@ object backup:
     val argsBuilder = com.pulumi.aws.backup.VaultNotificationsArgs.builder
     com.pulumi.aws.backup.VaultNotifications(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Backup vault policy resource. */
   def VaultPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -247,4 +247,4 @@ object backup:
     val argsBuilder = com.pulumi.aws.backup.VaultPolicyArgs.builder
     com.pulumi.aws.backup.VaultPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

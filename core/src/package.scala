@@ -1,6 +1,7 @@
 package jp.ukiba.ko_pulumi
 
 import com.pulumi.core.{Output, Either as PEither}
+import com.pulumi.resources.CustomResourceOptions
 
 import scala.jdk.CollectionConverters.*
 import scala.jdk.OptionConverters.*
@@ -14,7 +15,9 @@ import java.util.{Optional as JOptional, List as JList, Map as JMap, Collections
 type Endofunction[A] = Function1[A, A]  // TODO this does not belong here
 
 case class KoPulumiConf(
-  defaultProtect: Boolean = false,
+  // None leaves `protect` unset, so that a resource inherits its parent's;
+  // Some(false) unprotects even the children of a protected parent (pulumi-java 1.27.0 and later)
+  defaultProtect: Option[Boolean] = None,
 
   // propagate the logical name (the first argument of the resource class constructor) to the physical name
   logicalName2physicalName: String => Option[String] = _ => None,
@@ -26,7 +29,12 @@ case class KoPulumiConf(
 
   // avoid com.pulumi.exceptions.MissingRequiredPropertyException: Missing required property 'family when constructing 'TaskDefinitionArgs'
   logicalName2ecsTaskDefinitionFamily: String => Option[String] = _ => None,  // TODO maybe factor out to aws
-)
+):
+  def customResourceOptionsBuilder: CustomResourceOptions.Builder =
+    val builder = CustomResourceOptions.builder
+    defaultProtect match
+      case Some(protect) => builder.protect(protect)
+      case None          => builder
 
 object KoPulumiConf:
   private def propagateLogicalName(name: String) = Some(name)

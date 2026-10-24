@@ -10,7 +10,7 @@ object privatelink:
     val argsBuilder = com.pulumi.azure.privatelink.ApplicationSecurityGroupAssociationArgs.builder
     com.pulumi.azure.privatelink.ApplicationSecurityGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Private Endpoint.
@@ -32,7 +32,7 @@ object privatelink:
       case None =>
     com.pulumi.azure.privatelink.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PrivatelinkFunctions:
     // Pulumi methods are reproduced as Scala methods.

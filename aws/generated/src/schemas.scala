@@ -21,7 +21,7 @@ object schemas:
       case None =>
     com.pulumi.aws.schemas.Discoverer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge Custom Schema Registry resource.
@@ -43,7 +43,7 @@ object schemas:
       case None =>
     com.pulumi.aws.schemas.Registry(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EventBridge Schemas Registry Policy. */
   def RegistryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -51,7 +51,7 @@ object schemas:
     val argsBuilder = com.pulumi.aws.schemas.RegistryPolicyArgs.builder
     com.pulumi.aws.schemas.RegistryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge Schema resource.
@@ -73,4 +73,4 @@ object schemas:
       case None =>
     com.pulumi.aws.schemas.Schema(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

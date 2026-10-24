@@ -20,7 +20,7 @@ object waf:
       case None =>
     com.pulumi.azure.waf.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WafFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -10,7 +10,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.AuthenticationProfileArgs.builder
     com.pulumi.aws.redshift.AuthenticationProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Redshift Cluster Resource.
@@ -31,7 +31,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Redshift Cluster IAM Roles resource.
@@ -43,7 +43,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.ClusterIamRolesArgs.builder
     com.pulumi.aws.redshift.ClusterIamRoles(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Redshift cluster snapshot */
   def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -58,7 +58,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.ClusterSnapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Redshift Data Share Authorization. */
   def DataShareAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -66,7 +66,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.DataShareAuthorizationArgs.builder
     com.pulumi.aws.redshift.DataShareAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Redshift Data Share Consumer Association. */
   def DataShareConsumerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,7 +74,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.DataShareConsumerAssociationArgs.builder
     com.pulumi.aws.redshift.DataShareConsumerAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift endpoint access. */
   def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.EndpointAccessArgs.builder
     com.pulumi.aws.redshift.EndpointAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift endpoint authorization. */
   def EndpointAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.EndpointAuthorizationArgs.builder
     com.pulumi.aws.redshift.EndpointAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Redshift event subscription resource. */
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,7 +108,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.EventSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client&#39;s HSM in order to store and retrieve the keys used to encrypt the cluster databases. */
   def HsmClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -123,7 +123,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.HsmClientCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). */
   def HsmConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -138,7 +138,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.HsmConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift IDC application. */
   def IdcApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,7 +153,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.IdcApplication(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a DynamoDB zero-ETL integration or S3 event integration with Amazon Redshift. You can refer to the [User Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/RedshiftforDynamoDB-zero-etl.html) for a DynamoDB zero-ETL integration or the [User Guide](https://docs.aws.amazon.com/redshift/latest/dg/loading-data-copy-job.html) for a S3 event integration. */
   def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.Integration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Redshift Logging configuration. */
   def Logging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -176,7 +176,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.LoggingArgs.builder
     com.pulumi.aws.redshift.Logging(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon Redshift namespace registration to the AWS Glue Data Catalog. Use this resource to enable access to a Redshift data warehouse using the Apache Iceberg REST API.
@@ -188,7 +188,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.NamespaceRegistrationArgs.builder
     com.pulumi.aws.redshift.NamespaceRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Redshift Cluster parameter group resource. */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -206,7 +206,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.ParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Partner Integration. */
   def Partner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -214,7 +214,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.PartnerArgs.builder
     com.pulumi.aws.redshift.Partner(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RedshiftFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -301,7 +301,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.ResourcePolicyArgs.builder
     com.pulumi.aws.redshift.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.ScheduledActionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -311,7 +311,7 @@ object redshift:
       case None               =>
     com.pulumi.aws.redshift.ScheduledAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Redshift Snapshot Copy. */
   def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -319,7 +319,7 @@ object redshift:
     val argsBuilder = com.pulumi.aws.redshift.SnapshotCopyArgs.builder
     com.pulumi.aws.redshift.SnapshotCopy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a snapshot copy grant that allows AWS Redshift to encrypt copied snapshots with a customer master key from AWS KMS in a destination region.
@@ -338,7 +338,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.SnapshotCopyGrant(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def SnapshotSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -352,14 +352,14 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.SnapshotSchedule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def SnapshotScheduleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.redshift.SnapshotScheduleAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.redshift.SnapshotScheduleAssociationArgs.builder
     com.pulumi.aws.redshift.SnapshotScheduleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing VPC when creating Amazon Redshift subnet group. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -377,7 +377,7 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Usage Limit. */
   def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -392,4 +392,4 @@ object redshift:
       case None =>
     com.pulumi.aws.redshift.UsageLimit(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

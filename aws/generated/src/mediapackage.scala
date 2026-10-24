@@ -17,4 +17,4 @@ object mediapackage:
       case None =>
     com.pulumi.aws.mediapackage.Channel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

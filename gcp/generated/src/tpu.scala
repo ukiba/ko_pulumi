@@ -55,7 +55,7 @@ object tpu:
       case None               =>
     com.pulumi.gcp.tpu.V2QueuedResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud TPU VM instance.
@@ -77,4 +77,4 @@ object tpu:
       case None               =>
     com.pulumi.gcp.tpu.V2Vm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

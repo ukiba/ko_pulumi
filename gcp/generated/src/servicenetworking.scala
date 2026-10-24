@@ -15,7 +15,7 @@ object servicenetworking:
     val argsBuilder = com.pulumi.gcp.servicenetworking.ConnectionArgs.builder
     com.pulumi.gcp.servicenetworking.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of a single peered DNS domain for an existing Google Cloud Platform project.
@@ -32,7 +32,7 @@ object servicenetworking:
       case None               =>
     com.pulumi.gcp.servicenetworking.PeeredDnsDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicenetworkingFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -95,4 +95,4 @@ object servicenetworking:
     val argsBuilder = com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.builder
     com.pulumi.gcp.servicenetworking.VpcServiceControls(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

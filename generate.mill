@@ -307,7 +307,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
             case None =>
           com.pulumi.aws.ec2.SecurityGroup(name,
               argsBuilder.build,
-              resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+              resourceOptions(conf.customResourceOptionsBuilder).build)
 
       from the pattern
 
@@ -391,7 +391,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
           |    ${clsElem.getQualifiedName}(name,
           |        $finalArgsExpr,
-          |        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+          |        resourceOptions(conf.customResourceOptionsBuilder).build)
           |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
 
     /*

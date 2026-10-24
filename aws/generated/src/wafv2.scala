@@ -10,7 +10,7 @@ object wafv2:
     val argsBuilder = com.pulumi.aws.wafv2.ApiKeyArgs.builder
     com.pulumi.aws.wafv2.ApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAFv2 IP Set Resource */
   def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object wafv2:
       case None =>
     com.pulumi.aws.wafv2.IpSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS WAFv2 Regex Pattern Set Resource */
   def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object wafv2:
       case None =>
     com.pulumi.aws.wafv2.RegexPatternSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a WAFv2 Rule Group resource. */
   def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,7 +64,7 @@ object wafv2:
       case None =>
     com.pulumi.aws.wafv2.RuleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Wafv2Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -163,7 +163,7 @@ object wafv2:
       case None =>
     com.pulumi.aws.wafv2.WebAcl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a WAFv2 Web ACL Association.
@@ -183,7 +183,7 @@ object wafv2:
     val argsBuilder = com.pulumi.aws.wafv2.WebAclAssociationArgs.builder
     com.pulumi.aws.wafv2.WebAclAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource creates a WAFv2 Web ACL Logging Configuration.
@@ -195,7 +195,7 @@ object wafv2:
     val argsBuilder = com.pulumi.aws.wafv2.WebAclLoggingConfigurationArgs.builder
     com.pulumi.aws.wafv2.WebAclLoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual rule within a WAFv2 Web ACL. This resource creates proper Terraform dependencies for safe deletion of referenced resources like IP sets, solving the `WAFAssociatedItemException` error that occurs when deleting IP sets that are still referenced by Web ACL rules.
@@ -210,7 +210,7 @@ object wafv2:
       case None               =>
     com.pulumi.aws.wafv2.WebAclRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates a WAFv2 Rule Group (custom or managed) with a Web ACL by adding a rule that references the Rule Group. Use this resource to apply the rules defined in a Rule Group to a Web ACL without duplicating rule definitions.
@@ -231,4 +231,4 @@ object wafv2:
     val argsBuilder = com.pulumi.aws.wafv2.WebAclRuleGroupAssociationArgs.builder
     com.pulumi.aws.wafv2.WebAclRuleGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

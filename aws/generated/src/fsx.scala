@@ -17,7 +17,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.Backup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a FSx for Lustre Data Repository Association. See [Linking your file system to an S3 bucket](https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html) for more information.
@@ -36,7 +36,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.DataRepositoryAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an Amazon File Cache cache.
@@ -54,7 +54,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.FileCache(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FsxFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -148,7 +148,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.LustreFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon FSx for NetApp ONTAP file system.
@@ -166,7 +166,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OntapFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a FSx Storage Virtual Machine.
@@ -187,7 +187,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OntapStorageVirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a FSx ONTAP Volume.
@@ -208,7 +208,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OntapVolume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon FSx for OpenZFS file system.
@@ -226,7 +226,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OpenZfsFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon FSx for OpenZFS volume.
@@ -247,7 +247,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OpenZfsSnapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon FSx for OpenZFS volume.
@@ -268,7 +268,7 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.OpenZfsVolume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon FSx S3 Access Point attachment. */
   def S3AccessPointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -279,7 +279,7 @@ object fsx:
       case None               =>
     com.pulumi.aws.fsx.S3AccessPointAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a FSx Windows File System. See the [FSx Windows Guide](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html) for more information.
@@ -298,4 +298,4 @@ object fsx:
       case None =>
     com.pulumi.aws.fsx.WindowsFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

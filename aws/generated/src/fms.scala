@@ -10,7 +10,7 @@ object fms:
     val argsBuilder = com.pulumi.aws.fms.AdminAccountArgs.builder
     com.pulumi.aws.fms.AdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an AWS Firewall Manager policy. You need to be using AWS organizations and have enabled the Firewall Manager administrator account.
@@ -32,7 +32,7 @@ object fms:
       case None =>
     com.pulumi.aws.fms.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS FMS (Firewall Manager) Resource Set. */
   def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,4 +47,4 @@ object fms:
       case None =>
     com.pulumi.aws.fms.ResourceSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

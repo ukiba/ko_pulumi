@@ -56,7 +56,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamBindingArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Endpoints ServiceConsumers. Each of these resources serves a different use case:
@@ -110,7 +110,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamMemberArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Endpoints ServiceConsumers. Each of these resources serves a different use case:
@@ -164,7 +164,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamPolicyArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EndpointsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -203,7 +203,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceArgs.builder
     com.pulumi.gcp.endpoints.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Endpoints Service. Each of these resources serves a different use case:
@@ -503,7 +503,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamBindingArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Endpoints Service. Each of these resources serves a different use case:
@@ -803,7 +803,7 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamMemberArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Endpoints Service. Each of these resources serves a different use case:
@@ -1103,4 +1103,4 @@ object endpoints:
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamPolicyArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

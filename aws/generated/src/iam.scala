@@ -10,7 +10,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.AccessKeyArgs.builder
     com.pulumi.aws.iam.AccessKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** There is only a single account alias per AWS account.
@@ -22,7 +22,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.AccountAliasArgs.builder
     com.pulumi.aws.iam.AccountAlias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** There is only a single policy allowed per AWS account. An existing policy will be lost when using this resource as an effect of this limitation.
@@ -36,7 +36,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.AccountPasswordPolicyArgs.builder
     com.pulumi.aws.iam.AccountPasswordPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM group.
@@ -51,7 +51,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **WARNING:** Multiple aws.iam.GroupMembership resources with the same group name will produce inconsistent behavior!
@@ -71,7 +71,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.GroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) group.
@@ -85,7 +85,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.GroupPoliciesExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM policy attached to a group.
@@ -100,7 +100,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.GroupPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM group
@@ -112,7 +112,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentArgs.builder
     com.pulumi.aws.iam.GroupPolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) group.
@@ -126,7 +126,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.GroupPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IamFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -469,7 +469,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.InstanceProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM OpenID Connect provider. */
   def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -484,7 +484,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.OpenIdConnectProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages centralized root access features across AWS member accounts managed using AWS Organizations. More information about managing root access in IAM can be found in the [Centralize root access for member accounts](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html).
@@ -496,7 +496,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.OrganizationsFeaturesArgs.builder
     com.pulumi.aws.iam.OrganizationsFeatures(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS IAM (Identity &amp; Access Management) Outbound Web Identity Federation.
@@ -508,7 +508,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.builder
     com.pulumi.aws.iam.OutboundWebIdentityFederation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM policy.
@@ -530,7 +530,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a Managed IAM Policy to user(s), role(s), and/or group(s)
@@ -551,7 +551,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.PolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM role.
@@ -577,7 +577,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.Role(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **NOTE:**: To reliably detect drift between customer managed inline policies listed in this resource and actual policies attached to the role in the cloud, you currently need to run Pulumi with `pulumi up --refresh`. See [#4766](https://github.com/pulumi/pulumi-aws/issues/4766) for tracking making this work with regular `pulumi up` invocations.
@@ -593,7 +593,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.RolePoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.RolePoliciesExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM role inline policy.
@@ -610,7 +610,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.RolePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM role
@@ -624,7 +624,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentArgs.builder
     com.pulumi.aws.iam.RolePolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **NOTE:**: To reliably detect drift between customer managed policies listed in this resource and actual policies attached to the role in the cloud, you currently need to run Pulumi with `pulumi up --refresh`. See [#4766](https://github.com/pulumi/pulumi-aws/issues/4766) for tracking making this work with regular `pulumi up`
@@ -640,7 +640,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.RolePolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM SAML provider. */
   def SamlProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -658,7 +658,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.SamlProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM Security Token Service Preferences resource. */
   def SecurityTokenServicePreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -666,7 +666,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.builder
     com.pulumi.aws.iam.SecurityTokenServicePreferences(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM Server Certificate resource to upload Server Certificates.
@@ -695,7 +695,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.ServerCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an [IAM service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html). */
   def ServiceLinkedRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -710,7 +710,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.ServiceLinkedRole(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM Service Specific Credential. */
   def ServiceSpecificCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -718,7 +718,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.ServiceSpecificCredentialArgs.builder
     com.pulumi.aws.iam.ServiceSpecificCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM Signing Certificate resource to upload Signing Certificates.
@@ -730,7 +730,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.SigningCertificateArgs.builder
     com.pulumi.aws.iam.SigningCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Uploads an SSH public key and associates it with the specified IAM user. */
   def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -738,7 +738,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.SshKeyArgs.builder
     com.pulumi.aws.iam.SshKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM user.
@@ -760,7 +760,7 @@ object iam:
       case None =>
     com.pulumi.aws.iam.User(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource for adding an IAM User to IAM Groups. This
@@ -775,7 +775,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.UserGroupMembershipArgs.builder
     com.pulumi.aws.iam.UserGroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IAM User Login Profile with limited support for password creation during this provider resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.
@@ -787,7 +787,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.UserLoginProfileArgs.builder
     com.pulumi.aws.iam.UserLoginProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of inline policies assigned to an AWS IAM (Identity &amp; Access Management) user.
@@ -801,7 +801,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.UserPoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.UserPoliciesExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM policy attached to a user.
@@ -816,7 +816,7 @@ object iam:
       case None               =>
     com.pulumi.aws.iam.UserPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a Managed IAM Policy to an IAM user
@@ -828,7 +828,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentArgs.builder
     com.pulumi.aws.iam.UserPolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of managed IAM policies assigned to an AWS IAM (Identity &amp; Access Management) user.
@@ -842,7 +842,7 @@ object iam:
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.UserPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IAM Virtual MFA Device.
@@ -864,4 +864,4 @@ object iam:
       case None =>
     com.pulumi.aws.iam.VirtualMfaDevice(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

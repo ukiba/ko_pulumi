@@ -14,7 +14,7 @@ object modelarmor:
     val argsBuilder = com.pulumi.gcp.modelarmor.FloorsettingArgs.builder
     com.pulumi.gcp.modelarmor.Floorsetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `Template` is a resource of Model Armor that lets you configure how Model Armor screens prompts and responses.
@@ -25,4 +25,4 @@ object modelarmor:
     val argsBuilder = com.pulumi.gcp.modelarmor.TemplateArgs.builder
     com.pulumi.gcp.modelarmor.Template(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

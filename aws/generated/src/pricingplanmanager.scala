@@ -18,4 +18,4 @@ object pricingplanmanager:
     val argsBuilder = com.pulumi.aws.pricingplanmanager.SubscriptionArgs.builder
     com.pulumi.aws.pricingplanmanager.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

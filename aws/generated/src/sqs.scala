@@ -24,7 +24,7 @@ object sqs:
       case None =>
     com.pulumi.aws.sqs.Queue(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows you to set a policy of an SQS Queue while referencing the ARN of the queue within the policy.
@@ -36,7 +36,7 @@ object sqs:
     val argsBuilder = com.pulumi.aws.sqs.QueuePolicyArgs.builder
     com.pulumi.aws.sqs.QueuePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SQS Queue Redrive Allow Policy resource. */
   def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object sqs:
     val argsBuilder = com.pulumi.aws.sqs.RedriveAllowPolicyArgs.builder
     com.pulumi.aws.sqs.RedriveAllowPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows you to set a redrive policy of an SQS Queue
@@ -59,7 +59,7 @@ object sqs:
     val argsBuilder = com.pulumi.aws.sqs.RedrivePolicyArgs.builder
     com.pulumi.aws.sqs.RedrivePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SqsFunctions:
     // Pulumi methods are reproduced as Scala methods.

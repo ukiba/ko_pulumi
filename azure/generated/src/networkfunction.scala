@@ -20,7 +20,7 @@ object networkfunction:
       case None =>
     com.pulumi.azure.networkfunction.AzureTrafficCollector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Function Collector Policy. */
   def CollectorPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,4 +38,4 @@ object networkfunction:
       case None =>
     com.pulumi.azure.networkfunction.CollectorPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

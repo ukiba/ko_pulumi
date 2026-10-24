@@ -20,7 +20,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Domain Topic */
   def DomainTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object eventgrid:
       case None               =>
     com.pulumi.azure.eventgrid.DomainTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Event Subscription */
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object eventgrid:
       case None               =>
     com.pulumi.azure.eventgrid.EventSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EventgridFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -139,7 +139,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.Namespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Namespace Topic. */
   def NamespaceTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -150,7 +150,7 @@ object eventgrid:
       case None               =>
     com.pulumi.azure.eventgrid.NamespaceTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Configuration. */
   def PartnerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -165,7 +165,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.PartnerConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Namespace. */
   def PartnerNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -183,7 +183,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.PartnerNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Partner Registration. */
   def PartnerRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -201,7 +201,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.PartnerRegistration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid System Topic. */
   def SystemTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -219,7 +219,7 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.SystemTopic(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid System Topic Event Subscription. */
   def SystemTopicEventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -230,7 +230,7 @@ object eventgrid:
       case None               =>
     com.pulumi.azure.eventgrid.SystemTopicEventSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an EventGrid Topic
@@ -252,4 +252,4 @@ object eventgrid:
       case None =>
     com.pulumi.azure.eventgrid.Topic(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

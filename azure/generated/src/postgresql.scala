@@ -14,7 +14,7 @@ object postgresql:
     val argsBuilder = com.pulumi.azure.postgresql.ActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.postgresql.ActiveDirectoryAdministrator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets a PostgreSQL Configuration value on a PostgreSQL Server.
@@ -33,7 +33,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.Configuration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a PostgreSQL Database within a PostgreSQL Server
@@ -50,7 +50,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Firewall Rule for a PostgreSQL Server
@@ -65,7 +65,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server. */
   def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -83,7 +83,7 @@ object postgresql:
       case None =>
     com.pulumi.azure.postgresql.FlexibleServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows you to set a user or group as the AD administrator for a PostgreSQL Flexible Server.
@@ -101,7 +101,7 @@ object postgresql:
     val argsBuilder = com.pulumi.azure.postgresql.FlexibleServerActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.postgresql.FlexibleServerActiveDirectoryAdministrator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server Backup. */
   def FlexibleServerBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -112,7 +112,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FlexibleServerBackup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets a PostgreSQL Configuration value on a Azure PostgreSQL Flexible Server.
@@ -127,7 +127,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FlexibleServerConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a PostgreSQL Flexible Server Database.
@@ -142,7 +142,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FlexibleServerDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Flexible Server Firewall Rule. */
   def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,7 +153,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FlexibleServerFirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to create a Virtual Endpoint associated with a Postgres Flexible Replica. */
   def FlexibleServerVirtualEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -164,7 +164,7 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.FlexibleServerVirtualEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PostgresqlFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -225,7 +225,7 @@ object postgresql:
       case None =>
     com.pulumi.azure.postgresql.Server(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Customer Managed Key for a PostgreSQL Server.
@@ -237,7 +237,7 @@ object postgresql:
     val argsBuilder = com.pulumi.azure.postgresql.ServerKeyArgs.builder
     com.pulumi.azure.postgresql.ServerKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a PostgreSQL Virtual Network Rule.
@@ -254,4 +254,4 @@ object postgresql:
       case None               =>
     com.pulumi.azure.postgresql.VirtualNetworkRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

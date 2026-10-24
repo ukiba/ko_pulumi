@@ -24,7 +24,7 @@ object arckubernetes:
       case None =>
     com.pulumi.azure.arckubernetes.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Cluster Extension. */
   def ClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object arckubernetes:
       case None               =>
     com.pulumi.azure.arckubernetes.ClusterExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Flux Configuration. */
   def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object arckubernetes:
       case None               =>
     com.pulumi.azure.arckubernetes.FluxConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Provisioned Cluster. */
   def ProvisionedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,4 +64,4 @@ object arckubernetes:
       case None =>
     com.pulumi.azure.arckubernetes.ProvisionedCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

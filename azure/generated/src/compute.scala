@@ -10,7 +10,7 @@ object compute:
     val argsBuilder = com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.compute.AutomanageConfigurationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Availability Set for Virtual Machines. */
   def AvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.AvailabilitySet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bastion Host. */
   def BastionHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.BastionHost(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation within a Capacity Reservation Group. */
   def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,7 +64,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.CapacityReservation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation Group. */
   def CapacityReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.CapacityReservationGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ComputeFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -355,7 +355,7 @@ object compute:
     val argsBuilder = com.pulumi.azure.compute.DataDiskAttachmentArgs.builder
     com.pulumi.azure.compute.DataDiskAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host within a Dedicated Host Group. */
   def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -373,7 +373,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.DedicatedHost(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host Group. */
   def DedicatedHostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -391,7 +391,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.DedicatedHostGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Access. */
   def DiskAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -409,7 +409,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.DiskAccess(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Disk Encryption Set.
@@ -431,7 +431,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.DiskEncryptionSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Machine Extension to provide post deployment configuration
@@ -456,7 +456,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.Extension(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application. */
   def GalleryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -474,7 +474,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.GalleryApplication(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Machine Gallery Application Assignment.
@@ -486,7 +486,7 @@ object compute:
     val argsBuilder = com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.builder
     com.pulumi.azure.compute.GalleryApplicationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application Version. */
   def GalleryApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -504,7 +504,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.GalleryApplicationVersion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a custom virtual machine image that can be used to create virtual machines. */
   def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -522,7 +522,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.Image(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an implicit Data Disk of a Virtual Machine.
@@ -537,7 +537,7 @@ object compute:
       case None               =>
     com.pulumi.azure.compute.ImplicitDataDiskFromSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linux Virtual Machine.
@@ -569,7 +569,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.LinuxVirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linux Virtual Machine Scale Set.
@@ -593,7 +593,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.LinuxVirtualMachineScaleSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a managed disk. */
   def ManagedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -611,7 +611,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.ManagedDisk(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Disk SAS Token.
@@ -627,7 +627,7 @@ object compute:
     val argsBuilder = com.pulumi.azure.compute.ManagedDiskSasTokenArgs.builder
     com.pulumi.azure.compute.ManagedDiskSasToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Orchestrated Virtual Machine Scale Set in Flexible Orchestration Mode.
@@ -653,7 +653,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine using a Network Watcher. */
   def PacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -664,7 +664,7 @@ object compute:
       case None               =>
     com.pulumi.azure.compute.PacketCapture(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point. */
   def RestorePoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -675,7 +675,7 @@ object compute:
       case None               =>
     com.pulumi.azure.compute.RestorePoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point Collection. */
   def RestorePointCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -693,7 +693,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.RestorePointCollection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Run Command. */
   def RunCommand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -711,7 +711,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.RunCommand(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a virtual machine scale set. */
   def ScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -729,7 +729,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.ScaleSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine Scale Set using a Network Watcher. */
   def ScaleSetPacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -740,7 +740,7 @@ object compute:
       case None               =>
     com.pulumi.azure.compute.ScaleSetPacketCapture(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Standby Pool for Virtual Machine Scale Sets.
@@ -761,7 +761,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.ScaleSetStandbyPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image within a Shared Image Gallery. */
   def SharedImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -779,7 +779,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.SharedImage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image Gallery. */
   def SharedImageGallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -797,7 +797,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.SharedImageGallery(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Version of a Shared Image within a Shared Image Gallery. */
   def SharedImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -815,7 +815,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.SharedImageVersion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Snapshot. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -833,7 +833,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.Snapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SSH Public Key. */
   def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -851,7 +851,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.SshPublicKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Machine.
@@ -877,7 +877,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.VirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Extension for a Virtual Machine Scale Set.
@@ -892,7 +892,7 @@ object compute:
       case None               =>
     com.pulumi.azure.compute.VirtualMachineScaleSetExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Windows Virtual Machine.
@@ -924,7 +924,7 @@ object compute:
       case None =>
     com.pulumi.azure.compute.WindowsVirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Windows Virtual Machine Scale Set.
@@ -954,4 +954,4 @@ object compute:
       case None =>
     com.pulumi.azure.compute.WindowsVirtualMachineScaleSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

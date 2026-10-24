@@ -17,7 +17,7 @@ object orbital:
       case None               =>
     com.pulumi.azure.orbital.Contact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Contact profile.
@@ -39,7 +39,7 @@ object orbital:
       case None =>
     com.pulumi.azure.orbital.ContactProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spacecraft.
@@ -61,4 +61,4 @@ object orbital:
       case None =>
     com.pulumi.azure.orbital.Spacecraft(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

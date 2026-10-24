@@ -28,7 +28,7 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an DocumentDB Cluster Resource Instance. A Cluster Instance Resource defines attributes that are specific to a single instance in a DocumentDB Cluster.
@@ -47,7 +47,7 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.ClusterInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DocumentDB Cluster Parameter Group */
   def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,7 +65,7 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.ClusterParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DocumentDB database cluster snapshot for DocumentDB clusters. */
   def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object docdb:
     val argsBuilder = com.pulumi.aws.docdb.ClusterSnapshotArgs.builder
     com.pulumi.aws.docdb.ClusterSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DocdbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -122,7 +122,7 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.ElasticCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DocumentDB event subscription resource. */
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -140,7 +140,7 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.EventSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an DocumentDB Global Cluster. A global cluster consists of one primary region and up to five read-only secondary regions. You issue write operations directly to the primary cluster in the primary region and Amazon DocumentDB automatically replicates the data to the secondary regions using dedicated infrastructure.
@@ -152,7 +152,7 @@ object docdb:
     val argsBuilder = com.pulumi.aws.docdb.GlobalClusterArgs.builder
     com.pulumi.aws.docdb.GlobalCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an DocumentDB subnet group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,4 +170,4 @@ object docdb:
       case None =>
     com.pulumi.aws.docdb.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

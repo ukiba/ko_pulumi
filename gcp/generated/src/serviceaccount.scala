@@ -22,7 +22,7 @@ object serviceaccount:
     val argsBuilder = com.pulumi.gcp.serviceaccount.AccountArgs.builder
     com.pulumi.gcp.serviceaccount.Account(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * When managing IAM roles, you can treat a service account either as a resource or as an identity. This resource is to add iam policy bindings to a service account resource, such as allowing the members to run operations as or modify the service account. To configure permissions for a service account on other GCP resources, use the googleProjectIam set of resources.
@@ -42,7 +42,7 @@ object serviceaccount:
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMBindingArgs.builder
     com.pulumi.gcp.serviceaccount.IAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * When managing IAM roles, you can treat a service account either as a resource or as an identity. This resource is to add iam policy bindings to a service account resource, such as allowing the members to run operations as or modify the service account. To configure permissions for a service account on other GCP resources, use the googleProjectIam set of resources.
@@ -62,7 +62,7 @@ object serviceaccount:
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMMemberArgs.builder
     com.pulumi.gcp.serviceaccount.IAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * When managing IAM roles, you can treat a service account either as a resource or as an identity. This resource is to add iam policy bindings to a service account resource, such as allowing the members to run operations as or modify the service account. To configure permissions for a service account on other GCP resources, use the googleProjectIam set of resources.
@@ -82,7 +82,7 @@ object serviceaccount:
     val argsBuilder = com.pulumi.gcp.serviceaccount.IAMPolicyArgs.builder
     com.pulumi.gcp.serviceaccount.IAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates and manages service account keys, which allow the use of a service account with Google Cloud.
@@ -99,7 +99,7 @@ object serviceaccount:
     val argsBuilder = com.pulumi.gcp.serviceaccount.KeyArgs.builder
     com.pulumi.gcp.serviceaccount.Key(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServiceaccountFunctions:
     // Pulumi methods are reproduced as Scala methods.

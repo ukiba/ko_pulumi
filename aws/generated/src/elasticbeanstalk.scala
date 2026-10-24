@@ -27,7 +27,7 @@ object elasticbeanstalk:
       case None =>
     com.pulumi.aws.elasticbeanstalk.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Beanstalk Application Version Resource. Elastic Beanstalk allows
@@ -57,7 +57,7 @@ object elasticbeanstalk:
       case None =>
     com.pulumi.aws.elasticbeanstalk.ApplicationVersion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Beanstalk Configuration Template, which are associated with
@@ -72,7 +72,7 @@ object elasticbeanstalk:
       case None               =>
     com.pulumi.aws.elasticbeanstalk.ConfigurationTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElasticbeanstalkFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -140,4 +140,4 @@ object elasticbeanstalk:
       case None =>
     com.pulumi.aws.elasticbeanstalk.Environment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

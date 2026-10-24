@@ -18,7 +18,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.BigQueryExportArgs.builder
     com.pulumi.gcp.chronicle.BigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * CaseCloseDefinition provides predefined root cause options for closing security cases in SecOps. These definitions ensure consistent documentation and reporting across case investigations upon closure.
@@ -34,7 +34,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseCloseDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * CaseStageDefinition represents a stage in the lifecycle of a case.
@@ -50,7 +50,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseStageDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A CaseTagDefinition is used to classify and tag cases based on criteria.
@@ -66,7 +66,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseTagDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The custom list is a list of objects, that can be saved as a shared resource, and can be used by playbooks.
@@ -82,7 +82,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.CustomListArgs.builder
     com.pulumi.gcp.chronicle.CustomList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A chart resource used within a NativeDashboard. Its lifecycle (Create, Update, Delete) is managed via custom methods on the NativeDashboard resource.
@@ -98,7 +98,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DashboardChartArgs.builder
     com.pulumi.gcp.chronicle.DashboardChart(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A DataAccessLabel is a label on events to define user access to data.
@@ -114,7 +114,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DataAccessLabelArgs.builder
     com.pulumi.gcp.chronicle.DataAccessLabel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A DataAccessScope is a boolean expression of data access labels used to restrict access to data for users.
@@ -130,7 +130,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DataAccessScopeArgs.builder
     com.pulumi.gcp.chronicle.DataAccessScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * DataExport resource represents a request to export data from Chronicle to a GCS bucket.
@@ -146,7 +146,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DataExportArgs.builder
     com.pulumi.gcp.chronicle.DataExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Chronicle Data Table, a multicolumn structure used to ingest your own data into Google SecOps.
@@ -162,7 +162,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DataTableArgs.builder
     com.pulumi.gcp.chronicle.DataTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a single row in a data table.
@@ -178,7 +178,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.DataTableRowArgs.builder
     com.pulumi.gcp.chronicle.DataTableRow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An environment is logical container for different networks or customers that are managed by the SOC or MSSP. This is useful for SOCs who provide services to several different networks, customers or business units within the organization. The Platform comes with a predefined environment named Default Environment.
@@ -194,7 +194,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentArgs.builder
     com.pulumi.gcp.chronicle.Environment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Environment groups let you organize multiple environments into logical categories, making it easier to manage large organizations or multiple customers as a Managed Security Service Provider (MSSP).
@@ -210,7 +210,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentGroupArgs.builder
     com.pulumi.gcp.chronicle.EnvironmentGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The FeedsService is responsible for configuring and managing the ingestion of third-party security data and logs into Google Security Operations through various feed creation, updates, and lifecycle management, and schema validation.
@@ -226,7 +226,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.FeedArgs.builder
     com.pulumi.gcp.chronicle.Feed(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a set of logic conditions used to refine various types of findings such as curated rule detections.
@@ -242,7 +242,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementArgs.builder
     com.pulumi.gcp.chronicle.FindingsRefinement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The FindingsRefinementDeployment resource represents the deployment state of a findings refinement.
@@ -258,7 +258,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.builder
     com.pulumi.gcp.chronicle.FindingsRefinementDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A configuration for a native dashboard within a Google SecOps (Chronicle) instance.
@@ -274,7 +274,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.NativeDashboardArgs.builder
     com.pulumi.gcp.chronicle.NativeDashboard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A parser is a configuration that parses raw logs of a specific log type into Unified Data Model (UDM) events.
@@ -291,7 +291,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.ParserArgs.builder
     com.pulumi.gcp.chronicle.Parser(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A parser extension allows customers to extend or customize the behavior of an existing prebuilt or custom parser.
@@ -308,7 +308,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.ParserExtensionArgs.builder
     com.pulumi.gcp.chronicle.ParserExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Reference lists are user-defined lists of values which users can use in multiple Rules.
@@ -324,7 +324,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.ReferenceListArgs.builder
     com.pulumi.gcp.chronicle.ReferenceList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Retrohunt is an execution of a Rule over a time range in the past.
@@ -340,7 +340,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.RetrohuntArgs.builder
     com.pulumi.gcp.chronicle.Retrohunt(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Rule resource represents a user-created rule.
@@ -356,7 +356,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.RuleArgs.builder
     com.pulumi.gcp.chronicle.Rule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The RuleDeployment resource represents the deployment state of a Rule.
@@ -372,7 +372,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.RuleDeploymentArgs.builder
     com.pulumi.gcp.chronicle.RuleDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A SOAR domain designate a domain as internal, ensuring that entities associated with it are treated as organizational assets rather than external threats during ingestion.
@@ -391,7 +391,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.SoarDomainArgs.builder
     com.pulumi.gcp.chronicle.SoarDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage networks in the platform using the Classless Inter-Domain Routing (CIDR) format. The system identifies network subnets to help Google Security Operations recognize internal assets and consider network sensitivity during playbook execution.
@@ -407,7 +407,7 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.SoarNetworkArgs.builder
     com.pulumi.gcp.chronicle.SoarNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A watchlist is a list of entities that allows for bulk operations over the included entities.
@@ -423,4 +423,4 @@ object chronicle:
     val argsBuilder = com.pulumi.gcp.chronicle.WatchlistArgs.builder
     com.pulumi.gcp.chronicle.Watchlist(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

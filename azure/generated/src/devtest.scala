@@ -52,7 +52,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.GlobalVMShutdownSchedule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Test Lab. */
   def Lab(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -70,7 +70,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.Lab(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Virtual Machine within a Dev Test Lab. */
   def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -88,7 +88,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.LinuxVirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy within a Dev Test Policy Set. */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -106,7 +106,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages automated startup and shutdown schedules for Azure Dev Test Lab. */
   def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -124,7 +124,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.Schedule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Network within a DevTest Lab. */
   def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -142,7 +142,7 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.VirtualNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Virtual Machine within a Dev Test Lab. */
   def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -160,4 +160,4 @@ object devtest:
       case None =>
     com.pulumi.azure.devtest.WindowsVirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

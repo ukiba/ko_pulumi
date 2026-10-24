@@ -26,7 +26,7 @@ object hpc:
       case None =>
     com.pulumi.azure.hpc.Cache(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a HPC Cache Access Policy.
@@ -41,7 +41,7 @@ object hpc:
       case None               =>
     com.pulumi.azure.hpc.CacheAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Blob NFSv3 Target within a HPC Cache.
@@ -68,7 +68,7 @@ object hpc:
       case None               =>
     com.pulumi.azure.hpc.CacheBlobNfsTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Blob Target within a HPC Cache.
@@ -93,7 +93,7 @@ object hpc:
       case None               =>
     com.pulumi.azure.hpc.CacheBlobTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NFS Target within a HPC Cache.
@@ -110,4 +110,4 @@ object hpc:
       case None               =>
     com.pulumi.azure.hpc.CacheNfsTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

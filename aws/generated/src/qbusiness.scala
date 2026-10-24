@@ -17,4 +17,4 @@ object qbusiness:
       case None =>
     com.pulumi.aws.qbusiness.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

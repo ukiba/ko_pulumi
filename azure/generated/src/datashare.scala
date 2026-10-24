@@ -20,7 +20,7 @@ object datashare:
       case None =>
     com.pulumi.azure.datashare.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Data Share Blob Storage Dataset.
@@ -41,7 +41,7 @@ object datashare:
       case None               =>
     com.pulumi.azure.datashare.DatasetBlobStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Data Share Data Lake Gen2 Dataset.
@@ -62,7 +62,7 @@ object datashare:
       case None               =>
     com.pulumi.azure.datashare.DatasetDataLakeGen2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Share Kusto Cluster Dataset. */
   def DatasetKustoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object datashare:
       case None               =>
     com.pulumi.azure.datashare.DatasetKustoCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Share Kusto Database Dataset. */
   def DatasetKustoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -84,7 +84,7 @@ object datashare:
       case None               =>
     com.pulumi.azure.datashare.DatasetKustoDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatashareFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -174,4 +174,4 @@ object datashare:
       case None               =>
     com.pulumi.azure.datashare.Share(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

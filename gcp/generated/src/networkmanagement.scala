@@ -23,7 +23,7 @@ object networkmanagement:
       case None               =>
     com.pulumi.gcp.networkmanagement.ConnectivityTest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Network Monitoring Provider resource that allows third-party network monitoring
@@ -41,7 +41,7 @@ object networkmanagement:
     val argsBuilder = com.pulumi.gcp.networkmanagement.NetworkMonitoringProviderArgs.builder
     com.pulumi.gcp.networkmanagement.NetworkMonitoringProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkmanagementFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -128,7 +128,7 @@ object networkmanagement:
     val argsBuilder = com.pulumi.gcp.networkmanagement.OrganizationVpcFlowLogsConfigArgs.builder
     com.pulumi.gcp.networkmanagement.OrganizationVpcFlowLogsConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** VPC Flow Logs Config is a resource that lets you configure Flow Logs for Networks, Subnets, Interconnect attachments or VPN Tunnels. */
   def VpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -136,4 +136,4 @@ object networkmanagement:
     val argsBuilder = com.pulumi.gcp.networkmanagement.VpcFlowLogsConfigArgs.builder
     com.pulumi.gcp.networkmanagement.VpcFlowLogsConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

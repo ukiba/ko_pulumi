@@ -95,7 +95,7 @@ object batch:
       case None =>
     com.pulumi.aws.batch.ComputeEnvironment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Job Definition resource. */
   def JobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -113,7 +113,7 @@ object batch:
       case None =>
     com.pulumi.aws.batch.JobDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Job Queue resource. */
   def JobQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object batch:
       case None =>
     com.pulumi.aws.batch.JobQueue(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Batch Scheduling Policy resource. */
   def SchedulingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -149,4 +149,4 @@ object batch:
       case None =>
     com.pulumi.aws.batch.SchedulingPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

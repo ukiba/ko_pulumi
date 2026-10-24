@@ -20,7 +20,7 @@ object mailmanager:
       case None =>
     com.pulumi.aws.mailmanager.Archive(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Ingress Point. */
   def IngressPoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object mailmanager:
       case None =>
     com.pulumi.aws.mailmanager.IngressPoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Relay. */
   def Relay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object mailmanager:
       case None =>
     com.pulumi.aws.mailmanager.Relay(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SES Mail Manager Rule Set. */
   def RuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,7 +74,7 @@ object mailmanager:
       case None =>
     com.pulumi.aws.mailmanager.RuleSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SES Mail Manager Traffic Policy. */
   def TrafficPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,4 +92,4 @@ object mailmanager:
       case None =>
     com.pulumi.aws.mailmanager.TrafficPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -24,7 +24,7 @@ object amplify:
       case None =>
     com.pulumi.aws.amplify.App(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Backend Environment resource. */
   def BackendEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object amplify:
     val argsBuilder = com.pulumi.aws.amplify.BackendEnvironmentArgs.builder
     com.pulumi.aws.amplify.BackendEnvironment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Branch resource. */
   def Branch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object amplify:
       case None =>
     com.pulumi.aws.amplify.Branch(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Domain Association resource. */
   def DomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object amplify:
     val argsBuilder = com.pulumi.aws.amplify.DomainAssociationArgs.builder
     com.pulumi.aws.amplify.DomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amplify Webhook resource. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,4 +63,4 @@ object amplify:
     val argsBuilder = com.pulumi.aws.amplify.WebhookArgs.builder
     com.pulumi.aws.amplify.Webhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

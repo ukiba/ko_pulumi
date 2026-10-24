@@ -13,7 +13,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.AssetType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatazoneFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -62,7 +62,7 @@ object datazone:
       case None =>
     com.pulumi.aws.datazone.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment. */
   def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.Environment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment Blueprint Configuration. */
   def EnvironmentBlueprintConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,7 +81,7 @@ object datazone:
     val argsBuilder = com.pulumi.aws.datazone.EnvironmentBlueprintConfigurationArgs.builder
     com.pulumi.aws.datazone.EnvironmentBlueprintConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Environment Profile. */
   def EnvironmentProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.EnvironmentProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Form Type. */
   def FormType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.FormType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Glossary. */
   def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -114,7 +114,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.Glossary(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Glossary Term. */
   def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -125,7 +125,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.GlossaryTerm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataZone Policy Grant. */
   def PolicyGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -133,7 +133,7 @@ object datazone:
     val argsBuilder = com.pulumi.aws.datazone.PolicyGrantArgs.builder
     com.pulumi.aws.datazone.PolicyGrant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone Project. */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -144,7 +144,7 @@ object datazone:
       case None               =>
     com.pulumi.aws.datazone.Project(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataZone User Profile. */
   def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -152,4 +152,4 @@ object datazone:
     val argsBuilder = com.pulumi.aws.datazone.UserProfileArgs.builder
     com.pulumi.aws.datazone.UserProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

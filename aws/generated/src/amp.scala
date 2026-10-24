@@ -10,7 +10,7 @@ object amp:
     val argsBuilder = com.pulumi.aws.amp.AlertManagerDefinitionArgs.builder
     com.pulumi.aws.amp.AlertManagerDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AmpFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -68,7 +68,7 @@ object amp:
       case None =>
     com.pulumi.aws.amp.AnomalyDetector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Query Logging Configuration. */
   def QueryLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -76,7 +76,7 @@ object amp:
     val argsBuilder = com.pulumi.aws.amp.QueryLoggingConfigurationArgs.builder
     com.pulumi.aws.amp.QueryLoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon Managed Service for Prometheus (AMP) Resource Policy.
@@ -92,7 +92,7 @@ object amp:
     val argsBuilder = com.pulumi.aws.amp.ResourcePolicyArgs.builder
     com.pulumi.aws.amp.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Rule Group Namespace */
   def RuleGroupNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -110,7 +110,7 @@ object amp:
       case None =>
     com.pulumi.aws.amp.RuleGroupNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** If you change a Scraper&#39;s source (EKS cluster or VPC configuration), Terraform
@@ -133,7 +133,7 @@ object amp:
       case None =>
     com.pulumi.aws.amp.Scraper(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Scraper Logging Configuration. */
   def ScraperLoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -141,7 +141,7 @@ object amp:
     val argsBuilder = com.pulumi.aws.amp.ScraperLoggingConfigurationArgs.builder
     com.pulumi.aws.amp.ScraperLoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Service for Prometheus (AMP) Workspace. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -156,7 +156,7 @@ object amp:
       case None =>
     com.pulumi.aws.amp.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Managed Service for Prometheus Workspace Configuration. */
   def WorkspaceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -164,4 +164,4 @@ object amp:
     val argsBuilder = com.pulumi.aws.amp.WorkspaceConfigurationArgs.builder
     com.pulumi.aws.amp.WorkspaceConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

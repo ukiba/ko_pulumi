@@ -108,7 +108,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Account Encryption Resource.
@@ -120,7 +120,7 @@ object netapp:
     val argsBuilder = com.pulumi.azure.netapp.AccountEncryptionArgs.builder
     com.pulumi.azure.netapp.AccountEncryption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Backup Policy.
@@ -207,7 +207,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.BackupPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Backup Vault.
@@ -293,7 +293,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.BackupVault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetappFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1245,7 +1245,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.Pool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Snapshot.
@@ -1380,7 +1380,7 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.Snapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Snapshot Policy.
@@ -1498,7 +1498,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.SnapshotPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Volume.
@@ -1528,7 +1528,7 @@ object netapp:
       case None =>
     com.pulumi.azure.netapp.Volume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Files Volume Bucket. Buckets expose the contents of an Azure NetApp Files volume (or a sub-path within it) as an S3-compatible object endpoint via the Azure NetApp Files Object REST API.
@@ -1549,7 +1549,7 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.VolumeBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a NetApp Files Volume Bucket including its bucket server configuration. Buckets expose the contents of an Azure NetApp Files volume (or a sub-path within it) as an S3-compatible object endpoint via the Azure NetApp Files Object REST API.
@@ -1570,7 +1570,7 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.VolumeBucketWithServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Application Volume Group for Oracle application.
@@ -1585,7 +1585,7 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.VolumeGroupOracle(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Application Volume Group for SAP HANA application.
@@ -1600,7 +1600,7 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.VolumeGroupSapHana(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Volume Quota Rule. */
   def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1611,4 +1611,4 @@ object netapp:
       case None               =>
     com.pulumi.azure.netapp.VolumeQuotaRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -10,7 +10,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.ConditionalForwarderArgs.builder
     com.pulumi.aws.directoryservice.ConditionalForwarder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Simple or Managed Microsoft directory in AWS Directory Service. */
   def Directory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object directoryservice:
       case None =>
     com.pulumi.aws.directoryservice.Directory(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DirectoryserviceFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -61,7 +61,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.IpRouteArgs.builder
     com.pulumi.aws.directoryservice.IpRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an exclusive set of IP routes for an AWS Directory Service directory. IP routes are used to route traffic from an AWS Managed Microsoft AD or AD Connector directory to an IPv4 or IPv6 CIDR block, such as an on-premises network reachable over a VPN or AWS Direct Connect connection, or a peered VPC.
@@ -77,7 +77,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.IpRoutesExclusiveArgs.builder
     com.pulumi.aws.directoryservice.IpRoutesExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Log subscription for AWS Directory Service that pushes logs to CloudWatch. */
   def LogSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -85,7 +85,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.LogSubscriptionArgs.builder
     com.pulumi.aws.directoryservice.LogSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a directory&#39;s multi-factor authentication (MFA) using a Remote Authentication Dial In User Service (RADIUS) server. */
   def RadiusSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -93,7 +93,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.RadiusSettingsArgs.builder
     com.pulumi.aws.directoryservice.RadiusSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a replicated Region and directory for Multi-Region replication.
@@ -111,7 +111,7 @@ object directoryservice:
       case None =>
     com.pulumi.aws.directoryservice.ServiceRegion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a directory in your account (directory owner) shared with another account (directory consumer). */
   def SharedDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryArgs.builder
     com.pulumi.aws.directoryservice.SharedDirectory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepts a shared directory in a consumer account.
@@ -131,7 +131,7 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.SharedDirectoryAccepterArgs.builder
     com.pulumi.aws.directoryservice.SharedDirectoryAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a trust relationship between two Active Directory Directories.
@@ -147,4 +147,4 @@ object directoryservice:
     val argsBuilder = com.pulumi.aws.directoryservice.TrustArgs.builder
     com.pulumi.aws.directoryservice.Trust(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

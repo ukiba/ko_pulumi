@@ -97,7 +97,7 @@ object redis:
       case None               =>
     com.pulumi.gcp.redis.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Redis Cluster ACL policy.
@@ -123,7 +123,7 @@ object redis:
     val argsBuilder = com.pulumi.gcp.redis.ClusterAclPolicyArgs.builder
     com.pulumi.gcp.redis.ClusterAclPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages user created connections for Redis cluster
@@ -146,7 +146,7 @@ object redis:
       case None               =>
     com.pulumi.gcp.redis.ClusterUserCreatedConnections(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Redis instance.
@@ -165,7 +165,7 @@ object redis:
       case None               =>
     com.pulumi.gcp.redis.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RedisFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -10,7 +10,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.ContributorInsightsArgs.builder
     com.pulumi.aws.dynamodb.ContributorInsights(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DynamodbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -73,7 +73,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.GlobalSecondaryIndexArgs.builder
     com.pulumi.aws.dynamodb.GlobalSecondaryIndex(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages [DynamoDB Global Tables V1 (version 2017.11.29)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html). These are layered on top of existing DynamoDB Tables.
@@ -90,7 +90,7 @@ object dynamodb:
       case None               =>
     com.pulumi.aws.dynamodb.GlobalTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables a [Kinesis streaming destination](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/kds.html) for data replication of a DynamoDB table. */
   def KinesisStreamingDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.KinesisStreamingDestinationArgs.builder
     com.pulumi.aws.dynamodb.KinesisStreamingDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DynamoDB Resource Policy. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -106,7 +106,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.ResourcePolicyArgs.builder
     com.pulumi.aws.dynamodb.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DynamoDB table resource.
@@ -134,7 +134,7 @@ object dynamodb:
       case None =>
     com.pulumi.aws.dynamodb.Table(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS DynamoDB Table Export. Terraform will wait until the Table export reaches a status of `COMPLETED` or `FAILED`.
@@ -150,7 +150,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.TableExportArgs.builder
     com.pulumi.aws.dynamodb.TableExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DynamoDB table item resource
@@ -163,7 +163,7 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.TableItemArgs.builder
     com.pulumi.aws.dynamodb.TableItem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DynamoDB table replica resource for [DynamoDB Global Tables V2 (version 2019.11.21)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html).
@@ -184,7 +184,7 @@ object dynamodb:
       case None =>
     com.pulumi.aws.dynamodb.TableReplica(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual DynamoDB resource tag. This resource should only be used in cases where DynamoDB resources are created outside the provider (e.g., Table replicas in other regions).
@@ -198,4 +198,4 @@ object dynamodb:
     val argsBuilder = com.pulumi.aws.dynamodb.TagArgs.builder
     com.pulumi.aws.dynamodb.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

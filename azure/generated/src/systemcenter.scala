@@ -39,7 +39,7 @@ object systemcenter:
       case None =>
     com.pulumi.azure.systemcenter.VirtualMachineManagerAvailabilitySet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a System Center Virtual Machine Manager Cloud. */
   def VirtualMachineManagerCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,7 +57,7 @@ object systemcenter:
       case None =>
     com.pulumi.azure.systemcenter.VirtualMachineManagerCloud(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a System Center Virtual Machine Manager Server.
@@ -81,7 +81,7 @@ object systemcenter:
       case None =>
     com.pulumi.azure.systemcenter.VirtualMachineManagerServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a System Center Virtual Machine Manager Virtual Machine Instance. */
   def VirtualMachineManagerVirtualMachineInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object systemcenter:
     val argsBuilder = com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualMachineInstanceArgs.builder
     com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualMachineInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a System Center Virtual Machine Manager Virtual Machine Instance Guest Agent.
@@ -101,7 +101,7 @@ object systemcenter:
     val argsBuilder = com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualMachineInstanceGuestAgentArgs.builder
     com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualMachineInstanceGuestAgent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a System Center Virtual Machine Manager Virtual Machine Template. */
   def VirtualMachineManagerVirtualMachineTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object systemcenter:
       case None =>
     com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualMachineTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a System Center Virtual Machine Manager Virtual Network. */
   def VirtualMachineManagerVirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -137,4 +137,4 @@ object systemcenter:
       case None =>
     com.pulumi.azure.systemcenter.VirtualMachineManagerVirtualNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

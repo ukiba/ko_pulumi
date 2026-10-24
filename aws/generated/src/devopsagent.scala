@@ -20,4 +20,4 @@ object devopsagent:
       case None =>
     com.pulumi.aws.devopsagent.AgentSpace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -55,7 +55,7 @@ object cloudtrail:
       case None =>
     com.pulumi.aws.cloudtrail.EventDataStore(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an AWS CloudTrail Delegated Administrator. */
   def OrganizationDelegatedAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object cloudtrail:
     val argsBuilder = com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccountArgs.builder
     com.pulumi.aws.cloudtrail.OrganizationDelegatedAdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudTrail resource.
@@ -87,4 +87,4 @@ object cloudtrail:
       case None =>
     com.pulumi.aws.cloudtrail.Trail(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

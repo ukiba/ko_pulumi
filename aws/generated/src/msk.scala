@@ -28,7 +28,7 @@ object msk:
       case None =>
     com.pulumi.aws.msk.Channel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon MSK cluster.
@@ -47,7 +47,7 @@ object msk:
       case None =>
     com.pulumi.aws.msk.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka Cluster Policy. */
   def ClusterPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object msk:
     val argsBuilder = com.pulumi.aws.msk.ClusterPolicyArgs.builder
     com.pulumi.aws.msk.ClusterPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Managed Streaming for Kafka configuration. More information can be found on the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration.html). */
   def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -66,7 +66,7 @@ object msk:
       case None               =>
     com.pulumi.aws.msk.Configuration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MskFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -180,7 +180,7 @@ object msk:
       case None =>
     com.pulumi.aws.msk.Replicator(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates SCRAM secrets stored in the Secrets Manager service with a Managed Streaming for Kafka (MSK) cluster.
@@ -202,7 +202,7 @@ object msk:
     val argsBuilder = com.pulumi.aws.msk.ScramSecretAssociationArgs.builder
     com.pulumi.aws.msk.ScramSecretAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon MSK Serverless cluster.
@@ -221,7 +221,7 @@ object msk:
       case None =>
     com.pulumi.aws.msk.ServerlessCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a single SCRAM secret with a Managed Streaming for Kafka (MSK) cluster. */
   def SingleScramSecretAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -229,7 +229,7 @@ object msk:
     val argsBuilder = com.pulumi.aws.msk.SingleScramSecretAssociationArgs.builder
     com.pulumi.aws.msk.SingleScramSecretAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Managed Streaming for Kafka Topic. */
   def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -240,7 +240,7 @@ object msk:
       case None               =>
     com.pulumi.aws.msk.Topic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka VPC Connection. */
   def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -255,4 +255,4 @@ object msk:
       case None =>
     com.pulumi.aws.msk.VpcConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

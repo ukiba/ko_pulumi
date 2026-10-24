@@ -20,7 +20,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.ComputeCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Compute Instance. */
   def ComputeInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.ComputeInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Blob Storage DataStore. */
   def DatastoreBlobstorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.DatastoreBlobstorage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Data Lake Gen2 DataStore. */
   def DatastoreDatalakeGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,7 +74,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.DatastoreDatalakeGen2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning File Share DataStore. */
   def DatastoreFileshare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.DatastoreFileshare(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Machine Learning Inference Cluster.
@@ -114,7 +114,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.InferenceCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MachinelearningFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -151,7 +151,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.SynapseSpark(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Azure Machine Learning Workspace
@@ -173,7 +173,7 @@ object machinelearning:
       case None =>
     com.pulumi.azure.machinelearning.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace FQDN Network Outbound Rule. */
   def WorkspaceNetworkOutboundRuleFqdn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -184,7 +184,7 @@ object machinelearning:
       case None               =>
     com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleFqdn(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace Network Outbound Rule Private Endpoint. */
   def WorkspaceNetworkOutboundRulePrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -195,7 +195,7 @@ object machinelearning:
       case None               =>
     com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRulePrivateEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace Network Outbound Rule Service Tag. */
   def WorkspaceNetworkOutboundRuleServiceTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -206,4 +206,4 @@ object machinelearning:
       case None               =>
     com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleServiceTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

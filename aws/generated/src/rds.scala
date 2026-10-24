@@ -14,7 +14,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.CertificateArgs.builder
     com.pulumi.aws.rds.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a [RDS Aurora Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Aurora.html) or a [RDS Multi-AZ DB Cluster](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html). To manage cluster instances that inherit configuration from the cluster (when not running the cluster in `serverless` engine mode), see the `aws.rds.ClusterInstance` resource. To manage non-Aurora DB instances (e.g., MySQL, PostgreSQL, SQL Server, etc.), see the `aws.rds.Instance` resource.
@@ -44,7 +44,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages RDS Aurora Cluster Database Activity Streams.
@@ -62,7 +62,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.ClusterActivityStreamArgs.builder
     com.pulumi.aws.rds.ClusterActivityStream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an RDS Aurora Cluster Custom Endpoint.
@@ -80,7 +80,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ClusterEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS Cluster Instance Resource. A Cluster Instance Resource defines
@@ -112,7 +112,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ClusterInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS DB cluster parameter group resource. Documentation of the available parameters for various Aurora engines can be found at:
@@ -135,7 +135,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ClusterParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a RDS DB Cluster association with an IAM Role. Example use cases:
@@ -148,7 +148,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.ClusterRoleAssociationArgs.builder
     com.pulumi.aws.rds.ClusterRoleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database cluster snapshot for Aurora clusters. For managing RDS database instance snapshots, see the `aws.rds.Snapshot` resource. */
   def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -163,7 +163,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ClusterSnapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database cluster snapshot copy. For managing RDS database instance snapshot copies, see the `aws.rds.SnapshotCopy` resource. */
   def ClusterSnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -178,7 +178,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ClusterSnapshotCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an custom engine version (CEV) resource for Amazon RDS Custom. For additional information, see [Working with CEVs for RDS Custom for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html) and [Working with CEVs for RDS Custom for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev-sqlserver.html) in the the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html). */
   def CustomDbEngineVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -193,7 +193,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.CustomDbEngineVersion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DB event subscription resource. */
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.EventSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS RDS (Relational Database) Export Task. */
   def ExportTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -219,7 +219,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.ExportTaskArgs.builder
     com.pulumi.aws.rds.ExportTask(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an RDS Global Cluster, which is an Aurora global database spread across multiple regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
@@ -238,7 +238,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.GlobalCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS instance resource.  A DB instance is an isolated database
@@ -274,7 +274,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.Instance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage cross-region replication of automated backups to a different AWS Region. Documentation for cross-region automated backup replication can be found at:
@@ -288,7 +288,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.InstanceAutomatedBackupsReplicationArgs.builder
     com.pulumi.aws.rds.InstanceAutomatedBackupsReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS RDS (Relational Database) RDS Instance State.
@@ -300,7 +300,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.InstanceDesiredStateArgs.builder
     com.pulumi.aws.rds.InstanceDesiredState(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS RDS (Relational Database) zero-ETL integration. You can refer to the [User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.setting-up.html). */
   def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -315,7 +315,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.Integration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS DB option group resource. Documentation of the available options for various RDS engines can be found at:
@@ -340,7 +340,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.OptionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS DB parameter group resource. Documentation of the available parameters for various RDS engines can be found at:
@@ -370,7 +370,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS DB proxy resource. For additional information, see the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy.html).
@@ -392,7 +392,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.Proxy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an RDS DB proxy default target group resource.
@@ -414,7 +414,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.ProxyDefaultTargetGroupArgs.builder
     com.pulumi.aws.rds.ProxyDefaultTargetGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an RDS DB proxy endpoint resource. For additional information, see the [RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-endpoints.html). */
   def ProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -429,7 +429,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ProxyEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an RDS DB proxy target resource.
@@ -459,7 +459,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.ProxyTargetArgs.builder
     com.pulumi.aws.rds.ProxyTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RdsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -751,7 +751,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ReservedInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an RDS DB Instance association with an IAM Role. Example use cases:
@@ -774,7 +774,7 @@ object rds:
     val argsBuilder = com.pulumi.aws.rds.RoleAssociationArgs.builder
     com.pulumi.aws.rds.RoleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Aurora Limitless Database DB shard group */
   def ShardGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -789,7 +789,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.ShardGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database instance snapshot. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -804,7 +804,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.Snapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an RDS database instance snapshot copy. For managing RDS database cluster snapshots, see the `aws.rds.ClusterSnapshot` resource. */
   def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -819,7 +819,7 @@ object rds:
       case None =>
     com.pulumi.aws.rds.SnapshotCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an RDS DB subnet group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -837,4 +837,4 @@ object rds:
       case None =>
     com.pulumi.aws.rds.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

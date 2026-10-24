@@ -13,7 +13,7 @@ object authorization:
       case None               =>
     com.pulumi.azure.authorization.Assignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AuthorizationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -55,7 +55,7 @@ object authorization:
       case None               =>
     com.pulumi.azure.authorization.RoleDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &lt;!-- Note: This documentation is generated. Any manual changes will be overwritten --&gt;
@@ -77,4 +77,4 @@ object authorization:
       case None =>
     com.pulumi.azure.authorization.UserAssignedIdentity(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

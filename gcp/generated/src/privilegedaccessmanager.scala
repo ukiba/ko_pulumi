@@ -19,7 +19,7 @@ object privilegedaccessmanager:
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Entitlement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PrivilegedaccessmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -74,4 +74,4 @@ object privilegedaccessmanager:
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Settings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

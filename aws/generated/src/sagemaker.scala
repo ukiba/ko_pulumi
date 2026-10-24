@@ -17,7 +17,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Algorithm(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI App resource. */
   def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.App(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI App Image Config resource. */
   def AppImageConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.AppImageConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Code Repository resource. */
   def CodeRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,7 +62,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.CodeRepository(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI data quality job definition resource. */
   def DataQualityJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -80,7 +80,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.DataQualityJobDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Device resource. */
   def Device(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -88,7 +88,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.DeviceArgs.builder
     com.pulumi.aws.sagemaker.Device(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Device Fleet resource. */
   def DeviceFleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.DeviceFleet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Domain resource. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,7 +118,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a SageMaker AI Endpoint resource.
@@ -148,7 +148,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a SageMaker AI endpoint configuration resource.
@@ -181,7 +181,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.EndpointConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Feature Group resource. */
   def FeatureGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -196,7 +196,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.FeatureGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Flow Definition resource. */
   def FlowDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.FlowDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Hub resource. */
   def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -226,7 +226,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Hub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SageMaker AI Hub Content Reference resource. A hub content reference copies a model from the SageMaker JumpStart public hub into a private hub so that it is accessible to users in that hub. */
   def HubContentReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -241,7 +241,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.HubContentReference(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Human Task UI resource. */
   def HumanTaskUI(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -256,7 +256,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.HumanTaskUI(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS SageMaker AI Hyper Parameter Tuning Job.
@@ -278,7 +278,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.HyperParameterTuningJob(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Image resource. */
   def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -293,7 +293,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Image(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Image Version resource. */
   def ImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -301,7 +301,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.ImageVersionArgs.builder
     com.pulumi.aws.sagemaker.ImageVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage an Amazon SageMaker labeling job. */
   def LabelingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -316,7 +316,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.LabelingJob(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI MLflow App resource. */
   def MlflowApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -334,7 +334,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.MlflowApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI MLFlow Tracking Server resource. */
   def MlflowTrackingServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -349,7 +349,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.MlflowTrackingServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon SageMaker AI Model. */
   def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -367,7 +367,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Model(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage an Amazon SageMaker Model Card. */
   def ModelCard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -382,7 +382,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.ModelCard(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage an Amazon SageMaker Model Card export job. */
   def ModelCardExportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -390,7 +390,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.ModelCardExportJobArgs.builder
     com.pulumi.aws.sagemaker.ModelCardExportJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Model Package Group resource. */
   def ModelPackageGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -405,7 +405,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.ModelPackageGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Model Package Group Policy resource. */
   def ModelPackageGroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -413,7 +413,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.ModelPackageGroupPolicyArgs.builder
     com.pulumi.aws.sagemaker.ModelPackageGroupPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI monitoring schedule resource. */
   def MonitoringSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -431,7 +431,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.MonitoringSchedule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Notebook Instance resource. */
   def NotebookInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -449,7 +449,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.NotebookInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a lifecycle configuration for SageMaker AI Notebook Instances. */
   def NotebookInstanceLifecycleConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -467,7 +467,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.NotebookInstanceLifecycleConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Pipeline resource. */
   def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -482,7 +482,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Pipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a SageMaker AI Project resource.
@@ -501,7 +501,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SagemakerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -536,7 +536,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatusArgs.builder
     com.pulumi.aws.sagemaker.ServicecatalogPortfolioStatus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Space resource. */
   def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -551,7 +551,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Space(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Studio Lifecycle Config resource. */
   def StudioLifecycleConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -566,7 +566,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.StudioLifecycleConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS SageMaker AI Training Job. */
   def TrainingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -581,7 +581,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.TrainingJob(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI User Profile resource. */
   def UserProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -596,7 +596,7 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.UserProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Workforce resource. */
   def Workforce(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -604,7 +604,7 @@ object sagemaker:
     val argsBuilder = com.pulumi.aws.sagemaker.WorkforceArgs.builder
     com.pulumi.aws.sagemaker.Workforce(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SageMaker AI Workteam resource. */
   def Workteam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -619,4 +619,4 @@ object sagemaker:
       case None =>
     com.pulumi.aws.sagemaker.Workteam(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -13,7 +13,7 @@ object ec2clientvpn:
     val argsBuilder = com.pulumi.aws.ec2clientvpn.AuthorizationRuleArgs.builder
     com.pulumi.aws.ec2clientvpn.AuthorizationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Ec2clientvpnFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -50,7 +50,7 @@ object ec2clientvpn:
       case None =>
     com.pulumi.aws.ec2clientvpn.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides network associations for AWS Client VPN endpoints. For more information on usage, please see the
@@ -61,7 +61,7 @@ object ec2clientvpn:
     val argsBuilder = com.pulumi.aws.ec2clientvpn.NetworkAssociationArgs.builder
     com.pulumi.aws.ec2clientvpn.NetworkAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides additional routes for AWS Client VPN endpoints. For more information on usage, please see the
@@ -72,4 +72,4 @@ object ec2clientvpn:
     val argsBuilder = com.pulumi.aws.ec2clientvpn.RouteArgs.builder
     com.pulumi.aws.ec2clientvpn.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

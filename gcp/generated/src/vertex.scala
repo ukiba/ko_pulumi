@@ -24,7 +24,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScopeArgs.builder
     com.pulumi.gcp.vertex.AiAgentAnomalyDetectionScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Config of GenAI caching features. This is a singleton resource.
@@ -40,7 +40,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiCacheConfigArgs.builder
     com.pulumi.gcp.vertex.AiCacheConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A collection of DataItems and Annotations on them.
@@ -56,7 +56,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiDatasetArgs.builder
     com.pulumi.gcp.vertex.AiDataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#39;DeploymentResourcePool can be shared by multiple deployed models,
@@ -74,7 +74,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiDeploymentResourcePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Models are deployed into it, and afterwards Endpoint is called to obtain predictions and explanations.
@@ -93,28 +93,28 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AiEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AiEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AiEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.vertex.AiEndpointIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiEndpointIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create an Endpoint and deploy a Model Garden model to it.
@@ -132,7 +132,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeploymentArgs.builder
     com.pulumi.gcp.vertex.AiEndpointWithModelGardenDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A reusable metric configuration for Vertex AI evaluation. EvaluationMetrics
@@ -151,7 +151,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiEvaluationMetricArgs.builder
     com.pulumi.gcp.vertex.AiEvaluationMetric(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI Feature Group.
@@ -170,7 +170,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI Feature Group Feature is feature metadata information.
@@ -189,7 +189,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureGroupFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
@@ -502,7 +502,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
@@ -815,7 +815,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureGroup. Each of these resources serves a different use case:
@@ -1128,7 +1128,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureGroupIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI Feature Online Store provides a centralized repository for serving ML features and embedding indexes at low latency. The Feature Online Store is a top-level container.
@@ -1147,7 +1147,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureOnlineStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * FeatureView is representation of values that the FeatureOnlineStore will serve based on its syncConfig.
@@ -1166,7 +1166,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureview(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
@@ -1484,7 +1484,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
@@ -1802,7 +1802,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStoreFeatureview. Each of these resources serves a different use case:
@@ -2120,7 +2120,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreFeatureviewIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
@@ -2433,7 +2433,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
@@ -2746,7 +2746,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeatureOnlineStore. Each of these resources serves a different use case:
@@ -3059,7 +3059,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureOnlineStoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A collection of DataItems and Annotations on them.
@@ -3078,7 +3078,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An entity type is a type of object in a system that needs to be modeled and have stored information about. For example, driver is an entity type, and driver0 is an instance of an entity type driver.
@@ -3097,7 +3097,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureStoreEntityType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Feature Metadata information that describes an attribute of an entity type. For example, apple is an entity type, and color is a feature that describes apple.
@@ -3116,7 +3116,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
@@ -3428,7 +3428,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
@@ -3740,7 +3740,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI FeaturestoreEntitytype. Each of these resources serves a different use case:
@@ -4052,7 +4052,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreEntityTypeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
@@ -4371,7 +4371,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
@@ -4690,7 +4690,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI Featurestore. Each of these resources serves a different use case:
@@ -5009,7 +5009,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiFeatureStoreIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiFeatureStoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A representation of a collection of database items organized in a way that allows for approximate nearest neighbor (a.k.a ANN) algorithms search.
@@ -5023,7 +5023,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexArgs.builder
     com.pulumi.gcp.vertex.AiIndex(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint indexes are deployed into. An index endpoint can have multiple deployed indexes.
@@ -5037,7 +5037,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexEndpointArgs.builder
     com.pulumi.gcp.vertex.AiIndexEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint indexes are deployed into. An index endpoint can have multiple deployed indexes.
@@ -5051,7 +5051,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndexArgs.builder
     com.pulumi.gcp.vertex.AiIndexEndpointDeployedIndex(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Instance of a metadata store. Contains a set of metadata that can be queried.
@@ -5073,7 +5073,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiMetadataStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables a Model Garden publisher model for a project so that it can be
@@ -5101,7 +5101,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiModelGardenEnableModelArgs.builder
     com.pulumi.gcp.vertex.AiModelGardenEnableModel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An OnlineEvaluator contains the configuration for an Online Evaluation. It
@@ -5119,7 +5119,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiOnlineEvaluatorArgs.builder
     com.pulumi.gcp.vertex.AiOnlineEvaluator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents long-lasting resources that are dedicated to users to runs custom
@@ -5138,7 +5138,7 @@ object vertex:
       case None               =>
     com.pulumi.gcp.vertex.AiPersistentResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A RAG corpus is a container for user data uploaded to Vertex AI RAG Engine for chunking, embedding, and indexing.
@@ -5154,7 +5154,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiRagCorpusArgs.builder
     com.pulumi.gcp.vertex.AiRagCorpus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI RAG Engine lets you scale your RagManagedDb instance based on your usage and performance requirements using a choice of two tiers, and optionally, lets you delete your Vertex AI RAG Engine data using a third tier. The tier is a project-level setting that&#39;s available in the RagEngineConfig resource that impacts all RAG corpora using RagManagedDb. The following tiers are available in RagEngineConfig: Basic, Scaled and Unprovisioned.
@@ -5170,7 +5170,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiRagEngineConfigArgs.builder
     com.pulumi.gcp.vertex.AiRagEngineConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ReasoningEngine provides a customizable runtime for models to determine which actions to take and in which order.
@@ -5186,7 +5186,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
@@ -5499,7 +5499,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamBindingArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
@@ -5812,7 +5812,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamMemberArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Vertex AI ReasoningEngine. Each of these resources serves a different use case:
@@ -6125,7 +6125,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiReasoningEngineIamPolicyArgs.builder
     com.pulumi.gcp.vertex.AiReasoningEngineIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Semantic Governance Policy governs an AI agent&#39;s actions and tool execution
@@ -6144,7 +6144,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyArgs.builder
     com.pulumi.gcp.vertex.AiSemanticGovernancePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A SemanticGovernancePolicyEngine (SGPE) is the managed, runtime evaluation
@@ -6171,7 +6171,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngineArgs.builder
     com.pulumi.gcp.vertex.AiSemanticGovernancePolicyEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Tensorboard is a physical database that stores users&#39; training metrics. A default Tensorboard is provided in each region of a GCP project. If needed users can also create extra Tensorboards in their projects.
@@ -6187,7 +6187,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardArgs.builder
     com.pulumi.gcp.vertex.AiTensorboard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A TensorboardExperiment is a group of TensorboardRuns that are logically grouped together.
@@ -6203,7 +6203,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardExperimentArgs.builder
     com.pulumi.gcp.vertex.AiTensorboardExperiment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A TensorboardRun is a single execution of a training job.
@@ -6219,7 +6219,7 @@ object vertex:
     val argsBuilder = com.pulumi.gcp.vertex.AiTensorboardRunArgs.builder
     com.pulumi.gcp.vertex.AiTensorboardRun(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VertexFunctions:
     // Pulumi methods are reproduced as Scala methods.

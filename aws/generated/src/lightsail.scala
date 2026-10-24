@@ -20,7 +20,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Bucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail bucket access key. Use this resource to create credentials that allow programmatic access to your Lightsail bucket via API requests. */
   def BucketAccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.BucketAccessKeyArgs.builder
     com.pulumi.aws.lightsail.BucketAccessKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail bucket resource access. Use this resource to grant a Lightsail resource (such as an instance) access to a specific bucket. */
   def BucketResourceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.BucketResourceAccessArgs.builder
     com.pulumi.aws.lightsail.BucketResourceAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail certificate. Use this resource to create and manage SSL/TLS certificates for securing custom domains with your Lightsail resources. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail container service. Use this resource to create and manage a scalable compute and networking platform for deploying, running, and managing containerized applications in Lightsail.
@@ -78,7 +78,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.ContainerService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail container service deployment version. Use this resource to deploy containerized applications to your Lightsail container service with specific container configurations and settings.
@@ -92,7 +92,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.ContainerServiceDeploymentVersionArgs.builder
     com.pulumi.aws.lightsail.ContainerServiceDeploymentVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail database. Use this resource to create and manage fully managed database instances with automated backups, monitoring, and maintenance in Lightsail.
@@ -111,7 +111,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Database(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail disk. Use this resource to create additional block storage that can be attached to Lightsail instances for extra storage capacity. */
   def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -129,7 +129,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Disk(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail disk attachment. Use this resource to attach additional storage disks to your Lightsail instances for expanded storage capacity. */
   def Disk_attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -137,7 +137,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.Disk_attachmentArgs.builder
     com.pulumi.aws.lightsail.Disk_attachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail content delivery network (CDN) distribution. Use this resource to cache content at edge locations and reduce latency for users accessing your content. */
   def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -155,7 +155,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Distribution(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail domain for DNS management. Use this resource to manage DNS records for a domain that you have already registered with a domain registrar.
@@ -169,7 +169,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.DomainArgs.builder
     com.pulumi.aws.lightsail.Domain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail domain entry (DNS record). Use this resource to define how DNS queries for your domain are handled.
@@ -184,7 +184,7 @@ object lightsail:
       case None               =>
     com.pulumi.aws.lightsail.DomainEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail Instance. Use this resource to create easy virtual private servers with custom software already setup.
@@ -206,7 +206,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Instance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages public ports for a Lightsail instance. Use this resource to open ports for a specific Amazon Lightsail instance and specify the IP addresses allowed to connect to the instance through the ports and the protocol.
@@ -220,7 +220,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.InstancePublicPortsArgs.builder
     com.pulumi.aws.lightsail.InstancePublicPorts(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail Key Pair for use with Lightsail Instances. Use this resource to create or import key pairs that are separate from EC2 Key Pairs and required for Lightsail instances.
@@ -242,7 +242,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.KeyPair(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail load balancer resource.
@@ -264,7 +264,7 @@ object lightsail:
       case None =>
     com.pulumi.aws.lightsail.Lb(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail Load Balancer Attachment. Use this resource to attach Lightsail instances to a load balancer for distributing traffic across multiple instances. */
   def LbAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -272,7 +272,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.LbAttachmentArgs.builder
     com.pulumi.aws.lightsail.LbAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail Load Balancer Certificate.
@@ -287,7 +287,7 @@ object lightsail:
       case None               =>
     com.pulumi.aws.lightsail.LbCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Lightsail Load Balancer Certificate attachment to a Lightsail Load Balancer.
@@ -299,7 +299,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.LbCertificateAttachmentArgs.builder
     com.pulumi.aws.lightsail.LbCertificateAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages HTTPS redirection for a Lightsail Load Balancer.
@@ -311,7 +311,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.LbHttpsRedirectionPolicyArgs.builder
     com.pulumi.aws.lightsail.LbHttpsRedirectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages session stickiness for a Lightsail Load Balancer.
@@ -323,7 +323,7 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.LbStickinessPolicyArgs.builder
     com.pulumi.aws.lightsail.LbStickinessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a static IP address.
@@ -340,7 +340,7 @@ object lightsail:
       case None               =>
     com.pulumi.aws.lightsail.StaticIp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a static IP address attachment - relationship between a Lightsail static IP and Lightsail instance.
@@ -354,4 +354,4 @@ object lightsail:
     val argsBuilder = com.pulumi.aws.lightsail.StaticIpAttachmentArgs.builder
     com.pulumi.aws.lightsail.StaticIpAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

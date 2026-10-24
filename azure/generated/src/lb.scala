@@ -17,7 +17,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.BackendAddressPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Backend Address within a Backend Address Pool.
@@ -32,7 +32,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.BackendAddressPoolAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -105,7 +105,7 @@ object lb:
       case None =>
     com.pulumi.azure.lb.LoadBalancer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Load Balancer NAT pool.
@@ -122,7 +122,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.NatPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Load Balancer NAT Rule.
@@ -139,7 +139,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.NatRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Load Balancer Outbound Rule.
@@ -154,7 +154,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.OutboundRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a LoadBalancer Probe Resource.
@@ -169,7 +169,7 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.Probe(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Load Balancer Rule.
@@ -184,4 +184,4 @@ object lb:
       case None               =>
     com.pulumi.azure.lb.Rule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

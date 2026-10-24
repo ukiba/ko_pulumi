@@ -24,7 +24,7 @@ object workloadssap:
       case None =>
     com.pulumi.azure.workloadssap.DiscoveryVirtualInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an SAP Single Node Virtual Instance with new SAP System.
@@ -46,7 +46,7 @@ object workloadssap:
       case None =>
     com.pulumi.azure.workloadssap.SingleNodeVirtualInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an SAP Three Tier Virtual Instance with a new SAP System.
@@ -68,4 +68,4 @@ object workloadssap:
       case None =>
     com.pulumi.azure.workloadssap.ThreeTierVirtualInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

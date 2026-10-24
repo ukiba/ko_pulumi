@@ -39,7 +39,7 @@ object siteverification:
     val argsBuilder = com.pulumi.gcp.siteverification.OwnerArgs.builder
     com.pulumi.gcp.siteverification.Owner(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SiteverificationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -98,4 +98,4 @@ object siteverification:
     val argsBuilder = com.pulumi.gcp.siteverification.WebResourceArgs.builder
     com.pulumi.gcp.siteverification.WebResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -21,7 +21,7 @@ object securityposture:
     val argsBuilder = com.pulumi.gcp.securityposture.PostureArgs.builder
     com.pulumi.gcp.securityposture.Posture(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a deployment of a security posture on a resource. A posture contains user curated policy sets. A posture can
@@ -53,4 +53,4 @@ object securityposture:
     val argsBuilder = com.pulumi.gcp.securityposture.PostureDeploymentArgs.builder
     com.pulumi.gcp.securityposture.PostureDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

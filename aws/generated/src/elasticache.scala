@@ -36,7 +36,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElasticacheFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -155,7 +155,7 @@ object elasticache:
     val argsBuilder = com.pulumi.aws.elasticache.GlobalReplicationGroupArgs.builder
     com.pulumi.aws.elasticache.GlobalReplicationGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an ElastiCache parameter group resource.
@@ -177,7 +177,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.ParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an ElastiCache Replication Group resource.
@@ -213,7 +213,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.ReplicationGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an ElastiCache Reserved Cache Node.
@@ -234,7 +234,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.ReservedCacheNode(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache Serverless Cache resource which manages memcached, redis or valkey. */
   def ServerlessCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -252,7 +252,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.ServerlessCache(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache Subnet Group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -270,7 +270,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an ElastiCache user resource.
@@ -289,7 +289,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.User(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ElastiCache user group resource. */
   def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -304,7 +304,7 @@ object elasticache:
       case None =>
     com.pulumi.aws.elasticache.UserGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associate an existing ElastiCache user and an existing user group.
@@ -316,4 +316,4 @@ object elasticache:
     val argsBuilder = com.pulumi.aws.elasticache.UserGroupAssociationArgs.builder
     com.pulumi.aws.elasticache.UserGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

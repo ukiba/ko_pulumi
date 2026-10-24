@@ -20,7 +20,7 @@ object customerprofiles:
       case None =>
     com.pulumi.aws.customerprofiles.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an Amazon Customer Profiles Profile.
@@ -31,4 +31,4 @@ object customerprofiles:
     val argsBuilder = com.pulumi.aws.customerprofiles.ProfileArgs.builder
     com.pulumi.aws.customerprofiles.Profile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

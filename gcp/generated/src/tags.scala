@@ -18,7 +18,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.LocationTagBindingArgs.builder
     com.pulumi.gcp.tags.LocationTagBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A TagBinding represents a connection between a TagValue and a cloud resource (currently project, folder, or organization). Once a TagBinding is created, the TagValue is applied to all the descendants of the cloud resource.
@@ -34,14 +34,14 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagBindingArgs.builder
     com.pulumi.gcp.tags.TagBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def TagBindingCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.tags.TagBindingCollectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagBindingCollectionArgs.builder
     com.pulumi.gcp.tags.TagBindingCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A TagKey, used to group a set of TagValues.
@@ -57,7 +57,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagKeyArgs.builder
     com.pulumi.gcp.tags.TagKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
@@ -621,7 +621,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamBindingArgs.builder
     com.pulumi.gcp.tags.TagKeyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
@@ -1185,7 +1185,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamMemberArgs.builder
     com.pulumi.gcp.tags.TagKeyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagKey. Each of these resources serves a different use case:
@@ -1749,7 +1749,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamPolicyArgs.builder
     com.pulumi.gcp.tags.TagKeyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A TagValue is a child of a particular TagKey. TagValues are used to group cloud resources for the purpose of controlling them using policies.
@@ -1765,7 +1765,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagValueArgs.builder
     com.pulumi.gcp.tags.TagValue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
@@ -2329,7 +2329,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamBindingArgs.builder
     com.pulumi.gcp.tags.TagValueIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
@@ -2893,7 +2893,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamMemberArgs.builder
     com.pulumi.gcp.tags.TagValueIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Tags TagValue. Each of these resources serves a different use case:
@@ -3457,7 +3457,7 @@ object tags:
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamPolicyArgs.builder
     com.pulumi.gcp.tags.TagValueIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object TagsFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -41,7 +41,7 @@ object signer:
     val argsBuilder = com.pulumi.aws.signer.SigningJobArgs.builder
     com.pulumi.aws.signer.SigningJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Signer Signing Profile. A signing profile contains information about the code signing configuration parameters that can be used by a given code signing user. */
   def SigningProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -59,7 +59,7 @@ object signer:
       case None =>
     com.pulumi.aws.signer.SigningProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Signer Signing Profile Permission. That is, a cross-account permission for a signing profile. */
   def SigningProfilePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,4 +67,4 @@ object signer:
     val argsBuilder = com.pulumi.aws.signer.SigningProfilePermissionArgs.builder
     com.pulumi.aws.signer.SigningProfilePermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

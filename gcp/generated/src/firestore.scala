@@ -25,7 +25,7 @@ object firestore:
     val argsBuilder = com.pulumi.gcp.firestore.BackupScheduleArgs.builder
     com.pulumi.gcp.firestore.BackupSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A change stream resource for a Cloud Firestore Database.
@@ -49,7 +49,7 @@ object firestore:
       case None               =>
     com.pulumi.gcp.firestore.ChangeStream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Firestore Database.
@@ -74,7 +74,7 @@ object firestore:
       case None               =>
     com.pulumi.gcp.firestore.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * In Cloud Firestore, the unit of storage is the document. A document is a lightweight record
@@ -100,7 +100,7 @@ object firestore:
     val argsBuilder = com.pulumi.gcp.firestore.DocumentArgs.builder
     com.pulumi.gcp.firestore.Document(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a single field in the database.
@@ -125,7 +125,7 @@ object firestore:
     val argsBuilder = com.pulumi.gcp.firestore.FieldArgs.builder
     com.pulumi.gcp.firestore.Field(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FirestoreFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -180,7 +180,7 @@ object firestore:
     val argsBuilder = com.pulumi.gcp.firestore.IndexArgs.builder
     com.pulumi.gcp.firestore.Index(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * User credentials for a Cloud Firestore with MongoDB compatibility database.
@@ -200,4 +200,4 @@ object firestore:
       case None               =>
     com.pulumi.gcp.firestore.UserCreds(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

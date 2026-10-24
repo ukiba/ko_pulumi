@@ -13,7 +13,7 @@ object consumption:
       case None               =>
     com.pulumi.azure.consumption.BudgetManagementGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Consumption Budget. */
   def BudgetResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object consumption:
       case None               =>
     com.pulumi.azure.consumption.BudgetResourceGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Consumption Budget. */
   def BudgetSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object consumption:
       case None               =>
     com.pulumi.azure.consumption.BudgetSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ConsumptionFunctions:
     // Pulumi methods are reproduced as Scala methods.

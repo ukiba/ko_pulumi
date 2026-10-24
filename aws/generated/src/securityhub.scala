@@ -16,7 +16,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.AccountArgs.builder
     com.pulumi.aws.securityhub.Account(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables the unified Security Hub V2 for this AWS account.
@@ -37,7 +37,7 @@ object securityhub:
       case None =>
     com.pulumi.aws.securityhub.AccountV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates Security Hub custom action. */
   def ActionTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object securityhub:
       case None               =>
     com.pulumi.aws.securityhub.ActionTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Security Hub V2 Aggregator, which enables cross-region finding aggregation.
@@ -67,7 +67,7 @@ object securityhub:
       case None =>
     com.pulumi.aws.securityhub.AggregatorV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Security Hub Automation Rule. */
   def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object securityhub:
       case None =>
     com.pulumi.aws.securityhub.AutomationRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Security Hub V2 Automation Rule, which automatically updates or takes action on findings that match specified criteria.
@@ -101,7 +101,7 @@ object securityhub:
       case None =>
     com.pulumi.aws.securityhub.AutomationRuleV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Security Hub configuration policy
@@ -116,7 +116,7 @@ object securityhub:
       case None               =>
     com.pulumi.aws.securityhub.ConfigurationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Security Hub configuration policy associations.
@@ -128,7 +128,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.ConfigurationPolicyAssociationArgs.builder
     com.pulumi.aws.securityhub.ConfigurationPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Security Hub V2 connector.
@@ -152,7 +152,7 @@ object securityhub:
       case None =>
     com.pulumi.aws.securityhub.ConnectorV2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an opt-in [Security Hub V2](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) feature, such as network scanning (NetScan), for the calling account in the current AWS Region.
@@ -168,7 +168,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.FeatureV2Args.builder
     com.pulumi.aws.securityhub.FeatureV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Hub finding aggregator. Security Hub needs to be enabled in a region in order for the aggregator to pull through findings. */
   def FindingAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -176,7 +176,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.FindingAggregatorArgs.builder
     com.pulumi.aws.securityhub.FindingAggregator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Security Hub custom insight resource. See the [Managing custom insights section](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-insights.html) of the AWS User Guide for more information. */
   def Insight(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -187,7 +187,7 @@ object securityhub:
       case None               =>
     com.pulumi.aws.securityhub.Insight(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** AWS accounts can only be associated with a single Security Hub master account. Destroying this resource will disassociate the member account from the master account.
@@ -199,7 +199,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.InviteAccepterArgs.builder
     com.pulumi.aws.securityhub.InviteAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Security Hub member resource. */
   def Member(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -207,7 +207,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.MemberArgs.builder
     com.pulumi.aws.securityhub.Member(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Hub administrator account for an organization. The AWS account utilizing this resource must be an Organizations primary account. More information about Organizations support in Security Hub can be found in the [Security Hub User Guide](https://docs.aws.amazon.com/securityhub/latest/userguide/designate-orgs-admin-account.html). */
   def OrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -215,7 +215,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationAdminAccountArgs.builder
     com.pulumi.aws.securityhub.OrganizationAdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Security Hub Organization Configuration.
@@ -233,7 +233,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.OrganizationConfigurationArgs.builder
     com.pulumi.aws.securityhub.OrganizationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Subscribes to a Security Hub product. */
   def ProductSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -241,7 +241,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.ProductSubscriptionArgs.builder
     com.pulumi.aws.securityhub.ProductSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SecurityhubFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -298,7 +298,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlArgs.builder
     com.pulumi.aws.securityhub.StandardsControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Security Hub Standards Control Association.
@@ -314,7 +314,7 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.StandardsControlAssociationArgs.builder
     com.pulumi.aws.securityhub.StandardsControlAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Subscribes to a Security Hub standard. */
   def StandardsSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -322,4 +322,4 @@ object securityhub:
     val argsBuilder = com.pulumi.aws.securityhub.StandardsSubscriptionArgs.builder
     com.pulumi.aws.securityhub.StandardsSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

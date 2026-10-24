@@ -14,7 +14,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentAccepterArgs.builder
     com.pulumi.aws.networkmanager.AttachmentAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a routing policy label to a Network Manager Cloud WAN&#39;s attachment outside of the attachment creation. This is useful in multi-account environments where only the Cloud WAN core network owner account can apply a routing policy label. */
   def AttachmentRoutingPolicyLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -22,7 +22,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabelArgs.builder
     com.pulumi.aws.networkmanager.AttachmentRoutingPolicyLabel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Network Manager Connect Attachment.
@@ -41,7 +41,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.ConnectAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Network Manager Connect Peer.
@@ -60,7 +60,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.ConnectPeer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Connection.
@@ -79,7 +79,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.Connection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Core Network.
@@ -98,7 +98,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.CoreNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Core Network Policy Attachment.
@@ -112,7 +112,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachmentArgs.builder
     com.pulumi.aws.networkmanager.CoreNetworkPolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Customer Gateway Association.
@@ -124,7 +124,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.CustomerGatewayAssociationArgs.builder
     com.pulumi.aws.networkmanager.CustomerGatewayAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Device.
@@ -143,7 +143,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.Device(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Direct Connect Gateway Attachment.
@@ -162,7 +162,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.DxGatewayAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Global Network.
@@ -181,7 +181,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.GlobalNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager link. Use this resource to create a link for a site. */
   def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -196,7 +196,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.Link(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager link association. Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site. */
   def LinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -204,7 +204,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.LinkAssociationArgs.builder
     com.pulumi.aws.networkmanager.LinkAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -375,7 +375,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.PrefixListAssociationArgs.builder
     com.pulumi.aws.networkmanager.PrefixListAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager site. Use this resource to create a site in a global network. */
   def Site(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -390,7 +390,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.Site(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager site-to-site VPN attachment. */
   def SiteToSiteVpnAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -405,7 +405,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.SiteToSiteVpnAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway Connect peer association. Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. */
   def TransitGatewayConnectPeerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -413,7 +413,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociationArgs.builder
     com.pulumi.aws.networkmanager.TransitGatewayConnectPeerAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway peering connection. Creates a peering connection between an AWS Cloud WAN core network and an AWS Transit Gateway. */
   def TransitGatewayPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -428,7 +428,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.TransitGatewayPeering(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway registration. Registers a transit gateway to a global network. The transit gateway can be in any AWS Region, but it must be owned by the same AWS account that owns the global network. You cannot register a transit gateway in more than one global network. */
   def TransitGatewayRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -436,7 +436,7 @@ object networkmanager:
     val argsBuilder = com.pulumi.aws.networkmanager.TransitGatewayRegistrationArgs.builder
     com.pulumi.aws.networkmanager.TransitGatewayRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager transit gateway route table attachment. */
   def TransitGatewayRouteTableAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -451,7 +451,7 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.TransitGatewayRouteTableAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager VPC attachment. */
   def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -466,4 +466,4 @@ object networkmanager:
       case None =>
     com.pulumi.aws.networkmanager.VpcAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -39,7 +39,7 @@ object codebuild:
       case None =>
     com.pulumi.aws.codebuild.Fleet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CodeBuild Project resource. See also the
@@ -61,7 +61,7 @@ object codebuild:
       case None =>
     com.pulumi.aws.codebuild.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeBuild Report Groups Resource. */
   def ReportGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -79,7 +79,7 @@ object codebuild:
       case None =>
     com.pulumi.aws.codebuild.ReportGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeBuild Resource Policy Resource. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -87,7 +87,7 @@ object codebuild:
     val argsBuilder = com.pulumi.aws.codebuild.ResourcePolicyArgs.builder
     com.pulumi.aws.codebuild.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CodeBuild Source Credentials Resource.
@@ -102,7 +102,7 @@ object codebuild:
     val argsBuilder = com.pulumi.aws.codebuild.SourceCredentialArgs.builder
     com.pulumi.aws.codebuild.SourceCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a CodeBuild webhook, which is an endpoint accepted by the CodeBuild service to trigger builds from source code repositories. Depending on the source type of the CodeBuild project, the CodeBuild service may also automatically create and delete the actual repository webhook as well. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -110,4 +110,4 @@ object codebuild:
     val argsBuilder = com.pulumi.aws.codebuild.WebhookArgs.builder
     com.pulumi.aws.codebuild.Webhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

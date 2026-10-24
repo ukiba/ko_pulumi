@@ -20,7 +20,7 @@ object budgets:
       case None =>
     com.pulumi.aws.budgets.Budget(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a budget action resource. Budget actions are cost savings controls that run either automatically on your behalf or by using a workflow approval process. */
   def BudgetAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object budgets:
       case None =>
     com.pulumi.aws.budgets.BudgetAction(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BudgetsFunctions:
     // Pulumi methods are reproduced as Scala methods.

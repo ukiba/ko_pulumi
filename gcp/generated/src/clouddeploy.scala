@@ -21,7 +21,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.Automation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ClouddeployFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -84,7 +84,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.CustomTargetType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def CustomTargetTypeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -94,7 +94,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.CustomTargetTypeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def CustomTargetTypeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -104,7 +104,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.CustomTargetTypeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def CustomTargetTypeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.CustomTargetTypeIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -114,7 +114,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.CustomTargetTypeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Cloud Deploy `DeliveryPipeline` resource */
   def DeliveryPipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -125,7 +125,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.DeliveryPipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def DeliveryPipelineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -135,7 +135,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.DeliveryPipelineIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def DeliveryPipelineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -145,7 +145,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.DeliveryPipelineIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def DeliveryPipelineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.DeliveryPipelineIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -155,7 +155,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.DeliveryPipelineIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `DeployPolicy` inhibits manual or DeployPolicy-driven actions within a Delivery Pipeline or Target.
@@ -174,7 +174,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.DeployPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Cloud Deploy `Target` resource */
   def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -185,7 +185,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.Target(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def TargetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -195,7 +195,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.TargetIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def TargetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -205,7 +205,7 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.TargetIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def TargetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.clouddeploy.TargetIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -215,4 +215,4 @@ object clouddeploy:
       case None               =>
     com.pulumi.gcp.clouddeploy.TargetIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -13,7 +13,7 @@ object codecommit:
       case None               =>
     com.pulumi.aws.codecommit.ApprovalRuleTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a CodeCommit Approval Rule Template with a Repository. */
   def ApprovalRuleTemplateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,7 +21,7 @@ object codecommit:
     val argsBuilder = com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociationArgs.builder
     com.pulumi.aws.codecommit.ApprovalRuleTemplateAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CodecommitFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -67,7 +67,7 @@ object codecommit:
       case None =>
     com.pulumi.aws.codecommit.Repository(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeCommit Trigger Resource. */
   def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,4 +75,4 @@ object codecommit:
     val argsBuilder = com.pulumi.aws.codecommit.TriggerArgs.builder
     com.pulumi.aws.codecommit.Trigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

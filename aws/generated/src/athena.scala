@@ -43,7 +43,7 @@ object athena:
       case None =>
     com.pulumi.aws.athena.CapacityReservation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Athena data catalog.
@@ -67,7 +67,7 @@ object athena:
       case None =>
     com.pulumi.aws.athena.DataCatalog(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena database. */
   def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -78,7 +78,7 @@ object athena:
       case None               =>
     com.pulumi.aws.athena.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena Named Query resource. */
   def NamedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object athena:
       case None               =>
     com.pulumi.aws.athena.NamedQuery(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Athena Prepared Statement. */
   def PreparedStatement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -100,7 +100,7 @@ object athena:
       case None               =>
     com.pulumi.aws.athena.PreparedStatement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Athena Workgroup. */
   def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,4 +118,4 @@ object athena:
       case None =>
     com.pulumi.aws.athena.Workgroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

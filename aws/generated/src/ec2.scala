@@ -18,7 +18,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.AllowedImagesSettingsArgs.builder
     com.pulumi.aws.ec2.AllowedImagesSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The AMI resource allows the creation and management of a completely-custom
@@ -45,7 +45,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Ami(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The &#34;AMI copy&#34; resource allows duplication of an AMI,
@@ -75,7 +75,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.AmiCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The &#34;AMI from instance&#34; resource allows the creation of an Amazon Machine
@@ -111,7 +111,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.AmiFromInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds a launch permission to an AMI. */
   def AmiLaunchPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.AmiLaunchPermissionArgs.builder
     com.pulumi.aws.ec2.AmiLaunchPermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an EC2 Availability Zone Group, such as updating its opt-in status.
@@ -131,7 +131,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.AvailabilityZoneGroupArgs.builder
     com.pulumi.aws.ec2.AvailabilityZoneGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 Capacity Block Reservation. This allows you to purchase capacity block for your Amazon EC2 instances in a specific Availability Zone for machine learning (ML) Workloads.
@@ -152,7 +152,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.CapacityBlockReservation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 Capacity Reservation. This allows you to reserve capacity for your Amazon EC2 instances in a specific Availability Zone for any duration. */
   def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -167,7 +167,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.CapacityReservation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Carrier Gateway. See the AWS [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/Carrier_Gateway.html) for more information. */
   def CarrierGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -182,7 +182,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.CarrierGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a customer gateway inside a VPC. These objects can be connected to VPN gateways via VPN connections, and allow you to establish tunnels between your network and the VPC. */
   def CustomerGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -197,7 +197,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.CustomerGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 Host resource. This allows Dedicated Hosts to be allocated, modified, and released. */
   def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -212,7 +212,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DedicatedHost(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Default Credit Specification. */
   def DefaultCreditSpecification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -220,7 +220,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.DefaultCreditSpecificationArgs.builder
     com.pulumi.aws.ec2.DefaultCreditSpecification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a VPC&#39;s default network ACL. This resource can manage the default network ACL of the default or a non-default VPC.
@@ -245,7 +245,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultNetworkAcl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a default route table of a VPC. This resource can manage the default route table of the default or a non-default VPC.
@@ -268,7 +268,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultRouteTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a default security group. This resource can manage the default security group of the default or a non-default VPC.
@@ -293,7 +293,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultSecurityGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a [default subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#default-vpc-basics) in the current region.
@@ -317,7 +317,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultSubnet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the [default AWS VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)
@@ -344,7 +344,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultVpc(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the [default AWS DHCP Options Set](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html#AmazonDNS)
@@ -370,7 +370,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.DefaultVpcDhcpOptions(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Ec2Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1439,7 +1439,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.EgressOnlyInternetGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic IP resource.
@@ -1460,7 +1460,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Eip(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS EIP Association as a top level resource, to associate and disassociate Elastic IPs from AWS Instances and Network Interfaces.
@@ -1474,7 +1474,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.EipAssociationArgs.builder
     com.pulumi.aws.ec2.EipAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Assigns a static reverse DNS record to an Elastic IP addresses. See [Using reverse DNS for email applications](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS). */
   def EipDomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1482,7 +1482,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.EipDomainNameArgs.builder
     com.pulumi.aws.ec2.EipDomainName(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Encryption Control. */
   @deprecated("aws.ec2/encryptioncontrol.EncryptionControl has been deprecated in favor of aws.ec2/vpcencryptioncontrol.VpcEncryptionControl") def EncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1497,7 +1497,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.EncryptionControl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage EC2 Fleets. */
   def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1512,7 +1512,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Fleet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC/Subnet/ENI/Transit Gateway/Transit Gateway Attachment Flow Log to capture IP traffic for a specific network
@@ -1530,7 +1530,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.FlowLog(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a regional public access block for AMIs. This prevents AMIs from being made publicly accessible.
@@ -1543,7 +1543,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.ImageBlockPublicAccessArgs.builder
     com.pulumi.aws.ec2.ImageBlockPublicAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1558,7 +1558,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Instance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages regional EC2 instance metadata default settings.
@@ -1569,7 +1569,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.InstanceMetadataDefaultsArgs.builder
     com.pulumi.aws.ec2.InstanceMetadataDefaults(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC Internet Gateway. */
   def InternetGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1584,7 +1584,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.InternetGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC Internet Gateway Attachment. */
   def InternetGatewayAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1592,7 +1592,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.InternetGatewayAttachmentArgs.builder
     com.pulumi.aws.ec2.InternetGatewayAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an [EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) resource. A key pair is used to control login access to EC2 instances.
@@ -1617,7 +1617,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.KeyPair(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create a new launch configuration, used for Auto Scaling groups.
@@ -1634,7 +1634,7 @@ object ec2:
       case None               =>
     com.pulumi.aws.ec2.LaunchConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 launch template resource. Can be used to create instances or Auto Scaling groups.
@@ -1665,7 +1665,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.LaunchTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#routing). */
   def LocalGatewayRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1673,7 +1673,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.LocalGatewayRouteArgs.builder
     com.pulumi.aws.ec2.LocalGatewayRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#route-tables). */
   def LocalGatewayRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1688,7 +1688,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.LocalGatewayRouteTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table Virtual Interface Group Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html). */
   def LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1703,7 +1703,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.LocalGatewayRouteTableVirtualInterfaceGroupAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Local Gateway Route Table VPC Association. More information can be found in the [Outposts User Guide](https://docs.aws.amazon.com/outposts/latest/userguide/outposts-local-gateways.html#vpc-associations). */
   def LocalGatewayRouteTableVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1718,7 +1718,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.LocalGatewayRouteTableVpcAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource for managing the main routing table of a VPC.
@@ -1731,7 +1731,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.MainRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.MainRouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a managed prefix list resource.
@@ -1763,7 +1763,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.ManagedPrefixList(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Use the `aws.ec2.ManagedPrefixListEntry` resource to manage a managed prefix list entry.
@@ -1777,7 +1777,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.ManagedPrefixListEntryArgs.builder
     com.pulumi.aws.ec2.ManagedPrefixListEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create a VPC NAT Gateway.
@@ -1796,7 +1796,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NatGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS VPC NAT Gateway EIP Association.
@@ -1808,7 +1808,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NatGatewayEipAssociationArgs.builder
     com.pulumi.aws.ec2.NatGatewayEipAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an network ACL resource. You might set up network ACLs with rules similar
@@ -1836,7 +1836,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NetworkAcl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an network ACL association resource which allows you to associate your network ACL with any subnet(s).
@@ -1850,7 +1850,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NetworkAclAssociationArgs.builder
     com.pulumi.aws.ec2.NetworkAclAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an entry (a rule) in a network ACL with the specified rule number.
@@ -1866,7 +1866,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NetworkAclRuleArgs.builder
     com.pulumi.aws.ec2.NetworkAclRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Network Insights Access Scope resource.
@@ -1884,7 +1884,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NetworkInsightsAccessScope(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Network Insights Analysis resource. Part of the &#34;Reachability Analyzer&#34; service in the AWS VPC console. */
   def NetworkInsightsAnalysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1899,7 +1899,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NetworkInsightsAnalysis(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Network Insights Path resource. Part of the &#34;Reachability Analyzer&#34; service in the AWS VPC console. */
   def NetworkInsightsPath(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1914,7 +1914,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NetworkInsightsPath(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic network interface (ENI) resource. */
   def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1929,7 +1929,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.NetworkInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attach an Elastic network interface (ENI) resource with EC2 instance. */
   def NetworkInterfaceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1937,7 +1937,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfaceAttachmentArgs.builder
     com.pulumi.aws.ec2.NetworkInterfaceAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Grant cross-account access to an Elastic network interface (ENI). */
   def NetworkInterfacePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1945,7 +1945,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfacePermissionArgs.builder
     com.pulumi.aws.ec2.NetworkInterfacePermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource attaches a security group to an Elastic Network Interface (ENI).
@@ -1964,7 +1964,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.NetworkInterfaceSecurityGroupAttachmentArgs.builder
     com.pulumi.aws.ec2.NetworkInterfaceSecurityGroupAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage VPC peering connection options.
@@ -1983,7 +1983,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.PeeringConnectionOptionsArgs.builder
     com.pulumi.aws.ec2.PeeringConnectionOptions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 placement group. Read more about placement groups
@@ -2004,7 +2004,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.PlacementGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a proxy protocol policy, which allows an ELB to carry a client connection information to a backend. */
   def ProxyProtocolPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2012,7 +2012,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.ProxyProtocolPolicyArgs.builder
     com.pulumi.aws.ec2.ProxyProtocolPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create a routing table entry (a route) in a VPC routing table.
@@ -2026,7 +2026,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.RouteArgs.builder
     com.pulumi.aws.ec2.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create a VPC routing table.
@@ -2056,7 +2056,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.RouteTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an association between a route table and a subnet or a route table and an
@@ -2067,7 +2067,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.RouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.RouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 Secondary Network resource for RDMA networking.
@@ -2087,7 +2087,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.SecondaryNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 Secondary Subnet resource.
@@ -2106,7 +2106,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.SecondarySubnet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a security group resource.
@@ -2136,7 +2136,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.SecurityGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an association between a VPC endpoint and a security group.
@@ -2152,7 +2152,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SecurityGroupAssociationArgs.builder
     com.pulumi.aws.ec2.SecurityGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a security group rule resource. Represents a single `ingress` or `egress` group rule, which can be added to external Security Groups.
@@ -2170,7 +2170,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SecurityGroupRuleArgs.builder
     com.pulumi.aws.ec2.SecurityGroupRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage whether serial console access is enabled for your AWS account in the current AWS region.
@@ -2182,7 +2182,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SerialConsoleAccessArgs.builder
     com.pulumi.aws.ec2.SerialConsoleAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds permission to create volumes off of a given EBS Snapshot. */
   def SnapshotCreateVolumePermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2190,7 +2190,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SnapshotCreateVolumePermissionArgs.builder
     com.pulumi.aws.ec2.SnapshotCreateVolumePermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** There is only a single subscription allowed per account.
@@ -2203,7 +2203,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SpotDatafeedSubscriptionArgs.builder
     com.pulumi.aws.ec2.SpotDatafeedSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 Spot Fleet Request resource. This allows a fleet of Spot
@@ -2224,7 +2224,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.SpotFleetRequest(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 Spot Instance Request resource. This allows instances to be
@@ -2265,7 +2265,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.SpotInstanceRequest(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an VPC subnet resource.
@@ -2286,7 +2286,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Subnet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a subnet CIDR reservation resource. */
   def SubnetCidrReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2294,7 +2294,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.SubnetCidrReservationArgs.builder
     com.pulumi.aws.ec2.SubnetCidrReservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual EC2 resource tag. This resource should only be used in cases where EC2 resources are created outside the provider (e.g. AMIs), being shared via Resource Access Manager (RAM), or implicitly created by other means (e.g. Transit Gateway VPN Attachments).
@@ -2306,7 +2306,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.TagArgs.builder
     com.pulumi.aws.ec2.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Traffic mirror filter.\
@@ -2324,7 +2324,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.TrafficMirrorFilter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Traffic mirror filter rule.\
@@ -2335,7 +2335,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.TrafficMirrorFilterRuleArgs.builder
     com.pulumi.aws.ec2.TrafficMirrorFilterRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Traffic mirror session.\
@@ -2353,7 +2353,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.TrafficMirrorSession(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Traffic mirror target.\
@@ -2371,7 +2371,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.TrafficMirrorTarget(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS EBS Volume Attachment as a top level resource, to attach and
@@ -2384,7 +2384,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VolumeAttachmentArgs.builder
     com.pulumi.aws.ec2.VolumeAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC resource.
@@ -2403,7 +2403,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.Vpc(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 VPC Block Public Access Exclusion. */
   def VpcBlockPublicAccessExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2418,7 +2418,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcBlockPublicAccessExclusion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Block Public Access Options. */
   def VpcBlockPublicAccessOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2426,7 +2426,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcBlockPublicAccessOptionsArgs.builder
     com.pulumi.aws.ec2.VpcBlockPublicAccessOptions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC DHCP Options resource.
@@ -2445,7 +2445,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcDhcpOptions(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a VPC DHCP Options Association resource. */
   def VpcDhcpOptionsAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2453,7 +2453,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcDhcpOptionsAssociationArgs.builder
     com.pulumi.aws.ec2.VpcDhcpOptionsAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Encryption Control. */
   def VpcEncryptionControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2468,7 +2468,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcEncryptionControl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC Endpoint resource.
@@ -2493,7 +2493,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to accept a pending VPC Endpoint Connection accept request to VPC Endpoint Service. */
   def VpcEndpointConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2501,7 +2501,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointConnectionAccepterArgs.builder
     com.pulumi.aws.ec2.VpcEndpointConnectionAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC Endpoint connection notification resource.
@@ -2512,7 +2512,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointConnectionNotificationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointConnectionNotification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a VPC Endpoint Policy resource. */
   def VpcEndpointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2520,7 +2520,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointPolicyArgs.builder
     com.pulumi.aws.ec2.VpcEndpointPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPC Endpoint Route Table Association */
   def VpcEndpointRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2528,7 +2528,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointRouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a VPC Endpoint Service resource.
@@ -2552,7 +2552,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcEndpointService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to allow a principal to discover a VPC endpoint service.
@@ -2568,7 +2568,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointServiceAllowedPrincipleArgs.builder
     com.pulumi.aws.ec2.VpcEndpointServiceAllowedPrinciple(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an association between a VPC endpoint and a subnet.
@@ -2584,7 +2584,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcEndpointSubnetAssociationArgs.builder
     com.pulumi.aws.ec2.VpcEndpointSubnetAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IPAM resource. */
   def VpcIpam(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2599,7 +2599,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpam(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables the IPAM Service and promotes a delegated administrator. */
   def VpcIpamOrganizationAdminAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2607,7 +2607,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccountArgs.builder
     com.pulumi.aws.ec2.VpcIpamOrganizationAdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IP address pool resource for IPAM.
@@ -2626,7 +2626,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpamPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provisions a CIDR from an IPAM address pool.
@@ -2641,7 +2641,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamPoolCidrArgs.builder
     com.pulumi.aws.ec2.VpcIpamPoolCidr(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allocates (reserves) a CIDR from an IPAM address pool, preventing usage by IPAM. Only works for private IPv4. */
   def VpcIpamPoolCidrAllocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2656,7 +2656,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpamPoolCidrAllocation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Previews a CIDR from an IPAM address pool. Only works for private IPv4. */
   def VpcIpamPreviewNextCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2664,7 +2664,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcIpamPreviewNextCidrArgs.builder
     com.pulumi.aws.ec2.VpcIpamPreviewNextCidr(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IPAM Resource Discovery resource. IPAM Resource Discoveries are resources meant for multi-organization customers. If you wish to use a single IPAM across multiple orgs, a resource discovery can be created and shared from a subordinate organization to the management organizations IPAM delegated admin account. For a full deployment example, see `aws.ec2.VpcIpamResourceDiscoveryAssociation` resource. */
   def VpcIpamResourceDiscovery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2679,7 +2679,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpamResourceDiscovery(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an association between an Amazon IP Address Manager (IPAM) and a IPAM Resource Discovery. IPAM Resource Discoveries are resources meant for multi-organization customers. If you wish to use a single IPAM across multiple orgs, a resource discovery can be created and shared from a subordinate organization to the management organizations IPAM delegated admin account.
@@ -2698,7 +2698,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpamResourceDiscoveryAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a scope for AWS IPAM. */
   def VpcIpamScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2713,7 +2713,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcIpamScope(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to associate additional IPv4 CIDR blocks with a VPC.
@@ -2726,7 +2726,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcIpv4CidrBlockAssociationArgs.builder
     com.pulumi.aws.ec2.VpcIpv4CidrBlockAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to associate additional IPv6 CIDR blocks with a VPC.
@@ -2738,7 +2738,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcIpv6CidrBlockAssociationArgs.builder
     com.pulumi.aws.ec2.VpcIpv6CidrBlockAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an Infrastructure Performance subscription. */
   def VpcNetworkPerformanceMetricSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2746,7 +2746,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcNetworkPerformanceMetricSubscriptionArgs.builder
     com.pulumi.aws.ec2.VpcNetworkPerformanceMetricSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a VPC peering connection.
@@ -2782,7 +2782,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcPeeringConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the accepter&#39;s side of a VPC Peering Connection.
@@ -2808,7 +2808,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpcPeeringConnectionAccepter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an exclusive set of AWS VPC Security Group Rules.
@@ -2826,7 +2826,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpcSecurityGroupRulesExclusiveArgs.builder
     com.pulumi.aws.ec2.VpcSecurityGroupRulesExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPN Concentrator that aggregates multiple VPN connections to a transit gateway. */
   def VpnConcentrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2841,7 +2841,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpnConcentrator(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network.
@@ -2862,7 +2862,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpnConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a static route between a VPN connection and a customer gateway. */
   def VpnConnectionRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2870,7 +2870,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpnConnectionRouteArgs.builder
     com.pulumi.aws.ec2.VpnConnectionRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a VPC VPN Gateway. */
   def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2885,7 +2885,7 @@ object ec2:
       case None =>
     com.pulumi.aws.ec2.VpnGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Virtual Private Gateway attachment resource, allowing for an existing
@@ -2900,7 +2900,7 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpnGatewayAttachmentArgs.builder
     com.pulumi.aws.ec2.VpnGatewayAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Requests automatic route propagation between a VPN gateway and a route table.
@@ -2914,4 +2914,4 @@ object ec2:
     val argsBuilder = com.pulumi.aws.ec2.VpnGatewayRoutePropagationArgs.builder
     com.pulumi.aws.ec2.VpnGatewayRoutePropagation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

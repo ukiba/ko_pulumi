@@ -13,7 +13,7 @@ object appautoscaling:
       case None               =>
     com.pulumi.aws.appautoscaling.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Application Auto Scaling ScheduledAction resource. */
   def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object appautoscaling:
       case None               =>
     com.pulumi.aws.appautoscaling.ScheduledAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Application Auto Scaling ScalableTarget resource. To manage policies which get attached to the target, see the `aws.appautoscaling.Policy` resource.
@@ -45,4 +45,4 @@ object appautoscaling:
       case None =>
     com.pulumi.aws.appautoscaling.Target(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

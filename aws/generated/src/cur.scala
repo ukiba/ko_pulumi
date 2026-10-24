@@ -52,4 +52,4 @@ object cur:
       case None =>
     com.pulumi.aws.cur.ReportDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

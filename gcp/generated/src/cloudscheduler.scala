@@ -22,4 +22,4 @@ object cloudscheduler:
       case None               =>
     com.pulumi.gcp.cloudscheduler.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

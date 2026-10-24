@@ -17,7 +17,7 @@ object workspaces:
       case None =>
     com.pulumi.aws.workspaces.ConnectionAlias(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a WorkSpaces directory in AWS WorkSpaces Service.
@@ -36,7 +36,7 @@ object workspaces:
       case None =>
     com.pulumi.aws.workspaces.Directory(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IP access control group in AWS WorkSpaces Service */
   def IpGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object workspaces:
       case None =>
     com.pulumi.aws.workspaces.IpGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a WorkSpaces Pool in the AWS WorkSpaces service. */
   def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -69,7 +69,7 @@ object workspaces:
       case None =>
     com.pulumi.aws.workspaces.Pool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a workspace in [AWS WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html) Service
@@ -88,7 +88,7 @@ object workspaces:
       case None =>
     com.pulumi.aws.workspaces.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WorkspacesFunctions:
     // Pulumi methods are reproduced as Scala methods.

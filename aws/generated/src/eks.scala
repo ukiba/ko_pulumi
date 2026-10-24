@@ -17,7 +17,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.AccessEntry(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Access Entry Policy Association for an EKS Cluster. */
   def AccessPolicyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object eks:
     val argsBuilder = com.pulumi.aws.eks.AccessPolicyAssociationArgs.builder
     com.pulumi.aws.eks.AccessPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS add-on. */
   def Addon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -40,7 +40,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.Addon(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Capability for an EKS cluster. */
   def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.Capability(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Cluster. */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EksFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -229,7 +229,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.FargateProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Identity Provider Configuration. */
   def IdentityProviderConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -244,7 +244,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.IdentityProviderConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EKS Node Group, which can provision and optionally update an Auto Scaling group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html). */
   def NodeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -259,7 +259,7 @@ object eks:
       case None =>
     com.pulumi.aws.eks.NodeGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS EKS (Elastic Kubernetes) Pod Identity Association.
@@ -284,4 +284,4 @@ object eks:
       case None =>
     com.pulumi.aws.eks.PodIdentityAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

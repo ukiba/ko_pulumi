@@ -21,7 +21,7 @@ object vpcaccess:
       case None               =>
     com.pulumi.gcp.vpcaccess.Connector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VpcaccessFunctions:
     // Pulumi methods are reproduced as Scala methods.

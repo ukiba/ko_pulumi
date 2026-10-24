@@ -18,7 +18,7 @@ object activedirectory:
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainArgs.builder
     com.pulumi.gcp.activedirectory.Domain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds a trust between Active Directory domains
@@ -34,7 +34,7 @@ object activedirectory:
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainTrustArgs.builder
     com.pulumi.gcp.activedirectory.DomainTrust(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a Peering for Managed AD instance.
@@ -53,4 +53,4 @@ object activedirectory:
     val argsBuilder = com.pulumi.gcp.activedirectory.PeeringArgs.builder
     com.pulumi.gcp.activedirectory.Peering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

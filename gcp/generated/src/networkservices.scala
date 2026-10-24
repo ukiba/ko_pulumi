@@ -16,7 +16,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.AgentConnectivityTemplateArgs.builder
     com.pulumi.gcp.networkservices.AgentConnectivityTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AgentGateway represents the agent gateway resource.
@@ -33,7 +33,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.AgentGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AuthzExtension is a resource that allows traffic forwarding to a callout backend service to make an authorization decision.
@@ -50,7 +50,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.AuthzExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * EdgeCacheKeyset represents a collection of public keys used for validating signed requests.
@@ -69,7 +69,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.EdgeCacheKeyset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * EdgeCacheOrigin represents a HTTP-reachable backend for an EdgeCacheService.
@@ -86,7 +86,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.EdgeCacheOrigin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * EdgeCacheService defines the IP addresses, protocols, security policies, cache policies and routing configuration.
@@ -101,7 +101,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.EdgeCacheService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * EndpointPolicy is a resource that helps apply desired configuration on the endpoints that match specific criteria.
@@ -118,7 +118,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.EndpointPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Gateway represents the configuration for a proxy, typically a load balancer.
@@ -138,7 +138,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.Gateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * GrpcRoute is the resource defining how gRPC traffic routed by a Mesh or Gateway resource is routed.
@@ -155,7 +155,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.GrpcRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * HttpRoute is the resource defining how HTTP traffic should be routed by a Mesh or Gateway resource.
@@ -174,7 +174,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.HttpRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * LbEdgeExtension is a resource that lets the extension service influence the selection of backend services and Cloud CDN cache keys by modifying request headers.
@@ -193,7 +193,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.LbEdgeExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * LbRouteExtension is a resource that lets you control where traffic is routed to for a given request.
@@ -212,7 +212,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.LbRouteExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * LbTrafficExtension is a resource that lets the extension service modify the headers and payloads of both requests and responses without impacting the choice of backend services or any other security policies associated with the backend service.
@@ -231,7 +231,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.LbTrafficExtension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mesh represents a logical configuration grouping for workload to workload communication within a
@@ -250,7 +250,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.Mesh(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast consumer association in the specified location of the current project.
@@ -266,7 +266,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastConsumerAssociationArgs.builder
     com.pulumi.gcp.networkservices.MulticastConsumerAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast domain in the current project.
@@ -282,7 +282,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast domain activation in the specified location of the current project.
@@ -298,7 +298,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomainActivation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast domain group in the current project.
@@ -314,7 +314,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastDomainGroupArgs.builder
     com.pulumi.gcp.networkservices.MulticastDomainGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast group consumer activation in the specified location of the current project.
@@ -330,7 +330,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupConsumerActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupConsumerActivation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast group producer activation in the specified location of the current project.
@@ -346,7 +346,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupProducerActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupProducerActivation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast group range in the current project.
@@ -362,7 +362,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupRangeArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupRange(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast group range activation in the specified location of the current project.
@@ -378,7 +378,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastGroupRangeActivationArgs.builder
     com.pulumi.gcp.networkservices.MulticastGroupRangeActivation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Create a multicast producer association in the specified location of the current project.
@@ -394,7 +394,7 @@ object networkservices:
     val argsBuilder = com.pulumi.gcp.networkservices.MulticastProducerAssociationArgs.builder
     com.pulumi.gcp.networkservices.MulticastProducerAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkservicesFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -433,7 +433,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.ServiceBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ServiceLbPolicy holds global load balancing and traffic distribution configuration that can be applied to a BackendService.
@@ -453,7 +453,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.ServiceLbPolicies(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * TcpRoute is the resource defining how TCP traffic should be routed by a Mesh/Gateway resource.
@@ -472,7 +472,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.TcpRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * TlsRoute defines how traffic should be routed based on SNI and other matching L3 attributes.
@@ -489,7 +489,7 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.TlsRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * WasmPlugin is a resource representing a service executing a customer-provided Wasm module.
@@ -508,4 +508,4 @@ object networkservices:
       case None               =>
     com.pulumi.gcp.networkservices.WasmPlugin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

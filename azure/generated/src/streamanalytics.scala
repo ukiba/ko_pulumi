@@ -20,7 +20,7 @@ object streamanalytics:
       case None =>
     com.pulumi.azure.streamanalytics.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a JavaScript UDF Function within Stream Analytics Streaming Job. */
   def FunctionJavaScriptUDF(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.FunctionJavaScriptUDF(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a JavaScript UDA Function within a Stream Analytics Streaming Job. */
   def FunctionJavascriptUda(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.FunctionJavascriptUda(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Job. */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -60,7 +60,7 @@ object streamanalytics:
       case None =>
     com.pulumi.azure.streamanalytics.Job(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Job Schedule. */
   def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -68,7 +68,7 @@ object streamanalytics:
     val argsBuilder = com.pulumi.azure.streamanalytics.JobScheduleArgs.builder
     com.pulumi.azure.streamanalytics.JobSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Stream Analytics Job Storage Account. Use this resource for managing the Job Storage Account using `Msi` authentication with a `SystemAssigned` identity.
@@ -80,7 +80,7 @@ object streamanalytics:
     val argsBuilder = com.pulumi.azure.streamanalytics.JobStorageAccountArgs.builder
     com.pulumi.azure.streamanalytics.JobStorageAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Managed Private Endpoint. */
   def ManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -91,7 +91,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.ManagedPrivateEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to Blob Storage. */
   def OutputBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -102,7 +102,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputBlob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to CosmosDB. */
   def OutputCosmosdb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -113,7 +113,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputCosmosdb(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to an EventHub. */
   def OutputEventHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -124,7 +124,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputEventHub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output Function. */
   def OutputFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -135,7 +135,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputFunction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to Microsoft SQL Server Database. */
   def OutputMssql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -146,7 +146,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputMssql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output powerBI. */
   def OutputPowerbi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -157,7 +157,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputPowerbi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to a ServiceBus Queue. */
   def OutputServiceBusQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputServiceBusQueue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to a ServiceBus Topic. */
   def OutputServicebusTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -179,7 +179,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputServicebusTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output to an Azure Synapse Analytics Workspace. */
   def OutputSynapse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -190,7 +190,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputSynapse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Output Table. */
   def OutputTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -201,7 +201,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.OutputTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Reference Input Blob. Reference data (also known as a lookup table) is a finite data set that is static or slowly changing in nature, used to perform a lookup or to correlate with your data stream. Learn more [here](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-use-reference-data#azure-blob-storage). */
   def ReferenceInputBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -212,7 +212,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.ReferenceInputBlob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Reference Input from MS SQL. Reference data (also known as a lookup table) is a finite data set that is static or slowly changing in nature, used to perform a lookup or to correlate with your data stream. Learn more [here](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-use-reference-data#azure-sql-database). */
   def ReferenceInputMssql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -223,7 +223,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.ReferenceInputMssql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Stream Input Blob. */
   def StreamInputBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -234,7 +234,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.StreamInputBlob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource creates a Stream Input of type `Microsoft.ServiceBus/EventHub`, to create a Stream Input of type `Microsoft.EventHub/EventHub` please use the resource azurerm_stream_analytics_stream_input_eventhub_v2.
@@ -249,7 +249,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.StreamInputEventHub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource creates a Stream Input of type `Microsoft.EventHub/EventHub`, to create a Stream Input of type `Microsoft.ServiceBus/EventHub` please use the resource azurerm_stream_analytics_stream_input_eventhub.
@@ -264,7 +264,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.StreamInputEventHubV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Stream Analytics Stream Input IoTHub. */
   def StreamInputIotHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -275,7 +275,7 @@ object streamanalytics:
       case None               =>
     com.pulumi.azure.streamanalytics.StreamInputIotHub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object StreamanalyticsFunctions:
     // Pulumi methods are reproduced as Scala methods.

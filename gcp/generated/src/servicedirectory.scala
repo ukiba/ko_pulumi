@@ -18,7 +18,7 @@ object servicedirectory:
     val argsBuilder = com.pulumi.gcp.servicedirectory.EndpointArgs.builder
     com.pulumi.gcp.servicedirectory.Endpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A container for `services`. Namespaces allow administrators to group services
@@ -35,7 +35,7 @@ object servicedirectory:
     val argsBuilder = com.pulumi.gcp.servicedirectory.NamespaceArgs.builder
     com.pulumi.gcp.servicedirectory.Namespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
@@ -339,7 +339,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.NamespaceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
@@ -643,7 +643,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.NamespaceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Namespace. Each of these resources serves a different use case:
@@ -947,7 +947,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.NamespaceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An individual service. A service contains a name and optional metadata.
@@ -963,7 +963,7 @@ object servicedirectory:
     val argsBuilder = com.pulumi.gcp.servicedirectory.ServiceArgs.builder
     com.pulumi.gcp.servicedirectory.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
@@ -1267,7 +1267,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.ServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
@@ -1571,7 +1571,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.ServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Service Directory Service. Each of these resources serves a different use case:
@@ -1875,7 +1875,7 @@ object servicedirectory:
       case None               =>
     com.pulumi.gcp.servicedirectory.ServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicedirectoryFunctions:
     // Pulumi methods are reproduced as Scala methods.

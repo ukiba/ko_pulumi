@@ -20,7 +20,7 @@ object devicefarm:
       case None =>
     com.pulumi.aws.devicefarm.DevicePool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Instance Profiles.
@@ -42,7 +42,7 @@ object devicefarm:
       case None =>
     com.pulumi.aws.devicefarm.InstanceProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Network Profiles.
@@ -64,7 +64,7 @@ object devicefarm:
       case None =>
     com.pulumi.aws.devicefarm.NetworkProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Projects.
@@ -89,7 +89,7 @@ object devicefarm:
       case None =>
     com.pulumi.aws.devicefarm.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Test Grid Projects.
@@ -111,7 +111,7 @@ object devicefarm:
       case None =>
     com.pulumi.aws.devicefarm.TestGridProject(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Device Farm Uploads.
@@ -126,4 +126,4 @@ object devicefarm:
       case None               =>
     com.pulumi.aws.devicefarm.Upload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

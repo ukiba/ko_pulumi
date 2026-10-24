@@ -24,7 +24,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.Database(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Database Extended Auditing Policy. */
   def DatabaseExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Database Vulnerability Assessment Rule Baseline.
@@ -44,7 +44,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaselineArgs.builder
     com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaseline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage an Azure SQL Elastic Pool. */
   def ElasticPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,7 +62,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.ElasticPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Azure SQL Failover Group. */
   def FailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -80,7 +80,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.FailoverGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage an Azure SQL Firewall Rule. */
   def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -91,7 +91,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job. */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -102,7 +102,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Agent. */
   def JobAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -120,7 +120,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.JobAgent(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Credential. */
   def JobCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.JobCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Schedule. */
   def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -139,7 +139,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.JobScheduleArgs.builder
     com.pulumi.azure.mssql.JobSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Step. */
   def JobStep(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -150,7 +150,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.JobStep(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Job Target Group. */
   def JobTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.JobTargetGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure SQL Azure Managed Database for a SQL Managed Instance.
@@ -183,7 +183,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.ManagedDatabase(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Microsoft SQL Azure Managed Instance.
@@ -207,7 +207,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.ManagedInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to set a user, group or service principal as the AAD Administrator for an Azure SQL Managed Instance. */
   def ManagedInstanceActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -215,7 +215,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministrator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure SQL Managed Instance Failover Group. */
   def ManagedInstanceFailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -226,7 +226,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.ManagedInstanceFailoverGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for an MS SQL Managed Instance. */
   def ManagedInstanceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -234,7 +234,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicyArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Start Stop Schedules for an MS SQL Managed Instance. */
   def ManagedInstanceStartStopSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -242,7 +242,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceStartStopScheduleArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceStartStopSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the transparent data encryption configuration for a MSSQL Managed Instance
@@ -256,7 +256,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryptionArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for an MS Managed Instance. */
   def ManagedInstanceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -264,7 +264,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MssqlFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -354,7 +354,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.OutboundFirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Azure Database Server. */
   def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -372,7 +372,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.Server(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server DNS Alias. */
   def ServerDnsAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -383,7 +383,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.ServerDnsAlias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server Extended Auditing Policy. */
   def ServerExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -391,7 +391,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ServerExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.ServerExtendedAuditingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server Microsoft Support Auditing Policy. */
   def ServerMicrosoftSupportAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -399,7 +399,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Security Alert Policy for a MSSQL Server.
@@ -411,7 +411,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ServerSecurityAlertPolicyArgs.builder
     com.pulumi.azure.mssql.ServerSecurityAlertPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the transparent data encryption configuration for a MSSQL Server
@@ -427,7 +427,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ServerTransparentDataEncryptionArgs.builder
     com.pulumi.azure.mssql.ServerTransparentDataEncryption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Vulnerability Assessment for an MS SQL Server.
@@ -441,7 +441,7 @@ object mssql:
     val argsBuilder = com.pulumi.azure.mssql.ServerVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.mssql.ServerVulnerabilityAssessment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine */
   def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -456,7 +456,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.VirtualMachine(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine Availability Group Listener. */
   def VirtualMachineAvailabilityGroupListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -467,7 +467,7 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.VirtualMachineAvailabilityGroupListener(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine Group. */
   def VirtualMachineGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -485,7 +485,7 @@ object mssql:
       case None =>
     com.pulumi.azure.mssql.VirtualMachineGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage rules for allowing traffic between an Azure SQL server and a subnet of a virtual network. */
   def VirtualNetworkRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -496,4 +496,4 @@ object mssql:
       case None               =>
     com.pulumi.azure.mssql.VirtualNetworkRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

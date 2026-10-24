@@ -20,7 +20,7 @@ object medialive:
       case None =>
     com.pulumi.aws.medialive.Channel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS MediaLive Input. */
   def Input(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object medialive:
       case None =>
     com.pulumi.aws.medialive.Input(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS MediaLive Input Security Group. */
   def InputSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object medialive:
       case None =>
     com.pulumi.aws.medialive.InputSecurityGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MedialiveFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -90,7 +90,7 @@ object medialive:
       case None =>
     com.pulumi.aws.medialive.Multiplex(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS MediaLive MultiplexProgram. */
   def MultiplexProgram(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,4 +98,4 @@ object medialive:
     val argsBuilder = com.pulumi.aws.medialive.MultiplexProgramArgs.builder
     com.pulumi.aws.medialive.MultiplexProgram(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

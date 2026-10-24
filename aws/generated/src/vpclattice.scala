@@ -17,7 +17,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.AccessLogSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Auth Policy. */
   def AuthPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object vpclattice:
     val argsBuilder = com.pulumi.aws.vpclattice.AuthPolicyArgs.builder
     com.pulumi.aws.vpclattice.AuthPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS VPC Lattice Domain Verification.
@@ -44,7 +44,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.DomainVerification(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Listener. */
   def Listener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,7 +62,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.Listener(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Listener Rule. */
   def ListenerRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -80,7 +80,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ListenerRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Configuration. */
   def ResourceConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ResourceConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Gateway. */
   def ResourceGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -116,7 +116,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ResourceGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Resource Policy. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -124,7 +124,7 @@ object vpclattice:
     val argsBuilder = com.pulumi.aws.vpclattice.ResourcePolicyArgs.builder
     com.pulumi.aws.vpclattice.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -142,7 +142,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network. */
   def ServiceNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -160,7 +160,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ServiceNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network Resource Association. */
   def ServiceNetworkResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -175,7 +175,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ServiceNetworkResourceAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network Service Association. */
   def ServiceNetworkServiceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -190,7 +190,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ServiceNetworkServiceAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Service Network VPC Association. */
   def ServiceNetworkVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -205,7 +205,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.ServiceNetworkVpcAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS VPC Lattice Target Group. */
   def TargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -223,7 +223,7 @@ object vpclattice:
       case None =>
     com.pulumi.aws.vpclattice.TargetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides the ability to register a target with an AWS VPC Lattice Target Group. */
   def TargetGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -231,7 +231,7 @@ object vpclattice:
     val argsBuilder = com.pulumi.aws.vpclattice.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.vpclattice.TargetGroupAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VpclatticeFunctions:
     // Pulumi methods are reproduced as Scala methods.

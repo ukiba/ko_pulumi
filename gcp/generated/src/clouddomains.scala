@@ -22,4 +22,4 @@ object clouddomains:
     val argsBuilder = com.pulumi.gcp.clouddomains.RegistrationArgs.builder
     com.pulumi.gcp.clouddomains.Registration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

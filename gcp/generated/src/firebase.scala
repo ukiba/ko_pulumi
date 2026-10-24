@@ -24,7 +24,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicConfigArgs.builder
     com.pulumi.gcp.firebase.AiLogicConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The PromptTemplate resource for Firebase AI Logic.
@@ -45,7 +45,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicPromptTemplateArgs.builder
     com.pulumi.gcp.firebase.AiLogicPromptTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource that manages the lock state of a PromptTemplate.
@@ -60,7 +60,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AiLogicPromptTemplateLockArgs.builder
     com.pulumi.gcp.firebase.AiLogicPromptTemplateLock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Firebase Android application instance
@@ -79,7 +79,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AndroidAppArgs.builder
     com.pulumi.gcp.firebase.AndroidApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An app&#39;s App Attest configuration object. Note that the Team ID registered with your
@@ -96,7 +96,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckAppAttestConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckAppAttestConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A debug token is a secret used during the development or integration testing of
@@ -115,7 +115,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckDebugTokenArgs.builder
     com.pulumi.gcp.firebase.AppCheckDebugToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An app&#39;s DeviceCheck configuration object. Note that the Team ID registered with your
@@ -132,7 +132,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckDeviceCheckConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckDeviceCheckConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An app&#39;s Play Integrity configuration object. Note that your registered SHA-256 certificate fingerprints are used to validate tokens issued by the Play Integrity API.
@@ -149,7 +149,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckPlayIntegrityConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckPlayIntegrityConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An app&#39;s reCAPTCHA Enterprise configuration object.
@@ -165,7 +165,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckRecaptchaEnterpriseConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckRecaptchaEnterpriseConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An app&#39;s reCAPTCHA V3 configuration object.
@@ -181,7 +181,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckRecaptchaV3ConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckRecaptchaV3Config(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * App Check enforcement policy for a specific resource of a Google service supported by App Check. Note that this policy will override the service-level configuration.
@@ -197,7 +197,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckResourcePolicyArgs.builder
     com.pulumi.gcp.firebase.AppCheckResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The enforcement configuration for a service supported by App Check.
@@ -213,7 +213,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppCheckServiceConfigArgs.builder
     com.pulumi.gcp.firebase.AppCheckServiceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Backend is the primary resource of App Hosting. */
   def AppHostingBackend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -221,7 +221,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingBackendArgs.builder
     com.pulumi.gcp.firebase.AppHostingBackend(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A single build for a backend, at a specific point codebase reference tag
@@ -234,7 +234,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingBuildArgs.builder
     com.pulumi.gcp.firebase.AppHostingBuild(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A domain name that is associated with a backend. */
   def AppHostingDefaultDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -242,7 +242,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingDefaultDomainArgs.builder
     com.pulumi.gcp.firebase.AppHostingDefaultDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A domain name that is associated with a backend. */
   def AppHostingDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -250,7 +250,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingDomainArgs.builder
     com.pulumi.gcp.firebase.AppHostingDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Controls traffic configuration for a backend. */
   def AppHostingTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -258,7 +258,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppHostingTrafficArgs.builder
     com.pulumi.gcp.firebase.AppHostingTraffic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Firebase Apple application instance
@@ -277,7 +277,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.AppleAppArgs.builder
     com.pulumi.gcp.firebase.AppleApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Firebase Data Connect service.
@@ -293,7 +293,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.DataConnectServiceArgs.builder
     com.pulumi.gcp.firebase.DataConnectService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Firebase Realtime Database instance.
@@ -312,7 +312,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.DatabaseInstanceArgs.builder
     com.pulumi.gcp.firebase.DatabaseInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Instance is an installation of an Extension into a user&#39;s project.
@@ -329,7 +329,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.ExtensionsInstanceArgs.builder
     com.pulumi.gcp.firebase.ExtensionsInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FirebaseFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -557,7 +557,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.HostingChannelArgs.builder
     com.pulumi.gcp.firebase.HostingChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Custom Domains for Firebase Hosting. Custom Domains link your
@@ -578,7 +578,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.HostingCustomDomainArgs.builder
     com.pulumi.gcp.firebase.HostingCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Release is a particular collection of configurations that is set to be public at a particular time.
@@ -597,7 +597,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.HostingReleaseArgs.builder
     com.pulumi.gcp.firebase.HostingRelease(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `Site` represents a Firebase Hosting site.
@@ -616,7 +616,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.HostingSiteArgs.builder
     com.pulumi.gcp.firebase.HostingSite(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `Version` is a configuration which determine how a site is displayed. Static files are not supported at the moment.
@@ -635,7 +635,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.HostingVersionArgs.builder
     com.pulumi.gcp.firebase.HostingVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Firebase instance. This enables Firebase resources on a given Google Project.
@@ -661,7 +661,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.ProjectArgs.builder
     com.pulumi.gcp.firebase.Project(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A RemoteConfig represents a Remote Config template.
@@ -677,7 +677,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.RemoteConfigRemoteConfigArgs.builder
     com.pulumi.gcp.firebase.RemoteConfigRemoteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An association between a Firebase project and a Google Cloud Storage bucket.
@@ -697,7 +697,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.StorageBucketArgs.builder
     com.pulumi.gcp.firebase.StorageBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource that manages the creation of the default Google Cloud Storage bucket
@@ -717,7 +717,7 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.StorageDefaultBucketArgs.builder
     com.pulumi.gcp.firebase.StorageDefaultBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Firebase web application instance
@@ -736,4 +736,4 @@ object firebase:
     val argsBuilder = com.pulumi.gcp.firebase.WebAppArgs.builder
     com.pulumi.gcp.firebase.WebApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

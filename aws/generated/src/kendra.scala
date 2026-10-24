@@ -20,7 +20,7 @@ object kendra:
       case None =>
     com.pulumi.aws.kendra.DataSource(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra Experience. */
   def Experience(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object kendra:
       case None               =>
     com.pulumi.aws.kendra.Experience(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra FAQ. */
   def Faq(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object kendra:
       case None =>
     com.pulumi.aws.kendra.Faq(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Kendra Index resource. */
   def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object kendra:
       case None =>
     com.pulumi.aws.kendra.Index(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KendraFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -152,7 +152,7 @@ object kendra:
       case None =>
     com.pulumi.aws.kendra.QuerySuggestionsBlockList(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Kendra Thesaurus. */
   def Thesaurus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,4 +170,4 @@ object kendra:
       case None =>
     com.pulumi.aws.kendra.Thesaurus(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -17,7 +17,7 @@ object elasticsearch:
       case None =>
     com.pulumi.aws.elasticsearch.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows setting policy to an Elasticsearch domain while referencing domain attributes (e.g., ARN) */
   def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object elasticsearch:
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainPolicyArgs.builder
     com.pulumi.aws.elasticsearch.DomainPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages SAML authentication options for an AWS Elasticsearch Domain. */
   def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -33,7 +33,7 @@ object elasticsearch:
     val argsBuilder = com.pulumi.aws.elasticsearch.DomainSamlOptionsArgs.builder
     com.pulumi.aws.elasticsearch.DomainSamlOptions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElasticsearchFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -60,4 +60,4 @@ object elasticsearch:
     val argsBuilder = com.pulumi.aws.elasticsearch.VpcEndpointArgs.builder
     com.pulumi.aws.elasticsearch.VpcEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object containerapp:
       case None =>
     com.pulumi.azure.containerapp.App(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ContainerappFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -86,7 +86,7 @@ object containerapp:
       case None               =>
     com.pulumi.azure.containerapp.CustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment. */
   def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -104,7 +104,7 @@ object containerapp:
       case None =>
     com.pulumi.azure.containerapp.Environment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Certificate. */
   def EnvironmentCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object containerapp:
       case None =>
     com.pulumi.azure.containerapp.EnvironmentCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Custom Domain Suffix. */
   def EnvironmentCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,7 +130,7 @@ object containerapp:
     val argsBuilder = com.pulumi.azure.containerapp.EnvironmentCustomDomainArgs.builder
     com.pulumi.azure.containerapp.EnvironmentCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dapr Component for a Container App Environment. */
   def EnvironmentDaprComponent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -141,7 +141,7 @@ object containerapp:
       case None               =>
     com.pulumi.azure.containerapp.EnvironmentDaprComponent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Managed Certificate. */
   def EnvironmentManagedCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -159,7 +159,7 @@ object containerapp:
       case None =>
     com.pulumi.azure.containerapp.EnvironmentManagedCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Environment Storage. */
   def EnvironmentStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,7 +170,7 @@ object containerapp:
       case None               =>
     com.pulumi.azure.containerapp.EnvironmentStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container App Job. */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -188,4 +188,4 @@ object containerapp:
       case None =>
     com.pulumi.azure.containerapp.Job(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

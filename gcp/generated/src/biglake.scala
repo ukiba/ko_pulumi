@@ -100,7 +100,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.Catalog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Databases are containers of tables.
@@ -119,7 +119,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Hive Catalogs in Biglake Metastore
@@ -136,7 +136,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveCatalog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
@@ -445,7 +445,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveCatalogIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
@@ -754,7 +754,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveCatalogIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveCatalog. Each of these resources serves a different use case:
@@ -1063,7 +1063,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveCatalogIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Hive Databases in Biglake Metastore. Hive Databases exist within a Hive Catalog.
@@ -1080,7 +1080,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
@@ -1396,7 +1396,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveDatabaseIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
@@ -1712,7 +1712,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveDatabaseIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveDatabase. Each of these resources serves a different use case:
@@ -2028,7 +2028,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveDatabaseIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Hive Tables in BigLake Metastore that exist within a Hive Catalog and Database. */
   def HiveTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2039,7 +2039,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
@@ -2361,7 +2361,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveTableIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
@@ -2683,7 +2683,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveTableIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigLake Hive Metastore HiveTable. Each of these resources serves a different use case:
@@ -3005,7 +3005,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.HiveTableIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * IcebergCatalogs are top-level containers for Apache Iceberg REST Catalog served Namespaces and Tables.
@@ -3028,7 +3028,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergCatalog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
@@ -3337,7 +3337,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergCatalogIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
@@ -3646,7 +3646,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergCatalogIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergCatalog. Each of these resources serves a different use case:
@@ -3955,7 +3955,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergCatalogIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** IcebergNamespaces are containers for Apache Iceberg Tables within an IcebergCatalog. */
   def IcebergNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -3963,7 +3963,7 @@ object biglake:
     val argsBuilder = com.pulumi.gcp.biglake.IcebergNamespaceArgs.builder
     com.pulumi.gcp.biglake.IcebergNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
@@ -4276,7 +4276,7 @@ object biglake:
     val argsBuilder = com.pulumi.gcp.biglake.IcebergNamespaceIamBindingArgs.builder
     com.pulumi.gcp.biglake.IcebergNamespaceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
@@ -4589,7 +4589,7 @@ object biglake:
     val argsBuilder = com.pulumi.gcp.biglake.IcebergNamespaceIamMemberArgs.builder
     com.pulumi.gcp.biglake.IcebergNamespaceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergNamespace. Each of these resources serves a different use case:
@@ -4902,7 +4902,7 @@ object biglake:
     val argsBuilder = com.pulumi.gcp.biglake.IcebergNamespaceIamPolicyArgs.builder
     com.pulumi.gcp.biglake.IcebergNamespaceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** IcebergTables are the primary objects in an IcebergCatalog. */
   def IcebergTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -4913,7 +4913,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
@@ -5235,7 +5235,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergTableIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
@@ -5557,7 +5557,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergTableIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Biglake IcebergTable. Each of these resources serves a different use case:
@@ -5879,7 +5879,7 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.IcebergTableIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a table.
@@ -5898,4 +5898,4 @@ object biglake:
       case None               =>
     com.pulumi.gcp.biglake.Table(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

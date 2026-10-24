@@ -24,7 +24,7 @@ object redis:
       case None =>
     com.pulumi.azure.redis.Cache(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy */
   def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object redis:
       case None               =>
     com.pulumi.azure.redis.CacheAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy Assignment */
   def CacheAccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object redis:
       case None               =>
     com.pulumi.azure.redis.CacheAccessPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Redis Enterprise Cluster.
@@ -68,7 +68,7 @@ object redis:
       case None =>
     com.pulumi.azure.redis.EnterpriseCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Redis Enterprise Database.
@@ -83,7 +83,7 @@ object redis:
       case None               =>
     com.pulumi.azure.redis.EnterpriseDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Rule associated with a Redis Cache. */
   def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -94,7 +94,7 @@ object redis:
       case None               =>
     com.pulumi.azure.redis.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Linked Server (ie Geo Location) */
   def LinkedServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -102,7 +102,7 @@ object redis:
     val argsBuilder = com.pulumi.azure.redis.LinkedServerArgs.builder
     com.pulumi.azure.redis.LinkedServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RedisFunctions:
     // Pulumi methods are reproduced as Scala methods.

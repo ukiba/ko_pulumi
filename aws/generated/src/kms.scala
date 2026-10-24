@@ -17,7 +17,7 @@ object kms:
       case None               =>
     com.pulumi.aws.kms.Alias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The KMS ciphertext resource allows you to encrypt plaintext into ciphertext
@@ -30,7 +30,7 @@ object kms:
     val argsBuilder = com.pulumi.aws.kms.CiphertextArgs.builder
     com.pulumi.aws.kms.Ciphertext(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS KMS (Key Management) Custom Key Store. */
   def CustomKeyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object kms:
     val argsBuilder = com.pulumi.aws.kms.CustomKeyStoreArgs.builder
     com.pulumi.aws.kms.CustomKeyStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a single-Region or multi-Region primary KMS key that uses external key material.
@@ -56,7 +56,7 @@ object kms:
       case None =>
     com.pulumi.aws.kms.ExternalKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource-based access control mechanism for a KMS customer master key.
@@ -78,7 +78,7 @@ object kms:
       case None               =>
     com.pulumi.aws.kms.Grant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a single-Region or multi-Region primary KMS key.
@@ -99,7 +99,7 @@ object kms:
       case None =>
     com.pulumi.aws.kms.Key(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches a policy to a KMS Key. */
   def KeyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,7 +107,7 @@ object kms:
     val argsBuilder = com.pulumi.aws.kms.KeyPolicyArgs.builder
     com.pulumi.aws.kms.KeyPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KmsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -252,7 +252,7 @@ object kms:
       case None =>
     com.pulumi.aws.kms.ReplicaExternalKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a KMS multi-Region replica key. */
   def ReplicaKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -267,4 +267,4 @@ object kms:
       case None =>
     com.pulumi.aws.kms.ReplicaKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

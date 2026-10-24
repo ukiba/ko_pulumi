@@ -16,7 +16,7 @@ object outposts:
     val argsBuilder = com.pulumi.aws.outposts.CapacityTaskArgs.builder
     com.pulumi.aws.outposts.CapacityTask(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OutpostsFunctions:
     // Pulumi methods are reproduced as Scala methods.

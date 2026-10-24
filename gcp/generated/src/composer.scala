@@ -183,7 +183,7 @@ object composer:
       case None               =>
     com.pulumi.gcp.composer.Environment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * User workloads ConfigMap used by Airflow tasks that run with Kubernetes Executor or KubernetesPodOperator.
@@ -201,7 +201,7 @@ object composer:
       case None               =>
     com.pulumi.gcp.composer.UserWorkloadsConfigMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * User workloads Secret used by Airflow tasks that run with Kubernetes Executor
@@ -215,4 +215,4 @@ object composer:
       case None               =>
     com.pulumi.gcp.composer.UserWorkloadsSecret(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

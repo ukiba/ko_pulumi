@@ -24,7 +24,7 @@ object keyspaces:
       case None =>
     com.pulumi.aws.keyspaces.Keyspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Keyspaces Table.
@@ -43,4 +43,4 @@ object keyspaces:
       case None =>
     com.pulumi.aws.keyspaces.Table(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object managedapplication:
       case None =>
     com.pulumi.azure.managedapplication.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Application Definition. */
   def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object managedapplication:
       case None =>
     com.pulumi.azure.managedapplication.Definition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ManagedapplicationFunctions:
     // Pulumi methods are reproduced as Scala methods.

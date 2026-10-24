@@ -42,7 +42,7 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.AutoScalingConfigurationVersion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Runner Connection.
@@ -61,7 +61,7 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.Connection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Runner Custom Domain association.
@@ -73,7 +73,7 @@ object apprunner:
     val argsBuilder = com.pulumi.aws.apprunner.CustomDomainAssociationArgs.builder
     com.pulumi.aws.apprunner.CustomDomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the default App Runner auto scaling configuration.
@@ -86,7 +86,7 @@ object apprunner:
     val argsBuilder = com.pulumi.aws.apprunner.DefaultAutoScalingConfigurationVersionArgs.builder
     com.pulumi.aws.apprunner.DefaultAutoScalingConfigurationVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Runner Deployment Operation. */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -94,7 +94,7 @@ object apprunner:
     val argsBuilder = com.pulumi.aws.apprunner.DeploymentArgs.builder
     com.pulumi.aws.apprunner.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Runner Observability Configuration. */
   def ObservabilityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -109,7 +109,7 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.ObservabilityConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Runner Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -124,7 +124,7 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Runner VPC Connector. */
   def VpcConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -139,7 +139,7 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.VpcConnector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Runner VPC Ingress Connection. */
   def VpcIngressConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -157,4 +157,4 @@ object apprunner:
       case None =>
     com.pulumi.aws.apprunner.VpcIngressConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

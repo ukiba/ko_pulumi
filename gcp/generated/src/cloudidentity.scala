@@ -155,7 +155,7 @@ object cloudidentity:
     val argsBuilder = com.pulumi.gcp.cloudidentity.GroupArgs.builder
     com.pulumi.gcp.cloudidentity.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Membership defines a relationship between a Group and an entity belonging to that Group, referred to as a &#34;member&#34;.
@@ -177,7 +177,7 @@ object cloudidentity:
     val argsBuilder = com.pulumi.gcp.cloudidentity.GroupMembershipArgs.builder
     com.pulumi.gcp.cloudidentity.GroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Identity Policy binds a Setting to a PolicyQuery for a Google Workspace / Cloud Identity customer.
@@ -198,4 +198,4 @@ object cloudidentity:
     val argsBuilder = com.pulumi.gcp.cloudidentity.PolicyArgs.builder
     com.pulumi.gcp.cloudidentity.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

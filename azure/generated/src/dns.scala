@@ -24,7 +24,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.ARecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS AAAA Records within Azure DNS.
@@ -46,7 +46,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.AaaaRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS CNAME Records within Azure DNS.
@@ -68,7 +68,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.CNameRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS CAA Records within Azure DNS.
@@ -90,7 +90,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.CaaRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DnsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -331,7 +331,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.MxRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS NS Records within Azure DNS.
@@ -353,7 +353,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.NsRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS PTR Records within Azure DNS.
@@ -375,7 +375,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.PtrRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS SRV Records within Azure DNS.
@@ -397,7 +397,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.SrvRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables you to manage DNS TXT Records within Azure DNS.
@@ -419,7 +419,7 @@ object dns:
       case None =>
     com.pulumi.azure.dns.TxtRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS zones within Azure DNS. These zones are hosted on Azure&#39;s name servers to which you can delegate the zone from the parent domain. */
   def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -437,4 +437,4 @@ object dns:
       case None =>
     com.pulumi.azure.dns.Zone(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

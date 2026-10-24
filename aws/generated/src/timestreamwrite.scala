@@ -17,7 +17,7 @@ object timestreamwrite:
       case None =>
     com.pulumi.aws.timestreamwrite.Database(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Timestream table resource. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object timestreamwrite:
       case None =>
     com.pulumi.aws.timestreamwrite.Table(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object TimestreamwriteFunctions:
     // Pulumi methods are reproduced as Scala methods.

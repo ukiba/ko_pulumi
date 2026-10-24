@@ -40,7 +40,7 @@ object cloudbuildv2:
       case None               =>
     com.pulumi.gcp.cloudbuildv2.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Build v2 Connection. Each of these resources serves a different use case:
@@ -356,7 +356,7 @@ object cloudbuildv2:
       case None               =>
     com.pulumi.gcp.cloudbuildv2.ConnectionIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Build v2 Connection. Each of these resources serves a different use case:
@@ -672,7 +672,7 @@ object cloudbuildv2:
       case None               =>
     com.pulumi.gcp.cloudbuildv2.ConnectionIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Build v2 Connection. Each of these resources serves a different use case:
@@ -988,7 +988,7 @@ object cloudbuildv2:
       case None               =>
     com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A repository associated to a parent connection.
@@ -1007,4 +1007,4 @@ object cloudbuildv2:
       case None               =>
     com.pulumi.gcp.cloudbuildv2.Repository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

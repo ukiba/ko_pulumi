@@ -39,4 +39,4 @@ object elasticcloud:
       case None =>
     com.pulumi.azure.elasticcloud.Elasticsearch(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

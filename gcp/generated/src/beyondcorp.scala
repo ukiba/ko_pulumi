@@ -53,7 +53,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Specifies application endpoint(s) to protect behind a Security Gateway. */
   def SecurityGatewayApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
@@ -650,7 +650,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
@@ -1239,7 +1239,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGatewayApplication. Each of these resources serves a different use case:
@@ -1828,7 +1828,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
@@ -2417,7 +2417,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
@@ -3006,7 +3006,7 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BeyondCorp SecurityGateway. Each of these resources serves a different use case:
@@ -3595,4 +3595,4 @@ object beyondcorp:
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

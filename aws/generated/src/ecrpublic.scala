@@ -60,7 +60,7 @@ object ecrpublic:
       case None =>
     com.pulumi.aws.ecrpublic.Repository(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Container Registry Public Repository Policy.
@@ -74,4 +74,4 @@ object ecrpublic:
     val argsBuilder = com.pulumi.aws.ecrpublic.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecrpublic.RepositoryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

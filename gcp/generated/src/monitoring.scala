@@ -20,7 +20,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.AlertPolicyArgs.builder
     com.pulumi.gcp.monitoring.AlertPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Service is a discrete, autonomous, and network-accessible unit,
@@ -41,7 +41,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.CustomServiceArgs.builder
     com.pulumi.gcp.monitoring.CustomService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Stackdriver dashboard. Dashboards define the content and layout of pages in the Stackdriver web application.
@@ -57,7 +57,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.DashboardArgs.builder
     com.pulumi.gcp.monitoring.Dashboard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Service is a discrete, autonomous, and network-accessible unit,
@@ -78,7 +78,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.GenericServiceArgs.builder
     com.pulumi.gcp.monitoring.GenericService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The description of a dynamic collection of monitored resources. Each group
@@ -97,7 +97,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.GroupArgs.builder
     com.pulumi.gcp.monitoring.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Defines a metric type and its schema. Once a metric descriptor is created, deleting or altering it stops data collection and makes the metric type&#39;s existing data unusable.
@@ -113,7 +113,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.MetricDescriptorArgs.builder
     com.pulumi.gcp.monitoring.MetricDescriptor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A [project being monitored](https://cloud.google.com/monitoring/settings/multiple-projects#create-multi) by a Metrics Scope.
@@ -132,7 +132,7 @@ object monitoring:
       case None               =>
     com.pulumi.gcp.monitoring.MonitoredProject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MonitoringFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -382,7 +382,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.NotificationChannelArgs.builder
     com.pulumi.gcp.monitoring.NotificationChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Service-Level Objective (SLO) describes the level of desired good
@@ -405,7 +405,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.SloArgs.builder
     com.pulumi.gcp.monitoring.Slo(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Snooze will prevent any alerts from being opened, and close any that are already open.
@@ -427,7 +427,7 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.SnoozeArgs.builder
     com.pulumi.gcp.monitoring.Snooze(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This message configures which resources and services to monitor for availability.
@@ -446,4 +446,4 @@ object monitoring:
     val argsBuilder = com.pulumi.gcp.monitoring.UptimeCheckConfigArgs.builder
     com.pulumi.gcp.monitoring.UptimeCheckConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

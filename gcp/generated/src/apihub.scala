@@ -14,7 +14,7 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.ApiHubInstanceArgs.builder
     com.pulumi.gcp.apihub.ApiHubInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def Curation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -22,7 +22,7 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.CurationArgs.builder
     com.pulumi.gcp.apihub.Curation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Host project registration refers to the registration of a Google cloud project with API hub as a host project.
@@ -35,7 +35,7 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.HostProjectRegistrationArgs.builder
     com.pulumi.gcp.apihub.HostProjectRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A plugin resource in the API hub. */
   def Plugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -43,7 +43,7 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.PluginArgs.builder
     com.pulumi.gcp.apihub.Plugin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def PluginInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -51,7 +51,7 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.PluginInstanceArgs.builder
     com.pulumi.gcp.apihub.PluginInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Runtime project attachment represents an attachment from the runtime project to the host project. API Hub looks for deployments in the attached runtime projects and creates corresponding resources in API Hub for the discovered deployments. */
   def RuntimeProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -59,4 +59,4 @@ object apihub:
     val argsBuilder = com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.builder
     com.pulumi.gcp.apihub.RuntimeProjectAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

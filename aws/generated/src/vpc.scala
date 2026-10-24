@@ -15,7 +15,7 @@ object vpc:
     val argsBuilder = com.pulumi.aws.vpc.EndpointPrivateDnsArgs.builder
     com.pulumi.aws.vpc.EndpointPrivateDns(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS VPC Endpoint Service Private DNS Verification.
@@ -31,7 +31,7 @@ object vpc:
     val argsBuilder = com.pulumi.aws.vpc.EndpointServicePrivateDnsVerificationArgs.builder
     com.pulumi.aws.vpc.EndpointServicePrivateDnsVerification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server. */
   def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object vpc:
       case None =>
     com.pulumi.aws.vpc.RouteServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server Endpoint. */
   def RouteServerEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object vpc:
       case None =>
     com.pulumi.aws.vpc.RouteServerEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing a VPC Route Server Peer. */
   def RouteServerPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -76,7 +76,7 @@ object vpc:
       case None =>
     com.pulumi.aws.vpc.RouteServerPeer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing propagation between VPC route server and a route table. */
   def RouteServerPropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -84,7 +84,7 @@ object vpc:
     val argsBuilder = com.pulumi.aws.vpc.RouteServerPropagationArgs.builder
     com.pulumi.aws.vpc.RouteServerPropagation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource for managing association between VPC route server and a VPC. */
   def RouteServerVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object vpc:
     val argsBuilder = com.pulumi.aws.vpc.RouteServerVpcAssociationArgs.builder
     com.pulumi.aws.vpc.RouteServerVpcAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an outbound (egress) rule for a security group.
@@ -115,7 +115,7 @@ object vpc:
       case None =>
     com.pulumi.aws.vpc.SecurityGroupEgressRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an inbound (ingress) rule for a security group.
@@ -138,7 +138,7 @@ object vpc:
       case None =>
     com.pulumi.aws.vpc.SecurityGroupIngressRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing Security Group VPC Associations. */
   def SecurityGroupVpcAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -146,7 +146,7 @@ object vpc:
     val argsBuilder = com.pulumi.aws.vpc.SecurityGroupVpcAssociationArgs.builder
     com.pulumi.aws.vpc.SecurityGroupVpcAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VpcFunctions:
     // Pulumi methods are reproduced as Scala methods.

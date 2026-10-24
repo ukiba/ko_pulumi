@@ -21,7 +21,7 @@ object binaryauthorization:
       case None               =>
     com.pulumi.gcp.binaryauthorization.Attestor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
@@ -327,7 +327,7 @@ object binaryauthorization:
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
@@ -633,7 +633,7 @@ object binaryauthorization:
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Binary Authorization Attestor. Each of these resources serves a different use case:
@@ -939,7 +939,7 @@ object binaryauthorization:
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BinaryauthorizationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -974,4 +974,4 @@ object binaryauthorization:
     val argsBuilder = com.pulumi.gcp.binaryauthorization.PolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

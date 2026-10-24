@@ -21,7 +21,7 @@ object edgecontainer:
       case None               =>
     com.pulumi.gcp.edgecontainer.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#34;A set of Kubernetes nodes in a cluster with common configuration and specification.&#34;
@@ -40,7 +40,7 @@ object edgecontainer:
       case None               =>
     com.pulumi.gcp.edgecontainer.NodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A VPN connection
@@ -59,4 +59,4 @@ object edgecontainer:
       case None               =>
     com.pulumi.gcp.edgecontainer.VpnConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

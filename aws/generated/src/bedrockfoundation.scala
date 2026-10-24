@@ -53,4 +53,4 @@ object bedrockfoundation:
     val argsBuilder = com.pulumi.aws.bedrockfoundation.ModelAgreementArgs.builder
     com.pulumi.aws.bedrockfoundation.ModelAgreement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

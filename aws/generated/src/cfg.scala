@@ -17,7 +17,7 @@ object cfg:
       case None =>
     com.pulumi.aws.cfg.AggregateAuthorization(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Config Configuration Aggregator */
   def ConfigurationAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object cfg:
       case None =>
     com.pulumi.aws.cfg.ConfigurationAggregator(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Config Conformance Pack. More information about this collection of Config rules and remediation actions can be found in the
@@ -55,7 +55,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.ConformancePack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Config Delivery Channel.
@@ -70,7 +70,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.DeliveryChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Config Organization Conformance Pack. More information can be found in the [Managing Conformance Packs Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. Example conformance pack templates may be found in the [AWS Config Rules Repository](https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs).
@@ -85,7 +85,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.OrganizationConformancePack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Config Organization Custom Policy Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Managed Rules (those invoking an AWS managed rule), see the `aws.cfg.OrganizationManagedRule` resource.
@@ -100,7 +100,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.OrganizationCustomPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Config Organization Custom Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Managed Rules (those invoking an AWS managed rule), see the `aws.cfg.OrganizationManagedRule` resource.
@@ -117,7 +117,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.OrganizationCustomRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Config Organization Managed Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Custom Rules (those invoking a custom Lambda Function), see the `aws.cfg.OrganizationCustomRule` resource.
@@ -134,7 +134,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.OrganizationManagedRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Config Configuration Recorder. Please note that this resource **does not start** the created recorder automatically.
@@ -149,7 +149,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.Recorder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages status (recording / stopped) of an AWS Config Configuration Recorder.
@@ -164,7 +164,7 @@ object cfg:
       case None               =>
     com.pulumi.aws.cfg.RecorderStatus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Config Remediation Configuration.
@@ -176,7 +176,7 @@ object cfg:
     val argsBuilder = com.pulumi.aws.cfg.RemediationConfigurationArgs.builder
     com.pulumi.aws.cfg.RemediationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the AWS Config retention configuration.
@@ -187,7 +187,7 @@ object cfg:
     val argsBuilder = com.pulumi.aws.cfg.RetentionConfigurationArgs.builder
     com.pulumi.aws.cfg.RetentionConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Config Rule.
@@ -209,4 +209,4 @@ object cfg:
       case None =>
     com.pulumi.aws.cfg.Rule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

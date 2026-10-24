@@ -20,7 +20,7 @@ object secretsmanager:
       case None =>
     com.pulumi.aws.secretsmanager.Secret(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS Secrets Manager secret policy. */
   def SecretPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object secretsmanager:
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretPolicyArgs.builder
     com.pulumi.aws.secretsmanager.SecretPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS Secrets Manager secret rotation. To manage a secret, see the `aws.secretsmanager.Secret` resource. To manage a secret value, see the `aws.secretsmanager.SecretVersion` resource. */
   def SecretRotation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object secretsmanager:
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretRotationArgs.builder
     com.pulumi.aws.secretsmanager.SecretRotation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Secrets Manager secret version including its secret value. To manage secret metadata, see the `aws.secretsmanager.Secret` resource.
@@ -48,7 +48,7 @@ object secretsmanager:
     val argsBuilder = com.pulumi.aws.secretsmanager.SecretVersionArgs.builder
     com.pulumi.aws.secretsmanager.SecretVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SecretsmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -141,4 +141,4 @@ object secretsmanager:
     val argsBuilder = com.pulumi.aws.secretsmanager.TagArgs.builder
     com.pulumi.aws.secretsmanager.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

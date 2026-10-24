@@ -17,7 +17,7 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.ContainerAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Firewall Resource */
   def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.Firewall(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Firewall Policy Resource */
   def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.FirewallPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Network Firewall Firewall Transit Gateway Attachment Accepter.
@@ -68,7 +68,7 @@ object networkfirewall:
     val argsBuilder = com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepterArgs.builder
     com.pulumi.aws.networkfirewall.FirewallTransitGatewayAttachmentAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Logging Configuration Resource */
   def LoggingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -76,7 +76,7 @@ object networkfirewall:
     val argsBuilder = com.pulumi.aws.networkfirewall.LoggingConfigurationArgs.builder
     com.pulumi.aws.networkfirewall.LoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkfirewallFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -127,7 +127,7 @@ object networkfirewall:
     val argsBuilder = com.pulumi.aws.networkfirewall.ResourcePolicyArgs.builder
     com.pulumi.aws.networkfirewall.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Network Firewall Rule Group Resource */
   def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -145,7 +145,7 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.RuleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Network Firewall TLS Inspection Configuration. */
   def TlsInspectionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -163,7 +163,7 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.TlsInspectionConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a firewall endpoint for an AWS Network Firewall firewall.
@@ -182,4 +182,4 @@ object networkfirewall:
       case None =>
     com.pulumi.aws.networkfirewall.VpcEndpointAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

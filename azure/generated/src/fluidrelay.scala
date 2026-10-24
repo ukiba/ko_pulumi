@@ -20,4 +20,4 @@ object fluidrelay:
       case None =>
     com.pulumi.azure.fluidrelay.Server(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

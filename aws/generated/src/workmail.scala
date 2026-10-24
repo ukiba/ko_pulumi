@@ -14,7 +14,7 @@ object workmail:
     val argsBuilder = com.pulumi.aws.workmail.DefaultDomainArgs.builder
     com.pulumi.aws.workmail.DefaultDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a mail domain registered to an AWS WorkMail organization. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -22,7 +22,7 @@ object workmail:
     val argsBuilder = com.pulumi.aws.workmail.DomainArgs.builder
     com.pulumi.aws.workmail.Domain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS WorkMail Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -33,7 +33,7 @@ object workmail:
       case None               =>
     com.pulumi.aws.workmail.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS WorkMail Organization. */
   def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object workmail:
       case None =>
     com.pulumi.aws.workmail.Organization(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS WorkMail User.
@@ -64,4 +64,4 @@ object workmail:
       case None               =>
     com.pulumi.aws.workmail.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -21,7 +21,7 @@ object workbench:
       case None               =>
     com.pulumi.gcp.workbench.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.workbench.InstanceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -31,7 +31,7 @@ object workbench:
       case None               =>
     com.pulumi.gcp.workbench.InstanceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.workbench.InstanceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -41,7 +41,7 @@ object workbench:
       case None               =>
     com.pulumi.gcp.workbench.InstanceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def InstanceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.workbench.InstanceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -51,7 +51,7 @@ object workbench:
       case None               =>
     com.pulumi.gcp.workbench.InstanceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WorkbenchFunctions:
     // Pulumi methods are reproduced as Scala methods.

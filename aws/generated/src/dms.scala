@@ -17,7 +17,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DMS (Database Migration) Data Provider. A data provider stores the database engine and connection settings for a database used in a migration project. Creating a data provider does not create a database. */
   def DataProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.DataProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DmsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -172,7 +172,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DMS (Data Migration Service) event subscription resource. */
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -190,7 +190,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.EventSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DMS (Database Migration) Instance Profile. An instance profile provides network and encryption information to DMS Schema Conversion for use in connecting to a data provider. */
   def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -208,7 +208,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.InstanceProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS DMS (Database Migration) Migration Project. A migration project groups the instance profile and data providers used together in a DMS Schema Conversion or homogeneous data migration.
@@ -230,7 +230,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.MigrationProject(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DMS Serverless replication config resource.
@@ -249,7 +249,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.ReplicationConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DMS (Data Migration Service) replication instance resource. DMS replication instances can be created, updated, deleted, and imported. */
   def ReplicationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -264,7 +264,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.ReplicationInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DMS (Data Migration Service) replication subnet group resource. DMS replication subnet groups can be created, updated, deleted, and imported.
@@ -283,7 +283,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.ReplicationSubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DMS (Data Migration Service) replication task resource. DMS replication tasks can be created, updated, deleted, and imported.
@@ -302,7 +302,7 @@ object dms:
       case None =>
     com.pulumi.aws.dms.ReplicationTask(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a DMS (Data Migration Service) S3 endpoint resource. DMS S3 endpoints can be created, updated, deleted, and imported.
@@ -323,4 +323,4 @@ object dms:
       case None =>
     com.pulumi.aws.dms.S3Endpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

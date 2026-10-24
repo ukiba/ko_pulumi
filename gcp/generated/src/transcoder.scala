@@ -18,7 +18,7 @@ object transcoder:
     val argsBuilder = com.pulumi.gcp.transcoder.JobArgs.builder
     com.pulumi.gcp.transcoder.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Transcoding Job Template Resource
@@ -34,4 +34,4 @@ object transcoder:
     val argsBuilder = com.pulumi.gcp.transcoder.JobTemplateArgs.builder
     com.pulumi.gcp.transcoder.JobTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

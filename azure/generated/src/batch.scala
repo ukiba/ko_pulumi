@@ -20,7 +20,7 @@ object batch:
       case None =>
     com.pulumi.azure.batch.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Azure Batch Application instance. */
   def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object batch:
       case None               =>
     com.pulumi.azure.batch.Application(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BatchFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -106,7 +106,7 @@ object batch:
     val argsBuilder = com.pulumi.azure.batch.CertificateArgs.builder
     com.pulumi.azure.batch.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Batch Job. */
   def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -117,7 +117,7 @@ object batch:
       case None               =>
     com.pulumi.azure.batch.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Batch pool. */
   def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -128,4 +128,4 @@ object batch:
       case None               =>
     com.pulumi.azure.batch.Pool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

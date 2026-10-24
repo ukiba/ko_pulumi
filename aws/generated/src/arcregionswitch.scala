@@ -51,4 +51,4 @@ object arcregionswitch:
       case None =>
     com.pulumi.aws.arcregionswitch.Plan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

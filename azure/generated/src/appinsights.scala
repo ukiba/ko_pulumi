@@ -13,7 +13,7 @@ object appinsights:
       case None               =>
     com.pulumi.azure.appinsights.AnalyticsItem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights API key. */
   def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object appinsights:
       case None               =>
     com.pulumi.azure.appinsights.ApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AppinsightsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -61,7 +61,7 @@ object appinsights:
       case None =>
     com.pulumi.azure.appinsights.Insights(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights Smart Detection Rule. */
   def SmartDetectionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -72,7 +72,7 @@ object appinsights:
       case None               =>
     com.pulumi.azure.appinsights.SmartDetectionRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Application Insights Standard WebTest. */
   def StandardWebTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object appinsights:
       case None =>
     com.pulumi.azure.appinsights.StandardWebTest(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Application Insights WebTest.
@@ -112,7 +112,7 @@ object appinsights:
       case None =>
     com.pulumi.azure.appinsights.WebTest(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Workbook. */
   def Workbook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,7 +130,7 @@ object appinsights:
       case None =>
     com.pulumi.azure.appinsights.Workbook(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Insights Workbook Template. */
   def WorkbookTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -148,4 +148,4 @@ object appinsights:
       case None =>
     com.pulumi.azure.appinsights.WorkbookTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -64,7 +64,7 @@ object cloudfunctions:
       case None               =>
     com.pulumi.gcp.cloudfunctions.Function(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
@@ -377,7 +377,7 @@ object cloudfunctions:
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamBindingArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
@@ -690,7 +690,7 @@ object cloudfunctions:
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamMemberArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Functions CloudFunction. Each of these resources serves a different use case:
@@ -1003,4 +1003,4 @@ object cloudfunctions:
     val argsBuilder = com.pulumi.gcp.cloudfunctions.FunctionIamPolicyArgs.builder
     com.pulumi.gcp.cloudfunctions.FunctionIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

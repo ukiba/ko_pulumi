@@ -23,7 +23,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.LiteReservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** [Pubsub Lite is deprecated and will be turned down effective March 18, 2026](https://cloud.google.com/pubsub/lite/docs/release-notes#June_17_2024). The resource will be removed in a future major release, please use `gcp.pubsub.Subscription` instead.
@@ -45,7 +45,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.LiteSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** [Pubsub Lite is deprecated and will be turned down effective March 18, 2026](https://cloud.google.com/pubsub/lite/docs/release-notes#June_17_2024). The resource will be removed in a future major release, please use `gcp.pubsub.Topic` instead.
@@ -66,7 +66,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.LiteTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PubsubFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -239,7 +239,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.Schema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
@@ -545,7 +545,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamBindingArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
@@ -851,7 +851,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamMemberArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Schema. Each of these resources serves a different use case:
@@ -1157,7 +1157,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A named resource representing the stream of messages from a single,
@@ -1180,7 +1180,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for pubsub subscription. Each of these resources serves a different use case:
@@ -1431,7 +1431,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for pubsub subscription. Each of these resources serves a different use case:
@@ -1682,7 +1682,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for pubsub subscription. Each of these resources serves a different use case:
@@ -1933,7 +1933,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A named resource to which messages are sent by publishers.
@@ -1955,7 +1955,7 @@ object pubsub:
       case None               =>
     com.pulumi.gcp.pubsub.Topic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
@@ -2261,7 +2261,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
@@ -2567,7 +2567,7 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Pub/Sub Topic. Each of these resources serves a different use case:
@@ -2873,4 +2873,4 @@ object pubsub:
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

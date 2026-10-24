@@ -16,7 +16,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.projects.AccessApprovalSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Apikeys Key resource */
   def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -27,7 +27,7 @@ object projects:
       case None               =>
     com.pulumi.gcp.projects.ApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of Google Cloud Platform project default service accounts.
@@ -50,7 +50,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.DefaultServiceAccountsArgs.builder
     com.pulumi.gcp.projects.DefaultServiceAccounts(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a project. Each of these resources serves a different use case:
@@ -674,7 +674,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IAMAuditConfigArgs.builder
     com.pulumi.gcp.projects.IAMAuditConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a project. Each of these resources serves a different use case:
@@ -1298,7 +1298,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IAMBindingArgs.builder
     com.pulumi.gcp.projects.IAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of a customized Cloud IAM project role. For more information see
@@ -1318,7 +1318,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IAMCustomRoleArgs.builder
     com.pulumi.gcp.projects.IAMCustomRole(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a project. Each of these resources serves a different use case:
@@ -1942,7 +1942,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IAMMemberArgs.builder
     com.pulumi.gcp.projects.IAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a project. Each of these resources serves a different use case:
@@ -2566,7 +2566,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IAMPolicyArgs.builder
     com.pulumi.gcp.projects.IAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Ensures that a member:role pairing does not exist in a project&#39;s IAM policy.
@@ -2594,7 +2594,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.IamMemberRemoveArgs.builder
     com.pulumi.gcp.projects.IamMemberRemove(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of Organization Policies for a Google Cloud Project.
@@ -2612,7 +2612,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.OrganizationPolicyArgs.builder
     com.pulumi.gcp.projects.OrganizationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ProjectsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -3007,7 +3007,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.ServiceArgs.builder
     com.pulumi.gcp.projects.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -3031,7 +3031,7 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.ServiceIdentityArgs.builder
     com.pulumi.gcp.projects.ServiceIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets up a usage export bucket for a particular project.  A usage export bucket
@@ -3051,4 +3051,4 @@ object projects:
     val argsBuilder = com.pulumi.gcp.projects.UsageExportBucketArgs.builder
     com.pulumi.gcp.projects.UsageExportBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

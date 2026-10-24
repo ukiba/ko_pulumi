@@ -49,7 +49,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchange(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
@@ -362,7 +362,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
@@ -675,7 +675,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub DataExchange. Each of these resources serves a different use case:
@@ -988,7 +988,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Bigquery Analytics Hub Data Exchange subscription
@@ -1010,7 +1010,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Bigquery Analytics Hub data exchange listing
@@ -1026,7 +1026,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.Listing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
@@ -1345,7 +1345,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
@@ -1664,7 +1664,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Analytics Hub Listing. Each of these resources serves a different use case:
@@ -1983,7 +1983,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Bigquery Analytics Hub listing subscription
@@ -2002,7 +2002,7 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a BigQuery Query Template within a Data Exchange.
@@ -2021,4 +2021,4 @@ object bigqueryanalyticshub:
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.QueryTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

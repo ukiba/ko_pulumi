@@ -20,7 +20,7 @@ object codedeploy:
       case None =>
     com.pulumi.aws.codedeploy.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeDeploy deployment config for an application */
   def DeploymentConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object codedeploy:
     val argsBuilder = com.pulumi.aws.codedeploy.DeploymentConfigArgs.builder
     com.pulumi.aws.codedeploy.DeploymentConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CodeDeploy Deployment Group for a CodeDeploy Application
@@ -47,4 +47,4 @@ object codedeploy:
       case None =>
     com.pulumi.aws.codedeploy.DeploymentGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

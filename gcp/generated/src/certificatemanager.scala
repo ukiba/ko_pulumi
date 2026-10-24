@@ -24,7 +24,7 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Certificate represents a HTTP-reachable backend for a Certificate.
@@ -43,7 +43,7 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.CertificateIssuanceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * CertificateMap defines a collection of certificate configurations,
@@ -57,7 +57,7 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.CertificateMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * CertificateMapEntry is a list of certificate configurations,
@@ -71,7 +71,7 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.CertificateMapEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CertificatemanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -125,7 +125,7 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.DnsAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * TrustConfig represents a resource that represents your Public Key Infrastructure (PKI) configuration in Certificate Manager for use in mutual TLS authentication scenarios.
@@ -144,4 +144,4 @@ object certificatemanager:
       case None               =>
     com.pulumi.gcp.certificatemanager.TrustConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -10,7 +10,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeArgs.builder
     com.pulumi.gcp.dataplex.AspectType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
@@ -323,7 +323,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
@@ -636,7 +636,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex AspectType. Each of these resources serves a different use case:
@@ -949,7 +949,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AspectTypeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.AspectTypeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Asset resource */
   def Asset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -960,7 +960,7 @@ object dataplex:
       case None               =>
     com.pulumi.gcp.dataplex.Asset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
@@ -1285,7 +1285,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamBindingArgs.builder
     com.pulumi.gcp.dataplex.AssetIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
@@ -1610,7 +1610,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamMemberArgs.builder
     com.pulumi.gcp.dataplex.AssetIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Asset. Each of these resources serves a different use case:
@@ -1935,7 +1935,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.AssetIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.AssetIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** `gcp.dataplex.DataAsset` is deprecated and will be removed in a future major release. Please use `gcp.dataplex.DataProductDataAsset` resource instead.
@@ -1956,7 +1956,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataAssetArgs.builder
     com.pulumi.gcp.dataplex.DataAsset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A data product is a curated collection of data assets, packaged to address
@@ -1973,7 +1973,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductArgs.builder
     com.pulumi.gcp.dataplex.DataProduct(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A data asset resource that can be packaged and shared via a data product.
@@ -1989,7 +1989,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductDataAssetArgs.builder
     com.pulumi.gcp.dataplex.DataProductDataAsset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
@@ -2302,7 +2302,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamBindingArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
@@ -2615,7 +2615,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamMemberArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex DataProduct. Each of these resources serves a different use case:
@@ -2928,7 +2928,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DataProductIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.DataProductIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DataplexFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -3163,7 +3163,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanArgs.builder
     com.pulumi.gcp.dataplex.Datascan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
@@ -3476,7 +3476,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamBindingArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
@@ -3789,7 +3789,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamMemberArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Datascan. Each of these resources serves a different use case:
@@ -4102,7 +4102,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.DatascanIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.DatascanIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An entry represents a data asset for which you capture metadata, such as a BigQuery table.
@@ -4127,7 +4127,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryArgs.builder
     com.pulumi.gcp.dataplex.Entry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Entry Group represents a logical grouping of one or more Entries. */
   def EntryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -4135,7 +4135,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupArgs.builder
     com.pulumi.gcp.dataplex.EntryGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
@@ -4448,7 +4448,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamBindingArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
@@ -4761,7 +4761,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamMemberArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryGroup. Each of these resources serves a different use case:
@@ -5074,7 +5074,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryGroupIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.EntryGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * EntryLink represents a link between two Entries.
@@ -5090,7 +5090,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryLinkArgs.builder
     com.pulumi.gcp.dataplex.EntryLink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Entry Type is a template for creating Entries. */
   def EntryType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -5098,7 +5098,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeArgs.builder
     com.pulumi.gcp.dataplex.EntryType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
@@ -5411,7 +5411,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
@@ -5724,7 +5724,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex EntryType. Each of these resources serves a different use case:
@@ -6037,7 +6037,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.EntryTypeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.EntryTypeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of categories and terms defined by the user. Glossary is a top level resource and is the GCP parent resource of all the categories and terms within it. */
   def Glossary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -6045,7 +6045,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryArgs.builder
     com.pulumi.gcp.dataplex.Glossary(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of categories and terms within a Glossary that are related to each other. */
   def GlossaryCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -6053,7 +6053,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryCategoryArgs.builder
     com.pulumi.gcp.dataplex.GlossaryCategory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
@@ -6366,7 +6366,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamBindingArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
@@ -6679,7 +6679,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamMemberArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Glossary. Each of these resources serves a different use case:
@@ -6992,7 +6992,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.GlossaryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents a collection of terms within a Glossary that are related to each other. */
   def GlossaryTerm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -7000,7 +7000,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.GlossaryTermArgs.builder
     com.pulumi.gcp.dataplex.GlossaryTerm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Lake resource */
   def Lake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -7011,7 +7011,7 @@ object dataplex:
       case None               =>
     com.pulumi.gcp.dataplex.Lake(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
@@ -7324,7 +7324,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamBindingArgs.builder
     com.pulumi.gcp.dataplex.LakeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
@@ -7637,7 +7637,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamMemberArgs.builder
     com.pulumi.gcp.dataplex.LakeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Lake. Each of these resources serves a different use case:
@@ -7950,7 +7950,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.LakeIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.LakeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Dataplex Metadata Feed monitors Dataplex metadata entries in a specified scope and publishes notifications of changes to a Cloud Pub/Sub topic. */
   def MetadataFeed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -7958,7 +7958,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.MetadataFeedArgs.builder
     com.pulumi.gcp.dataplex.MetadataFeed(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Dataplex task represents the work that you want Dataplex to do on a schedule. It encapsulates code, parameters, and the schedule.
@@ -7974,7 +7974,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.TaskArgs.builder
     com.pulumi.gcp.dataplex.Task(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
@@ -8293,7 +8293,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamBindingArgs.builder
     com.pulumi.gcp.dataplex.TaskIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
@@ -8612,7 +8612,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamMemberArgs.builder
     com.pulumi.gcp.dataplex.TaskIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Task. Each of these resources serves a different use case:
@@ -8931,7 +8931,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.TaskIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.TaskIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Dataplex Zone resource */
   def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -8942,7 +8942,7 @@ object dataplex:
       case None               =>
     com.pulumi.gcp.dataplex.Zone(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
@@ -9261,7 +9261,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamBindingArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
@@ -9580,7 +9580,7 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamMemberArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataplex Zone. Each of these resources serves a different use case:
@@ -9899,4 +9899,4 @@ object dataplex:
     val argsBuilder = com.pulumi.gcp.dataplex.ZoneIamPolicyArgs.builder
     com.pulumi.gcp.dataplex.ZoneIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

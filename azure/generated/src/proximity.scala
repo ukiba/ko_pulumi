@@ -20,7 +20,7 @@ object proximity:
       case None =>
     com.pulumi.azure.proximity.PlacementGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ProximityFunctions:
     // Pulumi methods are reproduced as Scala methods.

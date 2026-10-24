@@ -16,7 +16,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.AppProfileArgs.builder
     com.pulumi.gcp.bigquery.AppProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a BI Reservation.
@@ -32,7 +32,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.BiReservationArgs.builder
     com.pulumi.gcp.bigquery.BiReservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BigqueryFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -299,7 +299,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.CapacityCommitmentArgs.builder
     com.pulumi.gcp.bigquery.CapacityCommitment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A connection allows BigQuery connections to external data sources..
@@ -318,7 +318,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionArgs.builder
     com.pulumi.gcp.bigquery.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Connection Connection. Each of these resources serves a different use case:
@@ -631,7 +631,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Connection Connection. Each of these resources serves a different use case:
@@ -944,7 +944,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Connection Connection. Each of these resources serves a different use case:
@@ -1257,7 +1257,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a data transfer configuration. A transfer configuration
@@ -1277,7 +1277,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferConfigArgs.builder
     com.pulumi.gcp.bigquery.DataTransferConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enrolls a BigQuery Data Transfer Service data source in a project, making it available
@@ -1303,7 +1303,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.builder
     com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * BigQuery Data Policy
@@ -1319,7 +1319,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy V2 DataPolicy. Each of these resources serves a different use case:
@@ -1632,7 +1632,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy V2 DataPolicy. Each of these resources serves a different use case:
@@ -1945,7 +1945,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy V2 DataPolicy. Each of these resources serves a different use case:
@@ -2258,7 +2258,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Datasets allow you to organize and control access to your tables.
@@ -2278,7 +2278,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetArgs.builder
     com.pulumi.gcp.bigquery.Dataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Gives dataset access for a single entity. This resource is intended to be used in cases where
@@ -2305,7 +2305,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetAccessArgs.builder
     com.pulumi.gcp.bigquery.DatasetAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery dataset. Each of these resources serves a different use case:
@@ -2899,7 +2899,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamBindingArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery dataset. Each of these resources serves a different use case:
@@ -3493,7 +3493,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamMemberArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery dataset. Each of these resources serves a different use case:
@@ -4087,7 +4087,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Table. Each of these resources serves a different use case:
@@ -4400,7 +4400,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.IamBindingArgs.builder
     com.pulumi.gcp.bigquery.IamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Table. Each of these resources serves a different use case:
@@ -4713,7 +4713,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.IamMemberArgs.builder
     com.pulumi.gcp.bigquery.IamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Table. Each of these resources serves a different use case:
@@ -5026,7 +5026,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.IamPolicyArgs.builder
     com.pulumi.gcp.bigquery.IamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Jobs are actions that BigQuery runs on your behalf to load data, export data, query data, or copy data.
@@ -5043,7 +5043,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.JobArgs.builder
     com.pulumi.gcp.bigquery.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A reservation is a mechanism used to guarantee BigQuery slots to users.
@@ -5062,7 +5062,7 @@ object bigquery:
       case None               =>
     com.pulumi.gcp.bigquery.Reservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The BigqueryReservation Assignment resource.
@@ -5078,7 +5078,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.ReservationAssignmentArgs.builder
     com.pulumi.gcp.bigquery.ReservationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A reservation group is a container for reservations.
@@ -5095,7 +5095,7 @@ object bigquery:
       case None               =>
     com.pulumi.gcp.bigquery.ReservationGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A user-defined function or a stored procedure that belongs to a Dataset
@@ -5111,7 +5111,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineArgs.builder
     com.pulumi.gcp.bigquery.Routine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
@@ -5424,7 +5424,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamBindingArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
@@ -5737,7 +5737,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamMemberArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Routine. Each of these resources serves a different use case:
@@ -6050,7 +6050,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents access on a subset of rows on the specified table, defined by its filter predicate. Access to the subset of rows is controlled by its IAM policy. */
   def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -6058,7 +6058,7 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.RowAccessPolicyArgs.builder
     com.pulumi.gcp.bigquery.RowAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a table resource in a dataset for Google BigQuery. For more information see
@@ -6074,4 +6074,4 @@ object bigquery:
     val argsBuilder = com.pulumi.gcp.bigquery.TableArgs.builder
     com.pulumi.gcp.bigquery.Table(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -19,4 +19,4 @@ object configdeployment:
       case None               =>
     com.pulumi.gcp.configdeployment.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -10,7 +10,7 @@ object route53domains:
     val argsBuilder = com.pulumi.aws.route53domains.DelegationSignerRecordArgs.builder
     com.pulumi.aws.route53domains.DelegationSignerRecord(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a domain. This resource registers, renews and deregisters a domain name. If a domain name&#39;s lifecycle is managed outside of Terraform use the `aws.route53domains.RegisteredDomain` resource instead. */
   def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object route53domains:
       case None =>
     com.pulumi.aws.route53domains.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a domain that has been [registered](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) and associated with the current AWS account. To register, renew and deregister a domain use the `aws.route53domains.Domain` resource instead.
@@ -46,4 +46,4 @@ object route53domains:
       case None =>
     com.pulumi.aws.route53domains.RegisteredDomain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -13,7 +13,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Azure Integration Runtime. */
   def IntegrationRuntimeAzure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.IntegrationRuntimeAzure(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Self-hosted Integration Runtime. */
   def IntegrationRuntimeSelfHosted(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.IntegrationRuntimeSelfHosted(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Linked Service. */
   def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.LinkedService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Managed Private Endpoint. */
   def ManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,7 +57,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.ManagedPrivateEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Private Link Hub. */
   def PrivateLinkHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object synapse:
       case None =>
     com.pulumi.azure.synapse.PrivateLinkHub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Role Assignment. */
   def RoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -83,7 +83,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.RoleAssignmentArgs.builder
     com.pulumi.azure.synapse.RoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Spark Pool. */
   def SparkPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -101,7 +101,7 @@ object synapse:
       case None =>
     com.pulumi.azure.synapse.SparkPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool. */
   def SqlPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object synapse:
       case None =>
     com.pulumi.azure.synapse.SqlPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Extended Auditing Policy. */
   def SqlPoolExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -127,7 +127,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.synapse.SqlPoolExtendedAuditingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for a Synapse SQL Pool. */
   def SqlPoolSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -135,7 +135,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolSecurityAlertPolicyArgs.builder
     com.pulumi.azure.synapse.SqlPoolSecurityAlertPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for a Synapse SQL Pool. */
   def SqlPoolVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -143,7 +143,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Vulnerability Assessment Rule Baseline. */
   def SqlPoolVulnerabilityAssessmentBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -154,7 +154,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.SqlPoolVulnerabilityAssessmentBaseline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Workload Classifier. */
   def SqlPoolWorkloadClassifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -165,7 +165,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.SqlPoolWorkloadClassifier(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse SQL Pool Workload Group. */
   def SqlPoolWorkloadGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -176,7 +176,7 @@ object synapse:
       case None               =>
     com.pulumi.azure.synapse.SqlPoolWorkloadGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SynapseFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -213,7 +213,7 @@ object synapse:
       case None =>
     com.pulumi.azure.synapse.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Active Directory Administrator setting for a Synapse Workspace */
   def WorkspaceAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -221,7 +221,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceAadAdminArgs.builder
     com.pulumi.azure.synapse.WorkspaceAadAdmin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Synapse Workspace Extended Auditing Policy. */
   def WorkspaceExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -229,7 +229,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.synapse.WorkspaceExtendedAuditingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Synapse Workspace keys
@@ -241,7 +241,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceKeyArgs.builder
     com.pulumi.azure.synapse.WorkspaceKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for a Synapse Workspace. */
   def WorkspaceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -249,7 +249,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceSecurityAlertPolicyArgs.builder
     com.pulumi.azure.synapse.WorkspaceSecurityAlertPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Active Directory SQL Administrator setting for a Synapse Workspace */
   def WorkspaceSqlAadAdmin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -257,7 +257,7 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceSqlAadAdminArgs.builder
     com.pulumi.azure.synapse.WorkspaceSqlAadAdmin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for a Synapse Workspace. */
   def WorkspaceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -265,4 +265,4 @@ object synapse:
     val argsBuilder = com.pulumi.azure.synapse.WorkspaceVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.synapse.WorkspaceVulnerabilityAssessment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

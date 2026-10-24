@@ -21,7 +21,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AddressGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Security ProjectAddressGroup. Each of these resources serves a different use case:
@@ -79,7 +79,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AddressGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Security ProjectAddressGroup. Each of these resources serves a different use case:
@@ -137,7 +137,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AddressGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Security ProjectAddressGroup. Each of these resources serves a different use case:
@@ -195,7 +195,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AddressGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AuthorizationPolicy is a resource that specifies how a server should authorize incoming connections. This resource in itself does not change the configuration unless it&#39;s attached to a target https proxy or endpoint config selector resource.
@@ -215,7 +215,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AuthorizationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AuthzPolicy is a resource that allows to forward traffic to a callout backend designed to scan the traffic for security purposes.
@@ -232,7 +232,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.AuthzPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * BackendAuthenticationConfig groups the TrustConfig together with other settings that control how the load balancer authenticates, and expresses its identity to the backend.
@@ -249,7 +249,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.BackendAuthenticationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ClientTlsPolicy is a resource that specifies how a client should authenticate connections to backends of a service. This resource itself does not affect configuration unless it is attached to a backend service resource.
@@ -268,7 +268,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.ClientTlsPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * DNS Armor is a fully-managed service that provides DNS-layer security for your Google Cloud workloads.
@@ -287,7 +287,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.DnsThreatDetector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Firewall endpoint is a Cloud Firewall resource that enables
@@ -315,7 +315,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.FirewallEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Firewall endpoint association links a firewall endpoint to a VPC network in
@@ -344,7 +344,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.FirewallEndpointAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The GatewaySecurityPolicy resource contains a collection of GatewaySecurityPolicyRules and associated metadata.
@@ -361,7 +361,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.GatewaySecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The GatewaySecurityPolicyRule resource is in a nested collection within a GatewaySecurityPolicy and represents
@@ -379,7 +379,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.GatewaySecurityPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A deployment represents a zonal intercept backend ready to accept
@@ -392,7 +392,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptDeploymentArgs.builder
     com.pulumi.gcp.networksecurity.InterceptDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A deployment group aggregates many zonal intercept backends (deployments)
@@ -404,7 +404,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptDeploymentGroupArgs.builder
     com.pulumi.gcp.networksecurity.InterceptDeploymentGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint group is a consumer frontend for a deployment group (backend).
@@ -418,7 +418,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptEndpointGroupArgs.builder
     com.pulumi.gcp.networksecurity.InterceptEndpointGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint group association represents a link between a network and an
@@ -434,7 +434,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociationArgs.builder
     com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A deployment represents a zonal mirroring backend ready to accept
@@ -453,7 +453,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringDeploymentArgs.builder
     com.pulumi.gcp.networksecurity.MirroringDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A deployment group aggregates many zonal mirroring backends (deployments)
@@ -471,7 +471,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringDeploymentGroupArgs.builder
     com.pulumi.gcp.networksecurity.MirroringDeploymentGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint is a managed mirroring collector that provides enhanced packet
@@ -484,7 +484,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint group is a consumer frontend for a deployment group (backend).
@@ -504,7 +504,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointGroupArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpointGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An endpoint group association represents a link between a network and an
@@ -526,7 +526,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociationArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworksecurityFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -595,7 +595,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.SacAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Secure Access Connect Realm resource
@@ -617,7 +617,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.SacRealm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A security profile defines the behavior associated to a profile type.
@@ -636,7 +636,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.SecurityProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A security profile group defines a container for security profiles.
@@ -656,7 +656,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.SecurityProfileGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ServerTlsPolicy is a resource that specifies how a server should authenticate incoming requests. This resource itself does not affect configuration unless it is attached to a target HTTPS proxy or endpoint config selector resource.
@@ -675,7 +675,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.ServerTlsPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The TlsInspectionPolicy resource contains references to CA pools in Certificate Authority Service and associated metadata.
@@ -694,7 +694,7 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.TlsInspectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Mirroring Collector is a logical representation of an appliance that collects
@@ -705,7 +705,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringCollectorArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringCollector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** UllMirroringCollectorRule is a resource that defines what traffic should be mirrored. */
   def UllMirroringCollectorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -713,7 +713,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringCollectorRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Mirroring Engine is a logical representation of the underlying infrastructure
@@ -724,7 +724,7 @@ object networksecurity:
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringEngineArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * UrlList proto helps users to set reusable, independently manageable lists of hosts, host patterns, URLs, URL patterns.
@@ -743,4 +743,4 @@ object networksecurity:
       case None               =>
     com.pulumi.gcp.networksecurity.UrlList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -17,7 +17,7 @@ object rekognition:
       case None =>
     com.pulumi.aws.rekognition.Collection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Rekognition Project. */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object rekognition:
       case None =>
     com.pulumi.aws.rekognition.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Rekognition Stream Processor.
@@ -59,4 +59,4 @@ object rekognition:
       case None =>
     com.pulumi.aws.rekognition.StreamProcessor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

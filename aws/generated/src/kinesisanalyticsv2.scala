@@ -25,7 +25,7 @@ object kinesisanalyticsv2:
       case None =>
     com.pulumi.aws.kinesisanalyticsv2.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Kinesis Analytics v2 Application Snapshot.
@@ -36,4 +36,4 @@ object kinesisanalyticsv2:
     val argsBuilder = com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshotArgs.builder
     com.pulumi.aws.kinesisanalyticsv2.ApplicationSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

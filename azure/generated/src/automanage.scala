@@ -20,4 +20,4 @@ object automanage:
       case None =>
     com.pulumi.azure.automanage.Configuration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

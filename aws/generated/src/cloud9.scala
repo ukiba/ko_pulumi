@@ -20,7 +20,7 @@ object cloud9:
       case None =>
     com.pulumi.aws.cloud9.EnvironmentEC2(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an environment member to an AWS Cloud9 development environment. */
   def EnvironmentMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,4 +28,4 @@ object cloud9:
     val argsBuilder = com.pulumi.aws.cloud9.EnvironmentMembershipArgs.builder
     com.pulumi.aws.cloud9.EnvironmentMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

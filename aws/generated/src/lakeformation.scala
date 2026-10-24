@@ -10,7 +10,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.DataCellsFilterArgs.builder
     com.pulumi.aws.lakeformation.DataCellsFilter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions.
@@ -22,7 +22,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.DataLakeSettingsArgs.builder
     com.pulumi.aws.lakeformation.DataLakeSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Lake Formation Identity Center Configuration. */
   def IdentityCenterConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -30,7 +30,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.IdentityCenterConfigurationArgs.builder
     com.pulumi.aws.lakeformation.IdentityCenterConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LakeformationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -89,7 +89,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.LfTagArgs.builder
     com.pulumi.aws.lakeformation.LfTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation LF Tag Expression. */
   def LfTagExpression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -100,7 +100,7 @@ object lakeformation:
       case None               =>
     com.pulumi.aws.lakeformation.LfTagExpression(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation Opt In. */
   def OptIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,7 +108,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.OptInArgs.builder
     com.pulumi.aws.lakeformation.OptIn(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
@@ -122,7 +122,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.PermissionsArgs.builder
     com.pulumi.aws.lakeformation.Permissions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Registers a Lake Formation resource (e.g., S3 bucket) as managed by the Data Catalog. In other words, the S3 path is added to the data lake.
@@ -137,7 +137,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceArgs.builder
     com.pulumi.aws.lakeformation.Resource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lake Formation Resource LF Tag. */
   def ResourceLfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -145,7 +145,7 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an attachment between one or more existing LF-tags and an existing Lake Formation resource. */
   def ResourceLfTags(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,4 +153,4 @@ object lakeformation:
     val argsBuilder = com.pulumi.aws.lakeformation.ResourceLfTagsArgs.builder
     com.pulumi.aws.lakeformation.ResourceLfTags(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

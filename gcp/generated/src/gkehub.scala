@@ -21,7 +21,7 @@ object gkehub:
       case None               =>
     com.pulumi.gcp.gkehub.Feature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
@@ -337,7 +337,7 @@ object gkehub:
       case None               =>
     com.pulumi.gcp.gkehub.FeatureIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
@@ -653,7 +653,7 @@ object gkehub:
       case None               =>
     com.pulumi.gcp.gkehub.FeatureIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Feature. Each of these resources serves a different use case:
@@ -969,7 +969,7 @@ object gkehub:
       case None               =>
     com.pulumi.gcp.gkehub.FeatureIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Contains information about a GKEHub Feature Memberships. Feature Memberships configure GKEHub Features that apply to specific memberships rather than the project as a whole. The googleGkeHub is the Fleet API. */
   def FeatureMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -977,7 +977,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.FeatureMembershipArgs.builder
     com.pulumi.gcp.gkehub.FeatureMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Fleet contains information about a group of clusters.
@@ -993,7 +993,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.FleetArgs.builder
     com.pulumi.gcp.gkehub.Fleet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GkehubFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1096,7 +1096,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipArgs.builder
     com.pulumi.gcp.gkehub.Membership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * MembershipBinding is a subresource of a Membership, representing what Fleet Scopes (or other, future Fleet resources) a Membership is bound to.
@@ -1112,7 +1112,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
@@ -1425,7 +1425,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
@@ -1738,7 +1738,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamMemberArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Membership. Each of these resources serves a different use case:
@@ -2051,7 +2051,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamPolicyArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * RBACRoleBinding represents a rbacrolebinding across the Fleet.
@@ -2070,7 +2070,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipRbacRoleBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipRbacRoleBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Namespace represents a namespace across the Fleet.
@@ -2086,7 +2086,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.NamespaceArgs.builder
     com.pulumi.gcp.gkehub.Namespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * RolloutSequence defines the desired order of upgrades.
@@ -2102,7 +2102,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.RolloutSequenceArgs.builder
     com.pulumi.gcp.gkehub.RolloutSequence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Scope represents a Scope in a Fleet.
@@ -2118,7 +2118,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeArgs.builder
     com.pulumi.gcp.gkehub.Scope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
@@ -2424,7 +2424,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamBindingArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
@@ -2730,7 +2730,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamMemberArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for GKEHub Scope. Each of these resources serves a different use case:
@@ -3036,7 +3036,7 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamPolicyArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * RBACRoleBinding represents a rbacrolebinding across the Fleet.
@@ -3052,4 +3052,4 @@ object gkehub:
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeRbacRoleBindingArgs.builder
     com.pulumi.gcp.gkehub.ScopeRbacRoleBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

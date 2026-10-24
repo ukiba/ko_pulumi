@@ -66,7 +66,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudAccelerator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Active Azure Spring Cloud Deployment.
@@ -78,7 +78,7 @@ object appplatform:
     val argsBuilder = com.pulumi.azure.appplatform.SpringCloudActiveDeploymentArgs.builder
     com.pulumi.azure.appplatform.SpringCloudActiveDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud API Portal.
@@ -95,7 +95,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudApiPortal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud API Portal Domain.
@@ -112,7 +112,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudApiPortalCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage an Azure Spring Cloud Application.
@@ -127,7 +127,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates a Spring Cloud Application with a CosmosDB Account.
@@ -142,7 +142,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudAppCosmosDBAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is only applicable for Spring Cloud Service enterprise tier
@@ -159,7 +159,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudAppDynamicsApplicationPerformanceMonitoring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates a Spring Cloud Application with a MySQL Database.
@@ -174,7 +174,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudAppMysqlAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates a Spring Cloud Application with a Redis Cache.
@@ -189,7 +189,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudAppRedisAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is only applicable for Spring Cloud Service enterprise tier
@@ -206,7 +206,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudApplicationInsightsApplicationPerformanceMonitoring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is applicable only for Spring Cloud Service with enterprise tier.
@@ -223,7 +223,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudApplicationLiveView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Build Deployment.
@@ -240,7 +240,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudBuildDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Build Pack Binding.
@@ -257,7 +257,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudBuildPackBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Builder.
@@ -274,7 +274,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudBuilder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Spring Cloud Certificate.
@@ -297,7 +297,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Configuration Service.
@@ -314,7 +314,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudConfigurationService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a service connector for spring cloud app.
@@ -329,7 +329,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Container Deployment.
@@ -344,7 +344,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudContainerDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Spring Cloud Custom Domain.
@@ -359,7 +359,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Customized Accelerator.
@@ -374,7 +374,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudCustomizedAccelerator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is applicable only for Spring Cloud Service with enterprise tier.
@@ -391,7 +391,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudDevToolPortal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is only applicable for Spring Cloud Service enterprise tier
@@ -408,7 +408,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudDynatraceApplicationPerformanceMonitoring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is only applicable for Spring Cloud Service enterprise tier
@@ -425,7 +425,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudElasticApplicationPerformanceMonitoring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is applicable only for Spring Cloud Service with enterprise tier.
@@ -442,7 +442,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Gateway Custom Domain.
@@ -459,7 +459,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudGatewayCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Gateway Route Config.
@@ -476,7 +476,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudGatewayRouteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Spring Cloud Deployment with a Java runtime.
@@ -493,7 +493,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudJavaDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** This resource is only applicable for Spring Cloud Service enterprise tier
@@ -510,7 +510,7 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudNewRelicApplicationPerformanceMonitoring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Spring Cloud Service.
@@ -532,7 +532,7 @@ object appplatform:
       case None =>
     com.pulumi.azure.appplatform.SpringCloudService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Spring Cloud Storage.
@@ -547,4 +547,4 @@ object appplatform:
       case None               =>
     com.pulumi.azure.appplatform.SpringCloudStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

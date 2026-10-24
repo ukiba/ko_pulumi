@@ -18,7 +18,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.AddonsConfigArgs.builder
     com.pulumi.gcp.apigee.AddonsConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * To get more information about API proxies see, see:
@@ -49,7 +49,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.Api(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a deployment of an API proxy.
@@ -65,7 +65,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.ApiDeploymentArgs.builder
     com.pulumi.gcp.apigee.ApiDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `ApiProduct` in Apigee.
@@ -84,7 +84,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.ApiProduct(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ApigeeFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -134,7 +134,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.AppGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authorize the Runtime components to access directly with Apigee Control Plane.
@@ -153,7 +153,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.ControlPlaneAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `DataCollector` collects and stores data from the runtime for use in
@@ -171,7 +171,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.DataCollectorArgs.builder
     com.pulumi.gcp.apigee.DataCollector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An analytics datastore for an Apigee organization. Datastores configure
@@ -189,7 +189,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.DatastoreArgs.builder
     com.pulumi.gcp.apigee.Datastore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `Developer` is an API consumer that can have apps registered in Apigee.
@@ -205,7 +205,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.DeveloperArgs.builder
     com.pulumi.gcp.apigee.Developer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an app associated with a developer.
@@ -227,7 +227,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.DeveloperApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Apigee Dns Zone.
@@ -243,7 +243,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.DnsZoneArgs.builder
     com.pulumi.gcp.apigee.DnsZone(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `EndpointAttachment` in Apigee is a resource that facilitates private connectivity between Apigee and backend services using Private Service Connect (PSC).
@@ -261,7 +261,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EndpointAttachmentArgs.builder
     com.pulumi.gcp.apigee.EndpointAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Environment group` in Apigee.
@@ -280,7 +280,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.EnvGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Environment Group attachment` in Apigee.
@@ -296,7 +296,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvGroupAttachmentArgs.builder
     com.pulumi.gcp.apigee.EnvGroupAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Environment KeyStore` in Apigee.
@@ -329,7 +329,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.EnvKeystore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Environment Reference` in Apigee.
@@ -362,7 +362,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.EnvReferences(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Environment` in Apigee.
@@ -381,7 +381,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.Environment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enable/Disable add-ons for an Apigee environment.
@@ -397,7 +397,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentAddonsConfigArgs.builder
     com.pulumi.gcp.apigee.EnvironmentAddonsConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Deploys a specific Apigee API Proxy revision to a given Apigee environment.
@@ -413,7 +413,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentApiRevisionDeploymentArgs.builder
     com.pulumi.gcp.apigee.EnvironmentApiRevisionDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the debug mask singleton for an Apigee environment. The debug mask
@@ -436,7 +436,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.builder
     com.pulumi.gcp.apigee.EnvironmentDebugmask(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
@@ -742,7 +742,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
@@ -1048,7 +1048,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Apigee Environment. Each of these resources serves a different use case:
@@ -1354,7 +1354,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamPolicyArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Collection of key/value string pairs.
@@ -1373,7 +1373,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.EnvironmentKeyvaluemaps(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates key value entries in a key value map scoped to an environment.
@@ -1392,7 +1392,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsEntries(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a sharedflow attachment to a flowhook point.
@@ -1422,7 +1422,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.FlowhookArgs.builder
     com.pulumi.gcp.apigee.Flowhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Instance` is the runtime dataplane in Apigee.
@@ -1441,7 +1441,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Instance attachment` in Apigee.
@@ -1457,7 +1457,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.InstanceAttachmentArgs.builder
     com.pulumi.gcp.apigee.InstanceAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An alias from a key/certificate pair.
@@ -1487,7 +1487,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.builder
     com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An alias from a pkcs12 file.
@@ -1517,7 +1517,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesPkcs12Args.builder
     com.pulumi.gcp.apigee.KeystoresAliasesPkcs12(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Environment Keystore Alias for Self Signed Certificate Format in Apigee
@@ -1533,7 +1533,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.builder
     com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCert(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Apigee NAT (network address translation) address. A NAT address is a static external IP address used for Internet egress traffic. This is not avaible for Apigee hybrid.
@@ -1552,7 +1552,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.NatAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An `Organization` is the top-level container in Apigee.
@@ -1569,7 +1569,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.OrganizationArgs.builder
     com.pulumi.gcp.apigee.Organization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A SecurityAction is rule that can be enforced at an environment level.
@@ -1588,7 +1588,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SecurityActionArgs.builder
     com.pulumi.gcp.apigee.SecurityAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a feedback report from an Advanced API Security customer.
@@ -1605,7 +1605,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SecurityFeedbackArgs.builder
     com.pulumi.gcp.apigee.SecurityFeedback(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Security monitoring condition for risk assessment version 2 in Apigee.
@@ -1621,7 +1621,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SecurityMonitoringConditionArgs.builder
     com.pulumi.gcp.apigee.SecurityMonitoringCondition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Security profile for risk assessment version 2 in Apigee.
@@ -1637,7 +1637,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SecurityProfileV2Args.builder
     com.pulumi.gcp.apigee.SecurityProfileV2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * You can combine policies and resources into a shared flow that you can consume from multiple API proxies, and even from other shared flows. Although it&#39;s like a proxy, a shared flow has no endpoint. It can be used only from an API proxy or shared flow that&#39;s in the same organization as the shared flow itself.
@@ -1656,7 +1656,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.Sharedflow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Deploys a revision of a sharedflow.
@@ -1686,7 +1686,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SharedflowDeploymentArgs.builder
     com.pulumi.gcp.apigee.SharedflowDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Space in Apigee
@@ -1702,7 +1702,7 @@ object apigee:
     val argsBuilder = com.pulumi.gcp.apigee.SpaceArgs.builder
     com.pulumi.gcp.apigee.Space(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authorize the Synchronizer to download environment data from the control plane.
@@ -1721,7 +1721,7 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.SyncAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * TargetServer configuration. TargetServers are used to decouple a proxy TargetEndpoint HTTPTargetConnections from concrete URLs for backend services.
@@ -1740,4 +1740,4 @@ object apigee:
       case None               =>
     com.pulumi.gcp.apigee.TargetServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

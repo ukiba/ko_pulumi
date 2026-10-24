@@ -10,7 +10,7 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.builder
     com.pulumi.aws.shield.ApplicationLayerAutomaticResponse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Shield DRT Access Log Bucket Association.
@@ -21,7 +21,7 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessLogBucketAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authorizes the Shield Response Team (SRT) using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks.
@@ -32,7 +32,7 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessRoleArnAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing a AWS Shield Proactive Engagement.
@@ -43,7 +43,7 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.ProactiveEngagementArgs.builder
     com.pulumi.aws.shield.ProactiveEngagement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables AWS Shield Advanced for a specific AWS resource.
@@ -64,7 +64,7 @@ object shield:
       case None =>
     com.pulumi.aws.shield.Protection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a grouping of protected resources so they can be handled as a collective.
@@ -83,7 +83,7 @@ object shield:
       case None =>
     com.pulumi.aws.shield.ProtectionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an association between a Route53 Health Check and a Shield Advanced protected resource.
@@ -96,7 +96,7 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.builder
     com.pulumi.aws.shield.ProtectionHealthCheckAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ShieldFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -129,4 +129,4 @@ object shield:
     val argsBuilder = com.pulumi.aws.shield.SubscriptionArgs.builder
     com.pulumi.aws.shield.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

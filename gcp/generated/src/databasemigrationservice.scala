@@ -18,7 +18,7 @@ object databasemigrationservice:
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.builder
     com.pulumi.gcp.databasemigrationservice.ConnectionProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A migration job definition.
@@ -34,7 +34,7 @@ object databasemigrationservice:
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.builder
     com.pulumi.gcp.databasemigrationservice.MigrationJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The PrivateConnection resource is used to establish private connectivity between Database Migration Service and a customer&#39;s network.
@@ -50,4 +50,4 @@ object databasemigrationservice:
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.builder
     com.pulumi.gcp.databasemigrationservice.PrivateConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

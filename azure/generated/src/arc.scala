@@ -39,7 +39,7 @@ object arc:
       case None =>
     com.pulumi.azure.arc.PrivateLinkScope(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Resource Bridge Appliance. */
   def ResourceBridgeAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,4 +57,4 @@ object arc:
       case None =>
     com.pulumi.azure.arc.ResourceBridgeAppliance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

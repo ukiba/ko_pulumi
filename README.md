@@ -92,7 +92,7 @@ import jp.ukiba.ko_pulumi.aws.{sns, sqs}
 
 // propagate the logical name (e.g. `order-events`) to physical name and Name tag,
 // when the builder has `name` and `tags` setter method.  Also protect resource in default.
-given KoPulumiConf = KoPulumiConf.PropagateLogicalNameAll.copy(defaultProtect = true)
+given KoPulumiConf = KoPulumiConf.PropagateLogicalNameAll.copy(defaultProtect = Some(true))
 
 val topic = sns.Topic("order-events"):
   _.displayName("Order events")

@@ -17,7 +17,7 @@ object managementgroups:
       case None               =>
     com.pulumi.azure.managementgroups.ManagementGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ManagementgroupsFunctions:
     // Pulumi methods are reproduced as Scala methods.

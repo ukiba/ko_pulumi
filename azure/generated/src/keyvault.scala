@@ -40,7 +40,7 @@ object keyvault:
     val argsBuilder = com.pulumi.azure.keyvault.AccessPolicyArgs.builder
     com.pulumi.azure.keyvault.AccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate. */
   @deprecated("azure.keyvault.Certifiate has been deprecated in favor of azure.keyvault.Certificate") def Certifiate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -58,7 +58,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.Certifiate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -76,7 +76,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Key Vault Certificate Contacts. */
   def CertificateContacts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -84,7 +84,7 @@ object keyvault:
     val argsBuilder = com.pulumi.azure.keyvault.CertificateContactsArgs.builder
     com.pulumi.azure.keyvault.CertificateContacts(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Certificate Issuer. */
   def CertificateIssuer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object keyvault:
       case None               =>
     com.pulumi.azure.keyvault.CertificateIssuer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Key. */
   def Key(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -113,7 +113,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.Key(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Key Vault.
@@ -139,7 +139,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.KeyVault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KeyvaultFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -342,7 +342,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Key Vault Managed Hardware Security Module Key.
@@ -364,7 +364,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed HSM Key rotation policy. */
   def ManagedHardwareSecurityModuleKeyRotationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -372,7 +372,7 @@ object keyvault:
     val argsBuilder = com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyRotationPolicyArgs.builder
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleKeyRotationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Hardware Security Module Role Assignment. */
   def ManagedHardwareSecurityModuleRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -383,7 +383,7 @@ object keyvault:
       case None               =>
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Hardware Security Module Role Definition. This resource works together with Managed hardware security module resource. */
   def ManagedHardwareSecurityModuleRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -394,7 +394,7 @@ object keyvault:
       case None               =>
     com.pulumi.azure.keyvault.ManagedHardwareSecurityModuleRoleDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Storage Account. */
   def ManagedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -412,7 +412,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.ManagedStorageAccount(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Managed Storage Account SAS Definition. */
   def ManagedStorageAccountSasTokenDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -430,7 +430,7 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.ManagedStorageAccountSasTokenDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Key Vault Secret. */
   def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -448,4 +448,4 @@ object keyvault:
       case None =>
     com.pulumi.azure.keyvault.Secret(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

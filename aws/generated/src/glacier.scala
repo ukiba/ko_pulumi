@@ -24,7 +24,7 @@ object glacier:
       case None =>
     com.pulumi.aws.glacier.Vault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Glacier Vault Lock. You can refer to the [Glacier Developer Guide](https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html) for a full explanation of the Glacier Vault Lock functionality.
@@ -40,4 +40,4 @@ object glacier:
     val argsBuilder = com.pulumi.aws.glacier.VaultLockArgs.builder
     com.pulumi.aws.glacier.VaultLock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

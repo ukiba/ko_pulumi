@@ -71,7 +71,7 @@ object cloudasset:
     val argsBuilder = com.pulumi.gcp.cloudasset.FolderFeedArgs.builder
     com.pulumi.gcp.cloudasset.FolderFeed(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a Cloud Asset Inventory feed used to to listen to asset updates.
@@ -87,7 +87,7 @@ object cloudasset:
     val argsBuilder = com.pulumi.gcp.cloudasset.OrganizationFeedArgs.builder
     com.pulumi.gcp.cloudasset.OrganizationFeed(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a Cloud Asset Inventory feed used to to listen to asset updates.
@@ -103,4 +103,4 @@ object cloudasset:
     val argsBuilder = com.pulumi.gcp.cloudasset.ProjectFeedArgs.builder
     com.pulumi.gcp.cloudasset.ProjectFeed(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

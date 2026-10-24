@@ -10,7 +10,7 @@ object maintenance:
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentDedicatedHostArgs.builder
     com.pulumi.azure.maintenance.AssignmentDedicatedHost(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Dynamic Maintenance Assignment.
@@ -33,7 +33,7 @@ object maintenance:
       case None               =>
     com.pulumi.azure.maintenance.AssignmentDynamicScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance assignment to virtual machine. */
   def AssignmentVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -41,7 +41,7 @@ object maintenance:
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentVirtualMachineArgs.builder
     com.pulumi.azure.maintenance.AssignmentVirtualMachine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance assignment to a virtual machine scale set. */
   def AssignmentVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object maintenance:
     val argsBuilder = com.pulumi.azure.maintenance.AssignmentVirtualMachineScaleSetArgs.builder
     com.pulumi.azure.maintenance.AssignmentVirtualMachineScaleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a maintenance configuration. */
   def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object maintenance:
       case None =>
     com.pulumi.azure.maintenance.Configuration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MaintenanceFunctions:
     // Pulumi methods are reproduced as Scala methods.

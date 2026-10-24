@@ -63,7 +63,7 @@ object resiliencehub:
       case None =>
     com.pulumi.aws.resiliencehub.ResiliencyPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 Assertion.
@@ -75,7 +75,7 @@ object resiliencehub:
     val argsBuilder = com.pulumi.aws.resiliencehub.V2AssertionArgs.builder
     com.pulumi.aws.resiliencehub.V2Assertion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 Input Source.
@@ -89,7 +89,7 @@ object resiliencehub:
     val argsBuilder = com.pulumi.aws.resiliencehub.V2InputSourceArgs.builder
     com.pulumi.aws.resiliencehub.V2InputSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 Policy.
@@ -111,7 +111,7 @@ object resiliencehub:
       case None =>
     com.pulumi.aws.resiliencehub.V2Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 Service.
@@ -133,7 +133,7 @@ object resiliencehub:
       case None =>
     com.pulumi.aws.resiliencehub.V2Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 Service Function.
@@ -148,7 +148,7 @@ object resiliencehub:
       case None               =>
     com.pulumi.aws.resiliencehub.V2ServiceFunction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 System.
@@ -170,7 +170,7 @@ object resiliencehub:
       case None =>
     com.pulumi.aws.resiliencehub.V2System(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Resilience Hub V2 User Journey.
@@ -185,4 +185,4 @@ object resiliencehub:
       case None               =>
     com.pulumi.aws.resiliencehub.V2UserJourney(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

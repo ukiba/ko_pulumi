@@ -22,7 +22,7 @@ object serviceusage:
     val argsBuilder = com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.builder
     com.pulumi.gcp.serviceusage.ConsumerQuotaOverride(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Consumer Policy is a set of rules that define what services or service groups can be used for a cloud resource hierarchy.
@@ -56,4 +56,4 @@ object serviceusage:
       case None               =>
     com.pulumi.gcp.serviceusage.V2ConsumerPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -13,7 +13,7 @@ object ecr:
       case None               =>
     com.pulumi.aws.ecr.AccountSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EcrFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -148,7 +148,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.LifecyclePolicyArgs.builder
     com.pulumi.aws.ecr.LifecyclePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Container Registry Pull Through Cache Rule.
@@ -161,7 +161,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.PullThroughCacheRuleArgs.builder
     com.pulumi.aws.ecr.PullThroughCacheRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS ECR (Elastic Container Registry) Pull Time Update Exclusion. */
   def PullTimeUpdateExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -169,7 +169,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.PullTimeUpdateExclusionArgs.builder
     com.pulumi.aws.ecr.PullTimeUpdateExclusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Container Registry Policy.
@@ -181,7 +181,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.RegistryPolicyArgs.builder
     com.pulumi.aws.ecr.RegistryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Scanning Configuration. Can&#39;t be completely deleted, instead reverts to the default `BASIC` scanning configuration without rules. */
   def RegistryScanningConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.RegistryScanningConfigurationArgs.builder
     com.pulumi.aws.ecr.RegistryScanningConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Replication Configuration. */
   def ReplicationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -197,7 +197,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.ReplicationConfigurationArgs.builder
     com.pulumi.aws.ecr.ReplicationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Repository. */
   def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -215,7 +215,7 @@ object ecr:
       case None =>
     com.pulumi.aws.ecr.Repository(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic Container Registry Repository Creation Template. */
   def RepositoryCreationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -223,7 +223,7 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.RepositoryCreationTemplateArgs.builder
     com.pulumi.aws.ecr.RepositoryCreationTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Container Registry Repository Policy.
@@ -235,4 +235,4 @@ object ecr:
     val argsBuilder = com.pulumi.aws.ecr.RepositoryPolicyArgs.builder
     com.pulumi.aws.ecr.RepositoryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

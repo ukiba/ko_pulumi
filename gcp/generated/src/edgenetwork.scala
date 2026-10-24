@@ -18,7 +18,7 @@ object edgenetwork:
     val argsBuilder = com.pulumi.gcp.edgenetwork.InterconnectAttachmentArgs.builder
     com.pulumi.gcp.edgenetwork.InterconnectAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Distributed Cloud Edge network, which provides L3 isolation within a zone.
@@ -34,7 +34,7 @@ object edgenetwork:
     val argsBuilder = com.pulumi.gcp.edgenetwork.NetworkArgs.builder
     com.pulumi.gcp.edgenetwork.Network(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Distributed Cloud Edge subnet, which provides L2 isolation within a network.
@@ -50,4 +50,4 @@ object edgenetwork:
     val argsBuilder = com.pulumi.gcp.edgenetwork.SubnetArgs.builder
     com.pulumi.gcp.edgenetwork.Subnet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

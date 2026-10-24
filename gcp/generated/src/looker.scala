@@ -22,4 +22,4 @@ object looker:
       case None               =>
     com.pulumi.gcp.looker.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

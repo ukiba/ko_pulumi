@@ -19,7 +19,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A datastore resource that can be mounted on a VMware Engine cluster.
@@ -240,7 +240,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.Datastore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * External access firewall rules for filtering incoming traffic destined to `ExternalAddress` resources.
@@ -257,7 +257,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.ExternalAccessRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An allocated external IP address and its corresponding internal IP address in a private cloud.
@@ -274,7 +274,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.ExternalAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides connectivity for VMware Engine private clouds.
@@ -291,7 +291,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.Network(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a network peering resource. Network peerings are global resources.
@@ -308,7 +308,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.NetworkPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a network policy resource. Network policies are regional resources.
@@ -325,7 +325,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.NetworkPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a private cloud resource. Private clouds are zonal resources.
@@ -342,7 +342,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.PrivateCloud(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Subnet in a private cloud. A Private Cloud contains two types of subnets: `management` subnets (such as vMotion) that
@@ -361,7 +361,7 @@ object vmwareengine:
       case None               =>
     com.pulumi.gcp.vmwareengine.Subnet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VmwareengineFunctions:
     // Pulumi methods are reproduced as Scala methods.

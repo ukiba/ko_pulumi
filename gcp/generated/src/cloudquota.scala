@@ -49,7 +49,7 @@ object cloudquota:
     val argsBuilder = com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.builder
     com.pulumi.gcp.cloudquota.SQuotaAdjusterSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * QuotaPreference represents the preferred quota configuration specified for a project, folder or organization. There is only one QuotaPreference resource for a quota value targeting a unique set of dimensions.
@@ -68,4 +68,4 @@ object cloudquota:
       case None               =>
     com.pulumi.gcp.cloudquota.SQuotaPreference(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

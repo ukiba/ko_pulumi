@@ -29,7 +29,7 @@ object codecatalyst:
     val argsBuilder = com.pulumi.aws.codecatalyst.DevEnvironmentArgs.builder
     com.pulumi.aws.codecatalyst.DevEnvironment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CodeCatalyst Project. */
   def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -37,7 +37,7 @@ object codecatalyst:
     val argsBuilder = com.pulumi.aws.codecatalyst.ProjectArgs.builder
     com.pulumi.aws.codecatalyst.Project(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CodeCatalyst Source Repository. */
   def SourceRepository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,4 +48,4 @@ object codecatalyst:
       case None               =>
     com.pulumi.aws.codecatalyst.SourceRepository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

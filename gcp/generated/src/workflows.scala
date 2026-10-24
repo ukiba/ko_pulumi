@@ -21,4 +21,4 @@ object workflows:
       case None               =>
     com.pulumi.gcp.workflows.Workflow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

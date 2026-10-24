@@ -28,7 +28,7 @@ object spanner:
       case None               =>
     com.pulumi.gcp.spanner.BackupSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Spanner Database which is hosted on a Spanner instance.
@@ -53,7 +53,7 @@ object spanner:
       case None               =>
     com.pulumi.gcp.spanner.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner database. Each of these resources serves a different use case:
@@ -607,7 +607,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner database. Each of these resources serves a different use case:
@@ -1161,7 +1161,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner database. Each of these resources serves a different use case:
@@ -1715,7 +1715,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An isolated set of Cloud Spanner resources on which databases can be
@@ -1735,7 +1735,7 @@ object spanner:
       case None               =>
     com.pulumi.gcp.spanner.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A possible configuration for a Cloud Spanner instance. Configurations
@@ -1755,7 +1755,7 @@ object spanner:
       case None               =>
     com.pulumi.gcp.spanner.InstanceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner instance. Each of these resources serves a different use case:
@@ -2028,7 +2028,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMBindingArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner instance. Each of these resources serves a different use case:
@@ -2301,7 +2301,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMMemberArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for a Spanner instance. Each of these resources serves a different use case:
@@ -2574,7 +2574,7 @@ object spanner:
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Spanner instance partition is a unit of Cloud Spanner database capacity
@@ -2594,7 +2594,7 @@ object spanner:
       case None               =>
     com.pulumi.gcp.spanner.InstancePartition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SpannerFunctions:
     // Pulumi methods are reproduced as Scala methods.

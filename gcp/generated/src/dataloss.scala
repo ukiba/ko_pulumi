@@ -18,7 +18,7 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionContentPolicyArgs.builder
     com.pulumi.gcp.dataloss.PreventionContentPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows creation of templates to de-identify content.
@@ -34,7 +34,7 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionDeidentifyTemplateArgs.builder
     com.pulumi.gcp.dataloss.PreventionDeidentifyTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Configuration for discovery to scan resources for profile generation. Only one discovery configuration may exist per organization, folder, or project.
@@ -50,7 +50,7 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionDiscoveryConfigArgs.builder
     com.pulumi.gcp.dataloss.PreventionDiscoveryConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An inspect job template.
@@ -66,7 +66,7 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionInspectTemplateArgs.builder
     com.pulumi.gcp.dataloss.PreventionInspectTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A job trigger configuration.
@@ -82,7 +82,7 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionJobTriggerArgs.builder
     com.pulumi.gcp.dataloss.PreventionJobTrigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows creation of custom info types.
@@ -98,4 +98,4 @@ object dataloss:
     val argsBuilder = com.pulumi.gcp.dataloss.PreventionStoredInfoTypeArgs.builder
     com.pulumi.gcp.dataloss.PreventionStoredInfoType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

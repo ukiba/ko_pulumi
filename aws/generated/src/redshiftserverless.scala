@@ -10,7 +10,7 @@ object redshiftserverless:
     val argsBuilder = com.pulumi.aws.redshiftserverless.CustomDomainAssociationArgs.builder
     com.pulumi.aws.redshiftserverless.CustomDomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Endpoint Access. */
   def EndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,7 +18,7 @@ object redshiftserverless:
     val argsBuilder = com.pulumi.aws.redshiftserverless.EndpointAccessArgs.builder
     com.pulumi.aws.redshiftserverless.EndpointAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new Amazon Redshift Serverless Namespace.
@@ -37,7 +37,7 @@ object redshiftserverless:
       case None =>
     com.pulumi.aws.redshiftserverless.Namespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RedshiftserverlessFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -88,7 +88,7 @@ object redshiftserverless:
     val argsBuilder = com.pulumi.aws.redshiftserverless.ResourcePolicyArgs.builder
     com.pulumi.aws.redshiftserverless.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Snapshot. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -96,7 +96,7 @@ object redshiftserverless:
     val argsBuilder = com.pulumi.aws.redshiftserverless.SnapshotArgs.builder
     com.pulumi.aws.redshiftserverless.Snapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Usage Limit. */
   def UsageLimit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -104,7 +104,7 @@ object redshiftserverless:
     val argsBuilder = com.pulumi.aws.redshiftserverless.UsageLimitArgs.builder
     com.pulumi.aws.redshiftserverless.UsageLimit(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a new Amazon Redshift Serverless Workgroup. */
   def Workgroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,4 +119,4 @@ object redshiftserverless:
       case None =>
     com.pulumi.aws.redshiftserverless.Workgroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

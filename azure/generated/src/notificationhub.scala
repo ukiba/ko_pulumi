@@ -13,7 +13,7 @@ object notificationhub:
       case None               =>
     com.pulumi.azure.notificationhub.AuthorizationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub within a Notification Hub Namespace. */
   def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object notificationhub:
       case None =>
     com.pulumi.azure.notificationhub.Hub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub Namespace. */
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object notificationhub:
       case None =>
     com.pulumi.azure.notificationhub.Namespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NotificationhubFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -39,7 +39,7 @@ object communication:
       case None =>
     com.pulumi.azure.communication.EmailService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain. */
   def EmailServiceDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,7 +57,7 @@ object communication:
       case None =>
     com.pulumi.azure.communication.EmailServiceDomain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain Sender Username. */
   def EmailServiceDomainSenderUsername(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -68,7 +68,7 @@ object communication:
       case None               =>
     com.pulumi.azure.communication.EmailServiceDomainSenderUsername(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Communication Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -86,7 +86,7 @@ object communication:
       case None =>
     com.pulumi.azure.communication.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a communication service email domain association. */
   def ServiceEmailDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -94,4 +94,4 @@ object communication:
     val argsBuilder = com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.builder
     com.pulumi.azure.communication.ServiceEmailDomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

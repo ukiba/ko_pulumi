@@ -21,7 +21,7 @@ object ssmincidents:
       case None =>
     com.pulumi.aws.ssmincidents.ReplicationSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage response plans in AWS Systems Manager Incident Manager.
@@ -43,7 +43,7 @@ object ssmincidents:
       case None =>
     com.pulumi.aws.ssmincidents.ResponsePlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SsmincidentsFunctions:
     // Pulumi methods are reproduced as Scala methods.

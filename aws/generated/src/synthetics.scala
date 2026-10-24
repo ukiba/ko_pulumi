@@ -24,7 +24,7 @@ object synthetics:
       case None =>
     com.pulumi.aws.synthetics.Canary(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Synthetics Group resource. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object synthetics:
       case None =>
     com.pulumi.aws.synthetics.Group(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Synthetics Group Association resource. */
   def GroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object synthetics:
     val argsBuilder = com.pulumi.aws.synthetics.GroupAssociationArgs.builder
     com.pulumi.aws.synthetics.GroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SyntheticsFunctions:
     // Pulumi methods are reproduced as Scala methods.

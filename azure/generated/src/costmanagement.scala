@@ -17,7 +17,7 @@ object costmanagement:
       case None               =>
     com.pulumi.azure.costmanagement.AnomalyAlert(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management Scheduled Action. */
   def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,4 +28,4 @@ object costmanagement:
       case None               =>
     com.pulumi.azure.costmanagement.ScheduledAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

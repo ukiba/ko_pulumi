@@ -29,7 +29,7 @@ object appstream:
     val argsBuilder = com.pulumi.aws.appstream.DirectoryConfigArgs.builder
     com.pulumi.aws.appstream.DirectoryConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppStream fleet. */
   def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object appstream:
       case None =>
     com.pulumi.aws.appstream.Fleet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AppStream Fleet Stack association. */
   def FleetStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object appstream:
     val argsBuilder = com.pulumi.aws.appstream.FleetStackAssociationArgs.builder
     com.pulumi.aws.appstream.FleetStackAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppStream image builder. */
   def ImageBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object appstream:
       case None =>
     com.pulumi.aws.appstream.ImageBuilder(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppStream stack. */
   def Stack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -91,7 +91,7 @@ object appstream:
       case None =>
     com.pulumi.aws.appstream.Stack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppStream user. */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -99,7 +99,7 @@ object appstream:
     val argsBuilder = com.pulumi.aws.appstream.UserArgs.builder
     com.pulumi.aws.appstream.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AppStream User Stack association. */
   def UserStackAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,4 +107,4 @@ object appstream:
     val argsBuilder = com.pulumi.aws.appstream.UserStackAssociationArgs.builder
     com.pulumi.aws.appstream.UserStackAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

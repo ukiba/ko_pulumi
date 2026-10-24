@@ -10,7 +10,7 @@ object vectorsearch:
     val argsBuilder = com.pulumi.gcp.vectorsearch.CollectionArgs.builder
     com.pulumi.gcp.vectorsearch.Collection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A DataObject is a single item of data (with optional vectors) stored in a
@@ -42,7 +42,7 @@ object vectorsearch:
     val argsBuilder = com.pulumi.gcp.vectorsearch.DataObjectArgs.builder
     com.pulumi.gcp.vectorsearch.DataObject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Index defines an approximate nearest-neighbor search structure over a
@@ -53,4 +53,4 @@ object vectorsearch:
     val argsBuilder = com.pulumi.gcp.vectorsearch.IndexArgs.builder
     com.pulumi.gcp.vectorsearch.Index(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

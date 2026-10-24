@@ -21,7 +21,7 @@ object datalineage:
     val argsBuilder = com.pulumi.gcp.datalineage.ConfigArgs.builder
     com.pulumi.gcp.datalineage.Config(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatalineageFunctions:
     // Pulumi methods are reproduced as Scala methods.

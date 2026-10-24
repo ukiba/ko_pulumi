@@ -20,7 +20,7 @@ object rum:
       case None =>
     com.pulumi.aws.rum.AppMonitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch RUM Metrics Destination resource. */
   def MetricsDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,4 +28,4 @@ object rum:
     val argsBuilder = com.pulumi.aws.rum.MetricsDestinationArgs.builder
     com.pulumi.aws.rum.MetricsDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

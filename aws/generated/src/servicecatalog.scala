@@ -24,7 +24,7 @@ object servicecatalog:
       case None =>
     com.pulumi.aws.servicecatalog.AppregistryApplication(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Service Catalog AppRegistry Attribute Group. */
   def AppregistryAttributeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object servicecatalog:
       case None =>
     com.pulumi.aws.servicecatalog.AppregistryAttributeGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Service Catalog AppRegistry Attribute Group Association. */
   def AppregistryAttributeGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociationArgs.builder
     com.pulumi.aws.servicecatalog.AppregistryAttributeGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Budget Resource Association.
@@ -62,7 +62,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.BudgetResourceAssociationArgs.builder
     com.pulumi.aws.servicecatalog.BudgetResourceAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Constraint.
@@ -74,7 +74,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.ConstraintArgs.builder
     com.pulumi.aws.servicecatalog.Constraint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Service Catalog AWS Organizations Access, a portfolio sharing feature through AWS Organizations. This allows Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This resource will prompt AWS to set `organizations:EnableAWSServiceAccess` on your behalf so that your shares can be in sync with any changes in your AWS Organizations structure.
@@ -86,7 +86,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.OrganizationsAccessArgs.builder
     com.pulumi.aws.servicecatalog.OrganizationsAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to create a Service Catalog Portfolio. */
   def Portfolio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -104,7 +104,7 @@ object servicecatalog:
       case None =>
     com.pulumi.aws.servicecatalog.Portfolio(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Portfolio Share. Shares the specified portfolio with the specified account or organization node. You can share portfolios to an organization, an organizational unit, or a specific account.
@@ -122,7 +122,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.PortfolioShareArgs.builder
     com.pulumi.aws.servicecatalog.PortfolioShare(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog Principal Portfolio Association. */
   def PrincipalPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,7 +130,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociationArgs.builder
     com.pulumi.aws.servicecatalog.PrincipalPortfolioAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Product.
@@ -154,7 +154,7 @@ object servicecatalog:
       case None =>
     com.pulumi.aws.servicecatalog.Product(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog Product Portfolio Association. */
   def ProductPortfolioAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -162,7 +162,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.ProductPortfolioAssociationArgs.builder
     com.pulumi.aws.servicecatalog.ProductPortfolioAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource provisions and manages a Service Catalog provisioned product.
@@ -188,7 +188,7 @@ object servicecatalog:
       case None =>
     com.pulumi.aws.servicecatalog.ProvisionedProduct(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Provisioning Artifact for a specified product.
@@ -207,7 +207,7 @@ object servicecatalog:
       case None               =>
     com.pulumi.aws.servicecatalog.ProvisioningArtifact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Service Catalog self-service action. */
   def ServiceAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -218,7 +218,7 @@ object servicecatalog:
       case None               =>
     com.pulumi.aws.servicecatalog.ServiceAction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicecatalogFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -349,7 +349,7 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionArgs.builder
     com.pulumi.aws.servicecatalog.TagOption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Catalog Tag Option Resource Association.
@@ -361,4 +361,4 @@ object servicecatalog:
     val argsBuilder = com.pulumi.aws.servicecatalog.TagOptionResourceAssociationArgs.builder
     com.pulumi.aws.servicecatalog.TagOptionResourceAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

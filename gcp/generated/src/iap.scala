@@ -591,7 +591,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
@@ -1180,7 +1180,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryAgent. Each of these resources serves a different use case:
@@ -1769,7 +1769,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
@@ -2358,7 +2358,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
@@ -2947,7 +2947,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryEndpoint. Each of these resources serves a different use case:
@@ -3536,7 +3536,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
@@ -4113,7 +4113,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
@@ -4690,7 +4690,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistry. Each of these resources serves a different use case:
@@ -5267,7 +5267,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
@@ -5856,7 +5856,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
@@ -6445,7 +6445,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AgentRegistryMcpServer. Each of these resources serves a different use case:
@@ -7034,7 +7034,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
@@ -7623,7 +7623,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
@@ -8212,7 +8212,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineService. Each of these resources serves a different use case:
@@ -8801,7 +8801,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
@@ -9402,7 +9402,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamBindingArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
@@ -10003,7 +10003,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamMemberArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy AppEngineVersion. Each of these resources serves a different use case:
@@ -10604,7 +10604,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamPolicyArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IapFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -11404,7 +11404,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamBindingArgs.builder
     com.pulumi.gcp.iap.LocationWebIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
@@ -11981,7 +11981,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamMemberArgs.builder
     com.pulumi.gcp.iap.LocationWebIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy LocationWeb. Each of these resources serves a different use case:
@@ -12558,7 +12558,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamPolicyArgs.builder
     com.pulumi.gcp.iap.LocationWebIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * IAP settings - manage IAP settings
@@ -12577,7 +12577,7 @@ object iap:
       case None               =>
     com.pulumi.gcp.iap.Settings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Tunnel destination groups represent resources that have the same tunnel access restrictions.
@@ -12593,7 +12593,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
@@ -13183,7 +13183,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamBindingArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
@@ -13773,7 +13773,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamMemberArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelDestGroup. Each of these resources serves a different use case:
@@ -14363,7 +14363,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
@@ -14926,7 +14926,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamBindingArgs.builder
     com.pulumi.gcp.iap.TunnelIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
@@ -15489,7 +15489,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamMemberArgs.builder
     com.pulumi.gcp.iap.TunnelIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Tunnel. Each of these resources serves a different use case:
@@ -16052,7 +16052,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
@@ -16642,7 +16642,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMBindingArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
@@ -17232,7 +17232,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMMemberArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy TunnelInstance. Each of these resources serves a different use case:
@@ -17822,7 +17822,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
@@ -18398,7 +18398,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
@@ -18974,7 +18974,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebBackendService. Each of these resources serves a different use case:
@@ -19550,7 +19550,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
@@ -20139,7 +20139,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
@@ -20728,7 +20728,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebCloudRunService. Each of these resources serves a different use case:
@@ -21317,7 +21317,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
@@ -21893,7 +21893,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
@@ -22469,7 +22469,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebForwardingRuleService. Each of these resources serves a different use case:
@@ -23045,7 +23045,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
@@ -23608,7 +23608,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebIamBindingArgs.builder
     com.pulumi.gcp.iap.WebIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
@@ -24171,7 +24171,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebIamMemberArgs.builder
     com.pulumi.gcp.iap.WebIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy Web. Each of these resources serves a different use case:
@@ -24734,7 +24734,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
@@ -25323,7 +25323,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
@@ -25912,7 +25912,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionBackendService. Each of these resources serves a different use case:
@@ -26501,7 +26501,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
@@ -27090,7 +27090,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
@@ -27679,7 +27679,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebRegionForwardingRuleService. Each of these resources serves a different use case:
@@ -28268,7 +28268,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
@@ -28844,7 +28844,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamBindingArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
@@ -29420,7 +29420,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamMemberArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeAppEngine. Each of these resources serves a different use case:
@@ -29996,7 +29996,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
@@ -30559,7 +30559,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamBindingArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
@@ -31122,7 +31122,7 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamMemberArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Identity-Aware Proxy WebTypeCompute. Each of these resources serves a different use case:
@@ -31685,4 +31685,4 @@ object iap:
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

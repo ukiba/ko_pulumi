@@ -16,7 +16,7 @@ object cloudsecuritycompliance:
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.CloudControlArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.CloudControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Frameworks allow you to monitor and enforce compliance and security requirements. Manage compliance by assigning built-in or custom frameworks to resources.
@@ -30,7 +30,7 @@ object cloudsecuritycompliance:
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.FrameworkArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.Framework(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Framework deployments represent the assignment of a framework to a target resource. Supported target resources are organizations, folders, and projects.
@@ -44,4 +44,4 @@ object cloudsecuritycompliance:
     val argsBuilder = com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeploymentArgs.builder
     com.pulumi.gcp.cloudsecuritycompliance.FrameworkDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

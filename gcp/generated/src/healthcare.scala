@@ -21,7 +21,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.ConsentStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Healthcare ConsentStore. Each of these resources serves a different use case:
@@ -327,7 +327,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Healthcare ConsentStore. Each of these resources serves a different use case:
@@ -633,7 +633,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Healthcare ConsentStore. Each of these resources serves a different use case:
@@ -939,7 +939,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.ConsentStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.ConsentStoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Healthcare `Dataset` is a toplevel logical grouping of `dicomStores`, `fhirStores` and `hl7V2Stores`.
@@ -958,7 +958,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.Dataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -1168,7 +1168,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamBindingArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -1378,7 +1378,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamMemberArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -1588,7 +1588,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DatasetIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.DatasetIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A DicomStore is a datastore inside a Healthcare dataset that conforms to the DICOM
@@ -1608,7 +1608,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.DicomStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -1818,7 +1818,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -2028,7 +2028,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -2238,7 +2238,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.DicomStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.DicomStoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A FhirStore is a datastore inside a Healthcare dataset that conforms to the FHIR (https://www.hl7.org/fhir/STU3/)
@@ -2258,7 +2258,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.FhirStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -2468,7 +2468,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -2678,7 +2678,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -2888,7 +2888,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.FhirStoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.FhirStoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object HealthcareFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -3255,7 +3255,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.Hl7Store(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -3465,7 +3465,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamBindingArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -3675,7 +3675,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamMemberArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** These resources are in beta, and should be used with the terraform-provider-google-beta provider.
@@ -3885,7 +3885,7 @@ object healthcare:
     val argsBuilder = com.pulumi.gcp.healthcare.Hl7StoreIamPolicyArgs.builder
     com.pulumi.gcp.healthcare.Hl7StoreIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * PipelineJobs are Long Running Operations on Healthcare API to Map or Reconcile
@@ -3905,7 +3905,7 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.PipelineJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Data Mapper workspace is used to configure Data Mapper access, permissions and data sources for mapping clinical patient data to the FHIR standard.
@@ -3924,4 +3924,4 @@ object healthcare:
       case None               =>
     com.pulumi.gcp.healthcare.Workspace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

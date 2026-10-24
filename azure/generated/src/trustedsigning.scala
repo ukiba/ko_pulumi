@@ -20,7 +20,7 @@ object trustedsigning:
       case None =>
     com.pulumi.azure.trustedsigning.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object TrustedsigningFunctions:
     // Pulumi methods are reproduced as Scala methods.

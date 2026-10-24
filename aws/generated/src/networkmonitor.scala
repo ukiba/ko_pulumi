@@ -17,7 +17,7 @@ object networkmonitor:
       case None =>
     com.pulumi.aws.networkmonitor.Monitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Network Monitor Probe. */
   def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,4 +32,4 @@ object networkmonitor:
       case None =>
     com.pulumi.aws.networkmonitor.Probe(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

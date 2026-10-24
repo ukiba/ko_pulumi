@@ -53,7 +53,7 @@ object agentregistry:
     val argsBuilder = com.pulumi.gcp.agentregistry.BindingArgs.builder
     com.pulumi.gcp.agentregistry.Binding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Service manages a service in a management boundary */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,4 +61,4 @@ object agentregistry:
     val argsBuilder = com.pulumi.gcp.agentregistry.ServiceArgs.builder
     com.pulumi.gcp.agentregistry.Service(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

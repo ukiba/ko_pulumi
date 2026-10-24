@@ -21,7 +21,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.AgentArgs.builder
     com.pulumi.gcp.diagflow.Agent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A conversation profile configures a set of parameters that control the suggestions made to an agent. These parameters control the suggestions that are surfaced during runtime. Each profile configures either a Dialogflow virtual agent or a human agent for a conversation.
@@ -37,7 +37,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.ConversationProfileArgs.builder
     com.pulumi.gcp.diagflow.ConversationProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Agents are best described as Natural Language Understanding (NLU) modules that transform user requests into actionable data. You can include agents in your app, product, or service to determine user intent and respond to the user in a natural way.
@@ -53,7 +53,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxAgentArgs.builder
     com.pulumi.gcp.diagflow.CxAgent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Entities are extracted from user input and represent parameters that are meaningful to your application.
@@ -70,7 +70,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxEntityTypeArgs.builder
     com.pulumi.gcp.diagflow.CxEntityType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an environment for an agent. You can create multiple versions of your agent and publish them to separate environments.
@@ -88,7 +88,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxEnvironmentArgs.builder
     com.pulumi.gcp.diagflow.CxEnvironment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Flows represents the conversation flows when you build your chatbot agent.
@@ -104,7 +104,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxFlowArgs.builder
     com.pulumi.gcp.diagflow.CxFlow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Settings for Generative AI.
@@ -120,7 +120,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxGenerativeSettingsArgs.builder
     com.pulumi.gcp.diagflow.CxGenerativeSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Generators contain prompt to be sent to the LLM model to generate text. The prompt can contain parameters which will be resolved before calling the model. It can optionally contain banned phrases to ensure the model responses are safe.
@@ -136,7 +136,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxGeneratorArgs.builder
     com.pulumi.gcp.diagflow.CxGenerator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An intent represents a user&#39;s intent to interact with a conversational agent.
@@ -152,7 +152,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxIntentArgs.builder
     com.pulumi.gcp.diagflow.CxIntent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Dialogflow CX conversation (session) can be described and visualized as a state machine. The states of a CX session are represented by pages.
@@ -168,7 +168,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxPageArgs.builder
     com.pulumi.gcp.diagflow.CxPage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Playbook is the basic building block to instruct the LLM how to execute a certain task.
@@ -184,7 +184,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxPlaybookArgs.builder
     com.pulumi.gcp.diagflow.CxPlaybook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents the settings related to security issues, such as data redaction and data retention. It may take hours for updates on the settings to propagate to all the related components and take effect.
@@ -201,7 +201,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxSecuritySettingsArgs.builder
     com.pulumi.gcp.diagflow.CxSecuritySettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * You can use the built-in test feature to uncover bugs and prevent regressions. A test execution verifies that agent responses have not changed for end-user inputs defined in the test case.
@@ -217,7 +217,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxTestCaseArgs.builder
     com.pulumi.gcp.diagflow.CxTestCase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A tool provides a list of actions which are available to the Playbook to attain its goal.
@@ -234,7 +234,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxToolArgs.builder
     com.pulumi.gcp.diagflow.CxTool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Tool version is a snapshot of the tool at certain timestamp.
@@ -250,7 +250,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxToolVersionArgs.builder
     com.pulumi.gcp.diagflow.CxToolVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * You can create multiple versions of your agent flows and deploy them to separate serving environments.
@@ -267,7 +267,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxVersionArgs.builder
     com.pulumi.gcp.diagflow.CxVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Webhooks host the developer&#39;s business logic. During a session, webhooks allow the developer to use the data extracted by Dialogflow&#39;s natural language processing to generate dynamic responses, validate collected data, or trigger actions on the backend.
@@ -283,7 +283,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.CxWebhookArgs.builder
     com.pulumi.gcp.diagflow.CxWebhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Initializes a location-level encryption key specification.
@@ -300,7 +300,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.EncryptionSpecArgs.builder
     com.pulumi.gcp.diagflow.EncryptionSpec(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an entity type. Entity types serve as a tool for extracting parameter values from natural language queries.
@@ -316,7 +316,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.EntityTypeArgs.builder
     com.pulumi.gcp.diagflow.EntityType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an environment for an agent. You can create multiple versions of your agent and publish them to separate environments.
@@ -332,7 +332,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.EnvironmentArgs.builder
     com.pulumi.gcp.diagflow.Environment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * By default, your agent responds to a matched intent with a static response. If you&#39;re using one of the integration options, you can provide a more dynamic response by using fulfillment. When you enable fulfillment for an intent, Dialogflow responds to that intent by calling a service that you define. For example, if an end-user wants to schedule a haircut on Friday, your service can check your database and respond to the end-user with availability information for Friday.
@@ -348,7 +348,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.FulfillmentArgs.builder
     com.pulumi.gcp.diagflow.Fulfillment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * LLM generator.
@@ -364,7 +364,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.GeneratorArgs.builder
     com.pulumi.gcp.diagflow.Generator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Dialogflow intent. Intents convert a number of user expressions or patterns into an action. An action
@@ -381,7 +381,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.IntentArgs.builder
     com.pulumi.gcp.diagflow.Intent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * SipTrunk is the resource that represents a SIP trunk to connect to the Google Telephony Platform SIP trunking service.
@@ -395,7 +395,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.SipTrunkArgs.builder
     com.pulumi.gcp.diagflow.SipTrunk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a list of actions available to a Generator (e.g., OpenAPI call, Function call, Connector call).
@@ -411,7 +411,7 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.ToolArgs.builder
     com.pulumi.gcp.diagflow.Tool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * You can create multiple versions of your agent and publish them to separate environments.
@@ -427,4 +427,4 @@ object diagflow:
     val argsBuilder = com.pulumi.gcp.diagflow.VersionArgs.builder
     com.pulumi.gcp.diagflow.Version(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

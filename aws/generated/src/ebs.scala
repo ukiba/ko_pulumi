@@ -19,7 +19,7 @@ object ebs:
     val argsBuilder = com.pulumi.aws.ebs.DefaultKmsKeyArgs.builder
     com.pulumi.aws.ebs.DefaultKmsKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EbsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -130,7 +130,7 @@ object ebs:
     val argsBuilder = com.pulumi.aws.ebs.EncryptionByDefaultArgs.builder
     com.pulumi.aws.ebs.EncryptionByDefault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an EBS (Elastic Block Storage) Fast Snapshot Restore. */
   def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -138,7 +138,7 @@ object ebs:
     val argsBuilder = com.pulumi.aws.ebs.FastSnapshotRestoreArgs.builder
     com.pulumi.aws.ebs.FastSnapshotRestore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of an EBS Volume. */
   def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,7 +153,7 @@ object ebs:
       case None =>
     com.pulumi.aws.ebs.Snapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the state of the &#34;Block public access for snapshots&#34; setting on region level.
@@ -165,7 +165,7 @@ object ebs:
     val argsBuilder = com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.builder
     com.pulumi.aws.ebs.SnapshotBlockPublicAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of a snapshot. */
   def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -180,7 +180,7 @@ object ebs:
       case None =>
     com.pulumi.aws.ebs.SnapshotCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Imports a disk image from S3 as a Snapshot. */
   def SnapshotImport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -195,7 +195,7 @@ object ebs:
       case None =>
     com.pulumi.aws.ebs.SnapshotImport(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a single EBS volume. */
   def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -210,7 +210,7 @@ object ebs:
       case None =>
     com.pulumi.aws.ebs.Volume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a copy of an existing Amazon EBS volume. */
   def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -225,4 +225,4 @@ object ebs:
       case None =>
     com.pulumi.aws.ebs.VolumeCopy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

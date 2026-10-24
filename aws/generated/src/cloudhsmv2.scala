@@ -47,7 +47,7 @@ object cloudhsmv2:
       case None =>
     com.pulumi.aws.cloudhsmv2.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates an HSM module in Amazon CloudHSM v2 cluster. */
   def Hsm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,4 +55,4 @@ object cloudhsmv2:
     val argsBuilder = com.pulumi.aws.cloudhsmv2.HsmArgs.builder
     com.pulumi.aws.cloudhsmv2.Hsm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -118,7 +118,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryArgs.builder
     com.pulumi.gcp.datacatalog.Entry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** `gcp.datacatalog.EntryGroup` is deprecated and will be removed in a future major release. Use `gcp.dataplex.EntryGroup` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -136,7 +136,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.EntryGroup` is deprecated and will be removed in a future major release. Use `gcp.dataplex.EntryGroup` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -440,7 +440,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.EntryGroup` is deprecated and will be removed in a future major release. Use `gcp.dataplex.EntryGroup` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -744,7 +744,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.EntryGroup` is deprecated and will be removed in a future major release. Use `gcp.dataplex.EntryGroup` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -1048,7 +1048,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.EntryGroupIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.EntryGroupIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Denotes one policy tag in a taxonomy.
@@ -1064,7 +1064,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
@@ -1363,7 +1363,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
@@ -1662,7 +1662,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog PolicyTag. Each of these resources serves a different use case:
@@ -1961,7 +1961,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.PolicyTagIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.PolicyTagIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** `gcp.datacatalog.Tag` is deprecated and will be removed in a future major release. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -1981,7 +1981,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TagArgs.builder
     com.pulumi.gcp.datacatalog.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** `gcp.datacatalog.TagTemplate` is deprecated and will be removed in a future major release. Use `gcp.dataplex.AspectType` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -2000,7 +2000,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.TagTemplate` is deprecated and will be removed in a future major release. Use `gcp.dataplex.AspectType` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -2304,7 +2304,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.TagTemplate` is deprecated and will be removed in a future major release. Use `gcp.dataplex.AspectType` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -2608,7 +2608,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** The parent resource has been deprecated: `gcp.datacatalog.TagTemplate` is deprecated and will be removed in a future major release. Use `gcp.dataplex.AspectType` instead. For steps to transition your Data Catalog users, workloads, and content to Dataplex Catalog, see https://cloud.google.com/dataplex/docs/transition-to-dataplex-catalog.
@@ -2912,7 +2912,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TagTemplateIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.TagTemplateIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A collection of policy tags that classify data along a common axis.
@@ -2928,7 +2928,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyArgs.builder
     com.pulumi.gcp.datacatalog.Taxonomy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
@@ -3229,7 +3229,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamBindingArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
@@ -3530,7 +3530,7 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamMemberArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Data Catalog Taxonomy. Each of these resources serves a different use case:
@@ -3831,4 +3831,4 @@ object datacatalog:
     val argsBuilder = com.pulumi.gcp.datacatalog.TaxonomyIamPolicyArgs.builder
     com.pulumi.gcp.datacatalog.TaxonomyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

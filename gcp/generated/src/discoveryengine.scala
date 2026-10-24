@@ -16,7 +16,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.AclConfigArgs.builder
     com.pulumi.gcp.discoveryengine.AclConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Assistant
@@ -30,7 +30,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.AssistantArgs.builder
     com.pulumi.gcp.discoveryengine.Assistant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex chat and Conversation Engine Chat type
@@ -46,7 +46,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.ChatEngineArgs.builder
     com.pulumi.gcp.discoveryengine.ChatEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * CmekConfig represents configurations used to enable CMEK data encryption with
@@ -61,7 +61,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.CmekConfigArgs.builder
     com.pulumi.gcp.discoveryengine.CmekConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Controls are rules that influence search results.
@@ -77,7 +77,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.ControlArgs.builder
     com.pulumi.gcp.discoveryengine.Control(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * DataConnector manages the connection to external data sources for all data stores grouped
@@ -96,7 +96,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataConnectorArgs.builder
     com.pulumi.gcp.discoveryengine.DataConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Data store is a collection of websites and documents used to find answers for
@@ -114,7 +114,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataStoreArgs.builder
     com.pulumi.gcp.discoveryengine.DataStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DiscoveryengineFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -187,7 +187,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.LicenseConfigArgs.builder
     com.pulumi.gcp.discoveryengine.LicenseConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI Search recommendation apps.
@@ -203,7 +203,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.builder
     com.pulumi.gcp.discoveryengine.RecommendationEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Schema defines the structure and layout of a type of document data.
@@ -219,7 +219,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SchemaArgs.builder
     com.pulumi.gcp.discoveryengine.Schema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Vertex AI Search and Conversation can be used to create a search engine or a chat application by connecting it with a datastore
@@ -235,7 +235,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngine(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Discovery Engine SearchEngine. Each of these resources serves a different use case:
@@ -554,7 +554,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Discovery Engine SearchEngine. Each of these resources serves a different use case:
@@ -873,7 +873,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Discovery Engine SearchEngine. Each of these resources serves a different use case:
@@ -1192,7 +1192,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a serving config which is a singleton resource under engine. A default
@@ -1223,7 +1223,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.ServingConfigArgs.builder
     com.pulumi.gcp.discoveryengine.ServingConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sitemap is a file where you provide information about the pages, videos, and
@@ -1238,7 +1238,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.SitemapArgs.builder
     com.pulumi.gcp.discoveryengine.Sitemap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * TargetSite represents a URI pattern that the users want to confine their
@@ -1253,7 +1253,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.TargetSiteArgs.builder
     com.pulumi.gcp.discoveryengine.TargetSite(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a user store.
@@ -1267,7 +1267,7 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.UserStoreArgs.builder
     com.pulumi.gcp.discoveryengine.UserStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a WidgetConfig.
@@ -1281,4 +1281,4 @@ object discoveryengine:
     val argsBuilder = com.pulumi.gcp.discoveryengine.WidgetConfigArgs.builder
     com.pulumi.gcp.discoveryengine.WidgetConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

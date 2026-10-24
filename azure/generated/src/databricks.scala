@@ -20,7 +20,7 @@ object databricks:
       case None =>
     com.pulumi.azure.databricks.AccessConnector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatabricksFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -74,7 +74,7 @@ object databricks:
       case None               =>
     com.pulumi.azure.databricks.VirtualNetworkPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object databricks:
       case None =>
     com.pulumi.azure.databricks.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
   def WorkspaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -100,7 +100,7 @@ object databricks:
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for the Databricks Workspaces Root Databricks File System (DBFS) */
   def WorkspaceRootDbfsCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,4 +108,4 @@ object databricks:
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

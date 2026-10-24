@@ -39,7 +39,7 @@ object emrcontainers:
       case None =>
     com.pulumi.aws.emrcontainers.JobTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EMR Containers (EMR on EKS) Virtual Cluster. */
   def VirtualCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,4 +57,4 @@ object emrcontainers:
       case None =>
     com.pulumi.aws.emrcontainers.VirtualCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

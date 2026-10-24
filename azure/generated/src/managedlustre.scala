@@ -20,4 +20,4 @@ object managedlustre:
       case None =>
     com.pulumi.azure.managedlustre.FileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

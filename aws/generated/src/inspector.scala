@@ -13,7 +13,7 @@ object inspector:
       case None               =>
     com.pulumi.aws.inspector.AssessmentTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Inspector Classic Assessment Template */
   def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object inspector:
       case None =>
     com.pulumi.aws.inspector.AssessmentTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object InspectorFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -73,4 +73,4 @@ object inspector:
       case None =>
     com.pulumi.aws.inspector.ResourceGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

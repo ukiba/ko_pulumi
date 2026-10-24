@@ -83,7 +83,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.ConfigurationFeature(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure App Configuration Key.
@@ -102,7 +102,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.ConfigurationKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure App Configuration.
@@ -128,7 +128,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.ConfigurationStore(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Gateway for Containers (ALB). */
   def LicationLoadBalancer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -146,7 +146,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.LicationLoadBalancer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Gateway for Containers Frontend. */
   def LicationLoadBalancerFrontend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -164,7 +164,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.LicationLoadBalancerFrontend(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Load Balancer Security Policy. */
   def LicationLoadBalancerSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -182,7 +182,7 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.LicationLoadBalancerSecurityPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an association between an Application Gateway for Containers and a Subnet. */
   def LicationLoadBalancerSubnetAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -200,4 +200,4 @@ object appconfiguration:
       case None =>
     com.pulumi.azure.appconfiguration.LicationLoadBalancerSubnetAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

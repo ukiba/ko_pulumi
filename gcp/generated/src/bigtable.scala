@@ -16,7 +16,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.AppProfileArgs.builder
     com.pulumi.gcp.bigtable.AppProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a Google Cloud Bigtable authorized view inside a table. For more information see
@@ -36,7 +36,7 @@ object bigtable:
       case None               =>
     com.pulumi.gcp.bigtable.AuthorizedView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BigtableFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -230,7 +230,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.GCPolicyArgs.builder
     com.pulumi.gcp.bigtable.GCPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a Google Bigtable instance. For more information see:
@@ -247,7 +247,7 @@ object bigtable:
       case None               =>
     com.pulumi.gcp.bigtable.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable instances. Each of these resources serves a different use case:
@@ -500,7 +500,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamBindingArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable instances. Each of these resources serves a different use case:
@@ -753,7 +753,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamMemberArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable instances. Each of these resources serves a different use case:
@@ -1006,7 +1006,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.InstanceIamPolicyArgs.builder
     com.pulumi.gcp.bigtable.InstanceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A logical view object that can be referenced in SQL queries.
@@ -1020,7 +1020,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.LogicalViewArgs.builder
     com.pulumi.gcp.bigtable.LogicalView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A materialized view object that can be referenced in SQL queries.
@@ -1034,7 +1034,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.MaterializedViewArgs.builder
     com.pulumi.gcp.bigtable.MaterializedView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A schema bundle object that can be referenced in SQL queries.
@@ -1048,7 +1048,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.SchemaBundleArgs.builder
     com.pulumi.gcp.bigtable.SchemaBundle(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a Google Cloud Bigtable table inside an instance. For more information see
@@ -1063,7 +1063,7 @@ object bigtable:
       case None               =>
     com.pulumi.gcp.bigtable.Table(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable tables. Each of these resources serves a different use case:
@@ -1322,7 +1322,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamBindingArgs.builder
     com.pulumi.gcp.bigtable.TableIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable tables. Each of these resources serves a different use case:
@@ -1581,7 +1581,7 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamMemberArgs.builder
     com.pulumi.gcp.bigtable.TableIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on bigtable tables. Each of these resources serves a different use case:
@@ -1840,4 +1840,4 @@ object bigtable:
     val argsBuilder = com.pulumi.gcp.bigtable.TableIamPolicyArgs.builder
     com.pulumi.gcp.bigtable.TableIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

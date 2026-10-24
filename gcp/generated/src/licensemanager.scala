@@ -10,4 +10,4 @@ object licensemanager:
     val argsBuilder = com.pulumi.gcp.licensemanager.ConfigurationArgs.builder
     com.pulumi.gcp.licensemanager.Configuration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

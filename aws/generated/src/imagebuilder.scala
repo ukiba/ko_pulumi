@@ -20,7 +20,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.Component(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Container Recipe. */
   def ContainerRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.ContainerRecipe(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Distribution Configuration. */
   def DistributionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.DistributionConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Image. */
   def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.Image(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Image Builder Image Pipeline.
@@ -103,7 +103,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.ImagePipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Image Recipe. */
   def ImageRecipe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -121,7 +121,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.ImageRecipe(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ImagebuilderFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -302,7 +302,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.InfrastructureConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Image Builder Lifecycle Policy. */
   def LifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -320,7 +320,7 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.LifecyclePolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS EC2 Image Builder Workflow.
@@ -342,4 +342,4 @@ object imagebuilder:
       case None =>
     com.pulumi.aws.imagebuilder.Workflow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

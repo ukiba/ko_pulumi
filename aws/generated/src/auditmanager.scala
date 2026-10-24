@@ -10,7 +10,7 @@ object auditmanager:
     val argsBuilder = com.pulumi.aws.auditmanager.AccountRegistrationArgs.builder
     com.pulumi.aws.auditmanager.AccountRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment. */
   def Assessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object auditmanager:
       case None =>
     com.pulumi.aws.auditmanager.Assessment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment Delegation. */
   def AssessmentDelegation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object auditmanager:
     val argsBuilder = com.pulumi.aws.auditmanager.AssessmentDelegationArgs.builder
     com.pulumi.aws.auditmanager.AssessmentDelegation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Assessment Report. */
   def AssessmentReport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object auditmanager:
       case None               =>
     com.pulumi.aws.auditmanager.AssessmentReport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AuditmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -96,7 +96,7 @@ object auditmanager:
       case None =>
     com.pulumi.aws.auditmanager.Control(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Framework. */
   def Framework(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -114,7 +114,7 @@ object auditmanager:
       case None =>
     com.pulumi.aws.auditmanager.Framework(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Audit Manager Framework Share. */
   def FrameworkShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object auditmanager:
     val argsBuilder = com.pulumi.aws.auditmanager.FrameworkShareArgs.builder
     com.pulumi.aws.auditmanager.FrameworkShare(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing AWS Audit Manager Organization Admin Account Registration. */
   def OrganizationAdminAccountRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -130,4 +130,4 @@ object auditmanager:
     val argsBuilder = com.pulumi.aws.auditmanager.OrganizationAdminAccountRegistrationArgs.builder
     com.pulumi.aws.auditmanager.OrganizationAdminAccountRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

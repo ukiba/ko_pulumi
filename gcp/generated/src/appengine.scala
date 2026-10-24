@@ -39,7 +39,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationArgs.builder
     com.pulumi.gcp.appengine.Application(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Rules to match an HTTP request and dispatch that request to a service.
@@ -53,7 +53,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.builder
     com.pulumi.gcp.appengine.ApplicationUrlDispatchRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A domain serving an App Engine application.
@@ -69,7 +69,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.DomainMappingArgs.builder
     com.pulumi.gcp.appengine.DomainMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Traffic routing configuration for versions within a single service. Traffic splits define how traffic directed to the service is assigned to versions.
@@ -83,7 +83,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.EngineSplitTrafficArgs.builder
     com.pulumi.gcp.appengine.EngineSplitTraffic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A single firewall rule that is evaluated against incoming traffic
@@ -100,7 +100,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.FirewallRuleArgs.builder
     com.pulumi.gcp.appengine.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Flexible App Version resource to create a new version of flexible GAE Application. Based on Google Compute Engine,
@@ -122,7 +122,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.FlexibleAppVersionArgs.builder
     com.pulumi.gcp.appengine.FlexibleAppVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A NetworkSettings resource is a container for ingress settings for a version or service.
@@ -136,7 +136,7 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.builder
     com.pulumi.gcp.appengine.ServiceNetworkSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Standard App Version resource to create a new version of standard GAE Application.
@@ -155,4 +155,4 @@ object appengine:
     val argsBuilder = com.pulumi.gcp.appengine.StandardAppVersionArgs.builder
     com.pulumi.gcp.appengine.StandardAppVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

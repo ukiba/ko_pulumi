@@ -14,7 +14,7 @@ object licensemanager:
     val argsBuilder = com.pulumi.aws.licensemanager.AssociationArgs.builder
     com.pulumi.aws.licensemanager.Association(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a License Manager license configuration resource.
@@ -36,7 +36,7 @@ object licensemanager:
       case None =>
     com.pulumi.aws.licensemanager.LicenseConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a License Manager grant. This allows for sharing licenses with other AWS accounts. */
   def LicenseGrant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object licensemanager:
       case None               =>
     com.pulumi.aws.licensemanager.LicenseGrant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Accepts a License Manager grant. This allows for sharing licenses with other aws accounts. */
   def LicenseGrantAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object licensemanager:
     val argsBuilder = com.pulumi.aws.licensemanager.LicenseGrantAccepterArgs.builder
     com.pulumi.aws.licensemanager.LicenseGrantAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LicensemanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.

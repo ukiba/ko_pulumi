@@ -29,7 +29,7 @@ object grafana:
     val argsBuilder = com.pulumi.aws.grafana.LicenseAssociationArgs.builder
     com.pulumi.aws.grafana.LicenseAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace role association resource. */
   def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -37,7 +37,7 @@ object grafana:
     val argsBuilder = com.pulumi.aws.grafana.RoleAssociationArgs.builder
     com.pulumi.aws.grafana.RoleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace resource. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object grafana:
       case None =>
     com.pulumi.aws.grafana.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace API Key resource. */
   def WorkspaceApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object grafana:
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceApiKeyArgs.builder
     com.pulumi.aws.grafana.WorkspaceApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon Managed Grafana workspace SAML configuration resource. */
   def WorkspaceSamlConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object grafana:
     val argsBuilder = com.pulumi.aws.grafana.WorkspaceSamlConfigurationArgs.builder
     com.pulumi.aws.grafana.WorkspaceSamlConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** You cannot update a service account. If you change any attribute, Terraform
@@ -87,7 +87,7 @@ object grafana:
       case None               =>
     com.pulumi.aws.grafana.WorkspaceServiceAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** You cannot update a service account token. If you change any attribute, Terraform
@@ -103,4 +103,4 @@ object grafana:
       case None               =>
     com.pulumi.aws.grafana.WorkspaceServiceAccountToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

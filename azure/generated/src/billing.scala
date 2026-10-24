@@ -13,7 +13,7 @@ object billing:
       case None               =>
     com.pulumi.azure.billing.AccountCostManagementExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BillingFunctions:
     // Pulumi methods are reproduced as Scala methods.

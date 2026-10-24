@@ -20,7 +20,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.Activation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates an SSM Document to an instance or EC2 tag. */
   def Association(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.Association(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Terraform resource for managing a Contacts Rotation in AWS Systems Manager Incident Manager.
@@ -60,7 +60,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.ContactsRotation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for registering an AWS Systems Manager Default Patch Baseline. */
   def DefaultPatchBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -68,7 +68,7 @@ object ssm:
     val argsBuilder = com.pulumi.aws.ssm.DefaultPatchBaselineArgs.builder
     com.pulumi.aws.ssm.DefaultPatchBaseline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SSM Document resource
@@ -91,7 +91,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.Document(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window resource */
   def MaintenanceWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -109,7 +109,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.MaintenanceWindow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window Target resource */
   def MaintenanceWindowTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -120,7 +120,7 @@ object ssm:
       case None               =>
     com.pulumi.aws.ssm.MaintenanceWindowTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Maintenance Window Task resource */
   def MaintenanceWindowTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object ssm:
       case None               =>
     com.pulumi.aws.ssm.MaintenanceWindowTask(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SSM Parameter resource.
@@ -153,7 +153,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.Parameter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SSM Patch Baseline resource.
@@ -177,7 +177,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.PatchBaseline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SSM Patch Group resource */
   def PatchGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -185,7 +185,7 @@ object ssm:
     val argsBuilder = com.pulumi.aws.ssm.PatchGroupArgs.builder
     com.pulumi.aws.ssm.PatchGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSM Quick Setup Configuration Manager. */
   def QuicksetupConfigurationManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -203,7 +203,7 @@ object ssm:
       case None =>
     com.pulumi.aws.ssm.QuicksetupConfigurationManager(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SSM resource data sync. */
   def ResourceDataSync(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -214,7 +214,7 @@ object ssm:
       case None               =>
     com.pulumi.aws.ssm.ResourceDataSync(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This setting defines how a user interacts with or uses a service or a feature of a service. */
   def ServiceSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object ssm:
     val argsBuilder = com.pulumi.aws.ssm.ServiceSettingArgs.builder
     com.pulumi.aws.ssm.ServiceSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SsmFunctions:
     // Pulumi methods are reproduced as Scala methods.

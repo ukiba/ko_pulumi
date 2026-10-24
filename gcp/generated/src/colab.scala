@@ -37,7 +37,7 @@ object colab:
     val argsBuilder = com.pulumi.gcp.colab.NotebookExecutionArgs.builder
     com.pulumi.gcp.colab.NotebookExecution(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#39;A runtime is a Google-provisioned virtual machine (VM) that can run the code in your notebook (IPYNB file).&#39;
@@ -56,7 +56,7 @@ object colab:
       case None               =>
     com.pulumi.gcp.colab.Runtime(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#39;A runtime template is a VM configuration that specifies a machine type and other characteristics of the VM,
@@ -77,7 +77,7 @@ object colab:
       case None               =>
     com.pulumi.gcp.colab.RuntimeTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
@@ -390,7 +390,7 @@ object colab:
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
@@ -703,7 +703,7 @@ object colab:
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Colab Enterprise RuntimeTemplate. Each of these resources serves a different use case:
@@ -1016,7 +1016,7 @@ object colab:
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamPolicyArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#39;Colab Enterprise Notebook Execution Schedules.&#39;
@@ -1032,4 +1032,4 @@ object colab:
     val argsBuilder = com.pulumi.gcp.colab.ScheduleArgs.builder
     com.pulumi.gcp.colab.Schedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

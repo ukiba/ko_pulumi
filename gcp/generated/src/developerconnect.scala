@@ -10,7 +10,7 @@ object developerconnect:
     val argsBuilder = com.pulumi.gcp.developerconnect.AccountConnectorArgs.builder
     com.pulumi.gcp.developerconnect.AccountConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A connection for GitHub, GitHub Enterprise, GitLab, and GitLab Enterprise.
@@ -26,7 +26,7 @@ object developerconnect:
     val argsBuilder = com.pulumi.gcp.developerconnect.ConnectionArgs.builder
     com.pulumi.gcp.developerconnect.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A git repository link to a parent connection.
@@ -42,7 +42,7 @@ object developerconnect:
     val argsBuilder = com.pulumi.gcp.developerconnect.GitRepositoryLinkArgs.builder
     com.pulumi.gcp.developerconnect.GitRepositoryLink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def InsightsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,4 +50,4 @@ object developerconnect:
     val argsBuilder = com.pulumi.gcp.developerconnect.InsightsConfigArgs.builder
     com.pulumi.gcp.developerconnect.InsightsConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

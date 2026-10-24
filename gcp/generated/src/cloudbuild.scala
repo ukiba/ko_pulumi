@@ -18,7 +18,7 @@ object cloudbuild:
     val argsBuilder = com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.builder
     com.pulumi.gcp.cloudbuild.BitbucketServerConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CloudbuildFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -94,7 +94,7 @@ object cloudbuild:
       case None               =>
     com.pulumi.gcp.cloudbuild.Trigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Definition of custom Cloud Build WorkerPools for running jobs with custom configuration and custom networking. */
   def WorkerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -105,4 +105,4 @@ object cloudbuild:
       case None               =>
     com.pulumi.gcp.cloudbuild.WorkerPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

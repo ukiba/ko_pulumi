@@ -10,7 +10,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.BgpPeerArgs.builder
     com.pulumi.aws.directconnect.BgpPeer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Connection of Direct Connect. */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.Connection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Direct Connect Connection with a LAG. */
   def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionAssociationArgs.builder
     com.pulumi.aws.directconnect.ConnectionAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a confirmation of the creation of the specified hosted connection on an interconnect. */
   def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionConfirmationArgs.builder
     com.pulumi.aws.directconnect.ConnectionConfirmation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DirectconnectFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -149,7 +149,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.Gateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associates a Direct Connect Gateway with a VGW or transit gateway.
@@ -163,7 +163,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the `aws.directconnect.GatewayAssociation` resource. */
   def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -171,7 +171,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociationProposal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects. Intended for use by AWS Direct Connect Partners only. */
   def HostedConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -182,7 +182,7 @@ object directconnect:
       case None               =>
     com.pulumi.aws.directconnect.HostedConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Direct Connect hosted private virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
@@ -196,7 +196,7 @@ object directconnect:
       case None               =>
     com.pulumi.aws.directconnect.HostedPrivateVirtualInterface(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted private virtual interface.
@@ -214,7 +214,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Direct Connect hosted public virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
@@ -228,7 +228,7 @@ object directconnect:
       case None               =>
     com.pulumi.aws.directconnect.HostedPublicVirtualInterface(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted public virtual interface.
@@ -246,7 +246,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Direct Connect hosted transit virtual interface resource.
@@ -261,7 +261,7 @@ object directconnect:
       case None               =>
     com.pulumi.aws.directconnect.HostedTransitVirtualInterface(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted transit virtual interface.
@@ -281,7 +281,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Direct Connect LAG. Connections can be added to the LAG via the `aws.directconnect.Connection` and `aws.directconnect.ConnectionAssociation` resources.
@@ -303,7 +303,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.LinkAggregationGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MAC Security (MACSec) secret key resource for use with Direct Connect. See [MACsec prerequisites](https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites) for information about MAC Security (MACsec) prerequisites.
@@ -318,7 +318,7 @@ object directconnect:
     val argsBuilder = com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.builder
     com.pulumi.aws.directconnect.MacsecKeyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect private virtual interface resource. */
   def PrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -336,7 +336,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.PrivateVirtualInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect public virtual interface resource. */
   def PublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -354,7 +354,7 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.PublicVirtualInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Direct Connect transit virtual interface resource.
@@ -375,4 +375,4 @@ object directconnect:
       case None =>
     com.pulumi.aws.directconnect.TransitVirtualInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

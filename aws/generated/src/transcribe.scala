@@ -21,7 +21,7 @@ object transcribe:
       case None =>
     com.pulumi.aws.transcribe.LanguageModel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transcribe MedicalVocabulary. */
   def MedicalVocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,7 +36,7 @@ object transcribe:
       case None =>
     com.pulumi.aws.transcribe.MedicalVocabulary(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transcribe Vocabulary. */
   def Vocabulary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -51,7 +51,7 @@ object transcribe:
       case None =>
     com.pulumi.aws.transcribe.Vocabulary(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Transcribe VocabularyFilter. */
   def VocabularyFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -66,4 +66,4 @@ object transcribe:
       case None =>
     com.pulumi.aws.transcribe.VocabularyFilter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

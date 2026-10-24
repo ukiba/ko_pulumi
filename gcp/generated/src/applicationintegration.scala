@@ -19,7 +19,7 @@ object applicationintegration:
     val argsBuilder = com.pulumi.gcp.applicationintegration.AuthConfigArgs.builder
     com.pulumi.gcp.applicationintegration.AuthConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Application Integration Client.
@@ -36,4 +36,4 @@ object applicationintegration:
     val argsBuilder = com.pulumi.gcp.applicationintegration.ClientArgs.builder
     com.pulumi.gcp.applicationintegration.Client(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

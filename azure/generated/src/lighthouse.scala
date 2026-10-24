@@ -13,7 +13,7 @@ object lighthouse:
       case None               =>
     com.pulumi.azure.lighthouse.Assignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a [Lighthouse](https://docs.microsoft.com/azure/lighthouse) Definition. */
   def Definition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,4 +24,4 @@ object lighthouse:
       case None               =>
     com.pulumi.azure.lighthouse.Definition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

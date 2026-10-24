@@ -17,4 +17,4 @@ object codegurureviewer:
       case None =>
     com.pulumi.aws.codegurureviewer.RepositoryAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

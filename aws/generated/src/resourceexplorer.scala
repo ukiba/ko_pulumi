@@ -17,7 +17,7 @@ object resourceexplorer:
       case None =>
     com.pulumi.aws.resourceexplorer.Index(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ResourceexplorerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -54,4 +54,4 @@ object resourceexplorer:
       case None =>
     com.pulumi.aws.resourceexplorer.View(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

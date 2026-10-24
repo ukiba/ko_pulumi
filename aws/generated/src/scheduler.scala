@@ -19,7 +19,7 @@ object scheduler:
       case None               =>
     com.pulumi.aws.scheduler.Schedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge Scheduler Schedule Group resource.
@@ -43,4 +43,4 @@ object scheduler:
       case None =>
     com.pulumi.aws.scheduler.ScheduleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

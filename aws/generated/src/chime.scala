@@ -10,7 +10,7 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.SdkvoiceGlobalSettingsArgs.builder
     com.pulumi.aws.chime.SdkvoiceGlobalSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A ChimeSDKVoice SIP Media Application is a managed object that passes values from a SIP rule to a target AWS Lambda function. */
   def SdkvoiceSipMediaApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object chime:
       case None =>
     com.pulumi.aws.chime.SdkvoiceSipMediaApplication(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A SIP rule associates your SIP media application with a phone number or a Request URI hostname. You can associate a SIP rule with more than one SIP media application. Each application then runs only that rule. */
   def SdkvoiceSipRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -39,7 +39,7 @@ object chime:
       case None               =>
     com.pulumi.aws.chime.SdkvoiceSipRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Chime SDK Voice Profile Domain. */
   def SdkvoiceVoiceProfileDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,7 +57,7 @@ object chime:
       case None =>
     com.pulumi.aws.chime.SdkvoiceVoiceProfileDomain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to connect your phone system to the telephone network at a substantial cost savings by using SIP trunking. */
   def VoiceConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object chime:
       case None =>
     com.pulumi.aws.chime.VoiceConnector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon Chime Voice Connector group under the administrator&#39;s AWS account. You can associate Amazon Chime Voice Connectors with the Amazon Chime Voice Connector group by including VoiceConnectorItems in the request.
@@ -90,7 +90,7 @@ object chime:
       case None               =>
     com.pulumi.aws.chime.VoiceConnectorGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs. */
   def VoiceConnectorLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.VoiceConnectorLoggingArgs.builder
     com.pulumi.aws.chime.VoiceConnectorLogging(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enable origination settings to control inbound calling to your SIP infrastructure. */
   def VoiceConnectorOrigination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -106,7 +106,7 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.VoiceConnectorOriginationArgs.builder
     com.pulumi.aws.chime.VoiceConnectorOrigination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Amazon Kinesis.
@@ -117,7 +117,7 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.VoiceConnectorStreamingArgs.builder
     com.pulumi.aws.chime.VoiceConnectorStreaming(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enable Termination settings to control outbound calling from your SIP infrastructure. */
   def VoiceConnectorTermination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -125,7 +125,7 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.VoiceConnectorTerminationArgs.builder
     com.pulumi.aws.chime.VoiceConnectorTermination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds termination SIP credentials for the specified Amazon Chime Voice Connector.
@@ -137,4 +137,4 @@ object chime:
     val argsBuilder = com.pulumi.aws.chime.VoiceConnectorTerminationCredentialsArgs.builder
     com.pulumi.aws.chime.VoiceConnectorTerminationCredentials(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

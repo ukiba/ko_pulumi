@@ -17,7 +17,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.Connect(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Connect Peer. */
   def ConnectPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.ConnectPeer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Association. */
   def DefaultRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -40,7 +40,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.DefaultRouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS EC2 Transit Gateway Default Route Table Propagation. */
   def DefaultRouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagationArgs.builder
     com.pulumi.aws.ec2transitgateway.DefaultRouteTablePropagation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Ec2transitgatewayFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -286,7 +286,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.InstanceConnectEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EC2 instance state resource. This allows managing an instance power state.
@@ -298,7 +298,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.InstanceStateArgs.builder
     com.pulumi.aws.ec2transitgateway.InstanceState(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Metering Policy for Flexible Cost Allocation (FCA). A metering policy defines how traffic is metered for cost allocation purposes on a Transit Gateway. */
   def MeteringPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -313,7 +313,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.MeteringPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Metering Policy Entry. Each entry defines a traffic matching rule within a Transit Gateway Metering Policy that determines which account is charged for matching traffic flows. */
   def MeteringPolicyEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -321,7 +321,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MeteringPolicyEntryArgs.builder
     com.pulumi.aws.ec2transitgateway.MeteringPolicyEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Multicast Domain. */
   def MulticastDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -336,7 +336,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.MulticastDomain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates the specified subnet and transit gateway attachment with the specified transit gateway multicast domain. */
   def MulticastDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -344,7 +344,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastDomainAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastDomainAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Registers members (network interfaces) with the transit gateway multicast group.
@@ -355,7 +355,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastGroupMemberArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastGroupMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Registers sources (network interfaces) with the transit gateway multicast group.
@@ -366,7 +366,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.MulticastGroupSourceArgs.builder
     com.pulumi.aws.ec2transitgateway.MulticastGroupSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an EC2 Transit Gateway Peering Attachment.
@@ -384,7 +384,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.PeeringAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the accepter&#39;s side of an EC2 Transit Gateway Peering Attachment. */
   def PeeringAttachmentAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -399,7 +399,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.PeeringAttachmentAccepter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table. */
   def PolicyTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -414,7 +414,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.PolicyTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table association. */
   def PolicyTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -422,7 +422,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.PolicyTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Policy Table Entry. Each entry defines a traffic matching rule within a Transit Gateway Policy Table that routes matching traffic to a specified transit gateway route table, enabling Policy-Based Routing (PBR). */
   def PolicyTableEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -430,7 +430,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PolicyTableEntryArgs.builder
     com.pulumi.aws.ec2transitgateway.PolicyTableEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Prefix List Reference. */
   def PrefixListReference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -438,7 +438,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.PrefixListReferenceArgs.builder
     com.pulumi.aws.ec2transitgateway.PrefixListReference(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route. */
   def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -446,7 +446,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteArgs.builder
     com.pulumi.aws.ec2transitgateway.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table. */
   def RouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -461,7 +461,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.RouteTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table association. */
   def RouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -469,7 +469,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteTableAssociationArgs.builder
     com.pulumi.aws.ec2transitgateway.RouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway Route Table propagation. */
   def RouteTablePropagation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -477,7 +477,7 @@ object ec2transitgateway:
     val argsBuilder = com.pulumi.aws.ec2transitgateway.RouteTablePropagationArgs.builder
     com.pulumi.aws.ec2transitgateway.RouteTablePropagation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway. */
   def TransitGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -492,7 +492,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.TransitGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EC2 Transit Gateway VPC Attachment. For examples of custom route table association and propagation, see the EC2 Transit Gateway Networking Examples Guide. */
   def VpcAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -507,7 +507,7 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.VpcAttachment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the accepter&#39;s side of an EC2 Transit Gateway VPC Attachment.
@@ -530,4 +530,4 @@ object ec2transitgateway:
       case None =>
     com.pulumi.aws.ec2transitgateway.VpcAttachmentAccepter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

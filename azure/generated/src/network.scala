@@ -27,7 +27,7 @@ object network:
       case None =>
     com.pulumi.azure.network.ApplicationGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Security Group. */
   def ApplicationSecurityGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -45,7 +45,7 @@ object network:
       case None =>
     com.pulumi.azure.network.ApplicationSecurityGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bgp Connection for a Virtual Hub. */
   def BgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.BgpConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AzureNetwork DDoS Protection Plan.
@@ -80,7 +80,7 @@ object network:
       case None =>
     com.pulumi.azure.network.DdosProtectionPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute circuit. */
   def ExpressRouteCircuit(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object network:
       case None =>
     com.pulumi.azure.network.ExpressRouteCircuit(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Circuit Authorization. */
   def ExpressRouteCircuitAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -109,7 +109,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.ExpressRouteCircuitAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Express Route Circuit Connection. */
   def ExpressRouteCircuitConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -120,7 +120,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.ExpressRouteCircuitConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Circuit Peering. */
   def ExpressRouteCircuitPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -128,7 +128,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.ExpressRouteCircuitPeeringArgs.builder
     com.pulumi.azure.network.ExpressRouteCircuitPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Express Route Connection.
@@ -143,7 +143,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.ExpressRouteConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute gateway. */
   def ExpressRouteGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object network:
       case None =>
     com.pulumi.azure.network.ExpressRouteGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Express Route Port. */
   def ExpressRoutePort(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -179,7 +179,7 @@ object network:
       case None =>
     com.pulumi.azure.network.ExpressRoutePort(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an ExpressRoute Port Authorization. */
   def ExpressRoutePortAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -190,7 +190,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.ExpressRoutePortAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Firewall. */
   def Firewall(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -208,7 +208,7 @@ object network:
       case None =>
     com.pulumi.azure.network.Firewall(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Application Rule Collection within an Azure Firewall. */
   def FirewallApplicationRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -219,7 +219,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.FirewallApplicationRuleCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Rule Collection within an Azure Firewall. */
   def FirewallNatRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -230,7 +230,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.FirewallNatRuleCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Rule Collection within an Azure Firewall. */
   def FirewallNetworkRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -241,7 +241,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.FirewallNetworkRuleCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Policy. */
   def FirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -259,7 +259,7 @@ object network:
       case None =>
     com.pulumi.azure.network.FirewallPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Policy Rule Collection Group. */
   def FirewallPolicyRuleCollectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -270,7 +270,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.FirewallPolicyRuleCollectionGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IP group that contains a list of CIDRs and/or IP addresses. */
   def IPGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -288,7 +288,7 @@ object network:
       case None =>
     com.pulumi.azure.network.IPGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages IP Group CIDR records.
@@ -302,7 +302,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.IPGroupCIDRArgs.builder
     com.pulumi.azure.network.IPGroupCIDR(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a local network gateway connection over which specific connections can be configured. */
   def LocalNetworkGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -320,7 +320,7 @@ object network:
       case None =>
     com.pulumi.azure.network.LocalNetworkGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure NAT Gateway. */
   def NatGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -338,7 +338,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NatGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Gateway Public IP Address association. */
   def NatGatewayPublicIpAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -346,7 +346,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NatGatewayPublicIpAssociationArgs.builder
     com.pulumi.azure.network.NatGatewayPublicIpAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a NAT Gateway Public IP Prefix association. */
   def NatGatewayPublicIpPrefixAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -354,7 +354,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NatGatewayPublicIpPrefixAssociationArgs.builder
     com.pulumi.azure.network.NatGatewayPublicIpPrefixAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Connection Monitor.
@@ -376,7 +376,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkConnectionMonitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1143,7 +1143,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkInterface(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Application Gateway&#39;s Backend Address Pool. */
   def NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1151,7 +1151,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceApplicationGatewayBackendAddressPoolAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceApplicationGatewayBackendAddressPoolAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Application Security Group. */
   def NetworkInterfaceApplicationSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1159,7 +1159,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceApplicationSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceApplicationSecurityGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Load Balancer&#39;s Backend Address Pool. */
   def NetworkInterfaceBackendAddressPoolAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1167,7 +1167,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceBackendAddressPoolAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceBackendAddressPoolAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Load Balancer&#39;s NAT Rule. */
   def NetworkInterfaceNatRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1175,7 +1175,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceNatRuleAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceNatRuleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the association between a Network Interface and a Network Security Group. */
   def NetworkInterfaceSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1183,7 +1183,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkInterfaceSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.NetworkInterfaceSecurityGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager. */
   def NetworkManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1201,7 +1201,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkManager(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Admin Rule. */
   def NetworkManagerAdminRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1212,7 +1212,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerAdminRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Admin Rule Collection. */
   def NetworkManagerAdminRuleCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1223,7 +1223,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerAdminRuleCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Connectivity Configuration.
@@ -1238,7 +1238,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerConnectivityConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Deployment.
@@ -1250,7 +1250,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.NetworkManagerDeploymentArgs.builder
     com.pulumi.azure.network.NetworkManagerDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager IP Address Management (IPAM) Pool. */
   def NetworkManagerIpamPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1268,7 +1268,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkManagerIpamPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager IPAM Pool Static CIDR. */
   def NetworkManagerIpamPoolStaticCidr(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1279,7 +1279,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerIpamPoolStaticCidr(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Management Group Connection which may cross tenants. */
   def NetworkManagerManagementGroupConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1290,7 +1290,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerManagementGroupConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Network Group. */
   def NetworkManagerNetworkGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1301,7 +1301,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerNetworkGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Routing Configuration. */
   def NetworkManagerRoutingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1312,7 +1312,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerRoutingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Routing Rule.
@@ -1327,7 +1327,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerRoutingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Manager Routing Rule Collection.
@@ -1342,7 +1342,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerRoutingRuleCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Scope Connection which may cross tenants. */
   def NetworkManagerScopeConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1353,7 +1353,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerScopeConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Security Admin Configuration. */
   def NetworkManagerSecurityAdminConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1364,7 +1364,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerSecurityAdminConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Static Member. */
   def NetworkManagerStaticMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1375,7 +1375,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerStaticMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Subscription Connection which may cross tenants. */
   def NetworkManagerSubscriptionConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1386,7 +1386,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerSubscriptionConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Verifier Workspace. */
   def NetworkManagerVerifierWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1404,7 +1404,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkManagerVerifierWorkspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Manager Verifier Workspace Reachability Analysis Intent. */
   def NetworkManagerVerifierWorkspaceReachabilityAnalysisIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1415,7 +1415,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkManagerVerifierWorkspaceReachabilityAnalysisIntent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a network security group that contains a list of network security rules.  Network security groups enable inbound or outbound traffic to be enabled or denied.
@@ -1439,7 +1439,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkSecurityGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter. */
   def NetworkSecurityPerimeter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1457,7 +1457,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkSecurityPerimeter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Access Rule. */
   def NetworkSecurityPerimeterAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1468,7 +1468,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkSecurityPerimeterAccessRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Association. */
   def NetworkSecurityPerimeterAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1479,7 +1479,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkSecurityPerimeterAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Security Perimeter Profile. */
   def NetworkSecurityPerimeterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1490,7 +1490,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkSecurityPerimeterProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Security Rule.
@@ -1507,7 +1507,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.NetworkSecurityRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Watcher. */
   def NetworkWatcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1525,7 +1525,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkWatcher(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Network Watcher Flow Log.
@@ -1547,7 +1547,7 @@ object network:
       case None =>
     com.pulumi.azure.network.NetworkWatcherFlowLog(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Point-to-Site VPN Gateway. */
   def PointToPointVpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1565,7 +1565,7 @@ object network:
       case None =>
     com.pulumi.azure.network.PointToPointVpnGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Profile. */
   def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1583,7 +1583,7 @@ object network:
       case None =>
     com.pulumi.azure.network.Profile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Public IP Address.
@@ -1605,7 +1605,7 @@ object network:
       case None =>
     com.pulumi.azure.network.PublicIp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Public IP Prefix. */
   def PublicIpPrefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1623,7 +1623,7 @@ object network:
       case None =>
     com.pulumi.azure.network.PublicIpPrefix(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Route within a Route Table.
@@ -1640,7 +1640,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route Filter. */
   def RouteFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1658,7 +1658,7 @@ object network:
       case None =>
     com.pulumi.azure.network.RouteFilter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route Map. */
   def RouteMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1669,7 +1669,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.RouteMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Route Server */
   def RouteServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1687,7 +1687,7 @@ object network:
       case None =>
     com.pulumi.azure.network.RouteServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bgp Connection for a Route Server */
   def RouteServerBgpConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1698,7 +1698,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.RouteServerBgpConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Route Table
@@ -1721,7 +1721,7 @@ object network:
       case None =>
     com.pulumi.azure.network.RouteTable(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub Routing Intent. */
   def RoutingIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1732,7 +1732,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.RoutingIntent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Partner Provider which could be associated to virtual hub. */
   def SecurityPartnerProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1750,7 +1750,7 @@ object network:
       case None =>
     com.pulumi.azure.network.SecurityPartnerProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a subnet. Subnets represent network segments within the IP space defined by the virtual network.
@@ -1767,7 +1767,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.Subnet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a NAT Gateway with a Subnet within a Virtual Network. */
   def SubnetNatGatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1775,7 +1775,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.SubnetNatGatewayAssociationArgs.builder
     com.pulumi.azure.network.SubnetNatGatewayAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Network Security Group with a Subnet within a Virtual Network. */
   def SubnetNetworkSecurityGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1783,7 +1783,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.SubnetNetworkSecurityGroupAssociationArgs.builder
     com.pulumi.azure.network.SubnetNetworkSecurityGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Route Table with a Subnet within a Virtual Network. */
   def SubnetRouteTableAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1791,7 +1791,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.SubnetRouteTableAssociationArgs.builder
     com.pulumi.azure.network.SubnetRouteTableAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subnet Service Endpoint Storage Policy. */
   def SubnetServiceEndpointStoragePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1809,7 +1809,7 @@ object network:
       case None =>
     com.pulumi.azure.network.SubnetServiceEndpointStoragePolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Endpoint within a Traffic Manager Profile. */
   def TrafficManagerAzureEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1820,7 +1820,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.TrafficManagerAzureEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an External Endpoint within a Traffic Manager Profile. */
   def TrafficManagerExternalEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1831,7 +1831,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.TrafficManagerExternalEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Nested Endpoint within a Traffic Manager Profile. */
   def TrafficManagerNestedEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1842,7 +1842,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.TrafficManagerNestedEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Traffic Manager Profile to which multiple endpoints can be attached. */
   def TrafficManagerProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1860,7 +1860,7 @@ object network:
       case None =>
     com.pulumi.azure.network.TrafficManagerProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub within a Virtual WAN. */
   def VirtualHub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1878,7 +1878,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VirtualHub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Connection for a Virtual Hub. */
   def VirtualHubConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1889,7 +1889,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualHubConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Hub IP. This resource is also known as a Route Server.
@@ -1904,7 +1904,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualHubIp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Hub Route Table. */
   def VirtualHubRouteTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1915,7 +1915,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualHubRouteTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Route in a Virtual Hub Route Table.
@@ -1930,7 +1930,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualHubRouteTableRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a virtual network including any configured subnets. Each subnet can
@@ -1957,7 +1957,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VirtualNetwork(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the DNS servers associated with a virtual network.
@@ -1970,7 +1970,7 @@ object network:
     val argsBuilder = com.pulumi.azure.network.VirtualNetworkDnsServersArgs.builder
     com.pulumi.azure.network.VirtualNetworkDnsServers(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Network Gateway to establish secure, cross-premises connectivity.
@@ -1992,7 +1992,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VirtualNetworkGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a connection in an existing Virtual Network Gateway. */
   def VirtualNetworkGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2010,7 +2010,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VirtualNetworkGatewayConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Network Gateway Nat Rule. */
   def VirtualNetworkGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2021,7 +2021,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualNetworkGatewayNatRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a virtual network peering which allows resources to access other
@@ -2035,7 +2035,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VirtualNetworkPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual WAN. */
   def VirtualWan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2053,7 +2053,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VirtualWan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway NAT Rule. */
   def VnpGatewayNatRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2064,7 +2064,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VnpGatewayNatRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway within a Virtual Hub, which enables Site-to-Site communication. */
   def VpnGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2082,7 +2082,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VpnGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Gateway Connection. */
   def VpnGatewayConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2093,7 +2093,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VpnGatewayConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Server Configuration. */
   def VpnServerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2111,7 +2111,7 @@ object network:
       case None =>
     com.pulumi.azure.network.VpnServerConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Server Configuration Policy Group. */
   def VpnServerConfigurationPolicyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2122,7 +2122,7 @@ object network:
       case None               =>
     com.pulumi.azure.network.VpnServerConfigurationPolicyGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a VPN Site. */
   def VpnSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -2140,4 +2140,4 @@ object network:
       case None =>
     com.pulumi.azure.network.VpnSite(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -29,4 +29,4 @@ object cloudcontrol:
     val argsBuilder = com.pulumi.aws.cloudcontrol.ResourceArgs.builder
     com.pulumi.aws.cloudcontrol.Resource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

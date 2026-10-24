@@ -13,7 +13,7 @@ object paloalto:
       case None               =>
     com.pulumi.azure.paloalto.LocalRulestack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Certificate. */
   def LocalRulestackCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object paloalto:
       case None               =>
     com.pulumi.azure.paloalto.LocalRulestackCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack FQDN List. */
   def LocalRulestackFqdnList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object paloalto:
       case None               =>
     com.pulumi.azure.paloalto.LocalRulestackFqdnList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Outbound Trust Certificate Association. */
   def LocalRulestackOutboundTrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -43,7 +43,7 @@ object paloalto:
     val argsBuilder = com.pulumi.azure.paloalto.LocalRulestackOutboundTrustCertificateAssociationArgs.builder
     com.pulumi.azure.paloalto.LocalRulestackOutboundTrustCertificateAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Networks Rulestack Outbound Untrust Certificate Association. */
   def LocalRulestackOutboundUntrustCertificateAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -51,7 +51,7 @@ object paloalto:
     val argsBuilder = com.pulumi.azure.paloalto.LocalRulestackOutboundUntrustCertificateAssociationArgs.builder
     com.pulumi.azure.paloalto.LocalRulestackOutboundUntrustCertificateAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack Prefix List. */
   def LocalRulestackPrefixList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,7 +62,7 @@ object paloalto:
       case None               =>
     com.pulumi.azure.paloalto.LocalRulestackPrefixList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Local Rulestack Rule. */
   def LocalRulestackRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -80,7 +80,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.LocalRulestackRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall VHub Local Rulestack. */
   def NextGenerationFirewallVirtualHubLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubLocalRulestack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall VHub Panorama. */
   def NextGenerationFirewallVirtualHubPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -116,7 +116,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubPanorama(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Hub Strata Cloud Manager. */
   def NextGenerationFirewallVirtualHubStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -134,7 +134,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualHubStrataCloudManager(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Deployed in a Virtual Network and configured via a Local Rulestack. */
   def NextGenerationFirewallVirtualNetworkLocalRulestack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -152,7 +152,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkLocalRulestack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Network Panorama. */
   def NextGenerationFirewallVirtualNetworkPanorama(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,7 +170,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkPanorama(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Palo Alto Next Generation Firewall Virtual Network Strata Cloud Manager. */
   def NextGenerationFirewallVirtualNetworkStrataCloudManager(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -188,7 +188,7 @@ object paloalto:
       case None =>
     com.pulumi.azure.paloalto.NextGenerationFirewallVirtualNetworkStrataCloudManager(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PaloaltoFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -218,4 +218,4 @@ object paloalto:
       case None               =>
     com.pulumi.azure.paloalto.VirtualNetworkAppliance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

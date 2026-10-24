@@ -17,7 +17,7 @@ object location:
       case None =>
     com.pulumi.aws.location.GeofenceCollection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LocationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -123,7 +123,7 @@ object location:
       case None =>
     com.pulumi.aws.location.Map(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Place Index. */
   def PlaceIndex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -138,7 +138,7 @@ object location:
       case None =>
     com.pulumi.aws.location.PlaceIndex(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Route Calculator. */
   def RouteCalculation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -153,7 +153,7 @@ object location:
       case None =>
     com.pulumi.aws.location.RouteCalculation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Location Service Tracker. */
   def Tracker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object location:
       case None =>
     com.pulumi.aws.location.Tracker(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Location Tracker Association. */
   def TrackerAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -176,4 +176,4 @@ object location:
     val argsBuilder = com.pulumi.aws.location.TrackerAssociationArgs.builder
     com.pulumi.aws.location.TrackerAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

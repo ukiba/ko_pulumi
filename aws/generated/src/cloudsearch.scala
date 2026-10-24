@@ -17,7 +17,7 @@ object cloudsearch:
       case None               =>
     com.pulumi.aws.cloudsearch.Domain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an CloudSearch domain service access policy resource.
@@ -29,4 +29,4 @@ object cloudsearch:
     val argsBuilder = com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.builder
     com.pulumi.aws.cloudsearch.DomainServiceAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

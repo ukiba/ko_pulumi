@@ -13,7 +13,7 @@ object desktopvirtualization:
       case None               =>
     com.pulumi.azure.desktopvirtualization.Application(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Application Group. */
   def ApplicationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object desktopvirtualization:
       case None =>
     com.pulumi.azure.desktopvirtualization.ApplicationGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DesktopvirtualizationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -82,7 +82,7 @@ object desktopvirtualization:
     val argsBuilder = com.pulumi.azure.desktopvirtualization.GetHostPoolRegistrationInfoArgs.builder
     com.pulumi.azure.desktopvirtualization.GetHostPoolRegistrationInfo(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Host Pool. */
   def HostPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -100,7 +100,7 @@ object desktopvirtualization:
       case None =>
     com.pulumi.azure.desktopvirtualization.HostPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Desktop Scaling Plan.
@@ -134,7 +134,7 @@ object desktopvirtualization:
       case None =>
     com.pulumi.azure.desktopvirtualization.ScalingPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Virtual Desktop Scaling Plan Host Pool Association.
@@ -154,7 +154,7 @@ object desktopvirtualization:
     val argsBuilder = com.pulumi.azure.desktopvirtualization.ScalingPlanHostPoolAssociationArgs.builder
     com.pulumi.azure.desktopvirtualization.ScalingPlanHostPoolAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Workspace. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -172,7 +172,7 @@ object desktopvirtualization:
       case None =>
     com.pulumi.azure.desktopvirtualization.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Desktop Workspace Application Group Association. */
   def WorkspaceApplicationGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -180,4 +180,4 @@ object desktopvirtualization:
     val argsBuilder = com.pulumi.azure.desktopvirtualization.WorkspaceApplicationGroupAssociationArgs.builder
     com.pulumi.azure.desktopvirtualization.WorkspaceApplicationGroupAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

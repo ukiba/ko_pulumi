@@ -24,7 +24,7 @@ object essentialcontacts:
     val argsBuilder = com.pulumi.gcp.essentialcontacts.ContactArgs.builder
     com.pulumi.gcp.essentialcontacts.Contact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The first-class citizen for Document AI. Each processor defines how to extract structural information from a document.
@@ -40,7 +40,7 @@ object essentialcontacts:
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiProcessorArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiProcessor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The default version for the processor. Deleting this resource is a no-op, and does not unset the default version. */
   def DocumentAiProcessorDefaultVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object essentialcontacts:
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiProcessorDefaultVersionArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiProcessorDefaultVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A document schema is used to define document structure.
@@ -64,7 +64,7 @@ object essentialcontacts:
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseDocumentSchemaArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseDocumentSchema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A location is used to initialize a project.
@@ -80,4 +80,4 @@ object essentialcontacts:
     val argsBuilder = com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseLocationArgs.builder
     com.pulumi.gcp.essentialcontacts.DocumentAiWarehouseLocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

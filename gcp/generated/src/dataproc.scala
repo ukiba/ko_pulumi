@@ -10,7 +10,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
@@ -323,7 +323,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamBindingArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
@@ -636,7 +636,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamMemberArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc AutoscalingPolicy. Each of these resources serves a different use case:
@@ -949,7 +949,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Dataproc Serverless Batches lets you run Spark workloads without requiring you to
@@ -966,7 +966,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.BatchArgs.builder
     com.pulumi.gcp.dataproc.Batch(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cloud Dataproc cluster resource within GCP.
@@ -987,7 +987,7 @@ object dataproc:
       case None               =>
     com.pulumi.gcp.dataproc.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc clusters. Each of these resources serves a different use case:
@@ -1242,7 +1242,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMBindingArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc clusters. Each of these resources serves a different use case:
@@ -1497,7 +1497,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMMemberArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc clusters. Each of these resources serves a different use case:
@@ -1752,7 +1752,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMPolicyArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DataprocFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -2015,7 +2015,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.GdcApplicationEnvironmentArgs.builder
     com.pulumi.gcp.dataproc.GdcApplicationEnvironment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A service instance is an instance of the Dataproc operator running on a GDC cluster.
@@ -2031,7 +2031,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.GdcServiceInstanceArgs.builder
     com.pulumi.gcp.dataproc.GdcServiceInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Spark application is a single Spark workload run on a GDC cluster.
@@ -2047,7 +2047,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.GdcSparkApplicationArgs.builder
     com.pulumi.gcp.dataproc.GdcSparkApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a job resource within a Dataproc cluster within GCE. For more information see
@@ -2060,7 +2060,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.JobArgs.builder
     com.pulumi.gcp.dataproc.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc jobs. Each of these resources serves a different use case:
@@ -2315,7 +2315,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMBindingArgs.builder
     com.pulumi.gcp.dataproc.JobIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc jobs. Each of these resources serves a different use case:
@@ -2570,7 +2570,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMMemberArgs.builder
     com.pulumi.gcp.dataproc.JobIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on dataproc jobs. Each of these resources serves a different use case:
@@ -2825,7 +2825,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMPolicyArgs.builder
     com.pulumi.gcp.dataproc.JobIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
@@ -3144,7 +3144,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
@@ -3463,7 +3463,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Database. Each of these resources serves a different use case:
@@ -3782,7 +3782,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A managed metastore federation. */
   def MetastoreFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -3790,7 +3790,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
@@ -4103,7 +4103,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
@@ -4416,7 +4416,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Federation. Each of these resources serves a different use case:
@@ -4729,7 +4729,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A managed metastore service that serves metadata queries.
@@ -4745,7 +4745,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceArgs.builder
     com.pulumi.gcp.dataproc.MetastoreService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
@@ -5058,7 +5058,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
@@ -5371,7 +5371,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Service. Each of these resources serves a different use case:
@@ -5684,7 +5684,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
@@ -6009,7 +6009,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
@@ -6334,7 +6334,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Dataproc Metastore Table. Each of these resources serves a different use case:
@@ -6659,7 +6659,7 @@ object dataproc:
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Dataproc Serverless session template defines the configuration settings for
@@ -6679,7 +6679,7 @@ object dataproc:
       case None               =>
     com.pulumi.gcp.dataproc.SessionTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Workflow Template is a reusable workflow configuration. It defines a graph of jobs with information on where to run those jobs. */
   def WorkflowTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -6690,4 +6690,4 @@ object dataproc:
       case None               =>
     com.pulumi.gcp.dataproc.WorkflowTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

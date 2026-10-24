@@ -56,7 +56,7 @@ object acm:
       case None =>
     com.pulumi.aws.acm.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource represents a successful validation of an ACM certificate in concert
@@ -73,4 +73,4 @@ object acm:
     val argsBuilder = com.pulumi.aws.acm.CertificateValidationArgs.builder
     com.pulumi.aws.acm.CertificateValidation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

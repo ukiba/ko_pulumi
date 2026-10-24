@@ -22,7 +22,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AttachedCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Anthos cluster running on AWS.
@@ -38,7 +38,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AwsCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Anthos node pool running on AWS.
@@ -54,7 +54,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AwsNodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AzureClient resources hold client authentication information needed by the Anthos Multi-Cloud API to manage Azure resources on your Azure subscription.When an AzureCluster is created, an AzureClient resource needs to be provided and all operations on Azure resources associated to that cluster will authenticate to Azure services using the given client.AzureClient resources are immutable and cannot be modified upon creation.Each AzureClient resource is bound to a single Azure Active Directory Application and tenant.
@@ -70,7 +70,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AzureClient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Anthos cluster running on Azure.
@@ -86,7 +86,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AzureCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Anthos node pool running on Azure.
@@ -102,7 +102,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.AzureNodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Google Kubernetes Engine (GKE) cluster.
@@ -127,7 +127,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.Cluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ContainerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -291,7 +291,7 @@ object container:
       case None               =>
     com.pulumi.gcp.container.NodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning**: Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. Resource will be removed in future major release.
@@ -305,4 +305,4 @@ object container:
     val argsBuilder = com.pulumi.gcp.container.RegistryArgs.builder
     com.pulumi.gcp.container.Registry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

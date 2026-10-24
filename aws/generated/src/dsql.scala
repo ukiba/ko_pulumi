@@ -17,7 +17,7 @@ object dsql:
       case None =>
     com.pulumi.aws.dsql.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Aurora DSQL Cluster Peering. */
   def ClusterPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object dsql:
     val argsBuilder = com.pulumi.aws.dsql.ClusterPeeringArgs.builder
     com.pulumi.aws.dsql.ClusterPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an Amazon Aurora DSQL Cluster resource-based policy.
@@ -39,4 +39,4 @@ object dsql:
     val argsBuilder = com.pulumi.aws.dsql.ClusterPolicyArgs.builder
     com.pulumi.aws.dsql.ClusterPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

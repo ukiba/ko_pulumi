@@ -877,7 +877,7 @@ object dns:
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamBindingArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud DNS ManagedZone. Each of these resources serves a different use case:
@@ -1453,7 +1453,7 @@ object dns:
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamMemberArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud DNS ManagedZone. Each of these resources serves a different use case:
@@ -2029,7 +2029,7 @@ object dns:
     val argsBuilder = com.pulumi.gcp.dns.DnsManagedZoneIamPolicyArgs.builder
     com.pulumi.gcp.dns.DnsManagedZoneIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A zone is a subtree of the DNS namespace under one administrative
@@ -2050,7 +2050,7 @@ object dns:
       case None               =>
     com.pulumi.gcp.dns.ManagedZone(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A policy is a collection of DNS rules applied to one or more Virtual
@@ -2070,7 +2070,7 @@ object dns:
       case None               =>
     com.pulumi.gcp.dns.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a set of DNS records within Google Cloud DNS. For more information see [the official documentation](https://cloud.google.com/dns/docs/records/) and
@@ -2086,7 +2086,7 @@ object dns:
       case None               =>
     com.pulumi.gcp.dns.RecordSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Response Policy is a collection of selectors that apply to queries
@@ -2097,7 +2097,7 @@ object dns:
     val argsBuilder = com.pulumi.gcp.dns.ResponsePolicyArgs.builder
     com.pulumi.gcp.dns.ResponsePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Response Policy Rule is a selector that applies its behavior to queries that match the selector.
@@ -2110,4 +2110,4 @@ object dns:
     val argsBuilder = com.pulumi.gcp.dns.ResponsePolicyRuleArgs.builder
     com.pulumi.gcp.dns.ResponsePolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

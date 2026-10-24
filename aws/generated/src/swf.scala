@@ -20,4 +20,4 @@ object swf:
       case None =>
     com.pulumi.aws.swf.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

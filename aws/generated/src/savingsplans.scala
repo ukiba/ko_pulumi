@@ -23,7 +23,7 @@ object savingsplans:
       case None =>
     com.pulumi.aws.savingsplans.SavingsPlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SavingsplansFunctions:
     // Pulumi methods are reproduced as Scala methods.

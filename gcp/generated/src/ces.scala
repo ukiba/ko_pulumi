@@ -10,7 +10,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.AgentArgs.builder
     com.pulumi.gcp.ces.Agent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Customer Engagement Suite App
@@ -24,7 +24,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.AppArgs.builder
     com.pulumi.gcp.ces.App(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets the root agent of a CES App after both the app and the agent have
@@ -45,7 +45,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.AppRootAgentAssociationArgs.builder
     com.pulumi.gcp.ces.AppRootAgentAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def AppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.AppVersionArgs.builder
     com.pulumi.gcp.ces.AppVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Description
@@ -66,7 +66,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.DeploymentArgs.builder
     com.pulumi.gcp.ces.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Customer Engagement Suite Evaluation
@@ -83,7 +83,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.EvaluationArgs.builder
     com.pulumi.gcp.ces.Evaluation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An example represents a sample conversation between the user and the agent(s). */
   def Example(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -91,7 +91,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.ExampleArgs.builder
     com.pulumi.gcp.ces.Example(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -99,7 +99,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.GuardrailArgs.builder
     com.pulumi.gcp.ces.Guardrail(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Security settings for a location in Customer Engagement Suite.
@@ -118,7 +118,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.SecuritySettingsArgs.builder
     com.pulumi.gcp.ces.SecuritySettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Description
@@ -136,7 +136,7 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.ToolArgs.builder
     com.pulumi.gcp.ces.Tool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def Toolset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -144,4 +144,4 @@ object ces:
     val argsBuilder = com.pulumi.gcp.ces.ToolsetArgs.builder
     com.pulumi.gcp.ces.Toolset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object loadtest:
       case None =>
     com.pulumi.azure.loadtest.LoadTest(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LoadtestFunctions:
     // Pulumi methods are reproduced as Scala methods.

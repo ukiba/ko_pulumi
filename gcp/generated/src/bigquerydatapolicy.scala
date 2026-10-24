@@ -37,7 +37,7 @@ object bigquerydatapolicy:
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
@@ -350,7 +350,7 @@ object bigquerydatapolicy:
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamBindingArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
@@ -663,7 +663,7 @@ object bigquerydatapolicy:
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamMemberArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for BigQuery Data Policy DataPolicy. Each of these resources serves a different use case:
@@ -976,4 +976,4 @@ object bigquerydatapolicy:
     val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamPolicyArgs.builder
     com.pulumi.gcp.bigquerydatapolicy.DataPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

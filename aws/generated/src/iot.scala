@@ -20,7 +20,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.Authorizer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS IoT Billing Group. */
   def BillingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.BillingGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT CA Certificate. */
   def CaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.CaCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT certificate. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.CertificateArgs.builder
     com.pulumi.aws.iot.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT domain configuration. */
   def DomainConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -79,7 +79,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.DomainConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages IoT event configurations.
@@ -91,7 +91,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.EventConfigurationsArgs.builder
     com.pulumi.aws.iot.EventConfigurations(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Managing [IoT Thing indexing](https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html). */
   def IndexingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -99,7 +99,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.IndexingConfigurationArgs.builder
     com.pulumi.aws.iot.IndexingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IotFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -138,7 +138,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.LoggingOptionsArgs.builder
     com.pulumi.aws.iot.LoggingOptions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an IoT policy.
@@ -160,7 +160,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.Policy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IoT policy attachment. */
   def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.PolicyAttachmentArgs.builder
     com.pulumi.aws.iot.PolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT fleet provisioning template. For more info, see the AWS documentation on [fleet provisioning](https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html). */
   def ProvisioningTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -186,7 +186,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.ProvisioningTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IoT role alias. */
   def RoleAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -201,7 +201,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.RoleAlias(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT Thing. */
   def Thing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -212,7 +212,7 @@ object iot:
       case None               =>
     com.pulumi.aws.iot.Thing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS IoT Thing Group. */
   def ThingGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -230,7 +230,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.ThingGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds an IoT Thing to an IoT Thing Group. */
   def ThingGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -238,7 +238,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.ThingGroupMembershipArgs.builder
     com.pulumi.aws.iot.ThingGroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches Principal to AWS IoT Thing. */
   def ThingPrincipalAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -246,7 +246,7 @@ object iot:
     val argsBuilder = com.pulumi.aws.iot.ThingPrincipalAttachmentArgs.builder
     com.pulumi.aws.iot.ThingPrincipalAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT Thing Type. */
   def ThingType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -264,7 +264,7 @@ object iot:
       case None =>
     com.pulumi.aws.iot.ThingType(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS IoT topic rule. */
   def TopicRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -282,11 +282,11 @@ object iot:
       case None =>
     com.pulumi.aws.iot.TopicRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def TopicRuleDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.iot.TopicRuleDestinationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iot.TopicRuleDestinationArgs.builder
     com.pulumi.aws.iot.TopicRuleDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

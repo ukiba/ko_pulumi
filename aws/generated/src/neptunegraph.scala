@@ -17,7 +17,7 @@ object neptunegraph:
       case None =>
     com.pulumi.aws.neptunegraph.Graph(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Neptune Analytics Private Graph Endpoint. */
   def PrivateGraphEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,4 +25,4 @@ object neptunegraph:
     val argsBuilder = com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.builder
     com.pulumi.aws.neptunegraph.PrivateGraphEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

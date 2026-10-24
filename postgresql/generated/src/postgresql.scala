@@ -99,7 +99,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.DefaultPrivileges`` resource creates and manages default privileges given to a user for a database schema.
@@ -231,7 +231,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.DefaultPrivilegArgs.builder
     com.pulumi.postgresql.DefaultPrivileg(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.DefaultPrivileges`` resource creates and manages default privileges given to a user for a database schema.
@@ -362,7 +362,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.DefaultPrivilegesArgs.builder
     com.pulumi.postgresql.DefaultPrivileges(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Extension`` resource creates and manages an extension on a PostgreSQL
@@ -415,7 +415,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Extension(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Function`` resource creates and manages a function on a PostgreSQL
@@ -488,7 +488,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Function(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Grant`` resource creates and manages privileges given to a user for a database schema.
@@ -598,7 +598,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.GrantArgs.builder
     com.pulumi.postgresql.Grant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.GrantRole`` resource creates and manages membership in a role to one or more other roles in a non-authoritative way.
@@ -686,7 +686,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.GrantRoleArgs.builder
     com.pulumi.postgresql.GrantRole(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.PhysicalReplicationSlot`` resource creates and manages a physical replication slot on a PostgreSQL
@@ -734,7 +734,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.PhysicalReplicationSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PostgresqlFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1000,7 +1000,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.ProviderArgs.builder
     com.pulumi.postgresql.Provider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The `postgresql.Publication` resource creates and manages a publication on a PostgreSQL
@@ -1054,7 +1054,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Publication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.ReplicationSlot`` resource creates and manages a replication slot on a PostgreSQL
@@ -1102,7 +1102,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.ReplicationSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Role`` resource creates and manages a role on a PostgreSQL
@@ -1279,7 +1279,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Role(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Schema`` resource creates and manages [schema
@@ -1411,7 +1411,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Schema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.SecurityLabel`` resource creates and manages security labels.
@@ -1472,7 +1472,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.SecurityLabelArgs.builder
     com.pulumi.postgresql.SecurityLabel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.Server`` resource creates and manages a foreign server on a PostgreSQL server.
@@ -1571,7 +1571,7 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.ServerArgs.builder
     com.pulumi.postgresql.Server(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The `postgresql.Subscription` resource creates and manages a publication on a PostgreSQL
@@ -1624,7 +1624,7 @@ object postgresql:
       case None               =>
     com.pulumi.postgresql.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ``postgresql.UserMapping`` resource creates and manages a user mapping on a PostgreSQL server.
@@ -1699,4 +1699,4 @@ object postgresql:
     val argsBuilder = com.pulumi.postgresql.UserMappingArgs.builder
     com.pulumi.postgresql.UserMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

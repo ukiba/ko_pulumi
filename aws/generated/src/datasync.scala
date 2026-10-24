@@ -24,7 +24,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.Agent(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS DataSync EFS Location.
@@ -43,7 +43,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.EfsLocation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataSync FSx OpenZfs Location. */
   def FsxOpenZfsFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -58,7 +58,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.FsxOpenZfsFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Microsoft Azure Blob Storage Location within AWS DataSync.
@@ -77,7 +77,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationAzureBlob(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataSync FSx Lustre Location. */
   def LocationFsxLustre(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -92,7 +92,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationFsxLustre(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DataSync Location FSx Ontap File System. */
   def LocationFsxOntapFileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,7 +107,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationFsxOntapFileSystem(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataSync FSx Windows Location. */
   def LocationFsxWindows(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationFsxWindows(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an HDFS Location within AWS DataSync.
@@ -141,7 +141,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationHdfs(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Object Storage Location within AWS DataSync.
@@ -160,7 +160,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationObjectStorage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a SMB Location within AWS DataSync.
@@ -179,7 +179,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.LocationSmb(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an NFS Location within AWS DataSync.
@@ -198,7 +198,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.NfsLocation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an S3 Location within AWS DataSync. */
   def S3Location(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -213,7 +213,7 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.S3Location(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS DataSync Task, which represents a configuration for synchronization. Starting an execution of these DataSync Tasks (actually synchronizing files) is performed outside of this resource. */
   def Task(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -231,4 +231,4 @@ object datasync:
       case None =>
     com.pulumi.aws.datasync.Task(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

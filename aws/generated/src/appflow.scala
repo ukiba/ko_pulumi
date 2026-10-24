@@ -19,7 +19,7 @@ object appflow:
       case None               =>
     com.pulumi.aws.appflow.ConnectorProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppFlow flow resource. */
   def Flow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -37,4 +37,4 @@ object appflow:
       case None =>
     com.pulumi.aws.appflow.Flow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

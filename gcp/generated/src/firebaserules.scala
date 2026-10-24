@@ -16,7 +16,7 @@ object firebaserules:
       case None               =>
     com.pulumi.gcp.firebaserules.Release(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * For more information, see:
@@ -27,4 +27,4 @@ object firebaserules:
     val argsBuilder = com.pulumi.gcp.firebaserules.RulesetArgs.builder
     com.pulumi.gcp.firebaserules.Ruleset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

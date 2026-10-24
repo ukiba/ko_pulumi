@@ -24,7 +24,7 @@ object mediastore:
       case None =>
     com.pulumi.aws.mediastore.Container(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MediaStore Container Policy.
@@ -38,4 +38,4 @@ object mediastore:
     val argsBuilder = com.pulumi.aws.mediastore.ContainerPolicyArgs.builder
     com.pulumi.aws.mediastore.ContainerPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -21,7 +21,7 @@ object dataflow:
       case None               =>
     com.pulumi.gcp.dataflow.FlexTemplateJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a job on Dataflow, which is an implementation of Apache Beam running on Google Compute Engine. For more information see
@@ -36,7 +36,7 @@ object dataflow:
       case None               =>
     com.pulumi.gcp.dataflow.Job(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The main pipeline entity and all the necessary metadata for launching and managing linked jobs.
@@ -55,4 +55,4 @@ object dataflow:
       case None               =>
     com.pulumi.gcp.dataflow.Pipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

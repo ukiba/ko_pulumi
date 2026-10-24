@@ -20,7 +20,7 @@ object ivs:
       case None =>
     com.pulumi.aws.ivs.Channel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IvsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -57,7 +57,7 @@ object ivs:
       case None =>
     com.pulumi.aws.ivs.PlaybackKeyPair(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Recording Configuration. */
   def RecordingConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,4 +75,4 @@ object ivs:
       case None =>
     com.pulumi.aws.ivs.RecordingConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

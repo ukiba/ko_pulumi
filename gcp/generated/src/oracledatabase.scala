@@ -18,7 +18,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.AutonomousDatabaseArgs.builder
     com.pulumi.gcp.oracledatabase.AutonomousDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A CloudExadataInfrastructure resource.
@@ -34,7 +34,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureArgs.builder
     com.pulumi.gcp.oracledatabase.CloudExadataInfrastructure(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource to configure Exascale storage on an Oracle Cloud Exadata Infrastructure.
@@ -47,7 +47,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfigArgs.builder
     com.pulumi.gcp.oracledatabase.CloudExadataInfrastructureExascaleConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A CloudVmCluster resource.
@@ -63,7 +63,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.CloudVmClusterArgs.builder
     com.pulumi.gcp.oracledatabase.CloudVmCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A DbSystem Resource */
   def DbSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.DbSystemArgs.builder
     com.pulumi.gcp.oracledatabase.DbSystem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
   def ExadbVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -79,7 +79,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.ExadbVmClusterArgs.builder
     com.pulumi.gcp.oracledatabase.ExadbVmCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An Exascale Storage Vault Resource */
   def ExascaleDbStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -87,7 +87,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.ExascaleDbStorageVaultArgs.builder
     com.pulumi.gcp.oracledatabase.ExascaleDbStorageVault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** GoldengateConnection is a resource that represents metadata to establish a connection to a source or target data. */
   def GoldengateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This resource helps to assign a GoldengateConnection to a GoldengateDeployment used for actual data replication and transformations. */
   def GoldengateConnectionAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignmentArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateConnectionAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This resource helps to create a GoldengateDeployment which enables running Oracle GoldenGate in Google Cloud. */
   def GoldengateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -111,7 +111,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.GoldengateDeploymentArgs.builder
     com.pulumi.gcp.oracledatabase.GoldengateDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An OdbNetwork resource which represents a private network providing connectivity between OracleDatabase resources and Google Cloud VPC network.
@@ -125,7 +125,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.OdbNetworkArgs.builder
     com.pulumi.gcp.oracledatabase.OdbNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An OdbSubnet resource which represents a subnet under an OdbNetwork.
@@ -139,7 +139,7 @@ object oracledatabase:
     val argsBuilder = com.pulumi.gcp.oracledatabase.OdbSubnetArgs.builder
     com.pulumi.gcp.oracledatabase.OdbSubnet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OracledatabaseFunctions:
     // Pulumi methods are reproduced as Scala methods.

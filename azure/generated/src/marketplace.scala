@@ -10,7 +10,7 @@ object marketplace:
     val argsBuilder = com.pulumi.azure.marketplace.AgreementArgs.builder
     com.pulumi.azure.marketplace.Agreement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MarketplaceFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -40,4 +40,4 @@ object marketplace:
       case None               =>
     com.pulumi.azure.marketplace.RoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

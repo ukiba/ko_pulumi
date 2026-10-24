@@ -20,7 +20,7 @@ object cosmosdb:
       case None =>
     com.pulumi.azure.cosmosdb.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cassandra Cluster.
@@ -50,7 +50,7 @@ object cosmosdb:
       case None =>
     com.pulumi.azure.cosmosdb.CassandraCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cassandra Datacenter.
@@ -73,7 +73,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.CassandraDatacenter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cassandra KeySpace within a Cosmos DB Account. */
   def CassandraKeyspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -84,7 +84,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.CassandraKeyspace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cassandra Table within a Cosmos DB Cassandra Keyspace. */
   def CassandraTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.CassandraTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CosmosdbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -173,7 +173,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.GremlinDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gremlin Graph within a Cosmos DB Account. */
   def GremlinGraph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -184,7 +184,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.GremlinGraph(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MongoDB Cluster using vCore Architecture. */
   @deprecated("azure.cosmosdb/mongocluster.MongoCluster has been deprecated in favor of azure.mongocluster/mongocluster.MongoCluster") def MongoCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -202,7 +202,7 @@ object cosmosdb:
       case None =>
     com.pulumi.azure.cosmosdb.MongoCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Collection within a Cosmos DB Account. */
   def MongoCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -213,7 +213,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.MongoCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Mongo Database within a Cosmos DB Account. */
   def MongoDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -224,7 +224,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.MongoDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB Mongo Role Definition. */
   def MongoRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -232,7 +232,7 @@ object cosmosdb:
     val argsBuilder = com.pulumi.azure.cosmosdb.MongoRoleDefinitionArgs.builder
     com.pulumi.azure.cosmosdb.MongoRoleDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB Mongo User Definition. */
   def MongoUserDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -240,7 +240,7 @@ object cosmosdb:
     val argsBuilder = com.pulumi.azure.cosmosdb.MongoUserDefinitionArgs.builder
     com.pulumi.azure.cosmosdb.MongoUserDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Cluster. */
   def PostgresqlCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -258,7 +258,7 @@ object cosmosdb:
       case None =>
     com.pulumi.azure.cosmosdb.PostgresqlCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Sets a Coordinator Configuration value on Azure Cosmos DB for PostgreSQL Cluster. */
   def PostgresqlCoordinatorConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -269,7 +269,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.PostgresqlCoordinatorConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Firewall Rule. */
   def PostgresqlFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -280,7 +280,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.PostgresqlFirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Sets a Node Configuration value on Azure Cosmos DB for PostgreSQL Cluster. */
   def PostgresqlNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -291,7 +291,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.PostgresqlNodeConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB for PostgreSQL Role. */
   def PostgresqlRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -302,7 +302,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.PostgresqlRole(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Container within a Cosmos DB Account. */
   def SqlContainer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -313,7 +313,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlContainer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Database within a Cosmos DB Account. */
   def SqlDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -324,7 +324,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Dedicated Gateway within a Cosmos DB Account. */
   def SqlDedicatedGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -332,7 +332,7 @@ object cosmosdb:
     val argsBuilder = com.pulumi.azure.cosmosdb.SqlDedicatedGatewayArgs.builder
     com.pulumi.azure.cosmosdb.SqlDedicatedGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SQL User Defined Function. */
   def SqlFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -343,7 +343,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlFunction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB SQL Role Assignment. */
   def SqlRoleAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -354,7 +354,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlRoleAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cosmos DB SQL Role Definition. */
   def SqlRoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -365,7 +365,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlRoleDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Stored Procedure within a Cosmos DB Account SQL Database. */
   def SqlStoredProcedure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -376,7 +376,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlStoredProcedure(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an SQL Trigger. */
   def SqlTrigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -387,7 +387,7 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.SqlTrigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Table within a Cosmos DB Account. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -398,4 +398,4 @@ object cosmosdb:
       case None               =>
     com.pulumi.azure.cosmosdb.Table(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

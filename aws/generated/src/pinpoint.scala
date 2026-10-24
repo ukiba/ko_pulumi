@@ -14,7 +14,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.AdmChannelArgs.builder
     com.pulumi.aws.pinpoint.AdmChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging APNs Channel resource.
@@ -26,7 +26,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging APNs Sandbox Channel resource.
@@ -38,7 +38,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsSandboxChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsSandboxChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging APNs VoIP Channel resource.
@@ -50,7 +50,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsVoipChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsVoipChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging APNs VoIP Sandbox Channel resource.
@@ -62,7 +62,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.ApnsVoipSandboxChannelArgs.builder
     com.pulumi.aws.pinpoint.ApnsVoipSandboxChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging App resource.
@@ -84,7 +84,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.App(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging Baidu Channel resource.
@@ -96,7 +96,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.BaiduChannelArgs.builder
     com.pulumi.aws.pinpoint.BaiduChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **NOTE:** This resource is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES using `aws.ses.DomainIdentity`, `aws.sesv2.EmailIdentity`, and related SES/SESv2 resources. See the [AWS End User Messaging migration guide](https://docs.aws.amazon.com/pinpoint/latest/userguide/migrate.html) for details.
@@ -108,7 +108,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.EmailChannelArgs.builder
     com.pulumi.aws.pinpoint.EmailChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **NOTE:** This resource is deprecated. AWS End User Messaging email features are being discontinued on October 30, 2026. Migrate to Amazon SES using `aws.ses.Template` or `aws.sesv2.EmailIdentity` and related SESv2 resources. See the [AWS End User Messaging migration guide](https://docs.aws.amazon.com/pinpoint/latest/userguide/migrate.html) for details.
@@ -127,7 +127,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.EmailTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **NOTE:** This resource is deprecated. AWS End User Messaging event streams are being discontinued on October 30, 2026. After that date, this resource will no longer be available. For SMS/Voice event delivery, use `aws.pinpoint.Smsvoicev2ConfigurationSet` with an event destination.
@@ -139,7 +139,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.EventStreamArgs.builder
     com.pulumi.aws.pinpoint.EventStream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an End User Messaging GCM Channel resource.
@@ -158,7 +158,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.GcmChannelArgs.builder
     com.pulumi.aws.pinpoint.GcmChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Use the `aws.pinpoint.SmsChannel` resource to manage End User Messaging SMS Channels.
@@ -170,7 +170,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.SmsChannelArgs.builder
     com.pulumi.aws.pinpoint.SmsChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS End User Messaging SMS Configuration Set. */
   def Smsvoicev2ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -188,7 +188,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.Smsvoicev2ConfigurationSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS End User Messaging SMS Event Destination.
@@ -200,7 +200,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2EventDestinationArgs.builder
     com.pulumi.aws.pinpoint.Smsvoicev2EventDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS End User Messaging SMS Keyword.
@@ -212,7 +212,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2KeywordArgs.builder
     com.pulumi.aws.pinpoint.Smsvoicev2Keyword(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS End User Messaging SMS opt-out list. */
   def Smsvoicev2OptOutList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -230,7 +230,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.Smsvoicev2OptOutList(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS End User Messaging SMS phone number. */
   def Smsvoicev2PhoneNumber(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -245,7 +245,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.Smsvoicev2PhoneNumber(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS End User Messaging SMS Pool. */
   def Smsvoicev2Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -260,7 +260,7 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.Smsvoicev2Pool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS End User Messaging SMS Resource Policy. */
   def Smsvoicev2ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -268,7 +268,7 @@ object pinpoint:
     val argsBuilder = com.pulumi.aws.pinpoint.Smsvoicev2ResourcePolicyArgs.builder
     com.pulumi.aws.pinpoint.Smsvoicev2ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an End User Messaging SMS Sender ID. */
   def Smsvoicev2SenderId(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -283,4 +283,4 @@ object pinpoint:
       case None =>
     com.pulumi.aws.pinpoint.Smsvoicev2SenderId(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

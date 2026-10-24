@@ -20,7 +20,7 @@ object portal:
       case None =>
     com.pulumi.azure.portal.PortalDashboard(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PortalFunctions:
     // Pulumi methods are reproduced as Scala methods.

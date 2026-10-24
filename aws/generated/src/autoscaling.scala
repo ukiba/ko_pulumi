@@ -14,7 +14,7 @@ object autoscaling:
     val argsBuilder = com.pulumi.aws.autoscaling.AttachmentArgs.builder
     com.pulumi.aws.autoscaling.Attachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AutoscalingFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -128,7 +128,7 @@ object autoscaling:
       case None               =>
     com.pulumi.aws.autoscaling.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AutoScaling Lifecycle Hook resource.
@@ -153,7 +153,7 @@ object autoscaling:
       case None               =>
     com.pulumi.aws.autoscaling.LifecycleHook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Auto Scaling group with Notification support, via SNS Topics. Each of
@@ -165,7 +165,7 @@ object autoscaling:
     val argsBuilder = com.pulumi.aws.autoscaling.NotificationArgs.builder
     com.pulumi.aws.autoscaling.Notification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AutoScaling Scaling Policy resource.
@@ -184,7 +184,7 @@ object autoscaling:
       case None               =>
     com.pulumi.aws.autoscaling.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AutoScaling Schedule resource. */
   def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -192,7 +192,7 @@ object autoscaling:
     val argsBuilder = com.pulumi.aws.autoscaling.ScheduleArgs.builder
     com.pulumi.aws.autoscaling.Schedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual Auto Scaling group (ASG) tag. This resource should only be used in cases where ASGs are created outside Pulumi (e.g., ASGs implicitly created by EKS Node Groups).
@@ -206,7 +206,7 @@ object autoscaling:
     val argsBuilder = com.pulumi.aws.autoscaling.TagArgs.builder
     com.pulumi.aws.autoscaling.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches a traffic source to an Auto Scaling group.
@@ -218,4 +218,4 @@ object autoscaling:
     val argsBuilder = com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.builder
     com.pulumi.aws.autoscaling.TrafficSourceAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

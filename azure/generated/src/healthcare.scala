@@ -20,7 +20,7 @@ object healthcare:
       case None =>
     com.pulumi.azure.healthcare.DicomService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare FHIR (Fast Healthcare Interoperability Resources) Service */
   def FhirService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object healthcare:
       case None =>
     com.pulumi.azure.healthcare.FhirService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object HealthcareFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -123,7 +123,7 @@ object healthcare:
       case None =>
     com.pulumi.azure.healthcare.MedtechService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare Med Tech Service Fhir Destination. */
   def MedtechServiceFhirDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -134,7 +134,7 @@ object healthcare:
       case None               =>
     com.pulumi.azure.healthcare.MedtechServiceFhirDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -152,7 +152,7 @@ object healthcare:
       case None =>
     com.pulumi.azure.healthcare.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Healthcare workspace */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,4 +170,4 @@ object healthcare:
       case None =>
     com.pulumi.azure.healthcare.Workspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

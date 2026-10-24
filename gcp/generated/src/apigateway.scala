@@ -21,7 +21,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiArgs.builder
     com.pulumi.gcp.apigateway.Api(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An API Configuration is an association of an API Controller Config and a Gateway Config
@@ -40,7 +40,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigArgs.builder
     com.pulumi.gcp.apigateway.ApiConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
@@ -353,7 +353,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamBindingArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
@@ -666,7 +666,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamMemberArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway ApiConfig. Each of these resources serves a different use case:
@@ -979,7 +979,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
@@ -1291,7 +1291,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamBindingArgs.builder
     com.pulumi.gcp.apigateway.ApiIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
@@ -1603,7 +1603,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamMemberArgs.builder
     com.pulumi.gcp.apigateway.ApiIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Api. Each of these resources serves a different use case:
@@ -1915,7 +1915,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.ApiIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ApigatewayFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -2001,7 +2001,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayArgs.builder
     com.pulumi.gcp.apigateway.Gateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
@@ -2320,7 +2320,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamBindingArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
@@ -2639,7 +2639,7 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamMemberArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for API Gateway Gateway. Each of these resources serves a different use case:
@@ -2958,4 +2958,4 @@ object apigateway:
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

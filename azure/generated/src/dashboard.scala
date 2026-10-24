@@ -51,7 +51,7 @@ object dashboard:
       case None =>
     com.pulumi.azure.dashboard.Grafana(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Dashboard Grafana Managed Private Endpoint.
@@ -73,4 +73,4 @@ object dashboard:
       case None =>
     com.pulumi.azure.dashboard.GrafanaManagedPrivateEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -19,7 +19,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleAnomalyBuiltIn(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Duplicated Anomaly Alert Rule. */
   def AlertRuleAnomalyDuplicate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -27,7 +27,7 @@ object sentinel:
     val argsBuilder = com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicateArgs.builder
     com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Fusion Alert Rule. */
   @deprecated("calls deprecated com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder.name: the `name` is deprecated and will be removed in v5.0 version of the provider.") def AlertRuleFusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleFusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Machine Learning Behavior Analytics Alert Rule. */
   def AlertRuleMachineLearningBehaviorAnalytics(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleMachineLearningBehaviorAnalytics(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel MS Security Incident Alert Rule. */
   def AlertRuleMsSecurityIncident(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -60,7 +60,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleMsSecurityIncident(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel NRT Alert Rule. */
   def AlertRuleNrt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleNrt(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Scheduled Alert Rule. */
   def AlertRuleScheduled(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleScheduled(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Threat Intelligence Alert Rule. */
   def AlertRuleThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -93,7 +93,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AlertRuleThreatIntelligence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Automation Rule. */
   @deprecated("azure.sentinel.AuthomationRule has been deprecated in favor of azure.sentinel.AutomationRule") def AuthomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -104,7 +104,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AuthomationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Automation Rule. */
   def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -115,7 +115,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.AutomationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AWS CloudTrail Data Connector. */
   def DataConnectorAwsCloudTrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -126,7 +126,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorAwsCloudTrail(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AWS S3 Data Connector. */
   def DataConnectorAwsS3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -137,7 +137,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorAwsS3(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Azure Active Directory Data Connector. */
   def DataConnectorAzureActiveDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -148,7 +148,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorAzureActiveDirectory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Azure Advanced Threat Protection Data Connector.
@@ -163,7 +163,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorAzureAdvancedThreadProtection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Azure Security Center Data Connector. */
   def DataConnectorAzureSecurityCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -174,7 +174,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorAzureSecurityCenter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dynamics 365 Data Connector. */
   def DataConnectorDynamics365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -185,7 +185,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorDynamics365(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Iot Data Connector. */
   def DataConnectorIot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -196,7 +196,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorIot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Microsoft Cloud App Security Data Connector.
@@ -211,7 +211,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorMicrosoftCloudAppSecurity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Defender Advanced Threat Protection Data Connector. */
   def DataConnectorMicrosoftDefenderAdvancedThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorMicrosoftDefenderAdvancedThreatProtection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Threat Intelligence Data Connector. */
   def DataConnectorMicrosoftThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,7 +233,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatIntelligence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Threat Protection Data Connector. */
   def DataConnectorMicrosoftThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -244,7 +244,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatProtection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Office 365 Data Connector. */
   def DataConnectorOffice365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -255,7 +255,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorOffice365(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office 365 Project Data Connector. */
   def DataConnectorOffice365Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -266,7 +266,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorOffice365Project(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Office ATP Data Connector. */
   def DataConnectorOfficeAtp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -277,7 +277,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorOfficeAtp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office IRM Data Connector. */
   def DataConnectorOfficeIrm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -288,7 +288,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorOfficeIrm(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office Power BI Data Connector. */
   def DataConnectorOfficePowerBi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -299,7 +299,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorOfficePowerBi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Threat Intelligence Data Connector. */
   def DataConnectorThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -310,7 +310,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorThreatIntelligence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Threat Intelligence TAXII Data Connector. */
   def DataConnectorThreatIntelligenceTaxii(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -321,7 +321,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceTaxii(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Insights Sentinel Onboarding. */
   def LogAnalyticsWorkspaceOnboarding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -329,7 +329,7 @@ object sentinel:
     val argsBuilder = com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboardingArgs.builder
     com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboarding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Metadata. */
   def Metadata(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -340,7 +340,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.Metadata(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SentinelFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -391,7 +391,7 @@ object sentinel:
     val argsBuilder = com.pulumi.azure.sentinel.ThreatIntelligenceIndicatorArgs.builder
     com.pulumi.azure.sentinel.ThreatIntelligenceIndicator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Watchlist. */
   def Watchlist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -402,7 +402,7 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.Watchlist(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Watchlist Item. */
   def WatchlistItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -413,4 +413,4 @@ object sentinel:
       case None               =>
     com.pulumi.azure.sentinel.WatchlistItem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object ram:
       case None =>
     com.pulumi.aws.ram.Permission(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Resource Access Manager (RAM) principal association. Depending if [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), the RAM behavior with different principal types changes.
@@ -40,7 +40,7 @@ object ram:
     val argsBuilder = com.pulumi.aws.ram.PrincipalAssociationArgs.builder
     com.pulumi.aws.ram.PrincipalAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RamFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -71,7 +71,7 @@ object ram:
     val argsBuilder = com.pulumi.aws.ram.ResourceAssociationArgs.builder
     com.pulumi.aws.ram.ResourceAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Access Manager (RAM) Resource Share. To associate principals with the share, see the `aws.ram.PrincipalAssociation` resource. To associate resources with the share, see the `aws.ram.ResourceAssociation` resource. */
   def ResourceShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -89,7 +89,7 @@ object ram:
       case None =>
     com.pulumi.aws.ram.ResourceShare(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage accepting a Resource Access Manager (RAM) Resource Share invitation. From a _receiver_ AWS account, accept an invitation to share resources that were shared by a _sender_ AWS account. To create a resource share in the _sender_, see the `aws.ram.ResourceShare` resource.
@@ -101,7 +101,7 @@ object ram:
     val argsBuilder = com.pulumi.aws.ram.ResourceShareAccepterArgs.builder
     com.pulumi.aws.ram.ResourceShareAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of principal and resource associations for an AWS RAM (Resource Access Manager) Resource Share.
@@ -117,7 +117,7 @@ object ram:
     val argsBuilder = com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.builder
     com.pulumi.aws.ram.ResourceShareAssociationsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Resource Access Manager (RAM) Resource Sharing with AWS Organizations. If you enable sharing with your organization, you can share resources without using invitations. Refer to the [AWS RAM user guide](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) for more details.
@@ -129,4 +129,4 @@ object ram:
     val argsBuilder = com.pulumi.aws.ram.SharingWithOrganizationArgs.builder
     com.pulumi.aws.ram.SharingWithOrganization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

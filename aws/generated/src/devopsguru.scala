@@ -47,7 +47,7 @@ object devopsguru:
     val argsBuilder = com.pulumi.aws.devopsguru.EventSourcesConfigArgs.builder
     com.pulumi.aws.devopsguru.EventSourcesConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS DevOps Guru Notification Channel. */
   def NotificationChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object devopsguru:
     val argsBuilder = com.pulumi.aws.devopsguru.NotificationChannelArgs.builder
     com.pulumi.aws.devopsguru.NotificationChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS DevOps Guru Resource Collection.
@@ -67,7 +67,7 @@ object devopsguru:
     val argsBuilder = com.pulumi.aws.devopsguru.ResourceCollectionArgs.builder
     com.pulumi.aws.devopsguru.ResourceCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS DevOps Guru Service Integration.
@@ -79,4 +79,4 @@ object devopsguru:
     val argsBuilder = com.pulumi.aws.devopsguru.ServiceIntegrationArgs.builder
     com.pulumi.aws.devopsguru.ServiceIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -10,7 +10,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.AccountArgs.builder
     com.pulumi.aws.apigateway.Account(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an API Gateway API Key.
@@ -32,7 +32,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.ApiKey(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ApigatewayFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -198,7 +198,7 @@ object apigateway:
       case None               =>
     com.pulumi.aws.apigateway.Authorizer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Connects a custom domain name registered via `aws.apigateway.DomainName`
@@ -236,7 +236,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.BasePathMappingArgs.builder
     com.pulumi.aws.apigateway.BasePathMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Client Certificate. */
   def ClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -251,7 +251,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.ClientCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an API Gateway REST Deployment. A deployment is a snapshot of the REST API configuration. The deployment can then be published to callable endpoints via the `aws.apigateway.Stage` resource and optionally managed further with the `aws.apigateway.BasePathMapping` resource, `aws.apigateway.DomainName` resource, and `aws.apigateway.MethodSettings` resource. For more information, see the [API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html).
@@ -266,7 +266,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.DeploymentArgs.builder
     com.pulumi.aws.apigateway.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a settings of an API Gateway Documentation Part. */
   def DocumentationPart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -274,7 +274,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.DocumentationPartArgs.builder
     com.pulumi.aws.apigateway.DocumentationPart(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an API Gateway Documentation Version. */
   def DocumentationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -282,7 +282,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.DocumentationVersionArgs.builder
     com.pulumi.aws.apigateway.DocumentationVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Registers a custom domain name for use with AWS API Gateway. Additional information about this functionality
@@ -324,7 +324,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.DomainName(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a domain name access association resource between an access association source and a private custom domain name. */
   def DomainNameAccessAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -339,7 +339,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.DomainNameAccessAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an HTTP Method Integration for an API Gateway Integration. */
   def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -347,7 +347,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.IntegrationArgs.builder
     com.pulumi.aws.apigateway.Integration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an HTTP Method Integration Response for an API Gateway Resource.
@@ -360,7 +360,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.IntegrationResponseArgs.builder
     com.pulumi.aws.apigateway.IntegrationResponse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a HTTP Method for an API Gateway Resource. */
   def Method(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -368,7 +368,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.MethodArgs.builder
     com.pulumi.aws.apigateway.Method(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an HTTP Method Response for an API Gateway Resource. More information about API Gateway method responses can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-settings-method-response.html). */
   def MethodResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -376,7 +376,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.MethodResponseArgs.builder
     com.pulumi.aws.apigateway.MethodResponse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages API Gateway Stage Method Settings. For example, CloudWatch logging and metrics.
@@ -388,7 +388,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.MethodSettingsArgs.builder
     com.pulumi.aws.apigateway.MethodSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Model for a REST API Gateway. */
   def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -399,7 +399,7 @@ object apigateway:
       case None               =>
     com.pulumi.aws.apigateway.Model(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Gateway Request Validator. */
   def RequestValidator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -410,7 +410,7 @@ object apigateway:
       case None               =>
     com.pulumi.aws.apigateway.RequestValidator(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Resource. */
   def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -418,7 +418,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.ResourceArgs.builder
     com.pulumi.aws.apigateway.Resource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Gateway Response for a REST API Gateway. */
   def Response(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -426,7 +426,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.ResponseArgs.builder
     com.pulumi.aws.apigateway.Response(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an API Gateway REST API. The REST API can be configured via [importing an OpenAPI specification](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api.html) in the `body` argument (with other arguments serving as overrides) or via other provider resources to manage the resources (`aws.apigateway.Resource` resource), methods (`aws.apigateway.Method` resource), integrations (`aws.apigateway.Integration` resource), etc. of the REST API. Once the REST API is configured, the `aws.apigateway.Deployment` resource can be used along with the `aws.apigateway.Stage` resource to publish the REST API.
@@ -450,7 +450,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.RestApi(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an API Gateway REST API Policy.
@@ -462,7 +462,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.RestApiPolicyArgs.builder
     com.pulumi.aws.apigateway.RestApiPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for updating an AWS API Gateway REST API with a new API description.
@@ -474,7 +474,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.RestApiPutArgs.builder
     com.pulumi.aws.apigateway.RestApiPut(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an API Gateway Stage. A stage is a named reference to a deployment, which can be done via the `aws.apigateway.Deployment` resource. Stages can be optionally managed further with the `aws.apigateway.BasePathMapping` resource, `aws.apigateway.DomainName` resource, and `aws.apigateway.MethodSettings` resource. For more information, see the [API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html).
@@ -549,7 +549,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.Stage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an API Gateway Usage Plan.
@@ -577,7 +577,7 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.UsagePlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Usage Plan Key. */
   def UsagePlanKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -585,7 +585,7 @@ object apigateway:
     val argsBuilder = com.pulumi.aws.apigateway.UsagePlanKeyArgs.builder
     com.pulumi.aws.apigateway.UsagePlanKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an API Gateway VPC Link.
@@ -608,4 +608,4 @@ object apigateway:
       case None =>
     com.pulumi.aws.apigateway.VpcLink(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

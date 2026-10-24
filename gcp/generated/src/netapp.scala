@@ -21,7 +21,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.ActiveDirectory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * NetApp Volumes supports volume backups, which are copies of your volumes
@@ -53,7 +53,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.Backup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A backup policy is used to schedule backups at regular daily, weekly, or monthly intervals.
@@ -74,7 +74,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.BackupPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A backup vault is the location where backups are stored. You can only create one backup vault per region.
@@ -94,7 +94,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.BackupVault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Hostgroups define the hosts (aka initiators) that can access the specific Google Cloud Netapp Volumes.
@@ -114,7 +114,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.HostGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * NetApp Volumes always encrypts your data at rest using volume-specific keys.
@@ -135,7 +135,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.Kmsconfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Storage pools act as containers for volumes. All volumes in a storage pool share the following information:
@@ -175,7 +175,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.StoragePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A volume is a file system container in a storage pool that stores application, database, and user data.
@@ -199,7 +199,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.Volume(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * QuotaRule specifies the maximum capacity a user or group can use within a volume. They can be used for creating default and individual quota rules.
@@ -218,7 +218,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.VolumeQuotaRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Volume replication creates an asynchronous mirror of a volume in a different location. This capability
@@ -249,7 +249,7 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.VolumeReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * NetApp Volumes helps you manage your data usage with snapshots that can quickly restore lost data.
@@ -273,4 +273,4 @@ object netapp:
       case None               =>
     com.pulumi.gcp.netapp.VolumeSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

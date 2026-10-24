@@ -13,7 +13,7 @@ object mysql:
       case None               =>
     com.pulumi.azure.mysql.FlexibleDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MySQL Flexible Server. */
   def FlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object mysql:
       case None =>
     com.pulumi.azure.mysql.FlexibleServer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Active Directory administrator on a MySQL Flexible Server */
   def FlexibleServerActiveDirectoryAdministratory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -39,7 +39,7 @@ object mysql:
     val argsBuilder = com.pulumi.azure.mysql.FlexibleServerActiveDirectoryAdministratoryArgs.builder
     com.pulumi.azure.mysql.FlexibleServerActiveDirectoryAdministratory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets a MySQL Flexible Server Configuration value on a MySQL Flexible Server.
@@ -56,7 +56,7 @@ object mysql:
       case None               =>
     com.pulumi.azure.mysql.FlexibleServerConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Rule for a MySQL Flexible Server. */
   def FlexibleServerFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object mysql:
       case None               =>
     com.pulumi.azure.mysql.FlexibleServerFirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MysqlFunctions:
     // Pulumi methods are reproduced as Scala methods.

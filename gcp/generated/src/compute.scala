@@ -34,7 +34,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Address(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Persistent disks can be attached to a compute instance using the `attachedDisk`
@@ -56,7 +56,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.AttachedDiskArgs.builder
     com.pulumi.gcp.compute.AttachedDisk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an Autoscaler resource.
@@ -79,7 +79,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Autoscaler(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Backend buckets allow you to use Google Cloud Storage buckets with HTTP(S)
@@ -104,7 +104,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
@@ -419,7 +419,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendBucketIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
@@ -734,7 +734,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendBucketIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendBucket. Each of these resources serves a different use case:
@@ -1049,7 +1049,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendBucketIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A key for signing Cloud CDN signed URLs for BackendBuckets.
@@ -1068,7 +1068,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendBucketSignedUrlKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Backend Service defines a group of virtual machines that will serve
@@ -1098,7 +1098,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
@@ -1683,7 +1683,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
@@ -2268,7 +2268,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine BackendService. Each of these resources serves a different use case:
@@ -2853,7 +2853,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A key for signing Cloud CDN signed URLs for Backend Services.
@@ -2872,7 +2872,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.BackendServiceSignedUrlKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A config defined for multiple managed instances that belong to an instance group manager with target_size_policy.mode=BULK.
@@ -2888,7 +2888,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.BulkPerInstanceConfigArgs.builder
     com.pulumi.gcp.compute.BulkPerInstanceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A representation of an ExternalAccountKey used for external account binding within ACME.
@@ -2912,7 +2912,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.CaExternalAccountKeyArgs.builder
     com.pulumi.gcp.compute.CaExternalAccountKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ComputeFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -4862,7 +4862,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.CrossSiteNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Persistent disks are durable storage devices that function similarly to
@@ -4898,7 +4898,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Disk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Starts and stops asynchronous persistent disk replication. For more information
@@ -4910,7 +4910,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.DiskAsyncReplicationArgs.builder
     com.pulumi.gcp.compute.DiskAsyncReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
@@ -5226,7 +5226,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.DiskIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
@@ -5542,7 +5542,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.DiskIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Disk. Each of these resources serves a different use case:
@@ -5858,7 +5858,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.DiskIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds existing resource policies to a disk. You can only add one policy
@@ -5874,7 +5874,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.DiskResourcePolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a VPN gateway managed outside of GCP.
@@ -5891,7 +5891,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ExternalVpnGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Each network has its own firewall controlling access to and from the
@@ -5921,7 +5921,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Firewall(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Hierarchical firewall policy rules let you create and enforce a consistent firewall policy across your organization. Rules can explicitly allow or deny connections or delegate evaluation to lower level policies. Policies can be created within organizations or folders.
@@ -5939,7 +5939,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyArgs.builder
     com.pulumi.gcp.compute.FirewallPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows associating hierarchical firewall policies with the target where they are applied. This allows creating policies and rules in a different location than they are applied.
@@ -5957,7 +5957,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.FirewallPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
@@ -6260,7 +6260,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.FirewallPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
@@ -6563,7 +6563,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.FirewallPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine FirewallPolicy. Each of these resources serves a different use case:
@@ -6866,7 +6866,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.FirewallPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a rule that describes one or more match conditions along with the action to be taken when traffic matches this condition (allow or deny).
@@ -6880,7 +6880,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.FirewallPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Compute FirewallPolicy with rules resource. It declaratively manges all
@@ -6891,7 +6891,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.FirewallPolicyWithRulesArgs.builder
     com.pulumi.gcp.compute.FirewallPolicyWithRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A ForwardingRule resource. A ForwardingRule resource specifies which pool
@@ -6912,7 +6912,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ForwardingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a future reservation resource in Compute Engine. Future reservations allow users
@@ -6942,7 +6942,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.FutureReservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Global Address resource. Global addresses are used for
@@ -6962,7 +6962,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.GlobalAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a GlobalForwardingRule resource. Global forwarding rules are
@@ -6980,7 +6980,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.GlobalForwardingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Global Network endpoint represents a IP address and port combination that exists outside of GCP.
@@ -6998,7 +6998,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.GlobalNetworkEndpointArgs.builder
     com.pulumi.gcp.compute.GlobalNetworkEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A global network endpoint group contains endpoints that reside outside of Google Cloud.
@@ -7022,7 +7022,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.GlobalNetworkEndpointGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Global VM Extension Policy. */
   def GlobalVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -7033,7 +7033,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.GlobalVmExtensionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a VPN gateway running in GCP. This virtual device is managed
@@ -7055,7 +7055,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.HaVpnGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Health Checks determine whether instances are responsive and able to do work.
@@ -7088,7 +7088,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.HealthCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An HttpHealthCheck resource. This resource defines a template for how
@@ -7114,7 +7114,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.HttpHealthCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An HttpsHealthCheck resource. This resource defines a template for how
@@ -7140,7 +7140,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.HttpsHealthCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an Image resource.
@@ -7174,7 +7174,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Image(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
@@ -7750,7 +7750,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ImageIamBindingArgs.builder
     com.pulumi.gcp.compute.ImageIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
@@ -8326,7 +8326,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ImageIamMemberArgs.builder
     com.pulumi.gcp.compute.ImageIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Image. Each of these resources serves a different use case:
@@ -8902,7 +8902,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ImageIamPolicyArgs.builder
     com.pulumi.gcp.compute.ImageIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a VM instance resource within GCE. For more information see
@@ -8918,7 +8918,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
@@ -8941,7 +8941,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceFromMachineImage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a VM instance resource within GCE. For more information see
@@ -8961,7 +8961,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceFromTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a group of dissimilar Compute Engine virtual machine instances.
@@ -8976,7 +8976,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Google Compute Engine Instance Group Manager API creates and manages pools
@@ -8994,7 +8994,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceGroupManager(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents the Instance membership to the Instance Group.
@@ -9021,7 +9021,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.InstanceGroupMembershipArgs.builder
     com.pulumi.gcp.compute.InstanceGroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mange the named ports setting for a managed instance group without
@@ -9043,7 +9043,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceGroupNamedPort(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
@@ -9632,7 +9632,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMBindingArgs.builder
     com.pulumi.gcp.compute.InstanceIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
@@ -10221,7 +10221,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMMemberArgs.builder
     com.pulumi.gcp.compute.InstanceIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Instance. Each of these resources serves a different use case:
@@ -10810,7 +10810,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.InstanceIAMPolicyArgs.builder
     com.pulumi.gcp.compute.InstanceIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an Instance Settings resource. Instance settings are centralized configuration parameters that allow users to configure the default values for specific VM parameters that are normally set using GCE instance API methods.
@@ -10826,7 +10826,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.InstanceSettingsArgs.builder
     com.pulumi.gcp.compute.InstanceSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note**: Global instance templates can be used in any region. To lower the impact of outages outside your region and gain data residency within your region, use google_compute_region_instance_template.
@@ -10844,7 +10844,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
@@ -11423,7 +11423,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceTemplateIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
@@ -12002,7 +12002,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceTemplateIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstanceTemplate. Each of these resources serves a different use case:
@@ -12581,7 +12581,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstanceTemplateIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instant snapshot resource.
@@ -12606,7 +12606,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstantSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
@@ -13198,7 +13198,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstantSnapshotIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
@@ -13790,7 +13790,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstantSnapshotIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine InstantSnapshot. Each of these resources serves a different use case:
@@ -14382,7 +14382,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InstantSnapshotIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an Interconnect resource. The Interconnect resource is a dedicated connection between
@@ -14402,7 +14402,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Interconnect(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an InterconnectAttachment (VLAN attachment) resource. For more
@@ -14422,7 +14422,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InterconnectAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An interconnect attachment group resource allows customers to create,
@@ -14442,7 +14442,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InterconnectAttachmentGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An interconnect group resource allows customers to create, analyze, and
@@ -14462,7 +14462,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.InterconnectGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Machine Image resource. Machine images store all the configuration,
@@ -14486,7 +14486,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.MachineImage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
@@ -15068,7 +15068,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamBindingArgs.builder
     com.pulumi.gcp.compute.MachineImageIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
@@ -15650,7 +15650,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamMemberArgs.builder
     com.pulumi.gcp.compute.MachineImageIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine MachineImage. Each of these resources serves a different use case:
@@ -16232,7 +16232,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.MachineImageIamPolicyArgs.builder
     com.pulumi.gcp.compute.MachineImageIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An SslCertificate resource, used for HTTPS load balancing.  This resource
@@ -16269,7 +16269,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ManagedSslCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An SslCertificate resource, used for HTTPS load balancing.  This resource
@@ -16306,7 +16306,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.MangedSslCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a VPC network or legacy network resource on GCP.
@@ -16325,7 +16325,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Network(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A network attachment is a resource that lets a producer Virtual Private Cloud (VPC) network initiate connections to a consumer VPC network through a Private Service Connect interface.
@@ -16344,7 +16344,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Google Cloud Armor network edge security service resource.
@@ -16363,7 +16363,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkEdgeSecurityService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Network endpoint represents a IP address and port combination that is
@@ -16387,7 +16387,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.NetworkEndpointArgs.builder
     com.pulumi.gcp.compute.NetworkEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Network endpoint groups (NEGs) are zonal resources that represent
@@ -16419,7 +16419,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkEndpointGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A set of network endpoints belonging to a network endpoint group (NEG). A
@@ -16446,7 +16446,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.NetworkEndpointListArgs.builder
     com.pulumi.gcp.compute.NetworkEndpointList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy resource */
   def NetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -16457,7 +16457,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Compute NetworkFirewallPolicyAssociation resource
@@ -16474,7 +16474,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -16783,7 +16783,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -17092,7 +17092,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine NetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -17401,7 +17401,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a packet mirroring rule that describes one or more match conditions along with the action to be taken when traffic matches this condition (mirror or do_not_mirror).
@@ -17418,7 +17418,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRuleArgs.builder
     com.pulumi.gcp.compute.NetworkFirewallPolicyPacketMirroringRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a rule that describes one or more match conditions along with the action to be taken when traffic matches this condition (allow or deny).
@@ -17432,7 +17432,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.NetworkFirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.NetworkFirewallPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy with rules resource */
   def NetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -17443,7 +17443,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkFirewallPolicyWithRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a network peering within GCE. For more information see
@@ -17464,7 +17464,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NetworkPeering(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage a network peering&#39;s route settings without managing the peering as
@@ -17483,7 +17483,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.NetworkPeeringRoutesConfigArgs.builder
     com.pulumi.gcp.compute.NetworkPeeringRoutesConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a NodeGroup resource to manage a group of sole-tenant nodes.
@@ -17507,7 +17507,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NodeGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a NodeTemplate resource. Node templates specify properties
@@ -17528,7 +17528,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.NodeTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Organization security policies are used to control incoming/outgoing traffic.
@@ -17544,7 +17544,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSecurityPolicyArgs.builder
     com.pulumi.gcp.compute.OrganizationSecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An association for the OrganizationSecurityPolicy.
@@ -17563,7 +17563,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.OrganizationSecurityPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A rule for the OrganizationSecurityPolicy.
@@ -17579,7 +17579,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.OrganizationSecurityPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents the singleton resource Organization Snapshot Recycle Bin Policy that
@@ -17602,7 +17602,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicyArgs.builder
     com.pulumi.gcp.compute.OrganizationSnapshotRecycleBinPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Packet Mirroring mirrors traffic to and from particular VM instances.
@@ -17623,7 +17623,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.PacketMirroring(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A config defined for a single managed instance that belongs to an instance group manager. It preserves the instance name
@@ -17643,7 +17643,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.PerInstanceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a single Google Compute Engine preview feature such as Alpha API access, which can be enabled or unspecified for a project.
@@ -17662,7 +17662,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.PreviewFeature(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Sets the Cloud Armor tier of the project.
@@ -17678,7 +17678,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ProjectCloudArmorTierArgs.builder
     com.pulumi.gcp.compute.ProjectCloudArmorTier(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Configures the Google Compute Engine
@@ -17693,7 +17693,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ProjectDefaultNetworkTierArgs.builder
     com.pulumi.gcp.compute.ProjectDefaultNetworkTier(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authoritatively manages metadata common to all instances for a project in GCE. For more information see
@@ -17711,7 +17711,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ProjectMetadataArgs.builder
     com.pulumi.gcp.compute.ProjectMetadata(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a single key/value pair on metadata common to all instances for
@@ -17724,7 +17724,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.ProjectMetadataItemArgs.builder
     com.pulumi.gcp.compute.ProjectMetadataItem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a PublicAdvertisedPrefix for use with bring your own IP addresses (BYOIP).
@@ -17743,7 +17743,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.PublicAdvertisedPrefix(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a PublicDelegatedPrefix for use with bring your own IP addresses (BYOIP).
@@ -17762,7 +17762,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.PublicDelegatedPrefix(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an Autoscaler resource.
@@ -17785,7 +17785,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionAutoscaler(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Regional backend buckets allow you to use Google Cloud Storage buckets with
@@ -17824,7 +17824,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendBucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
@@ -18422,7 +18422,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendBucketIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
@@ -19020,7 +19020,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendBucketIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendBucket. Each of these resources serves a different use case:
@@ -19618,7 +19618,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendBucketIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Region Backend Service defines a regionally-scoped group of virtual
@@ -19641,7 +19641,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
@@ -20239,7 +20239,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendServiceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
@@ -20837,7 +20837,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendServiceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionBackendService. Each of these resources serves a different use case:
@@ -21435,7 +21435,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionBackendServiceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a regional Commitment resource.
@@ -21458,7 +21458,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionCommitment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A composite health check resource specifies the health source resources and
@@ -21479,7 +21479,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionCompositeHealthCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Persistent disks are durable storage devices that function similarly to
@@ -21515,7 +21515,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionDisk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
@@ -21831,7 +21831,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionDiskIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
@@ -22147,7 +22147,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionDiskIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionDisk. Each of these resources serves a different use case:
@@ -22463,7 +22463,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionDiskIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds existing resource policies to a disk. You can only add one policy
@@ -22479,7 +22479,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionDiskResourcePolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Health Aggregation Policy specifies how to aggregate the service&#39;s constituent source health status to determine an aggregated health status result for the service.  For example, you can specify a criteria such as \u201cConsider the Health Source as `Healthy` if there are at least 5 healthy backend endpoints\u201d. Or, you can specify a criteria like \u201cConsider the Health Source as `Healthy` if minimum 60% of endpoints in the Backend are healthy\u201d. The Health Aggregation Policy is applied to each Health Source (e.g. Backend Service) individually.
@@ -22498,7 +22498,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionHealthAggregationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Health Checks determine whether instances are responsive and able to do work.
@@ -22527,7 +22527,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionHealthCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A health source resource specifies the source resources and the health
@@ -22548,7 +22548,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionHealthSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Google Compute Engine Regional Instance Group Manager API creates and manages pools
@@ -22571,7 +22571,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstanceGroupManager(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a VM instance template resource within GCE. For more information see
@@ -22587,7 +22587,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstanceTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instant snapshot resource.
@@ -22612,7 +22612,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstantSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
@@ -23204,7 +23204,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstantSnapshotIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
@@ -23796,7 +23796,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstantSnapshotIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionInstantSnapshot. Each of these resources serves a different use case:
@@ -24388,7 +24388,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionInstantSnapshotIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Region network endpoint represents a IP address/FQDN and port combination that is
@@ -24408,7 +24408,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkEndpointArgs.builder
     com.pulumi.gcp.compute.RegionNetworkEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A regional NEG that can support Serverless Products, proxying traffic to
@@ -24429,7 +24429,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkEndpointGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy resource */
   def RegionNetworkFirewallPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24440,7 +24440,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Compute NetworkFirewallPolicyAssociation resource
@@ -24457,7 +24457,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -24773,7 +24773,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -25089,7 +25089,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine RegionNetworkFirewallPolicy. Each of these resources serves a different use case:
@@ -25405,7 +25405,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a rule that describes one or more match conditions along with the action to be taken when traffic matches this condition (allow or deny).
@@ -25419,7 +25419,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRuleArgs.builder
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** The Compute NetworkFirewallPolicy with rules resource */
   def RegionNetworkFirewallPolicyWithRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25430,7 +25430,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkFirewallPolicyWithRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Compute NetworkFirewallPolicy resource
@@ -25446,7 +25446,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionNetworkPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a traffic classification rule that describes one or more match conditions along with the action to be taken when traffic matches this condition.
@@ -25463,7 +25463,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRuleArgs.builder
     com.pulumi.gcp.compute.RegionNetworkPolicyTrafficClassificationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A config defined for a single managed instance that belongs to an instance group manager. It preserves the instance name
@@ -25484,7 +25484,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionPerInstanceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Regional Managed Instance Group Resize Request
@@ -25507,7 +25507,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionResizeRequest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Region Cloud Armor Security Policy resource.
@@ -25526,7 +25526,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionSecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A rule for the RegionSecurityPolicy.
@@ -25542,7 +25542,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.RegionSecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.RegionSecurityPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A RegionSslCertificate resource, used for HTTPS load balancing. This resource
@@ -25566,7 +25566,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionSslCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Regional SSL policy. SSL policies give you the ability to control the
@@ -25586,7 +25586,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionSslPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a RegionTargetHttpProxy resource, which is used by one or more
@@ -25606,7 +25606,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionTargetHttpProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a RegionTargetHttpsProxy resource, which is used by one or more
@@ -25626,7 +25626,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionTargetHttpsProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a RegionTargetTcpProxy resource, which is used by one or more
@@ -25647,7 +25647,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionTargetTcpProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * UrlMaps are used to route requests to a backend service based on rules
@@ -25661,7 +25661,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RegionUrlMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a reservation resource. A reservation ensures that capacity is
@@ -25687,7 +25687,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Reservation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Managed Instance Group Resize Request
@@ -25710,7 +25710,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ResizeRequest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A policy that can be attached to a resource to specify or schedule actions on that resource.
@@ -25727,7 +25727,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Adds existing resource policies to a compute instance. You can only add one policy
@@ -25745,7 +25745,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ResourcePolicyAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A RolloutPlan is the customer-defined strategy to divide a large-scale change
@@ -25765,7 +25765,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RolloutPlan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Route resource.
@@ -25805,7 +25805,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Router resource.
@@ -25824,7 +25824,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Router(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cloud Router interface. For more information see
@@ -25840,7 +25840,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RouterInterface(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Named Set is a collection of IP addresses or ranges (for PREFIX type) or
@@ -25860,7 +25860,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RouterNamedSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A NAT service created in a router.
@@ -25882,7 +25882,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RouterNat(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource used to set the list of IP addresses to be used in a NAT service and manage the draining of destroyed IPs.
@@ -25902,7 +25902,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.RouterNatAddressArgs.builder
     com.pulumi.gcp.compute.RouterNatAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * BGP information that must be configured into the routing stack to
@@ -25924,7 +25924,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RouterPeer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A route policy created in a router
@@ -25943,7 +25943,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.RouterRoutePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An SslCertificate resource, used for HTTPS load balancing. This resource
@@ -25967,7 +25967,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SSLCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a SSL policy. SSL policies give you the ability to control the
@@ -25987,7 +25987,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SSLPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Security Policy defines an IP blacklist or whitelist that protects load balanced Google Cloud services by denying or permitting traffic from specified IP ranges. For more information
@@ -26004,7 +26004,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A rule for the SecurityPolicy.
@@ -26020,7 +26020,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SecurityPolicyRuleArgs.builder
     com.pulumi.gcp.compute.SecurityPolicyRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A ScanConfig resource contains the configurations to launch a scan.
@@ -26039,7 +26039,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SecurityScanConfigArgs.builder
     com.pulumi.gcp.compute.SecurityScanConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a ServiceAttachment resource.
@@ -26058,7 +26058,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ServiceAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables the Google Compute Engine
@@ -26074,7 +26074,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SharedVPCHostProjectArgs.builder
     com.pulumi.gcp.compute.SharedVPCHostProject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Enables the Google Compute Engine
@@ -26091,7 +26091,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SharedVPCServiceProjectArgs.builder
     com.pulumi.gcp.compute.SharedVPCServiceProject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Persistent Disk Snapshot resource.
@@ -26121,7 +26121,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Snapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
@@ -26430,7 +26430,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SnapshotIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
@@ -26739,7 +26739,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SnapshotIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Snapshot. Each of these resources serves a different use case:
@@ -27048,7 +27048,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.SnapshotIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents the singleton resource Snapshot Recycle Bin Policy that
@@ -27068,7 +27068,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SnapshotRecycleBinPolicyArgs.builder
     com.pulumi.gcp.compute.SnapshotRecycleBinPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Updates your project&#39;s snapshot settings and sets a new default storage location for snapshots.
@@ -27084,7 +27084,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SnapshotSettingsArgs.builder
     com.pulumi.gcp.compute.SnapshotSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Hyperdisk Storage Pool is a pre-purchased collection of capacity, throughput, and IOPS
@@ -27105,7 +27105,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.StoragePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
@@ -27697,7 +27697,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.StoragePoolIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
@@ -28289,7 +28289,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.StoragePoolIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine StoragePool. Each of these resources serves a different use case:
@@ -28881,7 +28881,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.StoragePoolIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A VPC network is a virtual version of the traditional physical networks
@@ -28922,7 +28922,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.Subnetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
@@ -29511,7 +29511,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMBindingArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
@@ -30100,7 +30100,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMMemberArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Compute Engine Subnetwork. Each of these resources serves a different use case:
@@ -30689,7 +30689,7 @@ object compute:
     val argsBuilder = com.pulumi.gcp.compute.SubnetworkIAMPolicyArgs.builder
     com.pulumi.gcp.compute.SubnetworkIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Target gRPC Proxy resource. A target gRPC proxy is a component
@@ -30711,7 +30711,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetGrpcProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a TargetHttpProxy resource, which is used by one or more global
@@ -30731,7 +30731,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetHttpProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a TargetHttpsProxy resource, which is used by one or more
@@ -30751,7 +30751,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetHttpsProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a TargetInstance resource which defines an endpoint instance
@@ -30775,7 +30775,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Target Pool within GCE. This is a collection of instances used as
@@ -30792,7 +30792,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a TargetSslProxy resource, which is used by one or more
@@ -30813,7 +30813,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetSSLProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a TargetTcpProxy resource, which is used by one or more
@@ -30834,7 +30834,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.TargetTCPProxy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * UrlMaps are used to route requests to a backend service based on rules
@@ -30854,7 +30854,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.URLMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a VPN gateway running in GCP. This virtual device is managed
@@ -30875,7 +30875,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.VPNGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * VPN tunnel resource.
@@ -30898,7 +30898,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.VPNTunnel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The WireGroup resource represents a group of redundant wires between interconnects in two different metros. Each WireGroup belongs to a CrossSiteNetwork. A wire group defines endpoints and the wires which exist between them.
@@ -30917,7 +30917,7 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.WireGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Zone VM Extension Policy. */
   def ZoneVmExtensionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -30928,4 +30928,4 @@ object compute:
       case None               =>
     com.pulumi.gcp.compute.ZoneVmExtensionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -14,7 +14,7 @@ object servicequotas:
     val argsBuilder = com.pulumi.aws.servicequotas.AutoManagementArgs.builder
     com.pulumi.aws.servicequotas.AutoManagement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual Service Quota.
@@ -26,7 +26,7 @@ object servicequotas:
     val argsBuilder = com.pulumi.aws.servicequotas.ServiceQuotaArgs.builder
     com.pulumi.aws.servicequotas.ServiceQuota(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicequotasFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -97,7 +97,7 @@ object servicequotas:
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateArgs.builder
     com.pulumi.aws.servicequotas.Template(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Service Quotas Template Association.
@@ -109,4 +109,4 @@ object servicequotas:
     val argsBuilder = com.pulumi.aws.servicequotas.TemplateAssociationArgs.builder
     com.pulumi.aws.servicequotas.TemplateAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

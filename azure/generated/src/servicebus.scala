@@ -20,7 +20,7 @@ object servicebus:
       case None =>
     com.pulumi.azure.servicebus.Namespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Namespace authorization Rule within a ServiceBus. */
   def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.NamespaceAuthorizationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Service Bus Namespace Customer Managed Key.
@@ -45,7 +45,7 @@ object servicebus:
     val argsBuilder = com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.servicebus.NamespaceCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Disaster Recovery Config for a Service Bus Namespace.
@@ -60,7 +60,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Queue. */
   def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.Queue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Authorization Rule for a ServiceBus Queue. */
   def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.QueueAuthorizationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicebusFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -196,7 +196,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Subscription Rule. */
   def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -207,7 +207,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.SubscriptionRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a ServiceBus Topic.
@@ -222,7 +222,7 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.Topic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic. */
   def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,4 +233,4 @@ object servicebus:
       case None               =>
     com.pulumi.azure.servicebus.TopicAuthorizationRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

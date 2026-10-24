@@ -159,7 +159,7 @@ object core:
       case None =>
     com.pulumi.azure.core.CustomProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Portal Tenant Configuration.
@@ -177,7 +177,7 @@ object core:
     val argsBuilder = com.pulumi.azure.core.PortalTenantConfigurationArgs.builder
     com.pulumi.azure.core.PortalTenantConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure Cli. */
   def ResourceDeploymentScriptAzureCli(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -195,7 +195,7 @@ object core:
       case None =>
     com.pulumi.azure.core.ResourceDeploymentScriptAzureCli(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure PowerShell. */
   def ResourceDeploymentScriptPowerShell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -213,7 +213,7 @@ object core:
       case None =>
     com.pulumi.azure.core.ResourceDeploymentScriptPowerShell(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Resource Group.
@@ -237,7 +237,7 @@ object core:
       case None =>
     com.pulumi.azure.core.ResourceGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Resource Group. */
   def ResourceGroupCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -248,7 +248,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceGroupCostManagementExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Resource Group. */
   def ResourceGroupCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -259,7 +259,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceGroupCostManagementView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Assignment. */
   def ResourceGroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -270,7 +270,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceGroupPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Exemption. */
   def ResourceGroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -281,7 +281,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceGroupPolicyExemption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Group Policy Remediation. */
   def ResourceGroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -292,7 +292,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceGroupPolicyRemediation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Resource Group Template Deployment.
@@ -314,7 +314,7 @@ object core:
       case None =>
     com.pulumi.azure.core.ResourceGroupTemplateDeployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Assignment to a Resource. */
   def ResourcePolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -325,7 +325,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourcePolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Policy Exemption. */
   def ResourcePolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -336,7 +336,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourcePolicyExemption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Policy Remediation. */
   def ResourcePolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -347,7 +347,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourcePolicyRemediation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the registration of a feature within a Resource Provider.
@@ -364,7 +364,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceProviderFeatureRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the registration of a Resource Provider - which allows access to the API&#39;s supported by this Resource Provider.
@@ -383,7 +383,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.ResourceProviderRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Alias for a Subscription - which adds an Alias to an existing Subscription, allowing it to be managed in the provider - or create a new Subscription with a new Alias.
@@ -412,7 +412,7 @@ object core:
       case None =>
     com.pulumi.azure.core.Subscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Subscription. */
   def SubscriptionCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -423,7 +423,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.SubscriptionCostManagementExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Subscription. */
   def SubscriptionCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -434,7 +434,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.SubscriptionCostManagementView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Assignment. */
   def SubscriptionPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -445,7 +445,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.SubscriptionPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Exemption. */
   def SubscriptionPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -456,7 +456,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.SubscriptionPolicyExemption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Subscription Policy Remediation. */
   def SubscriptionPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -467,7 +467,7 @@ object core:
       case None               =>
     com.pulumi.azure.core.SubscriptionPolicyRemediation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Template Deployment. */
   def SubscriptionTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -485,7 +485,7 @@ object core:
       case None =>
     com.pulumi.azure.core.SubscriptionTemplateDeployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Template Deployment at the Tenant Scope.
@@ -511,4 +511,4 @@ object core:
       case None =>
     com.pulumi.azure.core.TenantTemplateDeployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

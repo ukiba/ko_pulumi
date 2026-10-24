@@ -17,7 +17,7 @@ object accessanalyzer:
       case None =>
     com.pulumi.aws.accessanalyzer.Analyzer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AccessAnalyzer Archive Rule. */
   def ArchiveRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,4 +25,4 @@ object accessanalyzer:
     val argsBuilder = com.pulumi.aws.accessanalyzer.ArchiveRuleArgs.builder
     com.pulumi.aws.accessanalyzer.ArchiveRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

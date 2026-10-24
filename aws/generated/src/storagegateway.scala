@@ -14,7 +14,7 @@ object storagegateway:
     val argsBuilder = com.pulumi.aws.storagegateway.CacheArgs.builder
     com.pulumi.aws.storagegateway.Cache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Storage Gateway cached iSCSI volume.
@@ -35,7 +35,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.CachesIscsiVolume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Associate an Amazon FSx file system with the FSx File Gateway. After the association process is complete, the file shares on the Amazon FSx file system are available for access through the gateway. This operation only supports the FSx File Gateway type.
@@ -54,7 +54,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.FileSystemAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Storage Gateway file, tape, or volume gateway in the provider region.
@@ -73,7 +73,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.Gateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway NFS File Share. */
   def NfsFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -88,7 +88,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.NfsFileShare(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway SMB File Share. */
   def SmbFileShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.SmbFileShare(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object StoragegatewayFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -141,7 +141,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.StoredIscsiVolume(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Storage Gateway Tape Pool. */
   def TapePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -156,7 +156,7 @@ object storagegateway:
       case None =>
     com.pulumi.aws.storagegateway.TapePool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Storage Gateway upload buffer.
@@ -168,7 +168,7 @@ object storagegateway:
     val argsBuilder = com.pulumi.aws.storagegateway.UploadBufferArgs.builder
     com.pulumi.aws.storagegateway.UploadBuffer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Storage Gateway working storage.
@@ -180,4 +180,4 @@ object storagegateway:
     val argsBuilder = com.pulumi.aws.storagegateway.WorkingStorageArgs.builder
     com.pulumi.aws.storagegateway.WorkingStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

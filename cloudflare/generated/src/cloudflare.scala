@@ -12,7 +12,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -25,7 +25,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccessCaCertificateArgs.builder
     com.pulumi.cloudflare.AccessCaCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -41,7 +41,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessCustomPage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -57,7 +57,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -73,7 +73,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessIdentityProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -86,7 +86,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccessKeysConfigurationArgs.builder
     com.pulumi.cloudflare.AccessKeysConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -102,7 +102,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessMutualTlsCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -115,7 +115,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccessMutualTlsHostnameSettingsArgs.builder
     com.pulumi.cloudflare.AccessMutualTlsHostnameSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -132,7 +132,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessOrganization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -148,7 +148,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -161,7 +161,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccessRuleArgs.builder
     com.pulumi.cloudflare.AccessRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -177,7 +177,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessServiceToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/accesstag.AccessTag has been deprecated in favor of cloudflare.index/zerotrustaccesstag.ZeroTrustAccessTag") def AccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.AccessTagArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -187,7 +187,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccessTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -230,7 +230,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Account(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -243,7 +243,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccountDnsSettingsArgs.builder
     com.pulumi.cloudflare.AccountDnsSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -259,7 +259,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccountDnsSettingsInternalView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -273,7 +273,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccountMemberArgs.builder
     com.pulumi.cloudflare.AccountMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -286,7 +286,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AccountSubscriptionArgs.builder
     com.pulumi.cloudflare.AccountSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -302,7 +302,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AccountToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -315,7 +315,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AddressMapArgs.builder
     com.pulumi.cloudflare.AddressMap(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -328,7 +328,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AiGatewayArgs.builder
     com.pulumi.cloudflare.AiGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -344,7 +344,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AiGatewayDynamicRouting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ## Import
@@ -358,7 +358,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AiSearchInstanceArgs.builder
     com.pulumi.cloudflare.AiSearchInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ## Import
@@ -373,7 +373,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AiSearchNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ## Import
@@ -390,7 +390,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.AiSearchToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -411,7 +411,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ApiShieldArgs.builder
     com.pulumi.cloudflare.ApiShield(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -424,7 +424,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ApiShieldDiscoveryOperationArgs.builder
     com.pulumi.cloudflare.ApiShieldDiscoveryOperation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -439,7 +439,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ApiShieldOperationArgs.builder
     com.pulumi.cloudflare.ApiShieldOperation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -457,7 +457,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ApiShieldOperationSchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.ApiShieldOperationSchemaValidationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -478,7 +478,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ApiShieldSchema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -496,7 +496,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ApiShieldSchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.ApiShieldSchemaValidationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -512,7 +512,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ApiToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -525,35 +525,35 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ArgoSmartRoutingArgs.builder
     com.pulumi.cloudflare.ArgoSmartRouting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ArgoTieredCaching(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ArgoTieredCachingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ArgoTieredCachingArgs.builder
     com.pulumi.cloudflare.ArgoTieredCaching(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AuthenticatedOriginPulls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPulls(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AuthenticatedOriginPullsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsCertificateArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def AuthenticatedOriginPullsHostnameCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificateArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsHostnameCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -566,7 +566,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.AuthenticatedOriginPullsSettingsArgs.builder
     com.pulumi.cloudflare.AuthenticatedOriginPullsSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -579,7 +579,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.BotManagementArgs.builder
     com.pulumi.cloudflare.BotManagement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -596,7 +596,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ByoIpPrefixArgs.builder
     com.pulumi.cloudflare.ByoIpPrefix(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -612,7 +612,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.CallsSfuApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -628,7 +628,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.CallsTurnApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -641,7 +641,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CertificateAuthoritiesHostnameAssociationsArgs.builder
     com.pulumi.cloudflare.CertificateAuthoritiesHostnameAssociations(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -660,7 +660,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CertificatePackArgs.builder
     com.pulumi.cloudflare.CertificatePack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -673,7 +673,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ClientCertificateArgs.builder
     com.pulumi.cloudflare.ClientCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -686,7 +686,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CloudConnectorRulesArgs.builder
     com.pulumi.cloudflare.CloudConnectorRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CloudflareFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -10932,7 +10932,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -10945,7 +10945,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestAssetArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestAsset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -10957,7 +10957,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestMessageArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestMessage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -10970,7 +10970,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CloudforceOneRequestPriorityArgs.builder
     com.pulumi.cloudflare.CloudforceOneRequestPriority(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ConnectivityDirectoryService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ConnectivityDirectoryServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -10980,7 +10980,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ConnectivityDirectoryService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -10995,7 +10995,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ContentScanningArgs.builder
     com.pulumi.cloudflare.ContentScanning(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11008,7 +11008,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ContentScanningExpressionArgs.builder
     com.pulumi.cloudflare.ContentScanningExpression(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11021,7 +11021,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CtAlertingArgs.builder
     com.pulumi.cloudflare.CtAlerting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11037,7 +11037,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.CustomCsr(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11050,7 +11050,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CustomHostnameArgs.builder
     com.pulumi.cloudflare.CustomHostname(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11063,7 +11063,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CustomHostnameFallbackOriginArgs.builder
     com.pulumi.cloudflare.CustomHostnameFallbackOrigin(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11076,7 +11076,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CustomOriginTrustStoreArgs.builder
     com.pulumi.cloudflare.CustomOriginTrustStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def CustomPageAsset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.CustomPageAssetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -11086,7 +11086,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.CustomPageAsset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11102,7 +11102,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CustomPagesArgs.builder
     com.pulumi.cloudflare.CustomPages(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11117,7 +11117,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.CustomSslArgs.builder
     com.pulumi.cloudflare.CustomSsl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11136,7 +11136,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.D1Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11151,7 +11151,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DeviceManagedNetworks(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11166,7 +11166,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DevicePostureIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11181,7 +11181,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DevicePostureRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11197,7 +11197,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DlpCustomProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11210,7 +11210,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.DlpPredefinedProfileArgs.builder
     com.pulumi.cloudflare.DlpPredefinedProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11224,7 +11224,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.DlsPrefixBindingArgs.builder
     com.pulumi.cloudflare.DlsPrefixBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11240,7 +11240,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsFirewall(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11256,7 +11256,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsRecord(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11272,7 +11272,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsZoneTransfersAcl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11291,7 +11291,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsZoneTransfersIncoming(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11310,7 +11310,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsZoneTransfersOutgoing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11326,7 +11326,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsZoneTransfersPeer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11342,7 +11342,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.DnsZoneTransfersTsig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11355,7 +11355,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailRoutingAddressArgs.builder
     com.pulumi.cloudflare.EmailRoutingAddress(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11371,7 +11371,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.EmailRoutingCatchAll(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11387,7 +11387,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.EmailRoutingDns(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11403,7 +11403,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.EmailRoutingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11416,7 +11416,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailRoutingSettingsArgs.builder
     com.pulumi.cloudflare.EmailRoutingSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11429,7 +11429,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityAllowPolicyArgs.builder
     com.pulumi.cloudflare.EmailSecurityAllowPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11442,7 +11442,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityBlockSenderArgs.builder
     com.pulumi.cloudflare.EmailSecurityBlockSender(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11455,7 +11455,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityDomainArgs.builder
     com.pulumi.cloudflare.EmailSecurityDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11471,7 +11471,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.EmailSecurityImpersonationRegistry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11484,7 +11484,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.EmailSecurityTrustedDomainsArgs.builder
     com.pulumi.cloudflare.EmailSecurityTrustedDomains(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def EmailSendingSubdomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.EmailSendingSubdomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -11494,14 +11494,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.EmailSendingSubdomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def FieldExtractor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.FieldExtractorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.FieldExtractorArgs.builder
     com.pulumi.cloudflare.FieldExtractor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11520,7 +11520,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.FilterArgs.builder
     com.pulumi.cloudflare.Filter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11539,7 +11539,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.FirewallRuleArgs.builder
     com.pulumi.cloudflare.FirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11555,7 +11555,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.FlagshipApp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11568,7 +11568,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.FlagshipFlagArgs.builder
     com.pulumi.cloudflare.FlagshipFlag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11582,7 +11582,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.GoogleTagGatewayArgs.builder
     com.pulumi.cloudflare.GoogleTagGateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11598,7 +11598,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Healthcheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11610,7 +11610,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.HostnameTlsSettingArgs.builder
     com.pulumi.cloudflare.HostnameTlsSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11626,7 +11626,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.HyperdriveConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11652,7 +11652,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ImageArgs.builder
     com.pulumi.cloudflare.Image(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11665,7 +11665,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ImageVariantArgs.builder
     com.pulumi.cloudflare.ImageVariant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11715,7 +11715,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.KeylessCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11730,7 +11730,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.LeakedCredentialCheckArgs.builder
     com.pulumi.cloudflare.LeakedCredentialCheck(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11745,7 +11745,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.LeakedCredentialCheckRuleArgs.builder
     com.pulumi.cloudflare.LeakedCredentialCheckRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11767,7 +11767,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.List(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11780,7 +11780,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ListItemArgs.builder
     com.pulumi.cloudflare.ListItem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11796,7 +11796,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.LoadBalancer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11809,14 +11809,14 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.LoadBalancerMonitorArgs.builder
     com.pulumi.cloudflare.LoadBalancerMonitor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def LoadBalancerMonitorGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.LoadBalancerMonitorGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.LoadBalancerMonitorGroupArgs.builder
     com.pulumi.cloudflare.LoadBalancerMonitorGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11832,7 +11832,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.LoadBalancerPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11845,7 +11845,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.LogpullRetentionArgs.builder
     com.pulumi.cloudflare.LogpullRetention(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11860,7 +11860,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.LogpushJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11872,7 +11872,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.LogpushOwnershipChallengeArgs.builder
     com.pulumi.cloudflare.LogpushOwnershipChallenge(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11889,7 +11889,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicNetworkMonitoringConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11906,7 +11906,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicNetworkMonitoringRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11924,14 +11924,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicTransitCf1Site(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MagicTransitConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicTransitConnectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MagicTransitConnectorArgs.builder
     com.pulumi.cloudflare.MagicTransitConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11949,7 +11949,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicTransitSite(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11967,7 +11967,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicTransitSiteAcl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -11985,7 +11985,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicTransitSiteLan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12003,7 +12003,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicTransitSiteWan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MagicWanBgpFilterProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanBgpFilterProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12013,7 +12013,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicWanBgpFilterProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MagicWanGreTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanGreTunnelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12023,7 +12023,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicWanGreTunnel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MagicWanIpsecTunnel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanIpsecTunnelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12033,14 +12033,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MagicWanIpsecTunnel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MagicWanStaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MagicWanStaticRouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MagicWanStaticRouteArgs.builder
     com.pulumi.cloudflare.MagicWanStaticRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12091,7 +12091,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ManagedHeadersArgs.builder
     com.pulumi.cloudflare.ManagedHeaders(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12142,14 +12142,14 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ManagedTransformsArgs.builder
     com.pulumi.cloudflare.ManagedTransforms(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MonetizationRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MonetizationRulesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.MonetizationRulesArgs.builder
     com.pulumi.cloudflare.MonetizationRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MoqRelay(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MoqRelayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12159,7 +12159,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MoqRelay(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def MtlsCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.MtlsCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12169,7 +12169,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.MtlsCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12182,7 +12182,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.NelSettingArgs.builder
     com.pulumi.cloudflare.NelSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12201,7 +12201,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.NotificationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12220,7 +12220,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.NotificationPolicyWebhooks(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12233,7 +12233,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.OauthClientArgs.builder
     com.pulumi.cloudflare.OauthClient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12246,7 +12246,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ObservatoryScheduledTestArgs.builder
     com.pulumi.cloudflare.ObservatoryScheduledTest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12261,35 +12261,35 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Organization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def OrganizationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.OrganizationProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OrganizationProfileArgs.builder
     com.pulumi.cloudflare.OrganizationProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def OriginCaCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginCaCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginCaCertificateArgs.builder
     com.pulumi.cloudflare.OriginCaCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def OriginCloudRegion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginCloudRegionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginCloudRegionArgs.builder
     com.pulumi.cloudflare.OriginCloudRegion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def OriginTlsComplianceModes(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.OriginTlsComplianceModesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.OriginTlsComplianceModesArgs.builder
     com.pulumi.cloudflare.OriginTlsComplianceModes(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12336,7 +12336,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.PageRuleArgs.builder
     com.pulumi.cloudflare.PageRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12359,7 +12359,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.PageShieldPolicyArgs.builder
     com.pulumi.cloudflare.PageShieldPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12378,7 +12378,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.PagesDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12399,7 +12399,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.PagesProject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12415,7 +12415,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Pipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12431,7 +12431,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.PipelineSink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12447,14 +12447,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.PipelineStream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def Precursor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.PrecursorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.PrecursorArgs.builder
     com.pulumi.cloudflare.Precursor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The provider type for the cloudflare package. By default, resources use package-wide configuration
@@ -12467,7 +12467,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ProviderArgs.builder
     com.pulumi.cloudflare.Provider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12482,7 +12482,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.QueueArgs.builder
     com.pulumi.cloudflare.Queue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12497,7 +12497,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.QueueConsumerArgs.builder
     com.pulumi.cloudflare.QueueConsumer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12512,14 +12512,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.R2Bucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def R2BucketCors(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketCorsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketCorsArgs.builder
     com.pulumi.cloudflare.R2BucketCors(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12532,21 +12532,21 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.R2BucketEventNotificationArgs.builder
     com.pulumi.cloudflare.R2BucketEventNotification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def R2BucketLifecycle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketLifecycleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketLifecycleArgs.builder
     com.pulumi.cloudflare.R2BucketLifecycle(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def R2BucketLock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.R2BucketLockArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2BucketLockArgs.builder
     com.pulumi.cloudflare.R2BucketLock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12558,7 +12558,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.R2BucketSippyArgs.builder
     com.pulumi.cloudflare.R2BucketSippy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12571,7 +12571,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.R2CustomDomainArgs.builder
     com.pulumi.cloudflare.R2CustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12584,14 +12584,14 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.R2DataCatalogArgs.builder
     com.pulumi.cloudflare.R2DataCatalog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def R2ManagedDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.R2ManagedDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.R2ManagedDomainArgs.builder
     com.pulumi.cloudflare.R2ManagedDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12610,7 +12610,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.RateLimitArgs.builder
     com.pulumi.cloudflare.RateLimit(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12626,7 +12626,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Record(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12639,7 +12639,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.RegionalHostnameArgs.builder
     com.pulumi.cloudflare.RegionalHostname(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12654,7 +12654,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.RegionalTieredCacheArgs.builder
     com.pulumi.cloudflare.RegionalTieredCache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12667,7 +12667,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.RiskBehaviorArgs.builder
     com.pulumi.cloudflare.RiskBehavior(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def Ruleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.RulesetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12677,7 +12677,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Ruleset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12692,7 +12692,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SchemaValidationOperationSettingsArgs.builder
     com.pulumi.cloudflare.SchemaValidationOperationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12710,7 +12710,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.SchemaValidationSchemas(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12725,7 +12725,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SchemaValidationSettingsArgs.builder
     com.pulumi.cloudflare.SchemaValidationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12741,7 +12741,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.SecretsStore(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12757,7 +12757,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.SecretsStoreSecret(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def Share(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12767,21 +12767,21 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Share(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ShareRecipient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareRecipientArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ShareRecipientArgs.builder
     com.pulumi.cloudflare.ShareRecipient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ShareResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ShareResourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ShareResourceArgs.builder
     com.pulumi.cloudflare.ShareResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12794,7 +12794,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SnippetArgs.builder
     com.pulumi.cloudflare.Snippet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12807,7 +12807,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SnippetRulesArgs.builder
     com.pulumi.cloudflare.SnippetRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ## Import
@@ -12819,7 +12819,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SnippetsArgs.builder
     com.pulumi.cloudflare.Snippets(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12832,7 +12832,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SpectrumApplicationArgs.builder
     com.pulumi.cloudflare.SpectrumApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12845,14 +12845,14 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.SsoConnectorArgs.builder
     com.pulumi.cloudflare.SsoConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/staticroute.StaticRoute has been deprecated in favor of cloudflare.index/magicwanstaticroute.MagicWanStaticRoute") def StaticRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.StaticRouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.StaticRouteArgs.builder
     com.pulumi.cloudflare.StaticRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12865,7 +12865,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamArgs.builder
     com.pulumi.cloudflare.Stream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12878,7 +12878,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamAudioTrackArgs.builder
     com.pulumi.cloudflare.StreamAudioTrack(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12891,7 +12891,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamCaptionLanguageArgs.builder
     com.pulumi.cloudflare.StreamCaptionLanguage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12904,7 +12904,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamDownloadArgs.builder
     com.pulumi.cloudflare.StreamDownload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12917,7 +12917,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamKeyArgs.builder
     com.pulumi.cloudflare.StreamKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12930,7 +12930,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamLiveInputArgs.builder
     com.pulumi.cloudflare.StreamLiveInput(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12946,7 +12946,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.StreamWatermark(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12959,14 +12959,14 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.StreamWebhookArgs.builder
     com.pulumi.cloudflare.StreamWebhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/teamsaccount.TeamsAccount has been deprecated in favor of cloudflare.index/zerotrustgatewaysettings.ZeroTrustGatewaySettings") def TeamsAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsAccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.TeamsAccountArgs.builder
     com.pulumi.cloudflare.TeamsAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/teamslist.TeamsList has been deprecated in favor of cloudflare.index/zerotrustlist.ZeroTrustList") def TeamsList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -12976,7 +12976,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TeamsList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -12993,7 +12993,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TeamsLocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/teamsproxyendpoint.TeamsProxyEndpoint has been deprecated in favor of cloudflare.index/zerotrustgatewayproxyendpoint.ZeroTrustGatewayProxyEndpoint") def TeamsProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsProxyEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13003,7 +13003,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TeamsProxyEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   @deprecated("cloudflare.index/teamsrule.TeamsRule has been deprecated in favor of cloudflare.index/zerotrustgatewaypolicy.ZeroTrustGatewayPolicy") def TeamsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.TeamsRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13013,7 +13013,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TeamsRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13028,7 +13028,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TieredCacheArgs.builder
     com.pulumi.cloudflare.TieredCache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13043,7 +13043,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TokenValidationConfigArgs.builder
     com.pulumi.cloudflare.TokenValidationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13058,7 +13058,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TokenValidationRulesArgs.builder
     com.pulumi.cloudflare.TokenValidationRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13071,7 +13071,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TotalTlsArgs.builder
     com.pulumi.cloudflare.TotalTls(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13091,7 +13091,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Tunnel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13108,7 +13108,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TunnelConfigArgs.builder
     com.pulumi.cloudflare.TunnelConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13121,7 +13121,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.TunnelRouteArgs.builder
     com.pulumi.cloudflare.TunnelRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13137,7 +13137,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TunnelVirtualNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13155,7 +13155,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.TurnstileWidget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13168,7 +13168,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.UniversalSslSettingArgs.builder
     com.pulumi.cloudflare.UniversalSslSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13219,7 +13219,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.UrlNormalizationSettingsArgs.builder
     com.pulumi.cloudflare.UrlNormalizationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13232,7 +13232,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.UserArgs.builder
     com.pulumi.cloudflare.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13245,7 +13245,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.UserAgentBlockingRuleArgs.builder
     com.pulumi.cloudflare.UserAgentBlockingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13262,7 +13262,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.UserGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13276,7 +13276,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.UserGroupMembersArgs.builder
     com.pulumi.cloudflare.UserGroupMembers(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def VulnerabilityScannerCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerCredentialArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13286,7 +13286,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.VulnerabilityScannerCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def VulnerabilityScannerCredentialSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerCredentialSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13296,7 +13296,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.VulnerabilityScannerCredentialSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def VulnerabilityScannerTargetEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.VulnerabilityScannerTargetEnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13306,7 +13306,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.VulnerabilityScannerTargetEnvironment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13322,7 +13322,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.WaitingRoom(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13338,7 +13338,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.WaitingRoomEvent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13351,7 +13351,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WaitingRoomRulesArgs.builder
     com.pulumi.cloudflare.WaitingRoomRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13364,7 +13364,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WaitingRoomSettingsArgs.builder
     com.pulumi.cloudflare.WaitingRoomSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13380,14 +13380,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Web3Hostname(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def WebAnalyticsRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.WebAnalyticsRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.WebAnalyticsRuleArgs.builder
     com.pulumi.cloudflare.WebAnalyticsRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13400,7 +13400,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WebAnalyticsSiteArgs.builder
     com.pulumi.cloudflare.WebAnalyticsSite(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13417,7 +13417,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Worker(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13430,7 +13430,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkerCronTriggerArgs.builder
     com.pulumi.cloudflare.WorkerCronTrigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13443,7 +13443,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkerDomainArgs.builder
     com.pulumi.cloudflare.WorkerDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13459,7 +13459,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkerScriptArgs.builder
     com.pulumi.cloudflare.WorkerScript(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13473,7 +13473,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkerVersionArgs.builder
     com.pulumi.cloudflare.WorkerVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13486,7 +13486,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersCronTriggerArgs.builder
     com.pulumi.cloudflare.WorkersCronTrigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13499,7 +13499,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersCustomDomainArgs.builder
     com.pulumi.cloudflare.WorkersCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13513,7 +13513,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersDeploymentArgs.builder
     com.pulumi.cloudflare.WorkersDeployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13530,7 +13530,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.WorkersForPlatformsDispatchNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13547,7 +13547,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.WorkersForPlatformsNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13560,7 +13560,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersKvArgs.builder
     com.pulumi.cloudflare.WorkersKv(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13573,7 +13573,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersKvNamespaceArgs.builder
     com.pulumi.cloudflare.WorkersKvNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13586,7 +13586,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersRouteArgs.builder
     com.pulumi.cloudflare.WorkersRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13602,7 +13602,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersScriptArgs.builder
     com.pulumi.cloudflare.WorkersScript(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13618,7 +13618,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkersScriptSubdomainArgs.builder
     com.pulumi.cloudflare.WorkersScriptSubdomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13632,7 +13632,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.WorkflowArgs.builder
     com.pulumi.cloudflare.Workflow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13648,7 +13648,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpPortal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13664,7 +13664,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessAiControlsMcpServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustAccessApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13674,7 +13674,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13690,7 +13690,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessCustomPage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13706,7 +13706,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13722,7 +13722,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessIdentityProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustAccessInfrastructureTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessInfrastructureTargetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13736,7 +13736,7 @@ object cloudflare:
       case None =>
     com.pulumi.cloudflare.ZeroTrustAccessInfrastructureTarget(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13749,7 +13749,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessKeyConfigurationArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessKeyConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13765,7 +13765,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessMtlsCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13778,7 +13778,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessMtlsHostnameSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessMtlsHostnameSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13794,7 +13794,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13810,7 +13810,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessServiceToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13823,7 +13823,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustAccessShortLivedCertificateArgs.builder
     com.pulumi.cloudflare.ZeroTrustAccessShortLivedCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustAccessTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustAccessTagArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13833,7 +13833,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustAccessTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages a CASB integration. Exactly one vendor and exactly one authentication method must be configured. */
   def ZeroTrustCasbIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -13844,7 +13844,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustCasbIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13857,7 +13857,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustCasbPolicyArgs.builder
     com.pulumi.cloudflare.ZeroTrustCasbPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13870,7 +13870,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustCasbWebhookArgs.builder
     com.pulumi.cloudflare.ZeroTrustCasbWebhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13884,7 +13884,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustConnectivitySettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustConnectivitySettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13899,7 +13899,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDeviceCustomProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13911,7 +13911,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceCustomProfileLocalDomainFallback(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13923,7 +13923,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13936,7 +13936,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileCertificatesArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileCertificates(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13948,7 +13948,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceDefaultProfileLocalDomainFallback(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustDeviceDeploymentGroups(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustDeviceDeploymentGroupsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -13958,7 +13958,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDeviceDeploymentGroups(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13974,7 +13974,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDeviceIpProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -13989,7 +13989,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDeviceManagedNetworks(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14004,7 +14004,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDevicePostureIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14019,7 +14019,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDevicePostureRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14031,7 +14031,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDeviceSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustDeviceSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14047,7 +14047,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDeviceSubnet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14065,7 +14065,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDexRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14083,7 +14083,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDexTest(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14099,7 +14099,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpCustomEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14115,7 +14115,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpCustomProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14131,7 +14131,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpDataClass(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14147,7 +14147,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpDataTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14163,7 +14163,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpDataTagCategory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14179,7 +14179,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpDataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14195,7 +14195,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14208,7 +14208,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpIntegrationEntryArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpIntegrationEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14221,7 +14221,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpPredefinedEntryArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpPredefinedEntry(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14234,7 +14234,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpPredefinedProfileArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpPredefinedProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14250,7 +14250,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpSensitivityGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14266,7 +14266,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14279,7 +14279,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelOrderArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpSensitivityLevelOrder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14292,7 +14292,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustDlpSettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustDlpSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14309,21 +14309,21 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustDnsLocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustGatewayCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayCertificateArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewayCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustGatewayLogging(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayLoggingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewayLoggingArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewayLogging(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14339,7 +14339,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustGatewayPacfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustGatewayPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -14349,7 +14349,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustGatewayPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustGatewayProxyEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewayProxyEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -14359,14 +14359,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustGatewayProxyEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustGatewaySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustGatewaySettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustGatewaySettingsArgs.builder
     com.pulumi.cloudflare.ZeroTrustGatewaySettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -14376,7 +14376,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustList(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14388,7 +14388,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustLocalFallbackDomainArgs.builder
     com.pulumi.cloudflare.ZeroTrustLocalFallbackDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14403,7 +14403,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustNetworkHostnameRouteArgs.builder
     com.pulumi.cloudflare.ZeroTrustNetworkHostnameRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14420,7 +14420,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustOrganization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZeroTrustResourceLibraryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZeroTrustResourceLibraryApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -14430,7 +14430,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustResourceLibraryApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14443,7 +14443,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustRiskBehaviorArgs.builder
     com.pulumi.cloudflare.ZeroTrustRiskBehavior(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14456,7 +14456,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustRiskScoringIntegrationArgs.builder
     com.pulumi.cloudflare.ZeroTrustRiskScoringIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14476,7 +14476,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflared(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14493,7 +14493,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredConfigArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14506,7 +14506,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredRouteArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14522,7 +14522,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustTunnelCloudflaredVirtualNetwork(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14540,7 +14540,7 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.ZeroTrustTunnelWarpConnector(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14555,7 +14555,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorConfigArgs.builder
     com.pulumi.cloudflare.ZeroTrustTunnelWarpConnectorConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14609,14 +14609,14 @@ object cloudflare:
       case None               =>
     com.pulumi.cloudflare.Zone(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZoneAutoOriginTlsKex(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneAutoOriginTlsKexArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneAutoOriginTlsKexArgs.builder
     com.pulumi.cloudflare.ZoneAutoOriginTlsKex(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14631,7 +14631,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneCacheReserveArgs.builder
     com.pulumi.cloudflare.ZoneCacheReserve(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14646,7 +14646,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneCacheVariantsArgs.builder
     com.pulumi.cloudflare.ZoneCacheVariants(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14661,7 +14661,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneDnsSettingsArgs.builder
     com.pulumi.cloudflare.ZoneDnsSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14674,7 +14674,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneDnssecArgs.builder
     com.pulumi.cloudflare.ZoneDnssec(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14721,7 +14721,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneHoldArgs.builder
     com.pulumi.cloudflare.ZoneHold(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14734,7 +14734,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneLockdownArgs.builder
     com.pulumi.cloudflare.ZoneLockdown(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14827,7 +14827,7 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneSettingArgs.builder
     com.pulumi.cloudflare.ZoneSetting(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Accepted Permissions
@@ -14840,18 +14840,18 @@ object cloudflare:
     val argsBuilder = com.pulumi.cloudflare.ZoneSubscriptionArgs.builder
     com.pulumi.cloudflare.ZoneSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZoneTracing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneTracingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneTracingArgs.builder
     com.pulumi.cloudflare.ZoneTracing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def ZoneTracingRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.cloudflare.ZoneTracingRulesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.cloudflare.ZoneTracingRulesArgs.builder
     com.pulumi.cloudflare.ZoneTracingRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

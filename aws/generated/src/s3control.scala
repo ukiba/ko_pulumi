@@ -21,7 +21,7 @@ object s3control:
       case None =>
     com.pulumi.aws.s3control.AccessGrant(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Access Grants instance, which serves as a logical grouping for access grants.
@@ -39,7 +39,7 @@ object s3control:
       case None =>
     com.pulumi.aws.s3control.AccessGrantsInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Access Grants instance resource policy.
@@ -50,7 +50,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.AccessGrantsInstanceResourcePolicyArgs.builder
     com.pulumi.aws.s3control.AccessGrantsInstanceResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Access Grants location.
@@ -70,7 +70,7 @@ object s3control:
       case None =>
     com.pulumi.aws.s3control.AccessGrantsLocation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Access Point resource policy.
@@ -82,7 +82,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.AccessPointPolicyArgs.builder
     com.pulumi.aws.s3control.AccessPointPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Control Bucket.
@@ -101,7 +101,7 @@ object s3control:
       case None =>
     com.pulumi.aws.s3control.Bucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Control Bucket Lifecycle Configuration.
@@ -115,7 +115,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.BucketLifecycleConfigurationArgs.builder
     com.pulumi.aws.s3control.BucketLifecycleConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Control Bucket Policy.
@@ -127,7 +127,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.BucketPolicyArgs.builder
     com.pulumi.aws.s3control.BucketPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the access point scope for a directory bucket.
@@ -146,7 +146,7 @@ object s3control:
       case None               =>
     com.pulumi.aws.s3control.DirectoryBucketAccessPointScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Multi-Region Access Point associated with specified buckets.
@@ -160,7 +160,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an S3 Multi-Region Access Point access control policy. */
   def MultiRegionAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointPolicyArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPointPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage the routing configuration for an S3 Multi-Region Access Point.
@@ -180,7 +180,7 @@ object s3control:
     val argsBuilder = com.pulumi.aws.s3control.MultiRegionAccessPointRoutesArgs.builder
     com.pulumi.aws.s3control.MultiRegionAccessPointRoutes(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an S3 Object Lambda Access Point.
@@ -194,7 +194,7 @@ object s3control:
       case None               =>
     com.pulumi.aws.s3control.ObjectLambdaAccessPoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an S3 Object Lambda Access Point resource policy. */
   def ObjectLambdaAccessPointPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -205,7 +205,7 @@ object s3control:
       case None               =>
     com.pulumi.aws.s3control.ObjectLambdaAccessPointPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object S3controlFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -263,4 +263,4 @@ object s3control:
       case None =>
     com.pulumi.aws.s3control.StorageLensConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

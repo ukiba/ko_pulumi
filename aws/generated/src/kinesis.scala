@@ -14,7 +14,7 @@ object kinesis:
     val argsBuilder = com.pulumi.aws.kinesis.AccountSettingsArgs.builder
     com.pulumi.aws.kinesis.AccountSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Kinesis Analytics Application resource. Kinesis Analytics is a managed service that
@@ -41,7 +41,7 @@ object kinesis:
       case None =>
     com.pulumi.aws.kinesis.AnalyticsApplication(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Kinesis Firehose Delivery Stream resource. Amazon Kinesis Firehose is a fully managed, elastic service to easily deliver real-time data streams to destinations such as Amazon S3 , Amazon Redshift and Snowflake.
@@ -63,7 +63,7 @@ object kinesis:
       case None =>
     com.pulumi.aws.kinesis.FirehoseDeliveryStream(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KinesisFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -143,7 +143,7 @@ object kinesis:
     val argsBuilder = com.pulumi.aws.kinesis.ResourcePolicyArgs.builder
     com.pulumi.aws.kinesis.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Kinesis Stream resource. Amazon Kinesis is a managed service that
@@ -166,7 +166,7 @@ object kinesis:
       case None =>
     com.pulumi.aws.kinesis.Stream(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage a Kinesis Stream Consumer.
@@ -190,7 +190,7 @@ object kinesis:
       case None =>
     com.pulumi.aws.kinesis.StreamConsumer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Kinesis Video Stream resource. Amazon Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for analytics, machine learning (ML), playback, and other processing.
@@ -212,4 +212,4 @@ object kinesis:
       case None =>
     com.pulumi.aws.kinesis.VideoStream(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

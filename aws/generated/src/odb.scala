@@ -23,7 +23,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.AutonomousDatabase(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the Oracle Database{@literal @}AWS Autonomous Database Serverless integration with AWS Secrets Manager. The resource provisions an Oracle-managed service role that can assume a customer-managed role to read an administrator-password secret.
@@ -39,7 +39,7 @@ object odb:
     val argsBuilder = com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegrationArgs.builder
     com.pulumi.aws.odb.AutonomousDatabaseSecretsManagerIntegration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource managing cloud autonomous vm cluster in AWS for Oracle Database{@literal @}AWS.
@@ -58,7 +58,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.CloudAutonomousVmCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing exadata infrastructure resource in AWS for Oracle Database{@literal @}AWS. */
   def CloudExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.CloudExadataInfrastructure(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Terraform to manage cloud vm cluster resource in AWS for Oracle Database{@literal @}AWS. If underlying odb network and cloud exadata infrastructure is shared, ARN must be used while creating VM cluster.
@@ -92,7 +92,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.CloudVmCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Oracle Database{@literal @}AWS Associate Disassociate IAM Role.
@@ -104,7 +104,7 @@ object odb:
     val argsBuilder = com.pulumi.aws.odb.IamRoleAssociationArgs.builder
     com.pulumi.aws.odb.IamRoleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing odb Network resource in AWS for Oracle Database{@literal @}AWS. */
   def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.Network(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Terraform  resource for managing oracle database network peering resource in AWS. If underlying odb network is shared, ARN must be used while creating network peering.
@@ -138,7 +138,7 @@ object odb:
       case None =>
     com.pulumi.aws.odb.NetworkPeeringConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OdbFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -10,7 +10,7 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.BucketArgs.builder
     com.pulumi.gcp.observability.Bucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Cloud Observability settings for a folder. */
   def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,7 +18,7 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.FolderSettingsArgs.builder
     com.pulumi.gcp.observability.FolderSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Link configuration for exposing observability dataset data. */
   def Link(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -26,7 +26,7 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.LinkArgs.builder
     com.pulumi.gcp.observability.Link(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ObservabilityFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -125,7 +125,7 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.OrganizationSettingsArgs.builder
     com.pulumi.gcp.observability.OrganizationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Cloud Observability settings for a project. */
   def ProjectSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -133,7 +133,7 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.ProjectSettingsArgs.builder
     com.pulumi.gcp.observability.ProjectSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A trace scope is a collection of resources whose traces are queried together */
   def TraceScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -141,4 +141,4 @@ object observability:
     val argsBuilder = com.pulumi.gcp.observability.TraceScopeArgs.builder
     com.pulumi.gcp.observability.TraceScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

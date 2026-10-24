@@ -20,4 +20,4 @@ object fabric:
       case None =>
     com.pulumi.azure.fabric.Capacity(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

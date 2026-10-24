@@ -10,7 +10,7 @@ object inspector2:
     val argsBuilder = com.pulumi.aws.inspector2.DelegatedAdminAccountArgs.builder
     com.pulumi.aws.inspector2.DelegatedAdminAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for enabling Amazon Inspector resource scans.
@@ -22,7 +22,7 @@ object inspector2:
     val argsBuilder = com.pulumi.aws.inspector2.EnablerArgs.builder
     com.pulumi.aws.inspector2.Enabler(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Inspector Filter. */
   def Filter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -40,7 +40,7 @@ object inspector2:
       case None =>
     com.pulumi.aws.inspector2.Filter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for associating accounts to existing Inspector instances. */
   def MemberAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object inspector2:
     val argsBuilder = com.pulumi.aws.inspector2.MemberAssociationArgs.builder
     com.pulumi.aws.inspector2.MemberAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an Amazon Inspector Organization Configuration.
@@ -62,4 +62,4 @@ object inspector2:
     val argsBuilder = com.pulumi.aws.inspector2.OrganizationConfigurationArgs.builder
     com.pulumi.aws.inspector2.OrganizationConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

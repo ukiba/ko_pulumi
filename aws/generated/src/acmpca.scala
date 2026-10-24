@@ -48,7 +48,7 @@ object acmpca:
     val argsBuilder = com.pulumi.aws.acmpca.CertificateArgs.builder
     com.pulumi.aws.acmpca.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage AWS Certificate Manager Private Certificate Authorities (ACM PCA Certificate Authorities).
@@ -67,7 +67,7 @@ object acmpca:
       case None =>
     com.pulumi.aws.acmpca.CertificateAuthority(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a certificate with an AWS Certificate Manager Private Certificate Authority (ACM PCA Certificate Authority). An ACM PCA Certificate Authority is unable to issue certificates until it has a certificate associated with it. A root level ACM PCA Certificate Authority is able to self-sign its own root certificate. */
   def CertificateAuthorityCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object acmpca:
     val argsBuilder = com.pulumi.aws.acmpca.CertificateAuthorityCertificateArgs.builder
     com.pulumi.aws.acmpca.CertificateAuthorityCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to manage an AWS Certificate Manager Private Certificate Authorities Permission.
@@ -86,7 +86,7 @@ object acmpca:
     val argsBuilder = com.pulumi.aws.acmpca.PermissionArgs.builder
     com.pulumi.aws.acmpca.Permission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches a resource based policy to a private CA. */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -94,4 +94,4 @@ object acmpca:
     val argsBuilder = com.pulumi.aws.acmpca.PolicyArgs.builder
     com.pulumi.aws.acmpca.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

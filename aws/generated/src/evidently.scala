@@ -24,7 +24,7 @@ object evidently:
       case None =>
     com.pulumi.aws.evidently.Feature(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudWatch Evidently Launch resource.
@@ -46,7 +46,7 @@ object evidently:
       case None =>
     com.pulumi.aws.evidently.Launch(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudWatch Evidently Project resource.
@@ -68,7 +68,7 @@ object evidently:
       case None =>
     com.pulumi.aws.evidently.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudWatch Evidently Segment resource.
@@ -90,4 +90,4 @@ object evidently:
       case None =>
     com.pulumi.aws.evidently.Segment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

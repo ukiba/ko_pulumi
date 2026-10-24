@@ -21,7 +21,7 @@ object memcache:
       case None               =>
     com.pulumi.gcp.memcache.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MemcacheFunctions:
     // Pulumi methods are reproduced as Scala methods.

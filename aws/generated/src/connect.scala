@@ -15,7 +15,7 @@ object connect:
     val argsBuilder = com.pulumi.aws.connect.BotAssociationArgs.builder
     com.pulumi.aws.connect.BotAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ConnectFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -241,7 +241,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.ContactFlow(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Contact Flow Module resource. For more information see
@@ -268,7 +268,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.ContactFlowModule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Hours of Operation resource. For more information see
@@ -289,7 +289,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.HoursOfOperation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect instance resource. For more information see
@@ -309,7 +309,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.Instance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Instance Storage Config resource. For more information see
@@ -320,7 +320,7 @@ object connect:
     val argsBuilder = com.pulumi.aws.connect.InstanceStorageConfigArgs.builder
     com.pulumi.aws.connect.InstanceStorageConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Lambda Function Association. For more information see
@@ -331,7 +331,7 @@ object connect:
     val argsBuilder = com.pulumi.aws.connect.LambdaFunctionAssociationArgs.builder
     com.pulumi.aws.connect.LambdaFunctionAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Phone Number resource. For more information see
@@ -349,7 +349,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.PhoneNumber(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a flow with a phone number claimed to an Amazon Connect instance. */
   def PhoneNumberContactFlowAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -357,7 +357,7 @@ object connect:
     val argsBuilder = com.pulumi.aws.connect.PhoneNumberContactFlowAssociationArgs.builder
     com.pulumi.aws.connect.PhoneNumberContactFlowAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Queue resource. For more information see
@@ -378,7 +378,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.Queue(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Quick Connect resource. For more information see
@@ -399,7 +399,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.QuickConnect(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Routing Profile resource. For more information see
@@ -420,7 +420,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.RoutingProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Security Profile resource. For more information see
@@ -441,7 +441,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.SecurityProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect User resource. For more information see
@@ -462,7 +462,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.User(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect User Hierarchy Group resource. For more information see
@@ -485,7 +485,7 @@ object connect:
       case None =>
     com.pulumi.aws.connect.UserHierarchyGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect User Hierarchy Structure resource. For more information see
@@ -496,7 +496,7 @@ object connect:
     val argsBuilder = com.pulumi.aws.connect.UserHierarchyStructureArgs.builder
     com.pulumi.aws.connect.UserHierarchyStructure(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Connect Vocabulary resource. For more information see
@@ -517,4 +517,4 @@ object connect:
       case None =>
     com.pulumi.aws.connect.Vocabulary(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

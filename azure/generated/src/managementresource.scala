@@ -13,4 +13,4 @@ object managementresource:
       case None               =>
     com.pulumi.azure.managementresource.ManangementLock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

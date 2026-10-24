@@ -10,7 +10,7 @@ object s3tables:
     val argsBuilder = com.pulumi.aws.s3tables.NamespaceArgs.builder
     com.pulumi.aws.s3tables.Namespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table. */
   def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object s3tables:
       case None =>
     com.pulumi.aws.s3tables.Table(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Bucket. */
   def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object s3tables:
       case None =>
     com.pulumi.aws.s3tables.TableBucket(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Bucket Policy. */
   def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object s3tables:
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketPolicyArgs.builder
     com.pulumi.aws.s3tables.TableBucketPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Tables Table Bucket Replication configuration. */
   def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,7 +62,7 @@ object s3tables:
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketReplicationArgs.builder
     com.pulumi.aws.s3tables.TableBucketReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Policy. */
   def TablePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object s3tables:
       case None               =>
     com.pulumi.aws.s3tables.TablePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Tables Table Replication configuration. */
   def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,4 +81,4 @@ object s3tables:
     val argsBuilder = com.pulumi.aws.s3tables.TableReplicationArgs.builder
     com.pulumi.aws.s3tables.TableReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

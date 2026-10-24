@@ -242,4 +242,4 @@ object aws:
     val argsBuilder = com.pulumi.aws.ProviderArgs.builder
     com.pulumi.aws.Provider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object mskconnect:
       case None =>
     com.pulumi.aws.mskconnect.Connector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon MSK Connect Custom Plugin Resource. */
   def CustomPlugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object mskconnect:
       case None =>
     com.pulumi.aws.mskconnect.CustomPlugin(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MskconnectFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -99,4 +99,4 @@ object mskconnect:
       case None =>
     com.pulumi.aws.mskconnect.WorkerConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -38,7 +38,7 @@ object cognitive:
       case None =>
     com.pulumi.azure.cognitive.AIServices(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services Account.
@@ -62,7 +62,7 @@ object cognitive:
       case None =>
     com.pulumi.azure.cognitive.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Account Key authentication.
@@ -77,7 +77,7 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.AccountConnectionAccountKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Account Managed Identity authentication.
@@ -92,7 +92,7 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.AccountConnectionAccountManagedIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services (Microsoft Foundry) Account Connection with API Key authentication.
@@ -107,7 +107,7 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.AccountConnectionApiKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Custom Keys authentication.
@@ -122,7 +122,7 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.AccountConnectionCustomKeys(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Services (Microsoft Foundry) Account Connection with Entra ID (formerly Azure Active Directory) authentication.
@@ -137,7 +137,7 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.AccountConnectionEntraId(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Customer Managed Key for a Cognitive Services Account.
@@ -149,7 +149,7 @@ object cognitive:
     val argsBuilder = com.pulumi.azure.cognitive.AccountCustomerManagedKeyArgs.builder
     com.pulumi.azure.cognitive.AccountCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Cognitive Account Project.
@@ -171,7 +171,7 @@ object cognitive:
       case None =>
     com.pulumi.azure.cognitive.AccountProject(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Foundry &#34;Guardrails + Controls&#34; blocklist. Microsoft Foundry was previously known as &#34;Cognitive Account&#34;. */
   def AccountRaiBlocklist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object cognitive:
       case None =>
     com.pulumi.azure.cognitive.AccountRaiBlocklist(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cognitive Services Account RAI Policy. */
   def AccountRaiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -207,7 +207,7 @@ object cognitive:
       case None =>
     com.pulumi.azure.cognitive.AccountRaiPolicy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CognitiveFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -249,4 +249,4 @@ object cognitive:
       case None               =>
     com.pulumi.azure.cognitive.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

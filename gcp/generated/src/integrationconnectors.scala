@@ -21,7 +21,7 @@ object integrationconnectors:
       case None               =>
     com.pulumi.gcp.integrationconnectors.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Integration connectors Endpoint Attachment.
@@ -40,7 +40,7 @@ object integrationconnectors:
       case None               =>
     com.pulumi.gcp.integrationconnectors.EndpointAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An Integration connectors Managed Zone.
@@ -59,4 +59,4 @@ object integrationconnectors:
       case None               =>
     com.pulumi.gcp.integrationconnectors.ManagedZone(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

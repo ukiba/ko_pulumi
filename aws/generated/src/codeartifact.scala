@@ -48,7 +48,7 @@ object codeartifact:
       case None =>
     com.pulumi.aws.codeartifact.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Domains Permissions Policy Resource. */
   def DomainPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object codeartifact:
     val argsBuilder = com.pulumi.aws.codeartifact.DomainPermissionsArgs.builder
     com.pulumi.aws.codeartifact.DomainPermissions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Repository Resource. */
   def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object codeartifact:
       case None =>
     com.pulumi.aws.codeartifact.Repository(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodeArtifact Repository Permissions Policy Resource. */
   def RepositoryPermissionsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -79,4 +79,4 @@ object codeartifact:
     val argsBuilder = com.pulumi.aws.codeartifact.RepositoryPermissionsPolicyArgs.builder
     com.pulumi.aws.codeartifact.RepositoryPermissionsPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

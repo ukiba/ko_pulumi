@@ -23,7 +23,7 @@ object observabilityadmin:
       case None =>
     com.pulumi.aws.observabilityadmin.CentralizationRuleForOrganization(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudWatch Observability Admin S3 Table Integration. This integration enables CloudWatch to duplicate telemetry data to Amazon S3 Tables, making it available for analysis by tools such as Amazon Athena and Amazon Redshift.
@@ -42,7 +42,7 @@ object observabilityadmin:
       case None =>
     com.pulumi.aws.observabilityadmin.S3TableIntegration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Enrichment.
@@ -58,7 +58,7 @@ object observabilityadmin:
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEnrichmentArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEnrichment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Evaluation.
@@ -76,7 +76,7 @@ object observabilityadmin:
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEvaluation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Evaluation For Organization.
@@ -92,7 +92,7 @@ object observabilityadmin:
     val argsBuilder = com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganizationArgs.builder
     com.pulumi.aws.observabilityadmin.TelemetryEvaluationForOrganization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Pipeline.
@@ -118,7 +118,7 @@ object observabilityadmin:
       case None =>
     com.pulumi.aws.observabilityadmin.TelemetryPipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Rule.
@@ -139,7 +139,7 @@ object observabilityadmin:
       case None =>
     com.pulumi.aws.observabilityadmin.TelemetryRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudWatch Observability Admin Telemetry Rule for an AWS Organization.
@@ -162,4 +162,4 @@ object observabilityadmin:
       case None =>
     com.pulumi.aws.observabilityadmin.TelemetryRuleForOrganization(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

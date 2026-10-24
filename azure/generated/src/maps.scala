@@ -20,7 +20,7 @@ object maps:
       case None =>
     com.pulumi.azure.maps.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Azure Maps Creator.
@@ -42,7 +42,7 @@ object maps:
       case None =>
     com.pulumi.azure.maps.Creator(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MapsFunctions:
     // Pulumi methods are reproduced as Scala methods.

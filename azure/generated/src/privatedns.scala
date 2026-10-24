@@ -20,7 +20,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.AAAARecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS A Records within Azure Private DNS. */
   def ARecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.ARecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS CNAME Records within Azure Private DNS. */
   def CnameRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.CnameRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Private Link Service.
@@ -78,7 +78,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.LinkService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS MX Records within Azure Private DNS. */
   def MxRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -96,7 +96,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.MxRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS PTR Records within Azure Private DNS. */
   def PTRRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -114,7 +114,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.PTRRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PrivatednsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -395,7 +395,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.Resolver(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Dns Forwarding Ruleset. */
   def ResolverDnsForwardingRuleset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -413,7 +413,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.ResolverDnsForwardingRuleset(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Forwarding Rule. */
   def ResolverForwardingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -424,7 +424,7 @@ object privatedns:
       case None               =>
     com.pulumi.azure.privatedns.ResolverForwardingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Inbound Endpoint. */
   def ResolverInboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -442,7 +442,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.ResolverInboundEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Outbound Endpoint. */
   def ResolverOutboundEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -460,7 +460,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.ResolverOutboundEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Private DNS Resolver Virtual Network Link. */
   def ResolverVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -471,7 +471,7 @@ object privatedns:
       case None               =>
     com.pulumi.azure.privatedns.ResolverVirtualNetworkLink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS SRV Records within Azure Private DNS. */
   def SRVRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -489,7 +489,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.SRVRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage DNS TXT Records within Azure Private DNS. */
   def TxtRecord(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -507,7 +507,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.TxtRecord(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage Private DNS zones within Azure DNS. These zones are hosted on Azure&#39;s name servers. */
   def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -525,7 +525,7 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.Zone(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enables you to manage Private DNS zone Virtual Network Links. These Links enable DNS resolution and registration inside Azure Virtual Networks using Azure Private DNS. */
   def ZoneVirtualNetworkLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -543,4 +543,4 @@ object privatedns:
       case None =>
     com.pulumi.azure.privatedns.ZoneVirtualNetworkLink(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

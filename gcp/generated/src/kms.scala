@@ -23,7 +23,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.AutokeyConfigArgs.builder
     com.pulumi.gcp.kms.AutokeyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `CryptoKey` represents a logical key that can be used for cryptographic operations.
@@ -49,7 +49,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.CryptoKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS crypto key. Each of these resources serves a different use case:
@@ -317,7 +317,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS crypto key. Each of these resources serves a different use case:
@@ -585,7 +585,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS crypto key. Each of these resources serves a different use case:
@@ -853,7 +853,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `CryptoKeyVersion` represents an individual cryptographic key, and the associated key material.
@@ -871,7 +871,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyVersionArgs.builder
     com.pulumi.gcp.kms.CryptoKeyVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * `Ekm Connections` are used to control the connection settings for an `EXTERNAL_VPC` CryptoKey.
@@ -893,7 +893,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.EkmConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
@@ -1484,7 +1484,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.EkmConnectionIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
@@ -2075,7 +2075,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.EkmConnectionIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Key Management Service EkmConnection. Each of these resources serves a different use case:
@@ -2666,7 +2666,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.EkmConnectionIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * `FolderKajPolicyConfigs` is a folder-level singleton resource
@@ -2690,7 +2690,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.FolderKajPolicyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `KeyHandle` is a resource used to auto-provision CryptoKeys for CMEK.
@@ -2713,7 +2713,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.KeyHandle(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `KeyRing` is a toplevel logical grouping of `CryptoKeys`.
@@ -2736,7 +2736,7 @@ object kms:
       case None               =>
     com.pulumi.gcp.kms.KeyRing(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS key ring. Each of these resources serves a different use case:
@@ -3168,7 +3168,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMBindingArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS key ring. Each of these resources serves a different use case:
@@ -3600,7 +3600,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMMemberArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for KMS key ring. Each of these resources serves a different use case:
@@ -4032,7 +4032,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A `KeyRingImportJob` can be used to create `CryptoKeys` and `CryptoKeyVersions` using pre-existing
@@ -4055,7 +4055,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.KeyRingImportJobArgs.builder
     com.pulumi.gcp.kms.KeyRingImportJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KmsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -4626,7 +4626,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.OrganizationKajPolicyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * `ProjectAutokeyConfig` is a singleton resource used to configure the auto-provisioning
@@ -4647,7 +4647,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectAutokeyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * `ProjectKajPolicyConfig` is a project-level singleton resource
@@ -4671,7 +4671,7 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectKajPolicyConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Encrypts secret data with Google Cloud KMS and provides access to the ciphertext.
@@ -4692,4 +4692,4 @@ object kms:
     val argsBuilder = com.pulumi.gcp.kms.SecretCiphertextArgs.builder
     com.pulumi.gcp.kms.SecretCiphertext(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

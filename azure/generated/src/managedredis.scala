@@ -20,7 +20,7 @@ object managedredis:
     val argsBuilder = com.pulumi.azure.managedredis.AccessPolicyAssignmentArgs.builder
     com.pulumi.azure.managedredis.AccessPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Managed Redis Geo-Replication by linking and unlinking databases in a geo-replication group.
@@ -32,7 +32,7 @@ object managedredis:
     val argsBuilder = com.pulumi.azure.managedredis.GeoReplicationArgs.builder
     com.pulumi.azure.managedredis.GeoReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a [Managed Redis](https://learn.microsoft.com/azure/redis/overview). This resource supersedes azure.redis.EnterpriseCluster and azure.redis.EnterpriseDatabase resources. Please refer to the migration guide for more information on migrating from Redis Enterprise to Managed Redis: [Migrating from Redis Enterprise to Managed Redis](https://learn.microsoft.com/azure/redis/migrate/migrate-overview). */
   def ManagedRedis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object managedredis:
       case None =>
     com.pulumi.azure.managedredis.ManagedRedis(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ManagedredisFunctions:
     // Pulumi methods are reproduced as Scala methods.

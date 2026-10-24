@@ -20,7 +20,7 @@ object ivschat:
       case None =>
     com.pulumi.aws.ivschat.LoggingConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Chat Room. */
   def Room(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,4 +38,4 @@ object ivschat:
       case None =>
     com.pulumi.aws.ivschat.Room(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

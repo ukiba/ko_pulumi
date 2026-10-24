@@ -10,7 +10,7 @@ object arczonalshift:
     val argsBuilder = com.pulumi.aws.arczonalshift.AutoshiftObserverNotificationStatusArgs.builder
     com.pulumi.aws.arczonalshift.AutoshiftObserverNotificationStatus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Application Recovery Controller Zonal Shift Zonal Autoshift Configuration for a managed resource (such as a load balancer).
@@ -22,4 +22,4 @@ object arczonalshift:
     val argsBuilder = com.pulumi.aws.arczonalshift.ZonalAutoshiftConfigurationArgs.builder
     com.pulumi.aws.arczonalshift.ZonalAutoshiftConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

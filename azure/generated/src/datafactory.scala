@@ -13,7 +13,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.CredentialServicePrincipal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Data Factory User Assigned Managed Identity credential resource. These resources are used by Data Factory to access data sources. */
   def CredentialUserManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.CredentialUserManagedIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dataset inside an Azure Data Factory. This is a generic resource that supports all different Dataset Types. */
   def CustomDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.CustomDataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Customer Managed Key for a Data Factory.
@@ -47,7 +47,7 @@ object datafactory:
     val argsBuilder = com.pulumi.azure.datafactory.CustomerManagedKeyArgs.builder
     com.pulumi.azure.datafactory.CustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Flow inside an Azure Data Factory. */
   def DataFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -58,7 +58,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DataFlow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatafactoryFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -112,7 +112,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetAzureBlob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure SQL Table Dataset inside an Azure Data Factory. */
   def DatasetAzureSqlTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -123,7 +123,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetAzureSqlTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Factory Binary Dataset inside an Azure Data Factory. */
   def DatasetBinary(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -134,7 +134,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetBinary(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cosmos DB SQL API Dataset inside an Azure Data Factory. */
   def DatasetCosmosDBApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -145,7 +145,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetCosmosDBApi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Delimited Text Dataset inside an Azure Data Factory. */
   def DatasetDelimitedText(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -156,7 +156,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetDelimitedText(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure HTTP Dataset inside an Azure Data Factory. */
   def DatasetHttp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -167,7 +167,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetHttp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure JSON Dataset inside an Azure Data Factory. */
   def DatasetJson(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -178,7 +178,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetJson(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MySQL Dataset inside a Azure Data Factory. */
   def DatasetMysql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetMysql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Parquet Dataset inside an Azure Data Factory. */
   def DatasetParquet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -200,7 +200,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetParquet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a PostgreSQL Dataset inside a Azure Data Factory. */
   def DatasetPostgresql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetPostgresql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Snowflake Dataset inside an Azure Data Factory. */
   def DatasetSnowflake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetSnowflake(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SQL Server Table Dataset inside a Azure Data Factory. */
   def DatasetSqlServerTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,7 +233,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.DatasetSqlServerTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Data Factory (Version 2). */
   def Factory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -251,7 +251,7 @@ object datafactory:
       case None =>
     com.pulumi.azure.datafactory.Factory(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Flowlet Data Flow inside an Azure Data Factory. */
   def FlowletDataFlow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -262,7 +262,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.FlowletDataFlow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Factory Azure Integration Runtime. */
   def IntegrationRuntimeRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -273,7 +273,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.IntegrationRuntimeRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Factory Self-hosted Integration Runtime. */
   def IntegrationRuntimeSelfHosted(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -284,7 +284,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.IntegrationRuntimeSelfHosted(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Factory Azure-SSIS Integration Runtime. */
   def IntegrationRuntimeSsis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -295,7 +295,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.IntegrationRuntimeSsis(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a resource and Azure Data Factory. This is a generic resource that supports all different Linked Service Types. */
   def LinkedCustomService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -306,7 +306,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedCustomService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between an Azure Blob Storage Account and Azure Data Factory. */
   def LinkedServiceAzureBlobStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -317,7 +317,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureBlobStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Azure Databricks and Azure Data Factory. */
   def LinkedServiceAzureDatabricks(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -328,7 +328,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureDatabricks(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a SFTP Server and Azure Data Factory. */
   def LinkedServiceAzureFileStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -339,7 +339,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureFileStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between an Azure Function and Azure Data Factory. */
   def LinkedServiceAzureFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -350,7 +350,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureFunction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Azure Search Service and Azure Data Factory. */
   def LinkedServiceAzureSearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -361,7 +361,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureSearch(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Azure SQL Database and Azure Data Factory. */
   def LinkedServiceAzureSqlDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -372,7 +372,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureSqlDatabase(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between an Azure Table Storage and Azure Data Factory. */
   def LinkedServiceAzureTableStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -383,7 +383,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceAzureTableStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a CosmosDB and Azure Data Factory using SQL API. */
   def LinkedServiceCosmosDb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -394,7 +394,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceCosmosDb(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linked Service (connection) between a CosmosDB and Azure Data Factory using Mongo API.
@@ -409,7 +409,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceCosmosDbMongoApi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Data Lake Storage Gen2 and Azure Data Factory. */
   def LinkedServiceDataLakeStorageGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -420,7 +420,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceDataLakeStorageGen2(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Key Vault and Azure Data Factory. */
   def LinkedServiceKeyVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -431,7 +431,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceKeyVault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a Kusto Cluster and Azure Data Factory. */
   def LinkedServiceKusto(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -442,7 +442,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceKusto(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between MySQL and Azure Data Factory. */
   def LinkedServiceMysql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -453,7 +453,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceMysql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linked Service (connection) between a Database and Azure Data Factory through OData protocol.
@@ -468,7 +468,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceOdata(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linked Service (connection) between a Database and Azure Data Factory through ODBC protocol.
@@ -483,7 +483,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceOdbc(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between PostgreSQL and Azure Data Factory. */
   def LinkedServicePostgresql(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -494,7 +494,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServicePostgresql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a SFTP Server and Azure Data Factory. */
   def LinkedServiceSftp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -505,7 +505,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceSftp(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Snowflake and Azure Data Factory. */
   def LinkedServiceSnowflake(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -516,7 +516,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceSnowflake(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linked Service (connection) between Azure SQL Managed Instance and Azure Data Factory.
@@ -531,7 +531,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceSqlManagedInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a SQL Server and Azure Data Factory. */
   def LinkedServiceSqlServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -542,7 +542,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceSqlServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between Synapse and Azure Data Factory. */
   def LinkedServiceSynapse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -553,7 +553,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceSynapse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linked Service (connection) between a Web Server and Azure Data Factory. */
   def LinkedServiceWeb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -564,7 +564,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.LinkedServiceWeb(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Data Factory Managed Private Endpoint. */
   def ManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -575,7 +575,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.ManagedPrivateEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Pipeline inside a Azure Data Factory. */
   def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -586,7 +586,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.Pipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Blob Event Trigger inside an Azure Data Factory. */
   def TriggerBlobEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -597,7 +597,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.TriggerBlobEvent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Custom Event Trigger inside an Azure Data Factory. */
   def TriggerCustomEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -608,7 +608,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.TriggerCustomEvent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Trigger Schedule inside a Azure Data Factory. */
   def TriggerSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -619,7 +619,7 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.TriggerSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Tumbling Window Trigger inside an Azure Data Factory. */
   def TriggerTumblingWindow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -630,4 +630,4 @@ object datafactory:
       case None               =>
     com.pulumi.azure.datafactory.TriggerTumblingWindow(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

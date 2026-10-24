@@ -111,7 +111,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.GatewayRoute(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh service mesh resource. */
   def Mesh(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -129,7 +129,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.Mesh(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh route resource. */
   def Route(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -147,7 +147,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.Route(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh virtual gateway resource. */
   def VirtualGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -165,7 +165,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.VirtualGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS App Mesh virtual node resource.
@@ -187,7 +187,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.VirtualNode(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS App Mesh virtual router resource.
@@ -209,7 +209,7 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.VirtualRouter(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS App Mesh virtual service resource. */
   def VirtualService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -227,4 +227,4 @@ object appmesh:
       case None =>
     com.pulumi.aws.appmesh.VirtualService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -21,7 +21,7 @@ object oam:
       case None =>
     com.pulumi.aws.oam.Link(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OamFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -94,7 +94,7 @@ object oam:
       case None =>
     com.pulumi.aws.oam.Sink(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Observability Access Manager Sink Policy. */
   def SinkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -102,4 +102,4 @@ object oam:
     val argsBuilder = com.pulumi.aws.oam.SinkPolicyArgs.builder
     com.pulumi.aws.oam.SinkPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -28,7 +28,7 @@ object memorystore:
     val argsBuilder = com.pulumi.gcp.memorystore.AclPolicyArgs.builder
     com.pulumi.gcp.memorystore.AclPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Memorystore instance.
@@ -44,7 +44,7 @@ object memorystore:
     val argsBuilder = com.pulumi.gcp.memorystore.InstanceArgs.builder
     com.pulumi.gcp.memorystore.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages user created connections for Memorystore instance
@@ -67,7 +67,7 @@ object memorystore:
       case None               =>
     com.pulumi.gcp.memorystore.InstanceDesiredUserCreatedEndpoints(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MemorystoreFunctions:
     // Pulumi methods are reproduced as Scala methods.

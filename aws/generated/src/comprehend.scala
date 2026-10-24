@@ -20,7 +20,7 @@ object comprehend:
       case None =>
     com.pulumi.aws.comprehend.DocumentClassifier(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Comprehend Entity Recognizer. */
   def EntityRecognizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,4 +38,4 @@ object comprehend:
       case None =>
     com.pulumi.aws.comprehend.EntityRecognizer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

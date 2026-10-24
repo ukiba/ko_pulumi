@@ -21,7 +21,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.Destination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A gateway advertised route is a route that a gateway spoke advertises somewhere.
@@ -40,7 +40,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.GatewayAdvertisedRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The NetworkConnectivity Group resource
@@ -59,7 +59,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The NetworkConnectivity Hub resource
@@ -78,7 +78,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.Hub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
@@ -384,7 +384,7 @@ object networkconnectivity:
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamBindingArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
@@ -690,7 +690,7 @@ object networkconnectivity:
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamMemberArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Network Connectivity Hub. Each of these resources serves a different use case:
@@ -996,7 +996,7 @@ object networkconnectivity:
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamPolicyArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The internal range resource for IPAM operations within a VPC network. Used to represent a private address range along with behavioral characterstics of that range (its usage and peering behavior). Networking resources can link to this range if they are created as belonging to it.
@@ -1015,7 +1015,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.InternalRange(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &#39;Manage Multicloud Data Transfer Configs&#39;
@@ -1034,7 +1034,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.MulticloudDataTransferConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkconnectivityFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1072,7 +1072,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.PolicyBasedRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Regional Private Service Connect (PSC) endpoint resource.
@@ -1091,7 +1091,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.RegionalEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage Service Connection Policies.
@@ -1111,7 +1111,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.ServiceConnectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The NetworkConnectivity Spoke resource
@@ -1130,7 +1130,7 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.Spoke(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Transport resource is a top-level resource used by customers to control Partner Cross-Cloud Interconnect (CCI) connections.
@@ -1149,4 +1149,4 @@ object networkconnectivity:
       case None               =>
     com.pulumi.gcp.networkconnectivity.Transport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

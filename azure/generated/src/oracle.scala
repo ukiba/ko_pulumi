@@ -20,7 +20,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.AutonomousDatabase(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Oracle Autonomous Database Backup in Azure. */
   def AutonomousDatabaseBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object oracle:
       case None               =>
     com.pulumi.azure.oracle.AutonomousDatabaseBackup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage an autonomous database clone from backup. */
   def AutonomousDatabaseCloneFromBackup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.AutonomousDatabaseCloneFromBackup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an autonomous database clone from database. */
   def AutonomousDatabaseCloneFromDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.AutonomousDatabaseCloneFromDatabase(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cloud VM Cluster. */
   def CloudVmCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -85,7 +85,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.CloudVmCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cloud Exadata Infrastructure. */
   def ExadataInfrastructure(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -103,7 +103,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.ExadataInfrastructure(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Exadata Database Storage Vault. */
   def ExascaleDatabaseStorageVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -121,7 +121,7 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.ExascaleDatabaseStorageVault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OracleFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -354,4 +354,4 @@ object oracle:
       case None =>
     com.pulumi.azure.oracle.ResourceAnchor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

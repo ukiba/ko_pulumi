@@ -55,7 +55,7 @@ object databasemigration:
       case None =>
     com.pulumi.azure.databasemigration.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Azure Database Migration Service.
@@ -77,4 +77,4 @@ object databasemigration:
       case None =>
     com.pulumi.azure.databasemigration.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

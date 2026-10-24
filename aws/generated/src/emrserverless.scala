@@ -20,4 +20,4 @@ object emrserverless:
       case None =>
     com.pulumi.aws.emrserverless.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -52,7 +52,7 @@ object account:
       case None               =>
     com.pulumi.aws.account.AlternativeContact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the specified primary contact information associated with an AWS Account. */
   def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -60,7 +60,7 @@ object account:
     val argsBuilder = com.pulumi.aws.account.PrimaryContactArgs.builder
     com.pulumi.aws.account.PrimaryContact(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enable (Opt-In) or Disable (Opt-Out) a particular Region for an AWS account. */
   def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -68,4 +68,4 @@ object account:
     val argsBuilder = com.pulumi.aws.account.RegionArgs.builder
     com.pulumi.aws.account.Region(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

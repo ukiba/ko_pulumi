@@ -39,4 +39,4 @@ object appintegrations:
       case None =>
     com.pulumi.aws.appintegrations.DataIntegration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

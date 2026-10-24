@@ -23,7 +23,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.AuthorityArgs.builder
     com.pulumi.gcp.certificateauthority.Authority(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A CaPool represents a group of CertificateAuthorities that form a trust anchor. A CaPool can be used to manage
@@ -44,7 +44,7 @@ object certificateauthority:
       case None               =>
     com.pulumi.gcp.certificateauthority.CaPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
@@ -608,7 +608,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
@@ -1172,7 +1172,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CaPool. Each of these resources serves a different use case:
@@ -1736,7 +1736,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Certificate corresponds to a signed X.509 certificate issued by a Certificate.
@@ -1752,7 +1752,7 @@ object certificateauthority:
       case None               =>
     com.pulumi.gcp.certificateauthority.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Certificate Authority Service provides reusable and parameterized templates that you can use for common certificate issuance scenarios. A certificate template represents a relatively static and well-defined certificate issuance schema within an organization. A certificate template can essentially become a full-fledged vertical certificate issuance framework.
@@ -1773,7 +1773,7 @@ object certificateauthority:
       case None               =>
     com.pulumi.gcp.certificateauthority.CertificateTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
@@ -2337,7 +2337,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
@@ -2901,7 +2901,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Certificate Authority Service CertificateTemplate. Each of these resources serves a different use case:
@@ -3465,7 +3465,7 @@ object certificateauthority:
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CertificateauthorityFunctions:
     // Pulumi methods are reproduced as Scala methods.

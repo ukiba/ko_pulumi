@@ -16,7 +16,7 @@ object bedrockmodel:
     val argsBuilder = com.pulumi.aws.bedrockmodel.InvocationJobArgs.builder
     com.pulumi.aws.bedrockmodel.InvocationJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Bedrock model invocation logging configuration.
@@ -28,4 +28,4 @@ object bedrockmodel:
     val argsBuilder = com.pulumi.aws.bedrockmodel.InvocationLoggingConfigurationArgs.builder
     com.pulumi.aws.bedrockmodel.InvocationLoggingConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

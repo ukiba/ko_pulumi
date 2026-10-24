@@ -17,7 +17,7 @@ object route53recoveryreadiness:
       case None =>
     com.pulumi.aws.route53recoveryreadiness.Cell(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Readiness Check. */
   def ReadinessCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object route53recoveryreadiness:
       case None =>
     com.pulumi.aws.route53recoveryreadiness.ReadinessCheck(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Recovery Group. */
   def RecoveryGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object route53recoveryreadiness:
       case None =>
     com.pulumi.aws.route53recoveryreadiness.RecoveryGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Readiness Resource Set. */
   def ResourceSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -62,4 +62,4 @@ object route53recoveryreadiness:
       case None =>
     com.pulumi.aws.route53recoveryreadiness.ResourceSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

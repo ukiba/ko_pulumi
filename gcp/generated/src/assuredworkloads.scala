@@ -10,4 +10,4 @@ object assuredworkloads:
     val argsBuilder = com.pulumi.gcp.assuredworkloads.WorkloadArgs.builder
     com.pulumi.gcp.assuredworkloads.Workload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

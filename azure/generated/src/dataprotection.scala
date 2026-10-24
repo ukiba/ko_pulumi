@@ -13,7 +13,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstanceBlogStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Instance to back up Data Lake Storage. */
   def BackupInstanceDataLakeStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstanceDataLakeStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Instance to back up Disk. */
   def BackupInstanceDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstanceDisk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Instance to back up a Kubernetes Cluster. */
   def BackupInstanceKubernetesCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -46,7 +46,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstanceKubernetesCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Instance to back up MySQL Flexible Server. */
   def BackupInstanceMysqlFlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -57,7 +57,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstanceMysqlFlexibleServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Backup Instance to back up PostgreSQL.
@@ -74,7 +74,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstancePostgresql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Backup Instance to back up PostgreSQL Flexible Server.
@@ -89,7 +89,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupInstancePostgresqlFlexibleServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy Blob Storage. */
   def BackupPolicyBlobStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -100,7 +100,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyBlobStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy to Azure Data Lake Storage. */
   def BackupPolicyDataLakeStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -111,7 +111,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyDataLakeStorage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy Disk. */
   def BackupPolicyDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyDisk(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy to back up Kubernetes Cluster. */
   def BackupPolicyKubernetesCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -133,7 +133,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyKubernetesCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy to back up MySQL Flexible Server. */
   def BackupPolicyMysqlFlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -144,7 +144,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyMysqlFlexibleServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Backup Policy to back up PostgreSQL.
@@ -159,7 +159,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyPostgresql(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Policy to back up PostgreSQL Flexible Server. */
   def BackupPolicyPostgresqlFlexibleServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,7 +170,7 @@ object dataprotection:
       case None               =>
     com.pulumi.azure.dataprotection.BackupPolicyPostgresqlFlexibleServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Backup Vault. */
   def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -188,7 +188,7 @@ object dataprotection:
       case None =>
     com.pulumi.azure.dataprotection.BackupVault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Backup Vault Customer Managed Key.
@@ -200,7 +200,7 @@ object dataprotection:
     val argsBuilder = com.pulumi.azure.dataprotection.BackupVaultCustomerManagedKeyArgs.builder
     com.pulumi.azure.dataprotection.BackupVaultCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DataprotectionFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -237,4 +237,4 @@ object dataprotection:
       case None =>
     com.pulumi.azure.dataprotection.ResourceGuard(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

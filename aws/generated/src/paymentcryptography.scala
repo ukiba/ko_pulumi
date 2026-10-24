@@ -17,7 +17,7 @@ object paymentcryptography:
       case None =>
     com.pulumi.aws.paymentcryptography.Key(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Payment Cryptography Control Plane Key Alias. */
   def KeyAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,4 +25,4 @@ object paymentcryptography:
     val argsBuilder = com.pulumi.aws.paymentcryptography.KeyAliasArgs.builder
     com.pulumi.aws.paymentcryptography.KeyAlias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

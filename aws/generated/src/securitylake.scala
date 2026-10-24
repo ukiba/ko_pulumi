@@ -16,7 +16,7 @@ object securitylake:
     val argsBuilder = com.pulumi.aws.securitylake.AwsLogSourceArgs.builder
     com.pulumi.aws.securitylake.AwsLogSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Security Lake Custom Log Source.
@@ -28,7 +28,7 @@ object securitylake:
     val argsBuilder = com.pulumi.aws.securitylake.CustomLogSourceArgs.builder
     com.pulumi.aws.securitylake.CustomLogSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Security Lake Data Lake.
@@ -47,7 +47,7 @@ object securitylake:
       case None =>
     com.pulumi.aws.securitylake.DataLake(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Security Lake Subscriber.
@@ -66,7 +66,7 @@ object securitylake:
       case None =>
     com.pulumi.aws.securitylake.Subscriber(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Security Lake Subscriber Notification. */
   def SubscriberNotification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -74,4 +74,4 @@ object securitylake:
     val argsBuilder = com.pulumi.aws.securitylake.SubscriberNotificationArgs.builder
     com.pulumi.aws.securitylake.SubscriberNotification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

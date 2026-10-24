@@ -13,7 +13,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.CidrCollection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 CIDR location resource. */
   def CidrLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.CidrLocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource. */
   def DelegationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.DelegationSetArgs.builder
     com.pulumi.aws.route53.DelegationSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 health check. */
   def HealthCheck(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,7 +47,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.HealthCheck(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages Route 53 Hosted Zone DNS Security Extensions (DNSSEC). For more information about managing DNSSEC in Route 53, see the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html).
@@ -61,7 +61,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.HostedZoneDnsSecArgs.builder
     com.pulumi.aws.route53.HostedZoneDnsSec(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route 53 Key Signing Key. To manage DNS Security Extensions (DNSSEC) for a Hosted Zone, see the `aws.route53.HostedZoneDnsSec` resource. For more information about managing DNSSEC in Route 53, see the [Route 53 Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html). */
   def KeySigningKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -72,7 +72,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.KeySigningKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profiles Association. */
   def ProfilesAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ProfilesAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profile. */
   def ProfilesProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,7 +108,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ProfilesProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Route 53 Profiles Resource Association. */
   def ProfilesResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -119,7 +119,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.ProfilesResourceAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Route53 query logging configuration resource.
@@ -135,7 +135,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.QueryLogArgs.builder
     com.pulumi.aws.route53.QueryLog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 record resource. */
   def Record(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -146,7 +146,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.Record(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of resource record sets defined in an AWS Route53 hosted zone.
@@ -162,7 +162,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.RecordsExclusiveArgs.builder
     com.pulumi.aws.route53.RecordsExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver config resource. */
   def ResolverConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,7 +170,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.ResolverConfigArgs.builder
     com.pulumi.aws.route53.ResolverConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNSSEC config resource. */
   def ResolverDnsSecConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -178,7 +178,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.ResolverDnsSecConfigArgs.builder
     com.pulumi.aws.route53.ResolverDnsSecConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver endpoint resource. */
   def ResolverEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -196,7 +196,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall config resource. */
   def ResolverFirewallConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -204,7 +204,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.ResolverFirewallConfigArgs.builder
     com.pulumi.aws.route53.ResolverFirewallConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall domain list resource. */
   def ResolverFirewallDomainList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverFirewallDomainList(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule resource. */
   def ResolverFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,7 +233,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.ResolverFirewallRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule group resource. */
   def ResolverFirewallRuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -251,7 +251,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverFirewallRuleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver DNS Firewall rule group association resource. */
   def ResolverFirewallRuleGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -269,7 +269,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverFirewallRuleGroupAssociation(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver query logging configuration resource. */
   def ResolverQueryLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -287,7 +287,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverQueryLogConfig(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route 53 Resolver query logging configuration association resource. */
   def ResolverQueryLogConfigAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -295,7 +295,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.ResolverQueryLogConfigAssociationArgs.builder
     com.pulumi.aws.route53.ResolverQueryLogConfigAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 Resolver rule. */
   def ResolverRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -313,7 +313,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.ResolverRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 Resolver rule association. */
   def ResolverRuleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -324,7 +324,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.ResolverRuleAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Route53Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -578,7 +578,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.TrafficPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Route53 traffic policy instance resource. */
   def TrafficPolicyInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -589,7 +589,7 @@ object route53:
       case None               =>
     com.pulumi.aws.route53.TrafficPolicyInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Authorizes a VPC in a different account to be associated with a local Route53 Hosted Zone. */
   def VpcAssociationAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -597,7 +597,7 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.VpcAssociationAuthorizationArgs.builder
     com.pulumi.aws.route53.VpcAssociationAuthorization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Route53 Hosted Zone. For managing DNS Security Extensions (DNSSEC), see the `aws.route53.KeySigningKey` and `aws.route53.HostedZoneDnsSec` resources. */
   def Zone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -615,7 +615,7 @@ object route53:
       case None =>
     com.pulumi.aws.route53.Zone(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Route53 Hosted Zone VPC association. VPC associations can only be made on private zones. See the `aws.route53.VpcAssociationAuthorization` resource for setting up cross-account associations.
@@ -629,4 +629,4 @@ object route53:
     val argsBuilder = com.pulumi.aws.route53.ZoneAssociationArgs.builder
     com.pulumi.aws.route53.ZoneAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

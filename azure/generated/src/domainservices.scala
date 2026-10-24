@@ -37,7 +37,7 @@ object domainservices:
     val argsBuilder = com.pulumi.azure.domainservices.ReplicaSetArgs.builder
     com.pulumi.azure.domainservices.ReplicaSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Active Directory Domain Service.
@@ -61,7 +61,7 @@ object domainservices:
       case None =>
     com.pulumi.azure.domainservices.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Active Directory Domain Service Trust. */
   def ServiceTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -72,4 +72,4 @@ object domainservices:
       case None               =>
     com.pulumi.azure.domainservices.ServiceTrust(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

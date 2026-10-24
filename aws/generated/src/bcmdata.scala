@@ -17,4 +17,4 @@ object bcmdata:
       case None =>
     com.pulumi.aws.bcmdata.Export(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

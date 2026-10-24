@@ -20,7 +20,7 @@ object resourcegroups:
       case None =>
     com.pulumi.aws.resourcegroups.Group(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Resource Groups Resource. */
   def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,4 +28,4 @@ object resourcegroups:
     val argsBuilder = com.pulumi.aws.resourcegroups.ResourceArgs.builder
     com.pulumi.aws.resourcegroups.Resource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

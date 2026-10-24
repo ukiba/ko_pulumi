@@ -10,7 +10,7 @@ object computeoptimizer:
     val argsBuilder = com.pulumi.aws.computeoptimizer.EnrollmentStatusArgs.builder
     com.pulumi.aws.computeoptimizer.EnrollmentStatus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages AWS Compute Optimizer recommendation preferences. */
   def RecommendationPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -18,4 +18,4 @@ object computeoptimizer:
     val argsBuilder = com.pulumi.aws.computeoptimizer.RecommendationPreferencesArgs.builder
     com.pulumi.aws.computeoptimizer.RecommendationPreferences(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

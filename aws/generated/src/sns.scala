@@ -10,7 +10,7 @@ object sns:
     val argsBuilder = com.pulumi.aws.sns.DataProtectionPolicyArgs.builder
     com.pulumi.aws.sns.DataProtectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SNS platform application resource */
   def PlatformApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,7 +21,7 @@ object sns:
       case None               =>
     com.pulumi.aws.sns.PlatformApplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a way to set SNS SMS preferences. */
   def SmsPreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -29,7 +29,7 @@ object sns:
     val argsBuilder = com.pulumi.aws.sns.SmsPreferencesArgs.builder
     com.pulumi.aws.sns.SmsPreferences(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SnsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -74,7 +74,7 @@ object sns:
       case None =>
     com.pulumi.aws.sns.Topic(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SNS topic policy resource
@@ -86,7 +86,7 @@ object sns:
     val argsBuilder = com.pulumi.aws.sns.TopicPolicyArgs.builder
     com.pulumi.aws.sns.TopicPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource for subscribing to SNS topics. Requires that an SNS topic exist for the subscription to attach to. This resource allows you to automatically place messages sent to SNS topics in SQS queues, send them as HTTP(S) POST requests to a given endpoint, send SMS messages, or notify devices / applications. The most likely use case for provider users will probably be SQS queues.
@@ -106,4 +106,4 @@ object sns:
     val argsBuilder = com.pulumi.aws.sns.TopicSubscriptionArgs.builder
     com.pulumi.aws.sns.TopicSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

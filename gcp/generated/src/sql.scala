@@ -16,7 +16,7 @@ object sql:
       case None               =>
     com.pulumi.gcp.sql.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new Google SQL Database Instance. For more information, see the [official documentation](https://cloud.google.com/sql/docs/mysql/create-instance),
@@ -39,7 +39,7 @@ object sql:
       case None               =>
     com.pulumi.gcp.sql.DatabaseInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Executes a SQL script to provision in-database resources on a Cloud SQL Instance. Before executing a SQL script, you may need to configure your database user and permissions. For more information, see the [Cloud SQL official documentation](https://cloud.google.com/sql/docs/postgres/executesql-instance), or the [JSON API](https://cloud.google.com/sql/docs/admin-api/v1beta4/instances/executeSql).
@@ -53,7 +53,7 @@ object sql:
     val argsBuilder = com.pulumi.gcp.sql.ProvisionScriptArgs.builder
     com.pulumi.gcp.sql.ProvisionScript(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A source representation instance is a Cloud SQL instance that represents
@@ -70,7 +70,7 @@ object sql:
       case None               =>
     com.pulumi.gcp.sql.SourceRepresentationInstance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SqlFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -215,7 +215,7 @@ object sql:
     val argsBuilder = com.pulumi.gcp.sql.SslCertArgs.builder
     com.pulumi.gcp.sql.SslCert(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new Google SQL User on a Google SQL User Instance. For more information, see the [official documentation](https://cloud.google.com/sql/), or the [JSON API](https://cloud.google.com/sql/docs/admin-api/v1beta4/users).
@@ -233,4 +233,4 @@ object sql:
       case None               =>
     com.pulumi.gcp.sql.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

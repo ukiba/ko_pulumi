@@ -10,4 +10,4 @@ object agenticapplications:
     val argsBuilder = com.pulumi.gcp.agenticapplications.AnalystAgentPersonaArgs.builder
     com.pulumi.gcp.agenticapplications.AnalystAgentPersona(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

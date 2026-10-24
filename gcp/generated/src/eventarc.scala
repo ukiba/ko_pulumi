@@ -21,7 +21,7 @@ object eventarc:
       case None               =>
     com.pulumi.gcp.eventarc.Channel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Eventarc Enrollment resource
@@ -37,7 +37,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.EnrollmentArgs.builder
     com.pulumi.gcp.eventarc.Enrollment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EventarcFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -72,7 +72,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.GoogleApiSourceArgs.builder
     com.pulumi.gcp.eventarc.GoogleApiSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Eventarc GoogleChannelConfig resource
@@ -91,7 +91,7 @@ object eventarc:
       case None               =>
     com.pulumi.gcp.eventarc.GoogleChannelConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Eventarc MessageBus resource
@@ -107,7 +107,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.MessageBusArgs.builder
     com.pulumi.gcp.eventarc.MessageBus(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Eventarc Pipeline resource
@@ -123,7 +123,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineArgs.builder
     com.pulumi.gcp.eventarc.Pipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Eventarc Pipeline. Each of these resources serves a different use case:
@@ -436,7 +436,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamBindingArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Eventarc Pipeline. Each of these resources serves a different use case:
@@ -749,7 +749,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamMemberArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Eventarc Pipeline. Each of these resources serves a different use case:
@@ -1062,7 +1062,7 @@ object eventarc:
     val argsBuilder = com.pulumi.gcp.eventarc.PipelineIamPolicyArgs.builder
     com.pulumi.gcp.eventarc.PipelineIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Eventarc Trigger resource
@@ -1081,4 +1081,4 @@ object eventarc:
       case None               =>
     com.pulumi.gcp.eventarc.Trigger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

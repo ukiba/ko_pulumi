@@ -20,7 +20,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.AnycastIpList(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def CachePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.CachePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -30,7 +30,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.CachePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CloudfrontFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -203,7 +203,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.ConnectionFunction(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront Connection Group.
@@ -225,7 +225,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.ConnectionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudFront Continuous Deployment Policy. */
   def ContinuousDeploymentPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,7 +233,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.ContinuousDeploymentPolicyArgs.builder
     com.pulumi.aws.cloudfront.ContinuousDeploymentPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront web distribution.
@@ -254,7 +254,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.Distribution(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront distribution tenant.
@@ -278,7 +278,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.DistributionTenant(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudFront Field-level Encryption Config resource. */
   def FieldLevelEncryptionConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -286,7 +286,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.FieldLevelEncryptionConfigArgs.builder
     com.pulumi.aws.cloudfront.FieldLevelEncryptionConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudFront Field-level Encryption Profile resource. */
   def FieldLevelEncryptionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -297,7 +297,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.FieldLevelEncryptionProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudFront Function resource. With CloudFront Functions in Amazon CloudFront, you can write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
@@ -321,7 +321,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.Function(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def KeyGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.KeyGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -331,7 +331,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.KeyGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudFront Key Value Store. */
   def KeyValueStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -349,7 +349,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.KeyValueStore(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS CloudFront KeyValueStore Key.
@@ -361,7 +361,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.KeyvaluestoreKeyArgs.builder
     com.pulumi.aws.cloudfront.KeyvaluestoreKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for maintaining exclusive management of resource key value pairs defined in an AWS CloudFront KeyValueStore.
@@ -375,7 +375,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusiveArgs.builder
     com.pulumi.aws.cloudfront.KeyvaluestoreKeysExclusive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudFront real-time log configuration resource. */
   def MonitoringSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -383,7 +383,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.MonitoringSubscriptionArgs.builder
     com.pulumi.aws.cloudfront.MonitoringSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront multi-tenant distribution.
@@ -404,7 +404,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.MultitenantDistribution(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
@@ -419,7 +419,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.OriginAccessControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront origin access identity.
@@ -434,7 +434,7 @@ object cloudfront:
     val argsBuilder = com.pulumi.aws.cloudfront.OriginAccessIdentityArgs.builder
     com.pulumi.aws.cloudfront.OriginAccessIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def OriginRequestPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.OriginRequestPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -444,7 +444,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.OriginRequestPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def PublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.cloudfront.PublicKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -454,7 +454,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.PublicKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudFront real-time log configuration resource. */
   def RealtimeLogConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -465,7 +465,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.RealtimeLogConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudFront response headers policy resource.
@@ -481,7 +481,7 @@ object cloudfront:
       case None               =>
     com.pulumi.aws.cloudfront.ResponseHeadersPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS CloudFront Trust Store. */
   def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -499,7 +499,7 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.TrustStore(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates an Amazon CloudFront VPC origin.
@@ -519,4 +519,4 @@ object cloudfront:
       case None =>
     com.pulumi.aws.cloudfront.VpcOrigin(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

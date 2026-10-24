@@ -17,7 +17,7 @@ object elastictranscoder:
       case None               =>
     com.pulumi.aws.elastictranscoder.Pipeline(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Transcoder preset resource.
@@ -32,4 +32,4 @@ object elastictranscoder:
       case None               =>
     com.pulumi.aws.elastictranscoder.Preset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object signalr:
       case None =>
     com.pulumi.azure.signalr.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure SignalR Custom Certificate. */
   def ServiceCustomCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object signalr:
       case None               =>
     com.pulumi.azure.signalr.ServiceCustomCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure SignalR Custom Domain. */
   def ServiceCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object signalr:
       case None               =>
     com.pulumi.azure.signalr.ServiceCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Network ACL for a SignalR service. */
   def ServiceNetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object signalr:
     val argsBuilder = com.pulumi.azure.signalr.ServiceNetworkAclArgs.builder
     com.pulumi.azure.signalr.ServiceNetworkAcl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Shared Private Link Resource for a Signalr service. */
   def SharedPrivateLinkResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object signalr:
       case None               =>
     com.pulumi.azure.signalr.SharedPrivateLinkResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SignalrFunctions:
     // Pulumi methods are reproduced as Scala methods.

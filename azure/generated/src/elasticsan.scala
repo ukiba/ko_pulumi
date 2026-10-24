@@ -20,7 +20,7 @@ object elasticsan:
       case None =>
     com.pulumi.azure.elasticsan.ElasticSan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElasticsanFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -74,7 +74,7 @@ object elasticsan:
       case None               =>
     com.pulumi.azure.elasticsan.Volume(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic SAN Volume Group resource. */
   def VolumeGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -85,4 +85,4 @@ object elasticsan:
       case None               =>
     com.pulumi.azure.elasticsan.VolumeGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -10,4 +10,4 @@ object redshiftdata:
     val argsBuilder = com.pulumi.aws.redshiftdata.StatementArgs.builder
     com.pulumi.aws.redshiftdata.Statement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

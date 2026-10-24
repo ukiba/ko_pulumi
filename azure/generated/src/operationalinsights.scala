@@ -17,7 +17,7 @@ object operationalinsights:
       case None =>
     com.pulumi.azure.operationalinsights.AnalyticsSolution(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Workspace. */
   def AnalyticsWorkspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object operationalinsights:
       case None =>
     com.pulumi.azure.operationalinsights.AnalyticsWorkspace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OperationalinsightsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -72,4 +72,4 @@ object operationalinsights:
       case None =>
     com.pulumi.azure.operationalinsights.QueryPackQuery(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

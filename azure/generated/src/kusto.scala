@@ -13,7 +13,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.AttachedDatabaseConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Cluster */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object kusto:
       case None =>
     com.pulumi.azure.kusto.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for a Kusto Cluster. */
   def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -39,7 +39,7 @@ object kusto:
     val argsBuilder = com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.builder
     com.pulumi.azure.kusto.ClusterCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Private Endpoint for a Kusto Cluster. */
   def ClusterManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.ClusterManagedPrivateEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto Cluster Principal Assignment. */
   def ClusterPrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.ClusterPrincipalAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto / Cosmos Database Data Connection. */
   def CosmosdbDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -72,7 +72,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.CosmosdbDataConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Kusto (also known as Azure Data Explorer) Database
@@ -87,7 +87,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.Database(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Database Principal Assignment. */
   def DatabasePrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.DatabasePrincipalAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Event Grid Data Connection */
   def EventGridDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -109,7 +109,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.EventGridDataConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection */
   def EventhubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -120,7 +120,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.EventhubDataConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) IotHub Data Connection */
   def IotHubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.IotHubDataConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object KustoFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -173,4 +173,4 @@ object kusto:
       case None               =>
     com.pulumi.azure.kusto.Script(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

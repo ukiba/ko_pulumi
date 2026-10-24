@@ -17,7 +17,7 @@ object controltower:
       case None =>
     com.pulumi.aws.controltower.Baseline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows the application of pre-defined controls to organizational units. For more information on usage, please see the
@@ -28,7 +28,7 @@ object controltower:
     val argsBuilder = com.pulumi.aws.controltower.ControlTowerControlArgs.builder
     com.pulumi.aws.controltower.ControlTowerControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ControltowerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -73,4 +73,4 @@ object controltower:
       case None =>
     com.pulumi.aws.controltower.LandingZone(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

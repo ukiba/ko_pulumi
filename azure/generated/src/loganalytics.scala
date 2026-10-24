@@ -24,7 +24,7 @@ object loganalytics:
       case None =>
     com.pulumi.azure.loganalytics.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Cluster Customer Managed Key. */
   def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,7 +32,7 @@ object loganalytics:
     val argsBuilder = com.pulumi.azure.loganalytics.ClusterCustomerManagedKeyArgs.builder
     com.pulumi.azure.loganalytics.ClusterCustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Data Export Rule. */
   def DataExportRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -43,7 +43,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.DataExportRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Windows Event DataSource. */
   def DataSourceWindowsEvent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -54,7 +54,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.DataSourceWindowsEvent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Windows Performance Counter DataSource. */
   def DataSourceWindowsPerformanceCounter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,7 +65,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.DataSourceWindowsPerformanceCounter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Linked Service. */
   def LinkedService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -73,7 +73,7 @@ object loganalytics:
     val argsBuilder = com.pulumi.azure.loganalytics.LinkedServiceArgs.builder
     com.pulumi.azure.loganalytics.LinkedService(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Linked Storage Account. */
   def LinkedStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,7 +81,7 @@ object loganalytics:
     val argsBuilder = com.pulumi.azure.loganalytics.LinkedStorageAccountArgs.builder
     com.pulumi.azure.loganalytics.LinkedStorageAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LoganalyticsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -118,7 +118,7 @@ object loganalytics:
       case None =>
     com.pulumi.azure.loganalytics.QueryPack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics (formally Operational Insights) Saved Search. */
   def SavedSearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -136,7 +136,7 @@ object loganalytics:
       case None =>
     com.pulumi.azure.loganalytics.SavedSearch(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Log Analytics Storage Insights resource. */
   def StorageInsights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -147,7 +147,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.StorageInsights(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Table in a Log Analytics (formally Operational Insights) Workspace.
@@ -162,7 +162,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.WorkspaceTable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Custom Log Table in a Log Analytics (formally Operational Insights) Workspace. */
   def WorkspaceTableCustomLog(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -173,7 +173,7 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.WorkspaceTableCustomLog(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Table in a Log Analytics (formally Operational Insights) Workspace. */
   def WorkspaceTableMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -184,4 +184,4 @@ object loganalytics:
       case None               =>
     com.pulumi.azure.loganalytics.WorkspaceTableMicrosoft(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

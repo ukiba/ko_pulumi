@@ -14,7 +14,7 @@ object xray:
     val argsBuilder = com.pulumi.aws.xray.EncryptionConfigArgs.builder
     com.pulumi.aws.xray.EncryptionConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS XRay Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -29,7 +29,7 @@ object xray:
       case None =>
     com.pulumi.aws.xray.Group(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS X-Ray indexing rule.
@@ -44,7 +44,7 @@ object xray:
       case None               =>
     com.pulumi.aws.xray.IndexingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS X-Ray Resource Policy. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -52,7 +52,7 @@ object xray:
     val argsBuilder = com.pulumi.aws.xray.ResourcePolicyArgs.builder
     com.pulumi.aws.xray.ResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates and manages an AWS XRay Sampling Rule. */
   def SamplingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object xray:
       case None =>
     com.pulumi.aws.xray.SamplingRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the destination of data sent to `PutTraceSegments` by AWS X-Ray.
@@ -79,4 +79,4 @@ object xray:
     val argsBuilder = com.pulumi.aws.xray.TraceSegmentDestinationArgs.builder
     com.pulumi.aws.xray.TraceSegmentDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

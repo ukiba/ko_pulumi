@@ -16,4 +16,4 @@ object documentai:
     val argsBuilder = com.pulumi.gcp.documentai.SchemaArgs.builder
     com.pulumi.gcp.documentai.Schema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

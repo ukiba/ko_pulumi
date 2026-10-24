@@ -13,7 +13,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Consumer Group within an IotHub */
   def ConsumerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.ConsumerGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Device Provisioning Service Shared Access Policy */
   def DpsSharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.DpsSharedAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub Cosmos DB Account Endpoint
@@ -50,7 +50,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.EndpointCosmosdbAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub EventHub Endpoint
@@ -65,7 +65,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.EndpointEventhub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub ServiceBus Queue Endpoint
@@ -80,7 +80,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.EndpointServicebusQueue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub ServiceBus Topic Endpoint
@@ -95,7 +95,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.EndpointServicebusTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub Storage Container Endpoint
@@ -110,7 +110,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.EndpointStorageContainer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub Enrichment
@@ -122,7 +122,7 @@ object iot:
     val argsBuilder = com.pulumi.azure.iot.EnrichmentArgs.builder
     com.pulumi.azure.iot.Enrichment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub Fallback Route
@@ -138,7 +138,7 @@ object iot:
     val argsBuilder = com.pulumi.azure.iot.FallbackRouteArgs.builder
     com.pulumi.azure.iot.FallbackRoute(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the File Upload of an IoT Hub.
@@ -150,7 +150,7 @@ object iot:
     val argsBuilder = com.pulumi.azure.iot.FileUploadArgs.builder
     com.pulumi.azure.iot.FileUpload(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub
@@ -180,7 +180,7 @@ object iot:
       case None =>
     com.pulumi.azure.iot.IoTHub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IotFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -246,7 +246,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.IotHubCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Hub Device Update Account. */
   def IotHubDeviceUpdateAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -264,7 +264,7 @@ object iot:
       case None =>
     com.pulumi.azure.iot.IotHubDeviceUpdateAccount(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Hub Device Update Instance. */
   def IotHubDeviceUpdateInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -282,7 +282,7 @@ object iot:
       case None =>
     com.pulumi.azure.iot.IotHubDeviceUpdateInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Device Provisioning Service. */
   def IotHubDps(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -300,7 +300,7 @@ object iot:
       case None =>
     com.pulumi.azure.iot.IotHubDps(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an IotHub Route
@@ -315,7 +315,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Iot Security Device Group. */
   def SecurityDeviceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -326,7 +326,7 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.SecurityDeviceGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an iot security solution. */
   def SecuritySolution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -344,7 +344,7 @@ object iot:
       case None =>
     com.pulumi.azure.iot.SecuritySolution(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IotHub Shared Access Policy */
   def SharedAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -355,4 +355,4 @@ object iot:
       case None               =>
     com.pulumi.azure.iot.SharedAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

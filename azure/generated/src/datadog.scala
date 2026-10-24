@@ -20,7 +20,7 @@ object datadog:
       case None =>
     com.pulumi.azure.datadog.Monitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages SingleSignOn on the datadog Monitor. */
   def MonitorSsoConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -31,7 +31,7 @@ object datadog:
       case None               =>
     com.pulumi.azure.datadog.MonitorSsoConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages TagRules on the datadog Monitor. */
   def MonitorTagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,4 +42,4 @@ object datadog:
       case None               =>
     com.pulumi.azure.datadog.MonitorTagRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

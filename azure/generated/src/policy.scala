@@ -17,7 +17,7 @@ object policy:
       case None               =>
     com.pulumi.azure.policy.Definition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PolicyFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -99,7 +99,7 @@ object policy:
       case None               =>
     com.pulumi.azure.policy.PolicySetDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Applies a Guest Configuration Policy to a Virtual Machine.
@@ -114,4 +114,4 @@ object policy:
       case None               =>
     com.pulumi.azure.policy.VirtualMachineConfigurationAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -21,7 +21,7 @@ object dataform:
     val argsBuilder = com.pulumi.gcp.dataform.ConfigArgs.builder
     com.pulumi.gcp.dataform.Config(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DataformFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -56,7 +56,7 @@ object dataform:
     val argsBuilder = com.pulumi.gcp.dataform.FolderArgs.builder
     com.pulumi.gcp.dataform.Folder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource represents a Dataform Git repository
@@ -75,28 +75,28 @@ object dataform:
       case None               =>
     com.pulumi.gcp.dataform.Repository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource represents a Dataform release configuration
@@ -118,7 +118,7 @@ object dataform:
       case None               =>
     com.pulumi.gcp.dataform.RepositoryReleaseConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource represents a Dataform workflow configuration
@@ -140,7 +140,7 @@ object dataform:
       case None               =>
     com.pulumi.gcp.dataform.RepositoryWorkflowConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource represents a Dataform TeamFolder
@@ -156,4 +156,4 @@ object dataform:
     val argsBuilder = com.pulumi.gcp.dataform.TeamFolderArgs.builder
     com.pulumi.gcp.dataform.TeamFolder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

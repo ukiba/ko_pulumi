@@ -14,7 +14,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.AccountSettingsArgs.builder
     com.pulumi.aws.quicksight.AccountSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS QuickSight Account Subscription.
@@ -26,7 +26,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.AccountSubscriptionArgs.builder
     com.pulumi.aws.quicksight.AccountSubscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Analysis. */
   def Analysis(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Analysis(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a QuickSight custom permissions profile. */
   def CustomPermissions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -59,7 +59,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.CustomPermissions(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Dashboard. */
   def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -77,7 +77,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Dashboard(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Data Set. */
   def DataSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.DataSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Data Source */
   def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -113,7 +113,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.DataSource(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Folder. */
   def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Folder(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Folder Membership. */
   def FolderMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -139,7 +139,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.FolderMembershipArgs.builder
     com.pulumi.aws.quicksight.FolderMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Group */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -147,7 +147,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.GroupArgs.builder
     com.pulumi.aws.quicksight.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight Group Membership */
   def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -155,7 +155,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.GroupMembershipArgs.builder
     com.pulumi.aws.quicksight.GroupMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight IAM Policy Assignment. */
   def IamPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -163,7 +163,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.IamPolicyAssignmentArgs.builder
     com.pulumi.aws.quicksight.IamPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Ingestion. */
   def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -171,7 +171,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.IngestionArgs.builder
     com.pulumi.aws.quicksight.Ingestion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the content and status of IP rules.
@@ -183,7 +183,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.IpRestrictionArgs.builder
     com.pulumi.aws.quicksight.IpRestriction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Registers customer managed keys in a Amazon QuickSight account.
@@ -195,7 +195,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.KeyRegistrationArgs.builder
     com.pulumi.aws.quicksight.KeyRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Namespace. */
   def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -210,7 +210,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Namespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object QuicksightFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -301,7 +301,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.RefreshScheduleArgs.builder
     com.pulumi.aws.quicksight.RefreshSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the custom permissions that are associated with a role. */
   def RoleCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -309,7 +309,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.RoleCustomPermissionArgs.builder
     com.pulumi.aws.quicksight.RoleCustomPermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS QuickSight Role Membership.
@@ -321,7 +321,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.RoleMembershipArgs.builder
     com.pulumi.aws.quicksight.RoleMembership(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Template. */
   def Template(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -339,7 +339,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Template(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight Template Alias. */
   def TemplateAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -347,7 +347,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.TemplateAliasArgs.builder
     com.pulumi.aws.quicksight.TemplateAlias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a QuickSight Theme. */
   def Theme(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -365,7 +365,7 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.Theme(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing QuickSight User */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -373,7 +373,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.UserArgs.builder
     com.pulumi.aws.quicksight.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the custom permissions profile for a user. */
   def UserCustomPermission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -381,7 +381,7 @@ object quicksight:
     val argsBuilder = com.pulumi.aws.quicksight.UserCustomPermissionArgs.builder
     com.pulumi.aws.quicksight.UserCustomPermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS QuickSight VPC Connection. */
   def VpcConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -399,4 +399,4 @@ object quicksight:
       case None =>
     com.pulumi.aws.quicksight.VpcConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

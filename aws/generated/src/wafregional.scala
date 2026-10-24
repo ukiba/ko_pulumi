@@ -13,7 +13,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.ByteMatchSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Geo Match Set Resource */
   def GeoMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.GeoMatchSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional IPSet Resource for use with Application Load Balancer. */
   def IpSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.IpSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Rate Based Rule Resource */
   def RateBasedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -53,7 +53,7 @@ object wafregional:
       case None =>
     com.pulumi.aws.wafregional.RateBasedRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Regex Match Set Resource */
   def RegexMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,7 +64,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.RegexMatchSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Regex Pattern Set Resource */
   def RegexPatternSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.RegexPatternSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an WAF Regional Rule Resource for use with Application Load Balancer. */
   def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -93,7 +93,7 @@ object wafregional:
       case None =>
     com.pulumi.aws.wafregional.Rule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Rule Group Resource */
   def RuleGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -111,7 +111,7 @@ object wafregional:
       case None =>
     com.pulumi.aws.wafregional.RuleGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional Size Constraint Set Resource for use with Application Load Balancer. */
   def SizeConstraintSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -122,7 +122,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.SizeConstraintSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional SQL Injection Match Set Resource for use with Application Load Balancer. */
   def SqlInjectionMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -133,7 +133,7 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.SqlInjectionMatchSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WafregionalFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -218,7 +218,7 @@ object wafregional:
       case None =>
     com.pulumi.aws.wafregional.WebAcl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an association with WAF Regional Web ACL.
@@ -230,7 +230,7 @@ object wafregional:
     val argsBuilder = com.pulumi.aws.wafregional.WebAclAssociationArgs.builder
     com.pulumi.aws.wafregional.WebAclAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a WAF Regional XSS Match Set Resource for use with Application Load Balancer. */
   def XssMatchSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -241,4 +241,4 @@ object wafregional:
       case None               =>
     com.pulumi.aws.wafregional.XssMatchSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

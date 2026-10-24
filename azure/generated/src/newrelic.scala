@@ -13,7 +13,7 @@ object newrelic:
       case None               =>
     com.pulumi.azure.newrelic.Monitor(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Native New Relic Tag Rule. */
   def TagRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,4 +21,4 @@ object newrelic:
     val argsBuilder = com.pulumi.azure.newrelic.TagRuleArgs.builder
     com.pulumi.azure.newrelic.TagRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

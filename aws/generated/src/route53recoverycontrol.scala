@@ -20,7 +20,7 @@ object route53recoverycontrol:
       case None =>
     com.pulumi.aws.route53recoverycontrol.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Control Panel. */
   def ControlPanel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object route53recoverycontrol:
       case None =>
     com.pulumi.aws.route53recoverycontrol.ControlPanel(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Routing Control. */
   def RoutingControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -49,7 +49,7 @@ object route53recoverycontrol:
       case None               =>
     com.pulumi.aws.route53recoverycontrol.RoutingControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Route 53 Recovery Control Config Safety Rule */
   def SafetyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,4 +67,4 @@ object route53recoverycontrol:
       case None =>
     com.pulumi.aws.route53recoverycontrol.SafetyRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

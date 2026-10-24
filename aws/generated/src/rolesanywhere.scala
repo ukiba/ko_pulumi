@@ -20,7 +20,7 @@ object rolesanywhere:
       case None =>
     com.pulumi.aws.rolesanywhere.Profile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Roles Anywhere Trust Anchor. */
   def TrustAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,4 +38,4 @@ object rolesanywhere:
       case None =>
     com.pulumi.aws.rolesanywhere.TrustAnchor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

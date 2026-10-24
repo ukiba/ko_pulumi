@@ -18,4 +18,4 @@ object uxc:
     val argsBuilder = com.pulumi.aws.uxc.AccountCustomizationsArgs.builder
     com.pulumi.aws.uxc.AccountCustomizations(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

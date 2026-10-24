@@ -18,7 +18,7 @@ object resourcemanager:
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityArgs.builder
     com.pulumi.gcp.resourcemanager.Capability(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Capability configs define the enabled capabilities and their scope of
@@ -35,7 +35,7 @@ object resourcemanager:
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.builder
     com.pulumi.gcp.resourcemanager.CapabilityConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Lien represents an encumbrance on the actions that can be performed on a resource.
@@ -51,4 +51,4 @@ object resourcemanager:
     val argsBuilder = com.pulumi.gcp.resourcemanager.LienArgs.builder
     com.pulumi.gcp.resourcemanager.Lien(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

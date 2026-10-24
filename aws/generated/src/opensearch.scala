@@ -20,7 +20,7 @@ object opensearch:
       case None =>
     com.pulumi.aws.opensearch.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Authorize VPC Endpoint Access. */
   def AuthorizeVpcEndpointAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.AuthorizeVpcEndpointAccessArgs.builder
     com.pulumi.aws.opensearch.AuthorizeVpcEndpointAccess(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon OpenSearch Domain.
@@ -47,7 +47,7 @@ object opensearch:
       case None =>
     com.pulumi.aws.opensearch.Domain(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows setting policy to an OpenSearch domain while referencing domain attributes (e.g., ARN). */
   def DomainPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.DomainPolicyArgs.builder
     com.pulumi.aws.opensearch.DomainPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages SAML authentication options for an AWS OpenSearch Domain. */
   def DomainSamlOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.DomainSamlOptionsArgs.builder
     com.pulumi.aws.opensearch.DomainSamlOptions(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an [AWS Opensearch Inbound Connection Accepter](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_AcceptInboundConnection.html). If connecting domains from different AWS accounts, ensure that the accepter is configured to use the AWS account where the _remote_ opensearch domain exists. */
   def InboundConnectionAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.InboundConnectionAccepterArgs.builder
     com.pulumi.aws.opensearch.InboundConnectionAccepter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OpensearchFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -194,7 +194,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.OutboundConnectionArgs.builder
     com.pulumi.aws.opensearch.OutboundConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Opensearch Package. */
   def Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -202,7 +202,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.PackageArgs.builder
     com.pulumi.aws.opensearch.Package(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Opensearch Package Association. */
   def PackageAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -210,7 +210,7 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.PackageAssociationArgs.builder
     com.pulumi.aws.opensearch.PackageAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Serverless Access Policy. See AWS documentation for [data access policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html) and [supported data access policy permissions](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html#serverless-data-supported-permissions). */
   def ServerlessAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -221,7 +221,7 @@ object opensearch:
       case None               =>
     com.pulumi.aws.opensearch.ServerlessAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS OpenSearch Serverless Collection.
@@ -245,7 +245,7 @@ object opensearch:
       case None =>
     com.pulumi.aws.opensearch.ServerlessCollection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS OpenSearch Serverless Collection Group.
@@ -267,7 +267,7 @@ object opensearch:
       case None =>
     com.pulumi.aws.opensearch.ServerlessCollectionGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Serverless Lifecycle Policy. See AWS documentation for [lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html). */
   def ServerlessLifecyclePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -278,7 +278,7 @@ object opensearch:
       case None               =>
     com.pulumi.aws.opensearch.ServerlessLifecyclePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Serverless Security Config. */
   def ServerlessSecurityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -289,7 +289,7 @@ object opensearch:
       case None               =>
     com.pulumi.aws.opensearch.ServerlessSecurityConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearch Serverless Security Policy. See AWS documentation for [encryption policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html#serverless-encryption-policies) and [network policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html#serverless-network-policies). */
   def ServerlessSecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -300,7 +300,7 @@ object opensearch:
       case None               =>
     com.pulumi.aws.opensearch.ServerlessSecurityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS OpenSearchServerless VPC Endpoint. */
   def ServerlessVpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -311,7 +311,7 @@ object opensearch:
       case None               =>
     com.pulumi.aws.opensearch.ServerlessVpcEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an [AWS Opensearch VPC Endpoint](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_CreateVpcEndpoint.html). Creates an Amazon OpenSearch Service-managed VPC endpoint. */
   def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -319,4 +319,4 @@ object opensearch:
     val argsBuilder = com.pulumi.aws.opensearch.VpcEndpointArgs.builder
     com.pulumi.aws.opensearch.VpcEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

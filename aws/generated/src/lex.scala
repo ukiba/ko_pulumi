@@ -16,7 +16,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.Bot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Lex Bot Alias resource. For more information see
@@ -30,7 +30,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.BotAlias(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Amazon Lex Intent resource. For more information see
@@ -44,7 +44,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.Intent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LexFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -113,7 +113,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.SlotType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot. */
   def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -131,7 +131,7 @@ object lex:
       case None =>
     com.pulumi.aws.lex.V2modelsBot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Locale. */
   def V2modelsBotLocale(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -142,7 +142,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.V2modelsBotLocale(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Version. */
   def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -150,7 +150,7 @@ object lex:
     val argsBuilder = com.pulumi.aws.lex.V2modelsBotVersionArgs.builder
     com.pulumi.aws.lex.V2modelsBotVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Intent. */
   def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.V2modelsIntent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot. */
   def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -172,7 +172,7 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.V2modelsSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot Type. */
   def V2modelsSlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -183,4 +183,4 @@ object lex:
       case None               =>
     com.pulumi.aws.lex.V2modelsSlotType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

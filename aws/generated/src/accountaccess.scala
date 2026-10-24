@@ -54,7 +54,7 @@ object accountaccess:
       case None =>
     com.pulumi.aws.accountaccess.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an AWS Account Access Entitlement. An Entitlement grants an IAM Identity Center principal the ability to assume a specific IAM role in a target AWS account through an Account Access Application.
@@ -68,4 +68,4 @@ object accountaccess:
     val argsBuilder = com.pulumi.aws.accountaccess.EntitlementArgs.builder
     com.pulumi.aws.accountaccess.Entitlement(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -17,7 +17,7 @@ object appfabric:
       case None =>
     com.pulumi.aws.appfabric.AppAuthorization(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric App Authorization Connection. */
   def AppAuthorizationConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -25,7 +25,7 @@ object appfabric:
     val argsBuilder = com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.builder
     com.pulumi.aws.appfabric.AppAuthorizationConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric AppBundle. */
   def AppBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -40,7 +40,7 @@ object appfabric:
       case None =>
     com.pulumi.aws.appfabric.AppBundle(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric Ingestion. */
   def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -55,7 +55,7 @@ object appfabric:
       case None =>
     com.pulumi.aws.appfabric.Ingestion(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric Ingestion Destination. */
   def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -70,4 +70,4 @@ object appfabric:
       case None =>
     com.pulumi.aws.appfabric.IngestionDestination(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -17,7 +17,7 @@ object networkflowmonitor:
       case None =>
     com.pulumi.aws.networkflowmonitor.Monitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Flow Monitor Scope. */
   def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -32,4 +32,4 @@ object networkflowmonitor:
       case None =>
     com.pulumi.aws.networkflowmonitor.Scope(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

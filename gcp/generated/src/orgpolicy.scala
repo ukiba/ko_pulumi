@@ -22,7 +22,7 @@ object orgpolicy:
       case None               =>
     com.pulumi.gcp.orgpolicy.CustomConstraint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Defines an organization policy which is used to specify constraints for configurations of Google Cloud resources.
@@ -42,4 +42,4 @@ object orgpolicy:
       case None               =>
     com.pulumi.gcp.orgpolicy.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

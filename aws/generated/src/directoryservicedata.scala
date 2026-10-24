@@ -10,4 +10,4 @@ object directoryservicedata:
     val argsBuilder = com.pulumi.aws.directoryservicedata.UserArgs.builder
     com.pulumi.aws.directoryservicedata.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

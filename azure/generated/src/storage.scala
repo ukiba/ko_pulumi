@@ -20,7 +20,7 @@ object storage:
       case None =>
     com.pulumi.azure.storage.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages network rules inside of a Azure Storage Account.
@@ -36,7 +36,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.AccountNetworkRulesArgs.builder
     com.pulumi.azure.storage.AccountNetworkRules(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Queue Properties of an Azure Storage Account. */
   def AccountQueueProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.AccountQueuePropertiesArgs.builder
     com.pulumi.azure.storage.AccountQueueProperties(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Static Website of an Azure Storage Account. */
   def AccountStaticWebsite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -52,7 +52,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.AccountStaticWebsiteArgs.builder
     com.pulumi.azure.storage.AccountStaticWebsite(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Table Properties of an Azure Storage Account. */
   def AccountTableProperties(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -60,7 +60,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.AccountTablePropertiesArgs.builder
     com.pulumi.azure.storage.AccountTableProperties(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Blob within a Storage Container. */
   def Blob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -71,7 +71,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.Blob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Blob Inventory Policy. */
   def BlobInventoryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -79,7 +79,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.BlobInventoryPolicyArgs.builder
     com.pulumi.azure.storage.BlobInventoryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Container within an Azure Storage Account. */
   def Container(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.Container(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Immutability Policy for a Container within an Azure Storage Account. */
   def ContainerImmutabilityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.ContainerImmutabilityPolicyArgs.builder
     com.pulumi.azure.storage.ContainerImmutabilityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Customer Managed Key for a Storage Account.
@@ -110,7 +110,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.CustomerManagedKeyArgs.builder
     com.pulumi.azure.storage.CustomerManagedKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Data Lake Gen2 File System within an Azure Storage Account.
@@ -125,7 +125,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.DataLakeGen2Filesystem(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Data Lake Gen2 Path in a File System within an Azure Storage Account.
@@ -137,7 +137,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.DataLakeGen2PathArgs.builder
     com.pulumi.azure.storage.DataLakeGen2Path(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Storage Encryption Scope.
@@ -152,7 +152,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.EncryptionScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Account Local User. */
   def LocalUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -163,7 +163,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.LocalUser(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Storage Account Management Policy. */
   def ManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -171,7 +171,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.ManagementPolicyArgs.builder
     com.pulumi.azure.storage.ManagementPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover. */
   def Mover(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object storage:
       case None =>
     com.pulumi.azure.storage.Mover(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Agent. */
   def MoverAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -200,7 +200,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.MoverAgent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Job Definition. */
   def MoverJobDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.MoverJobDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Project. */
   def MoverProject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.MoverProject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Source Endpoint. */
   def MoverSourceEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -233,7 +233,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.MoverSourceEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Mover Target Endpoint. */
   def MoverTargetEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -244,7 +244,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.MoverTargetEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Object Replication. */
   def ObjectReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -252,7 +252,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.ObjectReplicationArgs.builder
     com.pulumi.azure.storage.ObjectReplication(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Queue within an Azure Storage Account. */
   def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -263,7 +263,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.Queue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a File Share within Azure Storage.
@@ -280,7 +280,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.Share(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Directory within an Azure Storage File Share.
@@ -295,7 +295,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.ShareDirectory(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a File within an Azure Storage File Share.
@@ -310,7 +310,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.ShareFile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object StorageFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -545,7 +545,7 @@ object storage:
       case None =>
     com.pulumi.azure.storage.Sync(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Storage Sync Cloud Endpoint.
@@ -560,7 +560,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.SyncCloudEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Storage Sync Group. */
   def SyncGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -571,7 +571,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.SyncGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Storage Sync Server Endpoint.
@@ -586,7 +586,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.SyncServerEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Table within an Azure Storage Account.
@@ -601,7 +601,7 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.Table(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Entity within a Table in an Azure Storage Account. */
   def TableEntity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -609,7 +609,7 @@ object storage:
     val argsBuilder = com.pulumi.azure.storage.TableEntityArgs.builder
     com.pulumi.azure.storage.TableEntity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** @deprecated ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead. */
   @deprecated("ZipBlob resource is deprecated in the 2.0 version of the provider. Use Blob resource instead.") def ZipBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -620,4 +620,4 @@ object storage:
       case None               =>
     com.pulumi.azure.storage.ZipBlob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

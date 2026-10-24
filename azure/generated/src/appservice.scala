@@ -16,7 +16,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.ActiveSlotArgs.builder
     com.pulumi.azure.appservice.ActiveSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a service connector for function app. */
   def AppConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -27,7 +27,7 @@ object appservice:
       case None               =>
     com.pulumi.azure.appservice.AppConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Running on a Flex Consumption Plan. */
   def AppFlexConsumption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -45,7 +45,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.AppFlexConsumption(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service (within an App Service Plan).
@@ -69,7 +69,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.AppService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AppserviceFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -294,7 +294,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.Certificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Certificate Binding. */
   def CertificateBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -302,7 +302,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.CertificateBindingArgs.builder
     com.pulumi.azure.appservice.CertificateBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Certificate Order. */
   def CertificateOrder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -320,7 +320,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.CertificateOrder(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a service connector for app service. */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -331,7 +331,7 @@ object appservice:
       case None               =>
     com.pulumi.azure.appservice.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hostname Binding within an App Service (or Function App). */
   def CustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -339,7 +339,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.CustomHostnameBindingArgs.builder
     com.pulumi.azure.appservice.CustomHostnameBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a 3rd Generation (v3) App Service Environment. */
   def EnvironmentV3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -357,7 +357,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.EnvironmentV3(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Function App.
@@ -382,7 +382,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.FunctionApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Active Slot. */
   def FunctionAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -390,7 +390,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.FunctionAppActiveSlotArgs.builder
     com.pulumi.azure.appservice.FunctionAppActiveSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Function. */
   def FunctionAppFunction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -401,7 +401,7 @@ object appservice:
       case None               =>
     com.pulumi.azure.appservice.FunctionAppFunction(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Function App Hybrid Connection. */
   def FunctionAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -409,7 +409,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.FunctionAppHybridConnectionArgs.builder
     com.pulumi.azure.appservice.FunctionAppHybridConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Function App deployment Slot.
@@ -431,7 +431,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.FunctionAppSlot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Hybrid Connection for an existing App Service, Relay and Service Bus.
@@ -443,7 +443,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.HybridConnectionArgs.builder
     com.pulumi.azure.appservice.HybridConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Linux Function App.
@@ -465,7 +465,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.LinuxFunctionApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Function App Slot. */
   def LinuxFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -483,7 +483,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.LinuxFunctionAppSlot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Web App. */
   def LinuxWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -501,7 +501,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.LinuxWebApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Web App Slot. */
   def LinuxWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -519,7 +519,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.LinuxWebAppSlot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This certificate can be used to secure custom domains on App Services (Windows and Linux) hosted on an App Service Plan of Basic and above (free and shared tiers are not supported).
@@ -538,7 +538,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.ManagedCertificate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Plan component.
@@ -560,7 +560,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.Plan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Public Certificate. */
   def PublicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -568,7 +568,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.PublicCertificateArgs.builder
     com.pulumi.azure.appservice.PublicCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service: Service Plan. */
   def ServicePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -586,7 +586,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.ServicePlan(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Slot (within an App Service).
@@ -610,7 +610,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.Slot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hostname Binding within an App Service Slot. */
   def SlotCustomHostnameBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -618,7 +618,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SlotCustomHostnameBindingArgs.builder
     com.pulumi.azure.appservice.SlotCustomHostnameBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Slot&#39;s Virtual Network Association (this is for the [Regional VNet Integration](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#regional-vnet-integration) which is still in preview). */
   def SlotVirtualNetworkSwiftConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -626,7 +626,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SlotVirtualNetworkSwiftConnectionArgs.builder
     com.pulumi.azure.appservice.SlotVirtualNetworkSwiftConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service source control token.
@@ -640,7 +640,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SourceCodeTokenArgs.builder
     com.pulumi.azure.appservice.SourceCodeToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Web App or Function App Source Control Configuration. */
   def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -648,7 +648,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SourceControlArgs.builder
     com.pulumi.azure.appservice.SourceControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Source Control Slot. */
   def SourceControlSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -656,7 +656,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SourceControlSlotArgs.builder
     com.pulumi.azure.appservice.SourceControlSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Source Control Token.
@@ -668,7 +668,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.SourceControlTokenArgs.builder
     com.pulumi.azure.appservice.SourceControlToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Static Site.
@@ -692,7 +692,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.StaticSite(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Static Site Custom Domain.
@@ -706,7 +706,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.StaticSiteCustomDomainArgs.builder
     com.pulumi.azure.appservice.StaticSiteCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an App Service Static Web App. */
   def StaticWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -724,7 +724,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.StaticWebApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Static Web App Custom Domain.
@@ -736,7 +736,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.StaticWebAppCustomDomainArgs.builder
     com.pulumi.azure.appservice.StaticWebAppCustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Static Web App Function App Registration.
@@ -748,7 +748,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.StaticWebAppFunctionAppRegistrationArgs.builder
     com.pulumi.azure.appservice.StaticWebAppFunctionAppRegistration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an App Service Virtual Network Association for [Regional VNet Integration](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#regional-vnet-integration).
@@ -779,7 +779,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.VirtualNetworkSwiftConnectionArgs.builder
     com.pulumi.azure.appservice.VirtualNetworkSwiftConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web App Active Slot. */
   def WebAppActiveSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -787,7 +787,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.WebAppActiveSlotArgs.builder
     com.pulumi.azure.appservice.WebAppActiveSlot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web App Hybrid Connection. */
   def WebAppHybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -795,7 +795,7 @@ object appservice:
     val argsBuilder = com.pulumi.azure.appservice.WebAppHybridConnectionArgs.builder
     com.pulumi.azure.appservice.WebAppHybridConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Function App. */
   def WindowsFunctionApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -813,7 +813,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.WindowsFunctionApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Function App Slot. */
   def WindowsFunctionAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -831,7 +831,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.WindowsFunctionAppSlot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Web App. */
   def WindowsWebApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -849,7 +849,7 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.WindowsWebApp(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Web App Slot. */
   def WindowsWebAppSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -867,4 +867,4 @@ object appservice:
       case None =>
     com.pulumi.azure.appservice.WindowsWebAppSlot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -32,7 +32,7 @@ object cloudtasks:
       case None               =>
     com.pulumi.gcp.cloudtasks.Queue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
@@ -348,7 +348,7 @@ object cloudtasks:
       case None               =>
     com.pulumi.gcp.cloudtasks.QueueIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
@@ -664,7 +664,7 @@ object cloudtasks:
       case None               =>
     com.pulumi.gcp.cloudtasks.QueueIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Tasks Queue. Each of these resources serves a different use case:
@@ -980,4 +980,4 @@ object cloudtasks:
       case None               =>
     com.pulumi.gcp.cloudtasks.QueueIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

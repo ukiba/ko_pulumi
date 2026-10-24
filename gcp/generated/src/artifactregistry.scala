@@ -451,7 +451,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.ProjectConfigArgs.builder
     com.pulumi.gcp.artifactregistry.ProjectConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A repository for storing artifacts
@@ -467,7 +467,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryArgs.builder
     com.pulumi.gcp.artifactregistry.Repository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Artifact Registry Repository. Each of these resources serves a different use case:
@@ -780,7 +780,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Artifact Registry Repository. Each of these resources serves a different use case:
@@ -1093,7 +1093,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Artifact Registry Repository. Each of these resources serves a different use case:
@@ -1406,7 +1406,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.artifactregistry.RepositoryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A rule defines the deny or allow action of the operation it applies to and the conditions required for the rule to apply. You can set one rule for an entire repository and one rule for each package within.
@@ -1422,7 +1422,7 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.RuleArgs.builder
     com.pulumi.gcp.artifactregistry.Rule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Artifact Registry VPC SC config that applies to a Project.
@@ -1444,4 +1444,4 @@ object artifactregistry:
     val argsBuilder = com.pulumi.gcp.artifactregistry.VpcscConfigArgs.builder
     com.pulumi.gcp.artifactregistry.VpcscConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

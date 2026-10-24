@@ -24,7 +24,7 @@ object serverlessrepository:
       case None =>
     com.pulumi.aws.serverlessrepository.CloudFormationStack(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServerlessrepositoryFunctions:
     // Pulumi methods are reproduced as Scala methods.

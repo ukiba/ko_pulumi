@@ -15,7 +15,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.AnywhereCacheArgs.builder
     com.pulumi.gcp.storage.AnywhereCache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Storage Batch Operations (SBO) is a Cloud Storage management feature that offers a
@@ -27,7 +27,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BatchOperationsJobArgs.builder
     com.pulumi.gcp.storage.BatchOperationsJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new bucket in Google cloud storage service (GCS).
@@ -49,7 +49,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.Bucket(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authoritatively manages a bucket&#39;s ACLs in Google cloud storage service (GCS). For more information see
@@ -68,7 +68,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BucketACLArgs.builder
     com.pulumi.gcp.storage.BucketACL(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Bucket ACLs can be managed authoritatively using the
@@ -99,7 +99,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BucketAccessControlArgs.builder
     com.pulumi.gcp.storage.BucketAccessControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage Bucket. Each of these resources serves a different use case:
@@ -632,7 +632,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMBindingArgs.builder
     com.pulumi.gcp.storage.BucketIAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage Bucket. Each of these resources serves a different use case:
@@ -1165,7 +1165,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMMemberArgs.builder
     com.pulumi.gcp.storage.BucketIAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage Bucket. Each of these resources serves a different use case:
@@ -1698,7 +1698,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.BucketIAMPolicyArgs.builder
     com.pulumi.gcp.storage.BucketIAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new object inside an existing bucket in Google cloud storage service (GCS).
@@ -1720,7 +1720,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.BucketObject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Folder Storage Intelligence resource represents GCS Storage Intelligence operating on individual GCP Folder. Storage Intelligence is a singleton resource and individual instance exists on each GCP Folder.
@@ -1738,7 +1738,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.ControlFolderIntelligenceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Organization Storage Intelligence Config resource represents GCS Storage Intelligence operating on individual GCP organization. Storage Intelligence Config is a singleton resource and individual instance exists on each GCP organization.
@@ -1756,7 +1756,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.ControlOrganizationIntelligenceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The Project Storage Intelligence Config resource represents GCS Storage Intelligence operating on individual GCP project. Storage Intelligence Config is a singleton resource and individual instance exists on each GCP project.
@@ -1774,7 +1774,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.ControlProjectIntelligenceConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authoritatively manages the default object ACLs for a Google Cloud Storage bucket
@@ -1796,7 +1796,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.DefaultObjectACLArgs.builder
     com.pulumi.gcp.storage.DefaultObjectACL(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The DefaultObjectAccessControls resources represent the Access Control
@@ -1824,7 +1824,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.DefaultObjectAccessControlArgs.builder
     com.pulumi.gcp.storage.DefaultObjectAccessControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Storage Folder.
@@ -1845,7 +1845,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.Folder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An SFTP Server resource supporting internal and external connectivity configurations. */
   def FtpServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1853,7 +1853,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.FtpServerArgs.builder
     com.pulumi.gcp.storage.FtpServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Storage FTP User resource supporting directory mappings and user credentials for an SFTP Server. */
   def FtpUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1861,7 +1861,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.FtpUserArgs.builder
     com.pulumi.gcp.storage.FtpUser(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The hmacKeys resource represents an HMAC key within Cloud Storage. The resource
@@ -1881,7 +1881,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.HmacKeyArgs.builder
     com.pulumi.gcp.storage.HmacKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Storage Insights DatasetConfig.
@@ -1897,7 +1897,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.InsightsDatasetConfigArgs.builder
     com.pulumi.gcp.storage.InsightsDatasetConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an inventory report configuration.
@@ -1913,7 +1913,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.InsightsReportConfigArgs.builder
     com.pulumi.gcp.storage.InsightsReportConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Storage Managed Folder.
@@ -1942,7 +1942,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.ManagedFolder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage ManagedFolder. Each of these resources serves a different use case:
@@ -2517,7 +2517,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamBindingArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage ManagedFolder. Each of these resources serves a different use case:
@@ -3092,7 +3092,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamMemberArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Storage ManagedFolder. Each of these resources serves a different use case:
@@ -3667,7 +3667,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.ManagedFolderIamPolicyArgs.builder
     com.pulumi.gcp.storage.ManagedFolderIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new notification configuration on a specified bucket, establishing a flow of event notifications from GCS to a Cloud Pub/Sub topic.
@@ -3692,7 +3692,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.NotificationArgs.builder
     com.pulumi.gcp.storage.Notification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Authoritatively manages the access control list (ACL) for an object in a Google
@@ -3712,7 +3712,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.ObjectACLArgs.builder
     com.pulumi.gcp.storage.ObjectACL(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The ObjectAccessControls resources represent the Access Control Lists
@@ -3739,7 +3739,7 @@ object storage:
     val argsBuilder = com.pulumi.gcp.storage.ObjectAccessControlArgs.builder
     com.pulumi.gcp.storage.ObjectAccessControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object StorageFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -4191,7 +4191,7 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.TransferAgentPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Creates a new Transfer Job in Google Cloud Storage Transfer.
@@ -4211,4 +4211,4 @@ object storage:
       case None               =>
     com.pulumi.gcp.storage.TransferJob(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

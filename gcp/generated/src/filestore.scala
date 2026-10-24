@@ -22,7 +22,7 @@ object filestore:
       case None               =>
     com.pulumi.gcp.filestore.Backup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FilestoreFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -62,7 +62,7 @@ object filestore:
       case None               =>
     com.pulumi.gcp.filestore.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Cloud Filestore snapshot.
@@ -82,4 +82,4 @@ object filestore:
       case None               =>
     com.pulumi.gcp.filestore.Snapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

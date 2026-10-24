@@ -19,7 +19,7 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.BareMetalAdminCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Bare Metal User Cluster.
@@ -36,7 +36,7 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.BareMetalCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Bare Metal Node Pool.
@@ -53,7 +53,7 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.BareMetalNodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google VMware User Cluster.
@@ -70,7 +70,7 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.VMwareCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google Vmware Node Pool.
@@ -87,7 +87,7 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.VMwareNodePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Google VMware Admin Cluster.
@@ -104,4 +104,4 @@ object gkeonprem:
       case None               =>
     com.pulumi.gcp.gkeonprem.VmwareAdminCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

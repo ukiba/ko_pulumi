@@ -20,7 +20,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.Account(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AutomationFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -134,7 +134,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.BoolVariable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Certificate. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -145,7 +145,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection. */
   def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -156,7 +156,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Connection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `Azure`. */
   def ConnectionCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -167,7 +167,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.ConnectionCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureClassicCertificate`. */
   def ConnectionClassicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -178,7 +178,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.ConnectionClassicCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureServicePrincipal`. */
   def ConnectionServicePrincipal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.ConnectionServicePrincipal(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages anAutomation Connection Type. */
   def ConnectionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -200,7 +200,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.ConnectionType(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Credential. */
   def Credential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -211,7 +211,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Credential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DateTime variable in Azure Automation */
   def DateTimeVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -222,7 +222,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.DateTimeVariable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Configuration. */
   def DscConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -240,7 +240,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.DscConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Node Configuration. */
   def DscNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -251,7 +251,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.DscNodeConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker. */
   def HybridRunbookWorker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -259,7 +259,7 @@ object automation:
     val argsBuilder = com.pulumi.azure.automation.HybridRunbookWorkerArgs.builder
     com.pulumi.azure.automation.HybridRunbookWorker(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker Group. */
   def HybridRunbookWorkerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -270,7 +270,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.HybridRunbookWorkerGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a integer variable in Azure Automation */
   def IntVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -281,7 +281,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.IntVariable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Links an Automation Runbook and Schedule.
@@ -293,7 +293,7 @@ object automation:
     val argsBuilder = com.pulumi.azure.automation.JobScheduleArgs.builder
     com.pulumi.azure.automation.JobSchedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Module. */
   def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -304,7 +304,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Module(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Powershell 7.2 Module. */
   def Powershell72Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -322,7 +322,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.Powershell72Module(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Python3 Package. */
   def Python3Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -340,7 +340,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.Python3Package(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Runbook. */
   def RunBook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -358,7 +358,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.RunBook(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runtime Environment. */
   def RuntimeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -376,7 +376,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.RuntimeEnvironment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Package within an Automation Runtime Environment. */
   def RuntimeEnvironmentPackage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -387,7 +387,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.RuntimeEnvironmentPackage(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Schedule. */
   def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -398,7 +398,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Schedule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Automation Software Update Configuration.
@@ -413,7 +413,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.SoftwareUpdateConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Source Control. */
   def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -424,7 +424,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.SourceControl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a string variable in Azure Automation */
   def StringVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -435,7 +435,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.StringVariable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an object variable in Azure Automation */
   def VariableObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -446,7 +446,7 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.VariableObject(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Wacher. */
   def Watcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -464,7 +464,7 @@ object automation:
       case None =>
     com.pulumi.azure.automation.Watcher(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runbook&#39;s Webhook. */
   def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -475,4 +475,4 @@ object automation:
       case None               =>
     com.pulumi.azure.automation.Webhook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,4 +20,4 @@ object confidentialledger:
       case None =>
     com.pulumi.azure.confidentialledger.Ledger(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

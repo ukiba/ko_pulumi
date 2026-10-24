@@ -20,7 +20,7 @@ object connections:
       case None =>
     com.pulumi.azure.connections.ApiConnection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ConnectionsFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -22,7 +22,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AnalysisRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AnalysisRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The CCAI Insights project wide assessment rule. This assessment rule will be
@@ -41,7 +41,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AssessmentRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * The CCAI Insights project wide auto labeling rule. This rule will be applied
@@ -58,7 +58,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AutoLabelingRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AutoLabelingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Initializes a location-level encryption key specification.
@@ -74,7 +74,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.EncryptionSpecArgs.builder
     com.pulumi.gcp.contactcenterinsights.EncryptionSpec(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A single question to be scored by the Insights QA feature. */
   def QaQuestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -82,7 +82,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaQuestion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A QaScorecard represents a collection of questions to be scored during analysis. */
   def QaScorecard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaScorecardArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaScorecard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A revision of a QaScorecard. */
   def QaScorecardRevision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -98,7 +98,7 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaScorecardRevisionArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaScorecardRevision(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Insights View resource for filtering conversations
@@ -112,4 +112,4 @@ object contactcenterinsights:
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.ViewArgs.builder
     com.pulumi.gcp.contactcenterinsights.View(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

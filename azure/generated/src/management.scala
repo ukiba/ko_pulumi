@@ -17,7 +17,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Assignment to a Management Group. */
   def GroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.GroupPolicyAssignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Management Group Policy Exemption. */
   def GroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -39,7 +39,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.GroupPolicyExemption(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Management Group Policy Remediation. */
   def GroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -50,7 +50,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.GroupPolicyRemediation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Set Definition for a Management Group. */
   def GroupPolicySetDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.GroupPolicySetDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Management Group Subscription Association.
@@ -73,7 +73,7 @@ object management:
     val argsBuilder = com.pulumi.azure.management.GroupSubscriptionAssociationArgs.builder
     com.pulumi.azure.management.GroupSubscriptionAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Template Deployment at a Management Group Scope.
@@ -97,7 +97,7 @@ object management:
       case None =>
     com.pulumi.azure.management.GroupTemplateDeployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Management Lock which is scoped to a Subscription, Resource Group or Resource. */
   def Lock(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -108,7 +108,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.Lock(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ManagementFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -150,7 +150,7 @@ object management:
       case None               =>
     com.pulumi.azure.management.PrivateLink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Management Private Link Association. */
   def PrivateLinkAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,4 +161,4 @@ object management:
       case None               =>
     com.pulumi.azure.management.PrivateLinkAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

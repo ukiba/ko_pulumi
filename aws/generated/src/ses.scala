@@ -10,7 +10,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.ActiveReceiptRuleSetArgs.builder
     com.pulumi.aws.ses.ActiveReceiptRuleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES configuration set resource. */
   def ConfigurationSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,7 +21,7 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.ConfigurationSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SES domain DKIM generation resource.
@@ -33,7 +33,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.DomainDkimArgs.builder
     com.pulumi.aws.ses.DomainDkim(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES domain identity resource */
   def DomainIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -41,7 +41,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityArgs.builder
     com.pulumi.aws.ses.DomainIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a successful verification of an SES domain identity.
@@ -57,7 +57,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.DomainIdentityVerificationArgs.builder
     com.pulumi.aws.ses.DomainIdentityVerification(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES email identity resource */
   def EmailIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -65,7 +65,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.EmailIdentityArgs.builder
     com.pulumi.aws.ses.EmailIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES event destination */
   def EventDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -76,7 +76,7 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.EventDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing SES Identity Notification Topics */
   def IdentityNotificationTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -84,7 +84,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.IdentityNotificationTopicArgs.builder
     com.pulumi.aws.ses.IdentityNotificationTopic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SES Identity Policy. More information about SES Sending Authorization Policies can be found in the [SES Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html). */
   def IdentityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.IdentityPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an SES domain MAIL FROM resource.
@@ -107,7 +107,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.MailFromArgs.builder
     com.pulumi.aws.ses.MailFrom(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES receipt filter resource */
   def ReceiptFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,7 +118,7 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.ReceiptFilter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES receipt rule resource */
   def ReceiptRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -129,7 +129,7 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.ReceiptRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an SES receipt rule set resource. */
   def ReceiptRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -137,7 +137,7 @@ object ses:
     val argsBuilder = com.pulumi.aws.ses.ReceiptRuleSetArgs.builder
     com.pulumi.aws.ses.ReceiptRuleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SesFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -191,4 +191,4 @@ object ses:
       case None               =>
     com.pulumi.aws.ses.Template(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

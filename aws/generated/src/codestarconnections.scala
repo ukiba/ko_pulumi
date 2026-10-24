@@ -43,7 +43,7 @@ object codestarconnections:
       case None =>
     com.pulumi.aws.codestarconnections.Connection(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CodeStar Host.
@@ -58,4 +58,4 @@ object codestarconnections:
       case None               =>
     com.pulumi.aws.codestarconnections.Host(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

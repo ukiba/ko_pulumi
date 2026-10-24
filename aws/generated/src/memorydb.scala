@@ -24,7 +24,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.Acl(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MemoryDB Cluster.
@@ -46,7 +46,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object MemorydbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -144,7 +144,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.MultiRegionCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MemoryDB Parameter Group.
@@ -166,7 +166,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.ParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MemoryDB Snapshot.
@@ -188,7 +188,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.Snapshot(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MemoryDB Subnet Group.
@@ -210,7 +210,7 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a MemoryDB User.
@@ -231,4 +231,4 @@ object memorydb:
       case None =>
     com.pulumi.aws.memorydb.User(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

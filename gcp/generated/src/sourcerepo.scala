@@ -21,7 +21,7 @@ object sourcerepo:
       case None               =>
     com.pulumi.gcp.sourcerepo.Repository(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
@@ -326,7 +326,7 @@ object sourcerepo:
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
@@ -631,7 +631,7 @@ object sourcerepo:
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Source Repositories Repository. Each of these resources serves a different use case:
@@ -936,7 +936,7 @@ object sourcerepo:
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SourcerepoFunctions:
     // Pulumi methods are reproduced as Scala methods.

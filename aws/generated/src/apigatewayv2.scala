@@ -24,7 +24,7 @@ object apigatewayv2:
       case None =>
     com.pulumi.aws.apigatewayv2.Api(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 API mapping.
@@ -35,7 +35,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.ApiMappingArgs.builder
     com.pulumi.aws.apigatewayv2.ApiMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Apigatewayv2Functions:
     // Pulumi methods are reproduced as Scala methods.
@@ -104,7 +104,7 @@ object apigatewayv2:
       case None               =>
     com.pulumi.aws.apigatewayv2.Authorizer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 deployment.
@@ -117,7 +117,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.DeploymentArgs.builder
     com.pulumi.aws.apigatewayv2.Deployment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 domain name.
@@ -138,7 +138,7 @@ object apigatewayv2:
       case None =>
     com.pulumi.aws.apigatewayv2.DomainName(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 integration.
@@ -149,7 +149,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationArgs.builder
     com.pulumi.aws.apigatewayv2.Integration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 integration response.
@@ -160,7 +160,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.IntegrationResponseArgs.builder
     com.pulumi.aws.apigatewayv2.IntegrationResponse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon API Gateway Version 2 [model](https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-models). */
   def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -171,7 +171,7 @@ object apigatewayv2:
       case None               =>
     com.pulumi.aws.apigatewayv2.Model(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 route.
@@ -182,7 +182,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteArgs.builder
     com.pulumi.aws.apigatewayv2.Route(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 route response.
@@ -193,7 +193,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.RouteResponseArgs.builder
     com.pulumi.aws.apigatewayv2.RouteResponse(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS API Gateway V2 Routing Rule. */
   def RoutingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -201,7 +201,7 @@ object apigatewayv2:
     val argsBuilder = com.pulumi.aws.apigatewayv2.RoutingRuleArgs.builder
     com.pulumi.aws.apigatewayv2.RoutingRule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 stage.
@@ -222,7 +222,7 @@ object apigatewayv2:
       case None =>
     com.pulumi.aws.apigatewayv2.Stage(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an Amazon API Gateway Version 2 VPC Link.
@@ -245,4 +245,4 @@ object apigatewayv2:
       case None =>
     com.pulumi.aws.apigatewayv2.VpcLink(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

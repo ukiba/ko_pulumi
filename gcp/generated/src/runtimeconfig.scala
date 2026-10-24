@@ -24,7 +24,7 @@ object runtimeconfig:
       case None               =>
     com.pulumi.gcp.runtimeconfig.Config(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
@@ -336,7 +336,7 @@ object runtimeconfig:
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
@@ -648,7 +648,7 @@ object runtimeconfig:
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Runtime Configurator Config. Each of these resources serves a different use case:
@@ -960,7 +960,7 @@ object runtimeconfig:
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object RuntimeconfigFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1066,4 +1066,4 @@ object runtimeconfig:
       case None               =>
     com.pulumi.gcp.runtimeconfig.Variable(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

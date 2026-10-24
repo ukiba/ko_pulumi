@@ -24,7 +24,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.BackupChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Backup Plan instance.
@@ -43,7 +43,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.BackupPlan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
@@ -359,7 +359,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.BackupPlanIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
@@ -675,7 +675,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.BackupPlanIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE BackupPlan. Each of these resources serves a different use case:
@@ -991,7 +991,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.BackupPlanIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GkebackupFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1044,7 +1044,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.RestoreChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Restore Plan instance.
@@ -1063,7 +1063,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.RestorePlan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
@@ -1379,7 +1379,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.RestorePlanIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
@@ -1695,7 +1695,7 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.RestorePlanIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Backup for GKE RestorePlan. Each of these resources serves a different use case:
@@ -2011,4 +2011,4 @@ object gkebackup:
       case None               =>
     com.pulumi.gcp.gkebackup.RestorePlanIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

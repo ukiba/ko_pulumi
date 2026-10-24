@@ -21,7 +21,7 @@ object ssmcontacts:
       case None =>
     com.pulumi.aws.ssmcontacts.Contact(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS SSM Contacts Contact Channel.
@@ -36,7 +36,7 @@ object ssmcontacts:
       case None               =>
     com.pulumi.aws.ssmcontacts.ContactChannel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS SSM Contact Plan. */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -44,7 +44,7 @@ object ssmcontacts:
     val argsBuilder = com.pulumi.aws.ssmcontacts.PlanArgs.builder
     com.pulumi.aws.ssmcontacts.Plan(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SsmcontactsFunctions:
     // Pulumi methods are reproduced as Scala methods.

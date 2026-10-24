@@ -13,7 +13,7 @@ object webpubsub:
       case None               =>
     com.pulumi.azure.webpubsub.CustomCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Web PubSub Custom Domain. */
   def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -24,7 +24,7 @@ object webpubsub:
       case None               =>
     com.pulumi.azure.webpubsub.CustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the hub settings for a Web Pubsub. */
   def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -35,7 +35,7 @@ object webpubsub:
       case None               =>
     com.pulumi.azure.webpubsub.Hub(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Network ACL for a Web Pubsub. */
   def NetworkAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -43,7 +43,7 @@ object webpubsub:
     val argsBuilder = com.pulumi.azure.webpubsub.NetworkAclArgs.builder
     com.pulumi.azure.webpubsub.NetworkAcl(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Web PubSub Service. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -61,7 +61,7 @@ object webpubsub:
       case None =>
     com.pulumi.azure.webpubsub.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Shared Private Link Resource for a Web Pubsub service. */
   def SharedPrivateLinkResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -72,7 +72,7 @@ object webpubsub:
       case None               =>
     com.pulumi.azure.webpubsub.SharedPrivateLinkResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Web PubSub Service for Socket.IO. */
   def Socketio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -90,7 +90,7 @@ object webpubsub:
       case None =>
     com.pulumi.azure.webpubsub.Socketio(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WebpubsubFunctions:
     // Pulumi methods are reproduced as Scala methods.

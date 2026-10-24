@@ -18,7 +18,7 @@ object datastream:
     val argsBuilder = com.pulumi.gcp.datastream.ConnectionProfileArgs.builder
     com.pulumi.gcp.datastream.ConnectionProfile(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DatastreamFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -59,7 +59,7 @@ object datastream:
     val argsBuilder = com.pulumi.gcp.datastream.PrivateConnectionArgs.builder
     com.pulumi.gcp.datastream.PrivateConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A resource representing streaming data from a source to a destination.
@@ -75,4 +75,4 @@ object datastream:
     val argsBuilder = com.pulumi.gcp.datastream.StreamArgs.builder
     com.pulumi.gcp.datastream.Stream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

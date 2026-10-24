@@ -28,4 +28,4 @@ object pipes:
       case None =>
     com.pulumi.aws.pipes.Pipe(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

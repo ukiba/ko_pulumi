@@ -18,4 +18,4 @@ object oslogin:
     val argsBuilder = com.pulumi.gcp.oslogin.SshPublicKeyArgs.builder
     com.pulumi.gcp.oslogin.SshPublicKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

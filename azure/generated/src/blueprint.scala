@@ -19,7 +19,7 @@ object blueprint:
       case None               =>
     com.pulumi.azure.blueprint.Assignment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BlueprintFunctions:
     // Pulumi methods are reproduced as Scala methods.

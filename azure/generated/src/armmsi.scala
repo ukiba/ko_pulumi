@@ -13,4 +13,4 @@ object armmsi:
       case None               =>
     com.pulumi.azure.armmsi.FederatedIdentityCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

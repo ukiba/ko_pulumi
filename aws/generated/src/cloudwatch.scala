@@ -20,7 +20,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.AlarmMuteRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CloudwatchFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -174,7 +174,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.CompositeAlarm(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Contributor Insight Rule. */
   def ContributorInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -189,7 +189,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.ContributorInsightRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Contributor Managed Insight Rule. */
   def ContributorManagedInsightRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -204,7 +204,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.ContributorManagedInsightRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Dashboard resource. */
   def Dashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -212,7 +212,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.DashboardArgs.builder
     com.pulumi.aws.cloudwatch.Dashboard(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge event API Destination resource.
@@ -227,7 +227,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.EventApiDestination(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge event archive resource.
@@ -242,7 +242,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.EventArchive(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge event bus resource.
@@ -264,7 +264,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.EventBus(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an EventBridge resource policy to support cross-account events.
@@ -278,7 +278,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.EventBusPolicyArgs.builder
     com.pulumi.aws.cloudwatch.EventBusPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge connection resource.
@@ -293,7 +293,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.EventConnection(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an EventBridge Global Endpoint.
@@ -308,7 +308,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.EventEndpoint(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a resource to create an EventBridge permission to support cross-account events in the current account default event bus.
@@ -322,7 +322,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.EventPermissionArgs.builder
     com.pulumi.aws.cloudwatch.EventPermission(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge Rule resource.
@@ -344,7 +344,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.EventRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an EventBridge Target resource.
@@ -362,7 +362,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.EventTargetArgs.builder
     com.pulumi.aws.cloudwatch.EventTarget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Internet Monitor Monitor resource. */
   def InternetMonitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -377,7 +377,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.InternetMonitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Log Account Policy resource. */
   def LogAccountPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -385,7 +385,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogAccountPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogAccountPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Log Anomaly Detector. */
   def LogAnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -400,7 +400,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogAnomalyDetector(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CloudWatch Log Data Protection Policy resource.
@@ -412,7 +412,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDataProtectionPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDataProtectionPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery. A delivery is a connection between an `aws.cloudwatch.LogDeliverySource` and an `aws.cloudwatch.LogDeliveryDestination`. */
   def LogDelivery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -427,7 +427,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogDelivery(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Destination. */
   def LogDeliveryDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -445,7 +445,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogDeliveryDestination(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Destination Policy. */
   def LogDeliveryDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -453,7 +453,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDeliveryDestinationPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDeliveryDestinationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Delivery Source. */
   def LogDeliverySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -471,7 +471,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogDeliverySource(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Logs destination resource. */
   def LogDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -489,7 +489,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogDestination(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Logs destination policy resource. */
   def LogDestinationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -497,7 +497,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogDestinationPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogDestinationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Log Group resource. */
   def LogGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -515,7 +515,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.LogGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Index Policy. */
   def LogIndexPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -523,7 +523,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogIndexPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogIndexPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Log Metric Filter resource. */
   def LogMetricFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -534,7 +534,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.LogMetricFilter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage a CloudWatch log resource policy. */
   def LogResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -542,7 +542,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogResourcePolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogResourcePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudWatch Logs S3 Table Integration data source association.
@@ -555,7 +555,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogS3TableIntegrationSourceArgs.builder
     com.pulumi.aws.cloudwatch.LogS3TableIntegrationSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudWatch Logs account-level storage tier policy. When set to `INTELLIGENT_TIERING`, CloudWatch Logs automatically moves log data to the most cost-effective storage tier based on access frequency.
@@ -567,7 +567,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogStorageTierPolicyArgs.builder
     com.pulumi.aws.cloudwatch.LogStorageTierPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Log Stream resource. */
   def LogStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -578,7 +578,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.LogStream(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Logs subscription filter resource. */
   def LogSubscriptionFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -589,7 +589,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.LogSubscriptionFilter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS CloudWatch Logs Transformer. */
   def LogTransformer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -597,7 +597,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.LogTransformerArgs.builder
     com.pulumi.aws.cloudwatch.LogTransformer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Metric Alarm resource. */
   def MetricAlarm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -615,7 +615,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.MetricAlarm(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Metric Stream resource. */
   def MetricStream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -633,7 +633,7 @@ object cloudwatch:
       case None =>
     com.pulumi.aws.cloudwatch.MetricStream(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages AWS CloudWatch OTel enrichment. This is a singleton resource that enables OTel enrichment at the account level.
@@ -649,7 +649,7 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.OtelEnrichmentArgs.builder
     com.pulumi.aws.cloudwatch.OtelEnrichment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CloudWatch Logs query definition resource. */
   def QueryDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -660,7 +660,7 @@ object cloudwatch:
       case None               =>
     com.pulumi.aws.cloudwatch.QueryDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a CloudWatch resource metrics configuration. Creating a configuration makes CloudWatch collect detailed metrics for the targeted AWS resource.
@@ -674,4 +674,4 @@ object cloudwatch:
     val argsBuilder = com.pulumi.aws.cloudwatch.ResourceMetricsConfigurationArgs.builder
     com.pulumi.aws.cloudwatch.ResourceMetricsConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

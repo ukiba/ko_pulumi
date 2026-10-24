@@ -18,7 +18,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationArgs.builder
     com.pulumi.gcp.workstations.Workstation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A grouping of workstation configurations and the associated workstations in that region.
@@ -34,7 +34,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationClusterArgs.builder
     com.pulumi.gcp.workstations.WorkstationCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A set of configuration options describing how a workstation will be run. Workstation configurations are intended to be shared across multiple workstations.
@@ -50,7 +50,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
@@ -369,7 +369,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
@@ -688,7 +688,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations WorkstationConfig. Each of these resources serves a different use case:
@@ -1007,7 +1007,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamPolicyArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
@@ -1332,7 +1332,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamBindingArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
@@ -1657,7 +1657,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamMemberArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud Workstations Workstation. Each of these resources serves a different use case:
@@ -1982,7 +1982,7 @@ object workstations:
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamPolicyArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object WorkstationsFunctions:
     // Pulumi methods are reproduced as Scala methods.

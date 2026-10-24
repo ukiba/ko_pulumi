@@ -16,7 +16,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.organizations.AccessApprovalSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of a Google Cloud Platform folder. For more information see
@@ -54,7 +54,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.FolderArgs.builder
     com.pulumi.gcp.organizations.Folder(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a organization. Each of these resources serves a different use case:
@@ -581,7 +581,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.IAMBindingArgs.builder
     com.pulumi.gcp.organizations.IAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of a customized Cloud IAM organization role. For more information see
@@ -601,7 +601,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.IAMCustomRoleArgs.builder
     com.pulumi.gcp.organizations.IAMCustomRole(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a organization. Each of these resources serves a different use case:
@@ -1128,7 +1128,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.IAMMemberArgs.builder
     com.pulumi.gcp.organizations.IAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a organization. Each of these resources serves a different use case:
@@ -1655,7 +1655,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.IAMPolicyArgs.builder
     com.pulumi.gcp.organizations.IAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a organization. Each of these resources serves a different use case:
@@ -2182,7 +2182,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.IamAuditConfigArgs.builder
     com.pulumi.gcp.organizations.IamAuditConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object OrganizationsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -2767,7 +2767,7 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.PolicyArgs.builder
     com.pulumi.gcp.organizations.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows creation and management of a Google Cloud Platform project.
@@ -2800,7 +2800,7 @@ object organizations:
       case None               =>
     com.pulumi.gcp.organizations.Project(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Generate organization service identity for a service.
@@ -2824,4 +2824,4 @@ object organizations:
     val argsBuilder = com.pulumi.gcp.organizations.ServiceIdentityArgs.builder
     com.pulumi.gcp.organizations.ServiceIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -20,7 +20,7 @@ object hdinsight:
       case None =>
     com.pulumi.azure.hdinsight.HBaseCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Hadoop Cluster. */
   def HadoopCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object hdinsight:
       case None =>
     com.pulumi.azure.hdinsight.HadoopCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object HdinsightFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -75,7 +75,7 @@ object hdinsight:
       case None =>
     com.pulumi.azure.hdinsight.InteractiveQueryCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Kafka Cluster. */
   def KafkaCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -93,7 +93,7 @@ object hdinsight:
       case None =>
     com.pulumi.azure.hdinsight.KafkaCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a HDInsight Spark Cluster. */
   def SparkCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -111,4 +111,4 @@ object hdinsight:
       case None =>
     com.pulumi.azure.hdinsight.SparkCluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

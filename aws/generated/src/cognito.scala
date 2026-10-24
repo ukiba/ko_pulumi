@@ -120,7 +120,7 @@ object cognito:
       case None =>
     com.pulumi.aws.cognito.IdentityPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AWS Cognito Identity Principal Mapping. */
   def IdentityPoolProviderPrincipalTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -128,7 +128,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTagArgs.builder
     com.pulumi.aws.cognito.IdentityPoolProviderPrincipalTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an AWS Cognito Identity Pool Roles Attachment.
@@ -146,7 +146,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.IdentityPoolRoleAttachmentArgs.builder
     com.pulumi.aws.cognito.IdentityPoolRoleAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Identity Provider resource. */
   def IdentityProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -154,7 +154,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.IdentityProviderArgs.builder
     com.pulumi.aws.cognito.IdentityProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Cognito IDP (Identity Provider) Log Delivery Configuration. */
   def LogDeliveryConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -162,7 +162,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.LogDeliveryConfigurationArgs.builder
     com.pulumi.aws.cognito.LogDeliveryConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages branding settings for a user pool style and associates it with an app client. */
   def ManagedLoginBranding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -170,7 +170,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.ManagedLoginBrandingArgs.builder
     com.pulumi.aws.cognito.ManagedLoginBranding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Use the `aws.cognito.UserPoolClient` resource to manage a Cognito User Pool Client.
@@ -186,7 +186,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.ManagedUserPoolClientArgs.builder
     com.pulumi.aws.cognito.ManagedUserPoolClient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito Resource Server. */
   def ResourceServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -197,7 +197,7 @@ object cognito:
       case None               =>
     com.pulumi.aws.cognito.ResourceServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito Risk Configuration resource. */
   def RiskConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -205,7 +205,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.RiskConfigurationArgs.builder
     com.pulumi.aws.cognito.RiskConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Resource. */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -213,7 +213,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.UserArgs.builder
     com.pulumi.aws.cognito.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Group resource. */
   def UserGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -224,7 +224,7 @@ object cognito:
       case None               =>
     com.pulumi.aws.cognito.UserGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Adds the specified user to the specified group. */
   def UserInGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -232,7 +232,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.UserInGroupArgs.builder
     com.pulumi.aws.cognito.UserInGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Pool resource. */
   def UserPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -250,7 +250,7 @@ object cognito:
       case None =>
     com.pulumi.aws.cognito.UserPool(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Cognito User Pool Client resource.
@@ -266,7 +266,7 @@ object cognito:
       case None               =>
     com.pulumi.aws.cognito.UserPoolClient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Cognito User Pool Domain resource. */
   def UserPoolDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -274,7 +274,7 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.UserPoolDomainArgs.builder
     com.pulumi.aws.cognito.UserPoolDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Cognito User Pool UI Customization resource.
@@ -286,4 +286,4 @@ object cognito:
     val argsBuilder = com.pulumi.aws.cognito.UserPoolUICustomizationArgs.builder
     com.pulumi.aws.cognito.UserPoolUICustomization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

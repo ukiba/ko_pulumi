@@ -20,7 +20,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.EventThreatDetectionCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.EventThreatDetectionCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -40,7 +40,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.FolderCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) notification configs. A
@@ -62,7 +62,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.FolderNotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -84,7 +84,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.FolderSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.FolderSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Data Fusion instance.
@@ -103,7 +103,7 @@ object securitycenter:
       case None               =>
     com.pulumi.gcp.securitycenter.InstanceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Data Fusion instance.
@@ -122,7 +122,7 @@ object securitycenter:
       case None               =>
     com.pulumi.gcp.securitycenter.InstanceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a Data Fusion instance.
@@ -141,7 +141,7 @@ object securitycenter:
       case None               =>
     com.pulumi.gcp.securitycenter.InstanceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -161,7 +161,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementFolderSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementFolderSecurityHealthAnalyticsCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of an Event Threat Detection custom module, including
@@ -179,7 +179,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementOrganizationEventThreatDetectionCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementOrganizationEventThreatDetectionCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -199,7 +199,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementOrganizationSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementOrganizationSecurityHealthAnalyticsCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -219,7 +219,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ManagementProjectSecurityHealthAnalyticsCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ManagementProjectSecurityHealthAnalyticsCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mute Findings is a volume management feature in Security Command Center
@@ -236,7 +236,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.MuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.MuteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) notification configs. A
@@ -258,7 +258,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.NotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.NotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Generates and retrieves the email and member string of the Security Command Center Notification Service Account (`gcp-sa-scc-notification.iam.gserviceaccount.com`).
@@ -277,7 +277,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.NotificationServiceAccountArgs.builder
     com.pulumi.gcp.securitycenter.NotificationServiceAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -297,7 +297,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.OrganizationCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.OrganizationCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -318,7 +318,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.OrganizationSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.OrganizationSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an instance of a Security Health Analytics custom module, including
@@ -338,7 +338,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectCustomModuleArgs.builder
     com.pulumi.gcp.securitycenter.ProjectCustomModule(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) notification configs. A
@@ -360,7 +360,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.ProjectNotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -381,7 +381,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.ProjectSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.ProjectSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object SecuritycenterFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -431,7 +431,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceArgs.builder
     com.pulumi.gcp.securitycenter.Source(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center&#39;s (Cloud SCC) finding source. A finding
@@ -450,7 +450,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamBindingArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center&#39;s (Cloud SCC) finding source. A finding
@@ -469,7 +469,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamMemberArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center&#39;s (Cloud SCC) finding source. A finding
@@ -488,7 +488,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.SourceIamPolicyArgs.builder
     com.pulumi.gcp.securitycenter.SourceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mute Findings is a volume management feature in Security Command Center
@@ -505,7 +505,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderMuteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This is a continuous export that exports findings to a Pub/Sub topic.
@@ -521,7 +521,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderNotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -542,7 +542,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2FolderSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.V2FolderSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mute Findings is a volume management feature in Security Command Center
@@ -559,7 +559,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationMuteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This is a continuous export that exports findings to a Pub/Sub topic.
@@ -575,7 +575,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationNotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -599,7 +599,7 @@ object securitycenter:
       case None               =>
     com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Warning:** `gcp.securitycenter.V2OrganizationSccBigQueryExports` is deprecated and will be removed in a future major release. Use `gcp.securitycenter.V2OrganizationSccBigQueryExport` instead.
@@ -625,7 +625,7 @@ object securitycenter:
       case None               =>
     com.pulumi.gcp.securitycenter.V2OrganizationSccBigQueryExports(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center&#39;s (Cloud SCC) finding source. A finding
@@ -644,7 +644,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Security Command Center (SCC) v2 API OrganizationSource. Each of these resources serves a different use case:
@@ -945,7 +945,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamBindingArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Security Command Center (SCC) v2 API OrganizationSource. Each of these resources serves a different use case:
@@ -1246,7 +1246,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamMemberArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Security Command Center (SCC) v2 API OrganizationSource. Each of these resources serves a different use case:
@@ -1547,7 +1547,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2OrganizationSourceIamPolicyArgs.builder
     com.pulumi.gcp.securitycenter.V2OrganizationSourceIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Mute Findings is a volume management feature in Security Command Center
@@ -1564,7 +1564,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectMuteConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectMuteConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This is a continuous export that exports findings to a Pub/Sub topic.
@@ -1580,7 +1580,7 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectNotificationConfigArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectNotificationConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cloud Security Command Center (Cloud SCC) Big Query Export Config.
@@ -1601,4 +1601,4 @@ object securitycenter:
     val argsBuilder = com.pulumi.gcp.securitycenter.V2ProjectSccBigQueryExportArgs.builder
     com.pulumi.gcp.securitycenter.V2ProjectSccBigQueryExport(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

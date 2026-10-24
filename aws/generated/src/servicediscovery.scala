@@ -19,7 +19,7 @@ object servicediscovery:
       case None =>
     com.pulumi.aws.servicediscovery.HttpNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Instance resource. */
   def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -27,7 +27,7 @@ object servicediscovery:
     val argsBuilder = com.pulumi.aws.servicediscovery.InstanceArgs.builder
     com.pulumi.aws.servicediscovery.Instance(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Private DNS Namespace resource. */
   def PrivateDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -45,7 +45,7 @@ object servicediscovery:
       case None =>
     com.pulumi.aws.servicediscovery.PrivateDnsNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Public DNS Namespace resource. */
   def PublicDnsNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object servicediscovery:
       case None =>
     com.pulumi.aws.servicediscovery.PublicDnsNamespace(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Service Discovery Service resource. */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -81,7 +81,7 @@ object servicediscovery:
       case None =>
     com.pulumi.aws.servicediscovery.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicediscoveryFunctions:
     // Pulumi methods are reproduced as Scala methods.

@@ -20,7 +20,7 @@ object costexplorer:
       case None =>
     com.pulumi.aws.costexplorer.AnomalyMonitor(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CE Anomaly Subscription. */
   def AnomalySubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -38,7 +38,7 @@ object costexplorer:
       case None =>
     com.pulumi.aws.costexplorer.AnomalySubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a CE Cost Allocation Tag.
@@ -50,7 +50,7 @@ object costexplorer:
     val argsBuilder = com.pulumi.aws.costexplorer.CostAllocationTagArgs.builder
     com.pulumi.aws.costexplorer.CostAllocationTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CE Cost Category. */
   def CostCategory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -68,7 +68,7 @@ object costexplorer:
       case None =>
     com.pulumi.aws.costexplorer.CostCategory(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CostexplorerFunctions:
     // Pulumi methods are reproduced as Scala methods.

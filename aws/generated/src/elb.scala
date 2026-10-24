@@ -13,7 +13,7 @@ object elb:
       case None               =>
     com.pulumi.aws.elb.AppCookieStickinessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Attaches an EC2 instance to an Elastic Load Balancer (ELB). For attaching resources with Application Load Balancer (ALB) or Network Load Balancer (NLB), see the `aws.lb.TargetGroupAttachment` resource.
@@ -30,7 +30,7 @@ object elb:
     val argsBuilder = com.pulumi.aws.elb.AttachmentArgs.builder
     com.pulumi.aws.elb.Attachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElbFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -113,7 +113,7 @@ object elb:
     val argsBuilder = com.pulumi.aws.elb.ListenerPolicyArgs.builder
     com.pulumi.aws.elb.ListenerPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic Load Balancer resource, also known as a &#34;Classic
@@ -142,7 +142,7 @@ object elb:
       case None =>
     com.pulumi.aws.elb.LoadBalancer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Attaches a load balancer policy to an ELB backend server. */
   def LoadBalancerBackendServerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -150,7 +150,7 @@ object elb:
     val argsBuilder = com.pulumi.aws.elb.LoadBalancerBackendServerPolicyArgs.builder
     com.pulumi.aws.elb.LoadBalancerBackendServerPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a load balancer cookie stickiness policy, which allows an ELB to control the sticky session lifetime of the browser. */
   def LoadBalancerCookieStickinessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -161,7 +161,7 @@ object elb:
       case None               =>
     com.pulumi.aws.elb.LoadBalancerCookieStickinessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a load balancer policy, which can be attached to an ELB listener or backend server. */
   def LoadBalancerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -169,7 +169,7 @@ object elb:
     val argsBuilder = com.pulumi.aws.elb.LoadBalancerPolicyArgs.builder
     com.pulumi.aws.elb.LoadBalancerPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a load balancer SSL negotiation policy, which allows an ELB to control the ciphers and protocols that are supported during SSL negotiations between a client and a load balancer. */
   def SslNegotiationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -180,4 +180,4 @@ object elb:
       case None               =>
     com.pulumi.aws.elb.SslNegotiationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

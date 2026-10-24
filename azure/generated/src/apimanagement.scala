@@ -13,7 +13,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Api(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Service API Diagnostics Logs. */
   def ApiDiagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -21,7 +21,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiDiagnosticArgs.builder
     com.pulumi.azure.apimanagement.ApiDiagnostic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Operation within an API Management Service. */
   def ApiOperation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -29,7 +29,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiOperationArgs.builder
     com.pulumi.azure.apimanagement.ApiOperation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Operation Policy */
   def ApiOperationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -37,7 +37,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiOperationPolicyArgs.builder
     com.pulumi.azure.apimanagement.ApiOperationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management API Operation Tag. */
   def ApiOperationTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -48,7 +48,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.ApiOperationTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Policy */
   def ApiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -56,7 +56,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiPolicyArgs.builder
     com.pulumi.azure.apimanagement.ApiPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management API Release. */
   def ApiRelease(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -67,7 +67,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.ApiRelease(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Schema within an API Management Service. */
   def ApiSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -75,7 +75,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiSchemaArgs.builder
     com.pulumi.azure.apimanagement.ApiSchema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Assignment of an API Management API Tag to an API. */
   def ApiTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -86,7 +86,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.ApiTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Tag Description within an API Management Service. */
   def ApiTagDescription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -94,7 +94,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ApiTagDescriptionArgs.builder
     com.pulumi.azure.apimanagement.ApiTagDescription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Version Set within an API Management Service. */
   def ApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -105,7 +105,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.ApiVersionSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ApimanagementFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -243,7 +243,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.AuthorizationServer(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a backend within an API Management Service. */
   def Backend(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -254,7 +254,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Backend(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Certificate within an API Management Service. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -265,7 +265,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Certificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a API Management Custom Domain.
@@ -279,7 +279,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.CustomDomainArgs.builder
     com.pulumi.azure.apimanagement.CustomDomain(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Service Diagnostic. */
   def Diagnostic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -287,7 +287,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.DiagnosticArgs.builder
     com.pulumi.azure.apimanagement.Diagnostic(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Email Template. */
   def EmailTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -295,7 +295,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.EmailTemplateArgs.builder
     com.pulumi.azure.apimanagement.EmailTemplate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway. */
   def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -306,7 +306,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Gateway(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Gateway API. */
   def GatewayApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -314,7 +314,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.GatewayApiArgs.builder
     com.pulumi.azure.apimanagement.GatewayApi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway Certificate Authority. */
   def GatewayCertificateAuthority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -322,7 +322,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.GatewayCertificateAuthorityArgs.builder
     com.pulumi.azure.apimanagement.GatewayCertificateAuthority(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Gateway Host Name Configuration. */
   def GatewayHostNameConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -333,7 +333,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.GatewayHostNameConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Global Schema within an API Management Service. */
   def GlobalSchema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -341,7 +341,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.GlobalSchemaArgs.builder
     com.pulumi.azure.apimanagement.GlobalSchema(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Group. */
   def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -352,7 +352,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Group(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management User Assignment to a Group. */
   def GroupUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -360,7 +360,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.GroupUserArgs.builder
     com.pulumi.azure.apimanagement.GroupUser(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management AAD Identity Provider. */
   def IdentityProviderAad(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -368,7 +368,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderAadArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderAad(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Azure AD B2C Identity Provider. */
   def IdentityProviderAadb2c(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -376,7 +376,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderAadb2cArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderAadb2c(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Facebook Identity Provider. */
   def IdentityProviderFacebook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -384,7 +384,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderFacebookArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderFacebook(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Google Identity Provider. */
   def IdentityProviderGoogle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -392,7 +392,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderGoogleArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderGoogle(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Microsoft Identity Provider. */
   def IdentityProviderMicrosoft(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -400,7 +400,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderMicrosoftArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderMicrosoft(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Twitter Identity Provider. */
   def IdentityProviderTwitter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -408,7 +408,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.IdentityProviderTwitterArgs.builder
     com.pulumi.azure.apimanagement.IdentityProviderTwitter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Logger within an API Management Service. */
   def Logger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -419,7 +419,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Logger(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Named Value. */
   def NamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -430,7 +430,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.NamedValue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Notification Recipient Email. */
   def NotificationRecipientEmail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -438,7 +438,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.NotificationRecipientEmailArgs.builder
     com.pulumi.azure.apimanagement.NotificationRecipientEmail(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Notification Recipient User. */
   def NotificationRecipientUser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -446,7 +446,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.NotificationRecipientUserArgs.builder
     com.pulumi.azure.apimanagement.NotificationRecipientUser(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an OpenID Connect Provider within a API Management Service. */
   def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -457,7 +457,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.OpenIdConnectProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a API Management service Policy.
@@ -469,7 +469,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.PolicyArgs.builder
     com.pulumi.azure.apimanagement.Policy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Api Management Policy Fragment. */
   def PolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -480,7 +480,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.PolicyFragment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product. */
   def Product(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -488,7 +488,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ProductArgs.builder
     com.pulumi.azure.apimanagement.Product(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management API Assignment to a Product. */
   def ProductApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -496,7 +496,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ProductApiArgs.builder
     com.pulumi.azure.apimanagement.ProductApi(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product Assignment to a Group. */
   def ProductGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -504,7 +504,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ProductGroupArgs.builder
     com.pulumi.azure.apimanagement.ProductGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product Policy */
   def ProductPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -512,7 +512,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.ProductPolicyArgs.builder
     com.pulumi.azure.apimanagement.ProductPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Product tag */
   def ProductTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -523,7 +523,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.ProductTag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Redis Cache. */
   def RedisCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -534,7 +534,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.RedisCache(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an API Management Service.
@@ -562,7 +562,7 @@ object apimanagement:
       case None =>
     com.pulumi.azure.apimanagement.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure API Management Standalone Gateway. */
   def StandaloneGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -580,7 +580,7 @@ object apimanagement:
       case None =>
     com.pulumi.azure.apimanagement.StandaloneGateway(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription within a API Management Service. */
   def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -588,7 +588,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.SubscriptionArgs.builder
     com.pulumi.azure.apimanagement.Subscription(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a API Management Tag. */
   def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -599,7 +599,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management User. */
   def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -607,7 +607,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.UserArgs.builder
     com.pulumi.azure.apimanagement.User(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an API Management Workspace.
@@ -622,7 +622,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.Workspace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Version Set within an API Management Workspace. */
   def WorkspaceApiVersionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -633,7 +633,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.WorkspaceApiVersionSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Certificate within an API Management Workspace. */
   def WorkspaceCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -644,7 +644,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.WorkspaceCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Named Value. */
   def WorkspaceNamedValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -655,7 +655,7 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.WorkspaceNamedValue(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Policy. */
   def WorkspacePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -663,7 +663,7 @@ object apimanagement:
     val argsBuilder = com.pulumi.azure.apimanagement.WorkspacePolicyArgs.builder
     com.pulumi.azure.apimanagement.WorkspacePolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Management Workspace Policy Fragment. */
   def WorkspacePolicyFragment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -674,4 +674,4 @@ object apimanagement:
       case None               =>
     com.pulumi.azure.apimanagement.WorkspacePolicyFragment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -27,7 +27,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Neptune Cluster Endpoint Resource. */
   def ClusterEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -42,7 +42,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.ClusterEndpoint(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A Cluster Instance Resource defines attributes that are specific to a single instance in a Neptune Cluster.
@@ -62,7 +62,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.ClusterInstance(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Neptune Cluster Parameter Group */
   def ClusterParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -80,7 +80,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.ClusterParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Neptune database cluster snapshot. */
   def ClusterSnapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -88,7 +88,7 @@ object neptune:
     val argsBuilder = com.pulumi.aws.neptune.ClusterSnapshotArgs.builder
     com.pulumi.aws.neptune.ClusterSnapshot(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.aws.neptune.EventSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
@@ -105,7 +105,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.EventSubscription(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Neptune Global Cluster. A global cluster consists of one primary region and up to five read-only secondary regions. You issue write operations directly to the primary cluster in the primary region and Amazon Neptune automatically replicates the data to the secondary regions using dedicated infrastructure.
@@ -117,7 +117,7 @@ object neptune:
     val argsBuilder = com.pulumi.aws.neptune.GlobalClusterArgs.builder
     com.pulumi.aws.neptune.GlobalCluster(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NeptuneFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -174,7 +174,7 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.ParameterGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Neptune subnet group resource. */
   def SubnetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -192,4 +192,4 @@ object neptune:
       case None =>
     com.pulumi.aws.neptune.SubnetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

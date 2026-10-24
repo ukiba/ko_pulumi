@@ -174,7 +174,7 @@ object lb:
       case None =>
     com.pulumi.aws.lb.Listener(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer Listener Certificate resource.
@@ -188,7 +188,7 @@ object lb:
     val argsBuilder = com.pulumi.aws.lb.ListenerCertificateArgs.builder
     com.pulumi.aws.lb.ListenerCertificate(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer Listener Rule resource.
@@ -217,7 +217,7 @@ object lb:
       case None =>
     com.pulumi.aws.lb.ListenerRule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Load Balancer resource.
@@ -239,7 +239,7 @@ object lb:
       case None =>
     com.pulumi.aws.lb.LoadBalancer(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides a Target Group resource for use with Load Balancer resources.
@@ -261,7 +261,7 @@ object lb:
       case None =>
     com.pulumi.aws.lb.TargetGroup(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides the ability to register instances and containers with an Application Load Balancer (ALB) or Network Load Balancer (NLB) target group. For attaching resources with Elastic Load Balancer (ELB), see the `aws.elb.Attachment` resource.
@@ -273,7 +273,7 @@ object lb:
     val argsBuilder = com.pulumi.aws.lb.TargetGroupAttachmentArgs.builder
     com.pulumi.aws.lb.TargetGroupAttachment(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a ELBv2 Trust Store for use with Application Load Balancer Listener resources. */
   def TrustStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -291,7 +291,7 @@ object lb:
       case None =>
     com.pulumi.aws.lb.TrustStore(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a ELBv2 Trust Store Revocation for use with Application Load Balancer Listener resources. */
   def TrustStoreRevocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -299,4 +299,4 @@ object lb:
     val argsBuilder = com.pulumi.aws.lb.TrustStoreRevocationArgs.builder
     com.pulumi.aws.lb.TrustStoreRevocation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

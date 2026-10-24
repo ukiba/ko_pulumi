@@ -23,7 +23,7 @@ object fis:
       case None =>
     com.pulumi.aws.fis.ExperimentTemplate(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FisFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -56,7 +56,7 @@ object fis:
     val argsBuilder = com.pulumi.aws.fis.SafetyLeverStateArgs.builder
     com.pulumi.aws.fis.SafetyLeverState(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
   def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -64,4 +64,4 @@ object fis:
     val argsBuilder = com.pulumi.aws.fis.TargetAccountConfigurationArgs.builder
     com.pulumi.aws.fis.TargetAccountConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

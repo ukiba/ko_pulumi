@@ -51,7 +51,7 @@ object datapipeline:
       case None =>
     com.pulumi.aws.datapipeline.Pipeline(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a DataPipeline Pipeline Definition resource. */
   def PipelineDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -59,4 +59,4 @@ object datapipeline:
     val argsBuilder = com.pulumi.aws.datapipeline.PipelineDefinitionArgs.builder
     com.pulumi.aws.datapipeline.PipelineDefinition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

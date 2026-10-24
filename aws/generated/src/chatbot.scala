@@ -36,7 +36,7 @@ object chatbot:
       case None =>
     com.pulumi.aws.chatbot.SlackChannelConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Resource for managing an AWS Chatbot Microsoft Teams Channel Configuration.
@@ -55,4 +55,4 @@ object chatbot:
       case None =>
     com.pulumi.aws.chatbot.TeamsChannelConfiguration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

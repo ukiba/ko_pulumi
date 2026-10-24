@@ -17,4 +17,4 @@ object rbin:
       case None =>
     com.pulumi.aws.rbin.Rule(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -39,7 +39,7 @@ object recoveryservices:
       case None =>
     com.pulumi.azure.recoveryservices.Vault(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an association of a Resource Guard and Recovery Services Vault. */
   def VaultResourceGuardAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -47,4 +47,4 @@ object recoveryservices:
     val argsBuilder = com.pulumi.azure.recoveryservices.VaultResourceGuardAssociationArgs.builder
     com.pulumi.azure.recoveryservices.VaultResourceGuardAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

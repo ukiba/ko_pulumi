@@ -20,4 +20,4 @@ object invoicing:
       case None =>
     com.pulumi.aws.invoicing.InvoiceUnit(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

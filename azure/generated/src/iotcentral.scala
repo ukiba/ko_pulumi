@@ -20,7 +20,7 @@ object iotcentral:
       case None =>
     com.pulumi.azure.iotcentral.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Central Application Network Rule Set. */
   def ApplicationNetworkRuleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -28,7 +28,7 @@ object iotcentral:
     val argsBuilder = com.pulumi.azure.iotcentral.ApplicationNetworkRuleSetArgs.builder
     com.pulumi.azure.iotcentral.ApplicationNetworkRuleSet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an IoT Central Organization */
   def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -36,4 +36,4 @@ object iotcentral:
     val argsBuilder = com.pulumi.azure.iotcentral.OrganizationArgs.builder
     com.pulumi.azure.iotcentral.Organization(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

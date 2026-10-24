@@ -253,7 +253,7 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.AccountIamBindingArgs.builder
     com.pulumi.gcp.billing.AccountIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on billing accounts. Each of these resources serves a different use case:
@@ -504,7 +504,7 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.AccountIamMemberArgs.builder
     com.pulumi.gcp.billing.AccountIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage IAM policies on billing accounts. Each of these resources serves a different use case:
@@ -755,7 +755,7 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.AccountIamPolicyArgs.builder
     com.pulumi.gcp.billing.AccountIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object BillingFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -866,7 +866,7 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.BudgetArgs.builder
     com.pulumi.gcp.billing.Budget(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Billing information for a project.
@@ -882,7 +882,7 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.ProjectInfoArgs.builder
     com.pulumi.gcp.billing.ProjectInfo(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows creation and management of a Google Cloud Billing Subaccount.
@@ -938,4 +938,4 @@ object billing:
     val argsBuilder = com.pulumi.gcp.billing.SubAccountArgs.builder
     com.pulumi.gcp.billing.SubAccount(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

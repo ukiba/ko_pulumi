@@ -42,7 +42,7 @@ object containeranalysis:
       case None               =>
     com.pulumi.gcp.containeranalysis.Note(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
@@ -348,7 +348,7 @@ object containeranalysis:
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
@@ -654,7 +654,7 @@ object containeranalysis:
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Container Registry Note. Each of these resources serves a different use case:
@@ -960,7 +960,7 @@ object containeranalysis:
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An occurrence is an instance of a Note, or type of analysis that
@@ -977,4 +977,4 @@ object containeranalysis:
     val argsBuilder = com.pulumi.gcp.containeranalysis.OccurenceArgs.builder
     com.pulumi.gcp.containeranalysis.Occurence(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

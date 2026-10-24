@@ -25,7 +25,7 @@ object aifoundry:
       case None =>
     com.pulumi.azure.aifoundry.Hub(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a Microsoft Foundry Hub (classic) Project resource.
@@ -48,4 +48,4 @@ object aifoundry:
       case None =>
     com.pulumi.azure.aifoundry.Project(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

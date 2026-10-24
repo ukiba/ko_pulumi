@@ -16,7 +16,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.builder
     com.pulumi.gcp.logging.BillingAccountBucketConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a billing account logging exclusion. For more information see:
@@ -35,7 +35,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.BillingAccountExclusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/billingAccounts.sinks)
@@ -55,7 +55,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.BillingAccountSink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a folder-level logging bucket config. For more information see
@@ -69,7 +69,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.FolderBucketConfigArgs.builder
     com.pulumi.gcp.logging.FolderBucketConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a folder-level logging exclusion. For more information see:
@@ -88,7 +88,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.FolderExclusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Default resource settings control whether CMEK is required for new log buckets. These settings also determine the storage location for the _Default and _Required log buckets, and whether the _Default sink is enabled or disabled.
@@ -104,7 +104,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.FolderSettingsArgs.builder
     com.pulumi.gcp.logging.FolderSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a folder-level logging sink. For more information see:
@@ -120,7 +120,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.FolderSink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a BigQuery linked dataset
@@ -136,7 +136,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.LinkedDatasetArgs.builder
     com.pulumi.gcp.logging.LinkedDataset(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a group of resources to read log entries from
@@ -155,7 +155,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.LogScope(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a view over log entries in a bucket.
@@ -174,7 +174,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.LogView(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud (Stackdriver) Logging LogView. Each of these resources serves a different use case:
@@ -777,7 +777,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.LogViewIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud (Stackdriver) Logging LogView. Each of these resources serves a different use case:
@@ -1380,7 +1380,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.LogViewIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud (Stackdriver) Logging LogView. Each of these resources serves a different use case:
@@ -1983,7 +1983,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.LogViewIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LoggingFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -2169,7 +2169,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.Metric(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a organization-level logging bucket config. For more information see
@@ -2183,7 +2183,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.OrganizationBucketConfigArgs.builder
     com.pulumi.gcp.logging.OrganizationBucketConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an organization-level logging exclusion. For more information see:
@@ -2202,7 +2202,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.OrganizationExclusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Default resource settings control whether CMEK is required for new log buckets. These settings also determine the storage location for the _Default and _Required log buckets, and whether the _Default sink is enabled or disabled.
@@ -2218,7 +2218,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.OrganizationSettingsArgs.builder
     com.pulumi.gcp.logging.OrganizationSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an organization-level logging sink. For more information see:
@@ -2234,7 +2234,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.OrganizationSink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a project-level logging bucket config. For more information see
@@ -2248,7 +2248,7 @@ object logging:
     val argsBuilder = com.pulumi.gcp.logging.ProjectBucketConfigArgs.builder
     com.pulumi.gcp.logging.ProjectBucketConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a project-level logging exclusion. For more information see:
@@ -2267,7 +2267,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.ProjectExclusion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages a project-level logging sink. For more information see:
@@ -2292,7 +2292,7 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.ProjectSink(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Describes a query that has been saved by a user.
@@ -2313,4 +2313,4 @@ object logging:
       case None               =>
     com.pulumi.gcp.logging.SavedQuery(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

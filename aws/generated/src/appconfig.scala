@@ -99,7 +99,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.Application(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Configuration Profile resource. */
   def ConfigurationProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -117,7 +117,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.ConfigurationProfile(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Deployment resource for an `aws.appconfig.Application` resource. */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -132,7 +132,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.Deployment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Deployment Strategy resource. */
   def DeploymentStrategy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -150,7 +150,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.DeploymentStrategy(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Environment resource for an `aws.appconfig.Application` resource. One or more environments can be defined for an application. */
   def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -168,7 +168,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.Environment(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Amazon AppIntegrations Event Integration resource. */
   def EventIntegration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -186,7 +186,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.EventIntegration(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Extension resource. */
   def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -204,7 +204,7 @@ object appconfig:
       case None =>
     com.pulumi.aws.appconfig.Extension(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates an AppConfig Extension with a Resource. */
   def ExtensionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -212,7 +212,7 @@ object appconfig:
     val argsBuilder = com.pulumi.aws.appconfig.ExtensionAssociationArgs.builder
     com.pulumi.aws.appconfig.ExtensionAssociation(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppConfig Hosted Configuration Version resource. */
   def HostedConfigurationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -220,4 +220,4 @@ object appconfig:
     val argsBuilder = com.pulumi.aws.appconfig.HostedConfigurationVersionArgs.builder
     com.pulumi.aws.appconfig.HostedConfigurationVersion(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

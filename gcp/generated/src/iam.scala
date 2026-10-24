@@ -17,7 +17,7 @@ object iam:
       case None               =>
     com.pulumi.gcp.iam.AccessBoundaryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a collection of denial policies to apply to a given resource.
@@ -36,7 +36,7 @@ object iam:
       case None               =>
     com.pulumi.gcp.iam.DenyPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an IAM v3 Access Policy parented by a Folder. This policy defines rules
@@ -52,7 +52,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.FolderAccessPolicyArgs.builder
     com.pulumi.gcp.iam.FolderAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A policy binding to a folder. This is a Terraform resource, and maps to a policy binding resource in GCP.
@@ -68,7 +68,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.FoldersPolicyBindingArgs.builder
     com.pulumi.gcp.iam.FoldersPolicyBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IamFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -281,7 +281,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.OauthClientArgs.builder
     com.pulumi.gcp.iam.OauthClient(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an OAuth Client Credential. Used to authenticate an OAuth Client
@@ -299,7 +299,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.OauthClientCredentialArgs.builder
     com.pulumi.gcp.iam.OauthClientCredential(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an IAM v3 Access Policy parented by a Google Cloud Organization. This policy
@@ -315,7 +315,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.builder
     com.pulumi.gcp.iam.OrganizationAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A policy binding to an organization. This is a Terraform resource, and maps to a policy binding resource in GCP.
@@ -331,7 +331,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.OrganizationsPolicyBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * An IAM Principal Access Boundary Policy resource. This resource has no effect on accesses until is bound to a target through policy bindings.
@@ -351,7 +351,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.builder
     com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents an IAM v3 Access Policy parented by a Project. This policy defines rules
@@ -367,7 +367,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.ProjectAccessPolicyArgs.builder
     com.pulumi.gcp.iam.ProjectAccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A policy binding to a project. This is a Terraform resource, and maps to a policy binding resource in GCP.
@@ -383,7 +383,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.ProjectsPolicyBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a collection of external workforces. Provides namespaces for
@@ -403,7 +403,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolArgs.builder
     com.pulumi.gcp.iam.WorkforcePool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
@@ -710,7 +710,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
@@ -1017,7 +1017,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkforcePool. Each of these resources serves a different use case:
@@ -1324,7 +1324,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A configuration for an external identity provider.
@@ -1346,7 +1346,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a public key configuration for a Workforce Pool Provider. The key can be configured in your identity provider to encrypt SAML assertions.
@@ -1364,7 +1364,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderKey(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a SCIM tenant configuration for a Workforce Pool Provider.
@@ -1381,7 +1381,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimTenant(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a SCIM Token for a Workforce Pool Provider Scim Tenant.
@@ -1398,7 +1398,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimToken(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a collection of external workload identities. You can define IAM policies to
@@ -1417,7 +1417,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPool(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
@@ -1993,7 +1993,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
@@ -2569,7 +2569,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud IAM WorkloadIdentityPool. Each of these resources serves a different use case:
@@ -3145,7 +3145,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a managed identity for a workload identity pool namespace.
@@ -3162,7 +3162,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Represents a namespace for a workload identity pool. Namespaces are used to segment identities
@@ -3180,7 +3180,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolNamespace(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * A configuration for an external identity provider.
@@ -3196,7 +3196,7 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolProvider(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Service Agent within the Workload Identity API. */
   def WorkloadIdentityServiceAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -3204,4 +3204,4 @@ object iam:
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityServiceAgent(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

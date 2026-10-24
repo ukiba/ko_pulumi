@@ -10,7 +10,7 @@ object emr:
     val argsBuilder = com.pulumi.aws.emr.BlockPublicAccessConfigurationArgs.builder
     com.pulumi.aws.emr.BlockPublicAccessConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic MapReduce Cluster, a web service that makes it easy to process large amounts of data efficiently. See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/elastic-mapreduce/) for more information.
@@ -32,7 +32,7 @@ object emr:
       case None =>
     com.pulumi.aws.emr.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EmrFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -81,7 +81,7 @@ object emr:
       case None               =>
     com.pulumi.aws.emr.InstanceFleet(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an Elastic MapReduce Cluster Instance Group configuration.
@@ -99,7 +99,7 @@ object emr:
       case None               =>
     com.pulumi.aws.emr.InstanceGroup(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Managed Scaling policy for EMR Cluster. With Amazon EMR versions 5.30.0 and later (except for Amazon EMR 6.0.0), you can enable EMR managed scaling to automatically increase or decrease the number of instances or units in your cluster based on workload. See [Using EMR Managed Scaling in Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-scaling.html) for more information. */
   def ManagedScalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -107,7 +107,7 @@ object emr:
     val argsBuilder = com.pulumi.aws.emr.ManagedScalingPolicyArgs.builder
     com.pulumi.aws.emr.ManagedScalingPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage AWS EMR Security Configurations */
   def SecurityConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -118,7 +118,7 @@ object emr:
       case None               =>
     com.pulumi.aws.emr.SecurityConfiguration(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic MapReduce Studio. */
   def Studio(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -136,7 +136,7 @@ object emr:
       case None =>
     com.pulumi.aws.emr.Studio(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Elastic MapReduce Studio Session Mapping. */
   def StudioSessionMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -144,4 +144,4 @@ object emr:
     val argsBuilder = com.pulumi.aws.emr.StudioSessionMappingArgs.builder
     com.pulumi.aws.emr.StudioSessionMapping(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -16,7 +16,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.folder.AccessApprovalSettings(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FolderFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -647,7 +647,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.IAMBindingArgs.builder
     com.pulumi.gcp.folder.IAMBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a folder. Each of these resources serves a different use case:
@@ -1169,7 +1169,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.IAMMemberArgs.builder
     com.pulumi.gcp.folder.IAMMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a folder. Each of these resources serves a different use case:
@@ -1691,7 +1691,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.IAMPolicyArgs.builder
     com.pulumi.gcp.folder.IAMPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a folder. Each of these resources serves a different use case:
@@ -2213,7 +2213,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.IamAuditConfigArgs.builder
     com.pulumi.gcp.folder.IamAuditConfig(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows management of Organization Policies for a Google Cloud Folder.
@@ -2231,7 +2231,7 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.OrganizationPolicyArgs.builder
     com.pulumi.gcp.folder.OrganizationPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Generate folder service identity for a service.
@@ -2255,4 +2255,4 @@ object folder:
     val argsBuilder = com.pulumi.gcp.folder.ServiceIdentityArgs.builder
     com.pulumi.gcp.folder.ServiceIdentity(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

@@ -19,7 +19,7 @@ object ecs:
       case None               =>
     com.pulumi.aws.ecs.AccountSettingDefault(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an ECS cluster capacity provider. More information can be found on the [ECS Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html).
@@ -45,7 +45,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.CapacityProvider(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ECS cluster. */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -63,7 +63,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.Cluster(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages the capacity providers of an ECS Cluster.
@@ -77,7 +77,7 @@ object ecs:
     val argsBuilder = com.pulumi.aws.ecs.ClusterCapacityProvidersArgs.builder
     com.pulumi.aws.ecs.ClusterCapacityProviders(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an ECS Daemon resource, which manages a daemon that runs exactly one task on each container instance in an ECS cluster. */
   def Daemon(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -95,7 +95,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.Daemon(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a revision of an ECS daemon task definition for use with daemon scheduling strategy. */
   def DaemonTaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -110,7 +110,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.DaemonTaskDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object EcsFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -240,7 +240,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.ExpressGatewayService(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * &gt; **Note:** To prevent a race condition during service deletion, make sure to set `dependsOn` to the related `aws.iam.RolePolicy`; otherwise, the policy may be destroyed too soon and the ECS service will then get stuck in the `DRAINING` state.
@@ -264,7 +264,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.Service(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manages an individual ECS resource tag. This resource should only be used in cases where ECS resources are created outside the provider (e.g., ECS Clusters implicitly created by Batch Compute Environments).
@@ -278,7 +278,7 @@ object ecs:
     val argsBuilder = com.pulumi.aws.ecs.TagArgs.builder
     com.pulumi.aws.ecs.Tag(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a revision of an ECS task definition to be used in `aws.ecs.Service`. */
   def TaskDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -296,7 +296,7 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.TaskDefinition(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Provides an ECS task set - effectively a task that is expected to run until an error occurs or a user terminates it (typically a webserver or a database).
@@ -315,4 +315,4 @@ object ecs:
       case None =>
     com.pulumi.aws.ecs.TaskSet(name,
         argsBuilder.build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)

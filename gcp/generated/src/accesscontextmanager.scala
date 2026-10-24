@@ -28,7 +28,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.AccessLevel(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows configuring a single access level condition to be appended to an access level&#39;s conditions.
@@ -57,7 +57,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessLevelConditionArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessLevelCondition(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Replace all existing Access Levels in an Access Policy with the Access Levels provided. This is done atomically.
@@ -81,7 +81,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessLevelsArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessLevels(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * AccessPolicy is a container for AccessLevels (which define the necessary
@@ -110,7 +110,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.AccessPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.AccessPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
@@ -413,7 +413,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.AccessPolicyIamBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
@@ -716,7 +716,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.AccessPolicyIamMember(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Access Context Manager (VPC Service Controls) AccessPolicy. Each of these resources serves a different use case:
@@ -1019,7 +1019,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.AccessPolicyIamPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object AccesscontextmanagerFunctions:
     // Pulumi methods are reproduced as Scala methods.
@@ -1091,7 +1091,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.AuthorizedOrgsDesc(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource has been deprecated, please refer to ServicePerimeterEgressPolicy.
@@ -1117,7 +1117,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.EgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.EgressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access.
@@ -1131,7 +1131,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.GcpUserAccessBindingArgs.builder
     com.pulumi.gcp.accesscontextmanager.GcpUserAccessBinding(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * This resource has been deprecated, please refer to ServicePerimeterIngressPolicy.
@@ -1157,7 +1157,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.IngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.IngressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * ServicePerimeter describes a set of GCP resources which can freely import
@@ -1191,7 +1191,7 @@ object accesscontextmanager:
       case None               =>
     com.pulumi.gcp.accesscontextmanager.ServicePerimeter(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage a single EgressPolicy in the spec (dry-run) configuration for a service perimeter.
@@ -1218,7 +1218,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunEgressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage a single IngressPolicy in the spec (dry-run) configuration for a service perimeter.
@@ -1246,7 +1246,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunIngressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows configuring a single GCP resource that should be inside of the `spec` block of a dry run service perimeter.
@@ -1276,7 +1276,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunResourceArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterDryRunResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage a single EgressPolicy in the status (enforced) configuration for a service perimeter.
@@ -1303,7 +1303,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterEgressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Manage a single IngressPolicy in the status (enforced) configuration for a service perimeter.
@@ -1331,7 +1331,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicyArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterIngressPolicy(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Allows configuring a single GCP resource that should be inside the `status` block of a service perimeter.
@@ -1361,7 +1361,7 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimeterResourceArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeterResource(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
    * Replace all existing Service Perimeters in an Access Policy with the Service Perimeters provided. This is done atomically.
@@ -1380,4 +1380,4 @@ object accesscontextmanager:
     val argsBuilder = com.pulumi.gcp.accesscontextmanager.ServicePerimetersArgs.builder
     com.pulumi.gcp.accesscontextmanager.ServicePerimeters(name,
         args(argsBuilder).build,
-        resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
+        resourceOptions(conf.customResourceOptionsBuilder).build)
