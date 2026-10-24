@@ -33,12 +33,6 @@ object directoryservice:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DirectoryserviceFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
     inline def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

@@ -29,12 +29,6 @@ object serverlessrepository:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServerlessrepositoryFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to get information about an AWS Serverless Application Repository application. For example, this can be used to determine the required `capabilities` for an application. */
     inline def getApplication(args: Endofunction[com.pulumi.aws.serverlessrepository.inputs.GetApplicationArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

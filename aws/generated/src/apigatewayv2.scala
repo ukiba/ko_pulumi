@@ -40,12 +40,6 @@ object apigatewayv2:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Apigatewayv2Functions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Provides details about a specific Amazon API Gateway Version 2 API. */
     inline def getApi(args: Endofunction[com.pulumi.aws.apigatewayv2.inputs.GetApiArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

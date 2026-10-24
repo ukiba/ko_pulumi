@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cloudidentity:
   object CloudidentityFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /**
      * Use this data source to look up the resource name of a Cloud Identity Group by its [EntityKey](https://cloud.google.com/identity/docs/reference/rest/v1/EntityKey), i.e. the group&#39;s email.
      * 

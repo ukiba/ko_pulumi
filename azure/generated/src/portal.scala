@@ -25,12 +25,6 @@ object portal:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object PortalFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to access information about an existing shared dashboard in the Azure Portal. This is the data source of the `azurermDashboard` resource. */
     inline def azurerm_portal_dashboard(args: Endofunction[com.pulumi.azure.portal.inputs.Azurerm_portal_dashboardArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

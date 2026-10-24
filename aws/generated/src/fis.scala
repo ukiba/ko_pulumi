@@ -28,12 +28,6 @@ object fis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object FisFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
     inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

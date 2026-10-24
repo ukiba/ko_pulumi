@@ -35,12 +35,6 @@ object elb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ElbFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /**
      * Use this data source to get the HostedZoneId of the AWS Elastic Load Balancing HostedZoneId
      * in a given region for the purpose of using in an AWS Route53 Alias.

@@ -22,12 +22,6 @@ object managementgroups:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ManagementgroupsFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to access information about an existing Management Group. */
     @deprecated("azure.managementgroups.getManagementGroup has been deprecated in favor of azure.management.getGroup") inline def getManagementGroup(args: Endofunction[com.pulumi.azure.managementgroups.inputs.GetManagementGroupArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

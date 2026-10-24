@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object core:
   object CoreFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** This data source return the available Extended Locations for a specific Azure Region. */
     inline def getExtendedLocations(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

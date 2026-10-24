@@ -998,12 +998,6 @@ object gkehub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GkehubFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Retrieves the details of a specific GKE Hub Feature. Use this data source to retrieve the feature&#39;s configuration and state. */
     inline def getFeature(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

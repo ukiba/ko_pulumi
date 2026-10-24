@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object containeranalysis:
   object ContaineranalysisFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Retrieves the current IAM policy data for note */
     inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

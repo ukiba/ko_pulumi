@@ -60,12 +60,6 @@ object licensemanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LicensemanagerFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** This resource can be used to get a set of license grant ARNs matching a filter. */
     inline def getLicenseGrants(args: Endofunction[com.pulumi.aws.licensemanager.inputs.GetLicenseGrantsArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

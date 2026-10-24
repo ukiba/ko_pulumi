@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cloudquota:
   object CloudquotaFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Provides information about a particular quota for a given project, folder or organization. */
     inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

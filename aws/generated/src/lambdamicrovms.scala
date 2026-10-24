@@ -25,12 +25,6 @@ object lambdamicrovms:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object LambdamicrovmsFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Provides details about an AWS Lambda MicroVMs Image Version. */
     inline def getImageVersion(args: Endofunction[com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

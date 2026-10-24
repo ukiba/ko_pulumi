@@ -76,12 +76,6 @@ object certificatemanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object CertificatemanagerFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Get info about a Google Certificate Manager Certificate Map resource. */
     inline def getCertificateMap(args: Endofunction[com.pulumi.gcp.certificatemanager.inputs.GetCertificateMapArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

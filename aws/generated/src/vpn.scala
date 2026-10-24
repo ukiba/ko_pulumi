@@ -6,12 +6,6 @@ import com.pulumi.deployment.InvokeOutputOptions
 
 object vpn:
   object VpnFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network. */
     @deprecated("aws.vpn/getconnection.getConnection has been deprecated in favor of aws.ec2/getvpnconnection.getVpnConnection") inline def getConnection(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

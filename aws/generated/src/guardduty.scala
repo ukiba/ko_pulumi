@@ -59,12 +59,6 @@ object guardduty:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object GuarddutyFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Retrieve information about a GuardDuty detector. */
     inline def getDetector(args: Endofunction[com.pulumi.aws.guardduty.inputs.GetDetectorArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

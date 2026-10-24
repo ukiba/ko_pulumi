@@ -65,12 +65,6 @@ object devcenter:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DevcenterFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to access information about an existing Dev Center. */
     inline def get(args: Endofunction[com.pulumi.azure.devcenter.inputs.GetArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

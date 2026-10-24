@@ -10609,12 +10609,6 @@ object iap:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object IapFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Retrieves the current IAM policy data for agentregistryagent */
     inline def getAgentRegistryAgentIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

@@ -104,12 +104,6 @@ object serviceaccount:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServiceaccountFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /**
      * Get the service account from a project. For more information see
      * the official [API](https://cloud.google.com/compute/docs/access/service-accounts) documentation.

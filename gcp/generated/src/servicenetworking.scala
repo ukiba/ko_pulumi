@@ -37,12 +37,6 @@ object servicenetworking:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ServicenetworkingFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =

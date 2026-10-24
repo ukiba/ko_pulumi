@@ -524,6 +524,11 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
               (invokeOptionsElem, "InvokeOptions.builder")
           requiredMethod(clsElem, method.simpleName.toString, method.parameters.head.asType, optionsElem.asType)
 
+          // Pulumi methods are reproduced as Scala methods.
+          // Java methods cause Scala warnings under -Yexplicit-nulls flag
+          // when the return value is assigned to class member without explicit type, e.g.:
+          //
+          //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
           val argsFuncType = s"Endofunction[$argsType.Builder] = identity"
           val invokeOptionsFuncType = s"Endofunction[${optionsElem.simpleName}.Builder] = identity"
           val text = s"""
@@ -536,14 +541,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
             |""".stripMargin
           (text = text, importedTypeName = optionsElem.getQualifiedName.toString)
 
-        packageMembers(packageComps) :+= FunctionsMember(s"""
-          |  object $clsName:
-          |    // Pulumi methods are reproduced as Scala methods.
-          |    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-          |    // when the return value is assigned to class member without explicit type, e.g.:
-          |    //
-          |    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-          |""".stripMargin.dropWhile(_ == '\n') + functions.map(_.text).mkString,  // drop the leading empty line
+        packageMembers(packageComps) :+= FunctionsMember(s"  object $clsName:" + functions.map(_.text).mkString,
           clsName.toString,
           functions.map(_.importedTypeName).distinct.toSeq)
 

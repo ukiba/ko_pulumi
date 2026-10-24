@@ -40,12 +40,6 @@ object parametermanager:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object ParametermanagerFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to get information about a Parameter Manager Parameter. */
     inline def getParameter(args: Endofunction[com.pulumi.gcp.parametermanager.inputs.GetParameterArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

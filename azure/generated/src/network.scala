@@ -381,12 +381,6 @@ object network:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object NetworkFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Use this data source to access information about an existing Application Gateway. */
     inline def getApplicationGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationGatewayArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

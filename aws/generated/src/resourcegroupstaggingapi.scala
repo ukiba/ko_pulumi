@@ -6,12 +6,6 @@ import com.pulumi.deployment.InvokeOutputOptions
 
 object resourcegroupstaggingapi:
   object ResourcegroupstaggingapiFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Lists the required tags for supported resource types in an AWS account. Required tags are defined through AWS Organizations [tag policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html). */
     inline def getRequiredTags(args: Endofunction[com.pulumi.aws.resourcegroupstaggingapi.inputs.GetRequiredTagsArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

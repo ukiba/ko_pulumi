@@ -53,12 +53,6 @@ object ec2transitgateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object Ec2transitgatewayFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Get information on an EC2 Transit Gateway&#39;s attachment to a resource. */
     inline def getAttachment(args: Endofunction[com.pulumi.aws.ec2transitgateway.inputs.GetAttachmentArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

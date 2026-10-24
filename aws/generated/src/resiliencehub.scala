@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object resiliencehub:
   object ResiliencehubFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Data source for reading an AWS Resilience Hub V2 Policy. */
     inline def getV2Policy(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2PolicyArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

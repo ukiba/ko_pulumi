@@ -7,12 +7,6 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cloudasset:
   object CloudassetFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /**
      * Retrieve all the resources within a given accessible CRM scope (project/folder/organization). See the
      * [REST API](https://cloud.google.com/asset-inventory/docs/reference/rest/v1p1beta1/resources/searchAll)

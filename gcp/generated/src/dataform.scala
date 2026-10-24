@@ -26,12 +26,6 @@ object dataform:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object DataformFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Retrieves the current IAM policy data for repository */
     inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):

@@ -54,12 +54,6 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   object VerifiedpermissionsFunctions:
-    // Pulumi methods are reproduced as Scala methods.
-    // Java methods cause Scala warnings under -Yexplicit-nulls flag
-    // when the return value is assigned to class member without explicit type, e.g.:
-    //
-    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-
     /** Data source for managing an AWS Verified Permissions Policy Store. */
     inline def getPolicyStore(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStoreArgs.Builder] = identity,
         invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
