@@ -95,7 +95,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     packageMembers.toMap
 
-  // fail on errors, since erroneous types silently fail the isSubtype checks, leaving members ungenerated
+  // fail on errors, since erroneous types silently fail the isSubtype checks, leaving members ungenerated.
+  // javac stops at 100 errors by default; -Xmaxerrs is not raised, since the exact count of a broken run matters little
   def checkDiagnostics(diagnostics: DiagnosticCollector[JavaFileObject]): Unit =
     val (errors, others) = diagnostics.getDiagnostics.asScala.partition(_.getKind == Diagnostic.Kind.ERROR)
     others.foreach(System.err.println)  // as javac would print without a listener
@@ -132,6 +133,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
     // split into multiple package files, to avoid `Class too large` error,
     // caused by JVM's per-class limit (65535 methods, 64K constant pool entries).
+    // the sizes are not checked here, since the compilation fails loudly when a range outgrows the limit
     case class SplitConf(range: (from: Char, to: Char), fileName: String):
       def contains(name: String): Boolean =
         val head = name.stripPrefix("`").head  // escapeScalaKeyword wraps keyword in backticks
