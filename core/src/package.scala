@@ -20,6 +20,10 @@ case class KoPulumiConf(
   defaultProtect: Option[Boolean] = None,
 
   // propagate the logical name (the first argument of the resource class constructor) to the physical name
+  // a fixed physical name makes Pulumi delete a resource before creating its replacement, which fails while another
+  // resource refers to it, e.g. a cloudfront.PublicKey in a cloudfront.KeyGroup (pulumi-aws#4067);
+  // give such a resource a copy of this conf that returns None. Adding `namePrefix` does not help:
+  // the provider rejects it together with the `name` that the generated wrapper sets from this function
   logicalName2physicalName: String => Option[String] = _ => None,
 
   // propagate the logical name to the `Name` tag

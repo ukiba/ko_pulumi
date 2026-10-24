@@ -45,7 +45,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       Files.writeString(file, content)  // UTF_8
     file
 
-  // delete *.scala files no longer generated, e.g. for a removed package or an emptied split range.
+  // delete *.scala files no longer generated,
+  // e.g. for a removed package or for a `<pkg>_ext` object left without extensions.
   // directories are left, so that an editor with a deleted file open is not confused
   def deleteStaleFiles(written: Seq[Path]): Unit =
     val writtenSet = written.map(_.toAbsolutePath.normalize).toSet
