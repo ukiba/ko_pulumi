@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object apigateway:
@@ -1929,60 +1931,72 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiConfigIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getApiConfigIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetApiConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for apiconfig
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetApiConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for api
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getApiIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetApiIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for api
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetApiIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for gateway
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for gateway
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.builder
-      com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A consumable API that can be used by multiple Gateways.

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object lakeformation:
@@ -40,48 +42,60 @@ object lakeformation:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    inline def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getDataLakeSettings(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettings(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get Lake Formation principals designated as data lake administrators and lists of principal permission entries for default create database and default create table permissions. */
-    inline def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataLakeSettingsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetDataLakeSettingsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetDataLakeSettingsPlainArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettingsPlain(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getDataLakeSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get permissions for a principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
      * 
      * &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    inline def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = scala.Predef.identity):
+    inline def getPermissions(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissions(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get permissions for a principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Permissions are granted to a principal, in a Data Catalog, relative to a Lake Formation resource, which includes the Data Catalog, databases, tables, LF-tags, and LF-tag policies. For more information, see [Security and Access Control to Metadata and Data in Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html).
      * 
      * &gt; **NOTE:** This data source deals with explicitly granted permissions. Lake Formation grants implicit permissions to data lake administrators, database creators, and table creators. For more information, see [Implicit Lake Formation Permissions](https://docs.aws.amazon.com/lake-formation/latest/dg/implicit-permissions.html).
      */
-    inline def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPermissionsPlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetPermissionsResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetPermissionsPlainArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissionsPlain(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getPermissionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a Lake Formation resource. */
-    inline def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
+    inline def getResource(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourceArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getResource(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getResource(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a Lake Formation resource. */
-    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lakeformation.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.lakeformation.inputs.GetResourcePlainArgs.builder
-      com.pulumi.aws.lakeformation.LakeformationFunctions.getResourcePlain(args(argsBuilder).build)
+      com.pulumi.aws.lakeformation.LakeformationFunctions.getResourcePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Creates an LF-Tag with the specified name and values. Each key must have at least one value. The maximum number of values permitted is 1000. */
   def LfTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

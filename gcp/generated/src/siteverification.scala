@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object siteverification:
@@ -57,10 +59,12 @@ object siteverification:
      * * How-to Guides
      *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    inline def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = scala.Predef.identity):
+    inline def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenArgs.builder
-      com.pulumi.gcp.siteverification.SiteverificationFunctions.getToken(args(argsBuilder).build)
+      com.pulumi.gcp.siteverification.SiteverificationFunctions.getToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A verification token is used to demonstrate ownership of a website or domain.
@@ -71,10 +75,12 @@ object siteverification:
      * * How-to Guides
      *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    inline def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.builder
-      com.pulumi.gcp.siteverification.SiteverificationFunctions.getTokenPlain(args(argsBuilder).build)
+      com.pulumi.gcp.siteverification.SiteverificationFunctions.getTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A web resource is a website or domain with verified ownership. Once your

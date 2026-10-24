@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object memcache:
@@ -31,13 +33,17 @@ object memcache:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/memcached/reference/rest/v1/projects.locations.instances). */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.memcache.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.memcache.MemcacheFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.memcache.MemcacheFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/memcached/reference/rest/v1/projects.locations.instances). */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.memcache.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.memcache.MemcacheFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.memcache.MemcacheFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

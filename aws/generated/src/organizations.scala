@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object organizations:
@@ -92,172 +94,228 @@ object organizations:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get information about an account in an organization. */
-    inline def getAccount(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetAccountArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getAccount(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about an account in an organization. */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetAccountPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getAccountPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get a list of AWS accounts that are designated as delegated administrators in this organization */
-    inline def getDelegatedAdministrators(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsArgs.Builder] = scala.Predef.identity):
+    inline def getDelegatedAdministrators(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetDelegatedAdministratorsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedAdministrators(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedAdministrators(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a list of AWS accounts that are designated as delegated administrators in this organization */
-    inline def getDelegatedAdministratorsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDelegatedAdministratorsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetDelegatedAdministratorsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetDelegatedAdministratorsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedAdministratorsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedAdministratorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get a list the AWS services for which the specified account is a delegated administrator */
-    inline def getDelegatedServices(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedServicesArgs.Builder] = scala.Predef.identity):
+    inline def getDelegatedServices(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedServicesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetDelegatedServicesResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetDelegatedServicesArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedServices(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedServices(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a list the AWS services for which the specified account is a delegated administrator */
-    inline def getDelegatedServicesPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedServicesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDelegatedServicesPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetDelegatedServicesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetDelegatedServicesResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetDelegatedServicesPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedServicesPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getDelegatedServicesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get the [entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed-view-data-orgs.html#access_policies_last-accessed-viewing-orgs-entity-path) for an entity. An entity&#39;s path is the text representation of the structure of that AWS Organizations entity. */
-    inline def getEntityPath(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathArgs.Builder] = scala.Predef.identity):
+    inline def getEntityPath(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetEntityPathResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetEntityPathArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPath(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPath(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the [entity path](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_last-accessed-view-data-orgs.html#access_policies_last-accessed-viewing-orgs-entity-path) for an entity. An entity&#39;s path is the text representation of the structure of that AWS Organizations entity. */
-    inline def getEntityPathPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntityPathPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetEntityPathPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetEntityPathResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetEntityPathPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPathPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getEntityPathPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about the organization that the users account belongs to. */
-    inline def getOrganization(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity):
+    inline def getOrganization(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganization(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganization(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about the organization that the users account belongs to. */
-    inline def getOrganizationPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for getting an AWS Organizations Organizational Unit. */
-    inline def getOrganizationalUnit(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnit(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnit(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnit(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for getting an AWS Organizations Organizational Unit. */
-    inline def getOrganizationalUnitPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get all direct child accounts under a parent organizational unit. This only provides immediate children, not all children. */
-    inline def getOrganizationalUnitChildAccounts(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitChildAccounts(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitChildAccountsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitChildAccounts(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitChildAccounts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get all direct child accounts under a parent organizational unit. This only provides immediate children, not all children. */
-    inline def getOrganizationalUnitChildAccountsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitChildAccountsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitChildAccountsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitChildAccountsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitChildAccountsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitChildAccountsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get all direct child accounts under a parent organizational unit. This provides all children. */
-    inline def getOrganizationalUnitDescendantAccounts(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitDescendantAccounts(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitDescendantAccountsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantAccounts(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantAccounts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get all direct child accounts under a parent organizational unit. This provides all children. */
-    inline def getOrganizationalUnitDescendantAccountsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitDescendantAccountsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitDescendantAccountsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantAccountsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantAccountsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantAccountsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get all direct child organizational units under a parent organizational unit. This provides all children. */
-    inline def getOrganizationalUnitDescendantOrganizationalUnits(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitDescendantOrganizationalUnits(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitDescendantOrganizationalUnitsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantOrganizationalUnits(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantOrganizationalUnits(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get all direct child organizational units under a parent organizational unit. This provides all children. */
-    inline def getOrganizationalUnitDescendantOrganizationalUnitsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitDescendantOrganizationalUnitsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitDescendantOrganizationalUnitsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitDescendantOrganizationalUnitsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantOrganizationalUnitsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitDescendantOrganizationalUnitsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get all direct child organizational units under a parent organizational unit. This only provides immediate children, not all children. */
-    inline def getOrganizationalUnits(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnits(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnits(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnits(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get all direct child organizational units under a parent organizational unit. This only provides immediate children, not all children. */
-    inline def getOrganizationalUnitsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationalUnitsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetOrganizationalUnitsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetOrganizationalUnitsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getOrganizationalUnitsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Organizations Policies. */
-    inline def getPolicies(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getPolicies(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetPoliciesResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPoliciesArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicies(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Organizations Policies. */
-    inline def getPoliciesPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPoliciesPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetPoliciesResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPoliciesPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Organizations Policies For Target. */
-    inline def getPoliciesForTarget(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesForTargetArgs.Builder] = scala.Predef.identity):
+    inline def getPoliciesForTarget(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesForTargetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetPoliciesForTargetResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPoliciesForTargetArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesForTarget(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesForTarget(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Organizations Policies For Target. */
-    inline def getPoliciesForTargetPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesForTargetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPoliciesForTargetPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPoliciesForTargetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetPoliciesForTargetResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPoliciesForTargetPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesForTargetPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPoliciesForTargetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Organizations Policy. */
-    inline def getPolicy(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPolicy(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPolicyArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicy(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Organizations Policy. */
-    inline def getPolicyPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetPolicyPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicyPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get tags attached to the specified AWS Organizations resource. */
-    inline def getResourceTags(args: Endofunction[com.pulumi.aws.organizations.inputs.GetResourceTagsArgs.Builder] = scala.Predef.identity):
+    inline def getResourceTags(args: Endofunction[com.pulumi.aws.organizations.inputs.GetResourceTagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.organizations.outputs.GetResourceTagsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetResourceTagsArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getResourceTags(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getResourceTags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get tags attached to the specified AWS Organizations resource. */
-    inline def getResourceTagsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetResourceTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceTagsPlain(args: Endofunction[com.pulumi.aws.organizations.inputs.GetResourceTagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.organizations.outputs.GetResourceTagsResult] =
       val argsBuilder = com.pulumi.aws.organizations.inputs.GetResourceTagsPlainArgs.builder
-      com.pulumi.aws.organizations.OrganizationsFunctions.getResourceTagsPlain(args(argsBuilder).build)
+      com.pulumi.aws.organizations.OrganizationsFunctions.getResourceTagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage an [AWS Organizations policy](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html). */
   def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

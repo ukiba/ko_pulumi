@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object lex:
@@ -54,52 +56,68 @@ object lex:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about a specific Amazon Lex Bot. */
-    inline def getBot(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotArgs.Builder] = scala.Predef.identity):
+    inline def getBot(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetBotResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getBot(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getBot(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Bot. */
-    inline def getBotPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBotPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetBotResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotPlainArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getBotPlain(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getBotPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Bot Alias. */
-    inline def getBotAlias(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasArgs.Builder] = scala.Predef.identity):
+    inline def getBotAlias(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetBotAliasResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotAliasArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getBotAlias(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getBotAlias(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Bot Alias. */
-    inline def getBotAliasPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBotAliasPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetBotAliasResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getBotAliasPlain(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getBotAliasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Intent. */
-    inline def getIntent(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentArgs.Builder] = scala.Predef.identity):
+    inline def getIntent(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetIntentResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetIntentArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getIntent(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getIntent(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Intent. */
-    inline def getIntentPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIntentPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetIntentResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetIntentPlainArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getIntentPlain(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getIntentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Slot Type. */
-    inline def getSlotType(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypeArgs.Builder] = scala.Predef.identity):
+    inline def getSlotType(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypeArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetSlotTypeResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetSlotTypeArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getSlotType(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getSlotType(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Slot Type. */
-    inline def getSlotTypePlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSlotTypePlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetSlotTypeResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.builder
-      com.pulumi.aws.lex.LexFunctions.getSlotTypePlain(args(argsBuilder).build)
+      com.pulumi.aws.lex.LexFunctions.getSlotTypePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides an Amazon Lex Slot Type resource. For more information see

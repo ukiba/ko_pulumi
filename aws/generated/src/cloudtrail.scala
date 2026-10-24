@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudtrail:
@@ -17,10 +19,12 @@ object cloudtrail:
      * 
      * &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    inline def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccount(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountArgs.builder
-      com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccount(args(argsBuilder).build)
+      com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the Account ID of the [AWS CloudTrail Service Account](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-supported-regions.html)
@@ -28,10 +32,12 @@ object cloudtrail:
      * 
      * &gt; **Warning:** This data source is deprecated. The AWS documentation [states that](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-s3-bucket-policy-for-cloudtrail.html#troubleshooting-s3-bucket-policy) a [service principal name](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services) should be used instead of an AWS account ID in any relevant IAM policy.
      */
-    inline def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceAccountPlain(args: Endofunction[com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudtrail.outputs.GetServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.cloudtrail.inputs.GetServiceAccountPlainArgs.builder
-      com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccountPlain(args(argsBuilder).build)
+      com.pulumi.aws.cloudtrail.CloudtrailFunctions.getServiceAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a CloudTrail Event Data Store.

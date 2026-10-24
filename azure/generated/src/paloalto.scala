@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object paloalto:
@@ -198,16 +200,20 @@ object paloalto:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Palo Alto Networks Rulestack. */
-    inline def getLocalRulestack(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.Builder] = scala.Predef.identity):
+    inline def getLocalRulestack(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.paloalto.outputs.GetLocalRulestackResult] =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.GetLocalRulestackArgs.builder
-      com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestack(args(argsBuilder).build)
+      com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestack(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Palo Alto Networks Rulestack. */
-    inline def getLocalRulestackPlain(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalRulestackPlain(args: Endofunction[com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.paloalto.outputs.GetLocalRulestackResult] =
       val argsBuilder = com.pulumi.azure.paloalto.inputs.GetLocalRulestackPlainArgs.builder
-      com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestackPlain(args(argsBuilder).build)
+      com.pulumi.azure.paloalto.PaloaltoFunctions.getLocalRulestackPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Palo Alto Network Virtual Appliance. */
   def VirtualNetworkAppliance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

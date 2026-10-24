@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object directoryservice:
@@ -38,16 +40,20 @@ object directoryservice:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
-    inline def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity):
+    inline def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.directoryservice.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.builder
-      com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectory(args(argsBuilder).build)
+      com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectory(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
-    inline def getDirectoryPlain(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDirectoryPlain(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directoryservice.outputs.GetDirectoryResult] =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.GetDirectoryPlainArgs.builder
-      com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectoryPlain(args(argsBuilder).build)
+      com.pulumi.aws.directoryservice.DirectoryserviceFunctions.getDirectoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an IP route for an AWS Directory Service directory. IP routes are used to route traffic from an AWS Managed Microsoft AD or AD Connector directory to an IPv4 or IPv6 CIDR block, such as an on-premises network reachable over a VPN or AWS Direct Connect connection, or a peered VPC.

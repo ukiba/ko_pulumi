@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object wafregional:
@@ -143,64 +145,84 @@ object wafregional:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** `aws.wafregional.IpSet` Retrieves a WAF Regional IP Set Resource ID. */
-    inline def getIpset(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetIpsetArgs.Builder] = scala.Predef.identity):
+    inline def getIpset(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetIpsetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafregional.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetIpsetArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getIpset(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getIpset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.wafregional.IpSet` Retrieves a WAF Regional IP Set Resource ID. */
-    inline def getIpsetPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetIpsetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpsetPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetIpsetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafregional.outputs.GetIpsetResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetIpsetPlainArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getIpsetPlain(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getIpsetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** `aws.wafregional.RateBasedRule` Retrieves a WAF Regional Rate Based Rule Resource ID. */
-    inline def getRateBasedMod(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRateBasedModArgs.Builder] = scala.Predef.identity):
+    inline def getRateBasedMod(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRateBasedModArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafregional.outputs.GetRateBasedModResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetRateBasedModArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getRateBasedMod(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getRateBasedMod(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.wafregional.RateBasedRule` Retrieves a WAF Regional Rate Based Rule Resource ID. */
-    inline def getRateBasedModPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRateBasedModPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRateBasedModPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRateBasedModPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafregional.outputs.GetRateBasedModResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetRateBasedModPlainArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getRateBasedModPlain(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getRateBasedModPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** `aws.wafregional.Rule` Retrieves a WAF Regional Rule Resource ID. */
-    inline def getRule(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRuleArgs.Builder] = scala.Predef.identity):
+    inline def getRule(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafregional.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetRuleArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getRule(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.wafregional.Rule` Retrieves a WAF Regional Rule Resource ID. */
-    inline def getRulePlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulePlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafregional.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetRulePlainArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getRulePlain(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** `aws.wafregional.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace for use in WAF Regional (needs to be subscribed to first). */
-    inline def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubscribedRuleGroup(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafregional.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getSubscribedRuleGroup(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getSubscribedRuleGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.wafregional.getSubscribedRuleGroup` retrieves information about a Managed WAF Rule Group from AWS Marketplace for use in WAF Regional (needs to be subscribed to first). */
-    inline def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscribedRuleGroupPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafregional.outputs.GetSubscribedRuleGroupResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetSubscribedRuleGroupPlainArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getSubscribedRuleGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getSubscribedRuleGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** `aws.wafregional.WebAcl` Retrieves a WAF Regional Web ACL Resource ID. */
-    inline def getWebAcl(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetWebAclArgs.Builder] = scala.Predef.identity):
+    inline def getWebAcl(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetWebAclArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.wafregional.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetWebAclArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getWebAcl(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getWebAcl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.wafregional.WebAcl` Retrieves a WAF Regional Web ACL Resource ID. */
-    inline def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAclPlain(args: Endofunction[com.pulumi.aws.wafregional.inputs.GetWebAclPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.wafregional.outputs.GetWebAclResult] =
       val argsBuilder = com.pulumi.aws.wafregional.inputs.GetWebAclPlainArgs.builder
-      com.pulumi.aws.wafregional.WafregionalFunctions.getWebAclPlain(args(argsBuilder).build)
+      com.pulumi.aws.wafregional.WafregionalFunctions.getWebAclPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a WAF Regional Web ACL Resource for use with Application Load Balancer. */
   def WebAcl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

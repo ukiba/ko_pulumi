@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object waf:
@@ -30,13 +32,17 @@ object waf:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Web Application Firewall Policy. */
-    inline def getFirewallPolicy(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicy(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.waf.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.waf.inputs.GetFirewallPolicyArgs.builder
-      com.pulumi.azure.waf.WafFunctions.getFirewallPolicy(args(argsBuilder).build)
+      com.pulumi.azure.waf.WafFunctions.getFirewallPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Web Application Firewall Policy. */
-    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.waf.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.waf.inputs.GetFirewallPolicyPlainArgs.builder
-      com.pulumi.azure.waf.WafFunctions.getFirewallPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.waf.WafFunctions.getFirewallPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

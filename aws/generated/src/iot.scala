@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object iot:
@@ -109,28 +111,36 @@ object iot:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Returns a unique endpoint specific to the AWS account making the call. */
-    inline def getEndpoint(args: Endofunction[com.pulumi.aws.iot.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getEndpoint(args: Endofunction[com.pulumi.aws.iot.inputs.GetEndpointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.iot.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.iot.inputs.GetEndpointArgs.builder
-      com.pulumi.aws.iot.IotFunctions.getEndpoint(args(argsBuilder).build)
+      com.pulumi.aws.iot.IotFunctions.getEndpoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Returns a unique endpoint specific to the AWS account making the call. */
-    inline def getEndpointPlain(args: Endofunction[com.pulumi.aws.iot.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointPlain(args: Endofunction[com.pulumi.aws.iot.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iot.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.aws.iot.inputs.GetEndpointPlainArgs.builder
-      com.pulumi.aws.iot.IotFunctions.getEndpointPlain(args(argsBuilder).build)
+      com.pulumi.aws.iot.IotFunctions.getEndpointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Gets a registration code used to register a CA certificate with AWS IoT. */
-    inline def getRegistrationCode(args: Endofunction[com.pulumi.aws.iot.inputs.GetRegistrationCodeArgs.Builder] = scala.Predef.identity):
+    inline def getRegistrationCode(args: Endofunction[com.pulumi.aws.iot.inputs.GetRegistrationCodeArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.iot.outputs.GetRegistrationCodeResult] =
       val argsBuilder = com.pulumi.aws.iot.inputs.GetRegistrationCodeArgs.builder
-      com.pulumi.aws.iot.IotFunctions.getRegistrationCode(args(argsBuilder).build)
+      com.pulumi.aws.iot.IotFunctions.getRegistrationCode(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Gets a registration code used to register a CA certificate with AWS IoT. */
-    inline def getRegistrationCodePlain(args: Endofunction[com.pulumi.aws.iot.inputs.GetRegistrationCodePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistrationCodePlain(args: Endofunction[com.pulumi.aws.iot.inputs.GetRegistrationCodePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iot.outputs.GetRegistrationCodeResult] =
       val argsBuilder = com.pulumi.aws.iot.inputs.GetRegistrationCodePlainArgs.builder
-      com.pulumi.aws.iot.IotFunctions.getRegistrationCodePlain(args(argsBuilder).build)
+      com.pulumi.aws.iot.IotFunctions.getRegistrationCodePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage [default logging options](https://docs.aws.amazon.com/iot/latest/developerguide/configure-logging.html#configure-logging-console). */
   def LoggingOptions(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

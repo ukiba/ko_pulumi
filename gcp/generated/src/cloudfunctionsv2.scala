@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudfunctionsv2:
@@ -16,32 +18,40 @@ object cloudfunctionsv2:
      * 
      * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions).
      */
-    inline def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
+    inline def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.builder
-      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunction(args(argsBuilder).build)
+      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunction(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about a Google Cloud Function (2nd gen). For more information see:
      * 
      * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions).
      */
-    inline def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.builder
-      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for function */
-    inline def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.builder
-      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for function */
-    inline def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.builder
-      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A Cloud Function that contains user computation executed in response to an event.

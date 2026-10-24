@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object hdinsight:
@@ -48,16 +50,20 @@ object hdinsight:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing HDInsight Cluster. */
-    inline def getCluster(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.hdinsight.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.GetClusterArgs.builder
-      com.pulumi.azure.hdinsight.HdinsightFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.azure.hdinsight.HdinsightFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing HDInsight Cluster. */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.hdinsight.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.hdinsight.inputs.GetClusterPlainArgs.builder
-      com.pulumi.azure.hdinsight.HdinsightFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.azure.hdinsight.HdinsightFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a HDInsight Interactive Query Cluster. */
   def InteractiveQueryCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

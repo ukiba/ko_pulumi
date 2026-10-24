@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudbuild:
@@ -34,10 +36,12 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = scala.Predef.identity):
+    inline def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.builder
-      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTrigger(args(argsBuilder).build)
+      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTrigger(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * To get more information about Cloudbuild Trigger, see:
@@ -46,10 +50,12 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.builder
-      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTriggerPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTriggerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * To get more information about Cloudbuild worker pool, see:
@@ -58,10 +64,12 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuild.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.builder
-      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPool(args(argsBuilder).build)
+      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * To get more information about Cloudbuild worker pool, see:
@@ -70,10 +78,12 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuild.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.builder
-      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPoolPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Configuration for an automated build in response to source repository changes.

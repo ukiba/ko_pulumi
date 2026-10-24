@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object memorystore:
@@ -77,25 +79,33 @@ object memorystore:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get information about a Google Cloud Memorystore ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/valkey) or the [API documentation](https://cloud.google.com/memorystore/docs/valkey/reference/rest). */
-    inline def getAclPolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetAclPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAclPolicy(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetAclPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.memorystore.outputs.GetAclPolicyResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetAclPolicyArgs.builder
-      com.pulumi.gcp.memorystore.MemorystoreFunctions.getAclPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.memorystore.MemorystoreFunctions.getAclPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Google Cloud Memorystore ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/valkey) or the [API documentation](https://cloud.google.com/memorystore/docs/valkey/reference/rest). */
-    inline def getAclPolicyPlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetAclPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAclPolicyPlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetAclPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.memorystore.outputs.GetAclPolicyResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetAclPolicyPlainArgs.builder
-      com.pulumi.gcp.memorystore.MemorystoreFunctions.getAclPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.memorystore.MemorystoreFunctions.getAclPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/valkey/reference/rest/v1/projects.locations.instances). */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.memorystore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/valkey/reference/rest/v1/projects.locations.instances). */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.memorystore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memorystore.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.memorystore.MemorystoreFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

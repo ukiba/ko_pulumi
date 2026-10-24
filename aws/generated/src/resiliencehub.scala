@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object resiliencehub:
@@ -12,40 +14,52 @@ object resiliencehub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for reading an AWS Resilience Hub V2 Policy. */
-    inline def getV2Policy(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2PolicyArgs.Builder] = scala.Predef.identity):
+    inline def getV2Policy(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2PolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resiliencehub.outputs.GetV2PolicyResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2PolicyArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2Policy(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2Policy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for reading an AWS Resilience Hub V2 Policy. */
-    inline def getV2PolicyPlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2PolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2PolicyPlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2PolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resiliencehub.outputs.GetV2PolicyResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2PolicyPlainArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2PolicyPlain(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2PolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for reading an AWS Resilience Hub V2 Service. */
-    inline def getV2Service(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2ServiceArgs.Builder] = scala.Predef.identity):
+    inline def getV2Service(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2ServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resiliencehub.outputs.GetV2ServiceResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2ServiceArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2Service(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2Service(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for reading an AWS Resilience Hub V2 Service. */
-    inline def getV2ServicePlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2ServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2ServicePlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2ServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resiliencehub.outputs.GetV2ServiceResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2ServicePlainArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2ServicePlain(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2ServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for reading an AWS Resilience Hub V2 System. */
-    inline def getV2System(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2SystemArgs.Builder] = scala.Predef.identity):
+    inline def getV2System(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2SystemArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resiliencehub.outputs.GetV2SystemResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2SystemArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2System(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2System(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for reading an AWS Resilience Hub V2 System. */
-    inline def getV2SystemPlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2SystemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2SystemPlain(args: Endofunction[com.pulumi.aws.resiliencehub.inputs.GetV2SystemPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resiliencehub.outputs.GetV2SystemResult] =
       val argsBuilder = com.pulumi.aws.resiliencehub.inputs.GetV2SystemPlainArgs.builder
-      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2SystemPlain(args(argsBuilder).build)
+      com.pulumi.aws.resiliencehub.ResiliencehubFunctions.getV2SystemPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS Resilience Hub Resiliency Policy. */
   def ResiliencyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

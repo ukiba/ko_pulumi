@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object runtimeconfig:
@@ -979,10 +981,12 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getConfig(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.Builder] = scala.Predef.identity):
+    inline def getConfig(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfig(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * To get more information about RuntimeConfigs, see:
@@ -994,30 +998,36 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for config
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getConfigIamPolicy(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getConfigIamPolicy(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for config
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * To get more information about RuntimeConfigs, see:
@@ -1029,10 +1039,12 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getVariable(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.Builder] = scala.Predef.identity):
+    inline def getVariable(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetVariableResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariable(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariable(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * To get more information about RuntimeConfigs, see:
@@ -1044,10 +1056,12 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getVariablePlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVariablePlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetVariableResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.builder
-      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariablePlain(args(argsBuilder).build)
+      com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariablePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a RuntimeConfig variable in Google Cloud. For more information, see the

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object dataprotection:
@@ -210,16 +212,20 @@ object dataprotection:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Backup Vault. */
-    inline def getBackupVault(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVault(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dataprotection.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.dataprotection.inputs.GetBackupVaultArgs.builder
-      com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVault(args(argsBuilder).build)
+      com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVault(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Backup Vault. */
-    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dataprotection.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.dataprotection.inputs.GetBackupVaultPlainArgs.builder
-      com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVaultPlain(args(argsBuilder).build)
+      com.pulumi.azure.dataprotection.DataprotectionFunctions.getBackupVaultPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Resource Guard. */
   def ResourceGuard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

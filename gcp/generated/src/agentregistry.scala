@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object agentregistry:
@@ -12,40 +14,52 @@ object agentregistry:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get information about an Agent Registry Agent. */
-    inline def getAgent(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetAgentArgs.Builder] = scala.Predef.identity):
+    inline def getAgent(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetAgentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.agentregistry.outputs.GetAgentResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetAgentArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getAgent(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getAgent(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about an Agent Registry Agent. */
-    inline def getAgentPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetAgentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAgentPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetAgentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.agentregistry.outputs.GetAgentResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetAgentPlainArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getAgentPlain(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getAgentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about an Agent Registry Endpoint. */
-    inline def getEndpoint(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getEndpoint(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetEndpointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.agentregistry.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetEndpointArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getEndpoint(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getEndpoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about an Agent Registry Endpoint. */
-    inline def getEndpointPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetEndpointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.agentregistry.outputs.GetEndpointResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetEndpointPlainArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getEndpointPlain(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getEndpointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about an Agent Registry MCP Server. */
-    inline def getMcpServer(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetMcpServerArgs.Builder] = scala.Predef.identity):
+    inline def getMcpServer(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetMcpServerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.agentregistry.outputs.GetMcpServerResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetMcpServerArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getMcpServer(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getMcpServer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about an Agent Registry MCP Server. */
-    inline def getMcpServerPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetMcpServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMcpServerPlain(args: Endofunction[com.pulumi.gcp.agentregistry.inputs.GetMcpServerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.agentregistry.outputs.GetMcpServerResult] =
       val argsBuilder = com.pulumi.gcp.agentregistry.inputs.GetMcpServerPlainArgs.builder
-      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getMcpServerPlain(args(argsBuilder).build)
+      com.pulumi.gcp.agentregistry.AgentregistryFunctions.getMcpServerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Represents a user-defined Binding. */
   def Binding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

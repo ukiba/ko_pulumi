@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object pim:
@@ -28,28 +30,36 @@ object pim:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about existing Role Assignments. */
-    inline def getRoleAssignments(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.Builder] = scala.Predef.identity):
+    inline def getRoleAssignments(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.pim.outputs.GetRoleAssignmentsResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleAssignmentsArgs.builder
-      com.pulumi.azure.pim.PimFunctions.getRoleAssignments(args(argsBuilder).build)
+      com.pulumi.azure.pim.PimFunctions.getRoleAssignments(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing Role Assignments. */
-    inline def getRoleAssignmentsPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleAssignmentsPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.pim.outputs.GetRoleAssignmentsResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleAssignmentsPlainArgs.builder
-      com.pulumi.azure.pim.PimFunctions.getRoleAssignmentsPlain(args(argsBuilder).build)
+      com.pulumi.azure.pim.PimFunctions.getRoleAssignmentsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
-    inline def getRoleManagementPolicy(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRoleManagementPolicy(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.pim.outputs.GetRoleManagementPolicyResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleManagementPolicyArgs.builder
-      com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicy(args(argsBuilder).build)
+      com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
-    inline def getRoleManagementPolicyPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleManagementPolicyPlain(args: Endofunction[com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.pim.outputs.GetRoleManagementPolicyResult] =
       val argsBuilder = com.pulumi.azure.pim.inputs.GetRoleManagementPolicyPlainArgs.builder
-      com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.pim.PimFunctions.getRoleManagementPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manage a role policy for an Azure Management Group, Subscription, Resource Group or resource. */
   def RoleManagementPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

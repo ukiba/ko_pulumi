@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object postgresql:
@@ -174,36 +176,44 @@ object postgresql:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing PostgreSQL Flexible Server. */
-    inline def getFlexibleServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.Builder] = scala.Predef.identity):
+    inline def getFlexibleServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.postgresql.outputs.GetFlexibleServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetFlexibleServerArgs.builder
-      com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServer(args(argsBuilder).build)
+      com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing PostgreSQL Flexible Server. */
-    inline def getFlexibleServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlexibleServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.postgresql.outputs.GetFlexibleServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetFlexibleServerPlainArgs.builder
-      com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServerPlain(args(argsBuilder).build)
+      com.pulumi.azure.postgresql.PostgresqlFunctions.getFlexibleServerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing PostgreSQL Azure Database Server.
      * 
      * &gt; **Note:** The `azure.postgresql.Server` data source is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServer` data source instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
      */
-    inline def getServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerArgs.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.postgresql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetServerArgs.builder
-      com.pulumi.azure.postgresql.PostgresqlFunctions.getServer(args(argsBuilder).build)
+      com.pulumi.azure.postgresql.PostgresqlFunctions.getServer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing PostgreSQL Azure Database Server.
      * 
      * &gt; **Note:** The `azure.postgresql.Server` data source is deprecated and will be removed in v5.0 of the AzureRM Provider. Azure Database for PostgreSQL Single Server and its sub resources have been retired as of 2025-03-28, please use the `azure.postgresql.FlexibleServer` data source instead. For more information, see https://techcommunity.microsoft.com/blog/adforpostgresql/retiring-azure-database-for-postgresql-single-server-in-2025/3783783.
      */
-    inline def getServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.postgresql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.postgresql.inputs.GetServerPlainArgs.builder
-      com.pulumi.azure.postgresql.PostgresqlFunctions.getServerPlain(args(argsBuilder).build)
+      com.pulumi.azure.postgresql.PostgresqlFunctions.getServerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a PostgreSQL Server.

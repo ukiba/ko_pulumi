@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object container:
@@ -137,64 +139,84 @@ object container:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides access to available platform versions in a location for a given project. */
-    inline def getAttachedInstallManifest(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedInstallManifestArgs.Builder] = scala.Predef.identity):
+    inline def getAttachedInstallManifest(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedInstallManifestArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetAttachedInstallManifestResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAttachedInstallManifestArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAttachedInstallManifest(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAttachedInstallManifest(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides access to available platform versions in a location for a given project. */
-    inline def getAttachedInstallManifestPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedInstallManifestPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAttachedInstallManifestPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedInstallManifestPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetAttachedInstallManifestResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAttachedInstallManifestPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAttachedInstallManifestPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAttachedInstallManifestPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides access to available platform versions in a location for a given project. */
-    inline def getAttachedVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getAttachedVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetAttachedVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAttachedVersionsArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAttachedVersions(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAttachedVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides access to available platform versions in a location for a given project. */
-    inline def getAttachedVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAttachedVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAttachedVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetAttachedVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAttachedVersionsPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAttachedVersionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAttachedVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides access to available Kubernetes versions in a location for a given project. */
-    inline def getAwsVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAwsVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getAwsVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAwsVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetAwsVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAwsVersionsArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAwsVersions(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAwsVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides access to available Kubernetes versions in a location for a given project. */
-    inline def getAwsVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAwsVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAwsVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAwsVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetAwsVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAwsVersionsPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAwsVersionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAwsVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides access to available Kubernetes versions in a location for a given project. */
-    inline def getAzureVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAzureVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getAzureVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetAzureVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetAzureVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAzureVersionsArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAzureVersions(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAzureVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides access to available Kubernetes versions in a location for a given project. */
-    inline def getAzureVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAzureVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAzureVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetAzureVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetAzureVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetAzureVersionsPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getAzureVersionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getAzureVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get info about a GKE cluster from its name and location. */
-    inline def getCluster(args: Endofunction[com.pulumi.gcp.container.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.gcp.container.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetClusterArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get info about a GKE cluster from its name and location. */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetClusterPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides access to available Google Kubernetes Engine versions in a zone or region for a given project.
@@ -208,10 +230,12 @@ object container:
      * its component zones, and not all zones in a region are guaranteed to
      * support the same version.
      */
-    inline def getEngineVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetEngineVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersions(args: Endofunction[com.pulumi.gcp.container.inputs.GetEngineVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetEngineVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetEngineVersionsArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getEngineVersions(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getEngineVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides access to available Google Kubernetes Engine versions in a zone or region for a given project.
@@ -225,10 +249,12 @@ object container:
      * its component zones, and not all zones in a region are guaranteed to
      * support the same version.
      */
-    inline def getEngineVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetEngineVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersionsPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetEngineVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetEngineVersionsResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetEngineVersionsPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getEngineVersionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getEngineVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * &gt; **Warning**: Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. Resource will be removed in future major release.
@@ -237,10 +263,12 @@ object container:
      * 
      * The URLs are computed entirely offline - as long as the project exists, they will be valid, but this data source does not contact Google Container Registry (GCR) at any point.
      */
-    inline def getRegistryImage(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryImageArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryImage(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryImageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetRegistryImageResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetRegistryImageArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getRegistryImage(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getRegistryImage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **Warning**: Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. Resource will be removed in future major release.
@@ -249,10 +277,12 @@ object container:
      * 
      * The URLs are computed entirely offline - as long as the project exists, they will be valid, but this data source does not contact Google Container Registry (GCR) at any point.
      */
-    inline def getRegistryImagePlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryImagePlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryImagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetRegistryImageResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetRegistryImagePlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getRegistryImagePlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getRegistryImagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * &gt; **Warning**: Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. Resource will be removed in future major release.
@@ -261,10 +291,12 @@ object container:
      * 
      * The URLs are computed entirely offline - as long as the project exists, they will be valid, but this data source does not contact Google Container Registry (GCR) at any point.
      */
-    inline def getRegistryRepository(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryRepositoryArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryRepository(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryRepositoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.container.outputs.GetRegistryRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetRegistryRepositoryArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getRegistryRepository(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getRegistryRepository(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **Warning**: Container Registry is deprecated. Effective March 18, 2025, Container Registry is shut down and writing images to Container Registry is unavailable. Resource will be removed in future major release.
@@ -273,10 +305,12 @@ object container:
      * 
      * The URLs are computed entirely offline - as long as the project exists, they will be valid, but this data source does not contact Google Container Registry (GCR) at any point.
      */
-    inline def getRegistryRepositoryPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryRepositoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryRepositoryPlain(args: Endofunction[com.pulumi.gcp.container.inputs.GetRegistryRepositoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.container.outputs.GetRegistryRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.container.inputs.GetRegistryRepositoryPlainArgs.builder
-      com.pulumi.gcp.container.ContainerFunctions.getRegistryRepositoryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.container.ContainerFunctions.getRegistryRepositoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a node pool in a Google Kubernetes Engine (GKE) cluster separately from

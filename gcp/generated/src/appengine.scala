@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object appengine:
@@ -12,16 +14,20 @@ object appengine:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.builder
-      com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccount(args(argsBuilder).build)
+      com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.builder
-      com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build)
+      com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Allows creation and management of an App Engine application.

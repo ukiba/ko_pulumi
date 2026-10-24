@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object logicapps:
@@ -140,40 +142,52 @@ object logicapps:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Logic App Integration Account. */
-    inline def getIntegrationAccount(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetIntegrationAccountArgs.Builder] = scala.Predef.identity):
+    inline def getIntegrationAccount(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetIntegrationAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.logicapps.outputs.GetIntegrationAccountResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetIntegrationAccountArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getIntegrationAccount(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getIntegrationAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Logic App Integration Account. */
-    inline def getIntegrationAccountPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetIntegrationAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIntegrationAccountPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetIntegrationAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.logicapps.outputs.GetIntegrationAccountResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetIntegrationAccountPlainArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getIntegrationAccountPlain(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getIntegrationAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Logic App Standard instance. */
-    inline def getStandard(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetStandardArgs.Builder] = scala.Predef.identity):
+    inline def getStandard(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetStandardArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.logicapps.outputs.GetStandardResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetStandardArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getStandard(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getStandard(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Logic App Standard instance. */
-    inline def getStandardPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetStandardPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStandardPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetStandardPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.logicapps.outputs.GetStandardResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetStandardPlainArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getStandardPlain(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getStandardPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Logic App Workflow. */
-    inline def getWorkflow(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetWorkflowArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflow(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetWorkflowArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.logicapps.outputs.GetWorkflowResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetWorkflowArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getWorkflow(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getWorkflow(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Logic App Workflow. */
-    inline def getWorkflowPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetWorkflowPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflowPlain(args: Endofunction[com.pulumi.azure.logicapps.inputs.GetWorkflowPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.logicapps.outputs.GetWorkflowResult] =
       val argsBuilder = com.pulumi.azure.logicapps.inputs.GetWorkflowPlainArgs.builder
-      com.pulumi.azure.logicapps.LogicappsFunctions.getWorkflowPlain(args(argsBuilder).build)
+      com.pulumi.azure.logicapps.LogicappsFunctions.getWorkflowPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Logic App (Standard / Single Tenant) */
   def Standard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

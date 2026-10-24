@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object amp:
@@ -20,40 +22,52 @@ object amp:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Returns the default scraper configuration used when Amazon EKS creates a scraper for you. */
-    inline def getDefaultScraperConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultScraperConfiguration(args: Endofunction[com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.amp.outputs.GetDefaultScraperConfigurationResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getDefaultScraperConfiguration(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getDefaultScraperConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Returns the default scraper configuration used when Amazon EKS creates a scraper for you. */
-    inline def getDefaultScraperConfigurationPlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultScraperConfigurationPlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.amp.outputs.GetDefaultScraperConfigurationResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetDefaultScraperConfigurationPlainArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getDefaultScraperConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getDefaultScraperConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides an Amazon Managed Prometheus workspace data source. */
-    inline def getWorkspace(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.amp.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetWorkspaceArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getWorkspace(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getWorkspace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides an Amazon Managed Prometheus workspace data source. */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.amp.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetWorkspacePlainArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getWorkspacePlain(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getWorkspacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides the aliases, ARNs, and workspace IDs of Amazon Prometheus workspaces. */
-    inline def getWorkspaces(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacesArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspaces(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.amp.outputs.GetWorkspacesResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetWorkspacesArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getWorkspaces(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getWorkspaces(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides the aliases, ARNs, and workspace IDs of Amazon Prometheus workspaces. */
-    inline def getWorkspacesPlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacesPlain(args: Endofunction[com.pulumi.aws.amp.inputs.GetWorkspacesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.amp.outputs.GetWorkspacesResult] =
       val argsBuilder = com.pulumi.aws.amp.inputs.GetWorkspacesPlainArgs.builder
-      com.pulumi.aws.amp.AmpFunctions.getWorkspacesPlain(args(argsBuilder).build)
+      com.pulumi.aws.amp.AmpFunctions.getWorkspacesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS AMP (Managed Prometheus) Anomaly Detector. */
   def AnomalyDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

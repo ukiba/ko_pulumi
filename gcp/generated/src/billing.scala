@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object billing:
@@ -800,10 +802,12 @@ object billing:
      * }
      * </pre>
      */
-    inline def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.builder
-      com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Billing Account.
@@ -841,10 +845,12 @@ object billing:
      * }
      * </pre>
      */
-    inline def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.builder
-      com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Budget configuration for a billing account.

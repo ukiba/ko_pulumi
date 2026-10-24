@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object dataplex:
@@ -2938,40 +2940,52 @@ object dataplex:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for aspecttype */
-    inline def getAspectTypeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAspectTypeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetAspectTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getAspectTypeIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getAspectTypeIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for aspecttype */
-    inline def getAspectTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAspectTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetAspectTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetAspectTypeIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getAspectTypeIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getAspectTypeIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for asset */
-    inline def getAssetIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAssetIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetAssetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getAssetIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getAssetIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for asset */
-    inline def getAssetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAssetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetAssetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetAssetIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getAssetIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getAssetIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for dataproduct */
-    inline def getDataProductIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDataProductIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetDataProductIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for dataproduct */
-    inline def getDataProductIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataProductIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetDataProductIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataProductIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataProductIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the generated data quality rules for the creating a new data quality scan.
@@ -3014,10 +3028,12 @@ object dataplex:
      * }
      * </pre>
      */
-    inline def getDataQualityRules(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesArgs.Builder] = scala.Predef.identity):
+    inline def getDataQualityRules(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetDataQualityRulesResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDataQualityRules(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataQualityRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the generated data quality rules for the creating a new data quality scan.
@@ -3060,94 +3076,124 @@ object dataplex:
      * }
      * </pre>
      */
-    inline def getDataQualityRulesPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataQualityRulesPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetDataQualityRulesResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDataQualityRulesPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDataQualityRulesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDataQualityRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for datascan */
-    inline def getDatascanIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDatascanIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetDatascanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDatascanIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDatascanIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for datascan */
-    inline def getDatascanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatascanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetDatascanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetDatascanIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getDatascanIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getDatascanIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for entrygroup */
-    inline def getEntryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEntryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetEntryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryGroupIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryGroupIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for entrygroup */
-    inline def getEntryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetEntryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetEntryGroupIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryGroupIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryGroupIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for entrytype */
-    inline def getEntryTypeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEntryTypeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetEntryTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryTypeIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryTypeIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for entrytype */
-    inline def getEntryTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntryTypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetEntryTypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetEntryTypeIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryTypeIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getEntryTypeIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for glossary */
-    inline def getGlossaryIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getGlossaryIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetGlossaryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getGlossaryIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getGlossaryIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for glossary */
-    inline def getGlossaryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGlossaryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetGlossaryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetGlossaryIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getGlossaryIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getGlossaryIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for lake */
-    inline def getLakeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getLakeIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetLakeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getLakeIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getLakeIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for lake */
-    inline def getLakeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLakeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetLakeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetLakeIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getLakeIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getLakeIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for task */
-    inline def getTaskIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTaskIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetTaskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getTaskIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getTaskIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for task */
-    inline def getTaskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTaskIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetTaskIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetTaskIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getTaskIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getTaskIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for zone */
-    inline def getZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataplex.outputs.GetZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getZoneIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getZoneIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for zone */
-    inline def getZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataplex.outputs.GetZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataplex.inputs.GetZoneIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataplex.DataplexFunctions.getZoneIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataplex.DataplexFunctions.getZoneIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Represents a user-visible job which provides the insights for the related data source.

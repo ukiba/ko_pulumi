@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object costexplorer:
@@ -78,25 +80,33 @@ object costexplorer:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about a specific CostExplorer Cost Category. */
-    inline def getCostCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetCostCategoryArgs.Builder] = scala.Predef.identity):
+    inline def getCostCategory(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetCostCategoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.costexplorer.outputs.GetCostCategoryResult] =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetCostCategoryArgs.builder
-      com.pulumi.aws.costexplorer.CostexplorerFunctions.getCostCategory(args(argsBuilder).build)
+      com.pulumi.aws.costexplorer.CostexplorerFunctions.getCostCategory(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific CostExplorer Cost Category. */
-    inline def getCostCategoryPlain(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetCostCategoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCostCategoryPlain(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetCostCategoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.costexplorer.outputs.GetCostCategoryResult] =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetCostCategoryPlainArgs.builder
-      com.pulumi.aws.costexplorer.CostexplorerFunctions.getCostCategoryPlain(args(argsBuilder).build)
+      com.pulumi.aws.costexplorer.CostexplorerFunctions.getCostCategoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides the available cost allocation tag keys and tag values for a specified period. */
-    inline def getTags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsArgs.Builder] = scala.Predef.identity):
+    inline def getTags(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.costexplorer.outputs.GetTagsResult] =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsArgs.builder
-      com.pulumi.aws.costexplorer.CostexplorerFunctions.getTags(args(argsBuilder).build)
+      com.pulumi.aws.costexplorer.CostexplorerFunctions.getTags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides the available cost allocation tag keys and tag values for a specified period. */
-    inline def getTagsPlain(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTagsPlain(args: Endofunction[com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.costexplorer.outputs.GetTagsResult] =
       val argsBuilder = com.pulumi.aws.costexplorer.inputs.GetTagsPlainArgs.builder
-      com.pulumi.aws.costexplorer.CostexplorerFunctions.getTagsPlain(args(argsBuilder).build)
+      com.pulumi.aws.costexplorer.CostexplorerFunctions.getTagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

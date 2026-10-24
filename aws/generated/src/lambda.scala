@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object lambda:
@@ -186,80 +188,100 @@ object lambda:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about an AWS Lambda Alias. Use this data source to retrieve information about an existing Lambda function alias for traffic management, deployment strategies, or API integrations. */
-    inline def getAlias(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasArgs.Builder] = scala.Predef.identity):
+    inline def getAlias(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetAliasArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getAlias(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getAlias(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS Lambda Alias. Use this data source to retrieve information about an existing Lambda function alias for traffic management, deployment strategies, or API integrations. */
-    inline def getAliasPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAliasPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetAliasPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getAliasPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getAliasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides details about an AWS Lambda Code Signing Config. Use this data source to retrieve information about an existing code signing configuration for Lambda functions to ensure code integrity and authenticity.
      * 
      * For information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html).
      */
-    inline def getCodeSigningConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.Builder] = scala.Predef.identity):
+    inline def getCodeSigningConfig(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetCodeSigningConfigResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetCodeSigningConfigArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfig(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides details about an AWS Lambda Code Signing Config. Use this data source to retrieve information about an existing code signing configuration for Lambda functions to ensure code integrity and authenticity.
      * 
      * For information about Lambda code signing configurations and how to use them, see [configuring code signing for Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html).
      */
-    inline def getCodeSigningConfigPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCodeSigningConfigPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetCodeSigningConfigResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetCodeSigningConfigPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfigPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getCodeSigningConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides details about an AWS Lambda Function. Use this data source to obtain information about an existing Lambda function for use in other resources or as a reference for function configurations.
      * 
      * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `\$LATEST` if no published version exists.
      */
-    inline def getFunction(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
+    inline def getFunction(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunction(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunction(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides details about an AWS Lambda Function. Use this data source to obtain information about an existing Lambda function for use in other resources or as a reference for function configurations.
      * 
      * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `\$LATEST` if no published version exists.
      */
-    inline def getFunctionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunctionPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunctionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about an AWS Lambda Function URL. Use this data source to retrieve information about an existing function URL configuration. */
-    inline def getFunctionUrl(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionUrl(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionUrlResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionUrlArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrl(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS Lambda Function URL. Use this data source to retrieve information about an existing function URL configuration. */
-    inline def getFunctionUrlPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionUrlPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionUrlResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionUrlPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrlPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunctionUrlPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides a list of AWS Lambda Functions in the current region. Use this data source to discover existing Lambda functions for inventory, monitoring, or bulk operations. */
-    inline def getFunctions(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsArgs.Builder] = scala.Predef.identity):
+    inline def getFunctions(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionsResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionsArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunctions(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunctions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides a list of AWS Lambda Functions in the current region. Use this data source to discover existing Lambda functions for inventory, monitoring, or bulk operations. */
-    inline def getFunctionsPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionsPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionsResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetFunctionsPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getFunctionsPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getFunctionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Invokes an AWS Lambda Function and returns its results. Use this data source to execute Lambda functions during Pulumi operations and use their results in other resources or outputs.
@@ -270,10 +292,12 @@ object lambda:
      * 
      * &gt; **Note:** If you get a `KMSAccessDeniedException: Lambda was unable to decrypt the environment variables because KMS access was denied` error when invoking a Lambda function with environment variables, the IAM role associated with the function may have been deleted and recreated after the function was created. You can fix the problem two ways: 1) updating the function&#39;s role to another role and then updating it back again to the recreated role. (When you create a function, Lambda grants permissions on the KMS key to the function&#39;s IAM role. If the IAM role is recreated, the grant is no longer valid. Changing the function&#39;s role or recreating the function causes Lambda to update the grant.)
      */
-    inline def getInvocation(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationArgs.Builder] = scala.Predef.identity):
+    inline def getInvocation(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetInvocationResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetInvocationArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getInvocation(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getInvocation(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Invokes an AWS Lambda Function and returns its results. Use this data source to execute Lambda functions during Pulumi operations and use their results in other resources or outputs.
@@ -284,22 +308,28 @@ object lambda:
      * 
      * &gt; **Note:** If you get a `KMSAccessDeniedException: Lambda was unable to decrypt the environment variables because KMS access was denied` error when invoking a Lambda function with environment variables, the IAM role associated with the function may have been deleted and recreated after the function was created. You can fix the problem two ways: 1) updating the function&#39;s role to another role and then updating it back again to the recreated role. (When you create a function, Lambda grants permissions on the KMS key to the function&#39;s IAM role. If the IAM role is recreated, the grant is no longer valid. Changing the function&#39;s role or recreating the function causes Lambda to update the grant.)
      */
-    inline def getInvocationPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInvocationPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetInvocationResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetInvocationPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getInvocationPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getInvocationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about an AWS Lambda Layer Version. Use this data source to retrieve information about a specific layer version or find the latest version compatible with your runtime and architecture requirements. */
-    inline def getLayerVersion(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.Builder] = scala.Predef.identity):
+    inline def getLayerVersion(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetLayerVersionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetLayerVersionArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getLayerVersion(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getLayerVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS Lambda Layer Version. Use this data source to retrieve information about a specific layer version or find the latest version compatible with your runtime and architecture requirements. */
-    inline def getLayerVersionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLayerVersionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetLayerVersionResult] =
       val argsBuilder = com.pulumi.aws.lambda.inputs.GetLayerVersionPlainArgs.builder
-      com.pulumi.aws.lambda.LambdaFunctions.getLayerVersionPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambda.LambdaFunctions.getLayerVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an AWS Lambda Layer Version. Use this resource to share code and dependencies across multiple Lambda functions.

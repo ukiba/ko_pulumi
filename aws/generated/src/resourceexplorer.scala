@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object resourceexplorer:
@@ -27,16 +29,20 @@ object resourceexplorer:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    inline def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity):
+    inline def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchArgs.builder
-      com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.search(args(argsBuilder).build)
+      com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.search(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    inline def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity):
+    inline def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.builder
-      com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.searchPlain(args(argsBuilder).build)
+      com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.searchPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage a Resource Explorer view. */
   def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

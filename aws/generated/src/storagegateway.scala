@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object storagegateway:
@@ -113,16 +115,20 @@ object storagegateway:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information about a Storage Gateway local disk. The disk identifier is useful for adding the disk as a cache or upload buffer to a gateway. */
-    inline def getLocalDisk(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.Builder] = scala.Predef.identity):
+    inline def getLocalDisk(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.storagegateway.outputs.GetLocalDiskResult] =
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GetLocalDiskArgs.builder
-      com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDisk(args(argsBuilder).build)
+      com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDisk(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a Storage Gateway local disk. The disk identifier is useful for adding the disk as a cache or upload buffer to a gateway. */
-    inline def getLocalDiskPlain(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalDiskPlain(args: Endofunction[com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.storagegateway.outputs.GetLocalDiskResult] =
       val argsBuilder = com.pulumi.aws.storagegateway.inputs.GetLocalDiskPlainArgs.builder
-      com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDiskPlain(args(argsBuilder).build)
+      com.pulumi.aws.storagegateway.StoragegatewayFunctions.getLocalDiskPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an AWS Storage Gateway stored iSCSI volume.

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object pubsub:
@@ -76,36 +78,44 @@ object pubsub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for schema */
-    inline def getSchemaIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSchemaIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for schema */
-    inline def getSchemaIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSchemaIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information about a Google Cloud Pub/Sub Subscription. For more information see
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getSubscription(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscription(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscription(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about a Google Cloud Pub/Sub Subscription. For more information see
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionPlain(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Pubsub subscription.
@@ -143,10 +153,12 @@ object pubsub:
      * }
      * </pre>
      */
-    inline def getSubscriptionIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSubscriptionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Pubsub subscription.
@@ -184,42 +196,52 @@ object pubsub:
      * }
      * </pre>
      */
-    inline def getSubscriptionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSubscriptionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information about a Google Cloud Pub/Sub Topic. For more information see
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getTopic(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getTopic(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getTopic(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about a Google Cloud Pub/Sub Topic. For more information see
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicPlain(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for topic */
-    inline def getTopicIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTopicIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetTopicIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for topic */
-    inline def getTopicIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetTopicIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.builder
-      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A schema is a format that messages must follow,

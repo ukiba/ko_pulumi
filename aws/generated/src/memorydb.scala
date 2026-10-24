@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object memorydb:
@@ -56,76 +58,100 @@ object memorydb:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides information about a MemoryDB ACL. */
-    inline def getAcl(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetAclArgs.Builder] = scala.Predef.identity):
+    inline def getAcl(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetAclArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetAclResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetAclArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getAcl(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getAcl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB ACL. */
-    inline def getAclPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAclPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetAclPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetAclResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetAclPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getAclPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getAclPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a MemoryDB Cluster. */
-    inline def getCluster(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetClusterArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB Cluster. */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetClusterPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a MemoryDB Parameter Group. */
-    inline def getParameterGroup(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetParameterGroupArgs.Builder] = scala.Predef.identity):
+    inline def getParameterGroup(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetParameterGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetParameterGroupArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getParameterGroup(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getParameterGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB Parameter Group. */
-    inline def getParameterGroupPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetParameterGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getParameterGroupPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetParameterGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetParameterGroupResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetParameterGroupPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getParameterGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getParameterGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a MemoryDB Snapshot. */
-    inline def getSnapshot(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetSnapshotArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getSnapshot(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getSnapshot(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB Snapshot. */
-    inline def getSnapshotPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetSnapshotPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getSnapshotPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getSnapshotPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a MemoryDB Subnet Group. */
-    inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroup(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSubnetGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetSubnetGroupArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getSubnetGroup(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getSubnetGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB Subnet Group. */
-    inline def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetGroupPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetSubnetGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetSubnetGroupResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetSubnetGroupPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getSubnetGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getSubnetGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a MemoryDB User. */
-    inline def getUser(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetUserArgs.Builder] = scala.Predef.identity):
+    inline def getUser(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetUserArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.memorydb.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetUserArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getUser(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getUser(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a MemoryDB User. */
-    inline def getUserPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPlain(args: Endofunction[com.pulumi.aws.memorydb.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.memorydb.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.memorydb.inputs.GetUserPlainArgs.builder
-      com.pulumi.aws.memorydb.MemorydbFunctions.getUserPlain(args(argsBuilder).build)
+      com.pulumi.aws.memorydb.MemorydbFunctions.getUserPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a MemoryDB Multi Region Cluster.

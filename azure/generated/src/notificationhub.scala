@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object notificationhub:
@@ -59,25 +61,33 @@ object notificationhub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    inline def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = scala.Predef.identity):
+    inline def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubArgs.builder
-      com.pulumi.azure.notificationhub.NotificationhubFunctions.getHub(args(argsBuilder).build)
+      com.pulumi.azure.notificationhub.NotificationhubFunctions.getHub(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    inline def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.builder
-      com.pulumi.azure.notificationhub.NotificationhubFunctions.getHubPlain(args(argsBuilder).build)
+      com.pulumi.azure.notificationhub.NotificationhubFunctions.getHubPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    inline def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.builder
-      com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespace(args(argsBuilder).build)
+      com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.builder
-      com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespacePlain(args(argsBuilder).build)
+      com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

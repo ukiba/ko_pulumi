@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object controltower:
@@ -38,16 +40,20 @@ object controltower:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** List of Control Tower controls applied to an OU. */
-    inline def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = scala.Predef.identity):
+    inline def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsArgs.builder
-      com.pulumi.aws.controltower.ControltowerFunctions.getControls(args(argsBuilder).build)
+      com.pulumi.aws.controltower.ControltowerFunctions.getControls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** List of Control Tower controls applied to an OU. */
-    inline def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.builder
-      com.pulumi.aws.controltower.ControltowerFunctions.getControlsPlain(args(argsBuilder).build)
+      com.pulumi.aws.controltower.ControltowerFunctions.getControlsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Creates a new landing zone using Control Tower. For more information on usage, please see the

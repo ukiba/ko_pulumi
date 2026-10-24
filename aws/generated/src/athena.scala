@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object athena:
@@ -12,16 +14,20 @@ object athena:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides an Athena Named Query data source. */
-    inline def getNamedQuery(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryArgs.Builder] = scala.Predef.identity):
+    inline def getNamedQuery(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.athena.outputs.GetNamedQueryResult] =
       val argsBuilder = com.pulumi.aws.athena.inputs.GetNamedQueryArgs.builder
-      com.pulumi.aws.athena.AthenaFunctions.getNamedQuery(args(argsBuilder).build)
+      com.pulumi.aws.athena.AthenaFunctions.getNamedQuery(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides an Athena Named Query data source. */
-    inline def getNamedQueryPlain(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamedQueryPlain(args: Endofunction[com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.athena.outputs.GetNamedQueryResult] =
       val argsBuilder = com.pulumi.aws.athena.inputs.GetNamedQueryPlainArgs.builder
-      com.pulumi.aws.athena.AthenaFunctions.getNamedQueryPlain(args(argsBuilder).build)
+      com.pulumi.aws.athena.AthenaFunctions.getNamedQueryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Resource for managing an AWS Athena Capacity Reservation.

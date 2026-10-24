@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudhsmv2:
@@ -12,16 +14,20 @@ object cloudhsmv2:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about a CloudHSM v2 cluster */
-    inline def getCluster(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cloudhsmv2.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.GetClusterArgs.builder
-      com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getCluster(args(argsBuilder).build)
+      com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a CloudHSM v2 cluster */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cloudhsmv2.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.cloudhsmv2.inputs.GetClusterPlainArgs.builder
-      com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.aws.cloudhsmv2.Cloudhsmv2Functions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Creates an Amazon CloudHSM v2 cluster.

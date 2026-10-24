@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object endpoints:
@@ -174,28 +176,36 @@ object endpoints:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for serviceconsumers */
-    inline def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.builder
-      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for serviceconsumers */
-    inline def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.builder
-      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.builder
-      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** This resource creates and rolls out a Cloud Endpoints service using OpenAPI or gRPC.  View the relevant docs for [OpenAPI](https://cloud.google.com/endpoints/docs/openapi/) and [gRPC](https://cloud.google.com/endpoints/docs/grpc/). */
   def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object batch:
@@ -15,61 +17,77 @@ object batch:
      * The Batch Compute Environment data source allows access to details of a specific
      * compute environment within AWS Batch.
      */
-    inline def getComputeEnvironment(args: Endofunction[com.pulumi.aws.batch.inputs.GetComputeEnvironmentArgs.Builder] = scala.Predef.identity):
+    inline def getComputeEnvironment(args: Endofunction[com.pulumi.aws.batch.inputs.GetComputeEnvironmentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.batch.outputs.GetComputeEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetComputeEnvironmentArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getComputeEnvironment(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getComputeEnvironment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The Batch Compute Environment data source allows access to details of a specific
      * compute environment within AWS Batch.
      */
-    inline def getComputeEnvironmentPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetComputeEnvironmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getComputeEnvironmentPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetComputeEnvironmentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.batch.outputs.GetComputeEnvironmentResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetComputeEnvironmentPlainArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getComputeEnvironmentPlain(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getComputeEnvironmentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Batch Job Definition. */
-    inline def getJobDefinition(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getJobDefinition(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.batch.outputs.GetJobDefinitionResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetJobDefinitionArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getJobDefinition(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getJobDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Batch Job Definition. */
-    inline def getJobDefinitionPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobDefinitionPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.batch.outputs.GetJobDefinitionResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetJobDefinitionPlainArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getJobDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getJobDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The Batch Job Queue data source allows access to details of a specific
      * job queue within AWS Batch.
      */
-    inline def getJobQueue(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobQueueArgs.Builder] = scala.Predef.identity):
+    inline def getJobQueue(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobQueueArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.batch.outputs.GetJobQueueResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetJobQueueArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getJobQueue(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getJobQueue(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The Batch Job Queue data source allows access to details of a specific
      * job queue within AWS Batch.
      */
-    inline def getJobQueuePlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobQueuePlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetJobQueuePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.batch.outputs.GetJobQueueResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetJobQueuePlainArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getJobQueuePlain(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getJobQueuePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** The Batch Scheduling Policy data source allows access to details of a specific Scheduling Policy within AWS Batch. */
-    inline def getSchedulingPolicy(args: Endofunction[com.pulumi.aws.batch.inputs.GetSchedulingPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSchedulingPolicy(args: Endofunction[com.pulumi.aws.batch.inputs.GetSchedulingPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.batch.outputs.GetSchedulingPolicyResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetSchedulingPolicyArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getSchedulingPolicy(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getSchedulingPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** The Batch Scheduling Policy data source allows access to details of a specific Scheduling Policy within AWS Batch. */
-    inline def getSchedulingPolicyPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetSchedulingPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchedulingPolicyPlain(args: Endofunction[com.pulumi.aws.batch.inputs.GetSchedulingPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.batch.outputs.GetSchedulingPolicyResult] =
       val argsBuilder = com.pulumi.aws.batch.inputs.GetSchedulingPolicyPlainArgs.builder
-      com.pulumi.aws.batch.BatchFunctions.getSchedulingPolicyPlain(args(argsBuilder).build)
+      com.pulumi.aws.batch.BatchFunctions.getSchedulingPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Creates a AWS Batch compute environment. Compute environments contain the Amazon ECS container instances that are used to run containerized batch jobs.

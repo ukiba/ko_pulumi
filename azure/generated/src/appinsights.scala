@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object appinsights:
@@ -34,16 +36,20 @@ object appinsights:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Application Insights component. */
-    inline def getInsights(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsArgs.Builder] = scala.Predef.identity):
+    inline def getInsights(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appinsights.outputs.GetInsightsResult] =
       val argsBuilder = com.pulumi.azure.appinsights.inputs.GetInsightsArgs.builder
-      com.pulumi.azure.appinsights.AppinsightsFunctions.getInsights(args(argsBuilder).build)
+      com.pulumi.azure.appinsights.AppinsightsFunctions.getInsights(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Application Insights component. */
-    inline def getInsightsPlain(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInsightsPlain(args: Endofunction[com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appinsights.outputs.GetInsightsResult] =
       val argsBuilder = com.pulumi.azure.appinsights.inputs.GetInsightsPlainArgs.builder
-      com.pulumi.azure.appinsights.AppinsightsFunctions.getInsightsPlain(args(argsBuilder).build)
+      com.pulumi.azure.appinsights.AppinsightsFunctions.getInsightsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Application Insights component. */
   def Insights(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

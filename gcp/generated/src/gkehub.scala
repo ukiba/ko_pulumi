@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object gkehub:
@@ -1003,84 +1005,108 @@ object gkehub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the details of a specific GKE Hub Feature. Use this data source to retrieve the feature&#39;s configuration and state. */
-    inline def getFeature(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.Builder] = scala.Predef.identity):
+    inline def getFeature(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetFeatureResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getFeature(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getFeature(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the details of a specific GKE Hub Feature. Use this data source to retrieve the feature&#39;s configuration and state. */
-    inline def getFeaturePlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.Builder] = scala.Predef.identity):
+    inline def getFeaturePlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetFeatureResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getFeaturePlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getFeaturePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for feature */
-    inline def getFeatureIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFeatureIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetFeatureIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for feature */
-    inline def getFeatureIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFeatureIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetFeatureIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the details of a specific GKE Hub Membership. Use this data source to retrieve the membership&#39;s configuration and state. */
-    inline def getMembership(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.Builder] = scala.Predef.identity):
+    inline def getMembership(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembership(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembership(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the details of a specific GKE Hub Membership. Use this data source to retrieve the membership&#39;s configuration and state. */
-    inline def getMembershipPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMembershipPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the details of a specific GKE Hub Membership Binding. Use this data source to retrieve the membership binding&#39;s configuration and state.
      * 
      * A membership binding associates a GKE Hub membership with a scope, enabling the membership to participate in fleet-wide configurations and policies defined by the scope.
      */
-    inline def getMembershipBinding(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.Builder] = scala.Predef.identity):
+    inline def getMembershipBinding(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipBindingResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBinding(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBinding(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the details of a specific GKE Hub Membership Binding. Use this data source to retrieve the membership binding&#39;s configuration and state.
      * 
      * A membership binding associates a GKE Hub membership with a scope, enabling the membership to participate in fleet-wide configurations and policies defined by the scope.
      */
-    inline def getMembershipBindingPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMembershipBindingPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipBindingResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBindingPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBindingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for membership */
-    inline def getMembershipIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMembershipIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for membership */
-    inline def getMembershipIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMembershipIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for scope */
-    inline def getScopeIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getScopeIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetScopeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for scope */
-    inline def getScopeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getScopeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetScopeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Membership contains information about a member cluster.

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object workstations:
@@ -1992,25 +1994,33 @@ object workstations:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for workstationconfig */
-    inline def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.builder
-      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workstationconfig */
-    inline def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.builder
-      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    inline def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.builder
-      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    inline def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.builder
-      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object quicksight:
@@ -220,80 +222,100 @@ object quicksight:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing a QuickSight Data Set. */
-    inline def getDataSet(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetDataSetArgs.Builder] = scala.Predef.identity):
+    inline def getDataSet(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetDataSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.quicksight.outputs.GetDataSetResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetDataSetArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getDataSet(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getDataSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing a QuickSight Data Set. */
-    inline def getDataSetPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetDataSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataSetPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetDataSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.quicksight.outputs.GetDataSetResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetDataSetPlainArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getDataSetPlain(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getDataSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS QuickSight Analysis. */
-    inline def getQuicksightAnalysis(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightAnalysis(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.quicksight.outputs.GetQuicksightAnalysisResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightAnalysis(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightAnalysis(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS QuickSight Analysis. */
-    inline def getQuicksightAnalysisPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightAnalysisPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.quicksight.outputs.GetQuicksightAnalysisResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightAnalysisPlainArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightAnalysisPlain(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightAnalysisPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * This data source can be used to fetch information about a specific
      * QuickSight group. By using this data source, you can reference QuickSight group
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getQuicksightGroup(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightGroupArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightGroup(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.quicksight.outputs.GetQuicksightGroupResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightGroupArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightGroup(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * This data source can be used to fetch information about a specific
      * QuickSight group. By using this data source, you can reference QuickSight group
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getQuicksightGroupPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightGroupPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.quicksight.outputs.GetQuicksightGroupResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightGroupPlainArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * This data source can be used to fetch information about a specific
      * QuickSight user. By using this data source, you can reference QuickSight user
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getQuicksightUser(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightUserArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightUser(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightUserArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.quicksight.outputs.GetQuicksightUserResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightUserArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightUser(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightUser(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * This data source can be used to fetch information about a specific
      * QuickSight user. By using this data source, you can reference QuickSight user
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getQuicksightUserPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightUserPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQuicksightUserPlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetQuicksightUserPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.quicksight.outputs.GetQuicksightUserResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetQuicksightUserPlainArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightUserPlain(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getQuicksightUserPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS QuickSight Theme. */
-    inline def getTheme(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetThemeArgs.Builder] = scala.Predef.identity):
+    inline def getTheme(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetThemeArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.quicksight.outputs.GetThemeResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetThemeArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getTheme(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getTheme(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS QuickSight Theme. */
-    inline def getThemePlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetThemePlainArgs.Builder] = scala.Predef.identity):
+    inline def getThemePlain(args: Endofunction[com.pulumi.aws.quicksight.inputs.GetThemePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.quicksight.outputs.GetThemeResult] =
       val argsBuilder = com.pulumi.aws.quicksight.inputs.GetThemePlainArgs.builder
-      com.pulumi.aws.quicksight.QuicksightFunctions.getThemePlain(args(argsBuilder).build)
+      com.pulumi.aws.quicksight.QuicksightFunctions.getThemePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing a QuickSight Refresh Schedule. */
   def RefreshSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

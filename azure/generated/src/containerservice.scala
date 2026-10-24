@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object containerservice:
@@ -65,124 +67,164 @@ object containerservice:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Kubernetes Cluster Node Pool. */
-    inline def getClusterNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetClusterNodePoolArgs.Builder] = scala.Predef.identity):
+    inline def getClusterNodePool(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetClusterNodePoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetClusterNodePoolResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetClusterNodePoolArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getClusterNodePool(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getClusterNodePool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Kubernetes Cluster Node Pool. */
-    inline def getClusterNodePoolPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetClusterNodePoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterNodePoolPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetClusterNodePoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetClusterNodePoolResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetClusterNodePoolPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getClusterNodePoolPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getClusterNodePoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Kubernetes Fleet Manager. */
-    inline def getFleetManager(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetFleetManagerArgs.Builder] = scala.Predef.identity):
+    inline def getFleetManager(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetFleetManagerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetFleetManagerResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetFleetManagerArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getFleetManager(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getFleetManager(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Kubernetes Fleet Manager. */
-    inline def getFleetManagerPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetFleetManagerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFleetManagerPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetFleetManagerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetFleetManagerResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetFleetManagerPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getFleetManagerPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getFleetManagerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container Group instance. */
-    inline def getGroup(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetGroupArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getGroup(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container Group instance. */
-    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetGroupPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Managed Kubernetes Cluster (AKS). */
-    inline def getKubernetesCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesClusterArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesCluster(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetKubernetesClusterResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesClusterArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesCluster(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Managed Kubernetes Cluster (AKS). */
-    inline def getKubernetesClusterPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesClusterPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetKubernetesClusterResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesClusterPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesClusterPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Kubernetes Node Pool Snapshot. */
-    inline def getKubernetesNodePoolSnapshot(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesNodePoolSnapshot(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetKubernetesNodePoolSnapshotResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesNodePoolSnapshot(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesNodePoolSnapshot(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Kubernetes Node Pool Snapshot. */
-    inline def getKubernetesNodePoolSnapshotPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesNodePoolSnapshotPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetKubernetesNodePoolSnapshotResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesNodePoolSnapshotPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesNodePoolSnapshotPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesNodePoolSnapshotPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to retrieve the version of Kubernetes supported by Azure Kubernetes Service. */
-    inline def getKubernetesServiceVersions(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesServiceVersions(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetKubernetesServiceVersionsResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesServiceVersions(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesServiceVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to retrieve the version of Kubernetes supported by Azure Kubernetes Service. */
-    inline def getKubernetesServiceVersionsPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKubernetesServiceVersionsPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetKubernetesServiceVersionsResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetKubernetesServiceVersionsPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesServiceVersionsPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getKubernetesServiceVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container Registry. */
-    inline def getRegistry(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryArgs.Builder] = scala.Predef.identity):
+    inline def getRegistry(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistry(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container Registry. */
-    inline def getRegistryPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetRegistryResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container Registry Cache Rule. */
-    inline def getRegistryCacheRule(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryCacheRuleArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryCacheRule(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryCacheRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetRegistryCacheRuleResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryCacheRuleArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryCacheRule(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryCacheRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container Registry Cache Rule. */
-    inline def getRegistryCacheRulePlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryCacheRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryCacheRulePlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryCacheRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetRegistryCacheRuleResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryCacheRulePlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryCacheRulePlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryCacheRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container Registry scope map. */
-    inline def getRegistryScopeMap(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryScopeMap(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetRegistryScopeMapResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryScopeMap(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryScopeMap(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container Registry scope map. */
-    inline def getRegistryScopeMapPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryScopeMapPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetRegistryScopeMapResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryScopeMapPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryScopeMapPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryScopeMapPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container Registry token. */
-    inline def getRegistryToken(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryTokenArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryToken(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerservice.outputs.GetRegistryTokenResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryTokenArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryToken(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container Registry token. */
-    inline def getRegistryTokenPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegistryTokenPlain(args: Endofunction[com.pulumi.azure.containerservice.inputs.GetRegistryTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerservice.outputs.GetRegistryTokenResult] =
       val argsBuilder = com.pulumi.azure.containerservice.inputs.GetRegistryTokenPlainArgs.builder
-      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryTokenPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerservice.ContainerserviceFunctions.getRegistryTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * &lt;!-- Note: This documentation is generated. Any manual changes will be overwritten --&gt;

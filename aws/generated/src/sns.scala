@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sns:
@@ -43,20 +45,24 @@ object sns:
      * Service (SNS). By using this data source, you can reference SNS topics
      * without having to hard code the ARNs as input.
      */
-    inline def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicArgs.builder
-      com.pulumi.aws.sns.SnsFunctions.getTopic(args(argsBuilder).build)
+      com.pulumi.aws.sns.SnsFunctions.getTopic(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ARN of a topic in AWS Simple Notification
      * Service (SNS). By using this data source, you can reference SNS topics
      * without having to hard code the ARNs as input.
      */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.aws.sns.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sns.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.sns.inputs.GetTopicPlainArgs.builder
-      com.pulumi.aws.sns.SnsFunctions.getTopicPlain(args(argsBuilder).build)
+      com.pulumi.aws.sns.SnsFunctions.getTopicPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an SNS topic resource */
   def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

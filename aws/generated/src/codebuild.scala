@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object codebuild:
@@ -12,16 +14,20 @@ object codebuild:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information about an CodeBuild Fleet. */
-    inline def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = scala.Predef.identity):
+    inline def getFleet(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetArgs.builder
-      com.pulumi.aws.codebuild.CodebuildFunctions.getFleet(args(argsBuilder).build)
+      com.pulumi.aws.codebuild.CodebuildFunctions.getFleet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about an CodeBuild Fleet. */
-    inline def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFleetPlain(args: Endofunction[com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codebuild.outputs.GetFleetResult] =
       val argsBuilder = com.pulumi.aws.codebuild.inputs.GetFleetPlainArgs.builder
-      com.pulumi.aws.codebuild.CodebuildFunctions.getFleetPlain(args(argsBuilder).build)
+      com.pulumi.aws.codebuild.CodebuildFunctions.getFleetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CodeBuild Fleet Resource. */
   def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

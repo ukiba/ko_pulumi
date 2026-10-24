@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object budgets:
@@ -45,13 +47,17 @@ object budgets:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    inline def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = scala.Predef.identity):
+    inline def getBudget(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetArgs.builder
-      com.pulumi.aws.budgets.BudgetsFunctions.getBudget(args(argsBuilder).build)
+      com.pulumi.aws.budgets.BudgetsFunctions.getBudget(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Web Services Budgets Budget. */
-    inline def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBudgetPlain(args: Endofunction[com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.budgets.outputs.GetBudgetResult] =
       val argsBuilder = com.pulumi.aws.budgets.inputs.GetBudgetPlainArgs.builder
-      com.pulumi.aws.budgets.BudgetsFunctions.getBudgetPlain(args(argsBuilder).build)
+      com.pulumi.aws.budgets.BudgetsFunctions.getBudgetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

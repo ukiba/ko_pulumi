@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object vertex:
@@ -6233,153 +6235,189 @@ object vertex:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiEndpointIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiEndpointIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiEndpointIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiEndpointIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiEndpointIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for endpoint
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiEndpointIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiEndpointIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiEndpointIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiEndpointIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiEndpointIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiEndpointIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for featuregroup
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureGroupIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureGroupIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiFeatureGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureGroupIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureGroupIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for featuregroup
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiFeatureGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureGroupIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureGroupIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureGroupIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for featureonlinestorefeatureview
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureOnlineStoreFeatureviewIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureOnlineStoreFeatureviewIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreFeatureviewIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreFeatureviewIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for featureonlinestorefeatureview
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureOnlineStoreFeatureviewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureOnlineStoreFeatureviewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreFeatureviewIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreFeatureviewIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreFeatureviewIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for featureonlinestore
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureOnlineStoreIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureOnlineStoreIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiFeatureOnlineStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for featureonlinestore
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeatureOnlineStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeatureOnlineStoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiFeatureOnlineStoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeatureOnlineStoreIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeatureOnlineStoreIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for featurestoreentitytype
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeaturestoreEntitytypeIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeaturestoreEntitytypeIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiFeaturestoreEntitytypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreEntitytypeIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreEntitytypeIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for featurestoreentitytype
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeaturestoreEntitytypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeaturestoreEntitytypeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiFeaturestoreEntitytypeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreEntitytypeIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreEntitytypeIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreEntitytypeIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for featurestore
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeaturestoreIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeaturestoreIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiFeaturestoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for featurestore
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAiFeaturestoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiFeaturestoreIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiFeaturestoreIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiFeaturestoreIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiFeaturestoreIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** A representation of a collection of database items organized in a way that allows for approximate nearest neighbor (a.k.a ANN) algorithms search. */
-    inline def getAiIndex(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiIndexArgs.Builder] = scala.Predef.identity):
+    inline def getAiIndex(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiIndexArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiIndexResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiIndexArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiIndex(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiIndex(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** A representation of a collection of database items organized in a way that allows for approximate nearest neighbor (a.k.a ANN) algorithms search. */
-    inline def getAiIndexPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiIndexPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiIndexPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiIndexPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiIndexResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiIndexPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiIndexPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiIndexPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for reasoningengine */
-    inline def getAiReasoningEngineIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAiReasoningEngineIamPolicy(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiReasoningEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for reasoningengine */
-    inline def getAiReasoningEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiReasoningEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiReasoningEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineIamPolicyPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get the output of a query sent to a Vertex AI Reasoning Engine agent. */
-    inline def getAiReasoningEngineQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryArgs.Builder] = scala.Predef.identity):
+    inline def getAiReasoningEngineQuery(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.vertex.outputs.GetAiReasoningEngineQueryResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineQuery(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineQuery(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the output of a query sent to a Vertex AI Reasoning Engine agent. */
-    inline def getAiReasoningEngineQueryPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiReasoningEngineQueryPlain(args: Endofunction[com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vertex.outputs.GetAiReasoningEngineQueryResult] =
       val argsBuilder = com.pulumi.gcp.vertex.inputs.GetAiReasoningEngineQueryPlainArgs.builder
-      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineQueryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.vertex.VertexFunctions.getAiReasoningEngineQueryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

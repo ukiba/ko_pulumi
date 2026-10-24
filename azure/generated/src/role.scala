@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object role:
@@ -34,13 +36,17 @@ object role:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Role Definition. */
-    @deprecated("azure.role.getRoleDefinition has been deprecated in favor of azure.authorization.getRoleDefinition") inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.role.getRoleDefinition has been deprecated in favor of azure.authorization.getRoleDefinition") inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.role.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.role.inputs.GetRoleDefinitionArgs.builder
-      com.pulumi.azure.role.RoleFunctions.getRoleDefinition(args(argsBuilder).build)
+      com.pulumi.azure.role.RoleFunctions.getRoleDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Role Definition. */
-    @deprecated("azure.role.getRoleDefinition has been deprecated in favor of azure.authorization.getRoleDefinition") inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.role.getRoleDefinition has been deprecated in favor of azure.authorization.getRoleDefinition") inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.role.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.role.inputs.GetRoleDefinitionPlainArgs.builder
-      com.pulumi.azure.role.RoleFunctions.getRoleDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.azure.role.RoleFunctions.getRoleDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

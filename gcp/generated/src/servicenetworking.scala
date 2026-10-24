@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object servicenetworking:
@@ -41,15 +43,19 @@ object servicenetworking:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = scala.Predef.identity):
+    inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.builder
-      com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomain(args(argsBuilder).build)
+      com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.builder
-      com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomainPlain(args(argsBuilder).build)
+      com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages the VPC Service Controls configuration for a service

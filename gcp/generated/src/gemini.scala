@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object gemini:
@@ -1067,28 +1069,36 @@ object gemini:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for dataagent */
-    inline def getDataAnalyticsDataAgentIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDataAnalyticsDataAgentIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gemini.outputs.GetDataAnalyticsDataAgentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyArgs.builder
-      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for dataagent */
-    inline def getDataAnalyticsDataAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataAnalyticsDataAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gemini.outputs.GetDataAnalyticsDataAgentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetDataAnalyticsDataAgentIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gemini.GeminiFunctions.getDataAnalyticsDataAgentIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for repositorygroup */
-    inline def getRepositoryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryGroupIamPolicy(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gemini.outputs.GetRepositoryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyArgs.builder
-      com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for repositorygroup */
-    inline def getRepositoryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gemini.outputs.GetRepositoryGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gemini.inputs.GetRepositoryGroupIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gemini.GeminiFunctions.getRepositoryGroupIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** The resource for managing GeminiGcpEnablement settings for Admin Control. */
   def GeminiGcpEnablementSetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

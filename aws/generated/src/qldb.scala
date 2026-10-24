@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object qldb:
@@ -34,16 +36,20 @@ object qldb:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    inline def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity):
+    inline def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerArgs.builder
-      com.pulumi.aws.qldb.QldbFunctions.getLedger(args(argsBuilder).build)
+      com.pulumi.aws.qldb.QldbFunctions.getLedger(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    inline def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.builder
-      com.pulumi.aws.qldb.QldbFunctions.getLedgerPlain(args(argsBuilder).build)
+      com.pulumi.aws.qldb.QldbFunctions.getLedgerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Quantum Ledger Database (QLDB) Stream resource */
   def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

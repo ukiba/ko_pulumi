@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object backup:
@@ -12,28 +14,36 @@ object backup:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing File Share Backup Policy. */
-    inline def getPolicyFileshare(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyFileshare(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.backup.outputs.GetPolicyFileshareResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyFileshareArgs.builder
-      com.pulumi.azure.backup.BackupFunctions.getPolicyFileshare(args(argsBuilder).build)
+      com.pulumi.azure.backup.BackupFunctions.getPolicyFileshare(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing File Share Backup Policy. */
-    inline def getPolicyFilesharePlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyFilesharePlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.backup.outputs.GetPolicyFileshareResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyFilesharePlainArgs.builder
-      com.pulumi.azure.backup.BackupFunctions.getPolicyFilesharePlain(args(argsBuilder).build)
+      com.pulumi.azure.backup.BackupFunctions.getPolicyFilesharePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing VM Backup Policy. */
-    inline def getPolicyVM(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyVM(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.backup.outputs.GetPolicyVMResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyVMArgs.builder
-      com.pulumi.azure.backup.BackupFunctions.getPolicyVM(args(argsBuilder).build)
+      com.pulumi.azure.backup.BackupFunctions.getPolicyVM(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing VM Backup Policy. */
-    inline def getPolicyVMPlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPolicyVMPlain(args: Endofunction[com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.backup.outputs.GetPolicyVMResult] =
       val argsBuilder = com.pulumi.azure.backup.inputs.GetPolicyVMPlainArgs.builder
-      com.pulumi.azure.backup.BackupFunctions.getPolicyVMPlain(args(argsBuilder).build)
+      com.pulumi.azure.backup.BackupFunctions.getPolicyVMPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages registration of a storage account with Azure Backup. Storage accounts must be registered with an Azure Recovery Vault in order to backup file shares within the storage account. Registering a storage account with a vault creates what is known as a protection container within Azure Recovery Services. Once the container is created, Azure file shares within the storage account can be backed up using the `azure.backup.ProtectedFileShare` resource. */
   def ContainerStorageAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

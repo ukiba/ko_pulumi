@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object transfer:
@@ -142,34 +144,42 @@ object transfer:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Transfer Family Connector. */
-    inline def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getConnector(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorArgs.builder
-      com.pulumi.aws.transfer.TransferFunctions.getConnector(args(argsBuilder).build)
+      com.pulumi.aws.transfer.TransferFunctions.getConnector(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Transfer Family Connector. */
-    inline def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectorPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetConnectorResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetConnectorPlainArgs.builder
-      com.pulumi.aws.transfer.TransferFunctions.getConnectorPlain(args(argsBuilder).build)
+      com.pulumi.aws.transfer.TransferFunctions.getConnectorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      * resources.
      */
-    inline def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerArgs.builder
-      com.pulumi.aws.transfer.TransferFunctions.getServer(args(argsBuilder).build)
+      com.pulumi.aws.transfer.TransferFunctions.getServer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ARN of an AWS Transfer Server for use in other
      * resources.
      */
-    inline def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.aws.transfer.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.transfer.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.aws.transfer.inputs.GetServerPlainArgs.builder
-      com.pulumi.aws.transfer.TransferFunctions.getServerPlain(args(argsBuilder).build)
+      com.pulumi.aws.transfer.TransferFunctions.getServerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a AWS Transfer User resource. Managing SSH keys can be accomplished with the `aws.transfer.SshKey` resource.

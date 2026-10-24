@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object elasticcloud:
@@ -12,16 +14,20 @@ object elasticcloud:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Elasticsearch resource. */
-    inline def getElasticsearch(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchArgs.Builder] = scala.Predef.identity):
+    inline def getElasticsearch(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.elasticcloud.outputs.GetElasticsearchResult] =
       val argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchArgs.builder
-      com.pulumi.azure.elasticcloud.ElasticcloudFunctions.getElasticsearch(args(argsBuilder).build)
+      com.pulumi.azure.elasticcloud.ElasticcloudFunctions.getElasticsearch(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Elasticsearch resource. */
-    inline def getElasticsearchPlain(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchPlainArgs.Builder] = scala.Predef.identity):
+    inline def getElasticsearchPlain(args: Endofunction[com.pulumi.azure.elasticcloud.inputs.GetElasticsearchPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.elasticcloud.outputs.GetElasticsearchResult] =
       val argsBuilder = com.pulumi.azure.elasticcloud.inputs.GetElasticsearchPlainArgs.builder
-      com.pulumi.azure.elasticcloud.ElasticcloudFunctions.getElasticsearchPlain(args(argsBuilder).build)
+      com.pulumi.azure.elasticcloud.ElasticcloudFunctions.getElasticsearchPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Elasticsearch in Elastic Cloud. */
   def Elasticsearch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

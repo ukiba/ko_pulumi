@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object avs:
@@ -12,16 +14,20 @@ object avs:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Azure VMware Solution Private Cloud. */
-    inline def getPrivateCloud(args: Endofunction[com.pulumi.azure.avs.inputs.GetPrivateCloudArgs.Builder] = scala.Predef.identity):
+    inline def getPrivateCloud(args: Endofunction[com.pulumi.azure.avs.inputs.GetPrivateCloudArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.avs.outputs.GetPrivateCloudResult] =
       val argsBuilder = com.pulumi.azure.avs.inputs.GetPrivateCloudArgs.builder
-      com.pulumi.azure.avs.AvsFunctions.getPrivateCloud(args(argsBuilder).build)
+      com.pulumi.azure.avs.AvsFunctions.getPrivateCloud(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure VMware Solution Private Cloud. */
-    inline def getPrivateCloudPlain(args: Endofunction[com.pulumi.azure.avs.inputs.GetPrivateCloudPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrivateCloudPlain(args: Endofunction[com.pulumi.azure.avs.inputs.GetPrivateCloudPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.avs.outputs.GetPrivateCloudResult] =
       val argsBuilder = com.pulumi.azure.avs.inputs.GetPrivateCloudPlainArgs.builder
-      com.pulumi.azure.avs.AvsFunctions.getPrivateCloudPlain(args(argsBuilder).build)
+      com.pulumi.azure.avs.AvsFunctions.getPrivateCloudPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure VMware Solution Cluster. */
   def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

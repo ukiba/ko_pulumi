@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object network:
@@ -386,112 +388,148 @@ object network:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Application Gateway. */
-    inline def getApplicationGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetApplicationGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetApplicationGatewayArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getApplicationGateway(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getApplicationGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Application Gateway. */
-    inline def getApplicationGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetApplicationGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetApplicationGatewayPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getApplicationGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getApplicationGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Application Security Group. */
-    inline def getApplicationSecurityGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationSecurityGroupArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationSecurityGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationSecurityGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetApplicationSecurityGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetApplicationSecurityGroupArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getApplicationSecurityGroup(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getApplicationSecurityGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Application Security Group. */
-    inline def getApplicationSecurityGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationSecurityGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationSecurityGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetApplicationSecurityGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetApplicationSecurityGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetApplicationSecurityGroupPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getApplicationSecurityGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getApplicationSecurityGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing ExpressRoute circuit. */
-    inline def getExpressRouteCircuit(args: Endofunction[com.pulumi.azure.network.inputs.GetExpressRouteCircuitArgs.Builder] = scala.Predef.identity):
+    inline def getExpressRouteCircuit(args: Endofunction[com.pulumi.azure.network.inputs.GetExpressRouteCircuitArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetExpressRouteCircuitResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetExpressRouteCircuitArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getExpressRouteCircuit(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getExpressRouteCircuit(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ExpressRoute circuit. */
-    inline def getExpressRouteCircuitPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetExpressRouteCircuitPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExpressRouteCircuitPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetExpressRouteCircuitPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetExpressRouteCircuitResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetExpressRouteCircuitPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getExpressRouteCircuitPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getExpressRouteCircuitPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Azure Firewall. */
-    inline def getFirewall(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallArgs.Builder] = scala.Predef.identity):
+    inline def getFirewall(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetFirewallArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getFirewall(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getFirewall(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Firewall. */
-    inline def getFirewallPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetFirewallPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getFirewallPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getFirewallPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Firewall Policy. */
-    inline def getFirewallPolicy(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicy(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetFirewallPolicyArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getFirewallPolicy(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getFirewallPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Firewall Policy. */
-    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetFirewallPolicyPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getFirewallPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getFirewallPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Network Gateway Connection. */
-    inline def getGatewayConnection(args: Endofunction[com.pulumi.azure.network.inputs.GetGatewayConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayConnection(args: Endofunction[com.pulumi.azure.network.inputs.GetGatewayConnectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetGatewayConnectionResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetGatewayConnectionArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getGatewayConnection(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getGatewayConnection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Network Gateway Connection. */
-    inline def getGatewayConnectionPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetGatewayConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayConnectionPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetGatewayConnectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetGatewayConnectionResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetGatewayConnectionPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getGatewayConnectionPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getGatewayConnectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing IP Group. */
-    inline def getIpGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupArgs.Builder] = scala.Predef.identity):
+    inline def getIpGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetIpGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetIpGroupArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getIpGroup(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getIpGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing IP Group. */
-    inline def getIpGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetIpGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetIpGroupPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getIpGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getIpGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about existing IP Groups. */
-    inline def getIpGroups(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getIpGroups(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetIpGroupsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetIpGroupsArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getIpGroups(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getIpGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing IP Groups. */
-    inline def getIpGroupsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpGroupsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetIpGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetIpGroupsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetIpGroupsPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getIpGroupsPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getIpGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Local Network Gateway. */
-    inline def getLocalNetworkGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetLocalNetworkGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getLocalNetworkGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetLocalNetworkGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetLocalNetworkGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetLocalNetworkGatewayArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getLocalNetworkGateway(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getLocalNetworkGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Local Network Gateway. */
-    inline def getLocalNetworkGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetLocalNetworkGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocalNetworkGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetLocalNetworkGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetLocalNetworkGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetLocalNetworkGatewayPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getLocalNetworkGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getLocalNetworkGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing NAT Gateway.
@@ -503,10 +541,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getNatGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetNatGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getNatGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetNatGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNatGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNatGatewayArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNatGateway(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNatGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing NAT Gateway.
@@ -518,238 +558,316 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getNatGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNatGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNatGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNatGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNatGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNatGatewayPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNatGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNatGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Azure Network DDoS Protection Plan. */
-    inline def getNetworkDdosProtectionPlan(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkDdosProtectionPlan(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkDdosProtectionPlanResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkDdosProtectionPlan(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkDdosProtectionPlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Network DDoS Protection Plan. */
-    inline def getNetworkDdosProtectionPlanPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkDdosProtectionPlanPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkDdosProtectionPlanResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkDdosProtectionPlanPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkDdosProtectionPlanPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkDdosProtectionPlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Interface. */
-    inline def getNetworkInterface(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkInterfaceArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterface(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkInterfaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkInterfaceResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkInterfaceArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkInterface(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkInterface(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Interface. */
-    inline def getNetworkInterfacePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkInterfacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkInterfacePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkInterfacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkInterfaceResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkInterfacePlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkInterfacePlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkInterfacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a Network Manager. */
-    inline def getNetworkManager(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManager(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkManagerResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManager(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManager(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a Network Manager. */
-    inline def getNetworkManagerPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkManagerResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Manager Connectivity Configuration. */
-    inline def getNetworkManagerConnectivityConfiguration(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerConnectivityConfiguration(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkManagerConnectivityConfigurationResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerConnectivityConfiguration(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerConnectivityConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Manager Connectivity Configuration. */
-    inline def getNetworkManagerConnectivityConfigurationPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerConnectivityConfigurationPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkManagerConnectivityConfigurationResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerConnectivityConfigurationPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerConnectivityConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerConnectivityConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Manager IPAM Pool. */
-    inline def getNetworkManagerIpamPool(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerIpamPool(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkManagerIpamPoolResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerIpamPool(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerIpamPool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Manager IPAM Pool. */
-    inline def getNetworkManagerIpamPoolPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerIpamPoolPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkManagerIpamPoolResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerIpamPoolPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerIpamPoolPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerIpamPoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a Network Manager Network Group. */
-    inline def getNetworkManagerNetworkGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerNetworkGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkManagerNetworkGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerNetworkGroup(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerNetworkGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a Network Manager Network Group. */
-    inline def getNetworkManagerNetworkGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkManagerNetworkGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkManagerNetworkGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkManagerNetworkGroupPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerNetworkGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkManagerNetworkGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Security Group. */
-    inline def getNetworkSecurityGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityGroupArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityGroup(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkSecurityGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityGroupArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityGroup(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Security Group. */
-    inline def getNetworkSecurityGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityGroupPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkSecurityGroupResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityGroupPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Security Perimeter. */
-    inline def getNetworkSecurityPerimeter(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityPerimeter(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkSecurityPerimeterResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeter(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeter(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Security Perimeter. */
-    inline def getNetworkSecurityPerimeterPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityPerimeterPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkSecurityPerimeterResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Security Perimeter Profile. */
-    inline def getNetworkSecurityPerimeterProfile(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfileArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityPerimeterProfile(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkSecurityPerimeterProfileResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfileArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterProfile(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Security Perimeter Profile. */
-    inline def getNetworkSecurityPerimeterProfilePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkSecurityPerimeterProfilePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkSecurityPerimeterProfileResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkSecurityPerimeterProfilePlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterProfilePlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkSecurityPerimeterProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Network Watcher. */
-    inline def getNetworkWatcher(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkWatcherArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkWatcher(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkWatcherArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetNetworkWatcherResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkWatcherArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkWatcher(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkWatcher(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Network Watcher. */
-    inline def getNetworkWatcherPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkWatcherPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNetworkWatcherPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetNetworkWatcherPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetNetworkWatcherResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetNetworkWatcherPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getNetworkWatcherPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getNetworkWatcherPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Public IP Address. */
-    inline def getPublicIP(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIP(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetPublicIPResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIPArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIP(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIP(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Public IP Address. */
-    inline def getPublicIPPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIPPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetPublicIPResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIPPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIPPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIPPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a set of existing Public IP Addresses. */
-    inline def getPublicIPs(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPsArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIPs(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetPublicIPsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIPsArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIPs(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIPs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a set of existing Public IP Addresses. */
-    inline def getPublicIPsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIPsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIPsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetPublicIPsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIPsPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIPsPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIPsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Public IP Prefix. */
-    inline def getPublicIpPrefix(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIpPrefixArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpPrefix(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIpPrefixArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetPublicIpPrefixResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIpPrefixArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIpPrefix(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIpPrefix(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Public IP Prefix. */
-    inline def getPublicIpPrefixPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIpPrefixPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicIpPrefixPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetPublicIpPrefixPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetPublicIpPrefixResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetPublicIpPrefixPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getPublicIpPrefixPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getPublicIpPrefixPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Route Filter. */
-    inline def getRouteFilter(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteFilterArgs.Builder] = scala.Predef.identity):
+    inline def getRouteFilter(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteFilterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetRouteFilterResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetRouteFilterArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getRouteFilter(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getRouteFilter(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Route Filter. */
-    inline def getRouteFilterPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteFilterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouteFilterPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteFilterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetRouteFilterResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetRouteFilterPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getRouteFilterPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getRouteFilterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Route Table. */
-    inline def getRouteTable(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteTableArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTable(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteTableArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetRouteTableResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetRouteTableArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getRouteTable(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getRouteTable(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Route Table. */
-    inline def getRouteTablePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRouteTablePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetRouteTablePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetRouteTableResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetRouteTablePlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getRouteTablePlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getRouteTablePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about Service Tags. */
-    inline def getServiceTags(args: Endofunction[com.pulumi.azure.network.inputs.GetServiceTagsArgs.Builder] = scala.Predef.identity):
+    inline def getServiceTags(args: Endofunction[com.pulumi.azure.network.inputs.GetServiceTagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetServiceTagsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetServiceTagsArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getServiceTags(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getServiceTags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about Service Tags. */
-    inline def getServiceTagsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetServiceTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceTagsPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetServiceTagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetServiceTagsResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetServiceTagsPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getServiceTagsPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getServiceTagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Subnet within a Virtual Network. */
-    inline def getSubnet(args: Endofunction[com.pulumi.azure.network.inputs.GetSubnetArgs.Builder] = scala.Predef.identity):
+    inline def getSubnet(args: Endofunction[com.pulumi.azure.network.inputs.GetSubnetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetSubnetArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getSubnet(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getSubnet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Subnet within a Virtual Network. */
-    inline def getSubnetPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetSubnetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubnetPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetSubnetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetSubnetPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getSubnetPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getSubnetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access the ID of a specified Traffic Manager Geographical Location within the Geographical Hierarchy. */
-    inline def getTrafficManager(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficManager(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetTrafficManagerResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetTrafficManagerArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getTrafficManager(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getTrafficManager(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access the ID of a specified Traffic Manager Geographical Location within the Geographical Hierarchy. */
-    inline def getTrafficManagerPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficManagerPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetTrafficManagerResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetTrafficManagerPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Traffic Manager Profile. */
-    inline def getTrafficManagerProfile(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerProfileArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficManagerProfile(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetTrafficManagerProfileResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetTrafficManagerProfileArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerProfile(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Traffic Manager Profile. */
-    inline def getTrafficManagerProfilePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTrafficManagerProfilePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetTrafficManagerProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetTrafficManagerProfileResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetTrafficManagerProfilePlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerProfilePlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getTrafficManagerProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub.
@@ -796,10 +914,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHub(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHub(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualHubResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHub(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHub(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub.
@@ -846,10 +966,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHubPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHubPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualHubResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHubPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHubPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub Connection.
@@ -897,10 +1019,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHubConnection(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHubConnection(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubConnectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualHubConnectionResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubConnectionArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHubConnection(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHubConnection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub Connection.
@@ -948,10 +1072,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHubConnectionPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHubConnectionPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubConnectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualHubConnectionResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubConnectionPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHubConnectionPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHubConnectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub Route Table.
@@ -999,10 +1125,12 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHubRouteTable(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubRouteTableArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHubRouteTable(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubRouteTableArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualHubRouteTableResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubRouteTableArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHubRouteTable(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHubRouteTable(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Uses this data source to access information about an existing Virtual Hub Route Table.
@@ -1050,82 +1178,108 @@ object network:
      * 
      * * `Microsoft.Network` - 2025-01-01
      */
-    inline def getVirtualHubRouteTablePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubRouteTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualHubRouteTablePlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualHubRouteTablePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualHubRouteTableResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualHubRouteTablePlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualHubRouteTablePlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualHubRouteTablePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Network. */
-    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetwork(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetwork(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Network. */
-    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Network Gateway. */
-    inline def getVirtualNetworkGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualNetworkGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkGateway(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Network Gateway. */
-    inline def getVirtualNetworkGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualNetworkGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkGatewayPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing virtual network peering. */
-    inline def getVirtualNetworkPeering(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkPeering(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualNetworkPeeringResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPeering(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPeering(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing virtual network peering. */
-    inline def getVirtualNetworkPeeringPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkPeeringPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualNetworkPeeringResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualNetworkPeeringPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPeeringPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualNetworkPeeringPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Wan. */
-    inline def getVirtualWan(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualWanArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualWan(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualWanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVirtualWanResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualWanArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualWan(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualWan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Wan. */
-    inline def getVirtualWanPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualWanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualWanPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVirtualWanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVirtualWanResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVirtualWanPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVirtualWanPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVirtualWanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing VPN Gateway within a Virtual Hub. */
-    inline def getVpnGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getVpnGateway(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVpnGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVpnGatewayArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVpnGateway(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVpnGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing VPN Gateway within a Virtual Hub. */
-    inline def getVpnGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpnGatewayPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVpnGatewayResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVpnGatewayPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVpnGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVpnGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing VPN Server Configuration. */
-    inline def getVpnServerConfiguration(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnServerConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getVpnServerConfiguration(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnServerConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.network.outputs.GetVpnServerConfigurationResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVpnServerConfigurationArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVpnServerConfiguration(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVpnServerConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing VPN Server Configuration. */
-    inline def getVpnServerConfigurationPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnServerConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpnServerConfigurationPlain(args: Endofunction[com.pulumi.azure.network.inputs.GetVpnServerConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.network.outputs.GetVpnServerConfigurationResult] =
       val argsBuilder = com.pulumi.azure.network.inputs.GetVpnServerConfigurationPlainArgs.builder
-      com.pulumi.azure.network.NetworkFunctions.getVpnServerConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.azure.network.NetworkFunctions.getVpnServerConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Network Interface. */
   def NetworkInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object dns:
@@ -23,10 +25,12 @@ object dns:
      * enabled will result in a 404 error as the collection of DNSKEYs does
      * not exist in the DNS API.
      */
-    inline def getKeys(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysArgs.Builder] = scala.Predef.identity):
+    inline def getKeys(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetKeysResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetKeysArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getKeys(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getKeys(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get the DNSKEY and DS records of DNSSEC-signed managed zones.
@@ -40,10 +44,12 @@ object dns:
      * enabled will result in a 404 error as the collection of DNSKEYs does
      * not exist in the DNS API.
      */
-    inline def getKeysPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeysPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetKeysResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetKeysPlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getKeysPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getKeysPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides access to a zone&#39;s attributes within Google Cloud DNS.
@@ -93,10 +99,12 @@ object dns:
      * }
      * </pre>
      */
-    inline def getManagedZone(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZone(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZoneResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZone(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZone(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides access to a zone&#39;s attributes within Google Cloud DNS.
@@ -146,22 +154,28 @@ object dns:
      * }
      * </pre>
      */
-    inline def getManagedZonePlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZonePlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZoneResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonePlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZonePlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZonePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for managedzone */
-    inline def getManagedZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZoneIamPolicy(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for managedzone */
-    inline def getManagedZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZoneIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZoneIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZoneIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZoneIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides access to a list of zones within Google Cloud DNS.
@@ -201,10 +215,12 @@ object dns:
      * }
      * </pre>
      */
-    inline def getManagedZones(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZones(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetManagedZonesResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonesArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZones(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZones(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides access to a list of zones within Google Cloud DNS.
@@ -244,10 +260,12 @@ object dns:
      * }
      * </pre>
      */
-    inline def getManagedZonesPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedZonesPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetManagedZonesResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetManagedZonesPlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getManagedZonesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getManagedZonesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a DNS record set within Google Cloud DNS
@@ -256,10 +274,12 @@ object dns:
      * and
      * [API](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets)
      */
-    inline def getRecordSet(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSet(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetRecordSetResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getRecordSet(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getRecordSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a DNS record set within Google Cloud DNS
@@ -268,10 +288,12 @@ object dns:
      * and
      * [API](https://cloud.google.com/dns/docs/reference/v1/resourceRecordSets)
      */
-    inline def getRecordSetPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSetPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetRecordSetResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetPlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getRecordSetPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getRecordSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a list of DNS record sets within a Google Cloud DNS managed zone. This data source allows you to list all record sets or filter them by name and type.
@@ -283,10 +305,12 @@ object dns:
      * 
      * &gt; **Note:** Filtering by `type` when `name` is not set is performed client-side.
      */
-    inline def getRecordSets(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSets(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dns.outputs.GetRecordSetsResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetsArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getRecordSets(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getRecordSets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a list of DNS record sets within a Google Cloud DNS managed zone. This data source allows you to list all record sets or filter them by name and type.
@@ -298,10 +322,12 @@ object dns:
      * 
      * &gt; **Note:** Filtering by `type` when `name` is not set is performed client-side.
      */
-    inline def getRecordSetsPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecordSetsPlain(args: Endofunction[com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dns.outputs.GetRecordSetsResult] =
       val argsBuilder = com.pulumi.gcp.dns.inputs.GetRecordSetsPlainArgs.builder
-      com.pulumi.gcp.dns.DnsFunctions.getRecordSetsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dns.DnsFunctions.getRecordSetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Three different resources help you manage your IAM policy for Cloud DNS ManagedZone. Each of these resources serves a different use case:

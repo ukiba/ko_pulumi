@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object firebase:
@@ -350,10 +352,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getAdminSdkConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigArgs.Builder] = scala.Predef.identity):
+    inline def getAdminSdkConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetAdminSdkConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAdminSdkConfig(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAdminSdkConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase Admin SDK configuration
@@ -367,10 +371,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getAdminSdkConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAdminSdkConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetAdminSdkConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAdminSdkConfigPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAdminSdkConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAdminSdkConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase Android application instance
@@ -378,10 +384,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAndroidApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppArgs.Builder] = scala.Predef.identity):
+    inline def getAndroidApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetAndroidAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAndroidAppArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidApp(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase Android application instance
@@ -389,20 +397,26 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAndroidAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAndroidAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetAndroidAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAndroidAppPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAndroidAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigArgs.Builder] = scala.Predef.identity):
+    inline def getAndroidAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetAndroidAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppConfig(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAndroidAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAndroidAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetAndroidAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAndroidAppConfigPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAndroidAppConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase Apple application instance
@@ -410,10 +424,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAppleApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppArgs.Builder] = scala.Predef.identity):
+    inline def getAppleApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetAppleAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAppleAppArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleApp(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase Apple application instance
@@ -421,10 +437,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getAppleAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppleAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetAppleAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAppleAppPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase Apple application configuration
@@ -438,10 +456,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getAppleAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppConfigArgs.Builder] = scala.Predef.identity):
+    inline def getAppleAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetAppleAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAppleAppConfigArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppConfig(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase Apple application configuration
@@ -455,10 +475,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getAppleAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppleAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetAppleAppConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetAppleAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetAppleAppConfigPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getAppleAppConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase Hosting Channel instance
@@ -466,10 +488,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getHostingChannel(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetHostingChannelArgs.Builder] = scala.Predef.identity):
+    inline def getHostingChannel(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetHostingChannelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetHostingChannelResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetHostingChannelArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getHostingChannel(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getHostingChannel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase Hosting Channel instance
@@ -477,10 +501,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getHostingChannelPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetHostingChannelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostingChannelPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetHostingChannelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetHostingChannelResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetHostingChannelPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getHostingChannelPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getHostingChannelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase web application instance
@@ -488,10 +514,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWebApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppArgs.Builder] = scala.Predef.identity):
+    inline def getWebApp(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetWebAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetWebAppArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getWebApp(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getWebApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase web application instance
@@ -499,10 +527,12 @@ object firebase:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWebAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAppPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetWebAppResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetWebAppPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Google Cloud Firebase web application configuration
@@ -516,10 +546,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getWebAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppConfigArgs.Builder] = scala.Predef.identity):
+    inline def getWebAppConfig(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firebase.outputs.GetWebAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetWebAppConfigArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppConfig(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Google Cloud Firebase web application configuration
@@ -533,10 +565,12 @@ object firebase:
      * * How-to Guides
      *     * [Official Documentation](https://firebase.google.com/)
      */
-    inline def getWebAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAppConfigPlain(args: Endofunction[com.pulumi.gcp.firebase.inputs.GetWebAppConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firebase.outputs.GetWebAppConfigResult] =
       val argsBuilder = com.pulumi.gcp.firebase.inputs.GetWebAppConfigPlainArgs.builder
-      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firebase.FirebaseFunctions.getWebAppConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A `Channel` represents a stream of releases for a site. All sites have a default

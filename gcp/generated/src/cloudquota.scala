@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudquota:
@@ -12,28 +14,36 @@ object cloudquota:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides information about a particular quota for a given project, folder or organization. */
-    inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.builder
-      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfo(args(argsBuilder).build)
+      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfo(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a particular quota for a given project, folder or organization. */
-    inline def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.builder
-      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfoPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfoPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    inline def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.builder
-      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfos(args(argsBuilder).build)
+      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfos(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    inline def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.builder
-      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfosPlain(args(argsBuilder).build)
+      com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfosPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * QuotaAdjusterSettings resource represents your quota adjuster settings for a particular project. When enabled, the quota adjuster monitors your usage for the specified resources and issues quota adjustment requests when resource usage approaches its quota value.

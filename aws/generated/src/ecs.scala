@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object ecs:
@@ -123,105 +125,129 @@ object ecs:
      * The ECS Cluster data source allows access to details of a specific
      * cluster within an AWS ECS service.
      */
-    inline def getCluster(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetClusterArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ECS Cluster data source allows access to details of a specific
      * cluster within an AWS ECS service.
      */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetClusterPlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS ECS (Elastic Container) Clusters. */
-    inline def getClusters(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClustersArgs.Builder] = scala.Predef.identity):
+    inline def getClusters(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClustersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetClustersArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getClusters(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getClusters(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS ECS (Elastic Container) Clusters. */
-    inline def getClustersPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClustersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClustersPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetClustersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetClustersResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetClustersPlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getClustersPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getClustersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The ECS container definition data source allows access to details of
      * a specific container within an AWS ECS service.
      */
-    inline def getContainerDefinition(args: Endofunction[com.pulumi.aws.ecs.inputs.GetContainerDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getContainerDefinition(args: Endofunction[com.pulumi.aws.ecs.inputs.GetContainerDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetContainerDefinitionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetContainerDefinitionArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getContainerDefinition(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getContainerDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ECS container definition data source allows access to details of
      * a specific container within an AWS ECS service.
      */
-    inline def getContainerDefinitionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetContainerDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContainerDefinitionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetContainerDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetContainerDefinitionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetContainerDefinitionPlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getContainerDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getContainerDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The ECS Service data source allows access to details of a specific
      * Service within a AWS ECS Cluster.
      */
-    inline def getService(args: Endofunction[com.pulumi.aws.ecs.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.aws.ecs.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetServiceArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getService(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ECS Service data source allows access to details of a specific
      * Service within a AWS ECS Cluster.
      */
-    inline def getServicePlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetServicePlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The ECS task definition data source allows access to details of
      * a specific AWS ECS task definition.
      */
-    inline def getTaskDefinition(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getTaskDefinition(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetTaskDefinitionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskDefinitionArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getTaskDefinition(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getTaskDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ECS task definition data source allows access to details of
      * a specific AWS ECS task definition.
      */
-    inline def getTaskDefinitionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTaskDefinitionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetTaskDefinitionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskDefinitionPlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getTaskDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getTaskDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Data source for managing an AWS ECS (Elastic Container) Task Execution. This data source calls the [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) API, allowing execution of one-time tasks that don&#39;t fit a standard resource lifecycle. See the feature request issue for additional context.
      * 
      * &gt; **NOTE on preview operations:** This data source calls the `RunTask` API on every read operation, which means new task(s) may be created from a `pulumi preview` command if all attributes are known. Placing this functionality behind a data source is an intentional trade off to enable use cases requiring a one-time task execution without relying on provisioners. Caution should be taken to ensure the data source is only executed once, or that the resulting tasks can safely run in parallel.
      */
-    inline def getTaskExecution(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionArgs.Builder] = scala.Predef.identity):
+    inline def getTaskExecution(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecs.outputs.GetTaskExecutionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getTaskExecution(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getTaskExecution(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Data source for managing an AWS ECS (Elastic Container) Task Execution. This data source calls the [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) API, allowing execution of one-time tasks that don&#39;t fit a standard resource lifecycle. See the feature request issue for additional context.
      * 
      * &gt; **NOTE on preview operations:** This data source calls the `RunTask` API on every read operation, which means new task(s) may be created from a `pulumi preview` command if all attributes are known. Placing this functionality behind a data source is an intentional trade off to enable use cases requiring a one-time task execution without relying on provisioners. Caution should be taken to ensure the data source is only executed once, or that the resulting tasks can safely run in parallel.
      */
-    inline def getTaskExecutionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTaskExecutionPlain(args: Endofunction[com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecs.outputs.GetTaskExecutionResult] =
       val argsBuilder = com.pulumi.aws.ecs.inputs.GetTaskExecutionPlainArgs.builder
-      com.pulumi.aws.ecs.EcsFunctions.getTaskExecutionPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecs.EcsFunctions.getTaskExecutionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an [ECS Express service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-overview.html). The Express service provides a simplified way to deploy containerized applications with automatic provisioning and management of AWS infrastructure including Application Load Balancers (ALBs), target groups, security groups, and auto-scaling policies. This service offers built-in load balancing, auto-scaling, and networking capabilities with zero-downtime deployments.

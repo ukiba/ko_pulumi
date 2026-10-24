@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object folder:
@@ -61,10 +63,12 @@ object folder:
      * }
      * </pre>
      */
-    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.folder.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.folder.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.folder.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.folder.inputs.GetIamPolicyArgs.builder
-      com.pulumi.gcp.folder.FolderFunctions.getIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.folder.FolderFunctions.getIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a folder.
@@ -102,30 +106,36 @@ object folder:
      * }
      * </pre>
      */
-    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.folder.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.folder.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.folder.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.folder.inputs.GetIamPolicyPlainArgs.builder
-      com.pulumi.gcp.folder.FolderFunctions.getIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.folder.FolderFunctions.getIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Allows management of Organization policies for a Google Folder. For more information see
      * [the official
      * documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    inline def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.folder.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.folder.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.folder.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.folder.inputs.GetOrganizationPolicyArgs.builder
-      com.pulumi.gcp.folder.FolderFunctions.getOrganizationPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.folder.FolderFunctions.getOrganizationPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Allows management of Organization policies for a Google Folder. For more information see
      * [the official
      * documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    inline def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.folder.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.folder.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.folder.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.folder.inputs.GetOrganizationPolicyPlainArgs.builder
-      com.pulumi.gcp.folder.FolderFunctions.getOrganizationPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.folder.FolderFunctions.getOrganizationPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Four different resources help you manage your IAM policy for a folder. Each of these resources serves a different use case:

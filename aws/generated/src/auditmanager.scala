@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object auditmanager:
@@ -57,28 +59,36 @@ object auditmanager:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Audit Manager Control. */
-    inline def getControl(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlArgs.Builder] = scala.Predef.identity):
+    inline def getControl(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.auditmanager.outputs.GetControlResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetControlArgs.builder
-      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControl(args(argsBuilder).build)
+      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Audit Manager Control. */
-    inline def getControlPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.auditmanager.outputs.GetControlResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetControlPlainArgs.builder
-      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControlPlain(args(argsBuilder).build)
+      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getControlPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Audit Manager Framework. */
-    inline def getFramework(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.Builder] = scala.Predef.identity):
+    inline def getFramework(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.auditmanager.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetFrameworkArgs.builder
-      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFramework(args(argsBuilder).build)
+      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFramework(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Audit Manager Framework. */
-    inline def getFrameworkPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrameworkPlain(args: Endofunction[com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.auditmanager.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.auditmanager.inputs.GetFrameworkPlainArgs.builder
-      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFrameworkPlain(args(argsBuilder).build)
+      com.pulumi.aws.auditmanager.AuditmanagerFunctions.getFrameworkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS Audit Manager Control. */
   def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

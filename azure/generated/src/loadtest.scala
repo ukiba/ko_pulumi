@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object loadtest:
@@ -30,13 +32,17 @@ object loadtest:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about a Load Test Service. */
-    inline def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetArgs.builder
-      com.pulumi.azure.loadtest.LoadtestFunctions.get(args(argsBuilder).build)
+      com.pulumi.azure.loadtest.LoadtestFunctions.get(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a Load Test Service. */
-    inline def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetPlainArgs.builder
-      com.pulumi.azure.loadtest.LoadtestFunctions.getPlain(args(argsBuilder).build)
+      com.pulumi.azure.loadtest.LoadtestFunctions.getPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

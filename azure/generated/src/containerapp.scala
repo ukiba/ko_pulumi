@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object containerapp:
@@ -30,52 +32,68 @@ object containerapp:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Container App. */
-    inline def getApp(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetAppArgs.Builder] = scala.Predef.identity):
+    inline def getApp(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerapp.outputs.GetAppResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetAppArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getApp(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container App. */
-    inline def getAppPlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppPlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerapp.outputs.GetAppResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetAppPlainArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container App Environment. */
-    inline def getEnvironment(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironment(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerapp.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironment(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container App Environment. */
-    inline def getEnvironmentPlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentPlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerapp.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentPlainArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentPlain(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container App Environment Certificate. */
-    inline def getEnvironmentCertificate(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentCertificate(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerapp.outputs.GetEnvironmentCertificateResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificateArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentCertificate(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container App Environment Certificate. */
-    inline def getEnvironmentCertificatePlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentCertificatePlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerapp.outputs.GetEnvironmentCertificateResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentCertificatePlainArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentCertificatePlain(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Container App Environment Storage. */
-    inline def getEnvironmentStorage(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentStorageArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentStorage(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentStorageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.containerapp.outputs.GetEnvironmentStorageResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentStorageArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentStorage(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentStorage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Container App Environment Storage. */
-    inline def getEnvironmentStoragePlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentStoragePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentStoragePlain(args: Endofunction[com.pulumi.azure.containerapp.inputs.GetEnvironmentStoragePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.containerapp.outputs.GetEnvironmentStorageResult] =
       val argsBuilder = com.pulumi.azure.containerapp.inputs.GetEnvironmentStoragePlainArgs.builder
-      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentStoragePlain(args(argsBuilder).build)
+      com.pulumi.azure.containerapp.ContainerappFunctions.getEnvironmentStoragePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Container App Custom Domain. */
   def CustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

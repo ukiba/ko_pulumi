@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object bigtable:
@@ -81,10 +83,12 @@ object bigtable:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigtable.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyArgs.builder
-      com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Bigtable instance.
@@ -122,10 +126,12 @@ object bigtable:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigtable.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetInstanceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigtable.BigtableFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Bigtable Table.
@@ -164,10 +170,12 @@ object bigtable:
      * }
      * </pre>
      */
-    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigtable.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyArgs.builder
-      com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Bigtable Table.
@@ -206,10 +214,12 @@ object bigtable:
      * }
      * </pre>
      */
-    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigtable.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigtable.inputs.GetTableIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigtable.BigtableFunctions.getTableIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Creates a Google Cloud Bigtable GC Policy inside a family. For more information see

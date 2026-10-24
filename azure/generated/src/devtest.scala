@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object devtest:
@@ -12,28 +14,36 @@ object devtest:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Dev Test Lab. */
-    inline def getLab(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabArgs.Builder] = scala.Predef.identity):
+    inline def getLab(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.devtest.outputs.GetLabResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetLabArgs.builder
-      com.pulumi.azure.devtest.DevtestFunctions.getLab(args(argsBuilder).build)
+      com.pulumi.azure.devtest.DevtestFunctions.getLab(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dev Test Lab. */
-    inline def getLabPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLabPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.devtest.outputs.GetLabResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetLabPlainArgs.builder
-      com.pulumi.azure.devtest.DevtestFunctions.getLabPlain(args(argsBuilder).build)
+      com.pulumi.azure.devtest.DevtestFunctions.getLabPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Dev Test Lab Virtual Network. */
-    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.devtest.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.builder
-      com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetwork(args(argsBuilder).build)
+      com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetwork(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dev Test Lab Virtual Network. */
-    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.devtest.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.builder
-      com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetworkPlain(args(argsBuilder).build)
+      com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetworkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages automated shutdown schedules for Azure VMs that are not within an Azure DevTest Lab. While this is part of the DevTest Labs service in Azure,

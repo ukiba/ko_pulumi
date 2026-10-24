@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object msk:
@@ -76,96 +78,124 @@ object msk:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get a list of brokers that a client application can use to bootstrap. */
-    inline def getBootstrapBrokers(args: Endofunction[com.pulumi.aws.msk.inputs.GetBootstrapBrokersArgs.Builder] = scala.Predef.identity):
+    inline def getBootstrapBrokers(args: Endofunction[com.pulumi.aws.msk.inputs.GetBootstrapBrokersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetBootstrapBrokersResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetBootstrapBrokersArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getBootstrapBrokers(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getBootstrapBrokers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a list of brokers that a client application can use to bootstrap. */
-    inline def getBootstrapBrokersPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetBootstrapBrokersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBootstrapBrokersPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetBootstrapBrokersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetBootstrapBrokersResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetBootstrapBrokersPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getBootstrapBrokersPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getBootstrapBrokersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information on an Amazon MSK Broker Nodes. */
-    inline def getBrokerNodes(args: Endofunction[com.pulumi.aws.msk.inputs.GetBrokerNodesArgs.Builder] = scala.Predef.identity):
+    inline def getBrokerNodes(args: Endofunction[com.pulumi.aws.msk.inputs.GetBrokerNodesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetBrokerNodesResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetBrokerNodesArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getBrokerNodes(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getBrokerNodes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information on an Amazon MSK Broker Nodes. */
-    inline def getBrokerNodesPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetBrokerNodesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBrokerNodesPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetBrokerNodesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetBrokerNodesResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetBrokerNodesPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getBrokerNodesPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getBrokerNodesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information on an Amazon MSK Cluster.
      * 
      * &gt; **Note:** This data sources returns information on _provisioned_ clusters.
      */
-    inline def getCluster(args: Endofunction[com.pulumi.aws.msk.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.aws.msk.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetClusterArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information on an Amazon MSK Cluster.
      * 
      * &gt; **Note:** This data sources returns information on _provisioned_ clusters.
      */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetClusterPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information on an Amazon MSK Configuration. */
-    inline def getConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getConfiguration(args: Endofunction[com.pulumi.aws.msk.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetConfigurationArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getConfiguration(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information on an Amazon MSK Configuration. */
-    inline def getConfigurationPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetConfigurationPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information on a Amazon MSK Kafka Version */
-    inline def getKafkaVersion(args: Endofunction[com.pulumi.aws.msk.inputs.GetKafkaVersionArgs.Builder] = scala.Predef.identity):
+    inline def getKafkaVersion(args: Endofunction[com.pulumi.aws.msk.inputs.GetKafkaVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetKafkaVersionResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetKafkaVersionArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getKafkaVersion(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getKafkaVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information on a Amazon MSK Kafka Version */
-    inline def getKafkaVersionPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetKafkaVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKafkaVersionPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetKafkaVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetKafkaVersionResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetKafkaVersionPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getKafkaVersionPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getKafkaVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information on an Amazon MSK Topic. */
-    inline def getTopic(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicArgs.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetTopicArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getTopic(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getTopic(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information on an Amazon MSK Topic. */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetTopicPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getTopicPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getTopicPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information on an Amazon MSK VPC Connection. */
-    inline def getVpcConnection(args: Endofunction[com.pulumi.aws.msk.inputs.GetVpcConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getVpcConnection(args: Endofunction[com.pulumi.aws.msk.inputs.GetVpcConnectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.msk.outputs.GetVpcConnectionResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetVpcConnectionArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getVpcConnection(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getVpcConnection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information on an Amazon MSK VPC Connection. */
-    inline def getVpcConnectionPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetVpcConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcConnectionPlain(args: Endofunction[com.pulumi.aws.msk.inputs.GetVpcConnectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.msk.outputs.GetVpcConnectionResult] =
       val argsBuilder = com.pulumi.aws.msk.inputs.GetVpcConnectionPlainArgs.builder
-      com.pulumi.aws.msk.MskFunctions.getVpcConnectionPlain(args(argsBuilder).build)
+      com.pulumi.aws.msk.MskFunctions.getVpcConnectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS Managed Streaming for Kafka Replicator. */
   def Replicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

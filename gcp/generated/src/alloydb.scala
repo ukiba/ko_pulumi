@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object alloydb:
@@ -12,52 +14,68 @@ object alloydb:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about the available cluster. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters). */
-    inline def getCluster(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.alloydb.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetClusterArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available cluster. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters). */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.alloydb.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetClusterPlainArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances). */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.alloydb.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters.instances). */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.alloydb.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about the available locations. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations). */
-    inline def getLocations(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetLocationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.alloydb.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetLocationsArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getLocations(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getLocations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available locations. For more details refer the [API docs](https://cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations). */
-    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.alloydb.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetLocationsPlainArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getLocationsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getLocationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about the supported alloydb database flags in a location. */
-    inline def getSupportedDatabaseFlags(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedDatabaseFlags(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.alloydb.outputs.GetSupportedDatabaseFlagsResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getSupportedDatabaseFlags(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getSupportedDatabaseFlags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the supported alloydb database flags in a location. */
-    inline def getSupportedDatabaseFlagsPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSupportedDatabaseFlagsPlain(args: Endofunction[com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.alloydb.outputs.GetSupportedDatabaseFlagsResult] =
       val argsBuilder = com.pulumi.gcp.alloydb.inputs.GetSupportedDatabaseFlagsPlainArgs.builder
-      com.pulumi.gcp.alloydb.AlloydbFunctions.getSupportedDatabaseFlagsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.alloydb.AlloydbFunctions.getSupportedDatabaseFlagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * An AlloyDB Backup.

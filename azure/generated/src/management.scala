@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object management:
@@ -118,28 +120,36 @@ object management:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Management Group. */
-    inline def getGroup(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.management.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupArgs.builder
-      com.pulumi.azure.management.ManagementFunctions.getGroup(args(argsBuilder).build)
+      com.pulumi.azure.management.ManagementFunctions.getGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Management Group. */
-    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.management.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupPlainArgs.builder
-      com.pulumi.azure.management.ManagementFunctions.getGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.management.ManagementFunctions.getGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Management Group Template Deployment. */
-    inline def getGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.management.outputs.GetGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentArgs.builder
-      com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeployment(args(argsBuilder).build)
+      com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeployment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Management Group Template Deployment. */
-    inline def getGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.management.outputs.GetGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.management.inputs.GetGroupTemplateDeploymentPlainArgs.builder
-      com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeploymentPlain(args(argsBuilder).build)
+      com.pulumi.azure.management.ManagementFunctions.getGroupTemplateDeploymentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Resource Management Private Link to restrict access for managing resources in the tenant. */
   def PrivateLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

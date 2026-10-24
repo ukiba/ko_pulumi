@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object storage:
@@ -3754,10 +3756,12 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/json_api/v1/buckets).
      */
-    inline def getBucket(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketArgs.Builder] = scala.Predef.identity):
+    inline def getBucket(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucket(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucket(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets an existing bucket in Google Cloud Storage service (GCS).
@@ -3765,22 +3769,28 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/json_api/v1/buckets).
      */
-    inline def getBucketPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for bucket */
-    inline def getBucketIamPolicy(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBucketIamPolicy(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketIamPolicyArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for bucket */
-    inline def getBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketIamPolicyPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketIamPolicyPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets an existing object inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3788,10 +3798,12 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/json_api/v1/objects).
      */
-    inline def getBucketObject(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObject(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketObjectResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObject(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObject(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets an existing object inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3799,10 +3811,12 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/json_api/v1/objects).
      */
-    inline def getBucketObjectPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketObjectResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets an existing object content inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3812,10 +3826,12 @@ object storage:
      * 
      * &gt; **Warning:** The object content will be saved in the state, and visible to everyone who has access to the state file.
      */
-    inline def getBucketObjectContent(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectContent(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketObjectContentResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectContentArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContent(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContent(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets an existing object content inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3825,10 +3841,12 @@ object storage:
      * 
      * &gt; **Warning:** The object content will be saved in the state, and visible to everyone who has access to the state file.
      */
-    inline def getBucketObjectContentPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectContentPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketObjectContentResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectContentPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContentPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets existing object contents inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3840,10 +3858,12 @@ object storage:
      * 
      * &gt; **Warning:** This data source loads all object contents into memory. Limit the results with `matchGlob` or `prefix`.
      */
-    inline def getBucketObjectContents(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentsArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectContents(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketObjectContentsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectContentsArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContents(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContents(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets existing object contents inside an existing bucket in Google Cloud Storage service (GCS).
@@ -3855,170 +3875,220 @@ object storage:
      * 
      * &gt; **Warning:** This data source loads all object contents into memory. Limit the results with `matchGlob` or `prefix`.
      */
-    inline def getBucketObjectContentsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectContentsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectContentsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketObjectContentsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectContentsPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContentsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectContentsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets existing objects inside an existing bucket in Google Cloud Storage service (GCS).
      * See [the official documentation](https://cloud.google.com/storage/docs/key-terms#objects)
      * and [API](https://cloud.google.com/storage/docs/json_api/v1/objects/list).
      */
-    inline def getBucketObjects(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectsArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjects(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketObjectsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectsArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjects(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjects(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets existing objects inside an existing bucket in Google Cloud Storage service (GCS).
      * See [the official documentation](https://cloud.google.com/storage/docs/key-terms#objects)
      * and [API](https://cloud.google.com/storage/docs/json_api/v1/objects/list).
      */
-    inline def getBucketObjectsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketObjectsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketObjectsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketObjectsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketObjectsPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketObjectsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets a list of existing GCS buckets.
      * See [the official documentation](https://cloud.google.com/storage/docs/introduction)
      * and [API](https://cloud.google.com/storage/docs/json_api/v1/buckets/list).
      */
-    inline def getBuckets(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketsArgs.Builder] = scala.Predef.identity):
+    inline def getBuckets(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetBucketsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketsArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBuckets(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBuckets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets a list of existing GCS buckets.
      * See [the official documentation](https://cloud.google.com/storage/docs/introduction)
      * and [API](https://cloud.google.com/storage/docs/json_api/v1/buckets/list).
      */
-    inline def getBucketsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBucketsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetBucketsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetBucketsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetBucketsPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getBucketsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getBucketsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Cloud Storage Control FolderIntelligenceConfig. */
-    inline def getControlFolderIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigArgs.Builder] = scala.Predef.identity):
+    inline def getControlFolderIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfig(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Cloud Storage Control FolderIntelligenceConfig. */
-    inline def getControlFolderIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlFolderIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceConfigPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified folder and location. */
-    inline def getControlFolderIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+    inline def getControlFolderIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummary(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummary(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified folder and location. */
-    inline def getControlFolderIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlFolderIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlFolderIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlFolderIntelligenceFindingsSummaryPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlFolderIntelligenceFindingsSummaryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Cloud Storage Control OrganizationIntelligenceConfig. */
-    inline def getControlOrganizationIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.Builder] = scala.Predef.identity):
+    inline def getControlOrganizationIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfig(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Cloud Storage Control OrganizationIntelligenceConfig. */
-    inline def getControlOrganizationIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlOrganizationIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceConfigPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified organization and location. */
-    inline def getControlOrganizationIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+    inline def getControlOrganizationIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummary(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummary(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified organization and location. */
-    inline def getControlOrganizationIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlOrganizationIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlOrganizationIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlOrganizationIntelligenceFindingsSummaryPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlOrganizationIntelligenceFindingsSummaryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Cloud Storage Control ProjectIntelligenceConfig. */
-    inline def getControlProjectIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfig(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Cloud Storage Control ProjectIntelligenceConfig. */
-    inline def getControlProjectIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceConfigPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves information about a specific Cloud Storage intelligence finding in a project and location. */
-    inline def getControlProjectIntelligenceFinding(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFinding(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFinding(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFinding(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves information about a specific Cloud Storage intelligence finding in a project and location. */
-    inline def getControlProjectIntelligenceFindingPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves information about a specific Cloud Storage intelligence finding revision in a project and location. */
-    inline def getControlProjectIntelligenceFindingRevision(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingRevision(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevision(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevision(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves information about a specific Cloud Storage intelligence finding revision in a project and location. */
-    inline def getControlProjectIntelligenceFindingRevisionPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingRevisionPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves a list of Cloud Storage intelligence finding revisions in a specified project and location. */
-    inline def getControlProjectIntelligenceFindingRevisions(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingRevisions(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisions(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves a list of Cloud Storage intelligence finding revisions in a specified project and location. */
-    inline def getControlProjectIntelligenceFindingRevisionsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingRevisionsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingRevisionsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingRevisionsPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingRevisionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves a list of Cloud Storage intelligence findings in a specified project and location. */
-    inline def getControlProjectIntelligenceFindings(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindings(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindings(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves a list of Cloud Storage intelligence findings in a specified project and location. */
-    inline def getControlProjectIntelligenceFindingsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingsPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified project and location. */
-    inline def getControlProjectIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingsSummary(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummary(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummary(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Summarizes Cloud Storage intelligence findings in a specified project and location. */
-    inline def getControlProjectIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getControlProjectIntelligenceFindingsSummaryPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetControlProjectIntelligenceFindingsSummaryResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetControlProjectIntelligenceFindingsSummaryPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummaryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getControlProjectIntelligenceFindingsSummaryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get information about a Storage Insights Dataset Config resource.
@@ -4026,10 +4096,12 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/insights/reference/rest/v1/projects.locations.datasetConfigs).
      */
-    inline def getInsightsDatasetConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigArgs.Builder] = scala.Predef.identity):
+    inline def getInsightsDatasetConfig(args: Endofunction[com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetInsightsDatasetConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getInsightsDatasetConfig(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getInsightsDatasetConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information about a Storage Insights Dataset Config resource.
@@ -4037,40 +4109,50 @@ object storage:
      * and
      * [API](https://cloud.google.com/storage/docs/insights/reference/rest/v1/projects.locations.datasetConfigs).
      */
-    inline def getInsightsDatasetConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInsightsDatasetConfigPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetInsightsDatasetConfigResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetInsightsDatasetConfigPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getInsightsDatasetConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getInsightsDatasetConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getManagedFolderIamPolicy(args: Endofunction[com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getManagedFolderIamPolicy(args: Endofunction[com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetManagedFolderIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getManagedFolderIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getManagedFolderIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getManagedFolderIamPolicyPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedFolderIamPolicyPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetManagedFolderIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetManagedFolderIamPolicyPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getManagedFolderIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getManagedFolderIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The Google Cloud storage signed URL data source generates a signed URL for a given storage object. Signed URLs provide a way to give time-limited read or write access to anyone in possession of the URL, regardless of whether they have a Google account.
      * 
      * For more info about signed URL&#39;s is available [here](https://cloud.google.com/storage/docs/access-control/signed-urls).
      */
-    inline def getObjectSignedUrl(args: Endofunction[com.pulumi.gcp.storage.inputs.GetObjectSignedUrlArgs.Builder] = scala.Predef.identity):
+    inline def getObjectSignedUrl(args: Endofunction[com.pulumi.gcp.storage.inputs.GetObjectSignedUrlArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetObjectSignedUrlResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetObjectSignedUrlArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getObjectSignedUrl(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getObjectSignedUrl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The Google Cloud storage signed URL data source generates a signed URL for a given storage object. Signed URLs provide a way to give time-limited read or write access to anyone in possession of the URL, regardless of whether they have a Google account.
      * 
      * For more info about signed URL&#39;s is available [here](https://cloud.google.com/storage/docs/access-control/signed-urls).
      */
-    inline def getObjectSignedUrlPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetObjectSignedUrlPlainArgs.Builder] = scala.Predef.identity):
+    inline def getObjectSignedUrlPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetObjectSignedUrlPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetObjectSignedUrlResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetObjectSignedUrlPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getObjectSignedUrlPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getObjectSignedUrlPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get the email address of a project&#39;s unique [automatic Google Cloud Storage service account](https://cloud.google.com/storage/docs/projects#service-accounts).
@@ -4106,10 +4188,12 @@ object storage:
      * For more information see
      * [the API reference](https://cloud.google.com/storage/docs/json_api/v1/projects/serviceAccount).
      */
-    inline def getProjectServiceAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetProjectServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getProjectServiceAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetProjectServiceAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetProjectServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetProjectServiceAccountArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getProjectServiceAccount(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getProjectServiceAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get the email address of a project&#39;s unique [automatic Google Cloud Storage service account](https://cloud.google.com/storage/docs/projects#service-accounts).
@@ -4145,34 +4229,44 @@ object storage:
      * For more information see
      * [the API reference](https://cloud.google.com/storage/docs/json_api/v1/projects/serviceAccount).
      */
-    inline def getProjectServiceAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetProjectServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectServiceAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetProjectServiceAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetProjectServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetProjectServiceAccountPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getProjectServiceAccountPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getProjectServiceAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    inline def getTransferProjectServiceAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getTransferProjectServiceAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetTransferProjectServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServiceAccount(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServiceAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    inline def getTransferProjectServiceAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTransferProjectServiceAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetTransferProjectServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServiceAccountPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServiceAccountPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServiceAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccount(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.storage.outputs.GetTransferProjectServieAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccount(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to retrieve Storage Transfer service account for this project */
-    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.storage.getTransferProjectServieAccount has been deprecated in favor of gcp.storage.getTransferProjectServiceAccount") inline def getTransferProjectServieAccountPlain(args: Endofunction[com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.storage.outputs.GetTransferProjectServieAccountResult] =
       val argsBuilder = com.pulumi.gcp.storage.inputs.GetTransferProjectServieAccountPlainArgs.builder
-      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccountPlain(args(argsBuilder).build)
+      com.pulumi.gcp.storage.StorageFunctions.getTransferProjectServieAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Represents an On-Premises Agent pool.

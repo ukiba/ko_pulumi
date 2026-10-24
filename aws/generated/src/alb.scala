@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object alb:
@@ -18,10 +20,12 @@ object alb:
      * 
      * This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    inline def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = scala.Predef.identity):
+    inline def getListener(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getListener(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getListener(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **Note:** `aws.alb.Listener` is known as `aws.lb.Listener`. The functionality is identical.
@@ -30,10 +34,12 @@ object alb:
      * 
      * This data source can prove useful when a module accepts an LB Listener as an input variable and needs to know the LB it is attached to, or other information specific to the listener in question.
      */
-    inline def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListenerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetListenerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetListenerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetListenerPlainArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getListenerPlain(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getListenerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
@@ -44,10 +50,12 @@ object alb:
      * variable and needs to, for example, determine the security groups associated
      * with it, etc.
      */
-    inline def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancer(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getLoadBalancer(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getLoadBalancer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **Note:** `aws.alb.LoadBalancer` is known as `aws.lb.LoadBalancer`. The functionality is identical.
@@ -58,10 +66,12 @@ object alb:
      * variable and needs to, for example, determine the security groups associated
      * with it, etc.
      */
-    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetLoadBalancerPlainArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getLoadBalancerPlain(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getLoadBalancerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
@@ -72,10 +82,12 @@ object alb:
      * input variable and needs to know its attributes. It can also be used to get the ARN of
      * an LB Target Group for use in other resources, given LB Target Group name.
      */
-    inline def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getTargetGroup(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getTargetGroup(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getTargetGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **Note:** `aws.alb.TargetGroup` is known as `aws.lb.TargetGroup`. The functionality is identical.
@@ -86,10 +98,12 @@ object alb:
      * input variable and needs to know its attributes. It can also be used to get the ARN of
      * an LB Target Group for use in other resources, given LB Target Group name.
      */
-    inline def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTargetGroupPlain(args: Endofunction[com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.alb.outputs.GetTargetGroupResult] =
       val argsBuilder = com.pulumi.aws.alb.inputs.GetTargetGroupPlainArgs.builder
-      com.pulumi.aws.alb.AlbFunctions.getTargetGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.alb.AlbFunctions.getTargetGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a Load Balancer Listener resource.

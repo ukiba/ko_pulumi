@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object healthcare:
@@ -48,64 +50,84 @@ object healthcare:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Healthcare DICOM Service */
-    inline def getDicomService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetDicomServiceArgs.Builder] = scala.Predef.identity):
+    inline def getDicomService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetDicomServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.healthcare.outputs.GetDicomServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetDicomServiceArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getDicomService(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getDicomService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Healthcare DICOM Service */
-    inline def getDicomServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetDicomServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDicomServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetDicomServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.healthcare.outputs.GetDicomServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetDicomServicePlainArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getDicomServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getDicomServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Healthcare FHIR Service(Fast Healthcare Interoperability Resources). */
-    inline def getFhirService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetFhirServiceArgs.Builder] = scala.Predef.identity):
+    inline def getFhirService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetFhirServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.healthcare.outputs.GetFhirServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetFhirServiceArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getFhirService(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getFhirService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Healthcare FHIR Service(Fast Healthcare Interoperability Resources). */
-    inline def getFhirServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetFhirServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getFhirServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetFhirServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.healthcare.outputs.GetFhirServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetFhirServicePlainArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getFhirServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getFhirServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Healthcare Med Tech Service */
-    inline def getMedtechService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetMedtechServiceArgs.Builder] = scala.Predef.identity):
+    inline def getMedtechService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetMedtechServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.healthcare.outputs.GetMedtechServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetMedtechServiceArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getMedtechService(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getMedtechService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Healthcare Med Tech Service */
-    inline def getMedtechServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetMedtechServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMedtechServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetMedtechServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.healthcare.outputs.GetMedtechServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetMedtechServicePlainArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getMedtechServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getMedtechServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Healthcare Service */
-    inline def getService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.healthcare.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetServiceArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getService(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Healthcare Service */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.healthcare.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetServicePlainArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Healthcare Workspace */
-    inline def getWorkspace(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.healthcare.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetWorkspaceArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getWorkspace(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getWorkspace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Healthcare Workspace */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.healthcare.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.healthcare.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.healthcare.inputs.GetWorkspacePlainArgs.builder
-      com.pulumi.azure.healthcare.HealthcareFunctions.getWorkspacePlain(args(argsBuilder).build)
+      com.pulumi.azure.healthcare.HealthcareFunctions.getWorkspacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Healthcare Med Tech Service. */
   def MedtechService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

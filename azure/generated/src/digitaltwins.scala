@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object digitaltwins:
@@ -12,16 +14,20 @@ object digitaltwins:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Digital Twins instance. */
-    inline def getInstance(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.digitaltwins.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.azure.digitaltwins.inputs.GetInstanceArgs.builder
-      com.pulumi.azure.digitaltwins.DigitaltwinsFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.azure.digitaltwins.DigitaltwinsFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Digital Twins instance. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.azure.digitaltwins.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.digitaltwins.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.azure.digitaltwins.inputs.GetInstancePlainArgs.builder
-      com.pulumi.azure.digitaltwins.DigitaltwinsFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.azure.digitaltwins.DigitaltwinsFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Digital Twins Event Grid Endpoint. */
   def EndpointEventGrid(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cognitive:
@@ -217,28 +219,36 @@ object cognitive:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Cognitive Services Account. */
-    inline def getAccount(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cognitive.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountArgs.builder
-      com.pulumi.azure.cognitive.CognitiveFunctions.getAccount(args(argsBuilder).build)
+      com.pulumi.azure.cognitive.CognitiveFunctions.getAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account. */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cognitive.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountPlainArgs.builder
-      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountPlain(args(argsBuilder).build)
+      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account Project. */
-    inline def getAccountProject(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.Builder] = scala.Predef.identity):
+    inline def getAccountProject(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cognitive.outputs.GetAccountProjectResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountProjectArgs.builder
-      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProject(args(argsBuilder).build)
+      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProject(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Cognitive Services Account Project. */
-    inline def getAccountProjectPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountProjectPlain(args: Endofunction[com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cognitive.outputs.GetAccountProjectResult] =
       val argsBuilder = com.pulumi.azure.cognitive.inputs.GetAccountProjectPlainArgs.builder
-      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProjectPlain(args(argsBuilder).build)
+      com.pulumi.azure.cognitive.CognitiveFunctions.getAccountProjectPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Cognitive Services Account Deployment. */
   def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object managedredis:
@@ -60,25 +62,33 @@ object managedredis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Managed Redis instance. */
-    inline def get(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetArgs.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managedredis.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetArgs.builder
-      com.pulumi.azure.managedredis.ManagedredisFunctions.get(args(argsBuilder).build)
+      com.pulumi.azure.managedredis.ManagedredisFunctions.get(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Managed Redis instance. */
-    inline def getPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managedredis.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetPlainArgs.builder
-      com.pulumi.azure.managedredis.ManagedredisFunctions.getPlain(args(argsBuilder).build)
+      com.pulumi.azure.managedredis.ManagedredisFunctions.getPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Managed Redis Access Policy Assignment. */
-    inline def getAccessPolicyAssignment(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyAssignment(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.managedredis.outputs.GetAccessPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentArgs.builder
-      com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignment(args(argsBuilder).build)
+      com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Managed Redis Access Policy Assignment. */
-    inline def getAccessPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPolicyAssignmentPlain(args: Endofunction[com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.managedredis.outputs.GetAccessPolicyAssignmentResult] =
       val argsBuilder = com.pulumi.azure.managedredis.inputs.GetAccessPolicyAssignmentPlainArgs.builder
-      com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignmentPlain(args(argsBuilder).build)
+      com.pulumi.azure.managedredis.ManagedredisFunctions.getAccessPolicyAssignmentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

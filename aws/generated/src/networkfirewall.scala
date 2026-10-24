@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object networkfirewall:
@@ -86,40 +88,52 @@ object networkfirewall:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information about a firewall. */
-    inline def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = scala.Predef.identity):
+    inline def getFirewall(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewall(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewall(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a firewall. */
-    inline def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPlainArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPlain(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve information about a firewall policy. */
-    inline def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicy(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a firewall policy. */
-    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallPolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetFirewallPolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetFirewallPolicyPlainArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicyPlain(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getFirewallPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    inline def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicy(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicy(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a Network Firewall resource policy. */
-    inline def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePolicyPlain(args: Endofunction[com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.networkfirewall.outputs.GetResourcePolicyResult] =
       val argsBuilder = com.pulumi.aws.networkfirewall.inputs.GetResourcePolicyPlainArgs.builder
-      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicyPlain(args(argsBuilder).build)
+      com.pulumi.aws.networkfirewall.NetworkfirewallFunctions.getResourcePolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Network Firewall Resource Policy Resource for a rule group or firewall policy. */
   def ResourcePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

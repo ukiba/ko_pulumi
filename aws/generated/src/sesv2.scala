@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sesv2:
@@ -147,52 +149,68 @@ object sesv2:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Configuration Set. */
-    inline def getConfigurationSet(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetConfigurationSetArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationSet(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetConfigurationSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sesv2.outputs.GetConfigurationSetResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetConfigurationSetArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getConfigurationSet(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getConfigurationSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Configuration Set. */
-    inline def getConfigurationSetPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetConfigurationSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationSetPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetConfigurationSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sesv2.outputs.GetConfigurationSetResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetConfigurationSetPlainArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getConfigurationSetPlain(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getConfigurationSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Dedicated IP Pool. */
-    inline def getDedicatedIpPool(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolArgs.Builder] = scala.Predef.identity):
+    inline def getDedicatedIpPool(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sesv2.outputs.GetDedicatedIpPoolResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getDedicatedIpPool(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getDedicatedIpPool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Dedicated IP Pool. */
-    inline def getDedicatedIpPoolPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDedicatedIpPoolPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sesv2.outputs.GetDedicatedIpPoolResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetDedicatedIpPoolPlainArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getDedicatedIpPoolPlain(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getDedicatedIpPoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Email Identity. */
-    inline def getEmailIdentity(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentity(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sesv2.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetEmailIdentityArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentity(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentity(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Email Identity. */
-    inline def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentityPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sesv2.outputs.GetEmailIdentityResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetEmailIdentityPlainArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityPlain(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Email Identity Mail From Attributes. */
-    inline def getEmailIdentityMailFromAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentityMailFromAttributes(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sesv2.outputs.GetEmailIdentityMailFromAttributesResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityMailFromAttributes(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityMailFromAttributes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS SESv2 (Simple Email V2) Email Identity Mail From Attributes. */
-    inline def getEmailIdentityMailFromAttributesPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailIdentityMailFromAttributesPlain(args: Endofunction[com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sesv2.outputs.GetEmailIdentityMailFromAttributesResult] =
       val argsBuilder = com.pulumi.aws.sesv2.inputs.GetEmailIdentityMailFromAttributesPlainArgs.builder
-      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityMailFromAttributesPlain(args(argsBuilder).build)
+      com.pulumi.aws.sesv2.Sesv2Functions.getEmailIdentityMailFromAttributesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS SESv2 (Simple Email V2) Tenant. */
   def Tenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

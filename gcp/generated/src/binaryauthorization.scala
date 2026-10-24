@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object binaryauthorization:
@@ -949,16 +951,20 @@ object binaryauthorization:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for attestor */
-    inline def getAttestorIamPolicy(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAttestorIamPolicy(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.binaryauthorization.outputs.GetAttestorIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.builder
-      com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for attestor */
-    inline def getAttestorIamPolicyPlain(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAttestorIamPolicyPlain(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.binaryauthorization.outputs.GetAttestorIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.builder
-      com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A policy for container image binary authorization.

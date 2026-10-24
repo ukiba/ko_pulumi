@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object iam:
@@ -112,10 +114,12 @@ object iam:
      * }
      * </pre>
      */
-    inline def getRule(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRuleArgs.Builder] = scala.Predef.identity):
+    inline def getRule(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetRuleArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getRule(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information about a Google IAM Role.
@@ -152,34 +156,44 @@ object iam:
      * }
      * </pre>
      */
-    inline def getRulePlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulePlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetRulePlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getRulePlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve a list of testable permissions for a resource. Testable permissions mean the permissions that user can add or remove in a role at a given resource. The resource can be referenced either via the full resource name or via a URI. */
-    inline def getTestablePermissions(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.Builder] = scala.Predef.identity):
+    inline def getTestablePermissions(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetTestablePermissionsResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getTestablePermissions(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getTestablePermissions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve a list of testable permissions for a resource. Testable permissions mean the permissions that user can add or remove in a role at a given resource. The resource can be referenced either via the full resource name or via a URI. */
-    inline def getTestablePermissionsPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTestablePermissionsPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetTestablePermissionsResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getTestablePermissionsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getTestablePermissionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workforcepool */
-    inline def getWorkforcePoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkforcePoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkforcePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workforcepool */
-    inline def getWorkforcePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkforcePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkforcePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a IAM workload identity pool from Google Cloud by its id.
@@ -189,10 +203,12 @@ object iam:
      * 
      * &gt; **Note:** The following resource requires the Beta IAM role `roles/iam.workloadIdentityPoolAdmin` in order to succeed. `OWNER` and `EDITOR` roles do not include the necessary permissions.
      */
-    inline def getWorkloadIdentityPool(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPool(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPool(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a IAM workload identity pool from Google Cloud by its id.
@@ -202,46 +218,60 @@ object iam:
      * 
      * &gt; **Note:** The following resource requires the Beta IAM role `roles/iam.workloadIdentityPoolAdmin` in order to succeed. `OWNER` and `EDITOR` roles do not include the necessary permissions.
      */
-    inline def getWorkloadIdentityPoolPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workloadidentitypool */
-    inline def getWorkloadIdentityPoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workloadidentitypool */
-    inline def getWorkloadIdentityPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
-    inline def getWorkloadIdentityPoolJwks(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolJwks(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwks(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
-    inline def getWorkloadIdentityPoolJwksPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolJwksPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwksPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
-    inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfig(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
-    inline def getWorkloadIdentityPoolOpenidConfigPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolOpenidConfigPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a IAM workload identity provider from Google Cloud by its id.
@@ -249,10 +279,12 @@ object iam:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWorkloadIdentityPoolProvider(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolProvider(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolProviderResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProvider(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProvider(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a IAM workload identity provider from Google Cloud by its id.
@@ -260,10 +292,12 @@ object iam:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWorkloadIdentityPoolProviderPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolProviderPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolProviderResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.builder
-      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProviderPlain(args(argsBuilder).build)
+      com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProviderPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Represents an OAuth Client. Used to access Google Cloud resources on behalf of a

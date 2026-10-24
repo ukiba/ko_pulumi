@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object securesourcemanager:
@@ -1034,25 +1036,33 @@ object securesourcemanager:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for instance */
-    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securesourcemanager.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyArgs.builder
-      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getInstanceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getInstanceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for instance */
-    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securesourcemanager.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.GetInstanceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securesourcemanager.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyArgs.builder
-      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getRepositoryIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getRepositoryIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securesourcemanager.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securesourcemanager.inputs.GetRepositoryIamPolicyPlainArgs.builder
-      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.securesourcemanager.SecuresourcemanagerFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

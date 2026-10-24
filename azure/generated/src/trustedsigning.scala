@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object trustedsigning:
@@ -30,13 +32,17 @@ object trustedsigning:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Trusted Signing Account. */
-    inline def getAccount(args: Endofunction[com.pulumi.azure.trustedsigning.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.trustedsigning.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.trustedsigning.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.trustedsigning.inputs.GetAccountArgs.builder
-      com.pulumi.azure.trustedsigning.TrustedsigningFunctions.getAccount(args(argsBuilder).build)
+      com.pulumi.azure.trustedsigning.TrustedsigningFunctions.getAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Trusted Signing Account. */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.trustedsigning.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.trustedsigning.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.trustedsigning.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.trustedsigning.inputs.GetAccountPlainArgs.builder
-      com.pulumi.azure.trustedsigning.TrustedsigningFunctions.getAccountPlain(args(argsBuilder).build)
+      com.pulumi.azure.trustedsigning.TrustedsigningFunctions.getAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

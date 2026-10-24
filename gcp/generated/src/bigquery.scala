@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object bigquery:
@@ -42,48 +44,60 @@ object bigquery:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getDatapolicyv2DataPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDatapolicyv2DataPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatapolicyv2DataPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getDatapolicyv2DataPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatapolicyv2DataPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatapolicyv2DataPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information about a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets).
      */
-    inline def getDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.Builder] = scala.Predef.identity):
+    inline def getDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDataset(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDataset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets).
      */
-    inline def getDatasetPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a BigQuery dataset.
@@ -121,10 +135,12 @@ object bigquery:
      * }
      * </pre>
      */
-    inline def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a BigQuery dataset.
@@ -162,30 +178,36 @@ object bigquery:
      * }
      * </pre>
      */
-    inline def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a list of datasets in a GCP project. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/list).
      */
-    inline def getDatasets(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.Builder] = scala.Predef.identity):
+    inline def getDatasets(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetsResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasets(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a list of datasets in a GCP project. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/list).
      */
-    inline def getDatasetsPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatasetsPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetsResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get the email address of a project&#39;s unique BigQuery service account.
@@ -198,10 +220,12 @@ object bigquery:
      * For more information see
      * [the API reference](https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/getServiceAccount).
      */
-    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccount(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get the email address of a project&#39;s unique BigQuery service account.
@@ -214,74 +238,92 @@ object bigquery:
      * For more information see
      * [the API reference](https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/getServiceAccount).
      */
-    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for routine */
-    inline def getRoutineIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRoutineIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for routine */
-    inline def getRoutineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoutineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a specific table in a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get).
      */
-    inline def getTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableArgs.Builder] = scala.Predef.identity):
+    inline def getTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTable(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTable(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a specific table in a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get).
      */
-    inline def getTablePlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablePlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTablePlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTablePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get a list of tables in a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).
      */
-    inline def getTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesArgs.Builder] = scala.Predef.identity):
+    inline def getTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablesArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTables(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTables(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a list of tables in a BigQuery dataset. For more information see
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).
      */
-    inline def getTablesPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablesPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.builder
-      com.pulumi.gcp.bigquery.BigqueryFunctions.getTablesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquery.BigqueryFunctions.getTablesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Capacity commitment is a way to purchase compute capacity for BigQuery jobs (in the form of slots) with some committed period of usage. Annual commitments renew by default. Commitments can be removed after their commitment end time passes.

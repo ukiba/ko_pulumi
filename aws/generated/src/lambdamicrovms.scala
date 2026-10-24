@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object lambdamicrovms:
@@ -30,16 +32,20 @@ object lambdamicrovms:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about an AWS Lambda MicroVMs Image Version. */
-    inline def getImageVersion(args: Endofunction[com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionArgs.Builder] = scala.Predef.identity):
+    inline def getImageVersion(args: Endofunction[com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambdamicrovms.outputs.GetImageVersionResult] =
       val argsBuilder = com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionArgs.builder
-      com.pulumi.aws.lambdamicrovms.LambdamicrovmsFunctions.getImageVersion(args(argsBuilder).build)
+      com.pulumi.aws.lambdamicrovms.LambdamicrovmsFunctions.getImageVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS Lambda MicroVMs Image Version. */
-    inline def getImageVersionPlain(args: Endofunction[com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImageVersionPlain(args: Endofunction[com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambdamicrovms.outputs.GetImageVersionResult] =
       val argsBuilder = com.pulumi.aws.lambdamicrovms.inputs.GetImageVersionPlainArgs.builder
-      com.pulumi.aws.lambdamicrovms.LambdamicrovmsFunctions.getImageVersionPlain(args(argsBuilder).build)
+      com.pulumi.aws.lambdamicrovms.LambdamicrovmsFunctions.getImageVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an AWS Lambda MicroVMs MicroVM. Use this resource to run a MicroVM from a MicroVM image, which provisions a dedicated HTTPS endpoint and starts your application from the image snapshot.

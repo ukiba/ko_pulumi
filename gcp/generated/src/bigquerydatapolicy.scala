@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object bigquerydatapolicy:
@@ -12,16 +14,20 @@ object bigquerydatapolicy:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquerydatapolicy.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyArgs.builder
-      com.pulumi.gcp.bigquerydatapolicy.BigquerydatapolicyFunctions.getIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.bigquerydatapolicy.BigquerydatapolicyFunctions.getIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquerydatapolicy.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquerydatapolicy.inputs.GetIamPolicyPlainArgs.builder
-      com.pulumi.gcp.bigquerydatapolicy.BigquerydatapolicyFunctions.getIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.bigquerydatapolicy.BigquerydatapolicyFunctions.getIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A BigQuery Data Policy

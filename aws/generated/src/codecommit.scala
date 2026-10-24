@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object codecommit:
@@ -31,28 +33,36 @@ object codecommit:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about a specific CodeCommit Approval Rule Template. */
-    inline def getApprovalRuleTemplate(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getApprovalRuleTemplate(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codecommit.outputs.GetApprovalRuleTemplateResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplateArgs.builder
-      com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplate(args(argsBuilder).build)
+      com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific CodeCommit Approval Rule Template. */
-    inline def getApprovalRuleTemplatePlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getApprovalRuleTemplatePlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codecommit.outputs.GetApprovalRuleTemplateResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetApprovalRuleTemplatePlainArgs.builder
-      com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplatePlain(args(argsBuilder).build)
+      com.pulumi.aws.codecommit.CodecommitFunctions.getApprovalRuleTemplatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** The CodeCommit Repository data source allows the ARN, Repository ID, Repository URL for HTTP and Repository URL for SSH to be retrieved for an CodeCommit repository. */
-    inline def getRepository(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
+    inline def getRepository(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codecommit.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetRepositoryArgs.builder
-      com.pulumi.aws.codecommit.CodecommitFunctions.getRepository(args(argsBuilder).build)
+      com.pulumi.aws.codecommit.CodecommitFunctions.getRepository(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** The CodeCommit Repository data source allows the ARN, Repository ID, Repository URL for HTTP and Repository URL for SSH to be retrieved for an CodeCommit repository. */
-    inline def getRepositoryPlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryPlain(args: Endofunction[com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codecommit.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.aws.codecommit.inputs.GetRepositoryPlainArgs.builder
-      com.pulumi.aws.codecommit.CodecommitFunctions.getRepositoryPlain(args(argsBuilder).build)
+      com.pulumi.aws.codecommit.CodecommitFunctions.getRepositoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a CodeCommit Repository Resource. */
   def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

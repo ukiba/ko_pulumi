@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object discoveryengine:
@@ -128,52 +130,64 @@ object discoveryengine:
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    inline def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = scala.Predef.identity):
+    inline def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStore(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStore(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets an existing Discovery Engine data store by ID or display name.
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    inline def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStorePlain(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStorePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Gets a list of existing Discovery Engine data stores.
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    inline def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = scala.Predef.identity):
+    inline def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStores(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStores(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets a list of existing Discovery Engine data stores.
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    inline def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStoresPlain(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStoresPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for searchengine */
-    inline def getSearchEngineIamPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSearchEngineIamPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetSearchEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for searchengine */
-    inline def getSearchEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSearchEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetSearchEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.builder
-      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * License Configuration.

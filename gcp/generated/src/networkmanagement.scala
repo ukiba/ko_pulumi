@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object networkmanagement:
@@ -64,10 +66,12 @@ object networkmanagement:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    inline def getConnectivityTestRun(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestRun(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestRunResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunArgs.builder
-      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRun(args(argsBuilder).build)
+      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRun(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; This datasource triggers side effects on the target resource. It will take a long time to refresh (i.e. `pulumi preview` will take much longer than usual) and may modify the state of the parent resource or other copies of the resource copying the same parent.
@@ -83,10 +87,12 @@ object networkmanagement:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    inline def getConnectivityTestRunPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestRunPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestRunResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestRunPlainArgs.builder
-      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRunPlain(args(argsBuilder).build)
+      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestRunPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A connectivity test is a static analysis of your resource configurations
@@ -100,10 +106,12 @@ object networkmanagement:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    inline def getConnectivityTests(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTests(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestsResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsArgs.builder
-      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTests(args(argsBuilder).build)
+      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTests(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A connectivity test is a static analysis of your resource configurations
@@ -117,10 +125,12 @@ object networkmanagement:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/network-intelligence-center/docs)
      */
-    inline def getConnectivityTestsPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityTestsPlain(args: Endofunction[com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkmanagement.outputs.GetConnectivityTestsResult] =
       val argsBuilder = com.pulumi.gcp.networkmanagement.inputs.GetConnectivityTestsPlainArgs.builder
-      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.networkmanagement.NetworkmanagementFunctions.getConnectivityTestsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** VPC Flow Logs Config is a resource that lets you configure Flow Logs for Organization. */
   def OrganizationVpcFlowLogsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

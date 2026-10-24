@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object apigateway:
@@ -42,98 +44,126 @@ object apigateway:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing AWS API Gateway API Keys. */
-    inline def getApiKeys(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.Builder] = scala.Predef.identity):
+    inline def getApiKeys(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetApiKeysResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeys(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeys(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing AWS API Gateway API Keys. */
-    inline def getApiKeysPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiKeysPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetApiKeysResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeysPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeysPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific API Gateway Authorizer. */
-    inline def getAuthorizer(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizer(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetAuthorizerResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizer(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific API Gateway Authorizer. */
-    inline def getAuthorizerPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizerPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetAuthorizerResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizerPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about multiple API Gateway Authorizers. */
-    inline def getAuthorizers(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizers(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetAuthorizersResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizers(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about multiple API Gateway Authorizers. */
-    inline def getAuthorizersPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizersPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetAuthorizersResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizersPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the custom domain name for use with AWS API Gateway. */
-    inline def getDomainName(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.Builder] = scala.Predef.identity):
+    inline def getDomainName(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetDomainNameResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainName(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainName(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the custom domain name for use with AWS API Gateway. */
-    inline def getDomainNamePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainNamePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetDomainNameResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainNamePlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainNamePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getExport(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportArgs.Builder] = scala.Predef.identity):
+    inline def getExport(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getExport(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getExport(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getExportPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getExportPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the name and value of a pre-existing API Key, for
      * example to supply credentials for a dependency microservice.
      */
-    inline def getKey(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyArgs.Builder] = scala.Predef.identity):
+    inline def getKey(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetKeyArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getKey(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the name and value of a pre-existing API Key, for
      * example to supply credentials for a dependency microservice.
      */
-    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getKeyPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the ID of a Resource in API Gateway.
      * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
-    inline def getResource(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourceArgs.Builder] = scala.Predef.identity):
+    inline def getResource(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetResourceArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getResource(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getResource(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ID of a Resource in API Gateway.
      * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
-    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getResourcePlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getResourcePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the ID and rootResourceId of a REST API in
@@ -141,10 +171,12 @@ object apigateway:
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
      */
-    inline def getRestApi(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiArgs.Builder] = scala.Predef.identity):
+    inline def getRestApi(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetRestApiResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetRestApiArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApi(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApi(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ID and rootResourceId of a REST API in
@@ -152,20 +184,26 @@ object apigateway:
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
      */
-    inline def getRestApiPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRestApiPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetRestApiResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApiPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApiPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getSdk(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkArgs.Builder] = scala.Predef.identity):
+    inline def getSdk(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getSdk(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getSdk(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSdkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSdkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getSdkPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getSdkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the ID of a VPC Link in
@@ -173,10 +211,12 @@ object apigateway:
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
      */
-    inline def getVpcLink(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.Builder] = scala.Predef.identity):
+    inline def getVpcLink(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLink(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLink(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ID of a VPC Link in
@@ -184,10 +224,12 @@ object apigateway:
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
      */
-    inline def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.builder
-      com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLinkPlain(args(argsBuilder).build)
+      com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLinkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an API Gateway Authorizer. */
   def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

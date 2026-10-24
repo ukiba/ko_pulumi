@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object networkconnectivity:
@@ -1044,16 +1046,20 @@ object networkconnectivity:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for hub */
-    inline def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.builder
-      com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for hub */
-    inline def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.builder
-      com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Policy-based Routes are more powerful routes that route L4 network traffic based on not just destination IP, but also source IP, protocol and more. A Policy-based Route always take precedence when it conflicts with other types of routes.

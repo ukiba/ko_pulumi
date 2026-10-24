@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object connections:
@@ -30,25 +32,33 @@ object connections:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing API Connection. */
-    inline def getApiConnection(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getApiConnection(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.connections.outputs.GetApiConnectionResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetApiConnectionArgs.builder
-      com.pulumi.azure.connections.ConnectionsFunctions.getApiConnection(args(argsBuilder).build)
+      com.pulumi.azure.connections.ConnectionsFunctions.getApiConnection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Connection. */
-    inline def getApiConnectionPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiConnectionPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.connections.outputs.GetApiConnectionResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.builder
-      com.pulumi.azure.connections.ConnectionsFunctions.getApiConnectionPlain(args(argsBuilder).build)
+      com.pulumi.azure.connections.ConnectionsFunctions.getApiConnectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Uses this data source to access information about an existing Managed API. */
-    inline def getManagedApi(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiArgs.Builder] = scala.Predef.identity):
+    inline def getManagedApi(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.connections.outputs.GetManagedApiResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetManagedApiArgs.builder
-      com.pulumi.azure.connections.ConnectionsFunctions.getManagedApi(args(argsBuilder).build)
+      com.pulumi.azure.connections.ConnectionsFunctions.getManagedApi(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Uses this data source to access information about an existing Managed API. */
-    inline def getManagedApiPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedApiPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.connections.outputs.GetManagedApiResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.builder
-      com.pulumi.azure.connections.ConnectionsFunctions.getManagedApiPlain(args(argsBuilder).build)
+      com.pulumi.azure.connections.ConnectionsFunctions.getManagedApiPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

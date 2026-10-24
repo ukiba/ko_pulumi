@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object devopsguru:
@@ -12,28 +14,36 @@ object devopsguru:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS DevOps Guru Notification Channel. */
-    inline def getNotificationChannel(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannel(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.devopsguru.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelArgs.builder
-      com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannel(args(argsBuilder).build)
+      com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS DevOps Guru Notification Channel. */
-    inline def getNotificationChannelPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannelPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.devopsguru.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetNotificationChannelPlainArgs.builder
-      com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannelPlain(args(argsBuilder).build)
+      com.pulumi.aws.devopsguru.DevopsguruFunctions.getNotificationChannelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS DevOps Guru Resource Collection. */
-    inline def getResourceCollection(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.Builder] = scala.Predef.identity):
+    inline def getResourceCollection(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.devopsguru.outputs.GetResourceCollectionResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetResourceCollectionArgs.builder
-      com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollection(args(argsBuilder).build)
+      com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS DevOps Guru Resource Collection. */
-    inline def getResourceCollectionPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceCollectionPlain(args: Endofunction[com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.devopsguru.outputs.GetResourceCollectionResult] =
       val argsBuilder = com.pulumi.aws.devopsguru.inputs.GetResourceCollectionPlainArgs.builder
-      com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollectionPlain(args(argsBuilder).build)
+      com.pulumi.aws.devopsguru.DevopsguruFunctions.getResourceCollectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Resource for managing an AWS DevOps Guru Event Sources Config. Currently the only service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.

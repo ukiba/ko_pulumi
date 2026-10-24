@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object redis:
@@ -112,33 +114,41 @@ object redis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Redis Cache */
-    inline def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = scala.Predef.identity):
+    inline def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCacheArgs.builder
-      com.pulumi.azure.redis.RedisFunctions.getCache(args(argsBuilder).build)
+      com.pulumi.azure.redis.RedisFunctions.getCache(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Redis Cache */
-    inline def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCachePlainArgs.builder
-      com.pulumi.azure.redis.RedisFunctions.getCachePlain(args(argsBuilder).build)
+      com.pulumi.azure.redis.RedisFunctions.getCachePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing Redis Enterprise Database
      * 
      * &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    inline def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.builder
-      com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabase(args(argsBuilder).build)
+      com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabase(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing Redis Enterprise Database
      * 
      * &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    inline def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.builder
-      com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabasePlain(args(argsBuilder).build)
+      com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabasePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

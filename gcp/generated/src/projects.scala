@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object projects:
@@ -2625,19 +2627,23 @@ object projects:
      * Retrieve the ancestors for a project.
      * See the [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/getAncestry) for more details.
      */
-    inline def getAncestry(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryArgs.Builder] = scala.Predef.identity):
+    inline def getAncestry(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetAncestryResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetAncestryArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getAncestry(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getAncestry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieve the ancestors for a project.
      * See the [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/getAncestry) for more details.
      */
-    inline def getAncestryPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAncestryPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetAncestryResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetAncestryPlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getAncestryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getAncestryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information about a Google Cloud Project IAM Custom Role. Note that you must have the `roles/iam.roleViewer` role (or equivalent permissions) at the project level to use this datasource.
@@ -2682,10 +2688,12 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRoleArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRole(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRole(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about a Google Cloud Project IAM Custom Role. Note that you must have the `roles/iam.roleViewer` role (or equivalent permissions) at the project level to use this datasource.
@@ -2730,10 +2738,12 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolePlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolePlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get information about Google Cloud IAM Custom Roles from a project.
@@ -2774,10 +2784,12 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolesArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRoles(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRoles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about Google Cloud IAM Custom Roles from a project.
@@ -2818,10 +2830,12 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamCustomRolesPlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamCustomRolesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a project.
@@ -2859,10 +2873,12 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamPolicyArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a project.
@@ -2900,50 +2916,60 @@ object projects:
      * }
      * </pre>
      */
-    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIamPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetIamPolicyPlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Allows management of Organization policies for a Google Project. For more information see
      * [the official
      * documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    inline def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicy(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetOrganizationPolicyArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Allows management of Organization policies for a Google Project. For more information see
      * [the official
      * documentation](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
      */
-    inline def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPolicyPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetOrganizationPolicyResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetOrganizationPolicyPlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getOrganizationPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieve information about a set of projects based on a filter. See the
      * [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/list)
      * for more details.
      */
-    inline def getProject(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectArgs.Builder] = scala.Predef.identity):
+    inline def getProject(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getProject(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getProject(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieve information about a set of projects based on a filter. See the
      * [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects/list)
      * for more details.
      */
-    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectPlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getProjectPlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getProjectPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Verify the API service for the Google Cloud Platform project to see if it is enabled or not.
@@ -2960,10 +2986,12 @@ object projects:
      * * How-to Guides
      *     * [Enabling and Disabling Services](https://cloud.google.com/service-usage/docs/enable-disable)
      */
-    inline def getProjectService(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.Builder] = scala.Predef.identity):
+    inline def getProjectService(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.projects.outputs.GetProjectServiceResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectServiceArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getProjectService(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getProjectService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Verify the API service for the Google Cloud Platform project to see if it is enabled or not.
@@ -2980,10 +3008,12 @@ object projects:
      * * How-to Guides
      *     * [Enabling and Disabling Services](https://cloud.google.com/service-usage/docs/enable-disable)
      */
-    inline def getProjectServicePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectServicePlain(args: Endofunction[com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.projects.outputs.GetProjectServiceResult] =
       val argsBuilder = com.pulumi.gcp.projects.inputs.GetProjectServicePlainArgs.builder
-      com.pulumi.gcp.projects.ProjectsFunctions.getProjectServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.projects.ProjectsFunctions.getProjectServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Allows management of a single API service for a Google Cloud project.

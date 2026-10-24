@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object kinesis:
@@ -77,20 +79,24 @@ object kinesis:
      * 
      * For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
      */
-    inline def getFirehoseDeliveryStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.Builder] = scala.Predef.identity):
+    inline def getFirehoseDeliveryStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetFirehoseDeliveryStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStream(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStream(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information about a Kinesis Firehose Delivery Stream for use in other resources.
      * 
      * For more details, see the [Amazon Kinesis Firehose Documentation](https://aws.amazon.com/documentation/firehose/).
      */
-    inline def getFirehoseDeliveryStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirehoseDeliveryStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetFirehoseDeliveryStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetFirehoseDeliveryStreamPlainArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStreamPlain(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getFirehoseDeliveryStreamPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get information about a Kinesis Stream for use in other
@@ -98,10 +104,12 @@ object kinesis:
      * 
      * For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
      */
-    inline def getStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamArgs.Builder] = scala.Predef.identity):
+    inline def getStream(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getStream(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getStream(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information about a Kinesis Stream for use in other
@@ -109,30 +117,36 @@ object kinesis:
      * 
      * For more details, see the [Amazon Kinesis Documentation](https://aws.amazon.com/documentation/kinesis/).
      */
-    inline def getStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamPlainArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getStreamPlain(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getStreamPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Provides details about a Kinesis Stream Consumer.
      * 
      * For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
-    inline def getStreamConsumer(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.Builder] = scala.Predef.identity):
+    inline def getStreamConsumer(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamConsumerArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumer(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Provides details about a Kinesis Stream Consumer.
      * 
      * For more details, see the [Amazon Kinesis Stream Consumer Documentation](https://docs.aws.amazon.com/streams/latest/dev/enhanced-consumers.html).
      */
-    inline def getStreamConsumerPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamConsumerPlain(args: Endofunction[com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kinesis.outputs.GetStreamConsumerResult] =
       val argsBuilder = com.pulumi.aws.kinesis.inputs.GetStreamConsumerPlainArgs.builder
-      com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumerPlain(args(argsBuilder).build)
+      com.pulumi.aws.kinesis.KinesisFunctions.getStreamConsumerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a resource to manage an Amazon Kinesis Streams resource policy.

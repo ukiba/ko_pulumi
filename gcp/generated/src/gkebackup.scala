@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object gkebackup:
@@ -1001,28 +1003,36 @@ object gkebackup:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for backupplan */
-    inline def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.builder
-      com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for backupplan */
-    inline def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    inline def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.builder
-      com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    inline def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.builder
-      com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A RestoreChannel imposes constraints on where backups can be restored.

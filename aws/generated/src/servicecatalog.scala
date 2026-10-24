@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object servicecatalog:
@@ -228,120 +230,156 @@ object servicecatalog:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Service Catalog AppRegistry Application. */
-    inline def getAppregistryApplication(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryApplication(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetAppregistryApplicationResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryApplication(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryApplication(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Service Catalog AppRegistry Application. */
-    inline def getAppregistryApplicationPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryApplicationPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetAppregistryApplicationResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryApplicationPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryApplicationPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryApplicationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Service Catalog AppRegistry Attribute Group. */
-    inline def getAppregistryAttributeGroup(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryAttributeGroup(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetAppregistryAttributeGroupResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroup(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Service Catalog AppRegistry Attribute Group. */
-    inline def getAppregistryAttributeGroupPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryAttributeGroupPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetAppregistryAttributeGroupResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing AWS Service Catalog AppRegistry Attribute Group Associations. */
-    inline def getAppregistryAttributeGroupAssociations(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryAttributeGroupAssociations(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetAppregistryAttributeGroupAssociationsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupAssociations(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupAssociations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing AWS Service Catalog AppRegistry Attribute Group Associations. */
-    inline def getAppregistryAttributeGroupAssociationsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppregistryAttributeGroupAssociationsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetAppregistryAttributeGroupAssociationsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetAppregistryAttributeGroupAssociationsPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupAssociationsPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getAppregistryAttributeGroupAssociationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information on a Service Catalog Constraint. */
-    inline def getConstraint(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetConstraintArgs.Builder] = scala.Predef.identity):
+    inline def getConstraint(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetConstraintArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetConstraintResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetConstraintArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getConstraint(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getConstraint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information on a Service Catalog Constraint. */
-    inline def getConstraintPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetConstraintPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConstraintPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetConstraintPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetConstraintResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetConstraintPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getConstraintPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getConstraintPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product. */
-    inline def getLaunchPaths(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchPaths(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetLaunchPathsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getLaunchPaths(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getLaunchPaths(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Lists the paths to the specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product. */
-    inline def getLaunchPathsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLaunchPathsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetLaunchPathsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetLaunchPathsPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getLaunchPathsPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getLaunchPathsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information for a Service Catalog Portfolio. */
-    inline def getPortfolio(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioArgs.Builder] = scala.Predef.identity):
+    inline def getPortfolio(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetPortfolioResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetPortfolioArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolio(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolio(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information for a Service Catalog Portfolio. */
-    inline def getPortfolioPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPortfolioPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetPortfolioResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetPortfolioPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information on Service Catalog Portfolio Constraints. */
-    inline def getPortfolioConstraints(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsArgs.Builder] = scala.Predef.identity):
+    inline def getPortfolioConstraints(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetPortfolioConstraintsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioConstraints(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioConstraints(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information on Service Catalog Portfolio Constraints. */
-    inline def getPortfolioConstraintsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPortfolioConstraintsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetPortfolioConstraintsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetPortfolioConstraintsPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioConstraintsPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getPortfolioConstraintsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to retrieve information about a Service Catalog product.
      * 
      * &gt; **NOTE:** A &#34;provisioning artifact&#34; is also known as a &#34;version,&#34; and a &#34;distributor&#34; is also known as a &#34;vendor.&#34;
      */
-    inline def getProduct(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductArgs.Builder] = scala.Predef.identity):
+    inline def getProduct(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetProductResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetProductArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProduct(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProduct(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to retrieve information about a Service Catalog product.
      * 
      * &gt; **NOTE:** A &#34;provisioning artifact&#34; is also known as a &#34;version,&#34; and a &#34;distributor&#34; is also known as a &#34;vendor.&#34;
      */
-    inline def getProductPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProductPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProductPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetProductResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetProductPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProductPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProductPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Lists the provisioning artifacts for the specified product. */
-    inline def getProvisioningArtifacts(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsArgs.Builder] = scala.Predef.identity):
+    inline def getProvisioningArtifacts(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicecatalog.outputs.GetProvisioningArtifactsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProvisioningArtifacts(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProvisioningArtifacts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Lists the provisioning artifacts for the specified product. */
-    inline def getProvisioningArtifactsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProvisioningArtifactsPlain(args: Endofunction[com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicecatalog.outputs.GetProvisioningArtifactsResult] =
       val argsBuilder = com.pulumi.aws.servicecatalog.inputs.GetProvisioningArtifactsPlainArgs.builder
-      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProvisioningArtifactsPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicecatalog.ServicecatalogFunctions.getProvisioningArtifactsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Service Catalog Tag Option. */
   def TagOption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

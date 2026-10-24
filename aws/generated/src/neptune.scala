@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object neptune:
@@ -131,32 +133,40 @@ object neptune:
      * 
      * &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    inline def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersion(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionArgs.builder
-      com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersion(args(argsBuilder).build)
+      com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Information about a Neptune engine version.
      * 
      * &gt; **Note:** If AWS returns multiple matching engine versions, this data source will produce a `multiple Neptune engine versions` error. To avoid this, provide additional criteria to narrow the results or use the `latest` argument to select a single version. See the Argument Reference for details.
      */
-    inline def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEngineVersionPlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetEngineVersionResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetEngineVersionPlainArgs.builder
-      com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersionPlain(args(argsBuilder).build)
+      com.pulumi.aws.neptune.NeptuneFunctions.getEngineVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Information about Neptune orderable DB instances. */
-    inline def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstance(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstanceArgs.builder
-      com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstance(args(argsBuilder).build)
+      com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Information about Neptune orderable DB instances. */
-    inline def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrderableDbInstancePlain(args: Endofunction[com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.neptune.outputs.GetOrderableDbInstanceResult] =
       val argsBuilder = com.pulumi.aws.neptune.inputs.GetOrderableDbInstancePlainArgs.builder
-      com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstancePlain(args(argsBuilder).build)
+      com.pulumi.aws.neptune.NeptuneFunctions.getOrderableDbInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Neptune Parameter Group */
   def ParameterGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

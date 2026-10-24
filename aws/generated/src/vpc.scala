@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object vpc:
@@ -156,45 +158,57 @@ object vpc:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS EC2 VPC Endpoint Associations. */
-    inline def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointAssociations(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS EC2 VPC Endpoint Associations. */
-    inline def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEndpointAssociationsPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetEndpointAssociationsResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetEndpointAssociationsPlainArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociationsPlain(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getEndpointAssociationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule.
      * 
      * The arguments of this data source act as filters for querying the available security group rules. The given filters must match exactly one security group rule whose data will be exported as attributes.
      */
-    inline def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRule(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRuleArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRule(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * `aws.vpc.getSecurityGroupRule` provides details about a specific security group rule.
      * 
      * The arguments of this data source act as filters for querying the available security group rules. The given filters must match exactly one security group rule whose data will be exported as attributes.
      */
-    inline def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRulePlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRuleResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulePlainArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulePlain(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    inline def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRules(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRules(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** This resource can be useful for getting back a set of security group rule IDs. */
-    inline def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityGroupRulesPlain(args: Endofunction[com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpc.outputs.GetSecurityGroupRulesResult] =
       val argsBuilder = com.pulumi.aws.vpc.inputs.GetSecurityGroupRulesPlainArgs.builder
-      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulesPlain(args(argsBuilder).build)
+      com.pulumi.aws.vpc.VpcFunctions.getSecurityGroupRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

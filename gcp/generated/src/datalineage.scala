@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object datalineage:
@@ -35,17 +37,21 @@ object datalineage:
      * 
      * To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    inline def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = scala.Predef.identity):
+    inline def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigArgs.builder
-      com.pulumi.gcp.datalineage.DatalineageFunctions.getConfig(args(argsBuilder).build)
+      com.pulumi.gcp.datalineage.DatalineageFunctions.getConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get a configuration for Data Lineage.
      * 
      * To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.builder
-      com.pulumi.gcp.datalineage.DatalineageFunctions.getConfigPlain(args(argsBuilder).build)
+      com.pulumi.gcp.datalineage.DatalineageFunctions.getConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

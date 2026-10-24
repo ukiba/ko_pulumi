@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object signer:
@@ -12,28 +14,36 @@ object signer:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides information about a Signer Signing Job. */
-    inline def getSigningJob(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobArgs.Builder] = scala.Predef.identity):
+    inline def getSigningJob(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.signer.outputs.GetSigningJobResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningJobArgs.builder
-      com.pulumi.aws.signer.SignerFunctions.getSigningJob(args(argsBuilder).build)
+      com.pulumi.aws.signer.SignerFunctions.getSigningJob(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a Signer Signing Job. */
-    inline def getSigningJobPlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSigningJobPlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.signer.outputs.GetSigningJobResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningJobPlainArgs.builder
-      com.pulumi.aws.signer.SignerFunctions.getSigningJobPlain(args(argsBuilder).build)
+      com.pulumi.aws.signer.SignerFunctions.getSigningJobPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about a Signer Signing Profile. */
-    inline def getSigningProfile(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfileArgs.Builder] = scala.Predef.identity):
+    inline def getSigningProfile(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.signer.outputs.GetSigningProfileResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningProfileArgs.builder
-      com.pulumi.aws.signer.SignerFunctions.getSigningProfile(args(argsBuilder).build)
+      com.pulumi.aws.signer.SignerFunctions.getSigningProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a Signer Signing Profile. */
-    inline def getSigningProfilePlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSigningProfilePlain(args: Endofunction[com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.signer.outputs.GetSigningProfileResult] =
       val argsBuilder = com.pulumi.aws.signer.inputs.GetSigningProfilePlainArgs.builder
-      com.pulumi.aws.signer.SignerFunctions.getSigningProfilePlain(args(argsBuilder).build)
+      com.pulumi.aws.signer.SignerFunctions.getSigningProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Creates a Signer Signing Job. */
   def SigningJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

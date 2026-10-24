@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object ram:
@@ -50,16 +52,20 @@ object ram:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    inline def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = scala.Predef.identity):
+    inline def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareArgs.builder
-      com.pulumi.aws.ram.RamFunctions.getResourceShare(args(argsBuilder).build)
+      com.pulumi.aws.ram.RamFunctions.getResourceShare(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    inline def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.builder
-      com.pulumi.aws.ram.RamFunctions.getResourceSharePlain(args(argsBuilder).build)
+      com.pulumi.aws.ram.RamFunctions.getResourceSharePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a Resource Access Manager (RAM) Resource Association.

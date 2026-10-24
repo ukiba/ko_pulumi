@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object communication:
@@ -12,16 +14,20 @@ object communication:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Communication Service. */
-    inline def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServiceArgs.builder
-      com.pulumi.azure.communication.CommunicationFunctions.getService(args(argsBuilder).build)
+      com.pulumi.azure.communication.CommunicationFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Communication Service. */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServicePlainArgs.builder
-      com.pulumi.azure.communication.CommunicationFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.communication.CommunicationFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Email Communication Service. */
   def EmailService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

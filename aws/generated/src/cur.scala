@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cur:
@@ -18,10 +20,12 @@ object cur:
      * 
      * &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    inline def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.builder
-      com.pulumi.aws.cur.CurFunctions.getReportDefinition(args(argsBuilder).build)
+      com.pulumi.aws.cur.CurFunctions.getReportDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information on an AWS Cost and Usage Report Definition.
@@ -30,10 +34,12 @@ object cur:
      * 
      * &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    inline def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.builder
-      com.pulumi.aws.cur.CurFunctions.getReportDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.aws.cur.CurFunctions.getReportDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages Cost and Usage Report Definitions.

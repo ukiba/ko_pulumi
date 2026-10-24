@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object ecrpublic:
@@ -16,32 +18,40 @@ object ecrpublic:
      * 
      * &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationToken(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenArgs.builder
-      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationToken(args(argsBuilder).build)
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The Public ECR Authorization Token data source allows the authorization token, token expiration date, user name, and password to be retrieved for a Public ECR repository.
      * 
      * &gt; **NOTE:** This data source can only be used in the `us-east-1` region.
      */
-    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationTokenPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetAuthorizationTokenResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetAuthorizationTokenPlainArgs.builder
-      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationTokenPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getAuthorizationTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    inline def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
+    inline def getImages(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesArgs.builder
-      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImages(args(argsBuilder).build)
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImages(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** The ECR Public Images data source allows the list of images in a specified public repository to be retrieved. */
-    inline def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagesPlain(args: Endofunction[com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ecrpublic.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.aws.ecrpublic.inputs.GetImagesPlainArgs.builder
-      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImagesPlain(args(argsBuilder).build)
+      com.pulumi.aws.ecrpublic.EcrpublicFunctions.getImagesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a Public Elastic Container Registry Repository.

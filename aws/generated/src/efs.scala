@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object efs:
@@ -38,52 +40,68 @@ object efs:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides information about an Elastic File System (EFS) Access Point. */
-    inline def getAccessPoint(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPoint(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.efs.outputs.GetAccessPointResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetAccessPointArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getAccessPoint(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getAccessPoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about an Elastic File System (EFS) Access Point. */
-    inline def getAccessPointPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPointPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.efs.outputs.GetAccessPointResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetAccessPointPlainArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getAccessPointPlain(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getAccessPointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about multiple Elastic File System (EFS) Access Points. */
-    inline def getAccessPoints(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPoints(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.efs.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetAccessPointsArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getAccessPoints(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getAccessPoints(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about multiple Elastic File System (EFS) Access Points. */
-    inline def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.efs.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetAccessPointsPlainArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getAccessPointsPlain(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getAccessPointsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about an Elastic File System (EFS) File System. */
-    inline def getFileSystem(args: Endofunction[com.pulumi.aws.efs.inputs.GetFileSystemArgs.Builder] = scala.Predef.identity):
+    inline def getFileSystem(args: Endofunction[com.pulumi.aws.efs.inputs.GetFileSystemArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.efs.outputs.GetFileSystemResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetFileSystemArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getFileSystem(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getFileSystem(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about an Elastic File System (EFS) File System. */
-    inline def getFileSystemPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetFileSystemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFileSystemPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetFileSystemPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.efs.outputs.GetFileSystemResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetFileSystemPlainArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getFileSystemPlain(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getFileSystemPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about an Elastic File System Mount Target (EFS). */
-    inline def getMountTarget(args: Endofunction[com.pulumi.aws.efs.inputs.GetMountTargetArgs.Builder] = scala.Predef.identity):
+    inline def getMountTarget(args: Endofunction[com.pulumi.aws.efs.inputs.GetMountTargetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.efs.outputs.GetMountTargetResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetMountTargetArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getMountTarget(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getMountTarget(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about an Elastic File System Mount Target (EFS). */
-    inline def getMountTargetPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetMountTargetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMountTargetPlain(args: Endofunction[com.pulumi.aws.efs.inputs.GetMountTargetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.efs.outputs.GetMountTargetResult] =
       val argsBuilder = com.pulumi.aws.efs.inputs.GetMountTargetPlainArgs.builder
-      com.pulumi.aws.efs.EfsFunctions.getMountTargetPlain(args(argsBuilder).build)
+      com.pulumi.aws.efs.EfsFunctions.getMountTargetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Elastic File System (EFS) File System resource. */
   def FileSystem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

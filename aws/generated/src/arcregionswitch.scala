@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object arcregionswitch:
@@ -12,28 +14,36 @@ object arcregionswitch:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an Amazon ARC Region Switch plan. */
-    inline def getPlan(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.Builder] = scala.Predef.identity):
+    inline def getPlan(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.arcregionswitch.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetPlanArgs.builder
-      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlan(args(argsBuilder).build)
+      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an Amazon ARC Region Switch plan. */
-    inline def getPlanPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlanPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.arcregionswitch.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetPlanPlainArgs.builder
-      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlanPlain(args(argsBuilder).build)
+      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getPlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing Amazon ARC Region Switch Route53 Health Checks. */
-    inline def getRoute53HealthChecks(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.Builder] = scala.Predef.identity):
+    inline def getRoute53HealthChecks(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.arcregionswitch.outputs.GetRoute53HealthChecksResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksArgs.builder
-      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecks(args(argsBuilder).build)
+      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing Amazon ARC Region Switch Route53 Health Checks. */
-    inline def getRoute53HealthChecksPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoute53HealthChecksPlain(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.arcregionswitch.outputs.GetRoute53HealthChecksResult] =
       val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.GetRoute53HealthChecksPlainArgs.builder
-      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecksPlain(args(argsBuilder).build)
+      com.pulumi.aws.arcregionswitch.ArcregionswitchFunctions.getRoute53HealthChecksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an Amazon ARC Region Switch plan. */
   def Plan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object ssmincidents:
@@ -57,29 +59,37 @@ object ssmincidents:
      * 
      * Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    inline def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSet(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetArgs.builder
-      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSet(args(argsBuilder).build)
+      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * &gt; **NOTE:** The AWS Region specified by a provider must always be one of the Regions specified for the replication set.
      * 
      * Use this data source to manage a replication set in AWS Systems Manager Incident Manager.
      */
-    inline def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationSetPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetReplicationSetResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetReplicationSetPlainArgs.builder
-      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSetPlain(args(argsBuilder).build)
+      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getReplicationSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    inline def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = scala.Predef.identity):
+    inline def getResponsePlan(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanArgs.builder
-      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlan(args(argsBuilder).build)
+      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to manage a response plan in AWS Systems Manager Incident Manager. */
-    inline def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResponsePlanPlain(args: Endofunction[com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ssmincidents.outputs.GetResponsePlanResult] =
       val argsBuilder = com.pulumi.aws.ssmincidents.inputs.GetResponsePlanPlainArgs.builder
-      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlanPlain(args(argsBuilder).build)
+      com.pulumi.aws.ssmincidents.SsmincidentsFunctions.getResponsePlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

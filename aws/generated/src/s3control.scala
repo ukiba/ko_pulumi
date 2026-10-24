@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object s3control:
@@ -215,40 +217,52 @@ object s3control:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about an AWS S3 Control Access Points. */
-    inline def getAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getAccessPoints(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getAccessPoints(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS S3 Control Access Points. */
-    inline def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetAccessPointsPlainArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getAccessPointsPlain(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getAccessPointsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details on a specific S3 Multi-Region Access Point. */
-    inline def getMultiRegionAccessPoint(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPoint(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoint(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details on a specific S3 Multi-Region Access Point. */
-    inline def getMultiRegionAccessPointPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPointPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointPlainArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointPlain(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about AWS S3 Control Multi-Region Access Points. */
-    inline def getMultiRegionAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPoints(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoints(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPoints(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about AWS S3 Control Multi-Region Access Points. */
-    inline def getMultiRegionAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMultiRegionAccessPointsPlain(args: Endofunction[com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.s3control.outputs.GetMultiRegionAccessPointsResult] =
       val argsBuilder = com.pulumi.aws.s3control.inputs.GetMultiRegionAccessPointsPlainArgs.builder
-      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointsPlain(args(argsBuilder).build)
+      com.pulumi.aws.s3control.S3controlFunctions.getMultiRegionAccessPointsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage an S3 Storage Lens configuration. */
   def StorageLensConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

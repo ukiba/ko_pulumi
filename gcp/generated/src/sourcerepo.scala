@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sourcerepo:
@@ -951,10 +953,12 @@ object sourcerepo:
      * and
      * [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    inline def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity):
+    inline def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.builder
-      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepository(args(argsBuilder).build)
+      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepository(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get infomation about an existing Google Cloud Source Repository.
@@ -962,19 +966,25 @@ object sourcerepo:
      * and
      * [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.builder
-      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.builder
-      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.builder
-      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

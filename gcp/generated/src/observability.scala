@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object observability:
@@ -44,10 +46,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetFolderSettingsArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettings(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Describes the Google Cloud Observability Settings associated with a folder.
@@ -58,10 +62,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetFolderSettingsPlainArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettingsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getFolderSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Describes the Google Cloud Observability Settings associated with an organization.
@@ -72,10 +78,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetOrganizationSettingsArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettings(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Describes the Google Cloud Observability Settings associated with an organization.
@@ -86,10 +94,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetOrganizationSettingsPlainArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getOrganizationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Describes the Google Cloud Observability Settings associated with a project.
@@ -100,10 +110,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.observability.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetProjectSettingsArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettings(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Describes the Google Cloud Observability Settings associated with a project.
@@ -114,10 +126,12 @@ object observability:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/stackdriver/docs/observability/set-defaults-for-observability-buckets)
      */
-    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.observability.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.observability.inputs.GetProjectSettingsPlainArgs.builder
-      com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettingsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.observability.ObservabilityFunctions.getProjectSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages Cloud Observability settings for an organization. */
   def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

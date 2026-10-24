@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object firestore:
@@ -140,10 +142,12 @@ object firestore:
      * and
      * [API](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/get/).
      */
-    inline def getDocument(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentArgs.Builder] = scala.Predef.identity):
+    inline def getDocument(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.firestore.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.GetDocumentArgs.builder
-      com.pulumi.gcp.firestore.FirestoreFunctions.getDocument(args(argsBuilder).build)
+      com.pulumi.gcp.firestore.FirestoreFunctions.getDocument(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Reads a document from a Firestore database.
@@ -151,10 +155,12 @@ object firestore:
      * and
      * [API](https://cloud.google.com/firestore/docs/reference/rest/v1/projects.databases.documents/get/).
      */
-    inline def getDocumentPlain(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDocumentPlain(args: Endofunction[com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.firestore.outputs.GetDocumentResult] =
       val argsBuilder = com.pulumi.gcp.firestore.inputs.GetDocumentPlainArgs.builder
-      com.pulumi.gcp.firestore.FirestoreFunctions.getDocumentPlain(args(argsBuilder).build)
+      com.pulumi.gcp.firestore.FirestoreFunctions.getDocumentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Cloud Firestore indexes enable simple and complex queries against documents in a database.

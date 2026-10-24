@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package cloudflare
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cloudflare:
@@ -701,10 +703,12 @@ object cloudflare:
      * - `Account Firewall Access Rules Read`
      * - `Account Firewall Access Rules Write`
      */
-    inline def getAccessRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRuleArgs.Builder] = scala.Predef.identity):
+    inline def getAccessRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccessRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccessRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccessRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccessRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -712,10 +716,12 @@ object cloudflare:
      * - `Account Firewall Access Rules Read`
      * - `Account Firewall Access Rules Write`
      */
-    inline def getAccessRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccessRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccessRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccessRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccessRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -723,10 +729,12 @@ object cloudflare:
      * - `Account Firewall Access Rules Read`
      * - `Account Firewall Access Rules Write`
      */
-    inline def getAccessRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulesArgs.Builder] = scala.Predef.identity):
+    inline def getAccessRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccessRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccessRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccessRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccessRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -734,10 +742,12 @@ object cloudflare:
      * - `Account Firewall Access Rules Read`
      * - `Account Firewall Access Rules Write`
      */
-    inline def getAccessRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccessRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccessRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccessRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccessRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccessRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccessRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -772,10 +782,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccount(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountArgs.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccount(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccount(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -810,10 +822,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -821,10 +835,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountApiTokenPermissionGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getAccountApiTokenPermissionGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountApiTokenPermissionGroupsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -832,10 +848,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountApiTokenPermissionGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountApiTokenPermissionGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountApiTokenPermissionGroupsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -843,10 +861,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountApiTokenPermissionGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListArgs.Builder] = scala.Predef.identity):
+    inline def getAccountApiTokenPermissionGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountApiTokenPermissionGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -854,10 +874,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountApiTokenPermissionGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountApiTokenPermissionGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountApiTokenPermissionGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountApiTokenPermissionGroupsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountApiTokenPermissionGroupsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -865,10 +887,12 @@ object cloudflare:
      * - `Account DNS Settings Read`
      * - `Account DNS Settings Write`
      */
-    inline def getAccountDnsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -876,10 +900,12 @@ object cloudflare:
      * - `Account DNS Settings Read`
      * - `Account DNS Settings Write`
      */
-    inline def getAccountDnsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -887,10 +913,12 @@ object cloudflare:
      * - `DNS View Read`
      * - `DNS View Write`
      */
-    inline def getAccountDnsSettingsInternalView(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettingsInternalView(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsInternalViewResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalView(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalView(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -898,10 +926,12 @@ object cloudflare:
      * - `DNS View Read`
      * - `DNS View Write`
      */
-    inline def getAccountDnsSettingsInternalViewPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettingsInternalViewPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsInternalViewResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViewPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViewPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -909,10 +939,12 @@ object cloudflare:
      * - `DNS View Read`
      * - `DNS View Write`
      */
-    inline def getAccountDnsSettingsInternalViews(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettingsInternalViews(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsInternalViewsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViews(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViews(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -920,10 +952,12 @@ object cloudflare:
      * - `DNS View Read`
      * - `DNS View Write`
      */
-    inline def getAccountDnsSettingsInternalViewsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountDnsSettingsInternalViewsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountDnsSettingsInternalViewsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountDnsSettingsInternalViewsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViewsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountDnsSettingsInternalViewsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -932,10 +966,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountMember(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMemberArgs.Builder] = scala.Predef.identity):
+    inline def getAccountMember(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMemberArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountMemberResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountMemberArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountMember(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountMember(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -944,10 +980,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountMemberPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMemberPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountMemberPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMemberPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountMemberResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountMemberPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountMemberPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountMemberPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -956,10 +994,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountMembers(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMembersArgs.Builder] = scala.Predef.identity):
+    inline def getAccountMembers(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMembersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountMembersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountMembersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountMembers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountMembers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -968,10 +1008,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountMembersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMembersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountMembersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountMembersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountMembersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountMembersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountMembersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountMembersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1006,10 +1048,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccountPermissionGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPermissionGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountPermissionGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountPermissionGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1044,10 +1088,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccountPermissionGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPermissionGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountPermissionGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountPermissionGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1082,10 +1128,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccountPermissionGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPermissionGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountPermissionGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1120,10 +1168,12 @@ object cloudflare:
      * - `Workers Tail Read`
      * - `Zero Trust: PII Read`
      */
-    inline def getAccountPermissionGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountPermissionGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountPermissionGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountPermissionGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountPermissionGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1132,10 +1182,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountRole(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRoleArgs.Builder] = scala.Predef.identity):
+    inline def getAccountRole(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRoleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountRoleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountRoleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountRole(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountRole(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1144,10 +1196,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountRolePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountRolePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountRoleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountRolePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountRolePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountRolePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1156,10 +1210,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountRoles(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolesArgs.Builder] = scala.Predef.identity):
+    inline def getAccountRoles(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountRolesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountRolesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountRoles(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountRoles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1168,10 +1224,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getAccountRolesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountRolesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountRolesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountRolesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountRolesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountRolesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountRolesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1179,10 +1237,12 @@ object cloudflare:
      * - `Billing Read`
      * - `Billing Write`
      */
-    inline def getAccountSubscription(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getAccountSubscription(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountSubscriptionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountSubscriptionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountSubscriptionArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountSubscription(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountSubscription(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1190,10 +1250,12 @@ object cloudflare:
      * - `Billing Read`
      * - `Billing Write`
      */
-    inline def getAccountSubscriptionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountSubscriptionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountSubscriptionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountSubscriptionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountSubscriptionPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountSubscriptionPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountSubscriptionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1201,10 +1263,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAccountToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1212,10 +1276,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1223,10 +1289,12 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokensArgs.Builder] = scala.Predef.identity):
+    inline def getAccountTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokensArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountTokensArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokens(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokens(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1234,20 +1302,26 @@ object cloudflare:
      * - `Account API Tokens Read`
      * - `Account API Tokens Write`
      */
-    inline def getAccountTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokensPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountTokensPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountTokensPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokensPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountTokensPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAccounts(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountsArgs.Builder] = scala.Predef.identity):
+    inline def getAccounts(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAccountsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccounts(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccounts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAccountsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAccountsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAccountsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAccountsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAccountsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAccountsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAccountsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1255,10 +1329,12 @@ object cloudflare:
      * - `Address Maps Read`
      * - `Address Maps Write`
      */
-    inline def getAddressMap(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapArgs.Builder] = scala.Predef.identity):
+    inline def getAddressMap(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAddressMapResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAddressMapArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAddressMap(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAddressMap(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1266,10 +1342,12 @@ object cloudflare:
      * - `Address Maps Read`
      * - `Address Maps Write`
      */
-    inline def getAddressMapPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressMapPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAddressMapResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAddressMapPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAddressMapPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAddressMapPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1277,10 +1355,12 @@ object cloudflare:
      * - `Address Maps Read`
      * - `Address Maps Write`
      */
-    inline def getAddressMaps(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapsArgs.Builder] = scala.Predef.identity):
+    inline def getAddressMaps(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAddressMapsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAddressMapsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAddressMaps(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAddressMaps(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1288,10 +1368,12 @@ object cloudflare:
      * - `Address Maps Read`
      * - `Address Maps Write`
      */
-    inline def getAddressMapsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAddressMapsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAddressMapsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAddressMapsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAddressMapsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAddressMapsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAddressMapsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1299,10 +1381,12 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGateway(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getAiGateway(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiGatewayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewayArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGateway(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1310,10 +1394,12 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGatewayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiGatewayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiGatewayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewayPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1321,10 +1407,12 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGatewayDynamicRouting(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingArgs.Builder] = scala.Predef.identity):
+    inline def getAiGatewayDynamicRouting(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiGatewayDynamicRoutingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayDynamicRouting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayDynamicRouting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1332,10 +1420,12 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGatewayDynamicRoutingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiGatewayDynamicRoutingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiGatewayDynamicRoutingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewayDynamicRoutingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayDynamicRoutingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewayDynamicRoutingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1343,10 +1433,12 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGateways(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewaysArgs.Builder] = scala.Predef.identity):
+    inline def getAiGateways(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewaysArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiGatewaysInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewaysArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGateways(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGateways(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1354,70 +1446,96 @@ object cloudflare:
      * - `AI Gateway Read`
      * - `AI Gateway Write`
      */
-    inline def getAiGatewaysPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewaysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiGatewaysPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiGatewaysPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiGatewaysInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiGatewaysPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewaysPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiGatewaysPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchInstance(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchInstance(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchInstanceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchInstanceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstance(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchInstancePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchInstancePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchInstanceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchInstancePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstancePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchInstances(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchInstances(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchInstancesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchInstancesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstances(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstances(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchInstancesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchInstancesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchInstancesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchInstancesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchInstancesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstancesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchInstancesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchNamespaceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespace(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchNamespacePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespacePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacesArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchNamespacesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespaces(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespaces(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchNamespacesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchNamespacesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespacesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchNamespacesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokenArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAiSearchTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokensArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokensArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAiSearchTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchTokensArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokens(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokens(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAiSearchTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokensPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAiSearchTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAiSearchTokensPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAiSearchTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAiSearchTokensPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokensPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAiSearchTokensPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1427,10 +1545,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShield(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldArgs.Builder] = scala.Predef.identity):
+    inline def getApiShield(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShield(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShield(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1440,10 +1560,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1453,10 +1575,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldDiscoveryOperations(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldDiscoveryOperations(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldDiscoveryOperationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldDiscoveryOperations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldDiscoveryOperations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1466,10 +1590,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldDiscoveryOperationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldDiscoveryOperationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldDiscoveryOperationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldDiscoveryOperationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldDiscoveryOperationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldDiscoveryOperationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1479,10 +1605,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperation(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperation(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldOperationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperation(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperation(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1492,10 +1620,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldOperationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1505,10 +1635,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperationSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperationSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldOperationSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationSchemaValidationSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationSchemaValidationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1518,10 +1650,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperationSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperationSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldOperationSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationSchemaValidationSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationSchemaValidationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationSchemaValidationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1531,10 +1665,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperations(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationsArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperations(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldOperationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1544,10 +1680,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldOperationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldOperationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldOperationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldOperationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldOperationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldOperationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1557,10 +1695,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchema(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchema(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldSchemaResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemaArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchema(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchema(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1570,10 +1710,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchemaPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchemaPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldSchemaResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemaPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1583,10 +1725,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaValidationSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaValidationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1596,10 +1740,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemaValidationSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaValidationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemaValidationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1609,10 +1755,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchemas(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemasArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchemas(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiShieldSchemasInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemasArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemas(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemas(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1622,10 +1770,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getApiShieldSchemasPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiShieldSchemasPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiShieldSchemasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiShieldSchemasInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiShieldSchemasPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemasPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiShieldSchemasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1633,10 +1783,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenArgs.Builder] = scala.Predef.identity):
+    inline def getApiToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1644,10 +1796,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1655,10 +1809,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiTokenPermissionGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListArgs.Builder] = scala.Predef.identity):
+    inline def getApiTokenPermissionGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiTokenPermissionGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPermissionGroupsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPermissionGroupsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1666,10 +1822,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiTokenPermissionGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiTokenPermissionGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiTokenPermissionGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokenPermissionGroupsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPermissionGroupsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiTokenPermissionGroupsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1677,10 +1835,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokensArgs.Builder] = scala.Predef.identity):
+    inline def getApiTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokensArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetApiTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokensArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiTokens(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiTokens(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1688,10 +1848,12 @@ object cloudflare:
      * - `API Tokens Read`
      * - `API Tokens Write`
      */
-    inline def getApiTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokensPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetApiTokensPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetApiTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetApiTokensPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getApiTokensPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getApiTokensPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1699,10 +1861,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getArgoSmartRouting(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoSmartRoutingArgs.Builder] = scala.Predef.identity):
+    inline def getArgoSmartRouting(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoSmartRoutingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetArgoSmartRoutingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetArgoSmartRoutingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getArgoSmartRouting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getArgoSmartRouting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1710,70 +1874,96 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getArgoSmartRoutingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoSmartRoutingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getArgoSmartRoutingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoSmartRoutingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetArgoSmartRoutingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetArgoSmartRoutingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getArgoSmartRoutingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getArgoSmartRoutingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getArgoTieredCaching(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoTieredCachingArgs.Builder] = scala.Predef.identity):
+    inline def getArgoTieredCaching(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoTieredCachingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetArgoTieredCachingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetArgoTieredCachingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getArgoTieredCaching(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getArgoTieredCaching(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getArgoTieredCachingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoTieredCachingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getArgoTieredCachingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetArgoTieredCachingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetArgoTieredCachingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetArgoTieredCachingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getArgoTieredCachingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getArgoTieredCachingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAuthenticatedOriginPulls(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPulls(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPulls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPulls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAuthenticatedOriginPullsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAuthenticatedOriginPullsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAuthenticatedOriginPullsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAuthenticatedOriginPullsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAuthenticatedOriginPullsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAuthenticatedOriginPullsHostnameCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsHostnameCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsHostnameCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAuthenticatedOriginPullsHostnameCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsHostnameCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsHostnameCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getAuthenticatedOriginPullsHostnameCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsHostnameCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsHostnameCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getAuthenticatedOriginPullsHostnameCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsHostnameCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsHostnameCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsHostnameCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsHostnameCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1781,10 +1971,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getAuthenticatedOriginPullsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1792,10 +1984,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getAuthenticatedOriginPullsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthenticatedOriginPullsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetAuthenticatedOriginPullsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetAuthenticatedOriginPullsSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getAuthenticatedOriginPullsSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1803,10 +1997,12 @@ object cloudflare:
      * - `Bot Management Read`
      * - `Bot Management Write`
      */
-    inline def getBotManagement(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotManagementArgs.Builder] = scala.Predef.identity):
+    inline def getBotManagement(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotManagementArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetBotManagementResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetBotManagementArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getBotManagement(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getBotManagement(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1814,10 +2010,12 @@ object cloudflare:
      * - `Bot Management Read`
      * - `Bot Management Write`
      */
-    inline def getBotManagementPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotManagementPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBotManagementPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotManagementPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetBotManagementResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetBotManagementPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getBotManagementPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getBotManagementPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1825,10 +2023,12 @@ object cloudflare:
      * - `DDoS Botnet Feed Read`
      * - `DDoS Botnet Feed Write`
      */
-    inline def getBotnetFeedConfigAsn(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnArgs.Builder] = scala.Predef.identity):
+    inline def getBotnetFeedConfigAsn(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetBotnetFeedConfigAsnResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getBotnetFeedConfigAsn(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getBotnetFeedConfigAsn(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1836,10 +2036,12 @@ object cloudflare:
      * - `DDoS Botnet Feed Read`
      * - `DDoS Botnet Feed Write`
      */
-    inline def getBotnetFeedConfigAsnPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBotnetFeedConfigAsnPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetBotnetFeedConfigAsnResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetBotnetFeedConfigAsnPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getBotnetFeedConfigAsnPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getBotnetFeedConfigAsnPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1851,10 +2053,12 @@ object cloudflare:
      * - `Magic Transit Read`
      * - `Magic Transit Write`
      */
-    inline def getByoIpPrefix(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixArgs.Builder] = scala.Predef.identity):
+    inline def getByoIpPrefix(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetByoIpPrefixResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetByoIpPrefixArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefix(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefix(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1866,10 +2070,12 @@ object cloudflare:
      * - `Magic Transit Read`
      * - `Magic Transit Write`
      */
-    inline def getByoIpPrefixPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixPlainArgs.Builder] = scala.Predef.identity):
+    inline def getByoIpPrefixPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetByoIpPrefixResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetByoIpPrefixPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1881,10 +2087,12 @@ object cloudflare:
      * - `Magic Transit Read`
      * - `Magic Transit Write`
      */
-    inline def getByoIpPrefixes(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixesArgs.Builder] = scala.Predef.identity):
+    inline def getByoIpPrefixes(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetByoIpPrefixesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetByoIpPrefixesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1896,10 +2104,12 @@ object cloudflare:
      * - `Magic Transit Read`
      * - `Magic Transit Write`
      */
-    inline def getByoIpPrefixesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getByoIpPrefixesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetByoIpPrefixesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetByoIpPrefixesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetByoIpPrefixesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getByoIpPrefixesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1907,10 +2117,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsSfuApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppArgs.Builder] = scala.Predef.identity):
+    inline def getCallsSfuApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCallsSfuAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsSfuAppArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuApp(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1918,10 +2130,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsSfuAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCallsSfuAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCallsSfuAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsSfuAppPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuAppPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1929,10 +2143,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsSfuApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppsArgs.Builder] = scala.Predef.identity):
+    inline def getCallsSfuApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCallsSfuAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsSfuAppsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuApps(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuApps(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1940,10 +2156,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsSfuAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCallsSfuAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsSfuAppsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCallsSfuAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsSfuAppsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuAppsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsSfuAppsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1951,10 +2169,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsTurnApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppArgs.Builder] = scala.Predef.identity):
+    inline def getCallsTurnApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCallsTurnAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsTurnAppArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnApp(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1962,10 +2182,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsTurnAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCallsTurnAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCallsTurnAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsTurnAppPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnAppPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1973,10 +2195,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsTurnApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppsArgs.Builder] = scala.Predef.identity):
+    inline def getCallsTurnApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCallsTurnAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsTurnAppsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnApps(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnApps(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -1984,10 +2208,12 @@ object cloudflare:
      * - `Calls Read`
      * - `Calls Write`
      */
-    inline def getCallsTurnAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCallsTurnAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCallsTurnAppsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCallsTurnAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCallsTurnAppsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnAppsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCallsTurnAppsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -1995,10 +2221,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificateAuthoritiesHostnameAssociations(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateAuthoritiesHostnameAssociations(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCertificateAuthoritiesHostnameAssociationsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificateAuthoritiesHostnameAssociations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificateAuthoritiesHostnameAssociations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2006,10 +2234,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificateAuthoritiesHostnameAssociationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateAuthoritiesHostnameAssociationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCertificateAuthoritiesHostnameAssociationsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificateAuthoritiesHostnameAssociationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificateAuthoritiesHostnameAssociationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificateAuthoritiesHostnameAssociationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2017,10 +2247,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificatePack(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePackArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePack(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePackArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCertificatePackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificatePackArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePack(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePack(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2028,10 +2260,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificatePackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePackPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCertificatePackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificatePackPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePackPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePackPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2039,10 +2273,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificatePacks(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePacksArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePacks(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePacksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCertificatePacksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificatePacksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePacks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePacks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2050,10 +2286,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCertificatePacksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePacksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePacksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCertificatePacksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCertificatePacksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCertificatePacksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePacksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCertificatePacksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2061,10 +2299,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getClientCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getClientCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetClientCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetClientCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2072,10 +2312,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getClientCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getClientCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetClientCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetClientCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2083,10 +2325,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getClientCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getClientCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetClientCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetClientCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2094,10 +2338,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getClientCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClientCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetClientCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetClientCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetClientCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getClientCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2105,10 +2351,12 @@ object cloudflare:
      * - `Cloud Connector Read`
      * - `Cloud Connector Write`
      */
-    inline def getCloudConnectorRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudConnectorRulesArgs.Builder] = scala.Predef.identity):
+    inline def getCloudConnectorRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudConnectorRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudConnectorRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudConnectorRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudConnectorRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudConnectorRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2116,10 +2364,12 @@ object cloudflare:
      * - `Cloud Connector Read`
      * - `Cloud Connector Write`
      */
-    inline def getCloudConnectorRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudConnectorRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudConnectorRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudConnectorRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudConnectorRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudConnectorRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudConnectorRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudConnectorRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2127,10 +2377,12 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequest(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequest(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequest(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequest(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2138,10 +2390,12 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2149,10 +2403,12 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestAsset(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestAsset(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestAssetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestAsset(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestAsset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2160,30 +2416,36 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestAssetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestAssetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestAssetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestAssetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestAssetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestAssetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestMessage(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessageArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestMessage(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestMessageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessageArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestMessage(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestMessage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestMessagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestMessagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestMessageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestMessagePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestMessagePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestMessagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2191,10 +2453,12 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestPriority(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestPriority(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestPriorityResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPriority(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPriority(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2202,50 +2466,64 @@ object cloudflare:
      * - `Cloudforce One Read`
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestPriorityPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestPriorityPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestPriorityResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestPriorityPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPriorityPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestPriorityPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequests(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequests(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequests(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequests(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Cloudforce One Write`
      */
-    inline def getCloudforceOneRequestsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCloudforceOneRequestsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCloudforceOneRequestsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCloudforceOneRequestsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCloudforceOneRequestsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getConnectivityDirectoryService(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServiceArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityDirectoryService(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetConnectivityDirectoryServiceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServiceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryService(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getConnectivityDirectoryServicePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityDirectoryServicePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetConnectivityDirectoryServiceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServicePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getConnectivityDirectoryServices(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityDirectoryServices(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetConnectivityDirectoryServicesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServices(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServices(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getConnectivityDirectoryServicesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectivityDirectoryServicesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetConnectivityDirectoryServicesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetConnectivityDirectoryServicesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServicesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getConnectivityDirectoryServicesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2255,10 +2533,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getContentScanning(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningArgs.Builder] = scala.Predef.identity):
+    inline def getContentScanning(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetContentScanningResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetContentScanningArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getContentScanning(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getContentScanning(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2268,10 +2548,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getContentScanningPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContentScanningPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetContentScanningResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetContentScanningPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2281,10 +2563,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getContentScanningExpressions(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningExpressionsArgs.Builder] = scala.Predef.identity):
+    inline def getContentScanningExpressions(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningExpressionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetContentScanningExpressionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetContentScanningExpressionsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningExpressions(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningExpressions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2294,10 +2578,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getContentScanningExpressionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningExpressionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getContentScanningExpressionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetContentScanningExpressionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetContentScanningExpressionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetContentScanningExpressionsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningExpressionsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getContentScanningExpressionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2305,10 +2591,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCtAlerting(args: Endofunction[com.pulumi.cloudflare.inputs.GetCtAlertingArgs.Builder] = scala.Predef.identity):
+    inline def getCtAlerting(args: Endofunction[com.pulumi.cloudflare.inputs.GetCtAlertingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCtAlertingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCtAlertingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCtAlerting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCtAlerting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2316,10 +2604,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCtAlertingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCtAlertingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCtAlertingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCtAlertingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCtAlertingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCtAlertingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCtAlertingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCtAlertingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2327,10 +2617,12 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getCustomCsr(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrArgs.Builder] = scala.Predef.identity):
+    inline def getCustomCsr(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomCsrResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomCsrArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsr(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsr(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2338,10 +2630,12 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getCustomCsrPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomCsrPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomCsrResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomCsrPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2349,10 +2643,12 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getCustomCsrs(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrsArgs.Builder] = scala.Predef.identity):
+    inline def getCustomCsrs(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomCsrsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomCsrsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrs(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2360,10 +2656,12 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getCustomCsrsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomCsrsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomCsrsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomCsrsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomCsrsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomCsrsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2371,10 +2669,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomHostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnameArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostname(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostname(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2382,10 +2682,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomHostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnamePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnamePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnamePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2393,10 +2695,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostnameFallbackOrigin(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostnameFallbackOrigin(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomHostnameFallbackOriginResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnameFallbackOrigin(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnameFallbackOrigin(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2404,10 +2708,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostnameFallbackOriginPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostnameFallbackOriginPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomHostnameFallbackOriginResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnameFallbackOriginPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnameFallbackOriginPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnameFallbackOriginPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2415,10 +2721,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamesArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomHostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnamesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnames(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnames(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2426,10 +2734,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomHostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomHostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomHostnamesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomHostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomHostnamesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnamesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomHostnamesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2437,10 +2747,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomOriginTrustStore(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoreArgs.Builder] = scala.Predef.identity):
+    inline def getCustomOriginTrustStore(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoreArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomOriginTrustStoreResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoreArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStore(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStore(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2448,10 +2760,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomOriginTrustStorePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomOriginTrustStorePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStorePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomOriginTrustStoreResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomOriginTrustStorePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStorePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStorePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2459,10 +2773,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomOriginTrustStores(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresArgs.Builder] = scala.Predef.identity):
+    inline def getCustomOriginTrustStores(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomOriginTrustStoresInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStores(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStores(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2470,30 +2786,40 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomOriginTrustStoresPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomOriginTrustStoresPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomOriginTrustStoresInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomOriginTrustStoresPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStoresPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomOriginTrustStoresPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getCustomPageAsset(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPageAsset(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomPageAssetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPageAssetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAsset(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAsset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getCustomPageAssetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPageAssetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomPageAssetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPageAssetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getCustomPageAssets(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetsArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPageAssets(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomPageAssetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPageAssetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getCustomPageAssetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPageAssetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPageAssetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomPageAssetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPageAssetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPageAssetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2504,10 +2830,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getCustomPages(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPages(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomPagesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPagesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPages(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPages(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2518,10 +2846,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getCustomPagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomPagesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPagesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2532,10 +2862,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getCustomPagesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesListArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPagesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomPagesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPagesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2546,10 +2878,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getCustomPagesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomPagesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomPagesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomPagesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomPagesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomPagesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2559,10 +2893,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomSsl(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslArgs.Builder] = scala.Predef.identity):
+    inline def getCustomSsl(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomSslResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomSslArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomSsl(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomSsl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2572,10 +2908,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomSslPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomSslPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomSslResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomSslPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomSslPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomSslPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2585,10 +2923,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomSsls(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslsArgs.Builder] = scala.Predef.identity):
+    inline def getCustomSsls(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetCustomSslsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomSslsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomSsls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomSsls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2598,10 +2938,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getCustomSslsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomSslsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetCustomSslsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetCustomSslsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetCustomSslsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getCustomSslsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getCustomSslsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2609,10 +2951,12 @@ object cloudflare:
      * - `D1 Read`
      * - `D1 Write`
      */
-    inline def getD1Database(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getD1Database(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabaseArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetD1DatabaseResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetD1DatabaseArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getD1Database(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getD1Database(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2620,10 +2964,12 @@ object cloudflare:
      * - `D1 Read`
      * - `D1 Write`
      */
-    inline def getD1DatabasePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getD1DatabasePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetD1DatabaseResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetD1DatabasePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getD1DatabasePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getD1DatabasePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2631,10 +2977,12 @@ object cloudflare:
      * - `D1 Read`
      * - `D1 Write`
      */
-    inline def getD1Databases(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasesArgs.Builder] = scala.Predef.identity):
+    inline def getD1Databases(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetD1DatabasesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetD1DatabasesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getD1Databases(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getD1Databases(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2642,10 +2990,12 @@ object cloudflare:
      * - `D1 Read`
      * - `D1 Write`
      */
-    inline def getD1DatabasesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getD1DatabasesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetD1DatabasesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetD1DatabasesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetD1DatabasesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getD1DatabasesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getD1DatabasesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2653,10 +3003,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getDcvDelegation(args: Endofunction[com.pulumi.cloudflare.inputs.GetDcvDelegationArgs.Builder] = scala.Predef.identity):
+    inline def getDcvDelegation(args: Endofunction[com.pulumi.cloudflare.inputs.GetDcvDelegationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDcvDelegationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDcvDelegationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDcvDelegation(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDcvDelegation(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2664,30 +3016,40 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getDcvDelegationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDcvDelegationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDcvDelegationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDcvDelegationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDcvDelegationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDcvDelegationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDcvDelegationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDcvDelegationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getDlsPrefixBinding(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingArgs.Builder] = scala.Predef.identity):
+    inline def getDlsPrefixBinding(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDlsPrefixBindingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDlsPrefixBindingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBinding(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBinding(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getDlsPrefixBindingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDlsPrefixBindingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDlsPrefixBindingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDlsPrefixBindingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getDlsPrefixBindings(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsArgs.Builder] = scala.Predef.identity):
+    inline def getDlsPrefixBindings(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDlsPrefixBindingsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getDlsPrefixBindingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDlsPrefixBindingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDlsPrefixBindingsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDlsPrefixBindingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDlsPrefixBindingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2695,10 +3057,12 @@ object cloudflare:
      * - `DNS Firewall Read`
      * - `DNS Firewall Write`
      */
-    inline def getDnsFirewall(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallArgs.Builder] = scala.Predef.identity):
+    inline def getDnsFirewall(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsFirewallResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsFirewallArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewall(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewall(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2706,10 +3070,12 @@ object cloudflare:
      * - `DNS Firewall Read`
      * - `DNS Firewall Write`
      */
-    inline def getDnsFirewallPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsFirewallPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsFirewallResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsFirewallPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewallPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewallPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2717,10 +3083,12 @@ object cloudflare:
      * - `DNS Firewall Read`
      * - `DNS Firewall Write`
      */
-    inline def getDnsFirewalls(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallsArgs.Builder] = scala.Predef.identity):
+    inline def getDnsFirewalls(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsFirewallsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsFirewallsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewalls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewalls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2728,10 +3096,12 @@ object cloudflare:
      * - `DNS Firewall Read`
      * - `DNS Firewall Write`
      */
-    inline def getDnsFirewallsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsFirewallsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsFirewallsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsFirewallsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsFirewallsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewallsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsFirewallsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2739,10 +3109,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getDnsRecord(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordArgs.Builder] = scala.Predef.identity):
+    inline def getDnsRecord(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsRecordResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsRecordArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecord(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecord(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2750,10 +3122,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getDnsRecordPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsRecordPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsRecordResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsRecordPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecordPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecordPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2761,10 +3135,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getDnsRecords(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordsArgs.Builder] = scala.Predef.identity):
+    inline def getDnsRecords(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsRecordsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsRecordsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecords(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecords(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2772,10 +3148,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getDnsRecordsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsRecordsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsRecordsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsRecordsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsRecordsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecordsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsRecordsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2783,10 +3161,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersAcl(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersAcl(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersAclResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAcl(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAcl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2794,10 +3174,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersAclPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersAclPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersAclResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAclPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAclPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2805,10 +3187,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersAcls(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersAcls(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersAclsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAcls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAcls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2816,10 +3200,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersAclsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersAclsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersAclsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersAclsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAclsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersAclsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2830,10 +3216,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getDnsZoneTransfersIncoming(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersIncoming(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersIncomingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersIncoming(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersIncoming(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2844,10 +3232,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getDnsZoneTransfersIncomingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersIncomingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersIncomingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersIncomingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersIncomingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersIncomingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2858,10 +3248,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getDnsZoneTransfersOutgoing(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersOutgoing(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersOutgoingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersOutgoing(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersOutgoing(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2872,10 +3264,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getDnsZoneTransfersOutgoingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersOutgoingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersOutgoingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersOutgoingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersOutgoingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersOutgoingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2883,10 +3277,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersPeer(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersPeer(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersPeerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeer(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2894,10 +3290,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersPeerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersPeerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersPeerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2905,10 +3303,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersPeers(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersPeers(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersPeersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2916,10 +3316,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersPeersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersPeersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersPeersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersPeersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersPeersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2927,10 +3329,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersTsig(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersTsig(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersTsigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsig(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2938,10 +3342,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersTsigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersTsigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersTsigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2949,10 +3355,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersTsigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersTsigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersTsigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigs(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2960,10 +3368,12 @@ object cloudflare:
      * - `Account Settings Read`
      * - `Account Settings Write`
      */
-    inline def getDnsZoneTransfersTsigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDnsZoneTransfersTsigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetDnsZoneTransfersTsigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetDnsZoneTransfersTsigsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getDnsZoneTransfersTsigsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2971,10 +3381,12 @@ object cloudflare:
      * - `Email Routing Addresses Read`
      * - `Email Routing Addresses Write`
      */
-    inline def getEmailRoutingAddress(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingAddress(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingAddressResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingAddressArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddress(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddress(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -2982,10 +3394,12 @@ object cloudflare:
      * - `Email Routing Addresses Read`
      * - `Email Routing Addresses Write`
      */
-    inline def getEmailRoutingAddressPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingAddressPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingAddressResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingAddressPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddressPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddressPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -2993,10 +3407,12 @@ object cloudflare:
      * - `Email Routing Addresses Read`
      * - `Email Routing Addresses Write`
      */
-    inline def getEmailRoutingAddresses(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingAddresses(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingAddressesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddresses(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddresses(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3004,10 +3420,12 @@ object cloudflare:
      * - `Email Routing Addresses Read`
      * - `Email Routing Addresses Write`
      */
-    inline def getEmailRoutingAddressesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingAddressesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingAddressesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingAddressesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddressesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingAddressesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3015,10 +3433,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingCatchAll(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingCatchAll(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingCatchAllResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingCatchAll(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingCatchAll(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3026,10 +3446,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingCatchAllPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingCatchAllPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingCatchAllResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingCatchAllPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingCatchAllPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingCatchAllPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3037,10 +3459,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getEmailRoutingDns(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingDnsArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingDns(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingDnsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingDnsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingDnsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingDns(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingDns(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3048,10 +3472,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getEmailRoutingDnsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingDnsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingDnsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingDnsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingDnsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingDnsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingDnsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingDnsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3059,10 +3485,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRuleArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3070,10 +3498,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3081,10 +3511,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulesArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3092,10 +3524,12 @@ object cloudflare:
      * - `Email Routing Rules Read`
      * - `Email Routing Rules Write`
      */
-    inline def getEmailRoutingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3103,10 +3537,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getEmailRoutingSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailRoutingSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3114,10 +3550,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getEmailRoutingSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailRoutingSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailRoutingSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailRoutingSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailRoutingSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3125,10 +3563,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityAllowPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityAllowPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityAllowPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3136,10 +3576,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityAllowPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityAllowPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityAllowPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3147,10 +3589,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityAllowPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityAllowPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityAllowPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3158,10 +3602,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityAllowPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityAllowPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityAllowPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityAllowPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityAllowPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3169,10 +3615,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityBlockSender(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityBlockSender(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityBlockSenderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSender(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSender(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3180,10 +3628,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityBlockSenderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityBlockSenderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityBlockSenderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSenderPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSenderPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSenderPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3191,10 +3641,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityBlockSenders(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityBlockSenders(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityBlockSendersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSenders(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSenders(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3202,10 +3654,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityBlockSendersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityBlockSendersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityBlockSendersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityBlockSendersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSendersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityBlockSendersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3213,10 +3667,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityDomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3224,10 +3680,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityDomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3235,10 +3693,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomains(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomains(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3246,10 +3706,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityDomainsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomainsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityDomainsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3257,10 +3719,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityImpersonationRegistries(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityImpersonationRegistries(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityImpersonationRegistriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistries(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistries(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3268,10 +3732,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityImpersonationRegistriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityImpersonationRegistriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityImpersonationRegistriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3279,10 +3745,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityImpersonationRegistry(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityImpersonationRegistry(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityImpersonationRegistryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistry(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3290,10 +3758,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityImpersonationRegistryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityImpersonationRegistryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityImpersonationRegistryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityImpersonationRegistryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityImpersonationRegistryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3301,10 +3771,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityTrustedDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityTrustedDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityTrustedDomainsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomains(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomains(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3312,10 +3784,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityTrustedDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityTrustedDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityTrustedDomainsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3323,10 +3797,12 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityTrustedDomainsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityTrustedDomainsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSecurityTrustedDomainsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3334,40 +3810,54 @@ object cloudflare:
      * - `Cloud Email Security: Read`
      * - `Cloud Email Security: Write`
      */
-    inline def getEmailSecurityTrustedDomainsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSecurityTrustedDomainsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSecurityTrustedDomainsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSecurityTrustedDomainsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSecurityTrustedDomainsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getEmailSendingSubdomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSendingSubdomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSendingSubdomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getEmailSendingSubdomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSendingSubdomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSendingSubdomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getEmailSendingSubdomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSendingSubdomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetEmailSendingSubdomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomains(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomains(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getEmailSendingSubdomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEmailSendingSubdomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetEmailSendingSubdomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetEmailSendingSubdomainsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomainsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getEmailSendingSubdomainsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getFieldExtractor(args: Endofunction[com.pulumi.cloudflare.inputs.GetFieldExtractorArgs.Builder] = scala.Predef.identity):
+    inline def getFieldExtractor(args: Endofunction[com.pulumi.cloudflare.inputs.GetFieldExtractorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFieldExtractorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFieldExtractorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFieldExtractor(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFieldExtractor(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getFieldExtractorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFieldExtractorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFieldExtractorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFieldExtractorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFieldExtractorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFieldExtractorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFieldExtractorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFieldExtractorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3375,10 +3865,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFilter(args: Endofunction[com.pulumi.cloudflare.inputs.GetFilterArgs.Builder] = scala.Predef.identity):
+    inline def getFilter(args: Endofunction[com.pulumi.cloudflare.inputs.GetFilterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFilterResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFilterArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFilter(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFilter(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3386,10 +3878,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFilterPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFilterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFilterPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFilterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFilterResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFilterPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFilterPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFilterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3397,10 +3891,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFilters(args: Endofunction[com.pulumi.cloudflare.inputs.GetFiltersArgs.Builder] = scala.Predef.identity):
+    inline def getFilters(args: Endofunction[com.pulumi.cloudflare.inputs.GetFiltersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFiltersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFiltersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFilters(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFilters(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3408,10 +3904,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFiltersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFiltersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFiltersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFiltersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFiltersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFiltersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFiltersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFiltersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3419,10 +3917,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFirewallRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRuleArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFirewallRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFirewallRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3430,10 +3930,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFirewallRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFirewallRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFirewallRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3441,10 +3943,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFirewallRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulesArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFirewallRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFirewallRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3452,90 +3956,108 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getFirewallRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFirewallRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFirewallRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFirewallRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFirewallRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFirewallRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipApp(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFlagshipAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipAppArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipApp(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipAppPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFlagshipAppResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipAppPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipAppPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppsArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipApps(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFlagshipAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipAppsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipApps(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipApps(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipAppsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipAppsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFlagshipAppsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipAppsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipAppsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipAppsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipFlag(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipFlag(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFlagshipFlagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipFlagArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlag(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlag(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipFlagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipFlagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFlagshipFlagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipFlagPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlagPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlagPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipFlags(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagsArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipFlags(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetFlagshipFlagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipFlagsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlags(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Flagship Read`
      */
-    inline def getFlagshipFlagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFlagshipFlagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetFlagshipFlagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetFlagshipFlagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetFlagshipFlagsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlagsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getFlagshipFlagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3544,10 +4066,12 @@ object cloudflare:
      * - `Zaraz Edit`
      * - `Zaraz Read`
      */
-    inline def getGoogleTagGateway(args: Endofunction[com.pulumi.cloudflare.inputs.GetGoogleTagGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getGoogleTagGateway(args: Endofunction[com.pulumi.cloudflare.inputs.GetGoogleTagGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetGoogleTagGatewayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetGoogleTagGatewayArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getGoogleTagGateway(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getGoogleTagGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3556,10 +4080,12 @@ object cloudflare:
      * - `Zaraz Edit`
      * - `Zaraz Read`
      */
-    inline def getGoogleTagGatewayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetGoogleTagGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGoogleTagGatewayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetGoogleTagGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetGoogleTagGatewayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetGoogleTagGatewayPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getGoogleTagGatewayPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getGoogleTagGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3567,10 +4093,12 @@ object cloudflare:
      * - `Health Checks Read`
      * - `Health Checks Write`
      */
-    inline def getHealthcheck(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthcheckArgs.Builder] = scala.Predef.identity):
+    inline def getHealthcheck(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthcheckArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHealthcheckResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHealthcheckArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHealthcheck(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHealthcheck(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3578,10 +4106,12 @@ object cloudflare:
      * - `Health Checks Read`
      * - `Health Checks Write`
      */
-    inline def getHealthcheckPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthcheckPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHealthcheckPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthcheckPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHealthcheckResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHealthcheckPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHealthcheckPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHealthcheckPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3589,10 +4119,12 @@ object cloudflare:
      * - `Health Checks Read`
      * - `Health Checks Write`
      */
-    inline def getHealthchecks(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthchecksArgs.Builder] = scala.Predef.identity):
+    inline def getHealthchecks(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthchecksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHealthchecksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHealthchecksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHealthchecks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHealthchecks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3600,20 +4132,26 @@ object cloudflare:
      * - `Health Checks Read`
      * - `Health Checks Write`
      */
-    inline def getHealthchecksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthchecksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHealthchecksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHealthchecksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHealthchecksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHealthchecksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHealthchecksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHealthchecksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getHostnameTlsSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingArgs.Builder] = scala.Predef.identity):
+    inline def getHostnameTlsSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHostnameTlsSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHostnameTlsSettingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSetting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSetting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getHostnameTlsSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostnameTlsSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHostnameTlsSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHostnameTlsSettingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3621,10 +4159,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getHostnameTlsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getHostnameTlsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHostnameTlsSettingsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3632,10 +4172,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getHostnameTlsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHostnameTlsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHostnameTlsSettingsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHostnameTlsSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHostnameTlsSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3643,10 +4185,12 @@ object cloudflare:
      * - `Hyperdrive Read`
      * - `Hyperdrive Write`
      */
-    inline def getHyperdriveConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigArgs.Builder] = scala.Predef.identity):
+    inline def getHyperdriveConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHyperdriveConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHyperdriveConfigArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfig(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3654,10 +4198,12 @@ object cloudflare:
      * - `Hyperdrive Read`
      * - `Hyperdrive Write`
      */
-    inline def getHyperdriveConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHyperdriveConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHyperdriveConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHyperdriveConfigPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3665,10 +4211,12 @@ object cloudflare:
      * - `Hyperdrive Read`
      * - `Hyperdrive Write`
      */
-    inline def getHyperdriveConfigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigsArgs.Builder] = scala.Predef.identity):
+    inline def getHyperdriveConfigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetHyperdriveConfigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHyperdriveConfigsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigs(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3676,10 +4224,12 @@ object cloudflare:
      * - `Hyperdrive Read`
      * - `Hyperdrive Write`
      */
-    inline def getHyperdriveConfigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHyperdriveConfigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetHyperdriveConfigsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetHyperdriveConfigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetHyperdriveConfigsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getHyperdriveConfigsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3687,10 +4237,12 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImage(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageArgs.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImageArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImage(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3698,10 +4250,12 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImagePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImagePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3709,10 +4263,12 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImageVariant(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageVariantArgs.Builder] = scala.Predef.identity):
+    inline def getImageVariant(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageVariantArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetImageVariantResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImageVariantArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImageVariant(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImageVariant(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3720,10 +4276,12 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImageVariantPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageVariantPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImageVariantPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImageVariantPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetImageVariantResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImageVariantPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImageVariantPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImageVariantPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3731,10 +4289,12 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImages(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagesArgs.Builder] = scala.Predef.identity):
+    inline def getImages(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetImagesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImagesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImages(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImages(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3742,20 +4302,26 @@ object cloudflare:
      * - `Images Read`
      * - `Images Write`
      */
-    inline def getImagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getImagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetImagesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetImagesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getImagesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getImagesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getIpRanges(args: Endofunction[com.pulumi.cloudflare.inputs.GetIpRangesArgs.Builder] = scala.Predef.identity):
+    inline def getIpRanges(args: Endofunction[com.pulumi.cloudflare.inputs.GetIpRangesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetIpRangesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetIpRangesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getIpRanges(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getIpRanges(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getIpRangesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetIpRangesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIpRangesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetIpRangesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetIpRangesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetIpRangesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getIpRangesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getIpRangesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3797,10 +4363,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getKeylessCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getKeylessCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetKeylessCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetKeylessCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3842,10 +4410,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getKeylessCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeylessCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetKeylessCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetKeylessCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3853,10 +4423,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getKeylessCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getKeylessCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetKeylessCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetKeylessCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3864,10 +4436,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getKeylessCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeylessCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetKeylessCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetKeylessCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetKeylessCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getKeylessCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3877,10 +4451,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheck(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheck(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheck(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheck(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3890,10 +4466,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheckPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheckPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3903,10 +4481,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheckRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRuleArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheckRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3916,10 +4496,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheckRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheckRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3929,10 +4511,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheckRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheckRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3942,30 +4526,36 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getLeakedCredentialCheckRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLeakedCredentialCheckRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLeakedCredentialCheckRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLeakedCredentialCheckRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLeakedCredentialCheckRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Filter Lists Read`
      */
-    inline def getList(args: Endofunction[com.pulumi.cloudflare.inputs.GetListArgs.Builder] = scala.Predef.identity):
+    inline def getList(args: Endofunction[com.pulumi.cloudflare.inputs.GetListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetListResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Filter Lists Read`
      */
-    inline def getListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetListResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3973,10 +4563,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getListItem(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemArgs.Builder] = scala.Predef.identity):
+    inline def getListItem(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetListItemResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListItemArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListItem(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListItem(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -3984,10 +4576,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getListItemPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListItemPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetListItemResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListItemPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListItemPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListItemPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -3995,10 +4589,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getListItems(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemsArgs.Builder] = scala.Predef.identity):
+    inline def getListItems(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetListItemsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListItemsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListItems(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListItems(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4006,10 +4602,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getListItemsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListItemsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListItemsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetListItemsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListItemsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListItemsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListItemsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4017,10 +4615,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getLists(args: Endofunction[com.pulumi.cloudflare.inputs.GetListsArgs.Builder] = scala.Predef.identity):
+    inline def getLists(args: Endofunction[com.pulumi.cloudflare.inputs.GetListsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetListsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLists(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLists(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4028,10 +4628,12 @@ object cloudflare:
      * - `Account Filter Lists Edit`
      * - `Account Filter Lists Read`
      */
-    inline def getListsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getListsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetListsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetListsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetListsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getListsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getListsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4039,10 +4641,12 @@ object cloudflare:
      * - `Load Balancers Read`
      * - `Load Balancers Write`
      */
-    inline def getLoadBalancer(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancer(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancer(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4050,10 +4654,12 @@ object cloudflare:
      * - `Load Balancers Read`
      * - `Load Balancers Write`
      */
-    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4061,10 +4667,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerMonitor(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitor(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitor(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitor(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4072,30 +4680,40 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerMonitorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getLoadBalancerMonitorGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getLoadBalancerMonitorGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getLoadBalancerMonitorGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getLoadBalancerMonitorGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4103,10 +4721,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerMonitors(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitors(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitors(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitors(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4114,10 +4734,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerMonitorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerMonitorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerMonitorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerMonitorsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerMonitorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4125,10 +4747,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerPool(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPool(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerPoolResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerPoolArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPool(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPool(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4136,10 +4760,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerPoolPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPoolPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerPoolResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerPoolPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPoolPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPoolPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4147,10 +4773,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerPools(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPools(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancerPoolsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPools(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPools(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4158,10 +4786,12 @@ object cloudflare:
      * - `Load Balancing: Monitors and Pools Read`
      * - `Load Balancing: Monitors and Pools Write`
      */
-    inline def getLoadBalancerPoolsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancerPoolsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancerPoolsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancerPoolsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPoolsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancerPoolsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4169,10 +4799,12 @@ object cloudflare:
      * - `Load Balancers Read`
      * - `Load Balancers Write`
      */
-    inline def getLoadBalancers(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancersArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancers(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLoadBalancersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4180,10 +4812,12 @@ object cloudflare:
      * - `Load Balancers Read`
      * - `Load Balancers Write`
      */
-    inline def getLoadBalancersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLoadBalancersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLoadBalancersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLoadBalancersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLoadBalancersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLoadBalancersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4191,10 +4825,12 @@ object cloudflare:
      * - `Logs Read`
      * - `Logs Write`
      */
-    inline def getLogpullRetention(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpullRetentionArgs.Builder] = scala.Predef.identity):
+    inline def getLogpullRetention(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpullRetentionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLogpullRetentionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpullRetentionArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpullRetention(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpullRetention(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4202,90 +4838,108 @@ object cloudflare:
      * - `Logs Read`
      * - `Logs Write`
      */
-    inline def getLogpullRetentionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpullRetentionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogpullRetentionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpullRetentionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLogpullRetentionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpullRetentionPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpullRetentionPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpullRetentionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Read`
      */
-    inline def getLogpushDatasetField(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushDatasetField(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLogpushDatasetFieldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetField(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetField(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Read`
      */
-    inline def getLogpushDatasetFieldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushDatasetFieldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLogpushDatasetFieldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushDatasetFieldPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetFieldPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetFieldPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushDatasetJob(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetJobArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushDatasetJob(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetJobArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLogpushDatasetJobResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushDatasetJobArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetJob(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetJob(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushDatasetJobPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetJobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushDatasetJobPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushDatasetJobPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLogpushDatasetJobResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushDatasetJobPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetJobPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushDatasetJobPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushJob(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushJob(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLogpushJobResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushJobArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJob(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJob(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushJobPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushJobPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLogpushJobResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushJobPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushJobs(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobsArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushJobs(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetLogpushJobsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushJobsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobs(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Logs Write`
      */
-    inline def getLogpushJobsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLogpushJobsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetLogpushJobsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetLogpushJobsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetLogpushJobsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getLogpushJobsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4294,10 +4948,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringConfiguration(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringConfiguration(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringConfigurationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringConfiguration(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4306,10 +4962,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringConfigurationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringConfigurationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringConfigurationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringConfigurationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4318,10 +4976,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRuleArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4330,10 +4990,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4342,10 +5004,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4354,10 +5018,12 @@ object cloudflare:
      * - `Magic Network Monitoring Config Read`
      * - `Magic Network Monitoring Config Write`
      */
-    inline def getMagicNetworkMonitoringRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicNetworkMonitoringRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicNetworkMonitoringRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicNetworkMonitoringRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicNetworkMonitoringRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4367,10 +5033,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitCf1Site(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SiteArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitCf1Site(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SiteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitCf1SiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitCf1SiteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1Site(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1Site(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4380,10 +5048,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitCf1SitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitCf1SitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitCf1SiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1SitePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1SitePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4393,10 +5063,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitCf1Sites(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitCf1Sites(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitCf1SitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1Sites(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1Sites(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4406,10 +5078,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitCf1SitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitCf1SitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitCf1SitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitCf1SitesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1SitesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitCf1SitesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4417,10 +5091,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitConnectorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnector(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnector(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4428,10 +5104,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitConnectorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4439,10 +5117,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectors(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectors(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4450,10 +5130,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitConnectorsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectorsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitConnectorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4463,10 +5145,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSite(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSite(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSite(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSite(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4476,10 +5160,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSitePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSitePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSitePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4489,10 +5175,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteAcl(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteAcl(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteAclResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAcl(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAcl(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4502,10 +5190,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteAclPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteAclPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteAclResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAclPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAclPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4515,10 +5205,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteAcls(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteAcls(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteAclsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAcls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAcls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4528,10 +5220,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteAclsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteAclsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteAclsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteAclsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAclsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteAclsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4541,10 +5235,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteLan(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteLan(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteLanResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLan(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4554,10 +5250,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteLanPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteLanPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteLanResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteLanPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLanPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4567,10 +5265,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteLans(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteLans(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteLansInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLans(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLans(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4580,10 +5280,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteLansPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteLansPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteLansInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteLansPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLansPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteLansPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4593,10 +5295,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteWan(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteWan(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteWanResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWan(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4606,10 +5310,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteWanPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteWanPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteWanResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteWanPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWanPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4619,10 +5325,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteWans(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteWans(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSiteWansInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWans(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWans(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4632,10 +5340,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSiteWansPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSiteWansPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSiteWansInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSiteWansPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWansPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSiteWansPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4645,10 +5355,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSites(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitesArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSites(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicTransitSitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSitesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSites(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSites(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4658,30 +5370,40 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicTransitSitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicTransitSitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicTransitSitesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicTransitSitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicTransitSitesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSitesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicTransitSitesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMagicWanBgpFilterProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfileArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanBgpFilterProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicWanBgpFilterProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMagicWanBgpFilterProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanBgpFilterProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicWanBgpFilterProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMagicWanBgpFilterProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanBgpFilterProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicWanBgpFilterProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfiles(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfiles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMagicWanBgpFilterProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanBgpFilterProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicWanBgpFilterProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanBgpFilterProfilesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfilesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanBgpFilterProfilesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4691,10 +5413,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanGreTunnel(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanGreTunnel(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicWanGreTunnelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanGreTunnel(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanGreTunnel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4704,10 +5428,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanGreTunnelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanGreTunnelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicWanGreTunnelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanGreTunnelPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanGreTunnelPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanGreTunnelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4717,10 +5443,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanIpsecTunnel(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanIpsecTunnel(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicWanIpsecTunnelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanIpsecTunnel(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanIpsecTunnel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4730,10 +5458,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanIpsecTunnelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanIpsecTunnelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicWanIpsecTunnelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanIpsecTunnelPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanIpsecTunnelPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanIpsecTunnelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4743,10 +5473,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanStaticRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanStaticRouteArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanStaticRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanStaticRouteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMagicWanStaticRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanStaticRouteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanStaticRoute(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanStaticRoute(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4756,10 +5488,12 @@ object cloudflare:
      * - `Magic WAN Read`
      * - `Magic WAN Write`
      */
-    inline def getMagicWanStaticRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanStaticRoutePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMagicWanStaticRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMagicWanStaticRoutePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMagicWanStaticRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMagicWanStaticRoutePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanStaticRoutePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMagicWanStaticRoutePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4805,10 +5539,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getManagedTransforms(args: Endofunction[com.pulumi.cloudflare.inputs.GetManagedTransformsArgs.Builder] = scala.Predef.identity):
+    inline def getManagedTransforms(args: Endofunction[com.pulumi.cloudflare.inputs.GetManagedTransformsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetManagedTransformsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetManagedTransformsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getManagedTransforms(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getManagedTransforms(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4854,50 +5590,68 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getManagedTransformsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetManagedTransformsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getManagedTransformsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetManagedTransformsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetManagedTransformsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetManagedTransformsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getManagedTransformsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getManagedTransformsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMonetizationRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetMonetizationRulesArgs.Builder] = scala.Predef.identity):
+    inline def getMonetizationRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetMonetizationRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMonetizationRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMonetizationRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMonetizationRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMonetizationRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMonetizationRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMonetizationRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMonetizationRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMonetizationRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMonetizationRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMonetizationRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMonetizationRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMonetizationRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMoqRelay(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelayArgs.Builder] = scala.Predef.identity):
+    inline def getMoqRelay(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMoqRelayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMoqRelayArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelay(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelay(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMoqRelayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMoqRelayPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMoqRelayResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMoqRelayPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelayPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMoqRelays(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelaysArgs.Builder] = scala.Predef.identity):
+    inline def getMoqRelays(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelaysArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMoqRelaysInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMoqRelaysArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelays(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelays(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMoqRelaysPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelaysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMoqRelaysPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMoqRelaysPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMoqRelaysInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMoqRelaysPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelaysPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMoqRelaysPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMtlsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMtlsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMtlsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMtlsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4905,10 +5659,12 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getMtlsCertificateAssociations(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificateAssociations(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMtlsCertificateAssociationsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificateAssociations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificateAssociations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4916,40 +5672,50 @@ object cloudflare:
      * - `Account: SSL and Certificates Read`
      * - `Account: SSL and Certificates Write`
      */
-    inline def getMtlsCertificateAssociationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificateAssociationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMtlsCertificateAssociationsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificateAssociationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificateAssociationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificateAssociationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getMtlsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetMtlsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getMtlsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMtlsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetMtlsCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetMtlsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetMtlsCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getMtlsCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Zone Settings Read`
      */
-    inline def getNelSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetNelSettingArgs.Builder] = scala.Predef.identity):
+    inline def getNelSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetNelSettingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetNelSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNelSettingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNelSetting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNelSetting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Zone Settings Read`
      */
-    inline def getNelSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNelSettingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNelSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNelSettingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetNelSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNelSettingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNelSettingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNelSettingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4960,10 +5726,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetNotificationPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -4974,10 +5742,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetNotificationPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -4988,10 +5758,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetNotificationPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5002,10 +5774,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetNotificationPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5016,10 +5790,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicyWebhooks(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicyWebhooks(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetNotificationPolicyWebhooksResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5030,10 +5806,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicyWebhooksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicyWebhooksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetNotificationPolicyWebhooksResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5044,10 +5822,12 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicyWebhooksList(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicyWebhooksList(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetNotificationPolicyWebhooksListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5058,60 +5838,74 @@ object cloudflare:
      * - `Notifications Write`
      * - `Zero Trust: PII Read`
      */
-    inline def getNotificationPolicyWebhooksListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationPolicyWebhooksListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetNotificationPolicyWebhooksListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetNotificationPolicyWebhooksListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getNotificationPolicyWebhooksListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `OAuth Client Read`
      */
-    inline def getOauthClient(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientArgs.Builder] = scala.Predef.identity):
+    inline def getOauthClient(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOauthClientResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthClientArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthClient(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthClient(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `OAuth Client Read`
      */
-    inline def getOauthClientPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOauthClientPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOauthClientResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthClientPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthClientPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthClientPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `OAuth Client Read`
      */
-    inline def getOauthClients(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientsArgs.Builder] = scala.Predef.identity):
+    inline def getOauthClients(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOauthClientsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthClientsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthClients(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthClients(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `OAuth Client Read`
      */
-    inline def getOauthClientsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOauthClientsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthClientsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOauthClientsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthClientsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthClientsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthClientsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOauthScopes(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthScopesArgs.Builder] = scala.Predef.identity):
+    inline def getOauthScopes(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthScopesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOauthScopesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthScopesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthScopes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthScopes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOauthScopesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthScopesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOauthScopesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOauthScopesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOauthScopesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOauthScopesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOauthScopesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOauthScopesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5119,10 +5913,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getObservatoryScheduledTest(args: Endofunction[com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestArgs.Builder] = scala.Predef.identity):
+    inline def getObservatoryScheduledTest(args: Endofunction[com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetObservatoryScheduledTestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getObservatoryScheduledTest(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getObservatoryScheduledTest(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5130,10 +5926,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getObservatoryScheduledTestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestPlainArgs.Builder] = scala.Predef.identity):
+    inline def getObservatoryScheduledTestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetObservatoryScheduledTestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetObservatoryScheduledTestPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getObservatoryScheduledTestPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getObservatoryScheduledTestPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5141,10 +5939,12 @@ object cloudflare:
      * - `User Details Read`
      * - `User Details Write`
      */
-    inline def getOrganization(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity):
+    inline def getOrganization(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganization(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganization(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5152,20 +5952,26 @@ object cloudflare:
      * - `User Details Read`
      * - `User Details Write`
      */
-    inline def getOrganizationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOrganizationProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationProfileArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOrganizationProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOrganizationProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOrganizationProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5173,10 +5979,12 @@ object cloudflare:
      * - `User Details Read`
      * - `User Details Write`
      */
-    inline def getOrganizations(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationsArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizations(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOrganizationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganizations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganizations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5184,60 +5992,82 @@ object cloudflare:
      * - `User Details Read`
      * - `User Details Write`
      */
-    inline def getOrganizationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOrganizationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOrganizationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOrganizationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOrganizationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOrganizationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOriginCaCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCaCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOriginCaCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCaCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOriginCaCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCaCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOriginCaCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCaCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOriginCaCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCaCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOriginCaCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCaCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOriginCaCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCaCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCaCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOriginCaCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCaCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCaCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOriginCloudRegion(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCloudRegion(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOriginCloudRegionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCloudRegionArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegion(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOriginCloudRegionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCloudRegionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOriginCloudRegionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCloudRegionPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegionPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOriginCloudRegions(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionsArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCloudRegions(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOriginCloudRegionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCloudRegionsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegions(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOriginCloudRegionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOriginCloudRegionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginCloudRegionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOriginCloudRegionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginCloudRegionsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegionsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginCloudRegionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getOriginTlsComplianceModes(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesArgs.Builder] = scala.Predef.identity):
+    inline def getOriginTlsComplianceModes(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetOriginTlsComplianceModesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginTlsComplianceModes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginTlsComplianceModes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getOriginTlsComplianceModesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOriginTlsComplianceModesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetOriginTlsComplianceModesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetOriginTlsComplianceModesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getOriginTlsComplianceModesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getOriginTlsComplianceModesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5279,10 +6109,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getPageRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageRuleArgs.Builder] = scala.Predef.identity):
+    inline def getPageRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5324,10 +6156,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getPageRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5339,10 +6173,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldConnections(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldConnections(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldConnectionsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldConnectionsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnections(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnections(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5354,10 +6190,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldConnectionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldConnectionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldConnectionsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldConnectionsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5369,10 +6207,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldConnectionsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldConnectionsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldConnectionsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5384,10 +6224,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldConnectionsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldConnectionsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldConnectionsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldConnectionsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldConnectionsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5399,10 +6241,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldCookies(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldCookies(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldCookiesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldCookiesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5414,10 +6258,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldCookiesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldCookiesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldCookiesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldCookiesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5429,10 +6275,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldCookiesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesListArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldCookiesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldCookiesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldCookiesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5444,10 +6292,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldCookiesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldCookiesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldCookiesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldCookiesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldCookiesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldCookiesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5459,10 +6309,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5474,10 +6326,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5489,10 +6343,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5504,10 +6360,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5519,10 +6377,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldScripts(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldScripts(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldScriptsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldScriptsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScripts(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScripts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5534,10 +6394,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldScriptsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldScriptsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldScriptsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldScriptsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5549,10 +6411,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldScriptsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsListArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldScriptsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPageShieldScriptsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldScriptsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5564,10 +6428,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getPageShieldScriptsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPageShieldScriptsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPageShieldScriptsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPageShieldScriptsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPageShieldScriptsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPageShieldScriptsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5575,10 +6441,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainArgs.Builder] = scala.Predef.identity):
+    inline def getPagesDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPagesDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesDomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5586,10 +6454,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPagesDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPagesDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesDomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5597,10 +6467,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainsArgs.Builder] = scala.Predef.identity):
+    inline def getPagesDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPagesDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesDomainsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomains(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomains(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5608,10 +6480,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPagesDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesDomainsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPagesDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesDomainsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomainsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesDomainsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5619,10 +6493,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesProject(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectArgs.Builder] = scala.Predef.identity):
+    inline def getPagesProject(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPagesProjectResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesProjectArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesProject(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesProject(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5630,10 +6506,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesProjectPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPagesProjectPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPagesProjectResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesProjectPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjectPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjectPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5641,10 +6519,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesProjects(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectsArgs.Builder] = scala.Predef.identity):
+    inline def getPagesProjects(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPagesProjectsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesProjectsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjects(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjects(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5652,10 +6532,12 @@ object cloudflare:
      * - `Pages Read`
      * - `Pages Write`
      */
-    inline def getPagesProjectsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPagesProjectsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPagesProjectsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPagesProjectsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPagesProjectsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjectsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPagesProjectsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5663,10 +6545,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipeline(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineArgs.Builder] = scala.Predef.identity):
+    inline def getPipeline(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPipelineResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipeline(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipeline(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5674,10 +6558,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelinePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelinePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelinePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelinePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPipelineResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelinePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelinePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelinePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5685,10 +6571,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineSink(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinkArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineSink(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPipelineSinkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineSinkArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSink(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSink(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5696,10 +6584,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineSinkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineSinkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPipelineSinkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineSinkPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinkPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5707,10 +6597,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineSinks(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinksArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineSinks(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPipelineSinksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineSinksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5718,10 +6610,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineSinksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineSinksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineSinksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPipelineSinksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineSinksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineSinksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5729,10 +6623,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineStream(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineStream(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPipelineStreamResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineStreamArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStream(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStream(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5740,10 +6636,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineStreamPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineStreamPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPipelineStreamResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineStreamPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreamPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreamPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5751,10 +6649,12 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineStreams(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamsArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineStreams(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPipelineStreamsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineStreamsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreams(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreams(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5762,20 +6662,26 @@ object cloudflare:
      * - `Pipelines Read`
      * - `Pipelines Write`
      */
-    inline def getPipelineStreamsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineStreamsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPipelineStreamsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPipelineStreamsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPipelineStreamsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreamsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPipelineStreamsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getPrecursor(args: Endofunction[com.pulumi.cloudflare.inputs.GetPrecursorArgs.Builder] = scala.Predef.identity):
+    inline def getPrecursor(args: Endofunction[com.pulumi.cloudflare.inputs.GetPrecursorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetPrecursorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPrecursorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPrecursor(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPrecursor(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getPrecursorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPrecursorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrecursorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetPrecursorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetPrecursorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetPrecursorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getPrecursorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getPrecursorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5785,10 +6691,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueue(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueArgs.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueueArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueue(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueue(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5798,10 +6706,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueuePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueuePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueuePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueuePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5811,10 +6721,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueueConsumer(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumerArgs.Builder] = scala.Predef.identity):
+    inline def getQueueConsumer(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetQueueConsumerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueueConsumerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumer(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5824,10 +6736,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueueConsumerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueueConsumerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetQueueConsumerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueueConsumerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5837,10 +6751,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueueConsumers(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumersArgs.Builder] = scala.Predef.identity):
+    inline def getQueueConsumers(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetQueueConsumersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueueConsumersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5850,10 +6766,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueueConsumersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueueConsumersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueueConsumersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetQueueConsumersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueueConsumersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueueConsumersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5863,10 +6781,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueues(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuesArgs.Builder] = scala.Predef.identity):
+    inline def getQueues(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetQueuesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueuesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueues(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueues(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5876,30 +6796,40 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getQueuesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getQueuesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetQueuesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetQueuesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetQueuesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getQueuesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getQueuesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getR2Bucket(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketArgs.Builder] = scala.Predef.identity):
+    inline def getR2Bucket(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2Bucket(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2Bucket(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getR2BucketPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getR2BucketCors(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketCorsArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketCors(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketCorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketCorsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketCorsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketCors(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketCors(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getR2BucketCorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketCorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketCorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketCorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketCorsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketCorsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketCorsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketCorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5907,10 +6837,12 @@ object cloudflare:
      * - `Workers R2 Storage Read`
      * - `Workers R2 Storage Write`
      */
-    inline def getR2BucketEventNotification(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketEventNotification(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketEventNotificationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketEventNotification(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketEventNotification(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5918,40 +6850,54 @@ object cloudflare:
      * - `Workers R2 Storage Read`
      * - `Workers R2 Storage Write`
      */
-    inline def getR2BucketEventNotificationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketEventNotificationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketEventNotificationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketEventNotificationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketEventNotificationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketEventNotificationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getR2BucketLifecycle(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLifecycleArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketLifecycle(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLifecycleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketLifecycleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketLifecycleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLifecycle(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLifecycle(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getR2BucketLifecyclePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLifecyclePlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketLifecyclePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLifecyclePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketLifecycleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketLifecyclePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLifecyclePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLifecyclePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getR2BucketLock(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLockArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketLock(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLockArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketLockResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketLockArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLock(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLock(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getR2BucketLockPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLockPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketLockPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketLockPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketLockResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketLockPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLockPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketLockPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getR2BucketSippy(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketSippyArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketSippy(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketSippyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2BucketSippyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketSippyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketSippy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketSippy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getR2BucketSippyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketSippyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2BucketSippyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2BucketSippyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2BucketSippyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2BucketSippyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketSippyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2BucketSippyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5959,10 +6905,12 @@ object cloudflare:
      * - `Workers R2 Storage Read`
      * - `Workers R2 Storage Write`
      */
-    inline def getR2CustomDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2CustomDomainArgs.Builder] = scala.Predef.identity):
+    inline def getR2CustomDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2CustomDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2CustomDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2CustomDomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2CustomDomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2CustomDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5970,10 +6918,12 @@ object cloudflare:
      * - `Workers R2 Storage Read`
      * - `Workers R2 Storage Write`
      */
-    inline def getR2CustomDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2CustomDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2CustomDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2CustomDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2CustomDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2CustomDomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2CustomDomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2CustomDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -5981,10 +6931,12 @@ object cloudflare:
      * - `Workers R2 Data Catalog Read`
      * - `Workers R2 Data Catalog Write`
      */
-    inline def getR2DataCatalog(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2DataCatalogArgs.Builder] = scala.Predef.identity):
+    inline def getR2DataCatalog(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2DataCatalogArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetR2DataCatalogResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2DataCatalogArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2DataCatalog(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2DataCatalog(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -5992,10 +6944,12 @@ object cloudflare:
      * - `Workers R2 Data Catalog Read`
      * - `Workers R2 Data Catalog Write`
      */
-    inline def getR2DataCatalogPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2DataCatalogPlainArgs.Builder] = scala.Predef.identity):
+    inline def getR2DataCatalogPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetR2DataCatalogPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetR2DataCatalogResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetR2DataCatalogPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getR2DataCatalogPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getR2DataCatalogPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6003,10 +6957,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getRateLimit(args: Endofunction[com.pulumi.cloudflare.inputs.GetRateLimitArgs.Builder] = scala.Predef.identity):
+    inline def getRateLimit(args: Endofunction[com.pulumi.cloudflare.inputs.GetRateLimitArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRateLimitResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRateLimitArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRateLimit(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRateLimit(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6014,10 +6970,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getRateLimitPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRateLimitPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRateLimitPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRateLimitPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRateLimitResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRateLimitPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRateLimitPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRateLimitPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6025,10 +6983,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getRegionalHostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnameArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalHostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnameArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRegionalHostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalHostnameArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostname(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostname(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6036,10 +6996,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getRegionalHostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalHostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRegionalHostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalHostnamePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnamePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnamePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6047,10 +7009,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getRegionalHostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamesArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalHostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRegionalHostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalHostnamesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnames(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnames(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6058,10 +7022,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getRegionalHostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalHostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalHostnamesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRegionalHostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalHostnamesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnamesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalHostnamesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6071,10 +7037,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getRegionalTieredCache(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalTieredCacheArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalTieredCache(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalTieredCacheArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRegionalTieredCacheResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalTieredCacheArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalTieredCache(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalTieredCache(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6084,10 +7052,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getRegionalTieredCachePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalTieredCachePlainArgs.Builder] = scala.Predef.identity):
+    inline def getRegionalTieredCachePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRegionalTieredCachePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRegionalTieredCacheResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRegionalTieredCachePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRegionalTieredCachePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRegionalTieredCachePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6096,10 +7066,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getResourceGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetResourceGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6108,10 +7080,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getResourceGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetResourceGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6120,10 +7094,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getResourceGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetResourceGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetResourceGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6132,30 +7108,40 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getResourceGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getResourceGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetResourceGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetResourceGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetResourceGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getResourceGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getRuleset(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetArgs.Builder] = scala.Predef.identity):
+    inline def getRuleset(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRulesetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRulesetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRuleset(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRuleset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getRulesetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulesetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRulesetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRulesetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRulesetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRulesetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getRulesets(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetsArgs.Builder] = scala.Predef.identity):
+    inline def getRulesets(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetRulesetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRulesetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRulesets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRulesets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getRulesetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulesetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetRulesetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetRulesetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetRulesetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getRulesetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getRulesetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6165,10 +7151,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationOperationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationOperationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSchemaValidationOperationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6178,10 +7166,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationOperationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationOperationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSchemaValidationOperationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6191,10 +7181,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationOperationSettingsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationOperationSettingsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSchemaValidationOperationSettingsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6204,10 +7196,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationOperationSettingsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationOperationSettingsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSchemaValidationOperationSettingsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationOperationSettingsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationOperationSettingsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6217,10 +7211,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSchemas(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSchemas(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSchemaValidationSchemasResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemas(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemas(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6230,10 +7226,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSchemasPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSchemasPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSchemaValidationSchemasResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6243,10 +7241,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSchemasList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSchemasList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSchemaValidationSchemasListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6256,10 +7256,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSchemasListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSchemasListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSchemaValidationSchemasListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSchemasListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSchemasListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6269,10 +7271,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6282,10 +7286,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemaValidationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSchemaValidationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSchemaValidationSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSchemaValidationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6293,10 +7299,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStore(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStore(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSecretsStoreResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoreArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStore(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStore(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6304,10 +7312,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStorePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStorePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStorePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSecretsStoreResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStorePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStorePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStorePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6315,10 +7325,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStoreSecret(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStoreSecret(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSecretsStoreSecretResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoreSecretArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecret(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecret(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6326,10 +7338,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStoreSecretPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStoreSecretPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSecretsStoreSecretResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoreSecretPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecretPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecretPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6337,10 +7351,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStoreSecrets(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStoreSecrets(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSecretsStoreSecretsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecrets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecrets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6348,10 +7364,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStoreSecretsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStoreSecretsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSecretsStoreSecretsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoreSecretsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecretsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoreSecretsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6359,10 +7377,12 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStores(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoresArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStores(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoresArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSecretsStoresInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoresArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStores(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStores(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6370,70 +7390,96 @@ object cloudflare:
      * - `Secrets Store Read`
      * - `Secrets Store Write`
      */
-    inline def getSecretsStoresPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoresPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsStoresPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSecretsStoresPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSecretsStoresInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSecretsStoresPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoresPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSecretsStoresPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShare(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareArgs.Builder] = scala.Predef.identity):
+    inline def getShare(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShare(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShare(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSharePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity):
+    inline def getSharePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetShareResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSharePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSharePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSharePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShareRecipient(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientArgs.Builder] = scala.Predef.identity):
+    inline def getShareRecipient(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetShareRecipientResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareRecipientArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipient(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipient(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getShareRecipientPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientPlainArgs.Builder] = scala.Predef.identity):
+    inline def getShareRecipientPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetShareRecipientResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareRecipientPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipientPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipientPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShareRecipients(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientsArgs.Builder] = scala.Predef.identity):
+    inline def getShareRecipients(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetShareRecipientsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareRecipientsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipients(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipients(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getShareRecipientsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getShareRecipientsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareRecipientsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetShareRecipientsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareRecipientsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipientsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareRecipientsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShareResource(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourceArgs.Builder] = scala.Predef.identity):
+    inline def getShareResource(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetShareResourceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareResourceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareResource(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareResource(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getShareResourcePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getShareResourcePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetShareResourceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareResourcePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareResourcePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareResourcePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShareResources(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcesArgs.Builder] = scala.Predef.identity):
+    inline def getShareResources(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetShareResourcesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareResourcesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareResources(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareResources(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getShareResourcesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getShareResourcesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetShareResourcesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetShareResourcesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetShareResourcesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShareResourcesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShareResourcesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getShares(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharesArgs.Builder] = scala.Predef.identity):
+    inline def getShares(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSharesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSharesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getShares(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getShares(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSharesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSharesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSharesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSharesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSharesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSharesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSharesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6441,10 +7487,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippet(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetArgs.Builder] = scala.Predef.identity):
+    inline def getSnippet(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippet(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6452,10 +7500,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6463,10 +7513,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetListArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6474,10 +7526,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6485,10 +7539,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6496,10 +7552,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6507,10 +7565,12 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetRulesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesListArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetRulesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetRulesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetRulesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6518,30 +7578,40 @@ object cloudflare:
      * - `Snippets Read`
      * - `Snippets Write`
      */
-    inline def getSnippetRulesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetRulesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetRulesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetRulesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetRulesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetRulesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getSnippets(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsArgs.Builder] = scala.Predef.identity):
+    inline def getSnippets(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSnippetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getSnippetsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsListArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSnippetsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSnippetsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSnippetsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSnippetsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSnippetsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSnippetsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSnippetsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6549,10 +7619,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSpectrumApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumApplicationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplication(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplication(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6560,10 +7632,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSpectrumApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumApplicationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplicationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplicationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6571,10 +7645,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationsArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSpectrumApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumApplicationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplications(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplications(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6582,10 +7658,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumApplicationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSpectrumApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumApplicationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplicationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumApplicationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6593,10 +7671,12 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumProtocols(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumProtocolsArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumProtocols(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumProtocolsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSpectrumProtocolsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumProtocolsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumProtocols(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumProtocols(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6604,50 +7684,60 @@ object cloudflare:
      * - `Zone Settings Read`
      * - `Zone Settings Write`
      */
-    inline def getSpectrumProtocolsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumProtocolsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSpectrumProtocolsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSpectrumProtocolsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSpectrumProtocolsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSpectrumProtocolsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumProtocolsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSpectrumProtocolsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `SSO Connector Read`
      */
-    inline def getSsoConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getSsoConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSsoConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSsoConnectorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnector(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnector(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `SSO Connector Read`
      */
-    inline def getSsoConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSsoConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSsoConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSsoConnectorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `SSO Connector Read`
      */
-    inline def getSsoConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorsArgs.Builder] = scala.Predef.identity):
+    inline def getSsoConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetSsoConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSsoConnectorsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectors(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectors(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `SSO Connector Read`
      */
-    inline def getSsoConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSsoConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetSsoConnectorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetSsoConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetSsoConnectorsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectorsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getSsoConnectorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6655,10 +7745,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStream(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamArgs.Builder] = scala.Predef.identity):
+    inline def getStream(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStream(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStream(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6666,10 +7758,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6677,10 +7771,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamAudioTrack(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamAudioTrackArgs.Builder] = scala.Predef.identity):
+    inline def getStreamAudioTrack(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamAudioTrackArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamAudioTrackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamAudioTrackArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamAudioTrack(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamAudioTrack(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6688,10 +7784,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamAudioTrackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamAudioTrackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamAudioTrackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamAudioTrackPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamAudioTrackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamAudioTrackPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamAudioTrackPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamAudioTrackPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6699,10 +7797,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamCaptionLanguage(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamCaptionLanguageArgs.Builder] = scala.Predef.identity):
+    inline def getStreamCaptionLanguage(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamCaptionLanguageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamCaptionLanguageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamCaptionLanguageArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamCaptionLanguage(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamCaptionLanguage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6710,10 +7810,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamCaptionLanguagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamCaptionLanguagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamCaptionLanguagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamCaptionLanguagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamCaptionLanguageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamCaptionLanguagePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamCaptionLanguagePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamCaptionLanguagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6721,10 +7823,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamDownload(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamDownloadArgs.Builder] = scala.Predef.identity):
+    inline def getStreamDownload(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamDownloadArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamDownloadResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamDownloadArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamDownload(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamDownload(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6732,10 +7836,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamDownloadPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamDownloadPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamDownloadPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamDownloadPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamDownloadResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamDownloadPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamDownloadPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamDownloadPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6743,10 +7849,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamKey(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKey(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamKeyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamKey(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6754,10 +7862,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamKeyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKeyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamKeyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamKeyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6765,10 +7875,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamLiveInput(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamLiveInputArgs.Builder] = scala.Predef.identity):
+    inline def getStreamLiveInput(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamLiveInputArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamLiveInputResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamLiveInputArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamLiveInput(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamLiveInput(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6776,10 +7888,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamLiveInputPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamLiveInputPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamLiveInputPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamLiveInputPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamLiveInputResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamLiveInputPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamLiveInputPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamLiveInputPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6787,10 +7901,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWatermark(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarkArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWatermark(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamWatermarkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWatermarkArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermark(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermark(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6798,10 +7914,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWatermarkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWatermarkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamWatermarkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWatermarkPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarkPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6809,10 +7927,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWatermarks(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarksArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWatermarks(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamWatermarksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWatermarksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6820,10 +7940,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWatermarksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWatermarksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWatermarksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamWatermarksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWatermarksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWatermarksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6831,10 +7953,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWebhook(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWebhookArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWebhook(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWebhookArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamWebhookResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWebhookArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWebhook(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWebhook(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6842,10 +7966,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamWebhookPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWebhookPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamWebhookPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamWebhookPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamWebhookResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamWebhookPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamWebhookPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamWebhookPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6853,10 +7979,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreams(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamsArgs.Builder] = scala.Predef.identity):
+    inline def getStreams(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetStreamsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreams(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreams(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6864,10 +7992,12 @@ object cloudflare:
      * - `Stream Read`
      * - `Stream Write`
      */
-    inline def getStreamsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetStreamsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetStreamsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetStreamsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getStreamsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getStreamsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6877,10 +8007,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getTieredCache(args: Endofunction[com.pulumi.cloudflare.inputs.GetTieredCacheArgs.Builder] = scala.Predef.identity):
+    inline def getTieredCache(args: Endofunction[com.pulumi.cloudflare.inputs.GetTieredCacheArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTieredCacheResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTieredCacheArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTieredCache(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTieredCache(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6890,10 +8022,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getTieredCachePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTieredCachePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTieredCachePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTieredCachePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTieredCacheResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTieredCachePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTieredCachePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTieredCachePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6903,10 +8037,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTokenValidationConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationConfigArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfig(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6916,10 +8052,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTokenValidationConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationConfigPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6929,10 +8067,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationConfigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigsArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationConfigs(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTokenValidationConfigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationConfigsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigs(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigs(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6942,10 +8082,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationConfigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationConfigsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationConfigsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTokenValidationConfigsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationConfigsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationConfigsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6955,10 +8097,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTokenValidationRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6968,10 +8112,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTokenValidationRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -6981,10 +8127,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationRulesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesListArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationRulesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTokenValidationRulesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationRulesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -6994,10 +8142,12 @@ object cloudflare:
      * - `Domain API Gateway`
      * - `Domain API Gateway Read`
      */
-    inline def getTokenValidationRulesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTokenValidationRulesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTokenValidationRulesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTokenValidationRulesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTokenValidationRulesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTokenValidationRulesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7005,10 +8155,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getTotalTls(args: Endofunction[com.pulumi.cloudflare.inputs.GetTotalTlsArgs.Builder] = scala.Predef.identity):
+    inline def getTotalTls(args: Endofunction[com.pulumi.cloudflare.inputs.GetTotalTlsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTotalTlsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTotalTlsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTotalTls(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTotalTls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7016,10 +8168,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getTotalTlsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTotalTlsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTotalTlsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTotalTlsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTotalTlsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTotalTlsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTotalTlsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTotalTlsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7029,10 +8183,12 @@ object cloudflare:
      * - `Turnstile Sites Read`
      * - `Turnstile Sites Write`
      */
-    inline def getTurnstileWidget(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetArgs.Builder] = scala.Predef.identity):
+    inline def getTurnstileWidget(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTurnstileWidgetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTurnstileWidgetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidget(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidget(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7042,10 +8198,12 @@ object cloudflare:
      * - `Turnstile Sites Read`
      * - `Turnstile Sites Write`
      */
-    inline def getTurnstileWidgetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTurnstileWidgetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTurnstileWidgetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTurnstileWidgetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7055,10 +8213,12 @@ object cloudflare:
      * - `Turnstile Sites Read`
      * - `Turnstile Sites Write`
      */
-    inline def getTurnstileWidgets(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetsArgs.Builder] = scala.Predef.identity):
+    inline def getTurnstileWidgets(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetTurnstileWidgetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTurnstileWidgetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7068,10 +8228,12 @@ object cloudflare:
      * - `Turnstile Sites Read`
      * - `Turnstile Sites Write`
      */
-    inline def getTurnstileWidgetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTurnstileWidgetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetTurnstileWidgetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetTurnstileWidgetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetTurnstileWidgetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getTurnstileWidgetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7079,10 +8241,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getUniversalSslSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetUniversalSslSettingArgs.Builder] = scala.Predef.identity):
+    inline def getUniversalSslSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetUniversalSslSettingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUniversalSslSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUniversalSslSettingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUniversalSslSetting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUniversalSslSetting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7090,10 +8254,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getUniversalSslSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUniversalSslSettingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUniversalSslSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUniversalSslSettingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUniversalSslSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUniversalSslSettingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUniversalSslSettingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUniversalSslSettingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7139,10 +8305,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getUrlNormalizationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getUrlNormalizationSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUrlNormalizationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUrlNormalizationSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUrlNormalizationSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7188,10 +8356,12 @@ object cloudflare:
      * - `Zone WAF Read`
      * - `Zone WAF Write`
      */
-    inline def getUrlNormalizationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUrlNormalizationSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUrlNormalizationSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUrlNormalizationSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUrlNormalizationSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUrlNormalizationSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7199,10 +8369,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getUserAgentBlockingRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRuleArgs.Builder] = scala.Predef.identity):
+    inline def getUserAgentBlockingRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUserAgentBlockingRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserAgentBlockingRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7210,10 +8382,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getUserAgentBlockingRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserAgentBlockingRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUserAgentBlockingRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7221,10 +8395,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getUserAgentBlockingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesArgs.Builder] = scala.Predef.identity):
+    inline def getUserAgentBlockingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUserAgentBlockingRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7232,10 +8408,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getUserAgentBlockingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserAgentBlockingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUserAgentBlockingRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserAgentBlockingRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserAgentBlockingRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7244,10 +8422,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUserGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7256,10 +8436,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUserGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7268,10 +8450,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroupMembers(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupMembersArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupMembers(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupMembersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUserGroupMembersResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupMembersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupMembers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupMembers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7280,10 +8464,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroupMembersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupMembersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupMembersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupMembersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUserGroupMembersResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupMembersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupMembersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupMembersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7292,10 +8478,12 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetUserGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7304,70 +8492,96 @@ object cloudflare:
      * - `Account Settings Write`
      * - `SCIM Provisioning`
      */
-    inline def getUserGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetUserGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetUserGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetUserGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getUserGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerCredential(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredential(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredential(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredential(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerCredentialPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerCredentialSet(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialSet(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialSetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSet(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerCredentialSetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialSetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialSetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerCredentialSets(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialSets(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialSetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerCredentialSetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialSetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialSetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialSetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialSetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerCredentials(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentials(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentials(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentials(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerCredentialsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerCredentialsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerCredentialsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerCredentialsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerCredentialsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerTargetEnvironment(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerTargetEnvironment(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerTargetEnvironmentResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironment(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerTargetEnvironmentPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerTargetEnvironmentPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerTargetEnvironmentResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironmentPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironmentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getVulnerabilityScannerTargetEnvironments(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerTargetEnvironments(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerTargetEnvironmentsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironments(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironments(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getVulnerabilityScannerTargetEnvironmentsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVulnerabilityScannerTargetEnvironmentsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetVulnerabilityScannerTargetEnvironmentsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetVulnerabilityScannerTargetEnvironmentsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironmentsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getVulnerabilityScannerTargetEnvironmentsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7375,10 +8589,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoom(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoom(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoom(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoom(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7386,10 +8602,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7397,10 +8615,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomEvent(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomEvent(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomEventResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomEventArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEvent(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEvent(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7408,10 +8628,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomEventPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomEventPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomEventResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomEventPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEventPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEventPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7419,10 +8641,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomEvents(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventsArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomEvents(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomEventsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomEventsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEvents(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEvents(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7430,10 +8654,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomEventsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomEventsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomEventsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomEventsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomEventsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEventsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomEventsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7441,10 +8667,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomRulesArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7452,10 +8680,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7463,10 +8693,12 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7474,30 +8706,36 @@ object cloudflare:
      * - `Waiting Rooms Read`
      * - `Waiting Rooms Write`
      */
-    inline def getWaitingRoomSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Waiting Rooms Read`
      */
-    inline def getWaitingRooms(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomsArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRooms(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWaitingRoomsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRooms(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRooms(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Waiting Rooms Read`
      */
-    inline def getWaitingRoomsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWaitingRoomsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWaitingRoomsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWaitingRoomsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWaitingRoomsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWaitingRoomsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7505,10 +8743,12 @@ object cloudflare:
      * - `Web3 Hostnames Read`
      * - `Web3 Hostnames Write`
      */
-    inline def getWeb3Hostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnameArgs.Builder] = scala.Predef.identity):
+    inline def getWeb3Hostname(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnameArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWeb3HostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWeb3HostnameArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWeb3Hostname(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWeb3Hostname(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7516,10 +8756,12 @@ object cloudflare:
      * - `Web3 Hostnames Read`
      * - `Web3 Hostnames Write`
      */
-    inline def getWeb3HostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWeb3HostnamePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWeb3HostnameResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWeb3HostnamePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWeb3HostnamePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWeb3HostnamePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7527,10 +8769,12 @@ object cloudflare:
      * - `Web3 Hostnames Read`
      * - `Web3 Hostnames Write`
      */
-    inline def getWeb3Hostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamesArgs.Builder] = scala.Predef.identity):
+    inline def getWeb3Hostnames(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWeb3HostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWeb3HostnamesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWeb3Hostnames(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWeb3Hostnames(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7538,50 +8782,60 @@ object cloudflare:
      * - `Web3 Hostnames Read`
      * - `Web3 Hostnames Write`
      */
-    inline def getWeb3HostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWeb3HostnamesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWeb3HostnamesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWeb3HostnamesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWeb3HostnamesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWeb3HostnamesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWeb3HostnamesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Settings Read`
      */
-    inline def getWebAnalyticsSite(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSiteArgs.Builder] = scala.Predef.identity):
+    inline def getWebAnalyticsSite(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSiteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWebAnalyticsSiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWebAnalyticsSiteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSite(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSite(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Settings Read`
      */
-    inline def getWebAnalyticsSitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAnalyticsSitePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWebAnalyticsSiteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWebAnalyticsSitePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSitePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSitePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Settings Read`
      */
-    inline def getWebAnalyticsSites(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesArgs.Builder] = scala.Predef.identity):
+    inline def getWebAnalyticsSites(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWebAnalyticsSitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSites(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSites(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Account Settings Read`
      */
-    inline def getWebAnalyticsSitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWebAnalyticsSitesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWebAnalyticsSitesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWebAnalyticsSitesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSitesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWebAnalyticsSitesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7590,10 +8844,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorker(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerArgs.Builder] = scala.Predef.identity):
+    inline def getWorker(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorker(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorker(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7602,10 +8858,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7614,10 +8872,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkerVersion(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerVersion(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkerVersionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerVersionArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersion(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7626,10 +8886,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkerVersionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerVersionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkerVersionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerVersionPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersionPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7638,10 +8900,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkerVersions(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionsArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerVersions(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkerVersionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerVersionsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersions(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersions(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7650,10 +8914,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkerVersionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkerVersionsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkerVersionsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkerVersionsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkerVersionsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersionsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkerVersionsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7662,10 +8928,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkers(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersArgs.Builder] = scala.Predef.identity):
+    inline def getWorkers(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7674,10 +8942,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7685,10 +8955,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCronTrigger(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCronTriggerArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCronTrigger(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCronTriggerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersCronTriggerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCronTriggerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCronTrigger(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCronTrigger(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7696,10 +8968,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCronTriggerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCronTriggerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCronTriggerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCronTriggerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersCronTriggerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCronTriggerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCronTriggerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCronTriggerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7707,10 +8981,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCustomDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCustomDomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersCustomDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCustomDomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7718,10 +8994,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCustomDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCustomDomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersCustomDomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCustomDomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7729,10 +9007,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCustomDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCustomDomains(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersCustomDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomains(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomains(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7740,10 +9020,12 @@ object cloudflare:
      * - `Workers Scripts Read`
      * - `Workers Scripts Write`
      */
-    inline def getWorkersCustomDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersCustomDomainsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersCustomDomainsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersCustomDomainsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomainsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersCustomDomainsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7752,10 +9034,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersDeployment(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersDeployment(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersDeploymentResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersDeploymentArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeployment(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeployment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7764,10 +9048,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersDeploymentPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersDeploymentPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersDeploymentResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersDeploymentPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeploymentPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeploymentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7776,10 +9062,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersDeployments(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentsArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersDeployments(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersDeploymentsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersDeploymentsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeployments(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeployments(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7788,10 +9076,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersDeploymentsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersDeploymentsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersDeploymentsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersDeploymentsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersDeploymentsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeploymentsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersDeploymentsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7800,10 +9090,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersForPlatformsDispatchNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersForPlatformsDispatchNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersForPlatformsDispatchNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespaceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespace(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7812,10 +9104,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersForPlatformsDispatchNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersForPlatformsDispatchNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersForPlatformsDispatchNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespacePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7824,10 +9118,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersForPlatformsDispatchNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersForPlatformsDispatchNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersForPlatformsDispatchNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespaces(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespaces(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7836,10 +9132,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersForPlatformsDispatchNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersForPlatformsDispatchNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersForPlatformsDispatchNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersForPlatformsDispatchNamespacesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespacesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersForPlatformsDispatchNamespacesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7847,10 +9145,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKv(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKv(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersKvResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKv(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKv(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7858,10 +9158,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKvPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKvPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersKvResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7869,10 +9171,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKvNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKvNamespace(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersKvNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvNamespaceArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespace(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7880,10 +9184,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKvNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKvNamespacePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersKvNamespaceResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvNamespacePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespacePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7891,10 +9197,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKvNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKvNamespaces(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersKvNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespaces(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespaces(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7902,10 +9210,12 @@ object cloudflare:
      * - `Workers KV Storage Read`
      * - `Workers KV Storage Write`
      */
-    inline def getWorkersKvNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersKvNamespacesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersKvNamespacesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersKvNamespacesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespacesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersKvNamespacesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7913,10 +9223,12 @@ object cloudflare:
      * - `Workers Routes Read`
      * - `Workers Routes Write`
      */
-    inline def getWorkersRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRouteArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRouteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersRouteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoute(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoute(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7924,10 +9236,12 @@ object cloudflare:
      * - `Workers Routes Read`
      * - `Workers Routes Write`
      */
-    inline def getWorkersRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersRoutePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7935,10 +9249,12 @@ object cloudflare:
      * - `Workers Routes Read`
      * - `Workers Routes Write`
      */
-    inline def getWorkersRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutesArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersRoutesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7946,10 +9262,12 @@ object cloudflare:
      * - `Workers Routes Read`
      * - `Workers Routes Write`
      */
-    inline def getWorkersRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersRoutesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersRoutesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersRoutesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7958,10 +9276,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScript(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScript(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersScriptResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScript(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScript(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7970,10 +9290,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScriptPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScriptPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersScriptResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -7982,10 +9304,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScriptSubdomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScriptSubdomain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersScriptSubdomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptSubdomain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptSubdomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -7994,10 +9318,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScriptSubdomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScriptSubdomainPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersScriptSubdomainResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptSubdomainPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptSubdomainPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptSubdomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8006,10 +9332,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScripts(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptsArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScripts(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkersScriptsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScripts(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScripts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8018,10 +9346,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkersScriptsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkersScriptsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkersScriptsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkersScriptsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkersScriptsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkersScriptsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8030,10 +9360,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkflow(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflow(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkflowResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkflowArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkflow(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkflow(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8042,10 +9374,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkflowPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflowPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkflowResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkflowPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkflowPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkflowPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8054,10 +9388,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkflows(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowsArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflows(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetWorkflowsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkflowsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkflows(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkflows(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8066,10 +9402,12 @@ object cloudflare:
      * - `Workers Scripts Write`
      * - `Workers Tail Read`
      */
-    inline def getWorkflowsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkflowsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetWorkflowsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetWorkflowsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetWorkflowsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getWorkflowsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getWorkflowsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8077,10 +9415,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpPortal(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpPortal(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpPortalResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortal(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortal(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8088,10 +9428,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpPortalPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpPortalPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpPortalResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortalPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortalPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8099,10 +9441,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpPortals(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpPortals(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpPortalsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortals(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortals(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8110,10 +9454,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpPortalsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpPortalsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpPortalsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpPortalsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortalsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpPortalsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8121,10 +9467,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpServer(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpServer(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpServerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServer(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8132,10 +9480,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpServerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpServerPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpServerResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServerPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServerPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8143,10 +9493,12 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpServers(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpServers(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpServersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServers(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8154,30 +9506,40 @@ object cloudflare:
      * - `MCP Portals Read`
      * - `MCP Portals Write`
      */
-    inline def getZeroTrustAccessAiControlsMcpServersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessAiControlsMcpServersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessAiControlsMcpServersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessAiControlsMcpServersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessAiControlsMcpServersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplication(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplication(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplicationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplicationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplications(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplications(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessApplicationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplicationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessApplicationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8185,10 +9547,12 @@ object cloudflare:
      * - `Access: Custom Pages Read`
      * - `Access: Custom Pages Write`
      */
-    inline def getZeroTrustAccessCustomPage(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPageArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessCustomPage(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessCustomPageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPageArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPage(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8196,10 +9560,12 @@ object cloudflare:
      * - `Access: Custom Pages Read`
      * - `Access: Custom Pages Write`
      */
-    inline def getZeroTrustAccessCustomPagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessCustomPagePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessCustomPageResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPagePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8207,10 +9573,12 @@ object cloudflare:
      * - `Access: Custom Pages Read`
      * - `Access: Custom Pages Write`
      */
-    inline def getZeroTrustAccessCustomPages(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessCustomPages(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessCustomPagesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPages(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPages(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8218,10 +9586,12 @@ object cloudflare:
      * - `Access: Custom Pages Read`
      * - `Access: Custom Pages Write`
      */
-    inline def getZeroTrustAccessCustomPagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessCustomPagesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessCustomPagesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessCustomPagesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPagesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessCustomPagesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8229,10 +9599,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8240,10 +9612,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8251,10 +9625,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8262,10 +9638,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8273,10 +9651,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessIdentityProvider(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessIdentityProvider(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessIdentityProviderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProvider(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProvider(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8284,10 +9664,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessIdentityProviderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessIdentityProviderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessIdentityProviderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProviderPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProviderPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProviderPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8295,10 +9677,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessIdentityProviders(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessIdentityProviders(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessIdentityProvidersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProviders(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProviders(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8306,30 +9690,40 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessIdentityProvidersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessIdentityProvidersPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessIdentityProvidersInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessIdentityProvidersPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProvidersPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessIdentityProvidersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessInfrastructureTarget(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessInfrastructureTarget(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessInfrastructureTargetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTarget(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTarget(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessInfrastructureTargetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessInfrastructureTargetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessInfrastructureTargetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessInfrastructureTargets(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessInfrastructureTargets(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessInfrastructureTargetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessInfrastructureTargetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessInfrastructureTargetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessInfrastructureTargetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessInfrastructureTargetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessInfrastructureTargetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8337,10 +9731,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessKeyConfiguration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessKeyConfiguration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessKeyConfigurationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessKeyConfiguration(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessKeyConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8348,10 +9744,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Read`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustAccessKeyConfigurationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessKeyConfigurationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessKeyConfigurationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessKeyConfigurationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessKeyConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessKeyConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8359,10 +9757,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8370,10 +9770,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8381,10 +9783,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8392,10 +9796,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8403,10 +9809,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsHostnameSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsHostnameSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsHostnameSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsHostnameSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsHostnameSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8414,10 +9822,12 @@ object cloudflare:
      * - `Access: Mutual TLS Certificates Read`
      * - `Access: Mutual TLS Certificates Write`
      */
-    inline def getZeroTrustAccessMtlsHostnameSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessMtlsHostnameSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessMtlsHostnameSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessMtlsHostnameSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsHostnameSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessMtlsHostnameSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8425,10 +9835,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8436,10 +9848,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8447,10 +9861,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8458,10 +9874,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8469,10 +9887,12 @@ object cloudflare:
      * - `Access: Service Tokens Read`
      * - `Access: Service Tokens Write`
      */
-    inline def getZeroTrustAccessServiceToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessServiceToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessServiceTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8480,10 +9900,12 @@ object cloudflare:
      * - `Access: Service Tokens Read`
      * - `Access: Service Tokens Write`
      */
-    inline def getZeroTrustAccessServiceTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessServiceTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessServiceTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8491,10 +9913,12 @@ object cloudflare:
      * - `Access: Service Tokens Read`
      * - `Access: Service Tokens Write`
      */
-    inline def getZeroTrustAccessServiceTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessServiceTokens(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessServiceTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokens(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokens(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8502,10 +9926,12 @@ object cloudflare:
      * - `Access: Service Tokens Read`
      * - `Access: Service Tokens Write`
      */
-    inline def getZeroTrustAccessServiceTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessServiceTokensPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessServiceTokensInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessServiceTokensPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokensPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessServiceTokensPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8513,10 +9939,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessShortLivedCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessShortLivedCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessShortLivedCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8524,10 +9952,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessShortLivedCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessShortLivedCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessShortLivedCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8535,10 +9965,12 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessShortLivedCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessShortLivedCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessShortLivedCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8546,50 +9978,68 @@ object cloudflare:
      * - `Access: Apps and Policies Read`
      * - `Access: Apps and Policies Write`
      */
-    inline def getZeroTrustAccessShortLivedCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessShortLivedCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessShortLivedCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessShortLivedCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessShortLivedCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessTag(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessTag(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessTagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTag(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTag(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessTagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessTagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessTagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTagPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTagPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustAccessTags(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessTags(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustAccessTagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTags(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustAccessTagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustAccessTagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustAccessTagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustAccessTagsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTagsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustAccessTagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustCasbIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegration(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustCasbIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustCasbIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustCasbIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbIntegrationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbIntegrationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8597,10 +10047,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8608,10 +10060,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8619,10 +10073,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8630,10 +10086,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8641,10 +10099,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbWebhook(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbWebhook(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbWebhookResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhook(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhook(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8652,10 +10112,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbWebhookPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbWebhookPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbWebhookResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhookPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhookPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhookPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8663,10 +10125,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbWebhooks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbWebhooks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustCasbWebhooksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhooks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhooks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8674,10 +10138,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustCasbWebhooksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustCasbWebhooksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustCasbWebhooksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustCasbWebhooksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhooksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustCasbWebhooksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8686,10 +10152,12 @@ object cloudflare:
      * - `Zero Trust Report`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustConnectivitySettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustConnectivitySettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustConnectivitySettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustConnectivitySettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustConnectivitySettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8698,50 +10166,68 @@ object cloudflare:
      * - `Zero Trust Report`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustConnectivitySettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustConnectivitySettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustConnectivitySettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustConnectivitySettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustConnectivitySettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustConnectivitySettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceCustomProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceCustomProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceCustomProfileLocalDomainFallback(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfileLocalDomainFallback(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfileLocalDomainFallback(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfileLocalDomainFallback(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceCustomProfileLocalDomainFallbackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfileLocalDomainFallbackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfileLocalDomainFallbackPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfileLocalDomainFallbackPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfileLocalDomainFallbackPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceCustomProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfiles(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfiles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceCustomProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceCustomProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceCustomProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceCustomProfilesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfilesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceCustomProfilesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceDefaultProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceDefaultProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8749,10 +10235,12 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getZeroTrustDeviceDefaultProfileCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfileCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileCertificatesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8760,40 +10248,54 @@ object cloudflare:
      * - `SSL and Certificates Read`
      * - `SSL and Certificates Write`
      */
-    inline def getZeroTrustDeviceDefaultProfileCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfileCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileCertificatesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceDefaultProfileLocalDomainFallback(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfileLocalDomainFallback(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileLocalDomainFallback(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileLocalDomainFallback(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceDefaultProfileLocalDomainFallbackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDefaultProfileLocalDomainFallbackPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDefaultProfileLocalDomainFallbackPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileLocalDomainFallbackPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDefaultProfileLocalDomainFallbackPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceDeploymentGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDeploymentGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDeploymentGroupsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceDeploymentGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDeploymentGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDeploymentGroupsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceDeploymentGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDeploymentGroupsList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDeploymentGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceDeploymentGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceDeploymentGroupsListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceDeploymentGroupsListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceDeploymentGroupsListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceDeploymentGroupsListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8801,10 +10303,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDeviceIpProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceIpProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceIpProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8812,10 +10316,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDeviceIpProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceIpProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceIpProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8823,10 +10329,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDeviceIpProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceIpProfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceIpProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfiles(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfiles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8834,80 +10342,110 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDeviceIpProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceIpProfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceIpProfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceIpProfilesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfilesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceIpProfilesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceManagedNetworks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceManagedNetworks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceManagedNetworksResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceManagedNetworksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceManagedNetworksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceManagedNetworksResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceManagedNetworksList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceManagedNetworksList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceManagedNetworksListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceManagedNetworksListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceManagedNetworksListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceManagedNetworksListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceManagedNetworksListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceManagedNetworksListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDevicePostureIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegration(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDevicePostureIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDevicePostureIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDevicePostureIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureIntegrationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureIntegrationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDevicePostureRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRuleArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDevicePostureRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDevicePostureRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDevicePostureRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDevicePostureRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDevicePostureRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDevicePostureRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDevicePostureRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustDeviceSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustDeviceSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8915,10 +10453,12 @@ object cloudflare:
      * - `Cloudflare One Networks Read`
      * - `Cloudflare One Networks Write`
      */
-    inline def getZeroTrustDeviceSubnet(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceSubnet(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceSubnetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSubnet(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSubnet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8926,10 +10466,12 @@ object cloudflare:
      * - `Cloudflare One Networks Read`
      * - `Cloudflare One Networks Write`
      */
-    inline def getZeroTrustDeviceSubnetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDeviceSubnetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDeviceSubnetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDeviceSubnetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSubnetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDeviceSubnetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8939,10 +10481,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRuleArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexRule(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDexRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexRuleArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRule(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8952,10 +10496,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexRulePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDexRuleResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexRulePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRulePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8965,10 +10511,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDexRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -8978,10 +10526,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDexRulesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -8991,10 +10541,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexTest(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexTest(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDexTestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexTestArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTest(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTest(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9004,10 +10556,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexTestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexTestPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDexTestResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexTestPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTestPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTestPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9017,10 +10571,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexTests(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexTests(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDexTestsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTests(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTests(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9030,10 +10586,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Report`
      */
-    inline def getZeroTrustDexTestsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDexTestsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDexTestsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDexTestsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTestsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDexTestsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9041,10 +10599,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntries(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntries(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9052,10 +10612,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9063,10 +10625,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntry(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9074,10 +10638,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomEntryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomEntryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9085,10 +10651,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9096,10 +10664,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9107,10 +10677,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomPromptTopic(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomPromptTopic(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomPromptTopicResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopic(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopic(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9118,10 +10690,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomPromptTopicPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomPromptTopicPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomPromptTopicResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopicPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopicPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9129,10 +10703,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomPromptTopics(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomPromptTopics(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomPromptTopicsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopics(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopics(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9140,10 +10716,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpCustomPromptTopicsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpCustomPromptTopicsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpCustomPromptTopicsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpCustomPromptTopicsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopicsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpCustomPromptTopicsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9151,10 +10729,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataClass(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataClass(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataClassResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClass(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClass(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9162,10 +10742,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataClassPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataClassPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataClassResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClassPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClassPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9173,10 +10755,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataClasses(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataClasses(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataClassesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClasses(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClasses(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9184,10 +10768,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataClassesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataClassesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataClassesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataClassesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClassesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataClassesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9195,10 +10781,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTag(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTag(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTag(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTag(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9206,10 +10794,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9217,10 +10807,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagCategories(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagCategories(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagCategoriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategories(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategories(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9228,10 +10820,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagCategoriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagCategoriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagCategoriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategoriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategoriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9239,10 +10833,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagCategory(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagCategory(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagCategoryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategory(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategory(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9250,10 +10846,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagCategoryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagCategoryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagCategoryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagCategoryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategoryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagCategoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9261,10 +10859,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTags(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTags(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTags(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTags(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9272,10 +10872,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataTagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataTagsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDataTagsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDataTagsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataTagsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9283,10 +10885,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDataset(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDataset(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDatasetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataset(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDataset(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9294,10 +10898,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDatasetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDatasetPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDatasetResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasetPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9305,10 +10911,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDatasets(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDatasets(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDatasetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasets(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9316,10 +10924,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpDatasetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpDatasetsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpDatasetsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpDatasetsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasetsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpDatasetsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9327,10 +10937,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntries(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntries(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9338,10 +10950,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9349,10 +10963,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntry(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9360,10 +10976,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpEntryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpEntryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9371,10 +10989,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpIntegrationEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpIntegrationEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpIntegrationEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntries(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntries(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9382,10 +11002,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpIntegrationEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpIntegrationEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpIntegrationEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9393,10 +11015,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpIntegrationEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpIntegrationEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpIntegrationEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntry(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9404,10 +11028,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpIntegrationEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpIntegrationEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpIntegrationEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpIntegrationEntryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpIntegrationEntryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9415,10 +11041,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedEntries(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntries(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntries(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9426,10 +11054,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedEntriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedEntriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9437,10 +11067,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedEntry(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntry(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntry(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9448,10 +11080,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedEntryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedEntryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedEntryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedEntryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9459,10 +11093,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedProfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedProfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9470,10 +11106,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpPredefinedProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpPredefinedProfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpPredefinedProfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpPredefinedProfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedProfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpPredefinedProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9481,10 +11119,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityGroup(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroup(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9492,10 +11132,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityGroupPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityGroupResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroupPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9503,10 +11145,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityGroups(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroups(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroups(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9514,10 +11158,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityGroupsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityGroupsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityGroupsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroupsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityGroupsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9525,10 +11171,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevel(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevel(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevel(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9536,10 +11184,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevelPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9547,10 +11197,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevelOrder(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevelOrder(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelOrderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelOrder(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelOrder(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9558,10 +11210,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevelOrderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevelOrderPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelOrderResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelOrderPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelOrderPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelOrderPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9569,10 +11223,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevels(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevels(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevels(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevels(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9580,10 +11236,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSensitivityLevelsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSensitivityLevelsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSensitivityLevelsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSensitivityLevelsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSensitivityLevelsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9591,10 +11249,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9602,10 +11262,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDlpSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDlpSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDlpSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDlpSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDlpSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9614,10 +11276,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDnsLocation(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDnsLocation(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDnsLocationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocation(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocation(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9626,10 +11290,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDnsLocationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDnsLocationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDnsLocationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9638,10 +11304,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDnsLocations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDnsLocations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustDnsLocationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9650,10 +11318,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustDnsLocationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustDnsLocationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustDnsLocationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustDnsLocationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustDnsLocationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9661,10 +11331,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayAppTypesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayAppTypesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayAppTypesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayAppTypesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayAppTypesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9672,10 +11344,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayAppTypesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayAppTypesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayAppTypesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayAppTypesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayAppTypesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayAppTypesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9683,10 +11357,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayCategoriesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCategoriesList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCategoriesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCategoriesList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCategoriesList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9694,40 +11370,54 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayCategoriesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCategoriesListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCategoriesListInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCategoriesListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCategoriesListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCategoriesListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCertificate(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificateArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificate(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCertificatePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCertificateResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificatePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCertificates(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificates(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayCertificatesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayCertificatesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayCertificatesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificatesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayCertificatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayLogging(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayLogging(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayLoggingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayLogging(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayLogging(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayLoggingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayLoggingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayLoggingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayLoggingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayLoggingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayLoggingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9735,10 +11425,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayPacfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfileArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPacfile(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPacfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfileArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfile(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9746,10 +11438,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayPacfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPacfilePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPacfileResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfilePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9757,10 +11451,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayPacfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPacfiles(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPacfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfiles(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfiles(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9768,80 +11464,110 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustGatewayPacfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPacfilesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPacfilesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPacfilesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfilesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPacfilesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPolicies(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicies(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicies(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPoliciesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPoliciesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPoliciesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPoliciesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPoliciesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPolicy(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicy(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayPolicyPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayPolicyResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayPolicyPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicyPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayProxyEndpoint(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayProxyEndpoint(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayProxyEndpointResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpoint(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayProxyEndpointPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayProxyEndpointPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayProxyEndpointResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpointPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewayProxyEndpoints(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayProxyEndpoints(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayProxyEndpointsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpoints(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpoints(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewayProxyEndpointsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewayProxyEndpointsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewayProxyEndpointsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewayProxyEndpointsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpointsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewayProxyEndpointsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustGatewaySettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewaySettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustGatewaySettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewaySettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewaySettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustGatewaySettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustGatewaySettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustGatewaySettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustGatewaySettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewaySettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustGatewaySettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustList(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustListResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustListArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustList(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustList(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustListPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustListResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustListPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustListPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustListPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustLists(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustLists(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustListsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustListsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustLists(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustLists(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustListsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustListsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustListsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustListsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustListsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustListsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustListsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9851,10 +11577,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustNetworkHostnameRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRouteArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustNetworkHostnameRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRouteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustNetworkHostnameRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRouteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoute(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoute(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9864,10 +11592,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustNetworkHostnameRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustNetworkHostnameRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustNetworkHostnameRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9877,10 +11607,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustNetworkHostnameRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustNetworkHostnameRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustNetworkHostnameRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9890,10 +11622,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustNetworkHostnameRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustNetworkHostnameRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustNetworkHostnameRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustNetworkHostnameRoutesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustNetworkHostnameRoutesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9902,10 +11636,12 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Revoke`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustOrganization(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustOrganization(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustOrganizationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustOrganization(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustOrganization(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9914,50 +11650,68 @@ object cloudflare:
      * - `Access: Organizations, Identity Providers, and Groups Revoke`
      * - `Access: Organizations, Identity Providers, and Groups Write`
      */
-    inline def getZeroTrustOrganizationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustOrganizationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustOrganizationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustOrganizationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustOrganizationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustOrganizationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustResourceLibraryApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryApplication(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplication(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplication(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustResourceLibraryApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryApplicationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryApplicationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplicationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplicationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustResourceLibraryApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryApplications(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplications(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplications(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustResourceLibraryApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryApplicationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryApplicationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryApplicationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplicationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryApplicationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustResourceLibraryCategories(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryCategories(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryCategoriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategories(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategories(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustResourceLibraryCategoriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryCategoriesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryCategoriesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoriesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategoriesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategoriesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZeroTrustResourceLibraryCategory(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryCategory(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryCategoryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategory(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategory(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZeroTrustResourceLibraryCategoryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustResourceLibraryCategoryPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustResourceLibraryCategoryResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustResourceLibraryCategoryPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategoryPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustResourceLibraryCategoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9965,10 +11719,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskBehavior(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskBehavior(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustRiskBehaviorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskBehavior(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskBehavior(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9976,10 +11732,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskBehaviorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskBehaviorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustRiskBehaviorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskBehaviorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskBehaviorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskBehaviorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -9987,10 +11745,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskScoringIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskScoringIntegration(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustRiskScoringIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegration(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -9998,10 +11758,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskScoringIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskScoringIntegrationPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustRiskScoringIntegrationResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrationPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10009,10 +11771,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskScoringIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskScoringIntegrations(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustRiskScoringIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrations(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10020,10 +11784,12 @@ object cloudflare:
      * - `Zero Trust Read`
      * - `Zero Trust Write`
      */
-    inline def getZeroTrustRiskScoringIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustRiskScoringIntegrationsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustRiskScoringIntegrationsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustRiskScoringIntegrationsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrationsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustRiskScoringIntegrationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10035,10 +11801,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflared(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflared(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflared(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflared(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10050,10 +11818,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10065,10 +11835,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredConfig(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10080,10 +11852,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredConfigPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredConfigPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10093,10 +11867,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRouteArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredRoute(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRouteArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRouteArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoute(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoute(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10106,10 +11882,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredRoutePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredRouteResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10119,10 +11897,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredRoutes(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutes(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutes(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10132,10 +11912,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredRoutesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredRoutesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredRoutesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredRoutesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10144,10 +11926,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Write`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10156,10 +11940,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Write`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10169,10 +11955,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredVirtualNetwork(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredVirtualNetwork(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredVirtualNetworkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetwork(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetwork(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10182,10 +11970,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredVirtualNetworkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredVirtualNetworkPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredVirtualNetworkResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworkPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworkPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10195,10 +11985,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredVirtualNetworks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredVirtualNetworks(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredVirtualNetworksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworks(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworks(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10208,10 +12000,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredVirtualNetworksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredVirtualNetworksPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredVirtualNetworksInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredVirtualNetworksPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworksPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredVirtualNetworksPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10223,10 +12017,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflareds(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflareds(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflareds(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflareds(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10238,10 +12034,12 @@ object cloudflare:
      * - `Cloudflare Tunnel Read`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelCloudflaredsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelCloudflaredsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelCloudflaredsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelCloudflaredsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelCloudflaredsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10251,10 +12049,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnector(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnector(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnector(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10264,10 +12064,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10277,10 +12079,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorConfig(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorConfig(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorConfig(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10290,10 +12094,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorConfigPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorConfigResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorConfigPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorConfigPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorConfigPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10302,10 +12108,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Write`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorToken(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorToken(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10314,10 +12122,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Write`
      * - `Cloudflare Tunnel Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorTokenPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorTokenResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorTokenPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorTokenPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10327,10 +12137,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectors(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectors(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectors(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10340,10 +12152,12 @@ object cloudflare:
      * - `Cloudflare One Connectors Read`
      * - `Cloudflare One Connectors Write`
      */
-    inline def getZeroTrustTunnelWarpConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZeroTrustTunnelWarpConnectorsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZeroTrustTunnelWarpConnectorsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZeroTrustTunnelWarpConnectorsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZeroTrustTunnelWarpConnectorsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10386,10 +12200,12 @@ object cloudflare:
      * - `Zone Write`
      * - `Zone Zone Read`
      */
-    inline def getZone(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneArgs.Builder] = scala.Predef.identity):
+    inline def getZone(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZone(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZone(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10432,20 +12248,26 @@ object cloudflare:
      * - `Zone Write`
      * - `Zone Zone Read`
      */
-    inline def getZonePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZonePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZonePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZonePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZonePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZoneAutoOriginTlsKex(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexArgs.Builder] = scala.Predef.identity):
+    inline def getZoneAutoOriginTlsKex(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneAutoOriginTlsKexResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneAutoOriginTlsKex(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneAutoOriginTlsKex(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZoneAutoOriginTlsKexPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneAutoOriginTlsKexPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneAutoOriginTlsKexResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneAutoOriginTlsKexPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneAutoOriginTlsKexPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneAutoOriginTlsKexPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10455,10 +12277,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneCacheReserve(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheReserveArgs.Builder] = scala.Predef.identity):
+    inline def getZoneCacheReserve(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheReserveArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneCacheReserveResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneCacheReserveArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheReserve(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheReserve(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10468,10 +12292,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneCacheReservePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheReservePlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneCacheReservePlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheReservePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneCacheReserveResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneCacheReservePlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheReservePlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheReservePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10481,10 +12307,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneCacheVariants(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheVariantsArgs.Builder] = scala.Predef.identity):
+    inline def getZoneCacheVariants(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheVariantsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneCacheVariantsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneCacheVariantsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheVariants(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheVariants(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10494,10 +12322,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneCacheVariantsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheVariantsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneCacheVariantsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneCacheVariantsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneCacheVariantsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneCacheVariantsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheVariantsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneCacheVariantsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10507,10 +12337,12 @@ object cloudflare:
      * - `Zone DNS Settings Read`
      * - `Zone DNS Settings Write`
      */
-    inline def getZoneDnsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnsSettingsArgs.Builder] = scala.Predef.identity):
+    inline def getZoneDnsSettings(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnsSettingsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneDnsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneDnsSettingsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnsSettings(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnsSettings(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10520,10 +12352,12 @@ object cloudflare:
      * - `Zone DNS Settings Read`
      * - `Zone DNS Settings Write`
      */
-    inline def getZoneDnsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnsSettingsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneDnsSettingsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnsSettingsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneDnsSettingsResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneDnsSettingsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnsSettingsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnsSettingsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10531,10 +12365,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getZoneDnssec(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnssecArgs.Builder] = scala.Predef.identity):
+    inline def getZoneDnssec(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnssecArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneDnssecResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneDnssecArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnssec(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnssec(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10542,10 +12378,12 @@ object cloudflare:
      * - `DNS Read`
      * - `DNS Write`
      */
-    inline def getZoneDnssecPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnssecPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneDnssecPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneDnssecPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneDnssecResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneDnssecPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnssecPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneDnssecPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10587,10 +12425,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneHold(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneHoldArgs.Builder] = scala.Predef.identity):
+    inline def getZoneHold(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneHoldArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneHoldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneHoldArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneHold(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneHold(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10632,10 +12472,12 @@ object cloudflare:
      * - `Zone Settings Write`
      * - `Zone Write`
      */
-    inline def getZoneHoldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneHoldPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneHoldPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneHoldPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneHoldResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneHoldPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneHoldPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneHoldPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10643,10 +12485,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getZoneLockdown(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownArgs.Builder] = scala.Predef.identity):
+    inline def getZoneLockdown(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneLockdownResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneLockdownArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdown(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdown(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10654,10 +12498,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getZoneLockdownPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneLockdownPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneLockdownResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneLockdownPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdownPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdownPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10665,10 +12511,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getZoneLockdowns(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownsArgs.Builder] = scala.Predef.identity):
+    inline def getZoneLockdowns(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneLockdownsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneLockdownsArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdowns(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdowns(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10676,10 +12524,12 @@ object cloudflare:
      * - `Firewall Services Read`
      * - `Firewall Services Write`
      */
-    inline def getZoneLockdownsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneLockdownsPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneLockdownsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneLockdownsInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneLockdownsPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdownsPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneLockdownsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10765,10 +12615,12 @@ object cloudflare:
      * 
      * &lt;!-- END_ZONE_SETTING_IDS --&gt;
      */
-    inline def getZoneSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSettingArgs.Builder] = scala.Predef.identity):
+    inline def getZoneSetting(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSettingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneSettingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneSetting(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneSetting(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10854,10 +12706,12 @@ object cloudflare:
      * 
      * &lt;!-- END_ZONE_SETTING_IDS --&gt;
      */
-    inline def getZoneSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSettingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneSettingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSettingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneSettingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneSettingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneSettingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneSettingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
@@ -10865,10 +12719,12 @@ object cloudflare:
      * - `Billing Read`
      * - `Billing Write`
      */
-    inline def getZoneSubscription(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getZoneSubscription(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSubscriptionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneSubscriptionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneSubscriptionArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneSubscription(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneSubscription(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
@@ -10876,50 +12732,64 @@ object cloudflare:
      * - `Billing Read`
      * - `Billing Write`
      */
-    inline def getZoneSubscriptionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneSubscriptionPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneSubscriptionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneSubscriptionResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneSubscriptionPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneSubscriptionPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneSubscriptionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZoneTracing(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingArgs.Builder] = scala.Predef.identity):
+    inline def getZoneTracing(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneTracingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneTracingArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracing(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracing(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZoneTracingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneTracingPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneTracingResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneTracingPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
-    inline def getZoneTracingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingRulesArgs.Builder] = scala.Predef.identity):
+    inline def getZoneTracingRules(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingRulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZoneTracingRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneTracingRulesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingRules(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingRules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getZoneTracingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingRulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZoneTracingRulesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZoneTracingRulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZoneTracingRulesResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZoneTracingRulesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingRulesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZoneTracingRulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Zone Zone Read`
      */
-    inline def getZones(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonesArgs.Builder] = scala.Predef.identity):
+    inline def getZones(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.cloudflare.outputs.GetZonesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZonesArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZones(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZones(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Accepted Permissions
      * 
      * - `Zone Zone Read`
      */
-    inline def getZonesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getZonesPlain(args: Endofunction[com.pulumi.cloudflare.inputs.GetZonesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.cloudflare.outputs.GetZonesInvokeResult] =
       val argsBuilder = com.pulumi.cloudflare.inputs.GetZonesPlainArgs.builder
-      com.pulumi.cloudflare.CloudflareFunctions.getZonesPlain(args(argsBuilder).build)
+      com.pulumi.cloudflare.CloudflareFunctions.getZonesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Accepted Permissions

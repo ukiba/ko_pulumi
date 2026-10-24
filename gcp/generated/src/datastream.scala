@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object datastream:
@@ -31,19 +33,23 @@ object datastream:
      * Returns the list of IP addresses that Datastream connects from. For more information see
      * the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    inline def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = scala.Predef.identity):
+    inline def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.builder
-      com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIps(args(argsBuilder).build)
+      com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIps(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Returns the list of IP addresses that Datastream connects from. For more information see
      * the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    inline def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.builder
-      com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIpsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIpsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * The PrivateConnection resource is used to establish private connectivity between Datastream and a customer&#39;s network.

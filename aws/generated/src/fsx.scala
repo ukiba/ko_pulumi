@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object fsx:
@@ -64,72 +66,92 @@ object fsx:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information on FSx ONTAP File System. */
-    inline def getOntapFileSystem(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapFileSystemArgs.Builder] = scala.Predef.identity):
+    inline def getOntapFileSystem(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapFileSystemArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetOntapFileSystemResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapFileSystemArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapFileSystem(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapFileSystem(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information on FSx ONTAP File System. */
-    inline def getOntapFileSystemPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapFileSystemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOntapFileSystemPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapFileSystemPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetOntapFileSystemResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapFileSystemPlainArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapFileSystemPlain(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapFileSystemPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieve information on FSx ONTAP Storage Virtual Machine (SVM).
      * 
      * The arguments of this data source act as filters for querying the available ONTAP Storage Virtual Machines in the current region. The given filters must match exactly one Storage Virtual Machine whose data will be exported as attributes.
      */
-    inline def getOntapStorageVirtualMachine(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineArgs.Builder] = scala.Predef.identity):
+    inline def getOntapStorageVirtualMachine(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachineResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachineArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachine(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachine(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieve information on FSx ONTAP Storage Virtual Machine (SVM).
      * 
      * The arguments of this data source act as filters for querying the available ONTAP Storage Virtual Machines in the current region. The given filters must match exactly one Storage Virtual Machine whose data will be exported as attributes.
      */
-    inline def getOntapStorageVirtualMachinePlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.Builder] = scala.Predef.identity):
+    inline def getOntapStorageVirtualMachinePlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachineResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinePlainArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachinePlain(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachinePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** This resource can be useful for getting back a set of FSx ONTAP Storage Virtual Machine (SVM) IDs. */
-    inline def getOntapStorageVirtualMachines(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesArgs.Builder] = scala.Predef.identity):
+    inline def getOntapStorageVirtualMachines(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachinesResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachines(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachines(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** This resource can be useful for getting back a set of FSx ONTAP Storage Virtual Machine (SVM) IDs. */
-    inline def getOntapStorageVirtualMachinesPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOntapStorageVirtualMachinesPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetOntapStorageVirtualMachinesResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOntapStorageVirtualMachinesPlainArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachinesPlain(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOntapStorageVirtualMachinesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about an Amazon FSx for OpenZFS Snapshot for use when provisioning new Volumes. */
-    inline def getOpenZfsSnapshot(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.Builder] = scala.Predef.identity):
+    inline def getOpenZfsSnapshot(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetOpenZfsSnapshotResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOpenZfsSnapshot(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOpenZfsSnapshot(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about an Amazon FSx for OpenZFS Snapshot for use when provisioning new Volumes. */
-    inline def getOpenZfsSnapshotPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotPlainArgs.Builder] = scala.Predef.identity):
+    inline def getOpenZfsSnapshotPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetOpenZfsSnapshotResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetOpenZfsSnapshotPlainArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getOpenZfsSnapshotPlain(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getOpenZfsSnapshotPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve information on FSx Windows File System. */
-    inline def getWindowsFileSystem(args: Endofunction[com.pulumi.aws.fsx.inputs.GetWindowsFileSystemArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsFileSystem(args: Endofunction[com.pulumi.aws.fsx.inputs.GetWindowsFileSystemArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fsx.outputs.GetWindowsFileSystemResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetWindowsFileSystemArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getWindowsFileSystem(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getWindowsFileSystem(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information on FSx Windows File System. */
-    inline def getWindowsFileSystemPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetWindowsFileSystemPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsFileSystemPlain(args: Endofunction[com.pulumi.aws.fsx.inputs.GetWindowsFileSystemPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fsx.outputs.GetWindowsFileSystemResult] =
       val argsBuilder = com.pulumi.aws.fsx.inputs.GetWindowsFileSystemPlainArgs.builder
-      com.pulumi.aws.fsx.FsxFunctions.getWindowsFileSystemPlain(args(argsBuilder).build)
+      com.pulumi.aws.fsx.FsxFunctions.getWindowsFileSystemPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a FSx Lustre File System. See the [FSx Lustre Guide](https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html) for more information.

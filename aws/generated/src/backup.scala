@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object backup:
@@ -12,64 +14,84 @@ object backup:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information on an existing backup framework. */
-    inline def getFramework(args: Endofunction[com.pulumi.aws.backup.inputs.GetFrameworkArgs.Builder] = scala.Predef.identity):
+    inline def getFramework(args: Endofunction[com.pulumi.aws.backup.inputs.GetFrameworkArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.backup.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetFrameworkArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getFramework(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getFramework(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing backup framework. */
-    inline def getFrameworkPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetFrameworkPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrameworkPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetFrameworkPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.backup.outputs.GetFrameworkResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetFrameworkPlainArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getFrameworkPlain(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getFrameworkPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on an existing backup plan. */
-    inline def getPlan(args: Endofunction[com.pulumi.aws.backup.inputs.GetPlanArgs.Builder] = scala.Predef.identity):
+    inline def getPlan(args: Endofunction[com.pulumi.aws.backup.inputs.GetPlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.backup.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetPlanArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getPlan(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getPlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing backup plan. */
-    inline def getPlanPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPlanPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetPlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.backup.outputs.GetPlanResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetPlanPlainArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getPlanPlain(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getPlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on an existing backup report plan. */
-    inline def getReportPlan(args: Endofunction[com.pulumi.aws.backup.inputs.GetReportPlanArgs.Builder] = scala.Predef.identity):
+    inline def getReportPlan(args: Endofunction[com.pulumi.aws.backup.inputs.GetReportPlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.backup.outputs.GetReportPlanResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetReportPlanArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getReportPlan(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getReportPlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing backup report plan. */
-    inline def getReportPlanPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetReportPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReportPlanPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetReportPlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.backup.outputs.GetReportPlanResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetReportPlanPlainArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getReportPlanPlain(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getReportPlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on an existing backup selection. */
-    inline def getSelection(args: Endofunction[com.pulumi.aws.backup.inputs.GetSelectionArgs.Builder] = scala.Predef.identity):
+    inline def getSelection(args: Endofunction[com.pulumi.aws.backup.inputs.GetSelectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.backup.outputs.GetSelectionResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetSelectionArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getSelection(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getSelection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing backup selection. */
-    inline def getSelectionPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetSelectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSelectionPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetSelectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.backup.outputs.GetSelectionResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetSelectionPlainArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getSelectionPlain(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getSelectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on an existing backup vault. */
-    inline def getVault(args: Endofunction[com.pulumi.aws.backup.inputs.GetVaultArgs.Builder] = scala.Predef.identity):
+    inline def getVault(args: Endofunction[com.pulumi.aws.backup.inputs.GetVaultArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.backup.outputs.GetVaultResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetVaultArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getVault(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getVault(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing backup vault. */
-    inline def getVaultPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetVaultPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVaultPlain(args: Endofunction[com.pulumi.aws.backup.inputs.GetVaultPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.backup.outputs.GetVaultResult] =
       val argsBuilder = com.pulumi.aws.backup.inputs.GetVaultPlainArgs.builder
-      com.pulumi.aws.backup.BackupFunctions.getVaultPlain(args(argsBuilder).build)
+      com.pulumi.aws.backup.BackupFunctions.getVaultPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides an AWS Backup Framework resource.

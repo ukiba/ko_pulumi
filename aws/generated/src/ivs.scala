@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object ivs:
@@ -30,16 +32,20 @@ object ivs:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    inline def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKey(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyArgs.builder
-      com.pulumi.aws.ivs.IvsFunctions.getStreamKey(args(argsBuilder).build)
+      com.pulumi.aws.ivs.IvsFunctions.getStreamKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS IVS (Interactive Video) Stream Key. */
-    inline def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStreamKeyPlain(args: Endofunction[com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ivs.outputs.GetStreamKeyResult] =
       val argsBuilder = com.pulumi.aws.ivs.inputs.GetStreamKeyPlainArgs.builder
-      com.pulumi.aws.ivs.IvsFunctions.getStreamKeyPlain(args(argsBuilder).build)
+      com.pulumi.aws.ivs.IvsFunctions.getStreamKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Resource for managing an AWS IVS (Interactive Video) Playback Key Pair. */
   def PlaybackKeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

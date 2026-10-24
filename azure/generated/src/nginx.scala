@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object nginx:
@@ -60,49 +62,65 @@ object nginx:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing NGINX Dataplane API Key. */
-    inline def getApiKey(args: Endofunction[com.pulumi.azure.nginx.inputs.GetApiKeyArgs.Builder] = scala.Predef.identity):
+    inline def getApiKey(args: Endofunction[com.pulumi.azure.nginx.inputs.GetApiKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.nginx.outputs.GetApiKeyResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetApiKeyArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getApiKey(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getApiKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NGINX Dataplane API Key. */
-    inline def getApiKeyPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetApiKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiKeyPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetApiKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.nginx.outputs.GetApiKeyResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetApiKeyPlainArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getApiKeyPlain(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getApiKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing NGINX Certificate. */
-    inline def getCertificate(args: Endofunction[com.pulumi.azure.nginx.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.azure.nginx.inputs.GetCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.nginx.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetCertificateArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getCertificate(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NGINX Certificate. */
-    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.nginx.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetCertificatePlainArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getCertificatePlain(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Nginx Configuration. */
-    inline def getConfiguration(args: Endofunction[com.pulumi.azure.nginx.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getConfiguration(args: Endofunction[com.pulumi.azure.nginx.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.nginx.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetConfigurationArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getConfiguration(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Nginx Configuration. */
-    inline def getConfigurationPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.nginx.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetConfigurationPlainArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing NGINX Deployment. */
-    inline def getDeployment(args: Endofunction[com.pulumi.azure.nginx.inputs.GetDeploymentArgs.Builder] = scala.Predef.identity):
+    inline def getDeployment(args: Endofunction[com.pulumi.azure.nginx.inputs.GetDeploymentArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.nginx.outputs.GetDeploymentResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetDeploymentArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getDeployment(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getDeployment(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NGINX Deployment. */
-    inline def getDeploymentPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetDeploymentPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDeploymentPlain(args: Endofunction[com.pulumi.azure.nginx.inputs.GetDeploymentPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.nginx.outputs.GetDeploymentResult] =
       val argsBuilder = com.pulumi.azure.nginx.inputs.GetDeploymentPlainArgs.builder
-      com.pulumi.azure.nginx.NginxFunctions.getDeploymentPlain(args(argsBuilder).build)
+      com.pulumi.azure.nginx.NginxFunctions.getDeploymentPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

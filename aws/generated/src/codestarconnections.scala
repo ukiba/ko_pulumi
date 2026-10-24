@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object codestarconnections:
@@ -12,16 +14,20 @@ object codestarconnections:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about CodeStar Connection. */
-    inline def getConnection(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionArgs.builder
-      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnection(args(argsBuilder).build)
+      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnection(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about CodeStar Connection. */
-    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.codestarconnections.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.codestarconnections.inputs.GetConnectionPlainArgs.builder
-      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnectionPlain(args(argsBuilder).build)
+      com.pulumi.aws.codestarconnections.CodestarconnectionsFunctions.getConnectionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Provides a CodeStar Connection.

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object synapse:
@@ -186,16 +188,20 @@ object synapse:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Synapse Workspace. */
-    inline def getWorkspace(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.synapse.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.synapse.inputs.GetWorkspaceArgs.builder
-      com.pulumi.azure.synapse.SynapseFunctions.getWorkspace(args(argsBuilder).build)
+      com.pulumi.azure.synapse.SynapseFunctions.getWorkspace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Synapse Workspace. */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.synapse.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.synapse.inputs.GetWorkspacePlainArgs.builder
-      com.pulumi.azure.synapse.SynapseFunctions.getWorkspacePlain(args(argsBuilder).build)
+      com.pulumi.azure.synapse.SynapseFunctions.getWorkspacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Synapse Workspace. */
   def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

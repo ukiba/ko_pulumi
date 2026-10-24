@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object servicequotas:
@@ -40,52 +42,64 @@ object servicequotas:
      * 
      * &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
-    inline def getService(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicequotas.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetServiceArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getService(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieve information about a Service Quotas Service.
      * 
      * &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
-    inline def getServicePlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicequotas.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetServicePlainArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieve information about a Service Quota.
      * 
      * &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
-    inline def getServiceQuota(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaArgs.Builder] = scala.Predef.identity):
+    inline def getServiceQuota(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicequotas.outputs.GetServiceQuotaResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetServiceQuotaArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServiceQuota(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServiceQuota(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieve information about a Service Quota.
      * 
      * &gt; **NOTE:** Global quotas apply to all AWS regions, but can only be accessed in `us-east-1` in the Commercial partition or `us-gov-west-1` in the GovCloud partition. In other regions, the AWS API will return the error `The request failed because the specified service does not exist.`
      */
-    inline def getServiceQuotaPlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServiceQuotaPlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetServiceQuotaPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicequotas.outputs.GetServiceQuotaResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetServiceQuotaPlainArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServiceQuotaPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getServiceQuotaPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing AWS Service Quotas Templates. */
-    inline def getTemplates(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetTemplatesArgs.Builder] = scala.Predef.identity):
+    inline def getTemplates(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetTemplatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.servicequotas.outputs.GetTemplatesResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetTemplatesArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getTemplates(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getTemplates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing AWS Service Quotas Templates. */
-    inline def getTemplatesPlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetTemplatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTemplatesPlain(args: Endofunction[com.pulumi.aws.servicequotas.inputs.GetTemplatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.servicequotas.outputs.GetTemplatesResult] =
       val argsBuilder = com.pulumi.aws.servicequotas.inputs.GetTemplatesPlainArgs.builder
-      com.pulumi.aws.servicequotas.ServicequotasFunctions.getTemplatesPlain(args(argsBuilder).build)
+      com.pulumi.aws.servicequotas.ServicequotasFunctions.getTemplatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Resource for managing an AWS Service Quotas Template.

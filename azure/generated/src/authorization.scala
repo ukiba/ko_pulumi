@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object authorization:
@@ -23,28 +25,36 @@ object authorization:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Role Definition. */
-    inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity):
+    inline def getRoleDefinition(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.authorization.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetRoleDefinitionArgs.builder
-      com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinition(args(argsBuilder).build)
+      com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinition(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Role Definition. */
-    inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRoleDefinitionPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.authorization.outputs.GetRoleDefinitionResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetRoleDefinitionPlainArgs.builder
-      com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinitionPlain(args(argsBuilder).build)
+      com.pulumi.azure.authorization.AuthorizationFunctions.getRoleDefinitionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity):
+    inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.authorization.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityArgs.builder
-      com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentity(args(argsBuilder).build)
+      com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentity(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.authorization.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.authorization.inputs.GetUserAssignedIdentityPlainArgs.builder
-      com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build)
+      com.pulumi.azure.authorization.AuthorizationFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a custom Role Definition, used to assign Roles to Users/Principals. See [&#39;Understand role definitions&#39;](https://docs.microsoft.com/azure/role-based-access-control/role-definitions) in the Azure documentation for more details. */
   def RoleDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object containeranalysis:
@@ -12,16 +14,20 @@ object containeranalysis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for note */
-    inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.builder
-      com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for note */
-    inline def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.builder
-      com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A Container Analysis note is a high-level piece of metadata that

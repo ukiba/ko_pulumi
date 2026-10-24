@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object elasticsearch:
@@ -43,16 +45,20 @@ object elasticsearch:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about an Elasticsearch Domain */
-    inline def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity):
+    inline def getDomain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainArgs.builder
-      com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomain(args(argsBuilder).build)
+      com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about an Elasticsearch Domain */
-    inline def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDomainPlain(args: Endofunction[com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticsearch.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.aws.elasticsearch.inputs.GetDomainPlainArgs.builder
-      com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomainPlain(args(argsBuilder).build)
+      com.pulumi.aws.elasticsearch.ElasticsearchFunctions.getDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an [AWS Elasticsearch VPC Endpoint](https://docs.aws.amazon.com/elasticsearch-service/latest/APIReference/API_CreateVpcEndpoint.html). Creates an Amazon Elasticsearch Service-managed VPC endpoint. */
   def VpcEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

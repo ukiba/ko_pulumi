@@ -116,16 +116,17 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
   def renderPackageFile(packageComps: Seq[String], members: Vector[Member]): (Path, String) =
     val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
 
-    val importCustomResourceOptions =
-      if members.exists(_.isInstanceOf[CustomResourceMember]) then
-        "\nimport com.pulumi.resources.CustomResourceOptions"
-      else
-        ""
+    val resourcesTypeNames =
+      Option.when(members.exists(_.isInstanceOf[CustomResourceMember]))("com.pulumi.resources.CustomResourceOptions")
+    val functionsTypeNames = members.collect:
+      case member: FunctionsMember => member.importedTypeNames
+    val importedTypeNames = (resourcesTypeNames.toSeq ++ functionsTypeNames.flatten).distinct.sorted
+    val imports = importedTypeNames.map(typeName => s"\nimport $typeName").mkString
 
     val header = s"""
       |package jp.ukiba.ko_pulumi
       |package $packageName
-      |$importCustomResourceOptions
+      |$imports
       |
       |object ${packageComps.last}:
       |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
@@ -212,7 +213,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     yield ExtMethod(extObject.name, name)).toSet
     val exportedFuncs = (for
       (packageComps, members) <- packageMembers.toSeq
-      case FunctionsMember(_, name) <- members
+      case FunctionsMember(_, name, _) <- members
     yield s"${packageComps.last}.$name").toSet
 
     // don't create empty files
@@ -239,9 +240,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
   sealed trait Member:
     def text: String
-  case class CustomResourceMember(text: String)                     extends Member
-  case class ResourceArgsMember  (text: String, names: Seq[String]) extends Member
-  case class FunctionsMember     (text: String, name: String)       extends Member
+  case class CustomResourceMember(text: String)                                              extends Member
+  case class ResourceArgsMember  (text: String, names: Seq[String])                          extends Member
+  case class FunctionsMember     (text: String, name: String, importedTypeNames: Seq[String]) extends Member
 
   class Scanner(packageMembers: collection.mutable.Map[Seq[String], Vector[Member]])
       (using trees: DocTrees, elements: Elements, types: Types) extends TreePathScanner[Unit, Unit]:
@@ -257,6 +258,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     val stringMapType             = types.getDeclaredType(typeElemOf("java.util.Map"), stringType, stringType)
     val outputStringMapType       = types.getDeclaredType(outputElem, stringMapType)
     val customResourceOptionsType = typeOf("com.pulumi.resources.CustomResourceOptions")
+    val invokeOptionsElem         = typeElemOf("com.pulumi.deployment.InvokeOptions")
+    val invokeOutputOptionsElem   = typeElemOf("com.pulumi.deployment.InvokeOutputOptions")
 
     // erased; excludes com.pulumi.aws.appstream.ImageBuilderArgs.builder(ImageBuilderArgs)
     val functionResultTypes =
@@ -469,21 +472,27 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
         object Ec2Functions:
           ...
-          inline def getAmi(args: Endofunction[GetAmiArgs.Builder] = identity):
+          inline def getAmi(args: Endofunction[GetAmiArgs.Builder] = identity,
+              invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
               com.pulumi.core.Output[GetAmiResult] =
             val argsBuilder = GetAmiArgs.builder
-            com.pulumi.aws.ec2.Ec2Functions.getAmi(args(argsBuilder).build)
+            com.pulumi.aws.ec2.Ec2Functions.getAmi(args(argsBuilder).build,
+                invokeOptions(InvokeOutputOptions.Builder()).build)
           ...
 
       from the pattern
 
         public class Ec2Functions {
           ...
-          public static Output<GetAmiResult> getAmi(GetAmiArgs args) {
-              return getAmi(args, InvokeOptions.Empty);
-          }
+          public static Output<GetAmiResult> getAmi(GetAmiArgs args, InvokeOutputOptions options) {
+          ...
+          public static CompletableFuture<GetAmiResult> getAmiPlain(GetAmiPlainArgs args, InvokeOptions options) {
           ...
         }
+
+      The Output form takes InvokeOutputOptions, which adds dependsOn. The InvokeOutputOptions overload returns
+      an unknown result while a resource the args come from has an unknown ID (e.g. during preview of a resource
+      to be created), unlike the single-argument method, which passes InvokeOptions.Empty.
     */
     def genFunctions(clsElem: TypeElement, packageComps: Seq[String]) =
       val clsName = clsElem.simpleName
@@ -507,15 +516,25 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           val deprecated = deprecatedOf(method)
 
           val argsType = renderScalaType(method.parameters.head.asType)
+          val isOutputForm = types.isSameType(types.erasure(method.returnType), types.erasure(outputElem.asType))
+          val (optionsElem, optionsBuilderExpr) =
+            if isOutputForm then
+              (invokeOutputOptionsElem, "InvokeOutputOptions.Builder()")  // no static builder method
+            else
+              (invokeOptionsElem, "InvokeOptions.builder")
+          requiredMethod(clsElem, method.simpleName.toString, method.parameters.head.asType, optionsElem.asType)
 
           val argsFuncType = s"Endofunction[$argsType.Builder] = $identityExpr"
-          s"""
-            |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType):
+          val invokeOptionsFuncType = s"Endofunction[${optionsElem.simpleName}.Builder] = $identityExpr"
+          val text = s"""
+            |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType,
+            |        invokeOptions: $invokeOptionsFuncType):
             |        ${renderScalaType(method.returnType)} =
             |      val argsBuilder = $argsType.builder
-            |      ${clsElem.getQualifiedName}.$methodName(args(argsBuilder).build)
+            |      ${clsElem.getQualifiedName}.$methodName(args(argsBuilder).build,
+            |          invokeOptions($optionsBuilderExpr).build)
             |""".stripMargin
-        .mkString
+          (text = text, importedTypeName = optionsElem.getQualifiedName.toString)
 
         packageMembers(packageComps) :+= FunctionsMember(s"""
           |  object $clsName:
@@ -524,8 +543,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           |    // when the return value is assigned to class member without explicit type, e.g.:
           |    //
           |    //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
-          |""".stripMargin.dropWhile(_ == '\n') + functions,  // drop the leading empty line
-          clsName.toString)
+          |""".stripMargin.dropWhile(_ == '\n') + functions.map(_.text).mkString,  // drop the leading empty line
+          clsName.toString,
+          functions.map(_.importedTypeName).distinct.toSeq)
 
     def builderOf(argsType: TypeElement): TypeElement =
       argsType.enclosedElements.collectFirst:

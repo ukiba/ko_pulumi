@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object apigee:
@@ -94,28 +96,36 @@ object apigee:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for environment */
-    inline def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.builder
-      com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for environment */
-    inline def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.builder
-      com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Google Apigee Instance. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.apigee.ApigeeFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.apigee.ApigeeFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Google Apigee Instance. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.apigee.ApigeeFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.apigee.ApigeeFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * An `AppGroup` in Apigee.

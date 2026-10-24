@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object inspector:
@@ -45,20 +47,24 @@ object inspector:
      * Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      * configured in the provider.
      */
-    inline def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity):
+    inline def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.builder
-      com.pulumi.aws.inspector.InspectorFunctions.getRulesPackages(args(argsBuilder).build)
+      com.pulumi.aws.inspector.InspectorFunctions.getRulesPackages(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The Amazon Inspector Classic Rules Packages data source allows access to the list of AWS
      * Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      * configured in the provider.
      */
-    inline def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.builder
-      com.pulumi.aws.inspector.InspectorFunctions.getRulesPackagesPlain(args(argsBuilder).build)
+      com.pulumi.aws.inspector.InspectorFunctions.getRulesPackagesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon Inspector Classic Resource Group. */
   def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

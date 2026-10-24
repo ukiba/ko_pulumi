@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object acm:
@@ -15,19 +17,23 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      * You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    inline def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificateArgs.builder
-      com.pulumi.aws.acm.AcmFunctions.getCertificate(args(argsBuilder).build)
+      com.pulumi.aws.acm.AcmFunctions.getCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      * You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.builder
-      com.pulumi.aws.acm.AcmFunctions.getCertificatePlain(args(argsBuilder).build)
+      com.pulumi.aws.acm.AcmFunctions.getCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * The ACM certificate resource allows requesting and management of certificates

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object privilegedaccessmanager:
@@ -37,10 +39,12 @@ object privilegedaccessmanager:
      * * How-to guides
      *   * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    inline def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.builder
-      com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlement(args(argsBuilder).build)
+      com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlement(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get information about a Google Cloud Privileged Access Manager Entitlement.
@@ -51,10 +55,12 @@ object privilegedaccessmanager:
      * * How-to guides
      *   * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    inline def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.builder
-      com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlementPlain(args(argsBuilder).build)
+      com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlementPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Settings resource defines the properties, applied directly to the resource or inherited through the hierarchy, to enable consistent, federated use of PAM.

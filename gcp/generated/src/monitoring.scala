@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object monitoring:
@@ -156,10 +158,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getAppEngineService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetAppEngineServiceArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetAppEngineServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetAppEngineServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetAppEngineServiceArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getAppEngineService(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getAppEngineService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -176,10 +180,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getAppEngineServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetAppEngineServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppEngineServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetAppEngineServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetAppEngineServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetAppEngineServicePlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getAppEngineServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getAppEngineServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -196,10 +202,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getClusterIstioService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetClusterIstioServiceArgs.Builder] = scala.Predef.identity):
+    inline def getClusterIstioService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetClusterIstioServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetClusterIstioServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetClusterIstioServiceArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getClusterIstioService(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getClusterIstioService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -216,10 +224,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getClusterIstioServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetClusterIstioServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterIstioServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetClusterIstioServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetClusterIstioServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetClusterIstioServicePlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getClusterIstioServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getClusterIstioServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -236,10 +246,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getIstioCanonicalService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServiceArgs.Builder] = scala.Predef.identity):
+    inline def getIstioCanonicalService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetIstioCanonicalServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServiceArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getIstioCanonicalService(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getIstioCanonicalService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -256,10 +268,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getIstioCanonicalServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getIstioCanonicalServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetIstioCanonicalServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetIstioCanonicalServicePlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getIstioCanonicalServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getIstioCanonicalServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -276,10 +290,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getMeshIstioService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetMeshIstioServiceArgs.Builder] = scala.Predef.identity):
+    inline def getMeshIstioService(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetMeshIstioServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetMeshIstioServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetMeshIstioServiceArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getMeshIstioService(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getMeshIstioService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A Monitoring Service is the root resource under which operational aspects of a
@@ -296,10 +312,12 @@ object monitoring:
      *     * [Service Monitoring](https://cloud.google.com/monitoring/service-monitoring)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getMeshIstioServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetMeshIstioServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMeshIstioServicePlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetMeshIstioServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetMeshIstioServiceResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetMeshIstioServicePlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getMeshIstioServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getMeshIstioServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * A NotificationChannel is a medium through which an alert is delivered
@@ -314,10 +332,12 @@ object monitoring:
      *     * [Notification Options](https://cloud.google.com/monitoring/support/notification-options)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getNotificationChannel(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannel(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetNotificationChannelArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetNotificationChannelArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getNotificationChannel(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getNotificationChannel(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * A NotificationChannel is a medium through which an alert is delivered
@@ -332,22 +352,28 @@ object monitoring:
      *     * [Notification Options](https://cloud.google.com/monitoring/support/notification-options)
      *     * [Monitoring API Documentation](https://cloud.google.com/monitoring/api/v3/)
      */
-    inline def getNotificationChannelPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity):
+    inline def getNotificationChannelPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetNotificationChannelPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetNotificationChannelResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetNotificationChannelPlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getNotificationChannelPlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getNotificationChannelPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersion(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersion(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.monitoring.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetSecretVersionArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersion(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersion(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the value and metadata from a Secret Manager secret version. For more information see the [official documentation](https://cloud.google.com/secret-manager/docs/) and [API](https://cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets.versions). If you don&#39;t need the metadata (i.e., if you want to use a more limited role to access the secret version only), see also the gcp.secretmanager.getSecretVersionAccess datasource. */
-    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("gcp.monitoring.getSecretVersion has been deprecated in favor of gcp.secretmanager.getSecretVersion") inline def getSecretVersionPlain(args: Endofunction[com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.monitoring.outputs.GetSecretVersionResult] =
       val argsBuilder = com.pulumi.gcp.monitoring.inputs.GetSecretVersionPlainArgs.builder
-      com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersionPlain(args(argsBuilder).build)
+      com.pulumi.gcp.monitoring.MonitoringFunctions.getSecretVersionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A NotificationChannel is a medium through which an alert is delivered

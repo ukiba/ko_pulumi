@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sagemaker:
@@ -515,20 +517,24 @@ object sagemaker:
      * 
      * &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    inline def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = scala.Predef.identity):
+    inline def getPrebuiltEcrImage(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImageArgs.builder
-      com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImage(args(argsBuilder).build)
+      com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImage(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get information about prebuilt Amazon SageMaker AI  Docker images.
      * 
      * &gt; **NOTE:** The AWS provider creates a validly constructed `registryPath` but does not verify that the `registryPath` corresponds to an existing image. For example, using a `registryPath` containing an `imageTag` that does not correspond to a Docker image in the ECR repository, will result in an error.
      */
-    inline def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrebuiltEcrImagePlain(args: Endofunction[com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sagemaker.outputs.GetPrebuiltEcrImageResult] =
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.GetPrebuiltEcrImagePlainArgs.builder
-      com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImagePlain(args(argsBuilder).build)
+      com.pulumi.aws.sagemaker.SagemakerFunctions.getPrebuiltEcrImagePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker AI projects. */
   def ServicecatalogPortfolioStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

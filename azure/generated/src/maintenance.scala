@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object maintenance:
@@ -77,25 +79,33 @@ object maintenance:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Maintenance Configuration. */
-    inline def getConfiguration(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getConfiguration(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.maintenance.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.azure.maintenance.inputs.GetConfigurationArgs.builder
-      com.pulumi.azure.maintenance.MaintenanceFunctions.getConfiguration(args(argsBuilder).build)
+      com.pulumi.azure.maintenance.MaintenanceFunctions.getConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Maintenance Configuration. */
-    inline def getConfigurationPlain(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConfigurationPlain(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.maintenance.outputs.GetConfigurationResult] =
       val argsBuilder = com.pulumi.azure.maintenance.inputs.GetConfigurationPlainArgs.builder
-      com.pulumi.azure.maintenance.MaintenanceFunctions.getConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.azure.maintenance.MaintenanceFunctions.getConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about existing Public Maintenance Configurations. */
-    inline def getPublicConfigurations(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsArgs.Builder] = scala.Predef.identity):
+    inline def getPublicConfigurations(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.maintenance.outputs.GetPublicConfigurationsResult] =
       val argsBuilder = com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsArgs.builder
-      com.pulumi.azure.maintenance.MaintenanceFunctions.getPublicConfigurations(args(argsBuilder).build)
+      com.pulumi.azure.maintenance.MaintenanceFunctions.getPublicConfigurations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing Public Maintenance Configurations. */
-    inline def getPublicConfigurationsPlain(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicConfigurationsPlain(args: Endofunction[com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.maintenance.outputs.GetPublicConfigurationsResult] =
       val argsBuilder = com.pulumi.azure.maintenance.inputs.GetPublicConfigurationsPlainArgs.builder
-      com.pulumi.azure.maintenance.MaintenanceFunctions.getPublicConfigurationsPlain(args(argsBuilder).build)
+      com.pulumi.azure.maintenance.MaintenanceFunctions.getPublicConfigurationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

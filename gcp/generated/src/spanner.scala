@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object spanner:
@@ -2604,16 +2606,20 @@ object spanner:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get a spanner database from Google Cloud by its name and instance name. */
-    inline def getDatabase(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getDatabase(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getDatabase(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a spanner database from Google Cloud by its name and instance name. */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getDatabasePlain(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getDatabasePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Spanner database.
@@ -2653,10 +2659,12 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Spanner database.
@@ -2696,22 +2704,28 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get a spanner instance from Google Cloud by its name. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a spanner instance from Google Cloud by its name. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Spanner instance.
@@ -2750,10 +2764,12 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Spanner instance.
@@ -2792,7 +2808,9 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object loganalytics:
@@ -91,16 +93,20 @@ object loganalytics:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Log Analytics Workspace Table. */
-    inline def getWorkspaceTable(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspaceTable(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.loganalytics.outputs.GetWorkspaceTableResult] =
       val argsBuilder = com.pulumi.azure.loganalytics.inputs.GetWorkspaceTableArgs.builder
-      com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTable(args(argsBuilder).build)
+      com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTable(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Log Analytics Workspace Table. */
-    inline def getWorkspaceTablePlain(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspaceTablePlain(args: Endofunction[com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.loganalytics.outputs.GetWorkspaceTableResult] =
       val argsBuilder = com.pulumi.azure.loganalytics.inputs.GetWorkspaceTablePlainArgs.builder
-      com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTablePlain(args(argsBuilder).build)
+      com.pulumi.azure.loganalytics.LoganalyticsFunctions.getWorkspaceTablePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Log Analytics Query Pack. */
   def QueryPack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object fis:
@@ -33,16 +35,20 @@ object fis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.builder
-      com.pulumi.aws.fis.FisFunctions.getExperimentTemplates(args(argsBuilder).build)
+      com.pulumi.aws.fis.FisFunctions.getExperimentTemplates(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    inline def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.builder
-      com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build)
+      com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages the state of the AWS FIS (Fault Injection Simulator) safety lever for the account and Region. The safety lever is a single, account/Region-wide emergency stop: engaging it immediately stops all running experiments and blocks new ones from starting.

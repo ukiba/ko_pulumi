@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object apimanagement:
@@ -115,124 +117,164 @@ object apimanagement:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing API Management API. */
-    inline def getApi(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiArgs.Builder] = scala.Predef.identity):
+    inline def getApi(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetApiResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetApiArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApi(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApi(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management API. */
-    inline def getApiPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetApiResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetApiPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Uses this data source to access information about an API Version Set within an API Management Service. */
-    inline def getApiVersionSet(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiVersionSetArgs.Builder] = scala.Predef.identity):
+    inline def getApiVersionSet(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiVersionSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetApiVersionSetResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetApiVersionSetArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiVersionSet(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiVersionSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Uses this data source to access information about an API Version Set within an API Management Service. */
-    inline def getApiVersionSetPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiVersionSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApiVersionSetPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetApiVersionSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetApiVersionSetResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetApiVersionSetPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiVersionSetPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getApiVersionSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Gateway. */
-    inline def getGateway(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayArgs.Builder] = scala.Predef.identity):
+    inline def getGateway(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGatewayArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGateway(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGateway(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Gateway. */
-    inline def getGatewayPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGatewayPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Gateway Host Configuration. */
-    inline def getGatewayHostNameConfiguration(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayHostNameConfiguration(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetGatewayHostNameConfigurationResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayHostNameConfiguration(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayHostNameConfiguration(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Gateway Host Configuration. */
-    inline def getGatewayHostNameConfigurationPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGatewayHostNameConfigurationPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetGatewayHostNameConfigurationResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGatewayHostNameConfigurationPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayHostNameConfigurationPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGatewayHostNameConfigurationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Group. */
-    inline def getGroup(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGroupArgs.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGroupArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGroup(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Group. */
-    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetGroupPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Product. */
-    inline def getProduct(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetProductArgs.Builder] = scala.Predef.identity):
+    inline def getProduct(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetProductArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetProductResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetProductArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getProduct(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getProduct(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Product. */
-    inline def getProductPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetProductPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProductPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetProductPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetProductResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetProductPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getProductPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getProductPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Service. */
-    inline def getService(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetServiceArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getService(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Service. */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetServicePlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Subscription. */
-    inline def getSubscription(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetSubscriptionArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getSubscription(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getSubscription(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Subscription. */
-    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetSubscriptionPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getSubscriptionPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getSubscriptionPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management User. */
-    inline def getUser(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetUserArgs.Builder] = scala.Predef.identity):
+    inline def getUser(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetUserArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetUserArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getUser(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getUser(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management User. */
-    inline def getUserPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity):
+    inline def getUserPlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetUserPlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getUserPlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getUserPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing API Management Workspace. */
-    inline def getWorkspace(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.apimanagement.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetWorkspaceArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getWorkspace(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getWorkspace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Management Workspace. */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.apimanagement.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.apimanagement.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.apimanagement.inputs.GetWorkspacePlainArgs.builder
-      com.pulumi.azure.apimanagement.ApimanagementFunctions.getWorkspacePlain(args(argsBuilder).build)
+      com.pulumi.azure.apimanagement.ApimanagementFunctions.getWorkspacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Authorization Server within an API Management Service. */
   def AuthorizationServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

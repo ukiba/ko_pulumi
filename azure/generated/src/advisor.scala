@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object advisor:
@@ -12,16 +14,20 @@ object advisor:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Advisor Recommendations. */
-    inline def getRecommendations(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.Builder] = scala.Predef.identity):
+    inline def getRecommendations(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.advisor.outputs.GetRecommendationsResult] =
       val argsBuilder = com.pulumi.azure.advisor.inputs.GetRecommendationsArgs.builder
-      com.pulumi.azure.advisor.AdvisorFunctions.getRecommendations(args(argsBuilder).build)
+      com.pulumi.azure.advisor.AdvisorFunctions.getRecommendations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Advisor Recommendations. */
-    inline def getRecommendationsPlain(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getRecommendationsPlain(args: Endofunction[com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.advisor.outputs.GetRecommendationsResult] =
       val argsBuilder = com.pulumi.azure.advisor.inputs.GetRecommendationsPlainArgs.builder
-      com.pulumi.azure.advisor.AdvisorFunctions.getRecommendationsPlain(args(argsBuilder).build)
+      com.pulumi.azure.advisor.AdvisorFunctions.getRecommendationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Specifies a suppression for an Azure Advisor recommendation. */
   def Suppression(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

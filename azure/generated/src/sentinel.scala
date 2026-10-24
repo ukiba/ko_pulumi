@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sentinel:
@@ -350,40 +352,52 @@ object sentinel:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    inline def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRule(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    inline def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRulePlain(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    inline def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomaly(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomaly(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    inline def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomalyPlain(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomalyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    inline def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplate(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    inline def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.builder
-      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplatePlain(args(argsBuilder).build)
+      com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Sentinel Threat Intelligence Indicator. */
   def ThreatIntelligenceIndicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

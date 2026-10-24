@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object dynatrace:
@@ -12,16 +14,20 @@ object dynatrace:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Dynatrace Monitor. */
-    inline def getMonitor(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.Builder] = scala.Predef.identity):
+    inline def getMonitor(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.dynatrace.outputs.GetMonitorResult] =
       val argsBuilder = com.pulumi.azure.dynatrace.inputs.GetMonitorArgs.builder
-      com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitor(args(argsBuilder).build)
+      com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitor(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dynatrace Monitor. */
-    inline def getMonitorPlain(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMonitorPlain(args: Endofunction[com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.dynatrace.outputs.GetMonitorResult] =
       val argsBuilder = com.pulumi.azure.dynatrace.inputs.GetMonitorPlainArgs.builder
-      com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitorPlain(args(argsBuilder).build)
+      com.pulumi.azure.dynatrace.DynatraceFunctions.getMonitorPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Dynatrace monitor. */
   def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

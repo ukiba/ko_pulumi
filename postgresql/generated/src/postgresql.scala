@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package postgresql
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object postgresql:
@@ -779,10 +781,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getSchemas(args: Endofunction[com.pulumi.postgresql.inputs.GetSchemasArgs.Builder] = scala.Predef.identity):
+    inline def getSchemas(args: Endofunction[com.pulumi.postgresql.inputs.GetSchemasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.postgresql.outputs.GetSchemasResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetSchemasArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getSchemas(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getSchemas(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ``postgresql.getSchemas`` data source retrieves a list of schema names from a specified PostgreSQL database.
@@ -820,10 +824,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getSchemasPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetSchemasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSchemasPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetSchemasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.postgresql.outputs.GetSchemasResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetSchemasPlainArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getSchemasPlain(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getSchemasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The ``postgresql.getSequences`` data source retrieves a list of sequence names from a specified PostgreSQL database.
@@ -861,10 +867,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getSequences(args: Endofunction[com.pulumi.postgresql.inputs.GetSequencesArgs.Builder] = scala.Predef.identity):
+    inline def getSequences(args: Endofunction[com.pulumi.postgresql.inputs.GetSequencesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.postgresql.outputs.GetSequencesResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetSequencesArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getSequences(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getSequences(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ``postgresql.getSequences`` data source retrieves a list of sequence names from a specified PostgreSQL database.
@@ -902,10 +910,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getSequencesPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetSequencesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSequencesPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetSequencesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.postgresql.outputs.GetSequencesResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetSequencesPlainArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getSequencesPlain(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getSequencesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The ``postgresql.getTables`` data source retrieves a list of table names from a specified PostgreSQL database.
@@ -943,10 +953,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getTables(args: Endofunction[com.pulumi.postgresql.inputs.GetTablesArgs.Builder] = scala.Predef.identity):
+    inline def getTables(args: Endofunction[com.pulumi.postgresql.inputs.GetTablesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.postgresql.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetTablesArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getTables(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getTables(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The ``postgresql.getTables`` data source retrieves a list of table names from a specified PostgreSQL database.
@@ -984,10 +996,12 @@ object postgresql:
      * }
      * </pre>
      */
-    inline def getTablesPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTablesPlain(args: Endofunction[com.pulumi.postgresql.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.postgresql.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.postgresql.inputs.GetTablesPlainArgs.builder
-      com.pulumi.postgresql.PostgresqlFunctions.getTablesPlain(args(argsBuilder).build)
+      com.pulumi.postgresql.PostgresqlFunctions.getTablesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * The provider type for the postgresql package. By default, resources use package-wide configuration

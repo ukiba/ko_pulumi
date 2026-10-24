@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object billing:
@@ -12,16 +14,20 @@ object billing:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about an AWS Billing Views. */
-    inline def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = scala.Predef.identity):
+    inline def getViews(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsArgs.builder
-      com.pulumi.aws.billing.BillingFunctions.getViews(args(argsBuilder).build)
+      com.pulumi.aws.billing.BillingFunctions.getViews(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an AWS Billing Views. */
-    inline def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getViewsPlain(args: Endofunction[com.pulumi.aws.billing.inputs.GetViewsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.billing.outputs.GetViewsResult] =
       val argsBuilder = com.pulumi.aws.billing.inputs.GetViewsPlainArgs.builder
-      com.pulumi.aws.billing.BillingFunctions.getViewsPlain(args(argsBuilder).build)
+      com.pulumi.aws.billing.BillingFunctions.getViewsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an AWS Billing View. */
   def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

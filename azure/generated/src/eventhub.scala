@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object eventhub:
@@ -165,112 +167,148 @@ object eventhub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Event Hubs Authorization Rule within an Event Hub. */
-    inline def getAuthorizationRule(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetAuthorizationRuleArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationRule(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetAuthorizationRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetAuthorizationRuleArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getAuthorizationRule(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getAuthorizationRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Event Hubs Authorization Rule within an Event Hub. */
-    inline def getAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetAuthorizationRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetAuthorizationRulePlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getAuthorizationRulePlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getAuthorizationRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventHub. */
-    inline def getCluster(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetClusterArgs.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetClusterArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getCluster(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getCluster(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventHub. */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetClusterPlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getClusterPlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getClusterPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Event Hubs Consumer Group within an Event Hub. */
-    inline def getConsumeGroup(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetConsumeGroupArgs.Builder] = scala.Predef.identity):
+    inline def getConsumeGroup(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetConsumeGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetConsumeGroupResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetConsumeGroupArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getConsumeGroup(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getConsumeGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Event Hubs Consumer Group within an Event Hub. */
-    inline def getConsumeGroupPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetConsumeGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getConsumeGroupPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetConsumeGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetConsumeGroupResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetConsumeGroupPlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getConsumeGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getConsumeGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventHub. */
-    inline def getEventHub(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventHubArgs.Builder] = scala.Predef.identity):
+    inline def getEventHub(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventHubArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetEventHubResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventHubArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getEventHub(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getEventHub(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventHub. */
-    inline def getEventHubPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventHubPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEventHubPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventHubPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetEventHubResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventHubPlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getEventHubPlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getEventHubPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetEventhubNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventhubNamespaceArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespace(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getEventhubNamespace has been deprecated in favor of azure.eventhub.getNamespace") inline def getEventhubNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetEventhubNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetEventhubNamespacePlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespacePlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getEventhubNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    inline def getNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetNamespaceArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getNamespace(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventHub Namespace. */
-    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetNamespacePlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getNamespacePlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an Authorization Rule for an Event Hub Namespace. */
-    inline def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRuleArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getNamespaceAuthorizationRule(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getNamespaceAuthorizationRule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an Authorization Rule for an Event Hub Namespace. */
-    inline def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetNamespaceAuthorizationRulePlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getNamespaceAuthorizationRulePlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getNamespaceAuthorizationRulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to obtain a Shared Access Signature (SAS Token) for an existing Event Hub. */
-    inline def getSas(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetSasArgs.Builder] = scala.Predef.identity):
+    inline def getSas(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetSasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetSasResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetSasArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getSas(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getSas(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to obtain a Shared Access Signature (SAS Token) for an existing Event Hub. */
-    inline def getSasPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetSasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSasPlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetSasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetSasResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetSasPlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getSasPlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getSasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespace(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.eventhub.outputs.GetServiceBusNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetServiceBusNamespaceArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespace(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespace(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.Builder] = scala.Predef.identity):
+    @deprecated("azure.eventhub.getServiceBusNamespace has been deprecated in favor of azure.servicebus.getNamespace") inline def getServiceBusNamespacePlain(args: Endofunction[com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventhub.outputs.GetServiceBusNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventhub.inputs.GetServiceBusNamespacePlainArgs.builder
-      com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespacePlain(args(argsBuilder).build)
+      com.pulumi.azure.eventhub.EventhubFunctions.getServiceBusNamespacePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Disaster Recovery Config for an Event Hub Namespace. */
   def EventhubNamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

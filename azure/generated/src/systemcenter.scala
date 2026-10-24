@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object systemcenter:
@@ -12,16 +14,20 @@ object systemcenter:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about existing System Center Virtual Machine Manager Inventory Items. */
-    inline def getVirtualMachineManagerInventoryItems(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineManagerInventoryItems(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.systemcenter.outputs.GetVirtualMachineManagerInventoryItemsResult] =
       val argsBuilder = com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsArgs.builder
-      com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItems(args(argsBuilder).build)
+      com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItems(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing System Center Virtual Machine Manager Inventory Items. */
-    inline def getVirtualMachineManagerInventoryItemsPlain(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineManagerInventoryItemsPlain(args: Endofunction[com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.systemcenter.outputs.GetVirtualMachineManagerInventoryItemsResult] =
       val argsBuilder = com.pulumi.azure.systemcenter.inputs.GetVirtualMachineManagerInventoryItemsPlainArgs.builder
-      com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItemsPlain(args(argsBuilder).build)
+      com.pulumi.azure.systemcenter.SystemcenterFunctions.getVirtualMachineManagerInventoryItemsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a System Center Virtual Machine Manager Availability Set. */
   def VirtualMachineManagerAvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

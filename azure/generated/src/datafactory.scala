@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object datafactory:
@@ -68,40 +70,52 @@ object datafactory:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Azure Data Factory (Version 2). */
-    inline def getFactory(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetFactoryArgs.Builder] = scala.Predef.identity):
+    inline def getFactory(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetFactoryArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datafactory.outputs.GetFactoryResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetFactoryArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getFactory(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getFactory(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Data Factory (Version 2). */
-    inline def getFactoryPlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetFactoryPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFactoryPlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetFactoryPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datafactory.outputs.GetFactoryResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetFactoryPlainArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getFactoryPlain(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getFactoryPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a trigger schedule in Azure Data Factory. */
-    inline def getTriggerSchedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerScheduleArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerSchedule(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerScheduleArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datafactory.outputs.GetTriggerScheduleResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetTriggerScheduleArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedule(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedule(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a trigger schedule in Azure Data Factory. */
-    inline def getTriggerSchedulePlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulePlainArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerSchedulePlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datafactory.outputs.GetTriggerScheduleResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetTriggerSchedulePlainArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedulePlain(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedulePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about all existing trigger schedules in Azure Data Factory. */
-    inline def getTriggerSchedules(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerSchedules(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.datafactory.outputs.GetTriggerSchedulesResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedules(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedules(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about all existing trigger schedules in Azure Data Factory. */
-    inline def getTriggerSchedulesPlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTriggerSchedulesPlain(args: Endofunction[com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.datafactory.outputs.GetTriggerSchedulesResult] =
       val argsBuilder = com.pulumi.azure.datafactory.inputs.GetTriggerSchedulesPlainArgs.builder
-      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedulesPlain(args(argsBuilder).build)
+      com.pulumi.azure.datafactory.DatafactoryFunctions.getTriggerSchedulesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure Blob Dataset inside an Azure Data Factory. */
   def DatasetAzureBlob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

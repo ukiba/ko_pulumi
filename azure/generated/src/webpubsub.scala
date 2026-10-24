@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object webpubsub:
@@ -100,25 +102,33 @@ object webpubsub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about the Private Link Resource supported by the Web Pubsub Resource. */
-    inline def getPrivateLinkResource(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourceArgs.Builder] = scala.Predef.identity):
+    inline def getPrivateLinkResource(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.webpubsub.outputs.GetPrivateLinkResourceResult] =
       val argsBuilder = com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourceArgs.builder
-      com.pulumi.azure.webpubsub.WebpubsubFunctions.getPrivateLinkResource(args(argsBuilder).build)
+      com.pulumi.azure.webpubsub.WebpubsubFunctions.getPrivateLinkResource(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about the Private Link Resource supported by the Web Pubsub Resource. */
-    inline def getPrivateLinkResourcePlain(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourcePlainArgs.Builder] = scala.Predef.identity):
+    inline def getPrivateLinkResourcePlain(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourcePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.webpubsub.outputs.GetPrivateLinkResourceResult] =
       val argsBuilder = com.pulumi.azure.webpubsub.inputs.GetPrivateLinkResourcePlainArgs.builder
-      com.pulumi.azure.webpubsub.WebpubsubFunctions.getPrivateLinkResourcePlain(args(argsBuilder).build)
+      com.pulumi.azure.webpubsub.WebpubsubFunctions.getPrivateLinkResourcePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Azure Web Pubsub service. */
-    inline def getService(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.webpubsub.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.webpubsub.inputs.GetServiceArgs.builder
-      com.pulumi.azure.webpubsub.WebpubsubFunctions.getService(args(argsBuilder).build)
+      com.pulumi.azure.webpubsub.WebpubsubFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Web Pubsub service. */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.webpubsub.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.webpubsub.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.webpubsub.inputs.GetServicePlainArgs.builder
-      com.pulumi.azure.webpubsub.WebpubsubFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.webpubsub.WebpubsubFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object kms:
@@ -121,20 +123,24 @@ object kms:
      * By using this data source, you can reference key alias
      * without having to hard code the ARN as input.
      */
-    inline def getAlias(args: Endofunction[com.pulumi.aws.kms.inputs.GetAliasArgs.Builder] = scala.Predef.identity):
+    inline def getAlias(args: Endofunction[com.pulumi.aws.kms.inputs.GetAliasArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetAliasArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getAlias(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getAlias(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the ARN of a KMS key alias.
      * By using this data source, you can reference key alias
      * without having to hard code the ARN as input.
      */
-    inline def getAliasPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAliasPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetAliasPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetAliasResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetAliasPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getAliasPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getAliasPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * The KMS ciphertext data source allows you to encrypt plaintext into ciphertext
@@ -142,10 +148,12 @@ object kms:
      * changes every apply. For a stable ciphertext value, see the `aws.kms.Ciphertext`
      * resource.
      */
-    inline def getCipherText(args: Endofunction[com.pulumi.aws.kms.inputs.GetCipherTextArgs.Builder] = scala.Predef.identity):
+    inline def getCipherText(args: Endofunction[com.pulumi.aws.kms.inputs.GetCipherTextArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetCipherTextResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetCipherTextArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getCipherText(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getCipherText(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * The KMS ciphertext data source allows you to encrypt plaintext into ciphertext
@@ -153,30 +161,36 @@ object kms:
      * changes every apply. For a stable ciphertext value, see the `aws.kms.Ciphertext`
      * resource.
      */
-    inline def getCipherTextPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetCipherTextPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCipherTextPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetCipherTextPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetCipherTextResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetCipherTextPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getCipherTextPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getCipherTextPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get the metadata KMS custom key store.
      * By using this data source, you can reference KMS custom key store
      * without having to hard code the ID as input.
      */
-    inline def getCustomKeyStore(args: Endofunction[com.pulumi.aws.kms.inputs.GetCustomKeyStoreArgs.Builder] = scala.Predef.identity):
+    inline def getCustomKeyStore(args: Endofunction[com.pulumi.aws.kms.inputs.GetCustomKeyStoreArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetCustomKeyStoreResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetCustomKeyStoreArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getCustomKeyStore(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getCustomKeyStore(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get the metadata KMS custom key store.
      * By using this data source, you can reference KMS custom key store
      * without having to hard code the ID as input.
      */
-    inline def getCustomKeyStorePlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetCustomKeyStorePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCustomKeyStorePlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetCustomKeyStorePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetCustomKeyStoreResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetCustomKeyStorePlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getCustomKeyStorePlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getCustomKeyStorePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to get detailed information about
@@ -184,10 +198,12 @@ object kms:
      * This can be useful to reference key alias
      * without having to hard code the ARN as input.
      */
-    inline def getKey(args: Endofunction[com.pulumi.aws.kms.inputs.GetKeyArgs.Builder] = scala.Predef.identity):
+    inline def getKey(args: Endofunction[com.pulumi.aws.kms.inputs.GetKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetKeyArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getKey(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to get detailed information about
@@ -195,46 +211,60 @@ object kms:
      * This can be useful to reference key alias
      * without having to hard code the ARN as input.
      */
-    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetKeyPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getKeyPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the public key about the specified KMS Key with flexible key ID input. This can be useful to reference key alias without having to hard code the ARN as input. */
-    inline def getPublicKey(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyArgs.Builder] = scala.Predef.identity):
+    inline def getPublicKey(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetPublicKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetPublicKeyArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getPublicKey(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getPublicKey(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the public key about the specified KMS Key with flexible key ID input. This can be useful to reference key alias without having to hard code the ARN as input. */
-    inline def getPublicKeyPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPublicKeyPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetPublicKeyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetPublicKeyResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetPublicKeyPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getPublicKeyPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getPublicKeyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** &gt; **WARNING:** This data source&#39;s functionality was removed in version 2.0.0 of the AWS Provider. You can migrate existing configurations to the `aws.kms.getSecrets` data source following instructions available in the Version 2 Upgrade Guide. This data source will be removed in a future version. */
-    inline def getSecret(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretArgs.Builder] = scala.Predef.identity):
+    inline def getSecret(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetSecretArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getSecret(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getSecret(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** &gt; **WARNING:** This data source&#39;s functionality was removed in version 2.0.0 of the AWS Provider. You can migrate existing configurations to the `aws.kms.getSecrets` data source following instructions available in the Version 2 Upgrade Guide. This data source will be removed in a future version. */
-    inline def getSecretPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetSecretResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetSecretPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getSecretPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getSecretPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Decrypt multiple secrets from data encrypted with the AWS KMS service. */
-    inline def getSecrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder] = scala.Predef.identity):
+    inline def getSecrets(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.kms.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetSecretsArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getSecrets(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getSecrets(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Decrypt multiple secrets from data encrypted with the AWS KMS service. */
-    inline def getSecretsPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecretsPlain(args: Endofunction[com.pulumi.aws.kms.inputs.GetSecretsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.kms.outputs.GetSecretsResult] =
       val argsBuilder = com.pulumi.aws.kms.inputs.GetSecretsPlainArgs.builder
-      com.pulumi.aws.kms.KmsFunctions.getSecretsPlain(args(argsBuilder).build)
+      com.pulumi.aws.kms.KmsFunctions.getSecretsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages a KMS multi-Region replica key that uses external key material.

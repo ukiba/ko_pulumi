@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object appservice:
@@ -83,200 +85,256 @@ object appservice:
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
      */
-    inline def getAppService(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServiceArgs.Builder] = scala.Predef.identity):
+    inline def getAppService(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetAppServiceResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetAppServiceArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getAppService(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getAppService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing App Service.
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxWebApp` and `azure.appservice.WindowsWebApp` data sources instead.
      */
-    inline def getAppServicePlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppServicePlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetAppServiceResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetAppServicePlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing App Service Plan (formerly known as a `Server Farm`).
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
      */
-    inline def getAppServicePlan(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanArgs.Builder] = scala.Predef.identity):
+    inline def getAppServicePlan(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetAppServicePlanResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetAppServicePlanArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlan(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing App Service Plan (formerly known as a `Server Farm`).
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.ServicePlan` data source instead.
      */
-    inline def getAppServicePlanPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAppServicePlanPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetAppServicePlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetAppServicePlanResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetAppServicePlanPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlanPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getAppServicePlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an App Service Certificate. */
-    inline def getCertificate(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateArgs.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetCertificateArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getCertificate(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getCertificate(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an App Service Certificate. */
-    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetCertificatePlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getCertificatePlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getCertificatePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing App Service Certificate Order. */
-    inline def getCertificateOrder(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateOrderArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateOrder(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateOrderArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetCertificateOrderResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetCertificateOrderArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getCertificateOrder(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getCertificateOrder(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing App Service Certificate Order. */
-    inline def getCertificateOrderPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateOrderPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCertificateOrderPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetCertificateOrderPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetCertificateOrderResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetCertificateOrderPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getCertificateOrderPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getCertificateOrderPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing 3rd Generation (v3) App Service Environment. */
-    inline def getEnvironmentV3(args: Endofunction[com.pulumi.azure.appservice.inputs.GetEnvironmentV3Args.Builder] = scala.Predef.identity):
+    inline def getEnvironmentV3(args: Endofunction[com.pulumi.azure.appservice.inputs.GetEnvironmentV3Args.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetEnvironmentV3Result] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetEnvironmentV3Args.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getEnvironmentV3(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getEnvironmentV3(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing 3rd Generation (v3) App Service Environment. */
-    inline def getEnvironmentV3Plain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetEnvironmentV3PlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnvironmentV3Plain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetEnvironmentV3PlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetEnvironmentV3Result] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetEnvironmentV3PlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getEnvironmentV3Plain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getEnvironmentV3Plain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about a Function App.
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
      */
-    inline def getFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetFunctionAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about a Function App.
      * 
      * &gt; **Note:** This data source has been deprecated and will be removed in version 6.0 of the provider. Please use the `azure.appservice.LinuxFunctionApp` and `azure.appservice.WindowsFunctionApp` data sources instead.
      */
-    inline def getFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetFunctionAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to fetch the Host Keys of an existing Function App */
-    inline def getFunctionAppHostKeys(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionAppHostKeys(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetFunctionAppHostKeysResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppHostKeys(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppHostKeys(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to fetch the Host Keys of an existing Function App */
-    inline def getFunctionAppHostKeysPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFunctionAppHostKeysPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetFunctionAppHostKeysResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetFunctionAppHostKeysPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppHostKeysPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getFunctionAppHostKeysPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Linux Function App. */
-    inline def getLinuxFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppArgs.Builder] = scala.Predef.identity):
+    inline def getLinuxFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetLinuxFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxFunctionApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxFunctionApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Linux Function App. */
-    inline def getLinuxFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLinuxFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetLinuxFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetLinuxFunctionAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxFunctionAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxFunctionAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Linux Web App. */
-    inline def getLinuxWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxWebAppArgs.Builder] = scala.Predef.identity):
+    inline def getLinuxWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxWebAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetLinuxWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetLinuxWebAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxWebApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxWebApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Linux Web App. */
-    inline def getLinuxWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxWebAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getLinuxWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetLinuxWebAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetLinuxWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetLinuxWebAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxWebAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getLinuxWebAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Service Plan. */
-    inline def getServicePlan(args: Endofunction[com.pulumi.azure.appservice.inputs.GetServicePlanArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlan(args: Endofunction[com.pulumi.azure.appservice.inputs.GetServicePlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetServicePlanResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetServicePlanArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getServicePlan(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getServicePlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Service Plan. */
-    inline def getServicePlanPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetServicePlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlanPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetServicePlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetServicePlanResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetServicePlanPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getServicePlanPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getServicePlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing App Service Source Control Token.
      * 
      * &gt; **Note:** This value can only be queried for the user or service principal that is executing Terraform. It is not possible to retrieve for another user.
      */
-    inline def getSourceControlToken(args: Endofunction[com.pulumi.azure.appservice.inputs.GetSourceControlTokenArgs.Builder] = scala.Predef.identity):
+    inline def getSourceControlToken(args: Endofunction[com.pulumi.azure.appservice.inputs.GetSourceControlTokenArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetSourceControlTokenResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetSourceControlTokenArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getSourceControlToken(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getSourceControlToken(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing App Service Source Control Token.
      * 
      * &gt; **Note:** This value can only be queried for the user or service principal that is executing Terraform. It is not possible to retrieve for another user.
      */
-    inline def getSourceControlTokenPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetSourceControlTokenPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSourceControlTokenPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetSourceControlTokenPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetSourceControlTokenResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetSourceControlTokenPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getSourceControlTokenPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getSourceControlTokenPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Static Web App. */
-    inline def getStaticWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetStaticWebAppArgs.Builder] = scala.Predef.identity):
+    inline def getStaticWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetStaticWebAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetStaticWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetStaticWebAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getStaticWebApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getStaticWebApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Static Web App. */
-    inline def getStaticWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetStaticWebAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStaticWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetStaticWebAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetStaticWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetStaticWebAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getStaticWebAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getStaticWebAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Windows Function App. */
-    inline def getWindowsFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsFunctionApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetWindowsFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsFunctionApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsFunctionApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Windows Function App. */
-    inline def getWindowsFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsFunctionAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetWindowsFunctionAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetWindowsFunctionAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsFunctionAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsFunctionAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Windows Web App. */
-    inline def getWindowsWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsWebAppArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsWebApp(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsWebAppArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.appservice.outputs.GetWindowsWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetWindowsWebAppArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsWebApp(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsWebApp(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Windows Web App. */
-    inline def getWindowsWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsWebAppPlainArgs.Builder] = scala.Predef.identity):
+    inline def getWindowsWebAppPlain(args: Endofunction[com.pulumi.azure.appservice.inputs.GetWindowsWebAppPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appservice.outputs.GetWindowsWebAppResult] =
       val argsBuilder = com.pulumi.azure.appservice.inputs.GetWindowsWebAppPlainArgs.builder
-      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsWebAppPlain(args(argsBuilder).build)
+      com.pulumi.azure.appservice.AppserviceFunctions.getWindowsWebAppPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an App Service certificate. */
   def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

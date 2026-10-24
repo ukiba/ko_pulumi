@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object accountaccess:
@@ -12,28 +14,36 @@ object accountaccess:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Looks up an existing AWS Account Access Application. Lookup is by Application ARN or by IAM Identity Center instance ARN (one Application per instance). */
-    inline def getApplication(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetApplicationArgs.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetApplicationArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.accountaccess.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetApplicationArgs.builder
-      com.pulumi.aws.accountaccess.AccountaccessFunctions.getApplication(args(argsBuilder).build)
+      com.pulumi.aws.accountaccess.AccountaccessFunctions.getApplication(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Looks up an existing AWS Account Access Application. Lookup is by Application ARN or by IAM Identity Center instance ARN (one Application per instance). */
-    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.accountaccess.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetApplicationPlainArgs.builder
-      com.pulumi.aws.accountaccess.AccountaccessFunctions.getApplicationPlain(args(argsBuilder).build)
+      com.pulumi.aws.accountaccess.AccountaccessFunctions.getApplicationPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Lists AWS Account Access Entitlements for a given Application. */
-    inline def getEntitlements(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlements(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.accountaccess.outputs.GetEntitlementsResult] =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsArgs.builder
-      com.pulumi.aws.accountaccess.AccountaccessFunctions.getEntitlements(args(argsBuilder).build)
+      com.pulumi.aws.accountaccess.AccountaccessFunctions.getEntitlements(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Lists AWS Account Access Entitlements for a given Application. */
-    inline def getEntitlementsPlain(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEntitlementsPlain(args: Endofunction[com.pulumi.aws.accountaccess.inputs.GetEntitlementsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.accountaccess.outputs.GetEntitlementsResult] =
       val argsBuilder = com.pulumi.aws.accountaccess.inputs.GetEntitlementsPlainArgs.builder
-      com.pulumi.aws.accountaccess.AccountaccessFunctions.getEntitlementsPlain(args(argsBuilder).build)
+      com.pulumi.aws.accountaccess.AccountaccessFunctions.getEntitlementsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Manages an AWS Account Access Application. An Application binds Account Access to an IAM Identity Center instance and serves as the parent container for entitlements that grant principals access to roles in target accounts.

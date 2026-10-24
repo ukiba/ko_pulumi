@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package aws
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object securityhub:
@@ -251,40 +253,52 @@ object securityhub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Lists the standards that are currently enabled. */
-    inline def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = scala.Predef.identity):
+    inline def getEnabledStandards(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandards(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandards(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Lists the standards that are currently enabled. */
-    inline def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getEnabledStandardsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetEnabledStandardsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetEnabledStandardsPlainArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandardsPlain(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getEnabledStandardsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Lists security controls. */
-    inline def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityControls(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControls(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControls(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Lists security controls. */
-    inline def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSecurityControlsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetSecurityControlsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetSecurityControlsPlainArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControlsPlain(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getSecurityControlsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    inline def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = scala.Predef.identity):
+    inline def getStandardsControlAssociations(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociations(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociations(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Security Hub Standards Control Associations. */
-    inline def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getStandardsControlAssociationsPlain(args: Endofunction[com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.securityhub.outputs.GetStandardsControlAssociationsResult] =
       val argsBuilder = com.pulumi.aws.securityhub.inputs.GetStandardsControlAssociationsPlainArgs.builder
-      com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociationsPlain(args(argsBuilder).build)
+      com.pulumi.aws.securityhub.SecurityhubFunctions.getStandardsControlAssociationsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Disable/enable Security Hub standards control in the current region.

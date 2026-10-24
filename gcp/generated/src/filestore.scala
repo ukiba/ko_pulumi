@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object filestore:
@@ -32,16 +34,20 @@ object filestore:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get info about a Google Cloud Filestore instance. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.filestore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.filestore.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.filestore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.GetInstanceArgs.builder
-      com.pulumi.gcp.filestore.FilestoreFunctions.getInstance(args(argsBuilder).build)
+      com.pulumi.gcp.filestore.FilestoreFunctions.getInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get info about a Google Cloud Filestore instance. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.filestore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.filestore.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.filestore.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.filestore.inputs.GetInstancePlainArgs.builder
-      com.pulumi.gcp.filestore.FilestoreFunctions.getInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.filestore.FilestoreFunctions.getInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A Google Cloud Filestore instance.

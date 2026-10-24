@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object biglake:
@@ -12,76 +14,100 @@ object biglake:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for hivecatalog */
-    inline def getHiveCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHiveCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for hivecatalog */
-    inline def getHiveCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHiveCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveCatalogIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveCatalogIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for hivedatabase */
-    inline def getHiveDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHiveDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for hivedatabase */
-    inline def getHiveDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHiveDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveDatabaseIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveDatabaseIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for hivetable */
-    inline def getHiveTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getHiveTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetHiveTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveTableIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveTableIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for hivetable */
-    inline def getHiveTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getHiveTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetHiveTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetHiveTableIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveTableIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getHiveTableIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for icebergcatalog */
-    inline def getIcebergCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergCatalogIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for icebergcatalog */
-    inline def getIcebergCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergCatalogIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergCatalogIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergCatalogIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergCatalogIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for icebergnamespace */
-    inline def getIcebergNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergNamespaceIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for icebergnamespace */
-    inline def getIcebergNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergNamespaceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergNamespaceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergNamespaceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergNamespaceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for icebergtable */
-    inline def getIcebergTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergTableIamPolicy(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.biglake.outputs.GetIcebergTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for icebergtable */
-    inline def getIcebergTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getIcebergTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.biglake.outputs.GetIcebergTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.biglake.inputs.GetIcebergTableIamPolicyPlainArgs.builder
-      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.biglake.BiglakeFunctions.getIcebergTableIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Catalogs are top-level containers for Databases and Tables.

@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object eventarc:
@@ -47,16 +49,20 @@ object eventarc:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for pipeline */
-    inline def getPipelineIamPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineIamPolicy(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.eventarc.outputs.GetPipelineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyArgs.builder
-      com.pulumi.gcp.eventarc.EventarcFunctions.getPipelineIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.eventarc.EventarcFunctions.getPipelineIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for pipeline */
-    inline def getPipelineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getPipelineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.eventarc.outputs.GetPipelineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.eventarc.inputs.GetPipelineIamPolicyPlainArgs.builder
-      com.pulumi.gcp.eventarc.EventarcFunctions.getPipelineIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.eventarc.EventarcFunctions.getPipelineIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * The Eventarc GoogleApiSource resource

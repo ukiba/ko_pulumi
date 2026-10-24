@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object sql:
@@ -80,16 +82,20 @@ object sql:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about a Cloud SQL instance backup run. */
-    inline def getBackupRun(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunArgs.Builder] = scala.Predef.identity):
+    inline def getBackupRun(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetBackupRunResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetBackupRunArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getBackupRun(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getBackupRun(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a Cloud SQL instance backup run. */
-    inline def getBackupRunPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.Builder] = scala.Predef.identity):
+    inline def getBackupRunPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetBackupRunResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getBackupRunPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getBackupRunPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get all of the trusted Certificate Authorities (CAs) for the specified SQL database instance. For more information see the
@@ -97,10 +103,12 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/listServerCas).
      */
-    inline def getCaCerts(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsArgs.Builder] = scala.Predef.identity):
+    inline def getCaCerts(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetCaCertsResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetCaCertsArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getCaCerts(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getCaCerts(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get all of the trusted Certificate Authorities (CAs) for the specified SQL database instance. For more information see the
@@ -108,34 +116,44 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/listServerCas).
      */
-    inline def getCaCertsPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.Builder] = scala.Predef.identity):
+    inline def getCaCertsPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetCaCertsResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getCaCertsPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getCaCertsPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a database in a Cloud SQL instance. */
-    inline def getDatabase(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabase(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabase(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a database in a Cloud SQL instance. */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabasePlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabasePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a Cloud SQL instance. */
-    inline def getDatabaseInstance(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstance(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstance(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstance(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a Cloud SQL instance. */
-    inline def getDatabaseInstancePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstancePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancePlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get Latest Recovery Time for a given instance. For more information see the
@@ -143,10 +161,12 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/postgres/backup-recovery/pitr#get-the-latest-recovery-time).
      */
-    inline def getDatabaseInstanceLatestRecoveryTime(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstanceLatestRecoveryTime(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceLatestRecoveryTimeResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTime(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTime(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get Latest Recovery Time for a given instance. For more information see the
@@ -154,34 +174,44 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/postgres/backup-recovery/pitr#get-the-latest-recovery-time).
      */
-    inline def getDatabaseInstanceLatestRecoveryTimePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstanceLatestRecoveryTimePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceLatestRecoveryTimeResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTimePlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTimePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a list of Cloud SQL instances in a project. You can also apply some filters over this list to get a more filtered list of Cloud SQL instances. */
-    inline def getDatabaseInstances(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstances(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstancesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstances(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstances(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a list of Cloud SQL instances in a project. You can also apply some filters over this list to get a more filtered list of Cloud SQL instances. */
-    inline def getDatabaseInstancesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstancesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstancesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a list of databases in a Cloud SQL instance. */
-    inline def getDatabases(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesArgs.Builder] = scala.Predef.identity):
+    inline def getDatabases(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasesArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabases(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabases(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a list of databases in a Cloud SQL instance. */
-    inline def getDatabasesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.Builder] = scala.Predef.identity):
+    inline def getDatabasesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getDatabasesPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getDatabasesPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Get all available machine types (tiers) for a project, for example, db-custom-1-3840. For more information see the
@@ -189,10 +219,12 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/tiers/list).
      */
-    inline def getTiers(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersArgs.Builder] = scala.Predef.identity):
+    inline def getTiers(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetTiersResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetTiersArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getTiers(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getTiers(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Get all available machine types (tiers) for a project, for example, db-custom-1-3840. For more information see the
@@ -200,10 +232,12 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/tiers/list).
      */
-    inline def getTiersPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.Builder] = scala.Predef.identity):
+    inline def getTiersPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetTiersResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.builder
-      com.pulumi.gcp.sql.SqlFunctions.getTiersPlain(args(argsBuilder).build)
+      com.pulumi.gcp.sql.SqlFunctions.getTiersPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * Creates a new Google SQL SSL Cert on a Google SQL Instance. For more information, see the [official documentation](https://cloud.google.com/sql/), or the [JSON API](https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/sslCerts).

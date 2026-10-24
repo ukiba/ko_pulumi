@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object cdn:
@@ -16,136 +18,176 @@ object cdn:
      * 
      * &gt; **Note:** This data source can only read Rule Sets that were provisioned in batch mode. Use the `azure.cdn.FrontdoorRuleSet` data source for Rule Sets that were not provisioned in batch mode.
      */
-    inline def getFrontdoorBatchRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorBatchRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorBatchRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSet(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets information about an existing Front Door (standard/premium) Batch Rule Set.
      * 
      * &gt; **Note:** This data source can only read Rule Sets that were provisioned in batch mode. Use the `azure.cdn.FrontdoorRuleSet` data source for Rule Sets that were not provisioned in batch mode.
      */
-    inline def getFrontdoorBatchRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorBatchRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorBatchRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorBatchRuleSetPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSetPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorBatchRuleSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Gets information about an existing Front Door (standard/premium) Custom Domain. */
-    inline def getFrontdoorCustomDomain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorCustomDomain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorCustomDomainResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorCustomDomain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorCustomDomain(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Gets information about an existing Front Door (standard/premium) Custom Domain. */
-    inline def getFrontdoorCustomDomainPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorCustomDomainPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorCustomDomainResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorCustomDomainPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorCustomDomainPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorCustomDomainPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Endpoint. */
-    inline def getFrontdoorEndpoint(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorEndpoint(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorEndpointResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorEndpoint(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorEndpoint(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Endpoint. */
-    inline def getFrontdoorEndpointPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorEndpointPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorEndpointResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorEndpointPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorEndpointPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorEndpointPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Firewall Policy. */
-    inline def getFrontdoorFirewallPolicy(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorFirewallPolicy(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorFirewallPolicy(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorFirewallPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Firewall Policy. */
-    inline def getFrontdoorFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorFirewallPolicyPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorFirewallPolicyResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorFirewallPolicyPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorFirewallPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorFirewallPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Origin Group. */
-    inline def getFrontdoorOriginGroup(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorOriginGroup(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorOriginGroupResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorOriginGroup(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorOriginGroup(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Origin Group. */
-    inline def getFrontdoorOriginGroupPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorOriginGroupPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorOriginGroupResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorOriginGroupPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorOriginGroupPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorOriginGroupPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Profile. */
-    inline def getFrontdoorProfile(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorProfileArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorProfile(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorProfileResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorProfileArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorProfile(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Profile. */
-    inline def getFrontdoorProfilePlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorProfilePlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorProfileResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorProfilePlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorProfilePlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Use this data source to access information about an existing Front Door (standard/premium) Rule Set.
      * 
      * &gt; **Note:** This data source can only read Rule Sets that were not provisioned in batch mode. Use the `azure.cdn.FrontdoorBatchRuleSet` data source for Rule Sets that were provisioned in batch mode.
      */
-    inline def getFrontdoorRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorRuleSet(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorRuleSet(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorRuleSet(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Use this data source to access information about an existing Front Door (standard/premium) Rule Set.
      * 
      * &gt; **Note:** This data source can only read Rule Sets that were not provisioned in batch mode. Use the `azure.cdn.FrontdoorBatchRuleSet` data source for Rule Sets that were provisioned in batch mode.
      */
-    inline def getFrontdoorRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorRuleSetPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorRuleSetResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorRuleSetPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorRuleSetPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorRuleSetPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Secret. */
-    inline def getFrontdoorSecret(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecretArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorSecret(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecretArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorSecretResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorSecretArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecret(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecret(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Front Door (standard/premium) Secret. */
-    inline def getFrontdoorSecretPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecretPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorSecretPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecretPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorSecretResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorSecretPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecretPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecretPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Gets information about an existing Front Door (standard/premium) Security Policy. */
-    inline def getFrontdoorSecurityPolicy(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorSecurityPolicy(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetFrontdoorSecurityPolicyResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecurityPolicy(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecurityPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Gets information about an existing Front Door (standard/premium) Security Policy. */
-    inline def getFrontdoorSecurityPolicyPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFrontdoorSecurityPolicyPlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetFrontdoorSecurityPolicyResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetFrontdoorSecurityPolicyPlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecurityPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getFrontdoorSecurityPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing CDN Profile. */
-    inline def getProfile(args: Endofunction[com.pulumi.azure.cdn.inputs.GetProfileArgs.Builder] = scala.Predef.identity):
+    inline def getProfile(args: Endofunction[com.pulumi.azure.cdn.inputs.GetProfileArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.cdn.outputs.GetProfileResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetProfileArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getProfile(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getProfile(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing CDN Profile. */
-    inline def getProfilePlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetProfilePlainArgs.Builder] = scala.Predef.identity):
+    inline def getProfilePlain(args: Endofunction[com.pulumi.azure.cdn.inputs.GetProfilePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.cdn.outputs.GetProfileResult] =
       val argsBuilder = com.pulumi.azure.cdn.inputs.GetProfilePlainArgs.builder
-      com.pulumi.azure.cdn.CdnFunctions.getProfilePlain(args(argsBuilder).build)
+      com.pulumi.azure.cdn.CdnFunctions.getProfilePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A CDN (classic) Endpoint is the entity within a CDN Profile containing configuration information regarding caching behaviours and origins. The CDN Endpoint is exposed using the URL format `&lt;endpointname&gt;.azureedge.net`.

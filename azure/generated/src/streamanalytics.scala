@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object streamanalytics:
@@ -285,13 +287,17 @@ object streamanalytics:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Stream Analytics Job. */
-    inline def getJob(args: Endofunction[com.pulumi.azure.streamanalytics.inputs.GetJobArgs.Builder] = scala.Predef.identity):
+    inline def getJob(args: Endofunction[com.pulumi.azure.streamanalytics.inputs.GetJobArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.streamanalytics.outputs.GetJobResult] =
       val argsBuilder = com.pulumi.azure.streamanalytics.inputs.GetJobArgs.builder
-      com.pulumi.azure.streamanalytics.StreamanalyticsFunctions.getJob(args(argsBuilder).build)
+      com.pulumi.azure.streamanalytics.StreamanalyticsFunctions.getJob(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Stream Analytics Job. */
-    inline def getJobPlain(args: Endofunction[com.pulumi.azure.streamanalytics.inputs.GetJobPlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobPlain(args: Endofunction[com.pulumi.azure.streamanalytics.inputs.GetJobPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.streamanalytics.outputs.GetJobResult] =
       val argsBuilder = com.pulumi.azure.streamanalytics.inputs.GetJobPlainArgs.builder
-      com.pulumi.azure.streamanalytics.StreamanalyticsFunctions.getJobPlain(args(argsBuilder).build)
+      com.pulumi.azure.streamanalytics.StreamanalyticsFunctions.getJobPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)

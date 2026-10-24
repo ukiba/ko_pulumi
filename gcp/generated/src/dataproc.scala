@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object dataproc:
@@ -1762,16 +1764,20 @@ object dataproc:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for autoscalingpolicy */
-    inline def getAutoscalingPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getAutoscalingPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetAutoscalingPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for autoscalingpolicy */
-    inline def getAutoscalingPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getAutoscalingPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetAutoscalingPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Dataproc cluster.
@@ -1810,10 +1816,12 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getClusterIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getClusterIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetClusterIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Dataproc cluster.
@@ -1852,10 +1860,12 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getClusterIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getClusterIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetClusterIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /**
      * Retrieves the current IAM policy data for a Dataproc job.
@@ -1894,10 +1904,12 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Retrieves the current IAM policy data for a Dataproc job.
@@ -1936,70 +1948,92 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for database */
-    inline def getMetastoreDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for database */
-    inline def getMetastoreDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for federation */
-    inline def getMetastoreFederationIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreFederationIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreFederationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for federation */
-    inline def getMetastoreFederationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreFederationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreFederationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get a Dataproc Metastore service from Google Cloud by its id and location. */
-    inline def getMetastoreService(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreService(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreService(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a Dataproc Metastore service from Google Cloud by its id and location. */
-    inline def getMetastoreServicePlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreServicePlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServicePlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getMetastoreServiceIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreServiceIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getMetastoreServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getMetastoreTableIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreTableIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getMetastoreTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getMetastoreTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.builder
-      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * An ApplicationEnvironment contains shared configuration that may be referenced by multiple SparkApplications.

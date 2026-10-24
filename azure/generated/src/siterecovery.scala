@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object siterecovery:
@@ -133,52 +135,68 @@ object siterecovery:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Site Recovery Replication Fabric. */
-    inline def getFabric(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetFabricArgs.Builder] = scala.Predef.identity):
+    inline def getFabric(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetFabricArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.siterecovery.outputs.GetFabricResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetFabricArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getFabric(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getFabric(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Site Recovery Replication Fabric. */
-    inline def getFabricPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetFabricPlainArgs.Builder] = scala.Predef.identity):
+    inline def getFabricPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetFabricPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.siterecovery.outputs.GetFabricResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetFabricPlainArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getFabricPlain(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getFabricPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing site recovery services protection container. */
-    inline def getProtectionContainer(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetProtectionContainerArgs.Builder] = scala.Predef.identity):
+    inline def getProtectionContainer(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetProtectionContainerArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.siterecovery.outputs.GetProtectionContainerResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetProtectionContainerArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getProtectionContainer(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getProtectionContainer(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing site recovery services protection container. */
-    inline def getProtectionContainerPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetProtectionContainerPlainArgs.Builder] = scala.Predef.identity):
+    inline def getProtectionContainerPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetProtectionContainerPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.siterecovery.outputs.GetProtectionContainerResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetProtectionContainerPlainArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getProtectionContainerPlain(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getProtectionContainerPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Azure Site Recovery replication policy. */
-    inline def getReplicationPolicy(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationPolicy(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.siterecovery.outputs.GetReplicationPolicyResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationPolicy(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Site Recovery replication policy. */
-    inline def getReplicationPolicyPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationPolicyPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.siterecovery.outputs.GetReplicationPolicyResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetReplicationPolicyPlainArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationPolicyPlain(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about an Azure Site Recovery Plan within a Recovery Services vault. A recovery plan gathers machines into recovery groups for the purpose of failover. */
-    inline def getReplicationRecoveryPlan(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationRecoveryPlan(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.siterecovery.outputs.GetReplicationRecoveryPlanResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationRecoveryPlan(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationRecoveryPlan(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about an Azure Site Recovery Plan within a Recovery Services vault. A recovery plan gathers machines into recovery groups for the purpose of failover. */
-    inline def getReplicationRecoveryPlanPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanPlainArgs.Builder] = scala.Predef.identity):
+    inline def getReplicationRecoveryPlanPlain(args: Endofunction[com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.siterecovery.outputs.GetReplicationRecoveryPlanResult] =
       val argsBuilder = com.pulumi.azure.siterecovery.inputs.GetReplicationRecoveryPlanPlainArgs.builder
-      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationRecoveryPlanPlain(args(argsBuilder).build)
+      com.pulumi.azure.siterecovery.SiterecoveryFunctions.getReplicationRecoveryPlanPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a VMWare Replication Policy. */
   def VMWareReplicationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

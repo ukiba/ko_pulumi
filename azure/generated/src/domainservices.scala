@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package azure
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object domainservices:
@@ -16,20 +18,24 @@ object domainservices:
      * 
      * &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    inline def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServiceArgs.builder
-      com.pulumi.azure.domainservices.DomainservicesFunctions.getService(args(argsBuilder).build)
+      com.pulumi.azure.domainservices.DomainservicesFunctions.getService(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /**
      * Gets information about an Active Directory Domain Service.
      * 
      * &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.builder
-      com.pulumi.azure.domainservices.DomainservicesFunctions.getServicePlain(args(argsBuilder).build)
+      com.pulumi.azure.domainservices.DomainservicesFunctions.getServicePlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Replica Set for an Active Directory Domain Service. */
   def ReplicaSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

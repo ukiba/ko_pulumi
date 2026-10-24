@@ -1,6 +1,8 @@
 package jp.ukiba.ko_pulumi
 package gcp
 
+import com.pulumi.deployment.InvokeOptions
+import com.pulumi.deployment.InvokeOutputOptions
 import com.pulumi.resources.CustomResourceOptions
 
 object securitycenter:
@@ -391,28 +393,36 @@ object securitycenter:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for source */
-    inline def getSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securitycenter.outputs.GetSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyArgs.builder
-      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for source */
-    inline def getSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securitycenter.outputs.GetSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetSourceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getSourceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for organizationsource */
-    inline def getV2OrganizationSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.Builder] = scala.Predef.identity):
+    inline def getV2OrganizationSourceIamPolicy(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.gcp.securitycenter.outputs.GetV2OrganizationSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyArgs.builder
-      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicy(args(argsBuilder).build)
+      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicy(args(argsBuilder).build,
+          invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for organizationsource */
-    inline def getV2OrganizationSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity):
+    inline def getV2OrganizationSourceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.securitycenter.outputs.GetV2OrganizationSourceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.securitycenter.inputs.GetV2OrganizationSourceIamPolicyPlainArgs.builder
-      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicyPlain(args(argsBuilder).build)
+      com.pulumi.gcp.securitycenter.SecuritycenterFunctions.getV2OrganizationSourceIamPolicyPlain(args(argsBuilder).build,
+          invokeOptions(InvokeOptions.builder).build)
 
   /**
    * A Cloud Security Command Center&#39;s (Cloud SCC) finding source. A finding
