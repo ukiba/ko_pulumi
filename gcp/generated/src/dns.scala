@@ -856,17 +856,17 @@ object dns:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
+   * \$ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dns/dnsManagedZoneIamBinding:DnsManagedZoneIamBinding editor projects/{{project}}/managedZones/{{managed_zone}}
+   * \$ pulumi import gcp:dns/dnsManagedZoneIamBinding:DnsManagedZoneIamBinding editor projects/{{project}}/managedZones/{{managed_zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1443,17 +1443,17 @@ object dns:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
+   * \$ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dns/dnsManagedZoneIamMember:DnsManagedZoneIamMember editor projects/{{project}}/managedZones/{{managed_zone}}
+   * \$ pulumi import gcp:dns/dnsManagedZoneIamMember:DnsManagedZoneIamMember editor projects/{{project}}/managedZones/{{managed_zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2030,17 +2030,17 @@ object dns:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dns_managed_zone_iam_member.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
+   * \$ terraform import google_dns_managed_zone_iam_binding.editor &#34;projects/{{project}}/managedZones/{{managed_zone}} roles/dns.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dns/dnsManagedZoneIamPolicy:DnsManagedZoneIamPolicy editor projects/{{project}}/managedZones/{{managed_zone}}
+   * \$ pulumi import gcp:dns/dnsManagedZoneIamPolicy:DnsManagedZoneIamPolicy editor projects/{{project}}/managedZones/{{managed_zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

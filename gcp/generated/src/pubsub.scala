@@ -566,17 +566,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/schemaIamBinding:SchemaIamBinding editor projects/{{project}}/schemas/{{schema}}
+   * \$ pulumi import gcp:pubsub/schemaIamBinding:SchemaIamBinding editor projects/{{project}}/schemas/{{schema}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -878,17 +878,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/schemaIamMember:SchemaIamMember editor projects/{{project}}/schemas/{{schema}}
+   * \$ pulumi import gcp:pubsub/schemaIamMember:SchemaIamMember editor projects/{{project}}/schemas/{{schema}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1190,17 +1190,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_schema_iam_member.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_schema_iam_binding.editor &#34;projects/{{project}}/schemas/{{schema}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/schemaIamPolicy:SchemaIamPolicy editor projects/{{project}}/schemas/{{schema}}
+   * \$ pulumi import gcp:pubsub/schemaIamPolicy:SchemaIamPolicy editor projects/{{project}}/schemas/{{schema}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2456,17 +2456,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/topicIAMBinding:TopicIAMBinding editor projects/{{project}}/topics/{{topic}}
+   * \$ pulumi import gcp:pubsub/topicIAMBinding:TopicIAMBinding editor projects/{{project}}/topics/{{topic}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2768,17 +2768,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/topicIAMMember:TopicIAMMember editor projects/{{project}}/topics/{{topic}}
+   * \$ pulumi import gcp:pubsub/topicIAMMember:TopicIAMMember editor projects/{{project}}/topics/{{topic}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3080,17 +3080,17 @@ object pubsub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_pubsub_topic_iam_member.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
+   * \$ terraform import google_pubsub_topic_iam_binding.editor &#34;projects/{{project}}/topics/{{topic}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:pubsub/topicIAMPolicy:TopicIAMPolicy editor projects/{{project}}/topics/{{topic}}
+   * \$ pulumi import gcp:pubsub/topicIAMPolicy:TopicIAMPolicy editor projects/{{project}}/topics/{{topic}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

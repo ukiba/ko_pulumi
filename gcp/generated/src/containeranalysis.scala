@@ -356,17 +356,17 @@ object containeranalysis:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
+   * \$ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:containeranalysis/noteIamBinding:NoteIamBinding editor projects/{{project}}/notes/{{note}}
+   * \$ pulumi import gcp:containeranalysis/noteIamBinding:NoteIamBinding editor projects/{{project}}/notes/{{note}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -668,17 +668,17 @@ object containeranalysis:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
+   * \$ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:containeranalysis/noteIamMember:NoteIamMember editor projects/{{project}}/notes/{{note}}
+   * \$ pulumi import gcp:containeranalysis/noteIamMember:NoteIamMember editor projects/{{project}}/notes/{{note}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -980,17 +980,17 @@ object containeranalysis:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_container_analysis_note_iam_member.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
+   * \$ terraform import google_container_analysis_note_iam_binding.editor &#34;projects/{{project}}/notes/{{note}} roles/containeranalysis.notes.occurrences.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:containeranalysis/noteIamPolicy:NoteIamPolicy editor projects/{{project}}/notes/{{note}}
+   * \$ pulumi import gcp:containeranalysis/noteIamPolicy:NoteIamPolicy editor projects/{{project}}/notes/{{note}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

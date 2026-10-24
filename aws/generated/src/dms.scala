@@ -169,7 +169,7 @@ object dms:
    * Using `pulumi import`, import endpoints using the `endpointId`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:dms/endpoint:Endpoint test test-dms-endpoint-tf
+   * \$ pulumi import aws:dms/endpoint:Endpoint test test-dms-endpoint-tf
    * ```
    */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

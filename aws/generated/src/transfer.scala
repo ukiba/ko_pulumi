@@ -610,7 +610,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
+     * @param destinationFileLocation Location for the file being copied. Use `\${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepCopyStepDetailsDestinationFileLocationArgs.Builder]):
@@ -639,7 +639,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
+     * @param destinationFileLocation Location for the file being copied. Use `\${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowOnExceptionStepDecryptStepDetailsDestinationFileLocationArgs.Builder]):
@@ -743,7 +743,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
+     * @param destinationFileLocation Location for the file being copied. Use `\${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepCopyStepDetailsDestinationFileLocationArgs.Builder]):
@@ -772,7 +772,7 @@ object transfer:
 
   extension (builder: com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsArgs.Builder)
     /**
-     * @param destinationFileLocation Location for the file being copied. Use `${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
+     * @param destinationFileLocation Location for the file being copied. Use `\${Transfer:username}` in this field to parametrize the destination prefix by username. See `destinationFileLocation` Block below.
      * @return builder
      */
     def destinationFileLocation(args: Endofunction[com.pulumi.aws.transfer.inputs.WorkflowStepDecryptStepDetailsDestinationFileLocationArgs.Builder]):

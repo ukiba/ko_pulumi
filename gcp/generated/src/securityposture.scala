@@ -56,7 +56,7 @@ object securityposture:
    * When using the `pulumi import` command, PostureDeployment can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:securityposture/postureDeployment:PostureDeployment default {{parent}}/locations/{{location}}/postureDeployments/{{posture_deployment_id}}
+   * \$ pulumi import gcp:securityposture/postureDeployment:PostureDeployment default {{parent}}/locations/{{location}}/postureDeployments/{{posture_deployment_id}}
    * ```
    */
   def PostureDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -1734,7 +1734,7 @@ object ec2:
       builder.destinationOptions(args(argsBuilder).build)
 
     /**
-     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `$${instance-tag}`) used in `logFormat`. More details below.
+     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `\$\${instance-tag}`) used in `logFormat`. More details below.
      * @return builder
      */
     def tagFieldSpecifications(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.Builder]*):
@@ -2031,7 +2031,7 @@ object ec2:
    * Using `pulumi import`, import Launch Templates using the `id`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:ec2/launchTemplate:LaunchTemplate web lt-12345678
+   * \$ pulumi import aws:ec2/launchTemplate:LaunchTemplate web lt-12345678
    * ```
    */
   def LaunchTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -4426,7 +4426,7 @@ object ec2:
       builder.destinationOptions(args(argsBuilder).build)
 
     /**
-     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `$${instance-tag}`) used in `logFormat`. More details below.
+     * @param tagFieldSpecifications Tag configuration for the Flow Logs Amazon EC2 Tags feature fields (e.g., `\$\${instance-tag}`) used in `logFormat`. More details below.
      * @return builder
      */
     def tagFieldSpecifications(args: Endofunction[com.pulumi.aws.ec2.inputs.FlowLogTagFieldSpecificationArgs.Builder]*):

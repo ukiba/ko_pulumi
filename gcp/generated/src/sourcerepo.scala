@@ -317,17 +317,17 @@ object sourcerepo:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:sourcerepo/repositoryIamBinding:RepositoryIamBinding editor projects/{{project}}/repos/{{repository}}
+   * \$ pulumi import gcp:sourcerepo/repositoryIamBinding:RepositoryIamBinding editor projects/{{project}}/repos/{{repository}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -628,17 +628,17 @@ object sourcerepo:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:sourcerepo/repositoryIamMember:RepositoryIamMember editor projects/{{project}}/repos/{{repository}}
+   * \$ pulumi import gcp:sourcerepo/repositoryIamMember:RepositoryIamMember editor projects/{{project}}/repos/{{repository}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -939,17 +939,17 @@ object sourcerepo:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_member.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
+   * \$ terraform import google_sourcerepo_repository_iam_binding.editor &#34;projects/{{project}}/repos/{{repository}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:sourcerepo/repositoryIamPolicy:RepositoryIamPolicy editor projects/{{project}}/repos/{{repository}}
+   * \$ pulumi import gcp:sourcerepo/repositoryIamPolicy:RepositoryIamPolicy editor projects/{{project}}/repos/{{repository}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

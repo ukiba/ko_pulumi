@@ -725,17 +725,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/connectionIamBinding:ConnectionIamBinding editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
+   * \$ pulumi import gcp:bigquery/connectionIamBinding:ConnectionIamBinding editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1044,17 +1044,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/connectionIamMember:ConnectionIamMember editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
+   * \$ pulumi import gcp:bigquery/connectionIamMember:ConnectionIamMember editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1363,17 +1363,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/connections/{{connection_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/connectionIamPolicy:ConnectionIamPolicy editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
+   * \$ pulumi import gcp:bigquery/connectionIamPolicy:ConnectionIamPolicy editor projects/{{project}}/locations/{{location}}/connections/{{connection_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1806,17 +1806,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamBinding:Datapolicyv2DataPolicyIamBinding editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
+   * \$ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamBinding:Datapolicyv2DataPolicyIamBinding editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2125,17 +2125,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamMember:Datapolicyv2DataPolicyIamMember editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
+   * \$ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamMember:Datapolicyv2DataPolicyIamMember editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2444,17 +2444,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_datapolicyv2_data_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamPolicy:Datapolicyv2DataPolicyIamPolicy editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
+   * \$ pulumi import gcp:bigquery/datapolicyv2DataPolicyIamPolicy:Datapolicyv2DataPolicyIamPolicy editor projects/{{project}}/locations/{{location}}/dataPolicies/{{data_policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4702,17 +4702,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/iamBinding:IamBinding editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
+   * \$ pulumi import gcp:bigquery/iamBinding:IamBinding editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5021,17 +5021,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/iamMember:IamMember editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
+   * \$ pulumi import gcp:bigquery/iamMember:IamMember editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5340,17 +5340,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_table_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_table_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/iamPolicy:IamPolicy editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
+   * \$ pulumi import gcp:bigquery/iamPolicy:IamPolicy editor projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5844,17 +5844,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/routineIamBinding:RoutineIamBinding editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * \$ pulumi import gcp:bigquery/routineIamBinding:RoutineIamBinding editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6163,17 +6163,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/routineIamMember:RoutineIamMember editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * \$ pulumi import gcp:bigquery/routineIamMember:RoutineIamMember editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6482,17 +6482,17 @@ object bigquery:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_routine_iam_member.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
+   * \$ terraform import google_bigquery_routine_iam_binding.editor &#34;projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}} roles/bigquery.dataOwner&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigquery/routineIamPolicy:RoutineIamPolicy editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
+   * \$ pulumi import gcp:bigquery/routineIamPolicy:RoutineIamPolicy editor projects/{{project}}/datasets/{{dataset_id}}/routines/{{routine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

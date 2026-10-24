@@ -162,7 +162,7 @@ object imagebuilder:
    * Using `pulumi import`, import `aws.imagebuilder.ImagePipeline` resources using the ARN. For example:
    * 
    * ```sh
-   * $ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
+   * \$ pulumi import aws:imagebuilder/imagePipeline:ImagePipeline example arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
    * ```
    */
   def ImagePipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

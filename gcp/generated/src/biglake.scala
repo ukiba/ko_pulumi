@@ -432,17 +432,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveCatalogIamBinding:HiveCatalogIamBinding editor projects/{{project}}/catalogs/{{hive_catalog}}
+   * \$ pulumi import gcp:biglake/hiveCatalogIamBinding:HiveCatalogIamBinding editor projects/{{project}}/catalogs/{{hive_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -747,17 +747,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveCatalogIamMember:HiveCatalogIamMember editor projects/{{project}}/catalogs/{{hive_catalog}}
+   * \$ pulumi import gcp:biglake/hiveCatalogIamMember:HiveCatalogIamMember editor projects/{{project}}/catalogs/{{hive_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1062,17 +1062,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{hive_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveCatalogIamPolicy:HiveCatalogIamPolicy editor projects/{{project}}/catalogs/{{hive_catalog}}
+   * \$ pulumi import gcp:biglake/hiveCatalogIamPolicy:HiveCatalogIamPolicy editor projects/{{project}}/catalogs/{{hive_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1395,17 +1395,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveDatabaseIamBinding:HiveDatabaseIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * \$ pulumi import gcp:biglake/hiveDatabaseIamBinding:HiveDatabaseIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1717,17 +1717,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveDatabaseIamMember:HiveDatabaseIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * \$ pulumi import gcp:biglake/hiveDatabaseIamMember:HiveDatabaseIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2039,17 +2039,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_database_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_database_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveDatabaseIamPolicy:HiveDatabaseIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
+   * \$ pulumi import gcp:biglake/hiveDatabaseIamPolicy:HiveDatabaseIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{hive_database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2393,17 +2393,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveTableIamBinding:HiveTableIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
+   * \$ pulumi import gcp:biglake/hiveTableIamBinding:HiveTableIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2721,17 +2721,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveTableIamMember:HiveTableIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
+   * \$ pulumi import gcp:biglake/hiveTableIamMember:HiveTableIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3049,17 +3049,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_hive_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_hive_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/hiveTableIamPolicy:HiveTableIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
+   * \$ pulumi import gcp:biglake/hiveTableIamPolicy:HiveTableIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{database}}/tables/{{hive_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3404,17 +3404,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergCatalogIamBinding:IcebergCatalogIamBinding editor projects/{{project}}/catalogs/{{iceberg_catalog}}
+   * \$ pulumi import gcp:biglake/icebergCatalogIamBinding:IcebergCatalogIamBinding editor projects/{{project}}/catalogs/{{iceberg_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3719,17 +3719,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergCatalogIamMember:IcebergCatalogIamMember editor projects/{{project}}/catalogs/{{iceberg_catalog}}
+   * \$ pulumi import gcp:biglake/icebergCatalogIamMember:IcebergCatalogIamMember editor projects/{{project}}/catalogs/{{iceberg_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4034,17 +4034,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_member.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_catalog_iam_binding.editor &#34;projects/{{project}}/catalogs/{{iceberg_catalog}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergCatalogIamPolicy:IcebergCatalogIamPolicy editor projects/{{project}}/catalogs/{{iceberg_catalog}}
+   * \$ pulumi import gcp:biglake/icebergCatalogIamPolicy:IcebergCatalogIamPolicy editor projects/{{project}}/catalogs/{{iceberg_catalog}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4358,17 +4358,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergNamespaceIamBinding:IcebergNamespaceIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
+   * \$ pulumi import gcp:biglake/icebergNamespaceIamBinding:IcebergNamespaceIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4677,17 +4677,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergNamespaceIamMember:IcebergNamespaceIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
+   * \$ pulumi import gcp:biglake/icebergNamespaceIamMember:IcebergNamespaceIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4996,17 +4996,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_namespace_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergNamespaceIamPolicy:IcebergNamespaceIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
+   * \$ pulumi import gcp:biglake/icebergNamespaceIamPolicy:IcebergNamespaceIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5357,17 +5357,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergTableIamBinding:IcebergTableIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
+   * \$ pulumi import gcp:biglake/icebergTableIamBinding:IcebergTableIamBinding editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5685,17 +5685,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergTableIamMember:IcebergTableIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
+   * \$ pulumi import gcp:biglake/icebergTableIamMember:IcebergTableIamMember editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6013,17 +6013,17 @@ object biglake:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_member.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
+   * \$ terraform import google_biglake_iceberg_table_iam_binding.editor &#34;projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}} roles/biglake.editor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:biglake/icebergTableIamPolicy:IcebergTableIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
+   * \$ pulumi import gcp:biglake/icebergTableIamPolicy:IcebergTableIamPolicy editor projects/{{project}}/catalogs/{{catalog}}/namespaces/{{namespace}}/tables/{{iceberg_table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

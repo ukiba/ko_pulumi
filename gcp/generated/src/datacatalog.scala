@@ -430,17 +430,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/entryGroupIamBinding:EntryGroupIamBinding editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
+   * \$ pulumi import gcp:datacatalog/entryGroupIamBinding:EntryGroupIamBinding editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -740,17 +740,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/entryGroupIamMember:EntryGroupIamMember editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
+   * \$ pulumi import gcp:datacatalog/entryGroupIamMember:EntryGroupIamMember editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1050,17 +1050,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/entryGroupIamPolicy:EntryGroupIamPolicy editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
+   * \$ pulumi import gcp:datacatalog/entryGroupIamPolicy:EntryGroupIamPolicy editor projects/{{project}}/locations/{{region}}/entryGroups/{{entry_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1365,17 +1365,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/policyTagIamBinding:PolicyTagIamBinding editor {{policy_tag}}
+   * \$ pulumi import gcp:datacatalog/policyTagIamBinding:PolicyTagIamBinding editor {{policy_tag}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1670,17 +1670,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/policyTagIamMember:PolicyTagIamMember editor {{policy_tag}}
+   * \$ pulumi import gcp:datacatalog/policyTagIamMember:PolicyTagIamMember editor {{policy_tag}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1975,17 +1975,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_member.editor &#34;{{policy_tag}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_policy_tag_iam_binding.editor &#34;{{policy_tag}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/policyTagIamPolicy:PolicyTagIamPolicy editor {{policy_tag}}
+   * \$ pulumi import gcp:datacatalog/policyTagIamPolicy:PolicyTagIamPolicy editor {{policy_tag}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2341,17 +2341,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/tagTemplateIamBinding:TagTemplateIamBinding editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
+   * \$ pulumi import gcp:datacatalog/tagTemplateIamBinding:TagTemplateIamBinding editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2651,17 +2651,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/tagTemplateIamMember:TagTemplateIamMember editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
+   * \$ pulumi import gcp:datacatalog/tagTemplateIamMember:TagTemplateIamMember editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2961,17 +2961,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_tag_template_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/tagTemplateIamPolicy:TagTemplateIamPolicy editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
+   * \$ pulumi import gcp:datacatalog/tagTemplateIamPolicy:TagTemplateIamPolicy editor projects/{{project}}/locations/{{region}}/tagTemplates/{{tag_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3278,17 +3278,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/taxonomyIamBinding:TaxonomyIamBinding editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
+   * \$ pulumi import gcp:datacatalog/taxonomyIamBinding:TaxonomyIamBinding editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3585,17 +3585,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/taxonomyIamMember:TaxonomyIamMember editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
+   * \$ pulumi import gcp:datacatalog/taxonomyIamMember:TaxonomyIamMember editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3892,17 +3892,17 @@ object datacatalog:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
+   * \$ terraform import google_data_catalog_taxonomy_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:datacatalog/taxonomyIamPolicy:TaxonomyIamPolicy editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
+   * \$ pulumi import gcp:datacatalog/taxonomyIamPolicy:TaxonomyIamPolicy editor projects/{{project}}/locations/{{region}}/taxonomies/{{taxonomy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

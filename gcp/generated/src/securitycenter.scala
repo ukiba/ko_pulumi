@@ -1069,17 +1069,17 @@ object securitycenter:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:securitycenter/v2OrganizationSourceIamBinding:V2OrganizationSourceIamBinding editor organizations/{{organization}}/sources/{{source}}
+   * \$ pulumi import gcp:securitycenter/v2OrganizationSourceIamBinding:V2OrganizationSourceIamBinding editor organizations/{{organization}}/sources/{{source}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1376,17 +1376,17 @@ object securitycenter:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:securitycenter/v2OrganizationSourceIamMember:V2OrganizationSourceIamMember editor organizations/{{organization}}/sources/{{source}}
+   * \$ pulumi import gcp:securitycenter/v2OrganizationSourceIamMember:V2OrganizationSourceIamMember editor organizations/{{organization}}/sources/{{source}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1683,17 +1683,17 @@ object securitycenter:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_member.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
+   * \$ terraform import google_scc_v2_organization_source_iam_binding.editor &#34;organizations/{{organization}}/sources/{{source}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:securitycenter/v2OrganizationSourceIamPolicy:V2OrganizationSourceIamPolicy editor organizations/{{organization}}/sources/{{source}}
+   * \$ pulumi import gcp:securitycenter/v2OrganizationSourceIamPolicy:V2OrganizationSourceIamPolicy editor organizations/{{organization}}/sources/{{source}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

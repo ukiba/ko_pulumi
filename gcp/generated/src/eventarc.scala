@@ -500,17 +500,17 @@ object eventarc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:eventarc/pipelineIamBinding:PipelineIamBinding editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
+   * \$ pulumi import gcp:eventarc/pipelineIamBinding:PipelineIamBinding editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -819,17 +819,17 @@ object eventarc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:eventarc/pipelineIamMember:PipelineIamMember editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
+   * \$ pulumi import gcp:eventarc/pipelineIamMember:PipelineIamMember editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1138,17 +1138,17 @@ object eventarc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
+   * \$ terraform import google_eventarc_pipeline_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}} roles/eventarc.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:eventarc/pipelineIamPolicy:PipelineIamPolicy editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
+   * \$ pulumi import gcp:eventarc/pipelineIamPolicy:PipelineIamPolicy editor projects/{{project}}/locations/{{location}}/pipelines/{{pipeline_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

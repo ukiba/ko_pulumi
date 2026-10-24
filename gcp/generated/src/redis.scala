@@ -113,9 +113,9 @@ object redis:
    * When using the `pulumi import` command, ClusterAclPolicy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}
-   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{project}}/{{location}}/{{acl_policy_id}}
-   * $ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{location}}/{{acl_policy_id}}
+   * \$ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}
+   * \$ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{project}}/{{location}}/{{acl_policy_id}}
+   * \$ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{location}}/{{acl_policy_id}}
    * ```
    */
   def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

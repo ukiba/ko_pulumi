@@ -134,7 +134,7 @@ object storage:
      * 
      * &gt; **Note:** `staticWebsite` can only be set when the `accountKind` is set to `StorageV2` or `BlockBlobStorage`.
      * 
-     * &gt; **Note:** If `staticWebsite` is specified, the service will automatically create a `azure.storage.Container` named `$web`.
+     * &gt; **Note:** If `staticWebsite` is specified, the service will automatically create a `azure.storage.Container` named `\$web`.
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider
      */
@@ -1213,7 +1213,7 @@ object storage:
      * 
      * &gt; **Note:** `staticWebsite` can only be set when the `accountKind` is set to `StorageV2` or `BlockBlobStorage`.
      * 
-     * &gt; **Note:** If `staticWebsite` is specified, the service will automatically create a `azure.storage.Container` named `$web`.
+     * &gt; **Note:** If `staticWebsite` is specified, the service will automatically create a `azure.storage.Container` named `\$web`.
      * @return builder
      * @deprecated this block has been deprecated and superseded by the `azure.storage.AccountStaticWebsite` resource and will be removed in v5.0 of the AzureRM provider
      */

@@ -660,17 +660,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayApplicationIamBinding:SecurityGatewayApplicationIamBinding editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayApplicationIamBinding:SecurityGatewayApplicationIamBinding editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1260,17 +1260,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayApplicationIamMember:SecurityGatewayApplicationIamMember editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayApplicationIamMember:SecurityGatewayApplicationIamMember editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1860,17 +1860,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_member.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_application_iam_binding.editor &#34;projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayApplicationIamPolicy:SecurityGatewayApplicationIamPolicy editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayApplicationIamPolicy:SecurityGatewayApplicationIamPolicy editor projects/{{project}}/locations/global/securityGateways/{{security_gateway_id}}/applications/{{application_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2490,17 +2490,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayIamBinding:SecurityGatewayIamBinding editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayIamBinding:SecurityGatewayIamBinding editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3090,17 +3090,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayIamMember:SecurityGatewayIamMember editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayIamMember:SecurityGatewayIamMember editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3690,17 +3690,17 @@ object beyondcorp:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
+   * \$ terraform import google_beyondcorp_security_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}} roles/beyondcorp.securityGatewayUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:beyondcorp/securityGatewayIamPolicy:SecurityGatewayIamPolicy editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
+   * \$ pulumi import gcp:beyondcorp/securityGatewayIamPolicy:SecurityGatewayIamPolicy editor projects/{{project}}/locations/{{location}}/securityGateways/{{security_gateway_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

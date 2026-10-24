@@ -905,17 +905,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workforcePoolIamBinding:WorkforcePoolIamBinding editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
+   * \$ pulumi import gcp:iam/workforcePoolIamBinding:WorkforcePoolIamBinding editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1218,17 +1218,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workforcePoolIamMember:WorkforcePoolIamMember editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
+   * \$ pulumi import gcp:iam/workforcePoolIamMember:WorkforcePoolIamMember editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1531,17 +1531,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_member.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
+   * \$ terraform import google_iam_workforce_pool_iam_binding.editor &#34;locations/{{location}}/workforcePools/{{workforce_pool_id}} roles/iam.workforcePoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workforcePoolIamPolicy:WorkforcePoolIamPolicy editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
+   * \$ pulumi import gcp:iam/workforcePoolIamPolicy:WorkforcePoolIamPolicy editor locations/{{location}}/workforcePools/{{workforce_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2307,17 +2307,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workloadIdentityPoolIamBinding:WorkloadIdentityPoolIamBinding editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
+   * \$ pulumi import gcp:iam/workloadIdentityPoolIamBinding:WorkloadIdentityPoolIamBinding editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2894,17 +2894,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workloadIdentityPoolIamMember:WorkloadIdentityPoolIamMember editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
+   * \$ pulumi import gcp:iam/workloadIdentityPoolIamMember:WorkloadIdentityPoolIamMember editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3481,17 +3481,17 @@ object iam:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_member.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
+   * \$ terraform import google_iam_workload_identity_pool_iam_binding.editor &#34;projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}} roles/iam.workloadIdentityPoolViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:iam/workloadIdentityPoolIamPolicy:WorkloadIdentityPoolIamPolicy editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
+   * \$ pulumi import gcp:iam/workloadIdentityPoolIamPolicy:WorkloadIdentityPoolIamPolicy editor projects/{{project}}/locations/global/workloadIdentityPools/{{workload_identity_pool_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

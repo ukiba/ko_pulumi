@@ -317,17 +317,17 @@ object binaryauthorization:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:binaryauthorization/attestorIamBinding:AttestorIamBinding editor projects/{{project}}/attestors/{{attestor}}
+   * \$ pulumi import gcp:binaryauthorization/attestorIamBinding:AttestorIamBinding editor projects/{{project}}/attestors/{{attestor}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -629,17 +629,17 @@ object binaryauthorization:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:binaryauthorization/attestorIamMember:AttestorIamMember editor projects/{{project}}/attestors/{{attestor}}
+   * \$ pulumi import gcp:binaryauthorization/attestorIamMember:AttestorIamMember editor projects/{{project}}/attestors/{{attestor}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -941,17 +941,17 @@ object binaryauthorization:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_member.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
+   * \$ terraform import google_binary_authorization_attestor_iam_binding.editor &#34;projects/{{project}}/attestors/{{attestor}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:binaryauthorization/attestorIamPolicy:AttestorIamPolicy editor projects/{{project}}/attestors/{{attestor}}
+   * \$ pulumi import gcp:binaryauthorization/attestorIamPolicy:AttestorIamPolicy editor projects/{{project}}/attestors/{{attestor}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

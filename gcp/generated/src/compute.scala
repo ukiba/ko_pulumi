@@ -431,17 +431,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendBucketIamBinding:BackendBucketIamBinding editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
+   * \$ pulumi import gcp:compute/backendBucketIamBinding:BackendBucketIamBinding editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -752,17 +752,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendBucketIamMember:BackendBucketIamMember editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
+   * \$ pulumi import gcp:compute/backendBucketIamMember:BackendBucketIamMember editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1073,17 +1073,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_member.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
+   * \$ terraform import google_compute_backend_bucket_iam_binding.editor &#34;projects/{{project}}/global/backendBuckets/{{backend_bucket}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendBucketIamPolicy:BackendBucketIamPolicy editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
+   * \$ pulumi import gcp:compute/backendBucketIamPolicy:BackendBucketIamPolicy editor projects/{{project}}/global/backendBuckets/{{backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1896,17 +1896,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendServiceIamBinding:BackendServiceIamBinding editor projects/{{project}}/global/backendServices/{{backend_service}}
+   * \$ pulumi import gcp:compute/backendServiceIamBinding:BackendServiceIamBinding editor projects/{{project}}/global/backendServices/{{backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2492,17 +2492,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendServiceIamMember:BackendServiceIamMember editor projects/{{project}}/global/backendServices/{{backend_service}}
+   * \$ pulumi import gcp:compute/backendServiceIamMember:BackendServiceIamMember editor projects/{{project}}/global/backendServices/{{backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3088,17 +3088,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_backend_service_iam_member.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_backend_service_iam_binding.editor &#34;projects/{{project}}/global/backendServices/{{backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/backendServiceIamPolicy:BackendServiceIamPolicy editor projects/{{project}}/global/backendServices/{{backend_service}}
+   * \$ pulumi import gcp:compute/backendServiceIamPolicy:BackendServiceIamPolicy editor projects/{{project}}/global/backendServices/{{backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5557,17 +5557,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/diskIamBinding:DiskIamBinding editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
+   * \$ pulumi import gcp:compute/diskIamBinding:DiskIamBinding editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5879,17 +5879,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/diskIamMember:DiskIamMember editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
+   * \$ pulumi import gcp:compute/diskIamMember:DiskIamMember editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6201,17 +6201,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_disk_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_disk_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/disks/{{disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/diskIamPolicy:DiskIamPolicy editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
+   * \$ pulumi import gcp:compute/diskIamPolicy:DiskIamPolicy editor projects/{{project}}/zones/{{zone}}/disks/{{disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6669,17 +6669,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/firewallPolicyIamBinding:FirewallPolicyIamBinding editor locations/global/firewallPolicies/{{firewall_policy}}
+   * \$ pulumi import gcp:compute/firewallPolicyIamBinding:FirewallPolicyIamBinding editor locations/global/firewallPolicies/{{firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6978,17 +6978,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/firewallPolicyIamMember:FirewallPolicyIamMember editor locations/global/firewallPolicies/{{firewall_policy}}
+   * \$ pulumi import gcp:compute/firewallPolicyIamMember:FirewallPolicyIamMember editor locations/global/firewallPolicies/{{firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -7287,17 +7287,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_member.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_firewall_policy_iam_binding.editor &#34;locations/global/firewallPolicies/{{firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/firewallPolicyIamPolicy:FirewallPolicyIamPolicy editor locations/global/firewallPolicies/{{firewall_policy}}
+   * \$ pulumi import gcp:compute/firewallPolicyIamPolicy:FirewallPolicyIamPolicy editor locations/global/firewallPolicies/{{firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -8547,17 +8547,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
+   * \$ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/imageIamBinding:ImageIamBinding editor projects/{{project}}/global/images/{{image}}
+   * \$ pulumi import gcp:compute/imageIamBinding:ImageIamBinding editor projects/{{project}}/global/images/{{image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -9134,17 +9134,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
+   * \$ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/imageIamMember:ImageIamMember editor projects/{{project}}/global/images/{{image}}
+   * \$ pulumi import gcp:compute/imageIamMember:ImageIamMember editor projects/{{project}}/global/images/{{image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -9721,17 +9721,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_image_iam_member.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
+   * \$ terraform import google_compute_image_iam_binding.editor &#34;projects/{{project}}/global/images/{{image}} roles/compute.imageUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/imageIamPolicy:ImageIamPolicy editor projects/{{project}}/global/images/{{image}}
+   * \$ pulumi import gcp:compute/imageIamPolicy:ImageIamPolicy editor projects/{{project}}/global/images/{{image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -10996,17 +10996,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
+   * \$ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceIAMBinding:InstanceIAMBinding editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
+   * \$ pulumi import gcp:compute/instanceIAMBinding:InstanceIAMBinding editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -11596,17 +11596,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
+   * \$ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceIAMMember:InstanceIAMMember editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
+   * \$ pulumi import gcp:compute/instanceIAMMember:InstanceIAMMember editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -12196,17 +12196,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
+   * \$ terraform import google_compute_instance_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instances/{{instance}} roles/compute.osLogin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceIAMPolicy:InstanceIAMPolicy editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
+   * \$ pulumi import gcp:compute/instanceIAMPolicy:InstanceIAMPolicy editor projects/{{project}}/zones/{{zone}}/instances/{{instance}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -12930,17 +12930,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
+   * \$ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceTemplateIamBinding:InstanceTemplateIamBinding editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
+   * \$ pulumi import gcp:compute/instanceTemplateIamBinding:InstanceTemplateIamBinding editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -13520,17 +13520,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
+   * \$ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceTemplateIamMember:InstanceTemplateIamMember editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
+   * \$ pulumi import gcp:compute/instanceTemplateIamMember:InstanceTemplateIamMember editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -14110,17 +14110,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instance_template_iam_member.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
+   * \$ terraform import google_compute_instance_template_iam_binding.editor &#34;projects/{{project}}/global/instanceTemplates/{{instance_template}} roles/compute.instanceAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instanceTemplateIamPolicy:InstanceTemplateIamPolicy editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
+   * \$ pulumi import gcp:compute/instanceTemplateIamPolicy:InstanceTemplateIamPolicy editor projects/{{project}}/global/instanceTemplates/{{instance_template}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -14738,17 +14738,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instantSnapshotIamBinding:InstantSnapshotIamBinding editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
+   * \$ pulumi import gcp:compute/instantSnapshotIamBinding:InstantSnapshotIamBinding editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -15341,17 +15341,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instantSnapshotIamMember:InstantSnapshotIamMember editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
+   * \$ pulumi import gcp:compute/instantSnapshotIamMember:InstantSnapshotIamMember editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -15944,17 +15944,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/instantSnapshotIamPolicy:InstantSnapshotIamPolicy editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
+   * \$ pulumi import gcp:compute/instantSnapshotIamPolicy:InstantSnapshotIamPolicy editor projects/{{project}}/zones/{{zone}}/instantSnapshots/{{instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -16764,17 +16764,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/machineImageIamBinding:MachineImageIamBinding editor projects/{{project}}/global/machineImages/{{machine_image}}
+   * \$ pulumi import gcp:compute/machineImageIamBinding:MachineImageIamBinding editor projects/{{project}}/global/machineImages/{{machine_image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -17357,17 +17357,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/machineImageIamMember:MachineImageIamMember editor projects/{{project}}/global/machineImages/{{machine_image}}
+   * \$ pulumi import gcp:compute/machineImageIamMember:MachineImageIamMember editor projects/{{project}}/global/machineImages/{{machine_image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -17950,17 +17950,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_machine_image_iam_member.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_machine_image_iam_binding.editor &#34;projects/{{project}}/global/machineImages/{{machine_image}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/machineImageIamPolicy:MachineImageIamPolicy editor projects/{{project}}/global/machineImages/{{machine_image}}
+   * \$ pulumi import gcp:compute/machineImageIamPolicy:MachineImageIamPolicy editor projects/{{project}}/global/machineImages/{{machine_image}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -18546,17 +18546,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/networkFirewallPolicyIamBinding:NetworkFirewallPolicyIamBinding editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * \$ pulumi import gcp:compute/networkFirewallPolicyIamBinding:NetworkFirewallPolicyIamBinding editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -18861,17 +18861,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/networkFirewallPolicyIamMember:NetworkFirewallPolicyIamMember editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * \$ pulumi import gcp:compute/networkFirewallPolicyIamMember:NetworkFirewallPolicyIamMember editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -19176,17 +19176,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/networkFirewallPolicyIamPolicy:NetworkFirewallPolicyIamPolicy editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
+   * \$ pulumi import gcp:compute/networkFirewallPolicyIamPolicy:NetworkFirewallPolicyIamPolicy editor projects/{{project}}/global/firewallPolicies/{{network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -20487,17 +20487,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendBucketIamBinding:RegionBackendBucketIamBinding editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
+   * \$ pulumi import gcp:compute/regionBackendBucketIamBinding:RegionBackendBucketIamBinding editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -21096,17 +21096,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendBucketIamMember:RegionBackendBucketIamMember editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
+   * \$ pulumi import gcp:compute/regionBackendBucketIamMember:RegionBackendBucketIamMember editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -21705,17 +21705,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_bucket_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendBucketIamPolicy:RegionBackendBucketIamPolicy editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
+   * \$ pulumi import gcp:compute/regionBackendBucketIamPolicy:RegionBackendBucketIamPolicy editor projects/{{project}}/regions/{{region}}/backendBuckets/{{region_backend_bucket}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -22520,17 +22520,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendServiceIamBinding:RegionBackendServiceIamBinding editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
+   * \$ pulumi import gcp:compute/regionBackendServiceIamBinding:RegionBackendServiceIamBinding editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -23129,17 +23129,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendServiceIamMember:RegionBackendServiceIamMember editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
+   * \$ pulumi import gcp:compute/regionBackendServiceIamMember:RegionBackendServiceIamMember editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -23738,17 +23738,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
+   * \$ terraform import google_compute_region_backend_service_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}} roles/compute.admin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionBackendServiceIamPolicy:RegionBackendServiceIamPolicy editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
+   * \$ pulumi import gcp:compute/regionBackendServiceIamPolicy:RegionBackendServiceIamPolicy editor projects/{{project}}/regions/{{region}}/backendServices/{{region_backend_service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -24231,17 +24231,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionDiskIamBinding:RegionDiskIamBinding editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
+   * \$ pulumi import gcp:compute/regionDiskIamBinding:RegionDiskIamBinding editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -24553,17 +24553,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionDiskIamMember:RegionDiskIamMember editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
+   * \$ pulumi import gcp:compute/regionDiskIamMember:RegionDiskIamMember editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -24875,17 +24875,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_disk_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_disk_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/disks/{{region_disk}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionDiskIamPolicy:RegionDiskIamPolicy editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
+   * \$ pulumi import gcp:compute/regionDiskIamPolicy:RegionDiskIamPolicy editor projects/{{project}}/regions/{{region}}/disks/{{region_disk}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -25956,17 +25956,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionInstantSnapshotIamBinding:RegionInstantSnapshotIamBinding editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
+   * \$ pulumi import gcp:compute/regionInstantSnapshotIamBinding:RegionInstantSnapshotIamBinding editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -26559,17 +26559,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionInstantSnapshotIamMember:RegionInstantSnapshotIamMember editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
+   * \$ pulumi import gcp:compute/regionInstantSnapshotIamMember:RegionInstantSnapshotIamMember editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -27162,17 +27162,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
+   * \$ terraform import google_compute_region_instant_snapshot_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}} roles/compute.storageAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionInstantSnapshotIamPolicy:RegionInstantSnapshotIamPolicy editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
+   * \$ pulumi import gcp:compute/regionInstantSnapshotIamPolicy:RegionInstantSnapshotIamPolicy editor projects/{{project}}/regions/{{region}}/instantSnapshots/{{region_instant_snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -27603,17 +27603,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamBinding:RegionNetworkFirewallPolicyIamBinding editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * \$ pulumi import gcp:compute/regionNetworkFirewallPolicyIamBinding:RegionNetworkFirewallPolicyIamBinding editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -27925,17 +27925,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamMember:RegionNetworkFirewallPolicyIamMember editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * \$ pulumi import gcp:compute/regionNetworkFirewallPolicyIamMember:RegionNetworkFirewallPolicyIamMember editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -28247,17 +28247,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
+   * \$ terraform import google_compute_region_network_firewall_policy_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/regionNetworkFirewallPolicyIamPolicy:RegionNetworkFirewallPolicyIamPolicy editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
+   * \$ pulumi import gcp:compute/regionNetworkFirewallPolicyIamPolicy:RegionNetworkFirewallPolicyIamPolicy editor projects/{{project}}/regions/{{region}}/firewallPolicies/{{region_network_firewall_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -29984,17 +29984,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
+   * \$ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/snapshotIamBinding:SnapshotIamBinding editor projects/{{project}}/global/snapshots/{{snapshot}}
+   * \$ pulumi import gcp:compute/snapshotIamBinding:SnapshotIamBinding editor projects/{{project}}/global/snapshots/{{snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -30299,17 +30299,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
+   * \$ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/snapshotIamMember:SnapshotIamMember editor projects/{{project}}/global/snapshots/{{snapshot}}
+   * \$ pulumi import gcp:compute/snapshotIamMember:SnapshotIamMember editor projects/{{project}}/global/snapshots/{{snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -30614,17 +30614,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_snapshot_iam_member.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
+   * \$ terraform import google_compute_snapshot_iam_binding.editor &#34;projects/{{project}}/global/snapshots/{{snapshot}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/snapshotIamPolicy:SnapshotIamPolicy editor projects/{{project}}/global/snapshots/{{snapshot}}
+   * \$ pulumi import gcp:compute/snapshotIamPolicy:SnapshotIamPolicy editor projects/{{project}}/global/snapshots/{{snapshot}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -31302,17 +31302,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
+   * \$ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/storagePoolIamBinding:StoragePoolIamBinding editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
+   * \$ pulumi import gcp:compute/storagePoolIamBinding:StoragePoolIamBinding editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -31905,17 +31905,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
+   * \$ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/storagePoolIamMember:StoragePoolIamMember editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
+   * \$ pulumi import gcp:compute/storagePoolIamMember:StoragePoolIamMember editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -32508,17 +32508,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_storage_pool_iam_member.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
+   * \$ terraform import google_compute_storage_pool_iam_binding.editor &#34;projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}} roles/compute.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/storagePoolIamPolicy:StoragePoolIamPolicy editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
+   * \$ pulumi import gcp:compute/storagePoolIamPolicy:StoragePoolIamPolicy editor projects/{{project}}/zones/{{zone}}/storagePools/{{storage_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -33178,17 +33178,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
+   * \$ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/subnetworkIAMBinding:SubnetworkIAMBinding editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
+   * \$ pulumi import gcp:compute/subnetworkIAMBinding:SubnetworkIAMBinding editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -33778,17 +33778,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
+   * \$ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/subnetworkIAMMember:SubnetworkIAMMember editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
+   * \$ pulumi import gcp:compute/subnetworkIAMMember:SubnetworkIAMMember editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -34378,17 +34378,17 @@ object compute:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_compute_subnetwork_iam_member.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
+   * \$ terraform import google_compute_subnetwork_iam_binding.editor &#34;projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}} roles/compute.networkUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:compute/subnetworkIAMPolicy:SubnetworkIAMPolicy editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
+   * \$ pulumi import gcp:compute/subnetworkIAMPolicy:SubnetworkIAMPolicy editor projects/{{project}}/regions/{{region}}/subnetworks/{{subnetwork}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

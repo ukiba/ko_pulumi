@@ -353,17 +353,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamBinding:DataExchangeIamBinding editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamBinding:DataExchangeIamBinding editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -672,17 +672,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamMember:DataExchangeIamMember editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamMember:DataExchangeIamMember editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -991,17 +991,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_data_exchange_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamPolicy:DataExchangeIamPolicy editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/dataExchangeIamPolicy:DataExchangeIamPolicy editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1410,17 +1410,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/listingIamBinding:ListingIamBinding editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/listingIamBinding:ListingIamBinding editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1735,17 +1735,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/listingIamMember:ListingIamMember editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/listingIamMember:ListingIamMember editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2060,17 +2060,17 @@ object bigqueryanalyticshub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
+   * \$ terraform import google_bigquery_analytics_hub_listing_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:bigqueryanalyticshub/listingIamPolicy:ListingIamPolicy editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
+   * \$ pulumi import gcp:bigqueryanalyticshub/listingIamPolicy:ListingIamPolicy editor projects/{{project}}/locations/{{location}}/dataExchanges/{{data_exchange_id}}/listings/{{listing_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

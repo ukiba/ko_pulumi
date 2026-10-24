@@ -216,19 +216,19 @@ object apigateway:
    * For an empty `basePath` or, in other words, a root path (`/`):
    * 
    * ```sh
-   * $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/
+   * \$ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/
    * ```
    * 
    * For a non-root `basePath`:
    * 
    * ```sh
-   * $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/base-path
+   * \$ pulumi import aws:apigateway/basePathMapping:BasePathMapping example example.com/base-path
    * ```
    * 
    * For a non-root `basePath` and a private custom domain name:
    * 
    * ```sh
-   * $ pulumi import aws:apigateway/basePathMapping:BasePathMapping example api.internal.example.com/base-path/abcde12345
+   * \$ pulumi import aws:apigateway/basePathMapping:BasePathMapping example api.internal.example.com/base-path/abcde12345
    * ```
    */
   def BasePathMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -599,7 +599,7 @@ object apigateway:
    * Using `pulumi import`, import `aws.apigateway.Stage` using `REST-API-ID/STAGE-NAME`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:apigateway/stage:Stage example 12345abcde/example
+   * \$ pulumi import aws:apigateway/stage:Stage example 12345abcde/example
    * ```
    */
   def Stage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -643,7 +643,7 @@ object apigateway:
    * Using `pulumi import`, import AWS API Gateway Usage Plan using the `id`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:apigateway/usagePlan:UsagePlan myusageplan &lt;usage_plan_id&gt;
+   * \$ pulumi import aws:apigateway/usagePlan:UsagePlan myusageplan &lt;usage_plan_id&gt;
    * ```
    */
   def UsagePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

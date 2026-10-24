@@ -18,7 +18,7 @@ object keyvault:
    * If both an `objectId` and `applicationId` are specified, then the Access Policy can be imported using the following code:
    * 
    * ```sh
-   * $ pulumi import azure:keyvault/accessPolicy:AccessPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.KeyVault/vaults/test-vault/objectId/11111111-1111-1111-1111-111111111111/applicationId/22222222-2222-2222-2222-222222222222
+   * \$ pulumi import azure:keyvault/accessPolicy:AccessPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.KeyVault/vaults/test-vault/objectId/11111111-1111-1111-1111-111111111111/applicationId/22222222-2222-2222-2222-222222222222
    * ```
    * 
    * where `11111111-1111-1111-1111-111111111111` is the `objectId` and `22222222-2222-2222-2222-222222222222` is the `applicationId`.
@@ -28,7 +28,7 @@ object keyvault:
    * Access Policies with an `objectId` but no `applicationId` can be imported using the following command:
    * 
    * ```sh
-   * $ pulumi import azure:keyvault/accessPolicy:AccessPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.KeyVault/vaults/test-vault/objectId/11111111-1111-1111-1111-111111111111
+   * \$ pulumi import azure:keyvault/accessPolicy:AccessPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup1/providers/Microsoft.KeyVault/vaults/test-vault/objectId/11111111-1111-1111-1111-111111111111
    * ```
    * 
    * where `11111111-1111-1111-1111-111111111111` is the `objectId`.

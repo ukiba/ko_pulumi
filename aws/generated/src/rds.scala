@@ -531,7 +531,7 @@ object rds:
    * Using `pulumi import`, import DB proxy default target groups using the `dbProxyName`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
+   * \$ pulumi import aws:rds/proxyDefaultTargetGroup:ProxyDefaultTargetGroup example example
    * ```
    */
   def ProxyDefaultTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -580,13 +580,13 @@ object rds:
    * Instances:
    * 
    * ```sh
-   * $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/RDS_INSTANCE/example-instance
+   * \$ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/RDS_INSTANCE/example-instance
    * ```
    * 
    * Provisioned Clusters:
    * 
    * ```sh
-   * $ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/TRACKED_CLUSTER/example-cluster
+   * \$ pulumi import aws:rds/proxyTarget:ProxyTarget example example-proxy/default/TRACKED_CLUSTER/example-cluster
    * ```
    */
   def ProxyTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -901,7 +901,7 @@ object rds:
    * Using `pulumi import`, import `aws.rds.RoleAssociation` using the DB Instance Identifier and IAM Role ARN separated by a comma (`,`). For example:
    * 
    * ```sh
-   * $ pulumi import aws:rds/roleAssociation:RoleAssociation example my-db-instance,arn:aws:iam::123456789012:role/my-role
+   * \$ pulumi import aws:rds/roleAssociation:RoleAssociation example my-db-instance,arn:aws:iam::123456789012:role/my-role
    * ```
    */
   def RoleAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

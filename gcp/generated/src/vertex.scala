@@ -600,17 +600,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureGroupIamBinding:AiFeatureGroupIamBinding editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
+   * \$ pulumi import gcp:vertex/aiFeatureGroupIamBinding:AiFeatureGroupIamBinding editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -919,17 +919,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureGroupIamMember:AiFeatureGroupIamMember editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
+   * \$ pulumi import gcp:vertex/aiFeatureGroupIamMember:AiFeatureGroupIamMember editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1238,17 +1238,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_group_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureGroupIamPolicy:AiFeatureGroupIamPolicy editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
+   * \$ pulumi import gcp:vertex/aiFeatureGroupIamPolicy:AiFeatureGroupIamPolicy editor projects/{{project}}/locations/{{region}}/featureGroups/{{feature_group}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1690,17 +1690,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamBinding:AiFeatureOnlineStoreFeatureviewIamBinding editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamBinding:AiFeatureOnlineStoreFeatureviewIamBinding editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2014,17 +2014,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamMember:AiFeatureOnlineStoreFeatureviewIamMember editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamMember:AiFeatureOnlineStoreFeatureviewIamMember editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2338,17 +2338,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_member.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_featureview_iam_binding.editor &#34;{{feature_online_store}}/featureViews/{{feature_online_store_featureview}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamPolicy:AiFeatureOnlineStoreFeatureviewIamPolicy editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreFeatureviewIamPolicy:AiFeatureOnlineStoreFeatureviewIamPolicy editor {{feature_online_store}}/featureViews/{{feature_online_store_featureview}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2651,17 +2651,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreIamBinding:AiFeatureOnlineStoreIamBinding editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreIamBinding:AiFeatureOnlineStoreIamBinding editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2970,17 +2970,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreIamMember:AiFeatureOnlineStoreIamMember editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreIamMember:AiFeatureOnlineStoreIamMember editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3289,17 +3289,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_feature_online_store_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureOnlineStoreIamPolicy:AiFeatureOnlineStoreIamPolicy editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
+   * \$ pulumi import gcp:vertex/aiFeatureOnlineStoreIamPolicy:AiFeatureOnlineStoreIamPolicy editor projects/{{project}}/locations/{{region}}/featureOnlineStores/{{feature_online_store}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3691,17 +3691,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamBinding:AiFeatureStoreEntityTypeIamBinding editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamBinding:AiFeatureStoreEntityTypeIamBinding editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4009,17 +4009,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamMember:AiFeatureStoreEntityTypeIamMember editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamMember:AiFeatureStoreEntityTypeIamMember editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4327,17 +4327,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_member.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_entitytype_iam_binding.editor &#34;{{featurestore}}/entityTypes/{{featurestore_entitytype}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamPolicy:AiFeatureStoreEntityTypeIamPolicy editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreEntityTypeIamPolicy:AiFeatureStoreEntityTypeIamPolicy editor {{featurestore}}/entityTypes/{{featurestore_entitytype}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4646,17 +4646,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreIamBinding:AiFeatureStoreIamBinding editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreIamBinding:AiFeatureStoreIamBinding editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4971,17 +4971,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreIamMember:AiFeatureStoreIamMember editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreIamMember:AiFeatureStoreIamMember editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5296,17 +5296,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_featurestore_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiFeatureStoreIamPolicy:AiFeatureStoreIamPolicy editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
+   * \$ pulumi import gcp:vertex/aiFeatureStoreIamPolicy:AiFeatureStoreIamPolicy editor projects/{{project}}/locations/{{region}}/featurestores/{{featurestore}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6050,17 +6050,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiReasoningEngineIamBinding:AiReasoningEngineIamBinding editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
+   * \$ pulumi import gcp:vertex/aiReasoningEngineIamBinding:AiReasoningEngineIamBinding editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6369,17 +6369,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiReasoningEngineIamMember:AiReasoningEngineIamMember editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
+   * \$ pulumi import gcp:vertex/aiReasoningEngineIamMember:AiReasoningEngineIamMember editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6688,17 +6688,17 @@ object vertex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
+   * \$ terraform import google_vertex_ai_reasoning_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:vertex/aiReasoningEngineIamPolicy:AiReasoningEngineIamPolicy editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
+   * \$ pulumi import gcp:vertex/aiReasoningEngineIamPolicy:AiReasoningEngineIamPolicy editor projects/{{project}}/locations/{{region}}/reasoningEngines/{{reasoning_engine}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

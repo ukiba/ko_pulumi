@@ -375,17 +375,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiConfigIamBinding:ApiConfigIamBinding editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
+   * \$ pulumi import gcp:apigateway/apiConfigIamBinding:ApiConfigIamBinding editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -694,17 +694,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiConfigIamMember:ApiConfigIamMember editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
+   * \$ pulumi import gcp:apigateway/apiConfigIamMember:ApiConfigIamMember editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1013,17 +1013,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_config_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiConfigIamPolicy:ApiConfigIamPolicy editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
+   * \$ pulumi import gcp:apigateway/apiConfigIamPolicy:ApiConfigIamPolicy editor projects/{{project}}/locations/global/apis/{{api}}/configs/{{api_config}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1325,17 +1325,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiIamBinding:ApiIamBinding editor projects/{{project}}/locations/global/apis/{{api}}
+   * \$ pulumi import gcp:apigateway/apiIamBinding:ApiIamBinding editor projects/{{project}}/locations/global/apis/{{api}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1643,17 +1643,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiIamMember:ApiIamMember editor projects/{{project}}/locations/global/apis/{{api}}
+   * \$ pulumi import gcp:apigateway/apiIamMember:ApiIamMember editor projects/{{project}}/locations/global/apis/{{api}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1961,17 +1961,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_api_iam_member.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_api_iam_binding.editor &#34;projects/{{project}}/locations/global/apis/{{api}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/apiIamPolicy:ApiIamPolicy editor projects/{{project}}/locations/global/apis/{{api}}
+   * \$ pulumi import gcp:apigateway/apiIamPolicy:ApiIamPolicy editor projects/{{project}}/locations/global/apis/{{api}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2366,17 +2366,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/gatewayIamBinding:GatewayIamBinding editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
+   * \$ pulumi import gcp:apigateway/gatewayIamBinding:GatewayIamBinding editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2691,17 +2691,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/gatewayIamMember:GatewayIamMember editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
+   * \$ pulumi import gcp:apigateway/gatewayIamMember:GatewayIamMember editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3016,17 +3016,17 @@ object apigateway:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_member.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
+   * \$ terraform import google_api_gateway_gateway_iam_binding.editor &#34;projects/{{project}}/locations/{{region}}/gateways/{{gateway}} roles/apigateway.viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigateway/gatewayIamPolicy:GatewayIamPolicy editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
+   * \$ pulumi import gcp:apigateway/gatewayIamPolicy:GatewayIamPolicy editor projects/{{project}}/locations/{{region}}/gateways/{{gateway}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3054,7 +3054,7 @@ object apigateway:
     /**
      * @param fileDescriptorSet Input only. File descriptor set, generated by protoc.
      * To generate, use protoc with imports and source info included. For an example test.proto file, the following command would put the value in a new file named out.pb.
-     * $ protoc --include_imports --include_source_info test.proto -o out.pb
+     * \$ protoc --include_imports --include_source_info test.proto -o out.pb
      * Structure is documented below.
      * @return builder
      */

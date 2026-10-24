@@ -262,9 +262,9 @@ object vmwareengine:
    * When using the `pulumi import` command, Datastore can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:vmwareengine/datastore:Datastore default projects/{{project}}/locations/{{location}}/datastores/{{name}}
-   * $ pulumi import gcp:vmwareengine/datastore:Datastore default {{project}}/{{location}}/{{name}}
-   * $ pulumi import gcp:vmwareengine/datastore:Datastore default {{location}}/{{name}}
+   * \$ pulumi import gcp:vmwareengine/datastore:Datastore default projects/{{project}}/locations/{{location}}/datastores/{{name}}
+   * \$ pulumi import gcp:vmwareengine/datastore:Datastore default {{project}}/{{location}}/{{name}}
+   * \$ pulumi import gcp:vmwareengine/datastore:Datastore default {{location}}/{{name}}
    * ```
    */
   def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

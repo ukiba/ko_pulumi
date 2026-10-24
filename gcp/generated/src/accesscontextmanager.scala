@@ -445,17 +445,17 @@ object accesscontextmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:accesscontextmanager/accessPolicyIamBinding:AccessPolicyIamBinding editor accessPolicies/{{access_policy}}
+   * \$ pulumi import gcp:accesscontextmanager/accessPolicyIamBinding:AccessPolicyIamBinding editor accessPolicies/{{access_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -754,17 +754,17 @@ object accesscontextmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:accesscontextmanager/accessPolicyIamMember:AccessPolicyIamMember editor accessPolicies/{{access_policy}}
+   * \$ pulumi import gcp:accesscontextmanager/accessPolicyIamMember:AccessPolicyIamMember editor accessPolicies/{{access_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1063,17 +1063,17 @@ object accesscontextmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_member.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
+   * \$ terraform import google_access_context_manager_access_policy_iam_binding.editor &#34;accessPolicies/{{access_policy}} roles/accesscontextmanager.policyAdmin&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:accesscontextmanager/accessPolicyIamPolicy:AccessPolicyIamPolicy editor accessPolicies/{{access_policy}}
+   * \$ pulumi import gcp:accesscontextmanager/accessPolicyIamPolicy:AccessPolicyIamPolicy editor accessPolicies/{{access_policy}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1177,7 +1177,7 @@ object accesscontextmanager:
    * When using the `pulumi import` command, EgressPolicy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:accesscontextmanager/egressPolicy:EgressPolicy default {{egress_policy_name}}/{{resource}}
+   * \$ pulumi import gcp:accesscontextmanager/egressPolicy:EgressPolicy default {{egress_policy_name}}/{{resource}}
    * ```
    */
   def EgressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1248,7 +1248,7 @@ object accesscontextmanager:
    * When using the `pulumi import` command, IngressPolicy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:accesscontextmanager/ingressPolicy:IngressPolicy default {{ingress_policy_name}}/{{resource}}
+   * \$ pulumi import gcp:accesscontextmanager/ingressPolicy:IngressPolicy default {{ingress_policy_name}}/{{resource}}
    * ```
    */
   def IngressPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

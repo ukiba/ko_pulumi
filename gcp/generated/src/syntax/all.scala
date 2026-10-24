@@ -1,4 +1,3 @@
-
 package jp.ukiba.ko_pulumi.gcp.syntax.all
 
 import jp.ukiba.ko_pulumi

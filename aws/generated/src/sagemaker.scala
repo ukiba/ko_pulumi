@@ -332,7 +332,7 @@ object sagemaker:
    * Using `pulumi import`, import endpoints using the `name`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:sagemaker/endpoint:Endpoint test_endpoint my-endpoint
+   * \$ pulumi import aws:sagemaker/endpoint:Endpoint test_endpoint my-endpoint
    * ```
    */
   def Endpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -375,7 +375,7 @@ object sagemaker:
    * Using `pulumi import`, import Endpoint Configurations using `name`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:sagemaker/endpointConfiguration:EndpointConfiguration example example-endpoint-config
+   * \$ pulumi import aws:sagemaker/endpointConfiguration:EndpointConfiguration example example-endpoint-config
    * ```
    */
   def EndpointConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

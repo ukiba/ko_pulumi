@@ -1533,17 +1533,17 @@ object kms:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:kms/ekmConnectionIamBinding:EkmConnectionIamBinding editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
+   * \$ pulumi import gcp:kms/ekmConnectionIamBinding:EkmConnectionIamBinding editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2135,17 +2135,17 @@ object kms:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:kms/ekmConnectionIamMember:EkmConnectionIamMember editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
+   * \$ pulumi import gcp:kms/ekmConnectionIamMember:EkmConnectionIamMember editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2737,17 +2737,17 @@ object kms:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
+   * \$ terraform import google_kms_ekm_connection_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:kms/ekmConnectionIamPolicy:EkmConnectionIamPolicy editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
+   * \$ pulumi import gcp:kms/ekmConnectionIamPolicy:EkmConnectionIamPolicy editor projects/{{project}}/locations/{{location}}/ekmConnections/{{ekm_connection}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

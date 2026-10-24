@@ -1927,7 +1927,7 @@ object diagflow:
 
     /**
      * @param triggerFulfillment The fulfillment to be triggered.
-     * When the answers from the Knowledge Connector are selected by Dialogflow, you can utitlize the request scoped parameter $request.knowledge.answers (contains up to the 5 highest confidence answers) and $request.knowledge.questions (contains the corresponding questions) to construct the fulfillment.
+     * When the answers from the Knowledge Connector are selected by Dialogflow, you can utitlize the request scoped parameter \$request.knowledge.answers (contains up to the 5 highest confidence answers) and \$request.knowledge.questions (contains the corresponding questions) to construct the fulfillment.
      * Structure is documented below.
      * @return builder
      */
@@ -3013,7 +3013,7 @@ object diagflow:
 
     /**
      * @param triggerFulfillment The fulfillment to be triggered.
-     * When the answers from the Knowledge Connector are selected by Dialogflow, you can utitlize the request scoped parameter $request.knowledge.answers (contains up to the 5 highest confidence answers) and $request.knowledge.questions (contains the corresponding questions) to construct the fulfillment.
+     * When the answers from the Knowledge Connector are selected by Dialogflow, you can utitlize the request scoped parameter \$request.knowledge.answers (contains up to the 5 highest confidence answers) and \$request.knowledge.questions (contains the corresponding questions) to construct the fulfillment.
      * Structure is documented below.
      * @return builder
      */

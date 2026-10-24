@@ -59,8 +59,8 @@ object organizations:
    * When using the `pulumi import` command, Folders can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:organizations/folder:Folder default {{folder_id}}
-   * $ pulumi import gcp:organizations/folder:Folder default folders/{{folder_id}}
+   * \$ pulumi import gcp:organizations/folder:Folder default {{folder_id}}
+   * \$ pulumi import gcp:organizations/folder:Folder default folders/{{folder_id}}
    * ```
    */
   def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

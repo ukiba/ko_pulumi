@@ -141,7 +141,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       SplitConf(('A', '_'), "syntax/all_nonlowercase.scala"),
     )
 
-    val `all.scala` = dstRoot.resolve(s"syntax/all.scala")
+    val `all.scala` = dstRoot.resolve("syntax/all.scala")
 
     // CustomResourceMember is not exported,
     // to avoid `two or more overloaded variants of method Cluster have default arguments`
@@ -172,7 +172,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           |
           |import jp.ukiba.ko_pulumi
           |
-          |""".stripMargin)
+          |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
 
       exportedFuncs.toSeq.sorted.foreach: func =>
         mainWriter.append(s"export ko_pulumi.$packageName.$func\n")
@@ -218,6 +218,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     )
     def isArgsType(typeMirror: TypeMirror) = argsSuperclasses.exists(types.isSubtype(typeMirror, _))
 
+    // super.visitClass is not called, so nested classes (e.g. Builder) are not visited;
+    // they are reached through their enclosing class instead (see builderOf)
     override def visitClass(cls: ClassTree, param: Unit) =
       val currentPath = getCurrentPath
       val clsElem = trees.getElement(currentPath).asInstanceOf[TypeElement]
@@ -552,10 +554,11 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
   def scaladoc(lines: Seq[String], indent: String): String =
     val outLines = lines
-      .map(_.dropRightWhile(_.isWhitespace).toString)  // remove trailing spaces from each line
+      .map(_.stripTrailing)  // remove trailing spaces from each line
       .dropWhile(_.forall(_.isWhitespace))
       .dropRightWhile(_.forall(_.isWhitespace))
       .map(_.replace("/*", "&#47;&#42;"))  // avoid `unclosed comment` error (scaladoc can be nested unlike javadoc)
+      .map(_.replace("$", "\\$"))  // avoid scaladoc variable expansion, e.g. `$LATEST`
     if outLines.isEmpty then  // e.g. only examples
       ""
     else if outLines.size == 1 then

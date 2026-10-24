@@ -35,17 +35,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/consumersIamBinding:ConsumersIamBinding editor services/{{service_name}}/consumers/{{consumer_project}}
+   * \$ pulumi import gcp:endpoints/consumersIamBinding:ConsumersIamBinding editor services/{{service_name}}/consumers/{{consumer_project}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -95,17 +95,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/consumersIamMember:ConsumersIamMember editor services/{{service_name}}/consumers/{{consumer_project}}
+   * \$ pulumi import gcp:endpoints/consumersIamMember:ConsumersIamMember editor services/{{service_name}}/consumers/{{consumer_project}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -155,17 +155,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_member.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
+   * \$ terraform import google_endpoints_service_consumers_iam_binding.editor &#34;services/{{service_name}}/consumers/{{consumer_project}} roles/servicemanagement.serviceController&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/consumersIamPolicy:ConsumersIamPolicy editor services/{{service_name}}/consumers/{{consumer_project}}
+   * \$ pulumi import gcp:endpoints/consumersIamPolicy:ConsumersIamPolicy editor services/{{service_name}}/consumers/{{consumer_project}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -494,17 +494,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
+   * \$ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/serviceIamBinding:ServiceIamBinding editor services/{{service_name}}
+   * \$ pulumi import gcp:endpoints/serviceIamBinding:ServiceIamBinding editor services/{{service_name}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -800,17 +800,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
+   * \$ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/serviceIamMember:ServiceIamMember editor services/{{service_name}}
+   * \$ pulumi import gcp:endpoints/serviceIamMember:ServiceIamMember editor services/{{service_name}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1106,17 +1106,17 @@ object endpoints:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_endpoints_service_iam_member.editor &#34;services/{{service_name}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
+   * \$ terraform import google_endpoints_service_iam_binding.editor &#34;services/{{service_name}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:endpoints/serviceIamPolicy:ServiceIamPolicy editor services/{{service_name}}
+   * \$ pulumi import gcp:endpoints/serviceIamPolicy:ServiceIamPolicy editor services/{{service_name}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

@@ -302,17 +302,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/aspectTypeIamBinding:AspectTypeIamBinding editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
+   * \$ pulumi import gcp:dataplex/aspectTypeIamBinding:AspectTypeIamBinding editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -621,17 +621,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/aspectTypeIamMember:AspectTypeIamMember editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
+   * \$ pulumi import gcp:dataplex/aspectTypeIamMember:AspectTypeIamMember editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -940,17 +940,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_aspect_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/aspectTypeIamPolicy:AspectTypeIamPolicy editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
+   * \$ pulumi import gcp:dataplex/aspectTypeIamPolicy:AspectTypeIamPolicy editor projects/{{project}}/locations/{{location}}/aspectTypes/{{aspect_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1295,17 +1295,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/assetIamBinding:AssetIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
+   * \$ pulumi import gcp:dataplex/assetIamBinding:AssetIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1626,17 +1626,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/assetIamMember:AssetIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
+   * \$ pulumi import gcp:dataplex/assetIamMember:AssetIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1957,17 +1957,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_asset_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_asset_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/assetIamPolicy:AssetIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
+   * \$ pulumi import gcp:dataplex/assetIamPolicy:AssetIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{dataplex_zone}}/assets/{{asset}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2367,17 +2367,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/dataProductIamBinding:DataProductIamBinding editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * \$ pulumi import gcp:dataplex/dataProductIamBinding:DataProductIamBinding editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2686,17 +2686,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/dataProductIamMember:DataProductIamMember editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * \$ pulumi import gcp:dataplex/dataProductIamMember:DataProductIamMember editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3005,17 +3005,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_data_product_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_data_product_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/dataProductIamPolicy:DataProductIamPolicy editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
+   * \$ pulumi import gcp:dataplex/dataProductIamPolicy:DataProductIamPolicy editor projects/{{project}}/locations/{{location}}/dataProducts/{{data_product_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3624,17 +3624,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/datascanIamBinding:DatascanIamBinding editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
+   * \$ pulumi import gcp:dataplex/datascanIamBinding:DatascanIamBinding editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3943,17 +3943,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/datascanIamMember:DatascanIamMember editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
+   * \$ pulumi import gcp:dataplex/datascanIamMember:DatascanIamMember editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4262,17 +4262,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_datascan_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_datascan_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/datascanIamPolicy:DatascanIamPolicy editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
+   * \$ pulumi import gcp:dataplex/datascanIamPolicy:DatascanIamPolicy editor projects/{{project}}/locations/{{location}}/dataScans/{{data_scan_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4629,17 +4629,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryGroupIamBinding:EntryGroupIamBinding editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
+   * \$ pulumi import gcp:dataplex/entryGroupIamBinding:EntryGroupIamBinding editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4948,17 +4948,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryGroupIamMember:EntryGroupIamMember editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
+   * \$ pulumi import gcp:dataplex/entryGroupIamMember:EntryGroupIamMember editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5267,17 +5267,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryGroupIamPolicy:EntryGroupIamPolicy editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
+   * \$ pulumi import gcp:dataplex/entryGroupIamPolicy:EntryGroupIamPolicy editor projects/{{project}}/locations/{{location}}/entryGroups/{{entry_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5636,17 +5636,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryTypeIamBinding:EntryTypeIamBinding editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
+   * \$ pulumi import gcp:dataplex/entryTypeIamBinding:EntryTypeIamBinding editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5955,17 +5955,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryTypeIamMember:EntryTypeIamMember editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
+   * \$ pulumi import gcp:dataplex/entryTypeIamMember:EntryTypeIamMember editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6274,17 +6274,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_entry_type_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/entryTypeIamPolicy:EntryTypeIamPolicy editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
+   * \$ pulumi import gcp:dataplex/entryTypeIamPolicy:EntryTypeIamPolicy editor projects/{{project}}/locations/{{location}}/entryTypes/{{entry_type_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6603,17 +6603,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/glossaryIamBinding:GlossaryIamBinding editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
+   * \$ pulumi import gcp:dataplex/glossaryIamBinding:GlossaryIamBinding editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6922,17 +6922,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/glossaryIamMember:GlossaryIamMember editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
+   * \$ pulumi import gcp:dataplex/glossaryIamMember:GlossaryIamMember editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -7241,17 +7241,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_glossary_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_glossary_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/glossaryIamPolicy:GlossaryIamPolicy editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
+   * \$ pulumi import gcp:dataplex/glossaryIamPolicy:GlossaryIamPolicy editor projects/{{project}}/locations/{{location}}/glossaries/{{glossary_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -7583,17 +7583,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/lakeIamBinding:LakeIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
+   * \$ pulumi import gcp:dataplex/lakeIamBinding:LakeIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -7902,17 +7902,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/lakeIamMember:LakeIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
+   * \$ pulumi import gcp:dataplex/lakeIamMember:LakeIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -8221,17 +8221,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_lake_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_lake_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/lakeIamPolicy:LakeIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
+   * \$ pulumi import gcp:dataplex/lakeIamPolicy:LakeIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -8626,17 +8626,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/taskIamBinding:TaskIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
+   * \$ pulumi import gcp:dataplex/taskIamBinding:TaskIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -8951,17 +8951,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/taskIamMember:TaskIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
+   * \$ pulumi import gcp:dataplex/taskIamMember:TaskIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -9276,17 +9276,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_task_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_task_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/taskIamPolicy:TaskIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
+   * \$ pulumi import gcp:dataplex/taskIamPolicy:TaskIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/tasks/{{task_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -9625,17 +9625,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/zoneIamBinding:ZoneIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
+   * \$ pulumi import gcp:dataplex/zoneIamBinding:ZoneIamBinding editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -9950,17 +9950,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/zoneIamMember:ZoneIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
+   * \$ pulumi import gcp:dataplex/zoneIamMember:ZoneIamMember editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -10275,17 +10275,17 @@ object dataplex:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataplex_zone_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
+   * \$ terraform import google_dataplex_zone_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataplex/zoneIamPolicy:ZoneIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
+   * \$ pulumi import gcp:dataplex/zoneIamPolicy:ZoneIamPolicy editor projects/{{project}}/locations/{{location}}/lakes/{{lake}}/zones/{{zone}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

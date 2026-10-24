@@ -12,7 +12,7 @@ object cloudformation:
    * Using `pulumi import`, import `aws.cloudformation.CloudFormationType` using the type version ARN. For example:
    * 
    * ```sh
-   * $ pulumi import aws:cloudformation/cloudFormationType:CloudFormationType example arn:aws:cloudformation:us-east-1:123456789012:type/resource/ExampleCompany-ExampleService-ExampleType/1
+   * \$ pulumi import aws:cloudformation/cloudFormationType:CloudFormationType example arn:aws:cloudformation:us-east-1:123456789012:type/resource/ExampleCompany-ExampleService-ExampleType/1
    * ```
    */
   def CloudFormationType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

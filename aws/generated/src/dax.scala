@@ -65,7 +65,7 @@ object dax:
     /**
      * @param nodes List of node objects including `id`, `address`, `port` and
      * `availabilityZone`. Referenceable e.g., as
-     * `${aws_dax_cluster.test.nodes.0.address}`
+     * `\${aws_dax_cluster.test.nodes.0.address}`
      * @return builder
      */
     def nodes(args: Endofunction[com.pulumi.aws.dax.inputs.ClusterNodeArgs.Builder]*):

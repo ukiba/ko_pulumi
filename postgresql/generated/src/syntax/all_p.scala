@@ -1,4 +1,3 @@
-
 package jp.ukiba.ko_pulumi.postgresql.syntax.all
 
 import jp.ukiba.ko_pulumi

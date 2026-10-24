@@ -334,17 +334,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/featureIamBinding:FeatureIamBinding editor projects/{{project}}/locations/{{location}}/features/{{feature}}
+   * \$ pulumi import gcp:gkehub/featureIamBinding:FeatureIamBinding editor projects/{{project}}/locations/{{location}}/features/{{feature}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -656,17 +656,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/featureIamMember:FeatureIamMember editor projects/{{project}}/locations/{{location}}/features/{{feature}}
+   * \$ pulumi import gcp:gkehub/featureIamMember:FeatureIamMember editor projects/{{project}}/locations/{{location}}/features/{{feature}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -978,17 +978,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_feature_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_feature_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/features/{{feature}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/featureIamPolicy:FeatureIamPolicy editor projects/{{project}}/locations/{{location}}/features/{{feature}}
+   * \$ pulumi import gcp:gkehub/featureIamPolicy:FeatureIamPolicy editor projects/{{project}}/locations/{{location}}/features/{{feature}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1499,17 +1499,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/membershipIamBinding:MembershipIamBinding editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
+   * \$ pulumi import gcp:gkehub/membershipIamBinding:MembershipIamBinding editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1818,17 +1818,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/membershipIamMember:MembershipIamMember editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
+   * \$ pulumi import gcp:gkehub/membershipIamMember:MembershipIamMember editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2137,17 +2137,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_membership_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_membership_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/memberships/{{membership_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/membershipIamPolicy:MembershipIamPolicy editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
+   * \$ pulumi import gcp:gkehub/membershipIamPolicy:MembershipIamPolicy editor projects/{{project}}/locations/{{location}}/memberships/{{membership_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2553,17 +2553,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/scopeIamBinding:ScopeIamBinding editor projects/{{project}}/locations/global/scopes/{{scope_id}}
+   * \$ pulumi import gcp:gkehub/scopeIamBinding:ScopeIamBinding editor projects/{{project}}/locations/global/scopes/{{scope_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2865,17 +2865,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/scopeIamMember:ScopeIamMember editor projects/{{project}}/locations/global/scopes/{{scope_id}}
+   * \$ pulumi import gcp:gkehub/scopeIamMember:ScopeIamMember editor projects/{{project}}/locations/global/scopes/{{scope_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3177,17 +3177,17 @@ object gkehub:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gke_hub_scope_iam_member.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
+   * \$ terraform import google_gke_hub_scope_iam_binding.editor &#34;projects/{{project}}/locations/global/scopes/{{scope_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gkehub/scopeIamPolicy:ScopeIamPolicy editor projects/{{project}}/locations/global/scopes/{{scope_id}}
+   * \$ pulumi import gcp:gkehub/scopeIamPolicy:ScopeIamPolicy editor projects/{{project}}/locations/global/scopes/{{scope_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

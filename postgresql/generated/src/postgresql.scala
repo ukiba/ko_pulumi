@@ -472,7 +472,7 @@ object postgresql:
    * command:
    * 
    * ```sh
-   * $ pulumi import postgresql:index/function:Function function_foo &#34;my_database.my_schema.my_function_name(arguments)&#34;
+   * \$ pulumi import postgresql:index/function:Function function_foo &#34;my_database.my_schema.my_function_name(arguments)&#34;
    * ```
    * 
    * Where `myDatabase` is the name of the database containing the schema,

@@ -45,7 +45,7 @@ object serviceusage:
    * When using the `pulumi import` command, ConsumerPolicy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:serviceusage/v2ConsumerPolicy:V2ConsumerPolicy default {{parent}}/consumerPolicies/{{name}}
+   * \$ pulumi import gcp:serviceusage/v2ConsumerPolicy:V2ConsumerPolicy default {{parent}}/consumerPolicies/{{name}}
    * ```
    */
   def V2ConsumerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

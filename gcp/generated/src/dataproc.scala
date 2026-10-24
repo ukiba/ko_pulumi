@@ -333,17 +333,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/autoscalingPolicyIamBinding:AutoscalingPolicyIamBinding editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
+   * \$ pulumi import gcp:dataproc/autoscalingPolicyIamBinding:AutoscalingPolicyIamBinding editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -652,17 +652,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/autoscalingPolicyIamMember:AutoscalingPolicyIamMember editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
+   * \$ pulumi import gcp:dataproc/autoscalingPolicyIamMember:AutoscalingPolicyIamMember editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -971,17 +971,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_autoscaling_policy_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/autoscalingPolicyIamPolicy:AutoscalingPolicyIamPolicy editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
+   * \$ pulumi import gcp:dataproc/autoscalingPolicyIamPolicy:AutoscalingPolicyIamPolicy editor projects/{{project}}/locations/{{location}}/autoscalingPolicies/{{policy_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3435,17 +3435,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreDatabaseIamBinding:MetastoreDatabaseIamBinding editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
+   * \$ pulumi import gcp:dataproc/metastoreDatabaseIamBinding:MetastoreDatabaseIamBinding editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3760,17 +3760,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreDatabaseIamMember:MetastoreDatabaseIamMember editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
+   * \$ pulumi import gcp:dataproc/metastoreDatabaseIamMember:MetastoreDatabaseIamMember editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4085,17 +4085,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_database_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreDatabaseIamPolicy:MetastoreDatabaseIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
+   * \$ pulumi import gcp:dataproc/metastoreDatabaseIamPolicy:MetastoreDatabaseIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{database}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4424,17 +4424,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreFederationIamBinding:MetastoreFederationIamBinding editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
+   * \$ pulumi import gcp:dataproc/metastoreFederationIamBinding:MetastoreFederationIamBinding editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4743,17 +4743,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreFederationIamMember:MetastoreFederationIamMember editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
+   * \$ pulumi import gcp:dataproc/metastoreFederationIamMember:MetastoreFederationIamMember editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5062,17 +5062,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_federation_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/federations/{{federation_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreFederationIamPolicy:MetastoreFederationIamPolicy editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
+   * \$ pulumi import gcp:dataproc/metastoreFederationIamPolicy:MetastoreFederationIamPolicy editor projects/{{project}}/locations/{{location}}/federations/{{federation_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5482,17 +5482,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreServiceIamBinding:MetastoreServiceIamBinding editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
+   * \$ pulumi import gcp:dataproc/metastoreServiceIamBinding:MetastoreServiceIamBinding editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -5801,17 +5801,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreServiceIamMember:MetastoreServiceIamMember editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
+   * \$ pulumi import gcp:dataproc/metastoreServiceIamMember:MetastoreServiceIamMember editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6120,17 +6120,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service_id}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreServiceIamPolicy:MetastoreServiceIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
+   * \$ pulumi import gcp:dataproc/metastoreServiceIamPolicy:MetastoreServiceIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{service_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6445,17 +6445,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreTableIamBinding:MetastoreTableIamBinding editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
+   * \$ pulumi import gcp:dataproc/metastoreTableIamBinding:MetastoreTableIamBinding editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -6776,17 +6776,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreTableIamMember:MetastoreTableIamMember editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
+   * \$ pulumi import gcp:dataproc/metastoreTableIamMember:MetastoreTableIamMember editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -7107,17 +7107,17 @@ object dataproc:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
+   * \$ terraform import google_dataproc_metastore_table_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:dataproc/metastoreTableIamPolicy:MetastoreTableIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
+   * \$ pulumi import gcp:dataproc/metastoreTableIamPolicy:MetastoreTableIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{serviceId}}/databases/{{databaseId}}/tables/{{table}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -8930,7 +8930,7 @@ object dataproc:
       builder.gkeClusterConfig(args(argsBuilder).build)
 
     /**
-     * @param initializationActions Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node&#39;s `role` metadata to run an executable on a master or worker node, as shown below using `curl` (you can also use `wget`): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if ; then ... master specific actions ... else ... worker specific actions ... fi
+     * @param initializationActions Commands to execute on each node after config is completed. By default, executables are run on master and all worker nodes. You can test a node&#39;s `role` metadata to run an executable on a master or worker node, as shown below using `curl` (you can also use `wget`): ROLE=\$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if ; then ... master specific actions ... else ... worker specific actions ... fi
      * @return builder
      */
     def initializationActions(args: Endofunction[com.pulumi.gcp.dataproc.inputs.WorkflowTemplatePlacementManagedClusterConfigInitializationActionArgs.Builder]*):

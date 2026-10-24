@@ -378,17 +378,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamBinding:DataAnalyticsDataAgentIamBinding editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * \$ pulumi import gcp:gemini/dataAnalyticsDataAgentIamBinding:DataAnalyticsDataAgentIamBinding editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -697,17 +697,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamMember:DataAnalyticsDataAgentIamMember editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * \$ pulumi import gcp:gemini/dataAnalyticsDataAgentIamMember:DataAnalyticsDataAgentIamMember editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1016,17 +1016,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
+   * \$ terraform import google_gemini_data_analytics_data_agent_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}} roles/geminidataanalytics.dataAgentUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/dataAnalyticsDataAgentIamPolicy:DataAnalyticsDataAgentIamPolicy editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
+   * \$ pulumi import gcp:gemini/dataAnalyticsDataAgentIamPolicy:DataAnalyticsDataAgentIamPolicy editor projects/{{project}}/locations/{{location}}/dataAgents/{{data_agent_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1563,17 +1563,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
+   * \$ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/repositoryGroupIamBinding:RepositoryGroupIamBinding editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
+   * \$ pulumi import gcp:gemini/repositoryGroupIamBinding:RepositoryGroupIamBinding editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1888,17 +1888,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
+   * \$ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/repositoryGroupIamMember:RepositoryGroupIamMember editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
+   * \$ pulumi import gcp:gemini/repositoryGroupIamMember:RepositoryGroupIamMember editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2213,17 +2213,17 @@ object gemini:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_gemini_repository_group_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
+   * \$ terraform import google_gemini_repository_group_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}} roles/cloudaicompanion.repositoryGroupsUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:gemini/repositoryGroupIamPolicy:RepositoryGroupIamPolicy editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
+   * \$ pulumi import gcp:gemini/repositoryGroupIamPolicy:RepositoryGroupIamPolicy editor projects/{{project}}/locations/{{location}}/codeRepositoryIndexes/{{code_repository_index}}/repositoryGroups/{{repository_group_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

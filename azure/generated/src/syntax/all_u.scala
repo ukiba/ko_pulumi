@@ -1,4 +1,3 @@
-
 package jp.ukiba.ko_pulumi.azure.syntax.all
 
 import jp.ukiba.ko_pulumi

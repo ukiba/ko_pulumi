@@ -988,7 +988,7 @@ object billing:
    * When using the `pulumi import` command, Billing Subaccounts can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:billing/subAccount:SubAccount default billingAccounts/{billing_account_id}
+   * \$ pulumi import gcp:billing/subAccount:SubAccount default billingAccounts/{billing_account_id}
    * ```
    */
   def SubAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

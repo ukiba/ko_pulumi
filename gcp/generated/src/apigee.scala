@@ -48,8 +48,8 @@ object apigee:
    * When using the `pulumi import` command, API proxy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/api:Api default {{org_id}}/apis/{{name}}
-   * $ pulumi import gcp:apigee/api:Api default {{org_id}}/{{name}}
+   * \$ pulumi import gcp:apigee/api:Api default {{org_id}}/apis/{{name}}
+   * \$ pulumi import gcp:apigee/api:Api default {{org_id}}/{{name}}
    * ```
    */
   def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -426,8 +426,8 @@ object apigee:
    * When using the `pulumi import` command, EnvKeystore can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/envKeystore:EnvKeystore default {{env_id}}/keystores/{{name}}
-   * $ pulumi import gcp:apigee/envKeystore:EnvKeystore default {{env_id}}/{{name}}
+   * \$ pulumi import gcp:apigee/envKeystore:EnvKeystore default {{env_id}}/keystores/{{name}}
+   * \$ pulumi import gcp:apigee/envKeystore:EnvKeystore default {{env_id}}/{{name}}
    * ```
    */
   def EnvKeystore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -459,8 +459,8 @@ object apigee:
    * When using the `pulumi import` command, EnvReferences can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/envReferences:EnvReferences default {{env_id}}/references/{{name}}
-   * $ pulumi import gcp:apigee/envReferences:EnvReferences default {{env_id}}/{{name}}
+   * \$ pulumi import gcp:apigee/envReferences:EnvReferences default {{env_id}}/references/{{name}}
+   * \$ pulumi import gcp:apigee/envReferences:EnvReferences default {{env_id}}/{{name}}
    * ```
    */
   def EnvReferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -861,17 +861,17 @@ object apigee:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
+   * \$ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigee/environmentIamBinding:EnvironmentIamBinding editor {{org_id}}/environments/{{environment}}
+   * \$ pulumi import gcp:apigee/environmentIamBinding:EnvironmentIamBinding editor {{org_id}}/environments/{{environment}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1173,17 +1173,17 @@ object apigee:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
+   * \$ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigee/environmentIamMember:EnvironmentIamMember editor {{org_id}}/environments/{{environment}}
+   * \$ pulumi import gcp:apigee/environmentIamMember:EnvironmentIamMember editor {{org_id}}/environments/{{environment}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1485,17 +1485,17 @@ object apigee:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_apigee_environment_iam_member.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
+   * \$ terraform import google_apigee_environment_iam_binding.editor &#34;{{org_id}}/environments/{{environment}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:apigee/environmentIamPolicy:EnvironmentIamPolicy editor {{org_id}}/environments/{{environment}}
+   * \$ pulumi import gcp:apigee/environmentIamPolicy:EnvironmentIamPolicy editor {{org_id}}/environments/{{environment}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1565,8 +1565,8 @@ object apigee:
    * When using the `pulumi import` command, Flowhook can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/flowhook:Flowhook default organizations/{{org_id}}/environments/{{environment}}/flowhooks/{{flow_hook_point}}
-   * $ pulumi import gcp:apigee/flowhook:Flowhook default {{org_id}}/{{environment}}/{{flow_hook_point}}
+   * \$ pulumi import gcp:apigee/flowhook:Flowhook default organizations/{{org_id}}/environments/{{environment}}/flowhooks/{{flow_hook_point}}
+   * \$ pulumi import gcp:apigee/flowhook:Flowhook default {{org_id}}/{{environment}}/{{flow_hook_point}}
    * ```
    */
   def Flowhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1642,8 +1642,8 @@ object apigee:
    * When using the `pulumi import` command, KeystoresAliasesKeyCertFile can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile default organizations/{{org_id}}/environments/{{environment}}/keystores/{{keystore}}/aliases/{{alias}}
-   * $ pulumi import gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
+   * \$ pulumi import gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile default organizations/{{org_id}}/environments/{{environment}}/keystores/{{keystore}}/aliases/{{alias}}
+   * \$ pulumi import gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
    * ```
    */
   def KeystoresAliasesKeyCertFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1678,8 +1678,8 @@ object apigee:
    * When using the `pulumi import` command, KeystoresAliasesPkcs12 can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12 default organizations/{{org_id}}/environments/{{environment}}/keystores/{{keystore}}/aliases/{{alias}}
-   * $ pulumi import gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12 default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
+   * \$ pulumi import gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12 default organizations/{{org_id}}/environments/{{environment}}/keystores/{{keystore}}/aliases/{{alias}}
+   * \$ pulumi import gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12 default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
    * ```
    */
   def KeystoresAliasesPkcs12(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
@@ -1951,8 +1951,8 @@ object apigee:
    * When using the `pulumi import` command, SharedflowDeployment can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:apigee/sharedflowDeployment:SharedflowDeployment default organizations/{{org_id}}/environments/{{environment}}/sharedflows/{{sharedflow_id}}/revisions/{{revision}}/deployments/{{name}}
-   * $ pulumi import gcp:apigee/sharedflowDeployment:SharedflowDeployment default {{org_id}}/{{environment}}/{{sharedflow_id}}/{{revision}}/{{name}}
+   * \$ pulumi import gcp:apigee/sharedflowDeployment:SharedflowDeployment default organizations/{{org_id}}/environments/{{environment}}/sharedflows/{{sharedflow_id}}/revisions/{{revision}}/deployments/{{name}}
+   * \$ pulumi import gcp:apigee/sharedflowDeployment:SharedflowDeployment default {{org_id}}/{{environment}}/{{sharedflow_id}}/{{revision}}/{{name}}
    * ```
    */
   def SharedflowDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

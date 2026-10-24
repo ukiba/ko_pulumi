@@ -444,17 +444,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/jobIamBinding:JobIamBinding editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
+   * \$ pulumi import gcp:cloudrunv2/jobIamBinding:JobIamBinding editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -766,17 +766,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/jobIamMember:JobIamMember editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
+   * \$ pulumi import gcp:cloudrunv2/jobIamMember:JobIamMember editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1088,17 +1088,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_job_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/jobs/{{job}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/jobIamPolicy:JobIamPolicy editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
+   * \$ pulumi import gcp:cloudrunv2/jobIamPolicy:JobIamPolicy editor projects/{{project}}/locations/{{location}}/jobs/{{job}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1491,17 +1491,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/serviceIamBinding:ServiceIamBinding editor projects/{{project}}/locations/{{location}}/services/{{service}}
+   * \$ pulumi import gcp:cloudrunv2/serviceIamBinding:ServiceIamBinding editor projects/{{project}}/locations/{{location}}/services/{{service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1813,17 +1813,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/serviceIamMember:ServiceIamMember editor projects/{{project}}/locations/{{location}}/services/{{service}}
+   * \$ pulumi import gcp:cloudrunv2/serviceIamMember:ServiceIamMember editor projects/{{project}}/locations/{{location}}/services/{{service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2135,17 +2135,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_service_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/services/{{service}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/serviceIamPolicy:ServiceIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{service}}
+   * \$ pulumi import gcp:cloudrunv2/serviceIamPolicy:ServiceIamPolicy editor projects/{{project}}/locations/{{location}}/services/{{service}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2511,17 +2511,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/workerPoolIamBinding:WorkerPoolIamBinding editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
+   * \$ pulumi import gcp:cloudrunv2/workerPoolIamBinding:WorkerPoolIamBinding editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2833,17 +2833,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/workerPoolIamMember:WorkerPoolIamMember editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
+   * \$ pulumi import gcp:cloudrunv2/workerPoolIamMember:WorkerPoolIamMember editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3155,17 +3155,17 @@ object cloudrunv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
+   * \$ terraform import google_cloud_run_v2_worker_pool_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudrunv2/workerPoolIamPolicy:WorkerPoolIamPolicy editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
+   * \$ pulumi import gcp:cloudrunv2/workerPoolIamPolicy:WorkerPoolIamPolicy editor projects/{{project}}/locations/{{location}}/workerPools/{{worker_pool}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

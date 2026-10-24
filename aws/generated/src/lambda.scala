@@ -545,7 +545,7 @@ object lambda:
     /**
      * Provides details about an AWS Lambda Function. Use this data source to obtain information about an existing Lambda function for use in other resources or as a reference for function configurations.
      * 
-     * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `$LATEST` if no published version exists.
+     * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `\$LATEST` if no published version exists.
      */
     inline def getFunction(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionArgs.Builder] = scala.Predef.identity):
         com.pulumi.core.Output[com.pulumi.aws.lambda.outputs.GetFunctionResult] =
@@ -555,7 +555,7 @@ object lambda:
     /**
      * Provides details about an AWS Lambda Function. Use this data source to obtain information about an existing Lambda function for use in other resources or as a reference for function configurations.
      * 
-     * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `$LATEST` if no published version exists.
+     * &gt; **Note:** This data source returns information about the latest version or alias specified by the `qualifier`. If no `qualifier` is provided, it returns information about the most recent published version, or `\$LATEST` if no published version exists.
      */
     inline def getFunctionPlain(args: Endofunction[com.pulumi.aws.lambda.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lambda.outputs.GetFunctionResult] =

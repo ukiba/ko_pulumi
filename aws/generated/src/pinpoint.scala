@@ -192,7 +192,7 @@ object pinpoint:
    * Using `pulumi import`, import End User Messaging GCM Channel using the `application-id`. For example:
    * 
    * ```sh
-   * $ pulumi import aws:pinpoint/gcmChannel:GcmChannel gcm application-id
+   * \$ pulumi import aws:pinpoint/gcmChannel:GcmChannel gcm application-id
    * ```
    */
   def GcmChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

@@ -382,17 +382,17 @@ object cloudtasks:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudtasks/queueIamBinding:QueueIamBinding editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
+   * \$ pulumi import gcp:cloudtasks/queueIamBinding:QueueIamBinding editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -704,17 +704,17 @@ object cloudtasks:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudtasks/queueIamMember:QueueIamMember editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
+   * \$ pulumi import gcp:cloudtasks/queueIamMember:QueueIamMember editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1026,17 +1026,17 @@ object cloudtasks:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
+   * \$ terraform import google_cloud_tasks_queue_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/queues/{{queue}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudtasks/queueIamPolicy:QueueIamPolicy editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
+   * \$ pulumi import gcp:cloudtasks/queueIamPolicy:QueueIamPolicy editor projects/{{project}}/locations/{{location}}/queues/{{queue}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

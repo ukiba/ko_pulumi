@@ -295,7 +295,7 @@ object clouddeploy:
       builder.anthosCluster(args(argsBuilder).build)
 
     /**
-     * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.
+     * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?\$`.
      * @return builder
      */
     def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):
@@ -433,7 +433,7 @@ object clouddeploy:
 
   extension (builder: com.pulumi.gcp.clouddeploy.inputs.AutomationRuleRepairRolloutRuleArgs.Builder)
     /**
-     * @param repairPhases Optional. Proceeds only after phase name matched any one in the list. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.
+     * @param repairPhases Optional. Proceeds only after phase name matched any one in the list. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?\$`.
      * Structure is documented below.
      * @return builder
      */
@@ -1372,7 +1372,7 @@ object clouddeploy:
       builder.anthosCluster(args(argsBuilder).build)
 
     /**
-     * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?$`.
+     * @param associatedEntities Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^a-z?\$`.
      * @return builder
      */
     def associatedEntities(args: Endofunction[com.pulumi.gcp.clouddeploy.inputs.TargetAssociatedEntityArgs.Builder]*):

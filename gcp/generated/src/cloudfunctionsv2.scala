@@ -383,17 +383,17 @@ object cloudfunctionsv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudfunctionsv2/functionIamBinding:FunctionIamBinding editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
+   * \$ pulumi import gcp:cloudfunctionsv2/functionIamBinding:FunctionIamBinding editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -702,17 +702,17 @@ object cloudfunctionsv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudfunctionsv2/functionIamMember:FunctionIamMember editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
+   * \$ pulumi import gcp:cloudfunctionsv2/functionIamMember:FunctionIamMember editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1021,17 +1021,17 @@ object cloudfunctionsv2:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
+   * \$ terraform import google_cloudfunctions2_function_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/functions/{{cloud_function}} roles/viewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:cloudfunctionsv2/functionIamPolicy:FunctionIamPolicy editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
+   * \$ pulumi import gcp:cloudfunctionsv2/functionIamPolicy:FunctionIamPolicy editor projects/{{project}}/locations/{{location}}/functions/{{cloud_function}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

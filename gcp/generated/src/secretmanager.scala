@@ -627,17 +627,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/regionalSecretIamBinding:RegionalSecretIamBinding editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/regionalSecretIamBinding:RegionalSecretIamBinding editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1227,17 +1227,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/regionalSecretIamMember:RegionalSecretIamMember editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/regionalSecretIamMember:RegionalSecretIamMember editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1827,17 +1827,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_regional_secret_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/regionalSecretIamPolicy:RegionalSecretIamPolicy editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/regionalSecretIamPolicy:RegionalSecretIamPolicy editor projects/{{project}}/locations/{{location}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -2483,17 +2483,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/secretIamBinding:SecretIamBinding editor projects/{{project}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/secretIamBinding:SecretIamBinding editor projects/{{project}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3070,17 +3070,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/secretIamMember:SecretIamMember editor projects/{{project}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/secretIamMember:SecretIamMember editor projects/{{project}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3657,17 +3657,17 @@ object secretmanager:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_secret_manager_secret_iam_member.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
+   * \$ terraform import google_secret_manager_secret_iam_binding.editor &#34;projects/{{project}}/secrets/{{secret_id}} roles/secretmanager.secretAccessor&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:secretmanager/secretIamPolicy:SecretIamPolicy editor projects/{{project}}/secrets/{{secret_id}}
+   * \$ pulumi import gcp:secretmanager/secretIamPolicy:SecretIamPolicy editor projects/{{project}}/secrets/{{secret_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

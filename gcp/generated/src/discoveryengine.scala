@@ -808,17 +808,17 @@ object discoveryengine:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:discoveryengine/searchEngineIamBinding:SearchEngineIamBinding editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
+   * \$ pulumi import gcp:discoveryengine/searchEngineIamBinding:SearchEngineIamBinding editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1133,17 +1133,17 @@ object discoveryengine:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:discoveryengine/searchEngineIamMember:SearchEngineIamMember editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
+   * \$ pulumi import gcp:discoveryengine/searchEngineIamMember:SearchEngineIamMember editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1458,17 +1458,17 @@ object discoveryengine:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_member.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
+   * \$ terraform import google_discovery_engine_search_engine_iam_binding.editor &#34;projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}} roles/discoveryengine.agentspaceUser&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:discoveryengine/searchEngineIamPolicy:SearchEngineIamPolicy editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
+   * \$ pulumi import gcp:discoveryengine/searchEngineIamPolicy:SearchEngineIamPolicy editor projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1500,9 +1500,9 @@ object discoveryengine:
    * When using the `pulumi import` command, ServingConfig can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}/servingConfigs/{{serving_config_id}}
-   * $ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{project}}/{{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
-   * $ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
+   * \$ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default projects/{{project}}/locations/{{location}}/collections/{{collection_id}}/engines/{{engine_id}}/servingConfigs/{{serving_config_id}}
+   * \$ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{project}}/{{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
+   * \$ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
    * ```
    */
   def ServingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)

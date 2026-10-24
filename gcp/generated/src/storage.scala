@@ -2893,17 +2893,17 @@ object storage:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
+   * \$ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:storage/managedFolderIamBinding:ManagedFolderIamBinding editor b/{{bucket}}/managedFolders/{{managed_folder}}
+   * \$ pulumi import gcp:storage/managedFolderIamBinding:ManagedFolderIamBinding editor b/{{bucket}}/managedFolders/{{managed_folder}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -3479,17 +3479,17 @@ object storage:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
+   * \$ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:storage/managedFolderIamMember:ManagedFolderIamMember editor b/{{bucket}}/managedFolders/{{managed_folder}}
+   * \$ pulumi import gcp:storage/managedFolderIamMember:ManagedFolderIamMember editor b/{{bucket}}/managedFolders/{{managed_folder}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -4065,17 +4065,17 @@ object storage:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_storage_managed_folder_iam_member.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
+   * \$ terraform import google_storage_managed_folder_iam_binding.editor &#34;b/{{bucket}}/managedFolders/{{managed_folder}} roles/storage.objectViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:storage/managedFolderIamPolicy:ManagedFolderIamPolicy editor b/{{bucket}}/managedFolders/{{managed_folder}}
+   * \$ pulumi import gcp:storage/managedFolderIamPolicy:ManagedFolderIamPolicy editor b/{{bucket}}/managedFolders/{{managed_folder}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

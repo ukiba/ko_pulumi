@@ -398,17 +398,17 @@ object networkconnectivity:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:networkconnectivity/hubIamBinding:HubIamBinding editor projects/{{project}}/locations/global/hubs/{{hub}}
+   * \$ pulumi import gcp:networkconnectivity/hubIamBinding:HubIamBinding editor projects/{{project}}/locations/global/hubs/{{hub}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -710,17 +710,17 @@ object networkconnectivity:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:networkconnectivity/hubIamMember:HubIamMember editor projects/{{project}}/locations/global/hubs/{{hub}}
+   * \$ pulumi import gcp:networkconnectivity/hubIamMember:HubIamMember editor projects/{{project}}/locations/global/hubs/{{hub}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
@@ -1022,17 +1022,17 @@ object networkconnectivity:
    * 
    * IAM member imports use space-delimited identifiers: the resource in question, the role, and the member identity, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_member.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer user:jane{@literal @}example.com&#34;
    * ```
    * 
    * IAM binding imports use space-delimited identifiers: the resource in question and the role, e.g.
    * ```sh
-   * $ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
+   * \$ terraform import google_network_connectivity_hub_iam_binding.editor &#34;projects/{{project}}/locations/global/hubs/{{hub}} roles/networkconnectivity.hubViewer&#34;
    * ```
    * 
    * IAM policy imports use the identifier of the resource in question, e.g.
    * ```sh
-   * $ pulumi import gcp:networkconnectivity/hubIamPolicy:HubIamPolicy editor projects/{{project}}/locations/global/hubs/{{hub}}
+   * \$ pulumi import gcp:networkconnectivity/hubIamPolicy:HubIamPolicy editor projects/{{project}}/locations/global/hubs/{{hub}}
    * ```
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the

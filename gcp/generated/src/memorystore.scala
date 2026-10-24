@@ -18,9 +18,9 @@ object memorystore:
    * When using the `pulumi import` command, AclPolicy can be imported using one of the formats above. For example:
    * 
    * ```sh
-   * $ pulumi import gcp:memorystore/aclPolicy:AclPolicy default projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}
-   * $ pulumi import gcp:memorystore/aclPolicy:AclPolicy default {{project}}/{{location}}/{{acl_policy_id}}
-   * $ pulumi import gcp:memorystore/aclPolicy:AclPolicy default {{location}}/{{acl_policy_id}}
+   * \$ pulumi import gcp:memorystore/aclPolicy:AclPolicy default projects/{{project}}/locations/{{location}}/aclPolicies/{{acl_policy_id}}
+   * \$ pulumi import gcp:memorystore/aclPolicy:AclPolicy default {{project}}/{{location}}/{{acl_policy_id}}
+   * \$ pulumi import gcp:memorystore/aclPolicy:AclPolicy default {{location}}/{{acl_policy_id}}
    * ```
    */
   def AclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
