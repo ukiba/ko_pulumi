@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkflowmonitor:
   /** Manages a Network Flow Monitor Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.networkflowmonitor.MonitorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkflowmonitor.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.MonitorArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,8 +20,8 @@ object networkflowmonitor:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Network Flow Monitor Scope. */
-  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkflowmonitor.ScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkflowmonitor.ScopeArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

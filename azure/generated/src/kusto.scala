@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object kusto:
   /** Manages a Kusto (also known as Azure Data Explorer) Attached Database Configuration */
-  def AttachedDatabaseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.AttachedDatabaseConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AttachedDatabaseConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.AttachedDatabaseConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.AttachedDatabaseConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -18,8 +18,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Cluster */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.ClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -36,16 +36,16 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for a Kusto Cluster. */
-  def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.kusto.ClusterCustomerManagedKeyArgs.builder
     com.pulumi.azure.kusto.ClusterCustomerManagedKey(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Managed Private Endpoint for a Kusto Cluster. */
-  def ClusterManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.ClusterManagedPrivateEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterManagedPrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.ClusterManagedPrivateEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterManagedPrivateEndpointArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -55,8 +55,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto Cluster Principal Assignment. */
-  def ClusterPrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.ClusterPrincipalAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterPrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.ClusterPrincipalAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ClusterPrincipalAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -66,8 +66,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto / Cosmos Database Data Connection. */
-  def CosmosdbDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.CosmosdbDataConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CosmosdbDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.CosmosdbDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.CosmosdbDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -81,8 +81,8 @@ object kusto:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -92,8 +92,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Database Principal Assignment. */
-  def DatabasePrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.DatabasePrincipalAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabasePrincipalAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.DatabasePrincipalAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.DatabasePrincipalAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -103,8 +103,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) Event Grid Data Connection */
-  def EventGridDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.EventGridDataConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EventGridDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.EventGridDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.EventGridDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -114,8 +114,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) EventHub Data Connection */
-  def EventhubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.EventhubDataConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EventhubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.EventhubDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.EventhubDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -125,8 +125,8 @@ object kusto:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Kusto (also known as Azure Data Explorer) IotHub Data Connection */
-  def IotHubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.IotHubDataConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IotHubDataConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.IotHubDataConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.IotHubDataConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -143,40 +143,40 @@ object kusto:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Kusto (also known as Azure Data Explorer) Cluster */
-    inline def getCluster(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.kusto.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetClusterArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getCluster(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Kusto (also known as Azure Data Explorer) Cluster */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.kusto.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetClusterPlainArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getClusterPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Kusto Database */
-    inline def getDatabase(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.kusto.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetDatabaseArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getDatabase(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Kusto Database */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.kusto.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.kusto.inputs.GetDatabasePlainArgs.builder
       com.pulumi.azure.kusto.KustoFunctions.getDatabasePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Kusto Script. */
-  def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.kusto.ScriptArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.kusto.ScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.kusto.ScriptArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

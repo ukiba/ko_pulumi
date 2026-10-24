@@ -11,8 +11,8 @@ object iam:
    * **NOTE**: This is a private feature and users should contact GCP support
    * if they would like to test it.
    */
-  def AccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.iam.AccessBoundaryPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -30,8 +30,8 @@ object iam:
    * * How-to Guides
    *     * [Permissions supported in deny policies](https://cloud.google.com/iam/docs/deny-permissions-support)
    */
-  def DenyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.DenyPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DenyPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.DenyPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.iam.DenyPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -49,8 +49,8 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/folders.locations.accessPolicies)
    */
-  def FolderAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.FolderAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.FolderAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.FolderAccessPolicyArgs.builder
     com.pulumi.gcp.iam.FolderAccessPolicy(name,
         args(argsBuilder).build,
@@ -65,8 +65,8 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def FoldersPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.FoldersPolicyBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FoldersPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.FoldersPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.FoldersPolicyBindingArgs.builder
     com.pulumi.gcp.iam.FoldersPolicyBinding(name,
         args(argsBuilder).build,
@@ -114,8 +114,8 @@ object iam:
      * }
      * </pre>
      */
-    inline def getRule(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRule(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetRuleArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getRule(args(argsBuilder).build,
@@ -156,40 +156,40 @@ object iam:
      * }
      * </pre>
      */
-    inline def getRulePlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRulePlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetRuleResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetRulePlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getRulePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve a list of testable permissions for a resource. Testable permissions mean the permissions that user can add or remove in a role at a given resource. The resource can be referenced either via the full resource name or via a URI. */
-    inline def getTestablePermissions(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTestablePermissions(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetTestablePermissionsResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetTestablePermissionsArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getTestablePermissions(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve a list of testable permissions for a resource. Testable permissions mean the permissions that user can add or remove in a role at a given resource. The resource can be referenced either via the full resource name or via a URI. */
-    inline def getTestablePermissionsPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTestablePermissionsPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetTestablePermissionsResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetTestablePermissionsPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getTestablePermissionsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workforcepool */
-    inline def getWorkforcePoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkforcePoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkforcePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workforcepool */
-    inline def getWorkforcePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkforcePoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkforcePoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkforcePoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkforcePoolIamPolicyPlain(args(argsBuilder).build,
@@ -203,8 +203,8 @@ object iam:
      * 
      * &gt; **Note:** The following resource requires the Beta IAM role `roles/iam.workloadIdentityPoolAdmin` in order to succeed. `OWNER` and `EDITOR` roles do not include the necessary permissions.
      */
-    inline def getWorkloadIdentityPool(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPool(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPool(args(argsBuilder).build,
@@ -218,56 +218,56 @@ object iam:
      * 
      * &gt; **Note:** The following resource requires the Beta IAM role `roles/iam.workloadIdentityPoolAdmin` in order to succeed. `OWNER` and `EDITOR` roles do not include the necessary permissions.
      */
-    inline def getWorkloadIdentityPoolPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workloadidentitypool */
-    inline def getWorkloadIdentityPoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolIamPolicy(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workloadidentitypool */
-    inline def getWorkloadIdentityPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
-    inline def getWorkloadIdentityPoolJwks(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolJwks(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwks(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the JSON Web Key Set (JWKS) public keys (`/openid/jwks`) for an Agent Workload Identity Pool from GCP. */
-    inline def getWorkloadIdentityPoolJwksPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolJwksPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolJwksResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolJwksPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolJwksPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
-    inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolOpenidConfig(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfig(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get the OpenID provider configuration (`/.well-known/openid-configuration`) for an Agent Workload Identity Pool from Google Cloud. */
-    inline def getWorkloadIdentityPoolOpenidConfigPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolOpenidConfigPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolOpenidConfigResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolOpenidConfigPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolOpenidConfigPlain(args(argsBuilder).build,
@@ -279,8 +279,8 @@ object iam:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWorkloadIdentityPoolProvider(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolProvider(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolProviderResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProvider(args(argsBuilder).build,
@@ -292,8 +292,8 @@ object iam:
      * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getWorkloadIdentityPoolProviderPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkloadIdentityPoolProviderPlain(args: Endofunction[com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iam.outputs.GetWorkloadIdentityPoolProviderResult] =
       val argsBuilder = com.pulumi.gcp.iam.inputs.GetWorkloadIdentityPoolProviderPlainArgs.builder
       com.pulumi.gcp.iam.IamFunctions.getWorkloadIdentityPoolProviderPlain(args(argsBuilder).build,
@@ -310,8 +310,8 @@ object iam:
    * * How-to Guides
    *     * [Managing OAuth clients](https://cloud.google.com/iam/docs/workforce-manage-oauth-app#manage-clients)
    */
-  def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.OauthClientArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OauthClient(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.OauthClientArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OauthClientArgs.builder
     com.pulumi.gcp.iam.OauthClient(name,
         args(argsBuilder).build,
@@ -328,8 +328,8 @@ object iam:
    * * How-to Guides
    *     * [Managing OAuth clients](https://cloud.google.com/iam/docs/workforce-manage-oauth-app#manage-clients)
    */
-  def OauthClientCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.OauthClientCredentialArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OauthClientCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.OauthClientCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OauthClientCredentialArgs.builder
     com.pulumi.gcp.iam.OauthClientCredential(name,
         args(argsBuilder).build,
@@ -344,8 +344,8 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/organizations.locations.accessPolicies)
    */
-  def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OrganizationAccessPolicyArgs.builder
     com.pulumi.gcp.iam.OrganizationAccessPolicy(name,
         args(argsBuilder).build,
@@ -360,8 +360,8 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def OrganizationsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.OrganizationsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.OrganizationsPolicyBinding(name,
         args(argsBuilder).build,
@@ -380,8 +380,8 @@ object iam:
    * * How-to Guides
    *     * [Create and apply Principal Access Boundaries](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create)
    */
-  def PrincipalAccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrincipalAccessBoundaryPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicyArgs.builder
     com.pulumi.gcp.iam.PrincipalAccessBoundaryPolicy(name,
         args(argsBuilder).build,
@@ -396,8 +396,8 @@ object iam:
    * 
    * * [API documentation](https://cloud.google.com/iam/docs/reference/rest/v3/projects.locations.accessPolicies)
    */
-  def ProjectAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.ProjectAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.ProjectAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.ProjectAccessPolicyArgs.builder
     com.pulumi.gcp.iam.ProjectAccessPolicy(name,
         args(argsBuilder).build,
@@ -412,8 +412,8 @@ object iam:
    * * How-to Guides
    *     * [Apply a policy binding](https://cloud.google.com/iam/docs/principal-access-boundary-policies-create#create_binding)
    */
-  def ProjectsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectsPolicyBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.ProjectsPolicyBindingArgs.builder
     com.pulumi.gcp.iam.ProjectsPolicyBinding(name,
         args(argsBuilder).build,
@@ -432,8 +432,8 @@ object iam:
    * &gt; **Note:** Ask your Google Cloud account team to request access to workforce identity federation for
    * your billing/quota project. The account team notifies you when the project is granted access.
    */
-  def WorkforcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolArgs.builder
     com.pulumi.gcp.iam.WorkforcePool(name,
         args(argsBuilder).build,
@@ -739,8 +739,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamBinding(name,
         args(argsBuilder).build,
@@ -1046,8 +1046,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamMember(name,
         args(argsBuilder).build,
@@ -1353,8 +1353,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkforcePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolIamPolicy(name,
         args(argsBuilder).build,
@@ -1375,8 +1375,8 @@ object iam:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `oidc.client_secret.value.plain_text_wo`, `extra_attributes_oauth2_client.client_secret.value.plain_text_wo`, `extended_attributes_oauth2_client.client_secret.value.plain_text_wo`.
    * Read more about Write-only Arguments.
    */
-  def WorkforcePoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProvider(name,
         args(argsBuilder).build,
@@ -1393,8 +1393,8 @@ object iam:
    *     * [Configure a provider within the workforce pool](https://cloud.google.com/iam/docs/manage-workforce-identity-pools-providers#configure_a_provider_within_the_workforce_pool)
    *     * [Workforce Identity Federation Overview](https://cloud.google.com/iam/docs/workforce-identity-federation)
    */
-  def WorkforcePoolProviderKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolProviderKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderKeyArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderKey(name,
         args(argsBuilder).build,
@@ -1410,8 +1410,8 @@ object iam:
    * * How-to Guides
    *     * [Configure a SCIM Tenant](https://cloud.google.com/iam/docs/workforce-sign-in-microsoft-entra-id-scalable-groups?group_type=extended#extended-attributes)
    */
-  def WorkforcePoolProviderScimTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolProviderScimTenant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTenantArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimTenant(name,
         args(argsBuilder).build,
@@ -1427,8 +1427,8 @@ object iam:
    * * How-to Guides
    *     * [Create a SCIM Token for the SCIM Tenant](https://cloud.google.com/iam/docs/workforce-sign-in-microsoft-entra-id-scalable-groups?group_type=extended#extended-attributes)
    */
-  def WorkforcePoolProviderScimToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkforcePoolProviderScimToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkforcePoolProviderScimTokenArgs.builder
     com.pulumi.gcp.iam.WorkforcePoolProviderScimToken(name,
         args(argsBuilder).build,
@@ -1446,8 +1446,8 @@ object iam:
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    *     * [Managing workload identity pools](https://cloud.google.com/iam/docs/manage-workload-identity-pools-providers#pools)
    */
-  def WorkloadIdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPool(name,
         args(argsBuilder).build,
@@ -2022,8 +2022,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamBindingArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamBinding(name,
         args(argsBuilder).build,
@@ -2598,8 +2598,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamMemberArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamMember(name,
         args(argsBuilder).build,
@@ -3174,8 +3174,8 @@ object iam:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkloadIdentityPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicyArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolIamPolicy(name,
         args(argsBuilder).build,
@@ -3191,8 +3191,8 @@ object iam:
    *     * [Configure managed workload identity authentication for Compute Engine](https://cloud.google.com/iam/docs/create-managed-workload-identities)
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    */
-  def WorkloadIdentityPoolManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolManagedIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentityArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolManagedIdentity(name,
         args(argsBuilder).build,
@@ -3209,8 +3209,8 @@ object iam:
    *     * [Configure managed workload identity authentication for Compute Engine](https://cloud.google.com/iam/docs/create-managed-workload-identities)
    *     * [Configure managed workload identity authentication for GKE](https://cloud.google.com/iam/docs/create-managed-workload-identities-gke)
    */
-  def WorkloadIdentityPoolNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolNamespaceArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolNamespace(name,
         args(argsBuilder).build,
@@ -3225,16 +3225,16 @@ object iam:
    * * How-to Guides
    *     * [Managing workload identity providers](https://cloud.google.com/iam/docs/manage-workload-identity-pools-providers#managing_workload_identity_providers)
    */
-  def WorkloadIdentityPoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityPoolProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityPoolProviderArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityPoolProvider(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Service Agent within the Workload Identity API. */
-  def WorkloadIdentityServiceAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkloadIdentityServiceAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iam.WorkloadIdentityServiceAgentArgs.builder
     com.pulumi.gcp.iam.WorkloadIdentityServiceAgent(name,
         args(argsBuilder).build,

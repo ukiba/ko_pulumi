@@ -10,8 +10,8 @@ object sql:
    * Represents a SQL database inside the Cloud SQL instance, hosted in
    * Google&#39;s cloud.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,8 +33,8 @@ object sql:
    * (and run `pulumi update` to write the field to state) in order to destroy an instance.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy the instance and its databases.
    */
-  def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.DatabaseInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.DatabaseInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.DatabaseInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -50,8 +50,8 @@ object sql:
    * 
    * &gt; **Note:** If you let Terraform connect to the instance via [IAM database authentication](https://cloud.google.com/sql/docs/mysql/authentication) to execute the script, the identity account used to apply your Terraform config must exist as an IAM user, IAM service account, or IAM group in the instance. You also need to grant roles or privileges to this IAM account so it has permission to execute statements in your provision scripts. See the example below.
    */
-  def ProvisionScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.ProvisionScriptArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProvisionScript(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.ProvisionScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sql.ProvisionScriptArgs.builder
     com.pulumi.gcp.sql.ProvisionScript(name,
         args(argsBuilder).build,
@@ -64,8 +64,8 @@ object sql:
    * contains no data, requires no configuration or maintenance, and does not
    * affect billing. You cannot update the source representation instance.
    */
-  def SourceRepresentationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.SourceRepresentationInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SourceRepresentationInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.SourceRepresentationInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.SourceRepresentationInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -82,16 +82,16 @@ object sql:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about a Cloud SQL instance backup run. */
-    inline def getBackupRun(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBackupRun(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetBackupRunResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetBackupRunArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getBackupRun(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a Cloud SQL instance backup run. */
-    inline def getBackupRunPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBackupRunPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetBackupRunResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetBackupRunPlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getBackupRunPlain(args(argsBuilder).build,
@@ -103,8 +103,8 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/listServerCas).
      */
-    inline def getCaCerts(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCaCerts(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetCaCertsResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetCaCertsArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getCaCerts(args(argsBuilder).build,
@@ -116,40 +116,40 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances/listServerCas).
      */
-    inline def getCaCertsPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCaCertsPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetCaCertsResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetCaCertsPlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getCaCertsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a database in a Cloud SQL instance. */
-    inline def getDatabase(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabase(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a database in a Cloud SQL instance. */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasePlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabasePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a Cloud SQL instance. */
-    inline def getDatabaseInstance(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstance(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a Cloud SQL instance. */
-    inline def getDatabaseInstancePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstancePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancePlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancePlain(args(argsBuilder).build,
@@ -161,8 +161,8 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/postgres/backup-recovery/pitr#get-the-latest-recovery-time).
      */
-    inline def getDatabaseInstanceLatestRecoveryTime(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstanceLatestRecoveryTime(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceLatestRecoveryTimeResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimeArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTime(args(argsBuilder).build,
@@ -174,40 +174,40 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/postgres/backup-recovery/pitr#get-the-latest-recovery-time).
      */
-    inline def getDatabaseInstanceLatestRecoveryTimePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstanceLatestRecoveryTimePlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstanceLatestRecoveryTimeResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstanceLatestRecoveryTimePlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstanceLatestRecoveryTimePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a list of Cloud SQL instances in a project. You can also apply some filters over this list to get a more filtered list of Cloud SQL instances. */
-    inline def getDatabaseInstances(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstances(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabaseInstancesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancesArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstances(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a list of Cloud SQL instances in a project. You can also apply some filters over this list to get a more filtered list of Cloud SQL instances. */
-    inline def getDatabaseInstancesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseInstancesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabaseInstancesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabaseInstancesPlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabaseInstancesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a list of databases in a Cloud SQL instance. */
-    inline def getDatabases(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabases(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasesArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabases(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a list of databases in a Cloud SQL instance. */
-    inline def getDatabasesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabasesPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetDatabasesResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetDatabasesPlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getDatabasesPlain(args(argsBuilder).build,
@@ -219,8 +219,8 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/tiers/list).
      */
-    inline def getTiers(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTiers(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sql.outputs.GetTiersResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetTiersArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getTiers(args(argsBuilder).build,
@@ -232,8 +232,8 @@ object sql:
      * and
      * [API](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/tiers/list).
      */
-    inline def getTiersPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTiersPlain(args: Endofunction[com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sql.outputs.GetTiersResult] =
       val argsBuilder = com.pulumi.gcp.sql.inputs.GetTiersPlainArgs.builder
       com.pulumi.gcp.sql.SqlFunctions.getTiersPlain(args(argsBuilder).build,
@@ -244,8 +244,8 @@ object sql:
    * 
    * Read more about sensitive data in state.
    */
-  def SslCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.SslCertArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SslCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.SslCertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sql.SslCertArgs.builder
     com.pulumi.gcp.sql.SslCert(name,
         args(argsBuilder).build,
@@ -259,8 +259,8 @@ object sql:
    * 
    * &gt; **Note:** Write-Only argument `passwordWo` is available to use in place of `password`. Write-Only arguments are supported in HashiCorp Terraform 1.11.0 and later. Learn more.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sql.UserArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sql.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sql.UserArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

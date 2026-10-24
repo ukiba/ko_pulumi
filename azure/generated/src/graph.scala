@@ -14,24 +14,24 @@ object graph:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Graph Services Account. */
-    inline def getServicesAccount(args: Endofunction[com.pulumi.azure.graph.inputs.GetServicesAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServicesAccount(args: Endofunction[com.pulumi.azure.graph.inputs.GetServicesAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.graph.outputs.GetServicesAccountResult] =
       val argsBuilder = com.pulumi.azure.graph.inputs.GetServicesAccountArgs.builder
       com.pulumi.azure.graph.GraphFunctions.getServicesAccount(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Graph Services Account. */
-    inline def getServicesAccountPlain(args: Endofunction[com.pulumi.azure.graph.inputs.GetServicesAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicesAccountPlain(args: Endofunction[com.pulumi.azure.graph.inputs.GetServicesAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.graph.outputs.GetServicesAccountResult] =
       val argsBuilder = com.pulumi.azure.graph.inputs.GetServicesAccountPlainArgs.builder
       com.pulumi.azure.graph.GraphFunctions.getServicesAccountPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Microsoft Graph Services Account. */
-  def ServicesAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.graph.ServicesAccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServicesAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.graph.ServicesAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.graph.ServicesAccountArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

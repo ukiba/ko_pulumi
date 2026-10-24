@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object notificationhub:
   /** Manages an Authorization Rule associated with a Notification Hub within a Notification Hub Namespace. */
-  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.notificationhub.AuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.notificationhub.AuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.AuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -18,8 +18,8 @@ object notificationhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub within a Notification Hub Namespace. */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.notificationhub.HubArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.notificationhub.HubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.HubArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -36,8 +36,8 @@ object notificationhub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Notification Hub Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.notificationhub.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.notificationhub.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.notificationhub.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -61,32 +61,32 @@ object notificationhub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    inline def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getHub(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getHub(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Notification Hub within a Notification Hub Namespace. */
-    inline def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getHubPlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetHubResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetHubPlainArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getHubPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    inline def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespaceArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespace(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Notification Hub Namespace. */
-    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.notificationhub.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.notificationhub.inputs.GetNamespacePlainArgs.builder
       com.pulumi.azure.notificationhub.NotificationhubFunctions.getNamespacePlain(args(argsBuilder).build,

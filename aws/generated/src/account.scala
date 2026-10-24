@@ -14,16 +14,16 @@ object account:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for the primary contact information associated with an AWS Account. */
-    inline def getPrimaryContact(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPrimaryContact(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.account.outputs.GetPrimaryContactResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetPrimaryContactArgs.builder
       com.pulumi.aws.account.AccountFunctions.getPrimaryContact(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for the primary contact information associated with an AWS Account. */
-    inline def getPrimaryContactPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPrimaryContactPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetPrimaryContactResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetPrimaryContactPlainArgs.builder
       com.pulumi.aws.account.AccountFunctions.getPrimaryContactPlain(args(argsBuilder).build,
@@ -34,8 +34,8 @@ object account:
      * 
      * This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
-    inline def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRegions(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.account.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsArgs.builder
       com.pulumi.aws.account.AccountFunctions.getRegions(args(argsBuilder).build,
@@ -46,16 +46,16 @@ object account:
      * 
      * This is more comprehensive than the aws.getRegions data source, which only uses the EC2 REST service and is limited to the current account and a subset of region statuses.
      */
-    inline def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRegionsPlain(args: Endofunction[com.pulumi.aws.account.inputs.GetRegionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.account.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.account.inputs.GetRegionsPlainArgs.builder
       com.pulumi.aws.account.AccountFunctions.getRegionsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages the specified alternate contact attached to an AWS Account. */
-  def AlternativeContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.account.AlternativeContactArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlternativeContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.account.AlternativeContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.account.AlternativeContactArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -65,16 +65,16 @@ object account:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the specified primary contact information associated with an AWS Account. */
-  def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.account.PrimaryContactArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrimaryContact(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.account.PrimaryContactArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.account.PrimaryContactArgs.builder
     com.pulumi.aws.account.PrimaryContact(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Enable (Opt-In) or Disable (Opt-Out) a particular Region for an AWS account. */
-  def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.account.RegionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Region(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.account.RegionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.account.RegionArgs.builder
     com.pulumi.aws.account.Region(name,
         args(argsBuilder).build,

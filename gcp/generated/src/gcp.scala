@@ -10,8 +10,8 @@ object gcp:
    * construction to achieve fine-grained programmatic control over provider settings. See the
    * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
    */
-  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ProviderArgs.builder
     com.pulumi.gcp.Provider(name,
         args(argsBuilder).build,

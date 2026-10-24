@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object controltower:
   /** Resource for managing an AWS Control Tower Baseline. */
-  def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.controltower.BaselineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Baseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.controltower.BaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.BaselineArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -25,8 +25,8 @@ object controltower:
    * Allows the application of pre-defined controls to organizational units. For more information on usage, please see the
    * [AWS Control Tower User Guide](https://docs.aws.amazon.com/controltower/latest/userguide/enable-guardrails.html).
    */
-  def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.controltower.ControlTowerControlArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ControlTowerControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.controltower.ControlTowerControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.controltower.ControlTowerControlArgs.builder
     com.pulumi.aws.controltower.ControlTowerControl(name,
         args(argsBuilder).build,
@@ -40,16 +40,16 @@ object controltower:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** List of Control Tower controls applied to an OU. */
-    inline def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getControls(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsArgs.builder
       com.pulumi.aws.controltower.ControltowerFunctions.getControls(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** List of Control Tower controls applied to an OU. */
-    inline def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getControlsPlain(args: Endofunction[com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.controltower.outputs.GetControlsResult] =
       val argsBuilder = com.pulumi.aws.controltower.inputs.GetControlsPlainArgs.builder
       com.pulumi.aws.controltower.ControltowerFunctions.getControlsPlain(args(argsBuilder).build,
@@ -67,8 +67,8 @@ object controltower:
    * \$ pulumi import aws:controltower/landingZone:LandingZone example 1A2B3C4D5E6F7G8H
    * ```
    */
-  def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.controltower.LandingZoneArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LandingZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.controltower.LandingZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.controltower.LandingZoneArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

@@ -14,64 +14,64 @@ object beyondcorp:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get information about a Google BeyondCorp Security Gateway. */
-    inline def getSecurityGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGateway(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGateway(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Google BeyondCorp Security Gateway. */
-    inline def getSecurityGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for securitygatewayapplication */
-    inline def getSecurityGatewayApplicationIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayApplicationIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayApplicationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayApplicationIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for securitygatewayapplication */
-    inline def getSecurityGatewayApplicationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayApplicationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayApplicationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayApplicationIamPolicyPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayApplicationIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for securitygateway */
-    inline def getSecurityGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for securitygateway */
-    inline def getSecurityGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSecurityGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.beyondcorp.outputs.GetSecurityGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.beyondcorp.inputs.GetSecurityGatewayIamPolicyPlainArgs.builder
       com.pulumi.gcp.beyondcorp.BeyondcorpFunctions.getSecurityGatewayIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Deployment of Security Gateway. */
-  def SecurityGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGateway(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Specifies application endpoint(s) to protect behind a Security Gateway. */
-  def SecurityGatewayApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplication(name,
         args(argsBuilder).build,
@@ -659,8 +659,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayApplicationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamBinding(name,
         args(argsBuilder).build,
@@ -1248,8 +1248,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayApplicationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamMember(name,
         args(argsBuilder).build,
@@ -1837,8 +1837,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayApplicationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayApplicationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayApplicationIamPolicy(name,
         args(argsBuilder).build,
@@ -2426,8 +2426,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamBindingArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamBinding(name,
         args(argsBuilder).build,
@@ -3015,8 +3015,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamMemberArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamMember(name,
         args(argsBuilder).build,
@@ -3604,8 +3604,8 @@ object beyondcorp:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SecurityGatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityGatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicyArgs.builder
     com.pulumi.gcp.beyondcorp.SecurityGatewayIamPolicy(name,
         args(argsBuilder).build,

@@ -7,16 +7,16 @@ import com.pulumi.resources.CustomResourceOptions
 
 object directconnect:
   /** Provides a Direct Connect BGP peer resource. */
-  def BgpPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.BgpPeerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BgpPeer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.BgpPeerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.BgpPeerArgs.builder
     com.pulumi.aws.directconnect.BgpPeer(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Connection of Direct Connect. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,16 +33,16 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Associates a Direct Connect Connection with a LAG. */
-  def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionAssociationArgs.builder
     com.pulumi.aws.directconnect.ConnectionAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a confirmation of the creation of the specified hosted connection on an interconnect. */
-  def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionConfirmationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionConfirmation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.ConnectionConfirmationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.ConnectionConfirmationArgs.builder
     com.pulumi.aws.directconnect.ConnectionConfirmation(name,
         args(argsBuilder).build,
@@ -56,32 +56,32 @@ object directconnect:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information about a Direct Connect Connection. */
-    inline def getConnection(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConnection(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetConnectionArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getConnection(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a Direct Connect Connection. */
-    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getConnectionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieve information about a Direct Connect Gateway. */
-    inline def getGateway(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getGateway(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetGatewayArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getGateway(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about a Direct Connect Gateway. */
-    inline def getGatewayPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getGatewayPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetGatewayResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetGatewayPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getGatewayPlain(args(argsBuilder).build,
@@ -93,8 +93,8 @@ object directconnect:
      * 
      * &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
-    inline def getLocation(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLocation(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocation(args(argsBuilder).build,
@@ -106,8 +106,8 @@ object directconnect:
      * 
      * &gt; **Note:** This data source is different from the `aws.directconnect.getLocations` data source which retrieves information about all the AWS Direct Connect locations in the current AWS Region.
      */
-    inline def getLocationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLocationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocationPlain(args(argsBuilder).build,
@@ -119,8 +119,8 @@ object directconnect:
      * 
      * &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
-    inline def getLocations(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationsArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocations(args(argsBuilder).build,
@@ -132,32 +132,32 @@ object directconnect:
      * 
      * &gt; **Note:** This data source is different from the `aws.directconnect.getLocation` data source which retrieves information about a specific AWS Direct Connect location in the current AWS Region.
      */
-    inline def getLocationsPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetLocationsPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getLocationsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for retrieving Router Configuration instructions for a given AWS Direct Connect Virtual Interface and Router Type. */
-    inline def getRouterConfiguration(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRouterConfiguration(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.directconnect.outputs.GetRouterConfigurationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetRouterConfigurationArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getRouterConfiguration(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for retrieving Router Configuration instructions for a given AWS Direct Connect Virtual Interface and Router Type. */
-    inline def getRouterConfigurationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRouterConfigurationPlain(args: Endofunction[com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.directconnect.outputs.GetRouterConfigurationResult] =
       val argsBuilder = com.pulumi.aws.directconnect.inputs.GetRouterConfigurationPlainArgs.builder
       com.pulumi.aws.directconnect.DirectconnectFunctions.getRouterConfigurationPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a Direct Connect Gateway. */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.GatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.GatewayArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -180,24 +180,24 @@ object directconnect:
    * in the AWS account that owns the VGW or transit gateway and then accept the proposal in the AWS account that owns the Direct Connect Gateway
    * by creating an `aws.directconnect.GatewayAssociation` resource with the `proposalId` and `associatedGatewayOwnerAccountId` attributes set.
    */
-  def GatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the `aws.directconnect.GatewayAssociation` resource. */
-  def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayAssociationProposal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.GatewayAssociationProposalArgs.builder
     com.pulumi.aws.directconnect.GatewayAssociationProposal(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects. Intended for use by AWS Direct Connect Partners only. */
-  def HostedConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -210,8 +210,8 @@ object directconnect:
    * Provides a Direct Connect hosted private virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedPrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedPrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -224,8 +224,8 @@ object directconnect:
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted private virtual interface.
    * This resource accepts ownership of a private virtual interface created by another AWS account.
    */
-  def HostedPrivateVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedPrivateVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPrivateVirtualInterfaceAccepterArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -242,8 +242,8 @@ object directconnect:
    * Provides a Direct Connect hosted public virtual interface resource. This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedPublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedPublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -256,8 +256,8 @@ object directconnect:
    * Provides a resource to manage the accepter&#39;s side of a Direct Connect hosted public virtual interface.
    * This resource accepts ownership of a public virtual interface created by another AWS account.
    */
-  def HostedPublicVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedPublicVirtualInterfaceAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedPublicVirtualInterfaceAccepterArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -275,8 +275,8 @@ object directconnect:
    * This resource represents the allocator&#39;s side of the hosted virtual interface.
    * A hosted virtual interface is a virtual interface that is owned by another AWS account.
    */
-  def HostedTransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedTransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -291,8 +291,8 @@ object directconnect:
    * 
    * &gt; **NOTE:** AWS allows a Direct Connect hosted transit virtual interface to be deleted from either the allocator&#39;s or accepter&#39;s side. However, this provider only allows the Direct Connect hosted transit virtual interface to be deleted from the allocator&#39;s side by removing the corresponding `aws.directconnect.HostedTransitVirtualInterface` resource from your configuration. Removing a `aws.directconnect.HostedTransitVirtualInterfaceAcceptor` resource from your configuration will remove it from your statefile and management, **but will not delete the Direct Connect virtual interface.**
    */
-  def HostedTransitVirtualInterfaceAcceptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostedTransitVirtualInterfaceAcceptor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.HostedTransitVirtualInterfaceAcceptorArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -310,8 +310,8 @@ object directconnect:
    * 
    * &gt; *NOTE:* When creating a LAG, if no existing connection is specified, Direct Connect will create a connection and this provider will remove this unmanaged connection during resource creation.
    */
-  def LinkAggregationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.LinkAggregationGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinkAggregationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.LinkAggregationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.LinkAggregationGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -335,16 +335,16 @@ object directconnect:
    * &gt; **Note:** All arguments including `ckn` and `cak` will be stored in the raw state as plain-text.
    * **Note:** The `secretArn` argument can only be used to reference a previously created MACSec key. You cannot associate a Secrets Manager secret created outside of the `aws.directconnect.MacsecKeyAssociation` resource.
    */
-  def MacsecKeyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MacsecKeyAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.directconnect.MacsecKeyAssociationArgs.builder
     com.pulumi.aws.directconnect.MacsecKeyAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect private virtual interface resource. */
-  def PrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.PrivateVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrivateVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.PrivateVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.PrivateVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -361,8 +361,8 @@ object directconnect:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Direct Connect public virtual interface resource. */
-  def PublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.PublicVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PublicVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.PublicVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.PublicVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -382,8 +382,8 @@ object directconnect:
    * Provides a Direct Connect transit virtual interface resource.
    * A transit virtual interface is a VLAN that transports traffic from a Direct Connect gateway to one or more transit gateways.
    */
-  def TransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.directconnect.TransitVirtualInterfaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TransitVirtualInterface(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directconnect.TransitVirtualInterfaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.directconnect.TransitVirtualInterfaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

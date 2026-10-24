@@ -18,8 +18,8 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def BackupChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupChannelArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -37,8 +37,8 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupPlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -353,8 +353,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupPlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -669,8 +669,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupPlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -985,8 +985,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def BackupPlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupPlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.BackupPlanIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.BackupPlanIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1003,32 +1003,32 @@ object gkebackup:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for backupplan */
-    inline def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for backupplan */
-    inline def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBackupPlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetBackupPlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetBackupPlanIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getBackupPlanIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    inline def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicy(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for restoreplan */
-    inline def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRestorePlanIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkebackup.outputs.GetRestorePlanIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkebackup.inputs.GetRestorePlanIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkebackup.GkebackupFunctions.getRestorePlanIamPolicyPlain(args(argsBuilder).build,
@@ -1046,8 +1046,8 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def RestoreChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.RestoreChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestoreChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.RestoreChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestoreChannelArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1065,8 +1065,8 @@ object gkebackup:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke)
    */
-  def RestorePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1381,8 +1381,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePlanIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1697,8 +1697,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePlanIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2013,8 +2013,8 @@ object gkebackup:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RestorePlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePlanIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkebackup.RestorePlanIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkebackup.RestorePlanIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

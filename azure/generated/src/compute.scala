@@ -7,16 +7,16 @@ import com.pulumi.resources.CustomResourceOptions
 
 object compute:
   /** Manages a Virtual Machine Automanage Configuration Profile Assignment. */
-  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.compute.AutomanageConfigurationAssignment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Availability Set for Virtual Machines. */
-  def AvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.AvailabilitySetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AvailabilitySet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.AvailabilitySetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.AvailabilitySetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,8 +33,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Bastion Host. */
-  def BastionHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.BastionHostArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BastionHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.BastionHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.BastionHostArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -51,8 +51,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation within a Capacity Reservation Group. */
-  def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.CapacityReservationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CapacityReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.CapacityReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.CapacityReservationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -69,8 +69,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Capacity Reservation Group. */
-  def CapacityReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.CapacityReservationGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CapacityReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.CapacityReservationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.CapacityReservationGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -94,336 +94,336 @@ object compute:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Availability Set. */
-    inline def getAvailabilitySet(args: Endofunction[com.pulumi.azure.compute.inputs.GetAvailabilitySetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilitySet(args: Endofunction[com.pulumi.azure.compute.inputs.GetAvailabilitySetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetAvailabilitySetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetAvailabilitySetArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getAvailabilitySet(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Availability Set. */
-    inline def getAvailabilitySetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetAvailabilitySetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilitySetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetAvailabilitySetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetAvailabilitySetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetAvailabilitySetPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getAvailabilitySetPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Bastion Host. */
-    inline def getBastionHost(args: Endofunction[com.pulumi.azure.compute.inputs.GetBastionHostArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBastionHost(args: Endofunction[com.pulumi.azure.compute.inputs.GetBastionHostArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetBastionHostResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetBastionHostArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getBastionHost(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Bastion Host. */
-    inline def getBastionHostPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetBastionHostPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBastionHostPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetBastionHostPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetBastionHostResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetBastionHostPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getBastionHostPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Gets information about an existing Confidential Ledger. */
-    inline def getConfidentialLedger(args: Endofunction[com.pulumi.azure.compute.inputs.GetConfidentialLedgerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConfidentialLedger(args: Endofunction[com.pulumi.azure.compute.inputs.GetConfidentialLedgerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetConfidentialLedgerResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetConfidentialLedgerArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getConfidentialLedger(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Gets information about an existing Confidential Ledger. */
-    inline def getConfidentialLedgerPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetConfidentialLedgerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConfidentialLedgerPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetConfidentialLedgerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetConfidentialLedgerResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetConfidentialLedgerPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getConfidentialLedgerPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Dedicated Host. */
-    inline def getDedicatedHost(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDedicatedHost(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetDedicatedHostResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDedicatedHostArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDedicatedHost(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dedicated Host. */
-    inline def getDedicatedHostPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDedicatedHostPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetDedicatedHostResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDedicatedHostPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDedicatedHostPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Dedicated Host Group. */
-    inline def getDedicatedHostGroup(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostGroupArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDedicatedHostGroup(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostGroupArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetDedicatedHostGroupResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDedicatedHostGroupArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDedicatedHostGroup(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dedicated Host Group. */
-    inline def getDedicatedHostGroupPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostGroupPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDedicatedHostGroupPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDedicatedHostGroupPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetDedicatedHostGroupResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDedicatedHostGroupPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDedicatedHostGroupPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Disk Access. */
-    inline def getDiskAccess(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskAccessArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDiskAccess(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskAccessArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetDiskAccessResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDiskAccessArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDiskAccess(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Disk Access. */
-    inline def getDiskAccessPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskAccessPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDiskAccessPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskAccessPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetDiskAccessResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDiskAccessPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDiskAccessPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Disk Encryption Set. */
-    inline def getDiskEncryptionSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskEncryptionSetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDiskEncryptionSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskEncryptionSetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetDiskEncryptionSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDiskEncryptionSetArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDiskEncryptionSet(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Disk Encryption Set. */
-    inline def getDiskEncryptionSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskEncryptionSetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDiskEncryptionSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetDiskEncryptionSetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetDiskEncryptionSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetDiskEncryptionSetPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getDiskEncryptionSetPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Image. */
-    inline def getImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetImageArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetImageArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetImageArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getImage(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Image. */
-    inline def getImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetImagePlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getImagePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about existing Images within a Resource Group. */
-    inline def getImages(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getImages(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetImagesArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getImages(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing Images within a Resource Group. */
-    inline def getImagesPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getImagesPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetImagesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetImagesResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetImagesPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getImagesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Managed Disk. */
-    inline def getManagedDisk(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDiskArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDisk(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDiskArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetManagedDiskResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetManagedDiskArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getManagedDisk(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Managed Disk. */
-    inline def getManagedDiskPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDiskPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDiskPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDiskPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetManagedDiskResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetManagedDiskPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getManagedDiskPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Managed Disk. */
-    inline def getManagedDisks(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDisksArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDisks(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDisksArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetManagedDisksResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetManagedDisksArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getManagedDisks(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Managed Disk. */
-    inline def getManagedDisksPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDisksPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDisksPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetManagedDisksPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetManagedDisksResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetManagedDisksPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getManagedDisksPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Orchestrated Virtual Machine Scale Set. */
-    inline def getOrchestratedVirtualMachineScaleSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOrchestratedVirtualMachineScaleSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetOrchestratedVirtualMachineScaleSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getOrchestratedVirtualMachineScaleSet(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Orchestrated Virtual Machine Scale Set. */
-    inline def getOrchestratedVirtualMachineScaleSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOrchestratedVirtualMachineScaleSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetOrchestratedVirtualMachineScaleSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetOrchestratedVirtualMachineScaleSetPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getOrchestratedVirtualMachineScaleSetPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a Platform Image. */
-    inline def getPlatformImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetPlatformImageArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPlatformImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetPlatformImageArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetPlatformImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetPlatformImageArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getPlatformImage(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a Platform Image. */
-    inline def getPlatformImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetPlatformImagePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPlatformImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetPlatformImagePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetPlatformImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetPlatformImagePlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getPlatformImagePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Shared Image within a Shared Image Gallery. */
-    inline def getSharedImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImage(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSharedImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImage(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Shared Image within a Shared Image Gallery. */
-    inline def getSharedImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImagePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImagePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImagePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSharedImageResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImagePlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImagePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Shared Image Gallery. */
-    inline def getSharedImageGallery(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageGalleryArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageGallery(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageGalleryArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSharedImageGalleryResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageGalleryArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageGallery(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Shared Image Gallery. */
-    inline def getSharedImageGalleryPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageGalleryPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageGalleryPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageGalleryPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSharedImageGalleryResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageGalleryPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageGalleryPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Version of a Shared Image within a Shared Image Gallery. */
-    inline def getSharedImageVersion(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageVersion(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSharedImageVersionResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageVersionArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageVersion(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Version of a Shared Image within a Shared Image Gallery. */
-    inline def getSharedImageVersionPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageVersionPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSharedImageVersionResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageVersionPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageVersionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about existing Versions of a Shared Image within a Shared Image Gallery. */
-    inline def getSharedImageVersions(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageVersions(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSharedImageVersionsResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageVersionsArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageVersions(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing Versions of a Shared Image within a Shared Image Gallery. */
-    inline def getSharedImageVersionsPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSharedImageVersionsPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSharedImageVersionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSharedImageVersionsResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSharedImageVersionsPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSharedImageVersionsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Snapshot. */
-    inline def getSnapshot(args: Endofunction[com.pulumi.azure.compute.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.azure.compute.inputs.GetSnapshotArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSnapshotArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSnapshot(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Snapshot. */
-    inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSnapshotPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSnapshotPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing SSH Public Key. */
-    inline def getSshPublicKey(args: Endofunction[com.pulumi.azure.compute.inputs.GetSshPublicKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSshPublicKey(args: Endofunction[com.pulumi.azure.compute.inputs.GetSshPublicKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetSshPublicKeyResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSshPublicKeyArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSshPublicKey(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing SSH Public Key. */
-    inline def getSshPublicKeyPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSshPublicKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSshPublicKeyPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetSshPublicKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetSshPublicKeyResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetSshPublicKeyPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getSshPublicKeyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Machine. */
-    inline def getVirtualMachine(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualMachine(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetVirtualMachineResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetVirtualMachineArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getVirtualMachine(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Machine. */
-    inline def getVirtualMachinePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachinePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualMachinePlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachinePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetVirtualMachineResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetVirtualMachinePlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getVirtualMachinePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Virtual Machine Scale Set. */
-    inline def getVirtualMachineScaleSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineScaleSet(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.compute.outputs.GetVirtualMachineScaleSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getVirtualMachineScaleSet(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Virtual Machine Scale Set. */
-    inline def getVirtualMachineScaleSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualMachineScaleSetPlain(args: Endofunction[com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.compute.outputs.GetVirtualMachineScaleSetResult] =
       val argsBuilder = com.pulumi.azure.compute.inputs.GetVirtualMachineScaleSetPlainArgs.builder
       com.pulumi.azure.compute.ComputeFunctions.getVirtualMachineScaleSetPlain(args(argsBuilder).build,
@@ -436,16 +436,16 @@ object compute:
    * 
    * &gt; **Please Note:** only Managed Disks are supported via this separate resource, Unmanaged Disks can be attached using the `storageDataDisk` block in the `azure.compute.VirtualMachine` resource.
    */
-  def DataDiskAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.DataDiskAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataDiskAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.DataDiskAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.DataDiskAttachmentArgs.builder
     com.pulumi.azure.compute.DataDiskAttachment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host within a Dedicated Host Group. */
-  def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.DedicatedHostArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DedicatedHost(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.DedicatedHostArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DedicatedHostArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -462,8 +462,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manage a Dedicated Host Group. */
-  def DedicatedHostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.DedicatedHostGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DedicatedHostGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.DedicatedHostGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DedicatedHostGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -480,8 +480,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Access. */
-  def DiskAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.DiskAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DiskAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.DiskAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DiskAccessArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -502,8 +502,8 @@ object compute:
    * 
    * &gt; **NOTE:** At this time the Key Vault used to store the Active Key for this Disk Encryption Set must have both Soft Delete &amp; Purge Protection enabled - which are not yet supported by this provider.
    */
-  def DiskEncryptionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.DiskEncryptionSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DiskEncryptionSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.DiskEncryptionSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.DiskEncryptionSetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -527,8 +527,8 @@ object compute:
    * 
    * &gt; **Note:** Custom Script Extensions require that the Azure Virtual Machine Guest Agent is running on the Virtual Machine.
    */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -545,8 +545,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application. */
-  def GalleryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GalleryApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.GalleryApplicationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -567,16 +567,16 @@ object compute:
    * 
    * &gt; **Note:** Gallery Application Assignments can be defined either directly on `azure.compute.LinuxVirtualMachine` and `azure.compute.WindowsVirtualMachine` resources, or using the `azure.compute.GalleryApplicationAssignment` resource - but the two approaches cannot be used together. If both are used with the same Virtual Machine, spurious changes will occur. It&#39;s recommended to use `ignoreChanges` for the `galleryApplication` block on the associated virtual machine resources, to avoid a persistent diff when using this resource.
    */
-  def GalleryApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GalleryApplicationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.GalleryApplicationAssignmentArgs.builder
     com.pulumi.azure.compute.GalleryApplicationAssignment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Gallery Application Version. */
-  def GalleryApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GalleryApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.GalleryApplicationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.GalleryApplicationVersionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -593,8 +593,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a custom virtual machine image that can be used to create virtual machines. */
-  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ImageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Image(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ImageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -615,8 +615,8 @@ object compute:
    * 
    * &gt; **Note:** The Implicit Data Disk will be deleted instantly after this resource is destroyed. If you want to detach this disk only, you may set `detachImplicitDataDiskOnDeletion` field to `true` within the `virtualMachine` block in the provider `features` block.
    */
-  def ImplicitDataDiskFromSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ImplicitDataDiskFromSourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ImplicitDataDiskFromSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ImplicitDataDiskFromSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ImplicitDataDiskFromSourceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -640,8 +640,8 @@ object compute:
    * 
    * &gt; In this release there&#39;s a known issue where the `publicIpAddress` and `publicIpAddresses` fields may not be fully populated for Dynamic Public IP&#39;s.
    */
-  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.LinuxVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -664,8 +664,8 @@ object compute:
    * 
    * &gt; **Note:** As of the **v2.86.0** (November 19, 2021) release of the provider this resource will only create Virtual Machine Scale Sets with the **Uniform** Orchestration Mode. For Virtual Machine Scale Sets with **Flexible** orchestration mode, use `azure.compute.OrchestratedVirtualMachineScaleSet`. Flexible orchestration mode is recommended for workloads on Azure.
    */
-  def LinuxVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinuxVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.LinuxVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -682,8 +682,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a managed disk. */
-  def ManagedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ManagedDiskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedDisk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ManagedDiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ManagedDiskArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -708,8 +708,8 @@ object compute:
    * 
    * With the help of this resource, data from the disk can be copied from managed disk to a storage blob or to some other system without the need of azcopy.
    */
-  def ManagedDiskSasToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ManagedDiskSasTokenArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedDiskSasToken(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ManagedDiskSasTokenArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.compute.ManagedDiskSasTokenArgs.builder
     com.pulumi.azure.compute.ManagedDiskSasToken(name,
         args(argsBuilder).build,
@@ -724,8 +724,8 @@ object compute:
    * 
    * &gt; **Note:** All arguments including the administrator login and password will be stored in the raw state as plain-text. [Read more about sensitive data in state](https://www.terraform.io/docs/state/sensitive-data.html).
    */
-  def OrchestratedVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrchestratedVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.OrchestratedVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -742,8 +742,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine using a Network Watcher. */
-  def PacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.PacketCaptureArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.PacketCaptureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.PacketCaptureArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -753,8 +753,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point. */
-  def RestorePoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.RestorePointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.RestorePointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RestorePointArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -764,8 +764,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Restore Point Collection. */
-  def RestorePointCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.RestorePointCollectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestorePointCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.RestorePointCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RestorePointCollectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -782,8 +782,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Machine Run Command. */
-  def RunCommand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.RunCommandArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RunCommand(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.RunCommandArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.RunCommandArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -800,8 +800,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a virtual machine scale set. */
-  def ScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ScaleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -818,8 +818,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Configures Network Packet Capturing against a Virtual Machine Scale Set using a Network Watcher. */
-  def ScaleSetPacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScaleSetPacketCapture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetPacketCaptureArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -832,8 +832,8 @@ object compute:
    * Manages a Standby Pool for Virtual Machine Scale Sets.
    * &gt; **Note:** please follow the prerequisites mentioned in this [article](https://learn.microsoft.com/azure/virtual-machine-scale-sets/standby-pools-create?tabs=portal#prerequisites) before using this resource.
    */
-  def ScaleSetStandbyPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScaleSetStandbyPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.ScaleSetStandbyPoolArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -850,8 +850,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image within a Shared Image Gallery. */
-  def SharedImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.SharedImageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SharedImage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.SharedImageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -868,8 +868,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Shared Image Gallery. */
-  def SharedImageGallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.SharedImageGalleryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SharedImageGallery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.SharedImageGalleryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageGalleryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -886,8 +886,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Version of a Shared Image within a Shared Image Gallery. */
-  def SharedImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.SharedImageVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SharedImageVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.SharedImageVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SharedImageVersionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -904,8 +904,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Disk Snapshot. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.SnapshotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -922,8 +922,8 @@ object compute:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a SSH Public Key. */
-  def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.SshPublicKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.SshPublicKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.SshPublicKeyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -948,8 +948,8 @@ object compute:
    * 
    * &gt; **Note:** Data Disks can be attached either directly on the `azure.compute.VirtualMachine` resource, or using the `azure.compute.DataDiskAttachment` resource - but the two cannot be used together. If both are used against the same Virtual Machine, spurious changes will occur.
    */
-  def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.VirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.VirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.VirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -970,8 +970,8 @@ object compute:
    * 
    * &gt; **Note:** This resource is not intended to be used with the `azure.compute.ScaleSet` resource - instead it&#39;s intended for this to be used with the `azure.compute.LinuxVirtualMachineScaleSet` and `azure.compute.WindowsVirtualMachineScaleSet` resources.
    */
-  def VirtualMachineScaleSetExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMachineScaleSetExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.VirtualMachineScaleSetExtensionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -995,8 +995,8 @@ object compute:
    * 
    * &gt; In this release there&#39;s a known issue where the `publicIpAddress` and `publicIpAddresses` fields may not be fully populated for Dynamic Public IP&#39;s.
    */
-  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.WindowsVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1025,8 +1025,8 @@ object compute:
    * 
    * &gt; **Note:** This resource does not support Unmanaged Disks. If you need to use Unmanaged Disks you can continue to use the `azure.compute.ScaleSet` resource instead.
    */
-  def WindowsVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WindowsVirtualMachineScaleSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.compute.WindowsVirtualMachineScaleSetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

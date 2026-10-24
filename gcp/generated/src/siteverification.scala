@@ -36,8 +36,8 @@ object siteverification:
    * * How-to Guides
    *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
    */
-  def Owner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.siteverification.OwnerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Owner(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.siteverification.OwnerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.siteverification.OwnerArgs.builder
     com.pulumi.gcp.siteverification.Owner(name,
         args(argsBuilder).build,
@@ -59,8 +59,8 @@ object siteverification:
      * * How-to Guides
      *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    inline def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getToken(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenArgs.builder
       com.pulumi.gcp.siteverification.SiteverificationFunctions.getToken(args(argsBuilder).build,
@@ -75,8 +75,8 @@ object siteverification:
      * * How-to Guides
      *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
      */
-    inline def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTokenPlain(args: Endofunction[com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.siteverification.outputs.GetTokenResult] =
       val argsBuilder = com.pulumi.gcp.siteverification.inputs.GetTokenPlainArgs.builder
       com.pulumi.gcp.siteverification.SiteverificationFunctions.getTokenPlain(args(argsBuilder).build,
@@ -99,8 +99,8 @@ object siteverification:
    * * How-to Guides
    *     * [Getting Started](https://developers.google.com/site-verification/v1/getting_started)
    */
-  def WebResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.siteverification.WebResourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebResource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.siteverification.WebResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.siteverification.WebResourceArgs.builder
     com.pulumi.gcp.siteverification.WebResource(name,
         args(argsBuilder).build,

@@ -7,24 +7,24 @@ import com.pulumi.resources.CustomResourceOptions
 
 object verifiedpermissions:
   /** Resource for managing an AWS Verified Permissions Identity Source. */
-  def IdentitySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IdentitySource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.IdentitySourceArgs.builder
     com.pulumi.aws.verifiedpermissions.IdentitySource(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Verified Permissions Policy. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyArgs.builder
     com.pulumi.aws.verifiedpermissions.Policy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store. */
-  def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PolicyStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyStoreArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -38,16 +38,16 @@ object verifiedpermissions:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Verified Permissions Policy Template. */
-  def PolicyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PolicyTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.verifiedpermissions.PolicyTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.PolicyTemplateArgs.builder
     com.pulumi.aws.verifiedpermissions.PolicyTemplate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** This is a Terraform resource for managing an AWS Verified Permissions Policy Store Schema. */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.verifiedpermissions.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.verifiedpermissions.SchemaArgs.builder
     com.pulumi.aws.verifiedpermissions.Schema(name,
         args(argsBuilder).build,
@@ -61,16 +61,16 @@ object verifiedpermissions:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Verified Permissions Policy Store. */
-    inline def getPolicyStore(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStoreArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPolicyStore(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStoreArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.verifiedpermissions.outputs.GetPolicyStoreResult] =
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStoreArgs.builder
       com.pulumi.aws.verifiedpermissions.VerifiedpermissionsFunctions.getPolicyStore(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Verified Permissions Policy Store. */
-    inline def getPolicyStorePlain(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStorePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPolicyStorePlain(args: Endofunction[com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStorePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.verifiedpermissions.outputs.GetPolicyStoreResult] =
       val argsBuilder = com.pulumi.aws.verifiedpermissions.inputs.GetPolicyStorePlainArgs.builder
       com.pulumi.aws.verifiedpermissions.VerifiedpermissionsFunctions.getPolicyStorePlain(args(argsBuilder).build,

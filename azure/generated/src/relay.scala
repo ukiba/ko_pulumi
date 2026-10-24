@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object relay:
   /** Manages an Azure Relay Hybrid Connection. */
-  def HybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.relay.HybridConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HybridConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.relay.HybridConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.relay.HybridConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -16,8 +16,8 @@ object relay:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Relay Hybrid Connection Authorization Rule. */
-  def HybridConnectionAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.relay.HybridConnectionAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HybridConnectionAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.relay.HybridConnectionAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.relay.HybridConnectionAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -27,8 +27,8 @@ object relay:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Relay Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.relay.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.relay.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.relay.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -45,8 +45,8 @@ object relay:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Relay Namespace Authorization Rule. */
-  def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.relay.NamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.relay.NamespaceAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.relay.NamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

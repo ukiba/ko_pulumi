@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object neptunegraph:
   /** The `aws.neptunegraph.Graph` resource creates an Amazon Analytics Graph. */
-  def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.neptunegraph.GraphArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Graph(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.neptunegraph.GraphArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.neptunegraph.GraphArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,8 +20,8 @@ object neptunegraph:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Amazon Neptune Analytics Private Graph Endpoint. */
-  def PrivateGraphEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrivateGraphEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.neptunegraph.PrivateGraphEndpointArgs.builder
     com.pulumi.aws.neptunegraph.PrivateGraphEndpoint(name,
         args(argsBuilder).build,

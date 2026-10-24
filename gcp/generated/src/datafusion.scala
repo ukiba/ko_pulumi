@@ -14,16 +14,16 @@ object datafusion:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for instance */
-    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.datafusion.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.datafusion.DatafusionFunctions.getInstanceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for instance */
-    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datafusion.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.datafusion.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.datafusion.DatafusionFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build,
@@ -38,8 +38,8 @@ object datafusion:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/data-fusion/docs/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.datafusion.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.datafusion.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.datafusion.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

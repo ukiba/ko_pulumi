@@ -16,8 +16,8 @@ object ebs:
    * 
    * &gt; **NOTE:** Destroying this resource will reset the default CMK to the account&#39;s AWS-managed default CMK for EBS.
    */
-  def DefaultKmsKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.DefaultKmsKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DefaultKmsKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.DefaultKmsKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.DefaultKmsKeyArgs.builder
     com.pulumi.aws.ebs.DefaultKmsKey(name,
         args(argsBuilder).build,
@@ -31,16 +31,16 @@ object ebs:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get the default EBS encryption KMS key in the current region. */
-    inline def getDefaultKmsKey(args: Endofunction[com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultKmsKey(args: Endofunction[com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetDefaultKmsKeyResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getDefaultKmsKey(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the default EBS encryption KMS key in the current region. */
-    inline def getDefaultKmsKeyPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultKmsKeyPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetDefaultKmsKeyResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetDefaultKmsKeyPlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getDefaultKmsKeyPlain(args(argsBuilder).build,
@@ -51,8 +51,8 @@ object ebs:
      * 
      * This data source can be useful for getting a list of volume IDs with (for example) matching tags.
      */
-    inline def getEbsVolumes(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEbsVolumes(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetEbsVolumesResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getEbsVolumes(args(argsBuilder).build,
@@ -63,40 +63,40 @@ object ebs:
      * 
      * This data source can be useful for getting a list of volume IDs with (for example) matching tags.
      */
-    inline def getEbsVolumesPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEbsVolumesPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetEbsVolumesResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetEbsVolumesPlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getEbsVolumesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides a way to check whether default EBS encryption is enabled for your AWS account in the current AWS region. */
-    inline def getEncryptionByDefault(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEncryptionByDefault(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetEncryptionByDefaultResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getEncryptionByDefault(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides a way to check whether default EBS encryption is enabled for your AWS account in the current AWS region. */
-    inline def getEncryptionByDefaultPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEncryptionByDefaultPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetEncryptionByDefaultResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetEncryptionByDefaultPlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getEncryptionByDefaultPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about an EBS Snapshot for use when provisioning EBS Volumes */
-    inline def getSnapshot(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getSnapshot(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about an EBS Snapshot for use when provisioning EBS Volumes */
-    inline def getSnapshotPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getSnapshotPlain(args(argsBuilder).build,
@@ -106,8 +106,8 @@ object ebs:
      * Use this data source to get a list of EBS Snapshot IDs matching the specified
      * criteria.
      */
-    inline def getSnapshotIds(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotIds(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetSnapshotIdsResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getSnapshotIds(args(argsBuilder).build,
@@ -117,8 +117,8 @@ object ebs:
      * Use this data source to get a list of EBS Snapshot IDs matching the specified
      * criteria.
      */
-    inline def getSnapshotIdsPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotIdsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotIdsPlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetSnapshotIdsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetSnapshotIdsResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetSnapshotIdsPlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getSnapshotIdsPlain(args(argsBuilder).build,
@@ -128,8 +128,8 @@ object ebs:
      * Use this data source to get information about an EBS volume for use in other
      * resources.
      */
-    inline def getVolume(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolume(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumeArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ebs.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetVolumeArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getVolume(args(argsBuilder).build,
@@ -139,8 +139,8 @@ object ebs:
      * Use this data source to get information about an EBS volume for use in other
      * resources.
      */
-    inline def getVolumePlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumePlain(args: Endofunction[com.pulumi.aws.ebs.inputs.GetVolumePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ebs.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.aws.ebs.inputs.GetVolumePlainArgs.builder
       com.pulumi.aws.ebs.EbsFunctions.getVolumePlain(args(argsBuilder).build,
@@ -151,24 +151,24 @@ object ebs:
    * 
    * &gt; **NOTE:** Removing this resource disables default EBS encryption.
    */
-  def EncryptionByDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.EncryptionByDefaultArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EncryptionByDefault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.EncryptionByDefaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.EncryptionByDefaultArgs.builder
     com.pulumi.aws.ebs.EncryptionByDefault(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an EBS (Elastic Block Storage) Fast Snapshot Restore. */
-  def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FastSnapshotRestore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.FastSnapshotRestoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.FastSnapshotRestoreArgs.builder
     com.pulumi.aws.ebs.FastSnapshotRestore(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of an EBS Volume. */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.SnapshotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -186,16 +186,16 @@ object ebs:
    * 
    * &gt; **NOTE:** Removing this Terraform resource disables blocking.
    */
-  def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SnapshotBlockPublicAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ebs.SnapshotBlockPublicAccessArgs.builder
     com.pulumi.aws.ebs.SnapshotBlockPublicAccess(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a Snapshot of a snapshot. */
-  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.SnapshotCopyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SnapshotCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.SnapshotCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotCopyArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -209,8 +209,8 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Imports a disk image from S3 as a Snapshot. */
-  def SnapshotImport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.SnapshotImportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SnapshotImport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.SnapshotImportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.SnapshotImportArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -224,8 +224,8 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a single EBS volume. */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.VolumeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.VolumeArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -239,8 +239,8 @@ object ebs:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a copy of an existing Amazon EBS volume. */
-  def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ebs.VolumeCopyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeCopy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ebs.VolumeCopyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ebs.VolumeCopyArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

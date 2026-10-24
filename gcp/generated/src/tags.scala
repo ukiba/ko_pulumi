@@ -15,8 +15,8 @@ object tags:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
    */
-  def LocationTagBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.LocationTagBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LocationTagBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.LocationTagBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.LocationTagBindingArgs.builder
     com.pulumi.gcp.tags.LocationTagBinding(name,
         args(argsBuilder).build,
@@ -31,15 +31,15 @@ object tags:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
    */
-  def TagBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagBindingArgs.builder
     com.pulumi.gcp.tags.TagBinding(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def TagBindingCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagBindingCollectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagBindingCollection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagBindingCollectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagBindingCollectionArgs.builder
     com.pulumi.gcp.tags.TagBindingCollection(name,
         args(argsBuilder).build,
@@ -54,8 +54,8 @@ object tags:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
    */
-  def TagKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagKeyArgs.builder
     com.pulumi.gcp.tags.TagKey(name,
         args(argsBuilder).build,
@@ -618,8 +618,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagKeyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagKeyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamBindingArgs.builder
     com.pulumi.gcp.tags.TagKeyIamBinding(name,
         args(argsBuilder).build,
@@ -1182,8 +1182,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagKeyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagKeyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamMemberArgs.builder
     com.pulumi.gcp.tags.TagKeyIamMember(name,
         args(argsBuilder).build,
@@ -1746,8 +1746,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagKeyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagKeyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagKeyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagKeyIamPolicyArgs.builder
     com.pulumi.gcp.tags.TagKeyIamPolicy(name,
         args(argsBuilder).build,
@@ -1762,8 +1762,8 @@ object tags:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing)
    */
-  def TagValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagValueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagValue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagValueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagValueArgs.builder
     com.pulumi.gcp.tags.TagValue(name,
         args(argsBuilder).build,
@@ -2326,8 +2326,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagValueIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagValueIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamBindingArgs.builder
     com.pulumi.gcp.tags.TagValueIamBinding(name,
         args(argsBuilder).build,
@@ -2890,8 +2890,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagValueIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagValueIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamMemberArgs.builder
     com.pulumi.gcp.tags.TagValueIamMember(name,
         args(argsBuilder).build,
@@ -3454,8 +3454,8 @@ object tags:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TagValueIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TagValueIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.tags.TagValueIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.tags.TagValueIamPolicyArgs.builder
     com.pulumi.gcp.tags.TagValueIamPolicy(name,
         args(argsBuilder).build,
@@ -3469,96 +3469,96 @@ object tags:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get a tag key by org or project `parent` and `shortName`. */
-    inline def getTagKey(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagKey(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagKeyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeyArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKey(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a tag key by org or project `parent` and `shortName`. */
-    inline def getTagKeyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagKeyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagKeyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeyPlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKeyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for tagkey */
-    inline def getTagKeyIamPolicy(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagKeyIamPolicy(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagKeyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKeyIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for tagkey */
-    inline def getTagKeyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagKeyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagKeyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeyIamPolicyPlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKeyIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get tag keys by org or project `parent`. */
-    inline def getTagKeys(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeysArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagKeys(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeysArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagKeysResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeysArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKeys(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get tag keys by org or project `parent`. */
-    inline def getTagKeysPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeysPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagKeysPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagKeysPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagKeysResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagKeysPlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagKeysPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get a tag value by `parent` key and `shortName`. */
-    inline def getTagValue(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagValue(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagValueResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValueArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValue(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a tag value by `parent` key and `shortName`. */
-    inline def getTagValuePlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagValuePlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagValueResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValuePlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValuePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for tagvalue */
-    inline def getTagValueIamPolicy(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagValueIamPolicy(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagValueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValueIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for tagvalue */
-    inline def getTagValueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagValueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagValueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValueIamPolicyPlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValueIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get tag values from a `parent` key. */
-    inline def getTagValues(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTagValues(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.tags.outputs.GetTagValuesResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValuesArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValues(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get tag values from a `parent` key. */
-    inline def getTagValuesPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTagValuesPlain(args: Endofunction[com.pulumi.gcp.tags.inputs.GetTagValuesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.tags.outputs.GetTagValuesResult] =
       val argsBuilder = com.pulumi.gcp.tags.inputs.GetTagValuesPlainArgs.builder
       com.pulumi.gcp.tags.TagsFunctions.getTagValuesPlain(args(argsBuilder).build,

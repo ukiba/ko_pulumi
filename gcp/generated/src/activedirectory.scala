@@ -13,8 +13,8 @@ object activedirectory:
    * * How-to Guides
    *     * [Managed Microsoft Active Directory Quickstart](https://cloud.google.com/managed-microsoft-ad/docs/quickstarts)
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.activedirectory.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.activedirectory.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainArgs.builder
     com.pulumi.gcp.activedirectory.Domain(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object activedirectory:
    * * How-to Guides
    *     * [Active Directory Trust](https://cloud.google.com/managed-microsoft-ad/docs/create-one-way-trust)
    */
-  def DomainTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.activedirectory.DomainTrustArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.activedirectory.DomainTrustArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.DomainTrustArgs.builder
     com.pulumi.gcp.activedirectory.DomainTrust(name,
         args(argsBuilder).build,
@@ -48,8 +48,8 @@ object activedirectory:
    * * How-to Guides
    *     * [Active Directory Domain Peering](https://cloud.google.com/managed-microsoft-ad/docs/domain-peering)
    */
-  def Peering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.activedirectory.PeeringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Peering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.activedirectory.PeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.activedirectory.PeeringArgs.builder
     com.pulumi.gcp.activedirectory.Peering(name,
         args(argsBuilder).build,

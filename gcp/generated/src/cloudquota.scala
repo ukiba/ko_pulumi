@@ -14,32 +14,32 @@ object cloudquota:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides information about a particular quota for a given project, folder or organization. */
-    inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfo(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfo(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about a particular quota for a given project, folder or organization. */
-    inline def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfoPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfoResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfoPlainArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfoPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    inline def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfos(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfos(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about all quotas for a given project, folder or organization. */
-    inline def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSQuotaInfosPlain(args: Endofunction[com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudquota.outputs.GetSQuotaInfosResult] =
       val argsBuilder = com.pulumi.gcp.cloudquota.inputs.GetSQuotaInfosPlainArgs.builder
       com.pulumi.gcp.cloudquota.CloudquotaFunctions.getSQuotaInfosPlain(args(argsBuilder).build,
@@ -54,8 +54,8 @@ object cloudquota:
    * * How-to Guides
    *     * [Cloud Quotas Overview](https://cloud.google.com/docs/quotas/overview)
    */
-  def SQuotaAdjusterSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SQuotaAdjusterSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudquota.SQuotaAdjusterSettingsArgs.builder
     com.pulumi.gcp.cloudquota.SQuotaAdjusterSettings(name,
         args(argsBuilder).build,
@@ -70,8 +70,8 @@ object cloudquota:
    * * How-to Guides
    *     * [Cloud Quotas Overview](https://cloud.google.com/docs/quotas/overview)
    */
-  def SQuotaPreference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SQuotaPreference(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudquota.SQuotaPreferenceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

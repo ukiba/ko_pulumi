@@ -13,8 +13,8 @@ object transcoder:
    * * How-to Guides
    *     * [Transcoder](https://cloud.google.com/transcoder/docs/)
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.transcoder.JobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.transcoder.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.transcoder.JobArgs.builder
     com.pulumi.gcp.transcoder.Job(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object transcoder:
    * * How-to Guides
    *     * [Transcoder](https://cloud.google.com/transcoder/docs/)
    */
-  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.transcoder.JobTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.transcoder.JobTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.transcoder.JobTemplateArgs.builder
     com.pulumi.gcp.transcoder.JobTemplate(name,
         args(argsBuilder).build,

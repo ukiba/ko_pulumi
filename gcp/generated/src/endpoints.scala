@@ -53,8 +53,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsumersIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConsumersIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamBindingArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamBinding(name,
         args(argsBuilder).build,
@@ -107,8 +107,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsumersIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConsumersIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamMemberArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamMember(name,
         args(argsBuilder).build,
@@ -161,8 +161,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConsumersIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConsumersIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ConsumersIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ConsumersIamPolicyArgs.builder
     com.pulumi.gcp.endpoints.ConsumersIamPolicy(name,
         args(argsBuilder).build,
@@ -176,40 +176,40 @@ object endpoints:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for serviceconsumers */
-    inline def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for serviceconsumers */
-    inline def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServiceConsumersIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceConsumersIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceConsumersIamPolicyPlainArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceConsumersIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.endpoints.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.endpoints.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.endpoints.EndpointsFunctions.getServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** This resource creates and rolls out a Cloud Endpoints service using OpenAPI or gRPC.  View the relevant docs for [OpenAPI](https://cloud.google.com/endpoints/docs/openapi/) and [gRPC](https://cloud.google.com/endpoints/docs/grpc/). */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceArgs.builder
     com.pulumi.gcp.endpoints.Service(name,
         args(argsBuilder).build,
@@ -508,8 +508,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamBindingArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamBinding(name,
         args(argsBuilder).build,
@@ -808,8 +808,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamMemberArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamMember(name,
         args(argsBuilder).build,
@@ -1108,8 +1108,8 @@ object endpoints:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.endpoints.ServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.endpoints.ServiceIamPolicyArgs.builder
     com.pulumi.gcp.endpoints.ServiceIamPolicy(name,
         args(argsBuilder).build,

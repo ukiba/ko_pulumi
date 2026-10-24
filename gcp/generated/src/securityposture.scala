@@ -16,8 +16,8 @@ object securityposture:
    * * How-to Guides
    *     * [Create and deploy a posture](https://cloud.google.com/security-command-center/docs/how-to-use-security-posture)
    */
-  def Posture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.securityposture.PostureArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Posture(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.securityposture.PostureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securityposture.PostureArgs.builder
     com.pulumi.gcp.securityposture.Posture(name,
         args(argsBuilder).build,
@@ -48,8 +48,8 @@ object securityposture:
    * \$ pulumi import gcp:securityposture/postureDeployment:PostureDeployment default {{parent}}/locations/{{location}}/postureDeployments/{{posture_deployment_id}}
    * ```
    */
-  def PostureDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.securityposture.PostureDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PostureDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.securityposture.PostureDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.securityposture.PostureDeploymentArgs.builder
     com.pulumi.gcp.securityposture.PostureDeployment(name,
         args(argsBuilder).build,

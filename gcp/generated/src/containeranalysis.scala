@@ -14,16 +14,16 @@ object containeranalysis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for note */
-    inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicy(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyArgs.builder
       com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for note */
-    inline def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNoteIamPolicyPlain(args: Endofunction[com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.containeranalysis.outputs.GetNoteIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.containeranalysis.inputs.GetNoteIamPolicyPlainArgs.builder
       com.pulumi.gcp.containeranalysis.ContaineranalysisFunctions.getNoteIamPolicyPlain(args(argsBuilder).build,
@@ -40,8 +40,8 @@ object containeranalysis:
    *     * [Creating Attestations (Occurrences)](https://cloud.google.com/binary-authorization/docs/making-attestations)
    *     * [Official Documentation](https://cloud.google.com/container-analysis/)
    */
-  def Note(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Note(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.containeranalysis.NoteArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -349,8 +349,8 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NoteIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamBindingArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamBinding(name,
         args(argsBuilder).build,
@@ -655,8 +655,8 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NoteIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamMemberArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamMember(name,
         args(argsBuilder).build,
@@ -961,8 +961,8 @@ object containeranalysis:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def NoteIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NoteIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.NoteIamPolicyArgs.builder
     com.pulumi.gcp.containeranalysis.NoteIamPolicy(name,
         args(argsBuilder).build,
@@ -978,8 +978,8 @@ object containeranalysis:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/container-analysis/)
    */
-  def Occurence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.containeranalysis.OccurenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Occurence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.containeranalysis.OccurenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.containeranalysis.OccurenceArgs.builder
     com.pulumi.gcp.containeranalysis.Occurence(name,
         args(argsBuilder).build,

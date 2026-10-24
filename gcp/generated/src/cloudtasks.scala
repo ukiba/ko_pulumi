@@ -14,24 +14,24 @@ object cloudtasks:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for queue */
-    inline def getQueueIamPolicy(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getQueueIamPolicy(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudtasks.outputs.GetQueueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyArgs.builder
       com.pulumi.gcp.cloudtasks.CloudtasksFunctions.getQueueIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for queue */
-    inline def getQueueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getQueueIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudtasks.outputs.GetQueueIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudtasks.inputs.GetQueueIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudtasks.CloudtasksFunctions.getQueueIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** A named resource to which messages are sent by publishers. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudtasks.QueueArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -346,8 +346,8 @@ object cloudtasks:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def QueueIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueueIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudtasks.QueueIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -662,8 +662,8 @@ object cloudtasks:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def QueueIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueueIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudtasks.QueueIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -978,8 +978,8 @@ object cloudtasks:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def QueueIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueueIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudtasks.QueueIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudtasks.QueueIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -11,8 +11,8 @@ object configdeployment:
    * 
    * * [API documentation](https://cloud.google.com/infrastructure-manager/docs/reference/rest/v1/projects.locations.deployments)
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.configdeployment.DeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.configdeployment.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.configdeployment.DeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -15,8 +15,8 @@ object cloudbuild:
    * * How-to Guides
    *     * [Connect to a Bitbucket Server host](https://cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-server)
    */
-  def BitbucketServerConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BitbucketServerConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudbuild.BitbucketServerConfigArgs.builder
     com.pulumi.gcp.cloudbuild.BitbucketServerConfig(name,
         args(argsBuilder).build,
@@ -36,8 +36,8 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTrigger(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTrigger(args(argsBuilder).build,
@@ -50,8 +50,8 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTriggerPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuild.outputs.GetTriggerResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetTriggerPlainArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getTriggerPlain(args(argsBuilder).build,
@@ -64,8 +64,8 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkerPool(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuild.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPool(args(argsBuilder).build,
@@ -78,8 +78,8 @@ object cloudbuild:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/build/docs/automating-builds/create-manage-triggers)
      */
-    inline def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkerPoolPlain(args: Endofunction[com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuild.outputs.GetWorkerPoolResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuild.inputs.GetWorkerPoolPlainArgs.builder
       com.pulumi.gcp.cloudbuild.CloudbuildFunctions.getWorkerPoolPlain(args(argsBuilder).build,
@@ -96,8 +96,8 @@ object cloudbuild:
    * 
    * &gt; **Note:** You can retrieve the email of the Cloud Build Service Account used in jobs by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuild.TriggerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Trigger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuild.TriggerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuild.TriggerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -107,8 +107,8 @@ object cloudbuild:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Definition of custom Cloud Build WorkerPools for running jobs with custom configuration and custom networking. */
-  def WorkerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkerPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuild.WorkerPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuild.WorkerPoolArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

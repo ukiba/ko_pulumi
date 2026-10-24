@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appfabric:
   /** Resource for managing an AWS AppFabric App Authorization. */
-  def AppAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.AppAuthorizationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,16 +20,16 @@ object appfabric:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric App Authorization Connection. */
-  def AppAuthorizationConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppAuthorizationConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appfabric.AppAuthorizationConnectionArgs.builder
     com.pulumi.aws.appfabric.AppAuthorizationConnection(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric AppBundle. */
-  def AppBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appfabric.AppBundleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppBundle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appfabric.AppBundleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.AppBundleArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -43,8 +43,8 @@ object appfabric:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric Ingestion. */
-  def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appfabric.IngestionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Ingestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appfabric.IngestionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.IngestionArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -58,8 +58,8 @@ object appfabric:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppFabric Ingestion Destination. */
-  def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IngestionDestination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appfabric.IngestionDestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appfabric.IngestionDestinationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

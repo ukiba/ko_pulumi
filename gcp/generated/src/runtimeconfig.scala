@@ -18,8 +18,8 @@ object runtimeconfig:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -333,8 +333,8 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamBindingArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamBinding(name,
         args(argsBuilder).build,
@@ -645,8 +645,8 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamMemberArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamMember(name,
         args(argsBuilder).build,
@@ -957,8 +957,8 @@ object runtimeconfig:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.runtimeconfig.ConfigIamPolicyArgs.builder
     com.pulumi.gcp.runtimeconfig.ConfigIamPolicy(name,
         args(argsBuilder).build,
@@ -981,8 +981,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getConfig(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConfig(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfig(args(argsBuilder).build,
@@ -998,8 +998,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigPlainArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigPlain(args(argsBuilder).build,
@@ -1010,8 +1010,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getConfigIamPolicy(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConfigIamPolicy(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicy(args(argsBuilder).build,
@@ -1022,8 +1022,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetConfigIamPolicyPlainArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getConfigIamPolicyPlain(args(argsBuilder).build,
@@ -1039,8 +1039,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getVariable(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVariable(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.runtimeconfig.outputs.GetVariableResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetVariableArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariable(args(argsBuilder).build,
@@ -1056,8 +1056,8 @@ object runtimeconfig:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta datasources.
      */
-    inline def getVariablePlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVariablePlain(args: Endofunction[com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.runtimeconfig.outputs.GetVariableResult] =
       val argsBuilder = com.pulumi.gcp.runtimeconfig.inputs.GetVariablePlainArgs.builder
       com.pulumi.gcp.runtimeconfig.RuntimeconfigFunctions.getVariablePlain(args(argsBuilder).build,
@@ -1072,8 +1072,8 @@ object runtimeconfig:
    * &gt; **Warning:** This resource is in beta, and should be used with the terraform-provider-google-beta provider.
    * See Provider Versions for more details on beta resources.
    */
-  def Variable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.runtimeconfig.VariableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Variable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.runtimeconfig.VariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.runtimeconfig.VariableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

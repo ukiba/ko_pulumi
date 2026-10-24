@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object powerbi:
   /** Manages a PowerBI Embedded. */
-  def Embedded(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.powerbi.EmbeddedArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Embedded(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.powerbi.EmbeddedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.powerbi.EmbeddedArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

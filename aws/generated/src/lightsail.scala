@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object lightsail:
   /** Manages a Lightsail bucket. Use this resource to create and manage object storage buckets for storing files, images, and other data in Lightsail. */
-  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.BucketArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Bucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.BucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.BucketArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,24 +23,24 @@ object lightsail:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail bucket access key. Use this resource to create credentials that allow programmatic access to your Lightsail bucket via API requests. */
-  def BucketAccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.BucketAccessKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BucketAccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.BucketAccessKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.BucketAccessKeyArgs.builder
     com.pulumi.aws.lightsail.BucketAccessKey(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail bucket resource access. Use this resource to grant a Lightsail resource (such as an instance) access to a specific bucket. */
-  def BucketResourceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.BucketResourceAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BucketResourceAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.BucketResourceAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.BucketResourceAccessArgs.builder
     com.pulumi.aws.lightsail.BucketResourceAccess(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail certificate. Use this resource to create and manage SSL/TLS certificates for securing custom domains with your Lightsail resources. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.CertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -63,8 +63,8 @@ object lightsail:
    * 
    * &gt; **NOTE:** You must create and validate an SSL/TLS certificate before you can use `publicDomainNames` with your container service. For more information, see [Enabling and managing custom domains for your Amazon Lightsail container services](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-services-certificates).
    */
-  def ContainerService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.ContainerServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ContainerService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.ContainerServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.ContainerServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -87,8 +87,8 @@ object lightsail:
    * 
    * &gt; **NOTE:** This resource allows you to manage an Amazon Lightsail container service deployment version but the provider cannot destroy it. Removing this resource from your configuration will remove it from your statefile.
    */
-  def ContainerServiceDeploymentVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.ContainerServiceDeploymentVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ContainerServiceDeploymentVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.ContainerServiceDeploymentVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.ContainerServiceDeploymentVersionArgs.builder
     com.pulumi.aws.lightsail.ContainerServiceDeploymentVersion(name,
         args(argsBuilder).build,
@@ -99,8 +99,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones&#34;](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) for more details
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.DatabaseArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -114,8 +114,8 @@ object lightsail:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail disk. Use this resource to create additional block storage that can be attached to Lightsail instances for extra storage capacity. */
-  def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.DiskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Disk(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.DiskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.DiskArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -132,16 +132,16 @@ object lightsail:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail disk attachment. Use this resource to attach additional storage disks to your Lightsail instances for expanded storage capacity. */
-  def Disk_attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.Disk_attachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Disk_attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.Disk_attachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.Disk_attachmentArgs.builder
     com.pulumi.aws.lightsail.Disk_attachment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail content delivery network (CDN) distribution. Use this resource to cache content at edge locations and reduce latency for users accessing your content. */
-  def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.DistributionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Distribution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.DistributionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.DistributionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -164,8 +164,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details.
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.DomainArgs.builder
     com.pulumi.aws.lightsail.Domain(name,
         args(argsBuilder).build,
@@ -176,8 +176,8 @@ object lightsail:
    * 
    * &gt; **NOTE on `id`:** In an effort to simplify imports, this resource `id` field has been updated to the standard resource ID separator, a comma (`,`). For backward compatibility, the previous separator (underscore `_`) can still be used to read and import existing resources. When state is refreshed, the `id` will be updated to use the new standard separator. The previous separator will be deprecated in a future major release.
    */
-  def DomainEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.DomainEntryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainEntry(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.DomainEntryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.DomainEntryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -191,8 +191,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -215,8 +215,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details.
    */
-  def InstancePublicPorts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.InstancePublicPortsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstancePublicPorts(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.InstancePublicPortsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.InstancePublicPortsArgs.builder
     com.pulumi.aws.lightsail.InstancePublicPorts(name,
         args(argsBuilder).build,
@@ -227,8 +227,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details
    */
-  def KeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.KeyPairArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyPair(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.KeyPairArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.KeyPairArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -249,8 +249,8 @@ object lightsail:
    * 
    * Use this resource to distribute incoming traffic across multiple Lightsail instances to improve application availability and performance.
    */
-  def Lb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Lb(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.LbArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -267,8 +267,8 @@ object lightsail:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Lightsail Load Balancer Attachment. Use this resource to attach Lightsail instances to a load balancer for distributing traffic across multiple instances. */
-  def LbAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LbAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.LbAttachmentArgs.builder
     com.pulumi.aws.lightsail.LbAttachment(name,
         args(argsBuilder).build,
@@ -279,8 +279,8 @@ object lightsail:
    * 
    * Use this resource to create and manage SSL/TLS certificates for Lightsail Load Balancers. The certificate must be validated before it can be attached to a load balancer to enable HTTPS traffic.
    */
-  def LbCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LbCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.LbCertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -294,8 +294,8 @@ object lightsail:
    * 
    * Use this resource to attach a validated SSL/TLS certificate to a Lightsail Load Balancer to enable HTTPS traffic. The certificate must be validated before it can be attached to the load balancer.
    */
-  def LbCertificateAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbCertificateAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LbCertificateAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbCertificateAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.LbCertificateAttachmentArgs.builder
     com.pulumi.aws.lightsail.LbCertificateAttachment(name,
         args(argsBuilder).build,
@@ -306,8 +306,8 @@ object lightsail:
    * 
    * Use this resource to configure automatic redirection of HTTP traffic to HTTPS on a Lightsail Load Balancer. A valid certificate must be attached to the load balancer before enabling HTTPS redirection.
    */
-  def LbHttpsRedirectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbHttpsRedirectionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LbHttpsRedirectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbHttpsRedirectionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.LbHttpsRedirectionPolicyArgs.builder
     com.pulumi.aws.lightsail.LbHttpsRedirectionPolicy(name,
         args(argsBuilder).build,
@@ -318,8 +318,8 @@ object lightsail:
    * 
    * Use this resource to configure session stickiness to ensure that user sessions are consistently routed to the same backend instance. This helps maintain session state for applications that store session data locally on the server.
    */
-  def LbStickinessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.LbStickinessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LbStickinessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.LbStickinessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.LbStickinessPolicyArgs.builder
     com.pulumi.aws.lightsail.LbStickinessPolicy(name,
         args(argsBuilder).build,
@@ -332,8 +332,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details.
    */
-  def StaticIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.StaticIpArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def StaticIp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.StaticIpArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lightsail.StaticIpArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -349,8 +349,8 @@ object lightsail:
    * 
    * &gt; **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [&#34;Regions and Availability Zones in Amazon Lightsail&#34;](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details.
    */
-  def StaticIpAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lightsail.StaticIpAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def StaticIpAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lightsail.StaticIpAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lightsail.StaticIpAttachmentArgs.builder
     com.pulumi.aws.lightsail.StaticIpAttachment(name,
         args(argsBuilder).build,

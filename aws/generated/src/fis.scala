@@ -13,8 +13,8 @@ object fis:
    * See [Amazon Fault Injection Simulator](https://docs.aws.amazon.com/fis/index.html)
    * for more information.
    */
-  def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.fis.ExperimentTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ExperimentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.fis.ExperimentTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.fis.ExperimentTemplateArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -35,16 +35,16 @@ object fis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplates(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplates(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** This resource can be useful for getting back a set of FIS experiment template IDs. */
-    inline def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getExperimentTemplatesPlain(args: Endofunction[com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.fis.outputs.GetExperimentTemplatesResult] =
       val argsBuilder = com.pulumi.aws.fis.inputs.GetExperimentTemplatesPlainArgs.builder
       com.pulumi.aws.fis.FisFunctions.getExperimentTemplatesPlain(args(argsBuilder).build,
@@ -57,16 +57,16 @@ object fis:
    * 
    * &gt; **Note:** AWS rejects a `reason` change unless `status` is also actually transitioning (for example, `engaged` to `disengaged`). Creating or updating this resource with a `status` that already matches the live safety lever succeeds only if the configured `reason` also matches the live `reason`; otherwise it fails at apply time. Pair a `reason` change with an actual `status` change.
    */
-  def SafetyLeverState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.fis.SafetyLeverStateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SafetyLeverState(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.fis.SafetyLeverStateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.fis.SafetyLeverStateArgs.builder
     com.pulumi.aws.fis.SafetyLeverState(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS FIS (Fault Injection Simulator) Target Account Configuration. */
-  def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TargetAccountConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.fis.TargetAccountConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.fis.TargetAccountConfigurationArgs.builder
     com.pulumi.aws.fis.TargetAccountConfiguration(name,
         args(argsBuilder).build,

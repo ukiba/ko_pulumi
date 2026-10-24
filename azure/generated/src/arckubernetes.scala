@@ -9,8 +9,8 @@ object arckubernetes:
    * 
    * &gt; **Note:** Installing and configuring the Azure Arc Agent on your Kubernetes Cluster to establish connectivity is outside the scope of this document. For more details refer to [Deploy agents to your cluster](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/conceptual-agent-overview#deploy-agents-to-your-cluster) and [Connect an existing Kubernetes Cluster](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/quickstart-connect-cluster?tabs=azure-cli#connect-an-existing-kubernetes-cluster). If you encounter issues connecting your Kubernetes Cluster to Azure Arc, we&#39;d recommend opening a ticket with Microsoft Support.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arckubernetes.ClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arckubernetes.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arckubernetes.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -27,8 +27,8 @@ object arckubernetes:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Cluster Extension. */
-  def ClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arckubernetes.ClusterExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arckubernetes.ClusterExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arckubernetes.ClusterExtensionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -38,8 +38,8 @@ object arckubernetes:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Flux Configuration. */
-  def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FluxConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arckubernetes.FluxConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arckubernetes.FluxConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -49,8 +49,8 @@ object arckubernetes:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Arc Kubernetes Provisioned Cluster. */
-  def ProvisionedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arckubernetes.ProvisionedClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProvisionedCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arckubernetes.ProvisionedClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arckubernetes.ProvisionedClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

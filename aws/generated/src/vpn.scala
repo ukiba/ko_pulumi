@@ -13,16 +13,16 @@ object vpn:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network. */
-    @deprecated("aws.vpn/getconnection.getConnection has been deprecated in favor of aws.ec2/getvpnconnection.getVpnConnection") inline def getConnection(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    @deprecated("aws.vpn/getconnection.getConnection has been deprecated in favor of aws.ec2/getvpnconnection.getVpnConnection") inline def getConnection(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.vpn.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionArgs.builder
       com.pulumi.aws.vpn.VpnFunctions.getConnection(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Fetches details of a Site-to-Site VPN connection. A Site-to-Site VPN connection is an IP security (IPsec) VPN connection between a VPC and an on-premises network. */
-    @deprecated("aws.vpn/getconnection.getConnection has been deprecated in favor of aws.ec2/getvpnconnection.getVpnConnection") inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    @deprecated("aws.vpn/getconnection.getConnection has been deprecated in favor of aws.ec2/getvpnconnection.getVpnConnection") inline def getConnectionPlain(args: Endofunction[com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.vpn.outputs.GetConnectionResult] =
       val argsBuilder = com.pulumi.aws.vpn.inputs.GetConnectionPlainArgs.builder
       com.pulumi.aws.vpn.VpnFunctions.getConnectionPlain(args(argsBuilder).build,

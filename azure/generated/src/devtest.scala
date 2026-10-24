@@ -14,32 +14,32 @@ object devtest:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Dev Test Lab. */
-    inline def getLab(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLab(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.devtest.outputs.GetLabResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetLabArgs.builder
       com.pulumi.azure.devtest.DevtestFunctions.getLab(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dev Test Lab. */
-    inline def getLabPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLabPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetLabPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.devtest.outputs.GetLabResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetLabPlainArgs.builder
       com.pulumi.azure.devtest.DevtestFunctions.getLabPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Dev Test Lab Virtual Network. */
-    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualNetwork(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.devtest.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetVirtualNetworkArgs.builder
       com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetwork(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Dev Test Lab Virtual Network. */
-    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVirtualNetworkPlain(args: Endofunction[com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.devtest.outputs.GetVirtualNetworkResult] =
       val argsBuilder = com.pulumi.azure.devtest.inputs.GetVirtualNetworkPlainArgs.builder
       com.pulumi.azure.devtest.DevtestFunctions.getVirtualNetworkPlain(args(argsBuilder).build,
@@ -50,8 +50,8 @@ object devtest:
    * this resource applies only to standard VMs, not DevTest Lab VMs. To manage automated shutdown schedules for DevTest Lab VMs, reference the
    * `azure.devtest.Schedule` resource
    */
-  def GlobalVMShutdownSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.GlobalVMShutdownScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GlobalVMShutdownSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.GlobalVMShutdownScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.GlobalVMShutdownScheduleArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -65,8 +65,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dev Test Lab. */
-  def Lab(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.LabArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Lab(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.LabArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.LabArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -83,8 +83,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Linux Virtual Machine within a Dev Test Lab. */
-  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.LinuxVirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinuxVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.LinuxVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.LinuxVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -101,8 +101,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy within a Dev Test Policy Set. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -119,8 +119,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages automated startup and shutdown schedules for Azure Dev Test Lab. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.ScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.ScheduleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -137,8 +137,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Virtual Network within a DevTest Lab. */
-  def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.VirtualNetworkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.VirtualNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.VirtualNetworkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -155,8 +155,8 @@ object devtest:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Windows Virtual Machine within a Dev Test Lab. */
-  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.devtest.WindowsVirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WindowsVirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.devtest.WindowsVirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.devtest.WindowsVirtualMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object inspector:
   /** Provides an Inspector Classic Assessment Target */
-  def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.inspector.AssessmentTargetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AssessmentTarget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.inspector.AssessmentTargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTargetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -18,8 +18,8 @@ object inspector:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Inspector Classic Assessment Template */
-  def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AssessmentTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.inspector.AssessmentTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.AssessmentTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -47,8 +47,8 @@ object inspector:
      * Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      * configured in the provider.
      */
-    inline def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRulesPackages(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackages(args(argsBuilder).build,
@@ -59,16 +59,16 @@ object inspector:
      * Inspector Rules Packages which can be used by Amazon Inspector Classic within the region
      * configured in the provider.
      */
-    inline def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRulesPackagesPlain(args: Endofunction[com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.inspector.outputs.GetRulesPackagesResult] =
       val argsBuilder = com.pulumi.aws.inspector.inputs.GetRulesPackagesPlainArgs.builder
       com.pulumi.aws.inspector.InspectorFunctions.getRulesPackagesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an Amazon Inspector Classic Resource Group. */
-  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.inspector.ResourceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.inspector.ResourceGroupArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

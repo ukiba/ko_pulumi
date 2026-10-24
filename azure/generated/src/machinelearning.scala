@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object machinelearning:
   /** Manages a Machine Learning Compute Cluster. */
-  def ComputeCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.ComputeClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ComputeCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.ComputeClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.ComputeClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -25,8 +25,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Compute Instance. */
-  def ComputeInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.ComputeInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ComputeInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.ComputeInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.ComputeInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -43,8 +43,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Blob Storage DataStore. */
-  def DatastoreBlobstorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreBlobstorageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatastoreBlobstorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreBlobstorageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.DatastoreBlobstorageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -61,8 +61,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning Data Lake Gen2 DataStore. */
-  def DatastoreDatalakeGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreDatalakeGen2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatastoreDatalakeGen2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreDatalakeGen2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.DatastoreDatalakeGen2Args.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -79,8 +79,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Machine Learning File Share DataStore. */
-  def DatastoreFileshare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreFileshareArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatastoreFileshare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.DatastoreFileshareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.DatastoreFileshareArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -101,8 +101,8 @@ object machinelearning:
    * 
    * &gt; **Note:** The Machine Learning Inference Cluster resource is used to attach an existing AKS cluster to the Machine Learning Workspace, it doesn&#39;t create the AKS cluster itself. Therefore it can only be created and deleted, not updated. Any change to the configuration will recreate the resource.
    */
-  def InferenceCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.InferenceClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InferenceCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.InferenceClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.InferenceClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -126,24 +126,24 @@ object machinelearning:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Machine Learning Workspace. */
-    inline def getWorkspace(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.machinelearning.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.machinelearning.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.machinelearning.MachinelearningFunctions.getWorkspace(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Machine Learning Workspace. */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.machinelearning.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.machinelearning.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.machinelearning.MachinelearningFunctions.getWorkspacePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages the linked service to link an Azure Machine learning workspace to an Azure Synapse workspace. */
-  def SynapseSpark(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.SynapseSparkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SynapseSpark(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.SynapseSparkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.SynapseSparkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -164,8 +164,8 @@ object machinelearning:
    * 
    * &gt; **Note:** For examples on how to set up the Azure Machine Learning workspace, together with compute and integrated services, see Terraform Quickstart
    */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -182,8 +182,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace FQDN Network Outbound Rule. */
-  def WorkspaceNetworkOutboundRuleFqdn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleFqdnArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkspaceNetworkOutboundRuleFqdn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleFqdnArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleFqdnArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -193,8 +193,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace Network Outbound Rule Private Endpoint. */
-  def WorkspaceNetworkOutboundRulePrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRulePrivateEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkspaceNetworkOutboundRulePrivateEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRulePrivateEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRulePrivateEndpointArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -204,8 +204,8 @@ object machinelearning:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Machine Learning Workspace Network Outbound Rule Service Tag. */
-  def WorkspaceNetworkOutboundRuleServiceTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleServiceTagArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkspaceNetworkOutboundRuleServiceTag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleServiceTagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.machinelearning.WorkspaceNetworkOutboundRuleServiceTagArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -13,8 +13,8 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def BillingAccountBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BillingAccountBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.BillingAccountBucketConfigArgs.builder
     com.pulumi.gcp.logging.BillingAccountBucketConfig(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by terraform by using the exclusions field of `gcp.logging.BillingAccountSink`
    */
-  def BillingAccountExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountExclusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BillingAccountExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.BillingAccountExclusionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -49,8 +49,8 @@ object logging:
    * the credentials used with this provider. [IAM roles granted on a billing account](https://cloud.google.com/billing/docs/how-to/billing-access) are separate from the
    * typical IAM roles granted on a project.
    */
-  def BillingAccountSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountSinkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BillingAccountSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.BillingAccountSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.BillingAccountSinkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -66,8 +66,8 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def FolderBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.FolderBucketConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.FolderBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.FolderBucketConfigArgs.builder
     com.pulumi.gcp.logging.FolderBucketConfig(name,
         args(argsBuilder).build,
@@ -82,8 +82,8 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.FolderSink`
    */
-  def FolderExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.FolderExclusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.FolderExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.FolderExclusionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -101,8 +101,8 @@ object logging:
    * * How-to Guides
    *     * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings)
    */
-  def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.FolderSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.FolderSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.FolderSettingsArgs.builder
     com.pulumi.gcp.logging.FolderSettings(name,
         args(argsBuilder).build,
@@ -114,8 +114,8 @@ object logging:
    * * How-to Guides
    *     * [Exporting Logs](https://cloud.google.com/logging/docs/export)
    */
-  def FolderSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.FolderSinkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.FolderSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.FolderSinkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -133,8 +133,8 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LinkedDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LinkedDatasetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinkedDataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LinkedDatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.LinkedDatasetArgs.builder
     com.pulumi.gcp.logging.LinkedDataset(name,
         args(argsBuilder).build,
@@ -149,8 +149,8 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LogScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LogScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LogScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogScopeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -168,8 +168,8 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def LogView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LogViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LogViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -771,8 +771,8 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogViewIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1374,8 +1374,8 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogViewIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1977,8 +1977,8 @@ object logging:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LogViewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogViewIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.LogViewIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.LogViewIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2002,8 +2002,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/folders/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFolderSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetFolderSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getFolderSettings(args(argsBuilder).build,
@@ -2017,8 +2017,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/folders/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFolderSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetFolderSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetFolderSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getFolderSettingsPlain(args(argsBuilder).build,
@@ -2029,8 +2029,8 @@ object logging:
      * [official documentation](https://cloud.google.com/logging/docs/apis)
      * and [API](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.locations.buckets.views).
      */
-    inline def getLogView(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLogView(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetLogViewResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogView(args(argsBuilder).build,
@@ -2041,24 +2041,24 @@ object logging:
      * [official documentation](https://cloud.google.com/logging/docs/apis)
      * and [API](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects.locations.buckets.views).
      */
-    inline def getLogViewPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLogViewPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetLogViewResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogViewPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for logview */
-    inline def getLogViewIamPolicy(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLogViewIamPolicy(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetLogViewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogViewIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for logview */
-    inline def getLogViewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLogViewIamPolicyPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetLogViewIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetLogViewIamPolicyPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getLogViewIamPolicyPlain(args(argsBuilder).build,
@@ -2072,8 +2072,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/organizations/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetOrganizationSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getOrganizationSettings(args(argsBuilder).build,
@@ -2087,8 +2087,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/organizations/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOrganizationSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetOrganizationSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetOrganizationSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getOrganizationSettingsPlain(args(argsBuilder).build,
@@ -2102,8 +2102,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getCmekSettings)
      * * [Enable CMEK](https://cloud.google.com/logging/docs/routing/managed-encryption-storage#enable).
      */
-    inline def getProjectCmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getProjectCmekSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetProjectCmekSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectCmekSettings(args(argsBuilder).build,
@@ -2117,8 +2117,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getCmekSettings)
      * * [Enable CMEK](https://cloud.google.com/logging/docs/routing/managed-encryption-storage#enable).
      */
-    inline def getProjectCmekSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getProjectCmekSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetProjectCmekSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectCmekSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectCmekSettingsPlain(args(argsBuilder).build,
@@ -2132,8 +2132,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getProjectSettings(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectSettingsArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectSettings(args(argsBuilder).build,
@@ -2147,8 +2147,8 @@ object logging:
      * * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/projects/getSettings)
      * * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings).
      */
-    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getProjectSettingsPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetProjectSettingsResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetProjectSettingsPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getProjectSettingsPlain(args(argsBuilder).build,
@@ -2160,8 +2160,8 @@ object logging:
      * 
      * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/sinks)
      */
-    inline def getSink(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSink(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.logging.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetSinkArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getSink(args(argsBuilder).build,
@@ -2173,8 +2173,8 @@ object logging:
      * 
      * [API documentation](https://cloud.google.com/logging/docs/reference/v2/rest/v2/sinks)
      */
-    inline def getSinkPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSinkPlain(args: Endofunction[com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.logging.outputs.GetSinkResult] =
       val argsBuilder = com.pulumi.gcp.logging.inputs.GetSinkPlainArgs.builder
       com.pulumi.gcp.logging.LoggingFunctions.getSinkPlain(args(argsBuilder).build,
@@ -2191,8 +2191,8 @@ object logging:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/logging/docs/apis)
    */
-  def Metric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.MetricArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Metric(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.MetricArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.MetricArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2208,8 +2208,8 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def OrganizationBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.OrganizationBucketConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.OrganizationBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.OrganizationBucketConfigArgs.builder
     com.pulumi.gcp.logging.OrganizationBucketConfig(name,
         args(argsBuilder).build,
@@ -2224,8 +2224,8 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.OrganizationSink`
    */
-  def OrganizationExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.OrganizationExclusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.OrganizationExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.OrganizationExclusionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2243,8 +2243,8 @@ object logging:
    * * How-to Guides
    *     * [Configure default settings for organizations and folders](https://cloud.google.com/logging/docs/default-settings)
    */
-  def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.OrganizationSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.OrganizationSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.OrganizationSettingsArgs.builder
     com.pulumi.gcp.logging.OrganizationSettings(name,
         args(argsBuilder).build,
@@ -2256,8 +2256,8 @@ object logging:
    * * How-to Guides
    *     * [Exporting Logs](https://cloud.google.com/logging/docs/export)
    */
-  def OrganizationSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.OrganizationSinkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.OrganizationSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.OrganizationSinkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2273,8 +2273,8 @@ object logging:
    * 
    * &gt; **Note:** Logging buckets are automatically created for a given folder, project, organization, billingAccount and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These buckets cannot be removed so deleting this resource will remove the bucket config from your state but will leave the logging bucket unchanged. The buckets that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def ProjectBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.ProjectBucketConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectBucketConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.ProjectBucketConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.logging.ProjectBucketConfigArgs.builder
     com.pulumi.gcp.logging.ProjectBucketConfig(name,
         args(argsBuilder).build,
@@ -2289,8 +2289,8 @@ object logging:
    * 
    * &gt; You can specify exclusions for log sinks created by the provider by using the exclusions field of `gcp.logging.ProjectSink`
    */
-  def ProjectExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.ProjectExclusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectExclusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.ProjectExclusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.ProjectExclusionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2314,8 +2314,8 @@ object logging:
    * 
    * &gt; **Note:** The `_Default` and `_Required` logging sinks are automatically created for a given project and cannot be deleted. Creating a resource of this type will acquire and update the resource that already exists at the desired location. These sinks cannot be removed so deleting this resource will remove the sink config from your terraform state but will leave the logging sink unchanged. The sinks that are currently automatically created are &#34;_Default&#34; and &#34;_Required&#34;.
    */
-  def ProjectSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.ProjectSinkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectSink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.ProjectSinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.ProjectSinkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2335,8 +2335,8 @@ object logging:
    *     * [Save and share SQL queries](https://docs.cloud.google.com/logging/docs/analyze/save-share-query)
    *     * [Save and share queries](https://docs.cloud.google.com/logging/docs/view/building-queries#saved-queries)
    */
-  def SavedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.logging.SavedQueryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SavedQuery(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.logging.SavedQueryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.logging.SavedQueryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

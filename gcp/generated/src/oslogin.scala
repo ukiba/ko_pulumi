@@ -13,8 +13,8 @@ object oslogin:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/compute/docs/oslogin)
    */
-  def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.oslogin.SshPublicKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SshPublicKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.oslogin.SshPublicKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.oslogin.SshPublicKeyArgs.builder
     com.pulumi.gcp.oslogin.SshPublicKey(name,
         args(argsBuilder).build,

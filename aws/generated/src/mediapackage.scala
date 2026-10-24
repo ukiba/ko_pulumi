@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object mediapackage:
   /** Provides an AWS Elemental MediaPackage Channel. */
-  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.mediapackage.ChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Channel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.mediapackage.ChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.mediapackage.ChannelArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

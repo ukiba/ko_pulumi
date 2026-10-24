@@ -9,16 +9,16 @@ object apihub:
    * Currently, only one ApiHub instance is allowed for each project.
    * Currently, updation/deletion of ApiHub instance is not allowed.
    */
-  def ApiHubInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.ApiHubInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiHubInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.ApiHubInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.ApiHubInstanceArgs.builder
     com.pulumi.gcp.apihub.ApiHubInstance(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def Curation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.CurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Curation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.CurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.CurationArgs.builder
     com.pulumi.gcp.apihub.Curation(name,
         args(argsBuilder).build,
@@ -30,32 +30,32 @@ object apihub:
    * It acts as the consumer project for the API hub instance provisioned.
    * Multiple runtime projects can be attached to the host project and these attachments define the scope of API hub.
    */
-  def HostProjectRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.HostProjectRegistrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HostProjectRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.HostProjectRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.HostProjectRegistrationArgs.builder
     com.pulumi.gcp.apihub.HostProjectRegistration(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A plugin resource in the API hub. */
-  def Plugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.PluginArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Plugin(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.PluginArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.PluginArgs.builder
     com.pulumi.gcp.apihub.Plugin(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def PluginInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.PluginInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PluginInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.PluginInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.PluginInstanceArgs.builder
     com.pulumi.gcp.apihub.PluginInstance(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Runtime project attachment represents an attachment from the runtime project to the host project. API Hub looks for deployments in the attached runtime projects and creates corresponding resources in API Hub for the discovered deployments. */
-  def RuntimeProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeProjectAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apihub.RuntimeProjectAttachmentArgs.builder
     com.pulumi.gcp.apihub.RuntimeProjectAttachment(name,
         args(argsBuilder).build,

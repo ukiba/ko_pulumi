@@ -13,8 +13,8 @@ object bigquery:
    * 
    * * [API documentation](https://cloud.google.com/bigtable/docs/reference/admin/rest/v2/projects.instances.appProfiles)
    */
-  @deprecated("gcp.bigquery.AppProfile has been deprecated in favor of gcp.bigtable.AppProfile") def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.AppProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  @deprecated("gcp.bigquery.AppProfile has been deprecated in favor of gcp.bigtable.AppProfile") def AppProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.AppProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.AppProfileArgs.builder
     com.pulumi.gcp.bigquery.AppProfile(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def BiReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.BiReservationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BiReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.BiReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.BiReservationArgs.builder
     com.pulumi.gcp.bigquery.BiReservation(name,
         args(argsBuilder).build,
@@ -44,32 +44,32 @@ object bigquery:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetConnectionIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getConnectionIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getDatapolicyv2DataPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatapolicyv2DataPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatapolicyv2DataPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for datapolicy */
-    inline def getDatapolicyv2DataPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatapolicyv2DataPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatapolicyv2DataPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatapolicyv2DataPolicyIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatapolicyv2DataPolicyIamPolicyPlain(args(argsBuilder).build,
@@ -80,8 +80,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets).
      */
-    inline def getDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDataset(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDataset(args(argsBuilder).build,
@@ -92,8 +92,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets).
      */
-    inline def getDatasetPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatasetPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetPlain(args(argsBuilder).build,
@@ -135,8 +135,8 @@ object bigquery:
      * }
      * </pre>
      */
-    inline def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicy(args(argsBuilder).build,
@@ -178,8 +178,8 @@ object bigquery:
      * }
      * </pre>
      */
-    inline def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatasetIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetIamPolicyPlain(args(argsBuilder).build,
@@ -190,8 +190,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/list).
      */
-    inline def getDatasets(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatasets(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDatasetsResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetsArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasets(args(argsBuilder).build,
@@ -202,8 +202,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets/list).
      */
-    inline def getDatasetsPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatasetsPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDatasetsResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDatasetsPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDatasetsPlain(args(argsBuilder).build,
@@ -220,8 +220,8 @@ object bigquery:
      * For more information see
      * [the API reference](https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/getServiceAccount).
      */
-    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccount(args(argsBuilder).build,
@@ -238,24 +238,24 @@ object bigquery:
      * For more information see
      * [the API reference](https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/getServiceAccount).
      */
-    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetDefaultServiceAccountPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for routine */
-    inline def getRoutineIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRoutineIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for routine */
-    inline def getRoutineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRoutineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetRoutineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetRoutineIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getRoutineIamPolicyPlain(args(argsBuilder).build,
@@ -266,8 +266,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get).
      */
-    inline def getTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTable(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTable(args(argsBuilder).build,
@@ -278,24 +278,24 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get).
      */
-    inline def getTablePlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTablePlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTableResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablePlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTablePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicy(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTableIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTableIamPolicyPlain(args(argsBuilder).build,
@@ -306,8 +306,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).
      */
-    inline def getTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTables(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigquery.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablesArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTables(args(argsBuilder).build,
@@ -318,8 +318,8 @@ object bigquery:
      * the [official documentation](https://cloud.google.com/bigquery/docs)
      * and [API](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables).
      */
-    inline def getTablesPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTablesPlain(args: Endofunction[com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigquery.outputs.GetTablesResult] =
       val argsBuilder = com.pulumi.gcp.bigquery.inputs.GetTablesPlainArgs.builder
       com.pulumi.gcp.bigquery.BigqueryFunctions.getTablesPlain(args(argsBuilder).build,
@@ -336,8 +336,8 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def CapacityCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.CapacityCommitmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CapacityCommitment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.CapacityCommitmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.CapacityCommitmentArgs.builder
     com.pulumi.gcp.bigquery.CapacityCommitment(name,
         args(argsBuilder).build,
@@ -355,8 +355,8 @@ object bigquery:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `cloud_sql.credential.password_wo`.
    * Read more about Write-only Arguments.
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionArgs.builder
     com.pulumi.gcp.bigquery.Connection(name,
         args(argsBuilder).build,
@@ -668,8 +668,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamBindingArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamBinding(name,
         args(argsBuilder).build,
@@ -981,8 +981,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamMemberArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamMember(name,
         args(argsBuilder).build,
@@ -1294,8 +1294,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ConnectionIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.ConnectionIamPolicy(name,
         args(argsBuilder).build,
@@ -1314,8 +1314,8 @@ object bigquery:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `sensitive_params.secret_access_key_wo`.
    * Read more about Write-only Arguments.
    */
-  def DataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferConfigArgs.builder
     com.pulumi.gcp.bigquery.DataTransferConfig(name,
         args(argsBuilder).build,
@@ -1340,8 +1340,8 @@ object bigquery:
    *     * [Export your carbon footprint](https://cloud.google.com/carbon-footprint/docs/export)
    *     * [Working with transfers](https://cloud.google.com/bigquery/docs/working-with-transfers)
    */
-  def DataTransferDataSourceEnrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataTransferDataSourceEnrollment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollmentArgs.builder
     com.pulumi.gcp.bigquery.DataTransferDataSourceEnrollment(name,
         args(argsBuilder).build,
@@ -1356,8 +1356,8 @@ object bigquery:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/column-data-masking-intro)
    */
-  def Datapolicyv2DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datapolicyv2DataPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicy(name,
         args(argsBuilder).build,
@@ -1669,8 +1669,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datapolicyv2DataPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBindingArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamBinding(name,
         args(argsBuilder).build,
@@ -1982,8 +1982,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datapolicyv2DataPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMemberArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamMember(name,
         args(argsBuilder).build,
@@ -2295,8 +2295,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def Datapolicyv2DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datapolicyv2DataPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.Datapolicyv2DataPolicyIamPolicy(name,
         args(argsBuilder).build,
@@ -2315,8 +2315,8 @@ object bigquery:
    * The API does accept both formats but it will always return the legacy format which results in Terraform
    * showing permanent diff on each plan and apply operation.
    */
-  def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Dataset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetArgs.builder
     com.pulumi.gcp.bigquery.Dataset(name,
         args(argsBuilder).build,
@@ -2342,8 +2342,8 @@ object bigquery:
    * The API does accept both formats but it will always return the legacy format which results in Terraform
    * showing permanent diff on each plan and apply operation.
    */
-  def DatasetAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatasetAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetAccessArgs.builder
     com.pulumi.gcp.bigquery.DatasetAccess(name,
         args(argsBuilder).build,
@@ -2936,8 +2936,8 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatasetIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamBindingArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamBinding(name,
         args(argsBuilder).build,
@@ -3530,8 +3530,8 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatasetIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamMemberArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamMember(name,
         args(argsBuilder).build,
@@ -4124,8 +4124,8 @@ object bigquery:
    * 
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatasetIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.DatasetIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.DatasetIamPolicy(name,
         args(argsBuilder).build,
@@ -4437,8 +4437,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.IamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.IamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamBindingArgs.builder
     com.pulumi.gcp.bigquery.IamBinding(name,
         args(argsBuilder).build,
@@ -4750,8 +4750,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.IamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.IamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamMemberArgs.builder
     com.pulumi.gcp.bigquery.IamMember(name,
         args(argsBuilder).build,
@@ -5063,8 +5063,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.IamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.IamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.IamPolicyArgs.builder
     com.pulumi.gcp.bigquery.IamPolicy(name,
         args(argsBuilder).build,
@@ -5080,8 +5080,8 @@ object bigquery:
    * * How-to Guides
    *     * [BigQuery Jobs Intro](https://cloud.google.com/bigquery/docs/jobs-overview)
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.JobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.JobArgs.builder
     com.pulumi.gcp.bigquery.Job(name,
         args(argsBuilder).build,
@@ -5096,8 +5096,8 @@ object bigquery:
    * * How-to Guides
    *     * [Introduction to Reservations](https://cloud.google.com/bigquery/docs/reservations-intro)
    */
-  def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Reservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigquery.ReservationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -5115,8 +5115,8 @@ object bigquery:
    * * How-to Guides
    *     * [Work with reservation assignments](https://cloud.google.com/bigquery/docs/reservations-assignments)
    */
-  def ReservationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReservationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.ReservationAssignmentArgs.builder
     com.pulumi.gcp.bigquery.ReservationAssignment(name,
         args(argsBuilder).build,
@@ -5129,8 +5129,8 @@ object bigquery:
    * 
    * * [API documentation](https://cloud.google.com/bigquery/docs/reference/reservations/rest/v1/projects.locations.reservationGroups)
    */
-  def ReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReservationGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.ReservationGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.bigquery.ReservationGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -5148,8 +5148,8 @@ object bigquery:
    * * How-to Guides
    *     * [Routines Intro](https://cloud.google.com/bigquery/docs/reference/rest/v2/routines)
    */
-  def Routine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Routine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineArgs.builder
     com.pulumi.gcp.bigquery.Routine(name,
         args(argsBuilder).build,
@@ -5461,8 +5461,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RoutineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamBindingArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamBinding(name,
         args(argsBuilder).build,
@@ -5774,8 +5774,8 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RoutineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamMemberArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamMember(name,
         args(argsBuilder).build,
@@ -6087,16 +6087,16 @@ object bigquery:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RoutineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RoutineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RoutineIamPolicyArgs.builder
     com.pulumi.gcp.bigquery.RoutineIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Represents access on a subset of rows on the specified table, defined by its filter predicate. Access to the subset of rows is controlled by its IAM policy. */
-  def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.RowAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RowAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.RowAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.RowAccessPolicyArgs.builder
     com.pulumi.gcp.bigquery.RowAccessPolicy(name,
         args(argsBuilder).build,
@@ -6111,8 +6111,8 @@ object bigquery:
    * (and run `pulumi update` to write the field to state) in order to destroy an instance.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy.
    */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigquery.TableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigquery.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigquery.TableArgs.builder
     com.pulumi.gcp.bigquery.Table(name,
         args(argsBuilder).build,

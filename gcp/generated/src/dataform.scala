@@ -18,8 +18,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/)
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.ConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.ConfigArgs.builder
     com.pulumi.gcp.dataform.Config(name,
         args(argsBuilder).build,
@@ -33,16 +33,16 @@ object dataform:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataform.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyArgs.builder
       com.pulumi.gcp.dataform.DataformFunctions.getRepositoryIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataform.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataform.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataform.DataformFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build,
@@ -57,8 +57,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/)
    */
-  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.FolderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.FolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.FolderArgs.builder
     com.pulumi.gcp.dataform.Folder(name,
         args(argsBuilder).build,
@@ -73,8 +73,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataform.RepositoryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -83,22 +83,22 @@ object dataform:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamBinding(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamMember(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
-  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.dataform.RepositoryIamPolicy(name,
         args(argsBuilder).build,
@@ -116,8 +116,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/release-configurations)
    */
-  def RepositoryReleaseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryReleaseConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryReleaseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryReleaseConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataform.RepositoryReleaseConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -138,8 +138,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/workflow-configurations)
    */
-  def RepositoryWorkflowConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryWorkflowConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryWorkflowConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.RepositoryWorkflowConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataform.RepositoryWorkflowConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -157,8 +157,8 @@ object dataform:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataform/docs/)
    */
-  def TeamFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataform.TeamFolderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TeamFolder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataform.TeamFolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataform.TeamFolderArgs.builder
     com.pulumi.gcp.dataform.TeamFolder(name,
         args(argsBuilder).build,

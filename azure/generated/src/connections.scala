@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object connections:
   /** Manages an API Connection. */
-  def ApiConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.connections.ApiConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.connections.ApiConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.connections.ApiConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,32 +32,32 @@ object connections:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing API Connection. */
-    inline def getApiConnection(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getApiConnection(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.connections.outputs.GetApiConnectionResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetApiConnectionArgs.builder
       com.pulumi.azure.connections.ConnectionsFunctions.getApiConnection(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing API Connection. */
-    inline def getApiConnectionPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getApiConnectionPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.connections.outputs.GetApiConnectionResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetApiConnectionPlainArgs.builder
       com.pulumi.azure.connections.ConnectionsFunctions.getApiConnectionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Uses this data source to access information about an existing Managed API. */
-    inline def getManagedApi(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getManagedApi(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.connections.outputs.GetManagedApiResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetManagedApiArgs.builder
       com.pulumi.azure.connections.ConnectionsFunctions.getManagedApi(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Uses this data source to access information about an existing Managed API. */
-    inline def getManagedApiPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getManagedApiPlain(args: Endofunction[com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.connections.outputs.GetManagedApiResult] =
       val argsBuilder = com.pulumi.azure.connections.inputs.GetManagedApiPlainArgs.builder
       com.pulumi.azure.connections.ConnectionsFunctions.getManagedApiPlain(args(argsBuilder).build,

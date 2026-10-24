@@ -15,8 +15,8 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-connection-profiles)
    */
-  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.datastream.ConnectionProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.ConnectionProfileArgs.builder
     com.pulumi.gcp.datastream.ConnectionProfile(name,
         args(argsBuilder).build,
@@ -33,8 +33,8 @@ object datastream:
      * Returns the list of IP addresses that Datastream connects from. For more information see
      * the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    inline def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getStaticIps(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsArgs.builder
       com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIps(args(argsBuilder).build,
@@ -44,8 +44,8 @@ object datastream:
      * Returns the list of IP addresses that Datastream connects from. For more information see
      * the [official documentation](https://cloud.google.com/datastream/docs/ip-allowlists-and-regions).
      */
-    inline def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getStaticIpsPlain(args: Endofunction[com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datastream.outputs.GetStaticIpsResult] =
       val argsBuilder = com.pulumi.gcp.datastream.inputs.GetStaticIpsPlainArgs.builder
       com.pulumi.gcp.datastream.DatastreamFunctions.getStaticIpsPlain(args(argsBuilder).build,
@@ -60,8 +60,8 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-a-private-connectivity-configuration)
    */
-  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.datastream.PrivateConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.datastream.PrivateConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.PrivateConnectionArgs.builder
     com.pulumi.gcp.datastream.PrivateConnection(name,
         args(argsBuilder).build,
@@ -76,8 +76,8 @@ object datastream:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/datastream/docs/create-a-stream)
    */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.datastream.StreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.datastream.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datastream.StreamArgs.builder
     com.pulumi.gcp.datastream.Stream(name,
         args(argsBuilder).build,

@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object codepipeline:
   /** Provides a CodeDeploy CustomActionType */
-  def CustomActionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.codepipeline.CustomActionTypeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CustomActionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.codepipeline.CustomActionTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.CustomActionTypeArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,8 +20,8 @@ object codepipeline:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodePipeline. */
-  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.codepipeline.PipelineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Pipeline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.codepipeline.PipelineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.PipelineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -38,8 +38,8 @@ object codepipeline:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a CodePipeline Webhook. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.codepipeline.WebhookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.codepipeline.WebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.codepipeline.WebhookArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

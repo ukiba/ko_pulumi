@@ -11,8 +11,8 @@ object documentai:
    * 
    * * [API documentation](https://cloud.google.com/document-ai/docs/reference/rest/v1/projects.locations.schemas)
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.documentai.SchemaArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.documentai.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.documentai.SchemaArgs.builder
     com.pulumi.gcp.documentai.Schema(name,
         args(argsBuilder).build,

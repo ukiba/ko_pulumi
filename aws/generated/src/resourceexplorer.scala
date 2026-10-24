@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object resourceexplorer:
   /** Provides a resource to manage a Resource Explorer index in the current AWS Region. */
-  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.resourceexplorer.IndexArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Index(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.resourceexplorer.IndexArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.IndexArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -29,24 +29,24 @@ object resourceexplorer:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    inline def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def search(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.search(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Resource Explorer Search. */
-    inline def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def searchPlain(args: Endofunction[com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.resourceexplorer.outputs.SearchResult] =
       val argsBuilder = com.pulumi.aws.resourceexplorer.inputs.SearchPlainArgs.builder
       com.pulumi.aws.resourceexplorer.ResourceexplorerFunctions.searchPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides a resource to manage a Resource Explorer view. */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.resourceexplorer.ViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.resourceexplorer.ViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.resourceexplorer.ViewArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

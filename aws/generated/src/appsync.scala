@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appsync:
   /** Manages an [AWS AppSync Event API](https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-concepts.html#API). Event APIs enable real-time subscriptions and event-driven communication in AppSync applications. */
-  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.ApiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.ApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appsync.ApiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,24 +23,24 @@ object appsync:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Cache. */
-  def ApiCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.ApiCacheArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiCache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.ApiCacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.ApiCacheArgs.builder
     com.pulumi.aws.appsync.ApiCache(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Key. */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.ApiKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.ApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.ApiKeyArgs.builder
     com.pulumi.aws.appsync.ApiKey(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an [AWS AppSync Channel Namespace](https://docs.aws.amazon.com/appsync/latest/eventapi/event-api-concepts.html#namespace). */
-  def ChannelNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ChannelNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.ChannelNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appsync.ChannelNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -57,8 +57,8 @@ object appsync:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Data Source. */
-  def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.DataSourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataSource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.DataSourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appsync.DataSourceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -68,24 +68,24 @@ object appsync:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Domain Name. */
-  def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.DomainNameArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.DomainNameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.DomainNameArgs.builder
     com.pulumi.aws.appsync.DomainName(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync API Association. */
-  def DomainNameApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.DomainNameApiAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainNameApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.DomainNameApiAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.DomainNameApiAssociationArgs.builder
     com.pulumi.aws.appsync.DomainNameApiAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Function. */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.FunctionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.FunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appsync.FunctionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -95,8 +95,8 @@ object appsync:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync GraphQL API. */
-  def GraphQLApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.GraphQLApiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GraphQLApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.GraphQLApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appsync.GraphQLApiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -113,24 +113,24 @@ object appsync:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Resolver. */
-  def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.ResolverArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Resolver(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.ResolverArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.ResolverArgs.builder
     com.pulumi.aws.appsync.Resolver(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS AppSync Source API Association. */
-  def SourceApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SourceApiAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.SourceApiAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.SourceApiAssociationArgs.builder
     com.pulumi.aws.appsync.SourceApiAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AppSync Type. */
-  def Type(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appsync.TypeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Type(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appsync.TypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.appsync.TypeArgs.builder
     com.pulumi.aws.appsync.Type(name,
         args(argsBuilder).build,

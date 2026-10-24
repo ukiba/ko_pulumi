@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object videoindexer:
   /** Manages a Video Indexer Account */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.videoindexer.AccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.videoindexer.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.videoindexer.AccountArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

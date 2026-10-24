@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object applicationinsights:
   /** Provides a ApplicationInsights Application resource. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.applicationinsights.ApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.applicationinsights.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.applicationinsights.ApplicationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

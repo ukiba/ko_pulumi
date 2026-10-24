@@ -22,8 +22,8 @@ object spanner:
    * This resource is owned by the database it is backing up, and is deleted along
    * with the database. The actual backups are not though.
    */
-  def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.BackupScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.BackupScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.BackupScheduleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -47,8 +47,8 @@ object spanner:
    * On older versions, it is strongly recommended to set `lifecycle { preventDestroy = true }`
    * on databases in order to prevent accidental data loss.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -604,8 +604,8 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMBindingArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMBinding(name,
         args(argsBuilder).build,
@@ -1158,8 +1158,8 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMMemberArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMMember(name,
         args(argsBuilder).build,
@@ -1712,8 +1712,8 @@ object spanner:
    * * {{project}}/{{instance}}/{{database}}
    * * {{instance}}/{{database}} (project is taken from provider project)
    */
-  def DatabaseIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.DatabaseIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.DatabaseIAMPolicy(name,
         args(argsBuilder).build,
@@ -1729,8 +1729,8 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1749,8 +1749,8 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/)
    */
-  def InstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstanceConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstanceConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstanceConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2025,8 +2025,8 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMBindingArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMBinding(name,
         args(argsBuilder).build,
@@ -2298,8 +2298,8 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMMemberArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMMember(name,
         args(argsBuilder).build,
@@ -2571,8 +2571,8 @@ object spanner:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.spanner.InstanceIAMPolicyArgs.builder
     com.pulumi.gcp.spanner.InstanceIAMPolicy(name,
         args(argsBuilder).build,
@@ -2588,8 +2588,8 @@ object spanner:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/spanner/docs/geo-partitioning)
    */
-  def InstancePartition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.spanner.InstancePartitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstancePartition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.spanner.InstancePartitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.spanner.InstancePartitionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2606,16 +2606,16 @@ object spanner:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get a spanner database from Google Cloud by its name and instance name. */
-    inline def getDatabase(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getDatabase(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a spanner database from Google Cloud by its name and instance name. */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabasePlainArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getDatabasePlain(args(argsBuilder).build,
@@ -2659,8 +2659,8 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicy(args(argsBuilder).build,
@@ -2704,24 +2704,24 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetDatabaseIamPolicyPlainArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getDatabaseIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get a spanner instance from Google Cloud by its name. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a spanner instance from Google Cloud by its name. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getInstancePlain(args(argsBuilder).build,
@@ -2764,8 +2764,8 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.spanner.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicy(args(argsBuilder).build,
@@ -2808,8 +2808,8 @@ object spanner:
      * }
      * </pre>
      */
-    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.spanner.outputs.GetInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.spanner.inputs.GetInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.spanner.SpannerFunctions.getInstanceIamPolicyPlain(args(argsBuilder).build,

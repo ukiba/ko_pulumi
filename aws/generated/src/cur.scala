@@ -20,8 +20,8 @@ object cur:
      * 
      * &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    inline def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getReportDefinition(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinition(args(argsBuilder).build,
@@ -34,8 +34,8 @@ object cur:
      * 
      * &gt; *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
      */
-    inline def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getReportDefinitionPlain(args: Endofunction[com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.cur.outputs.GetReportDefinitionResult] =
       val argsBuilder = com.pulumi.aws.cur.inputs.GetReportDefinitionPlainArgs.builder
       com.pulumi.aws.cur.CurFunctions.getReportDefinitionPlain(args(argsBuilder).build,
@@ -46,8 +46,8 @@ object cur:
    * 
    * &gt; *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
    */
-  def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cur.ReportDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReportDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cur.ReportDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cur.ReportDefinitionArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

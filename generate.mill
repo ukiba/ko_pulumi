@@ -384,13 +384,13 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         // mergeConfs apply args
         val finalArgsExpr = if mergeConfs.nonEmpty then "argsBuilder.build" else "args(argsBuilder).build"
 
-        val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = $identityExpr"
+        val resourceFuncType = s"Endofunction[CustomResourceOptions.Builder] = identity"
         // the confs reassign argsBuilder
         val builderVarOrVal = if confs.nonEmpty then "var" else "val"
         val argsTypeName = argsType.getQualifiedName
         packageMembers(packageComps) :+= CustomResourceMember(s"""
           |  ${clsDoc}${deprecated}def $clsName(name: String, resourceOptions: $resourceFuncType)
-          |      (args: Endofunction[$argsTypeName.Builder] = $identityExpr)(using conf: KoPulumiConf) =
+          |      (args: Endofunction[$argsTypeName.Builder] = identity)(using conf: KoPulumiConf) =
           |    $builderVarOrVal argsBuilder = $argsTypeName.builder${confs.map(_.code).mkString}
           |    ${clsElem.getQualifiedName}(name,
           |        $finalArgsExpr,
@@ -524,8 +524,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
               (invokeOptionsElem, "InvokeOptions.builder")
           requiredMethod(clsElem, method.simpleName.toString, method.parameters.head.asType, optionsElem.asType)
 
-          val argsFuncType = s"Endofunction[$argsType.Builder] = $identityExpr"
-          val invokeOptionsFuncType = s"Endofunction[${optionsElem.simpleName}.Builder] = $identityExpr"
+          val argsFuncType = s"Endofunction[$argsType.Builder] = identity"
+          val invokeOptionsFuncType = s"Endofunction[${optionsElem.simpleName}.Builder] = identity"
           val text = s"""
             |    ${methodDoc}${deprecated}inline def $methodName(args: $argsFuncType,
             |        invokeOptions: $invokeOptionsFuncType):
@@ -605,9 +605,6 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           case tag: DeprecatedTree => tag.getBody.asScala.mkString.trim.replaceAll("\\s+", " ")
         .filter(_.nonEmpty)
         (since = since, reason = reason)
-
-  // qualified to avoid the collision with gcp.storage.identity
-  val identityExpr = "scala.Predef.identity"
 
   def renderScalaType(typeMirror: TypeMirror): String =
     val text = typeMirror.toString

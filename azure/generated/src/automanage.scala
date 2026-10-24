@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object automanage:
   /** Manages an Automanage Configuration. */
-  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automanage.ConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Configuration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automanage.ConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automanage.ConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

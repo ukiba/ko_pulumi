@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object rolesanywhere:
   /** Resource for managing a Roles Anywhere Profile. */
-  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.rolesanywhere.ProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Profile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.rolesanywhere.ProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rolesanywhere.ProfileArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,8 +23,8 @@ object rolesanywhere:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing a Roles Anywhere Trust Anchor. */
-  def TrustAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.rolesanywhere.TrustAnchorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TrustAnchor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.rolesanywhere.TrustAnchorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.rolesanywhere.TrustAnchorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

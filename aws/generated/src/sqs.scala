@@ -11,8 +11,8 @@ object sqs:
    * 
    * &gt; AWS will hang indefinitely, leading to a `timeout while waiting` error, when creating or updating an `aws.sqs.Queue` with an associated `aws.sqs.QueuePolicy` if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy.
    */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.sqs.QueueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sqs.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.sqs.QueueArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,16 +33,16 @@ object sqs:
    * 
    * &gt; AWS will hang indefinitely when creating or updating an `aws.sqs.Queue` with an associated policy if `Version = &#34;2012-10-17&#34;` is not explicitly set in the policy. See below for an example of how to avoid this issue.
    */
-  def QueuePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.sqs.QueuePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueuePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sqs.QueuePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.QueuePolicyArgs.builder
     com.pulumi.aws.sqs.QueuePolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a SQS Queue Redrive Allow Policy resource. */
-  def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.sqs.RedriveAllowPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RedriveAllowPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sqs.RedriveAllowPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.RedriveAllowPolicyArgs.builder
     com.pulumi.aws.sqs.RedriveAllowPolicy(name,
         args(argsBuilder).build,
@@ -56,8 +56,8 @@ object sqs:
    * dead letter queue for a standard or FIFO queue, but need
    * the dead letter queue to exist before setting the redrive policy.
    */
-  def RedrivePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.sqs.RedrivePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RedrivePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sqs.RedrivePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.sqs.RedrivePolicyArgs.builder
     com.pulumi.aws.sqs.RedrivePolicy(name,
         args(argsBuilder).build,
@@ -77,8 +77,8 @@ object sqs:
      * 
      * &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
-    inline def getQueue(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueueArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueueArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.sqs.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueueArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueue(args(argsBuilder).build,
@@ -91,24 +91,24 @@ object sqs:
      * 
      * &gt; **NOTE:** To use this data source, you must have the `sqs:GetQueueAttributes` and `sqs:GetQueueURL` permissions.
      */
-    inline def getQueuePlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sqs.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuePlainArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueuePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Data source for managing an AWS SQS (Simple Queue) Queues. */
-    inline def getQueues(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getQueues(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.sqs.outputs.GetQueuesResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuesArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueues(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS SQS (Simple Queue) Queues. */
-    inline def getQueuesPlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getQueuesPlain(args: Endofunction[com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.sqs.outputs.GetQueuesResult] =
       val argsBuilder = com.pulumi.aws.sqs.inputs.GetQueuesPlainArgs.builder
       com.pulumi.aws.sqs.SqsFunctions.getQueuesPlain(args(argsBuilder).build,

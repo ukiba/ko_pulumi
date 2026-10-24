@@ -13,8 +13,8 @@ object pricingplanmanager:
    * 
    * &gt; Resources must meet the plan family&#39;s eligibility requirements or `CreateSubscription` fails with a `ValidationException`. For the `CloudFront` plan family, distributions using legacy cache settings (`forwardedValues`) are rejected as not eligible \u2014 use [cache policies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html) instead.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.pricingplanmanager.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.pricingplanmanager.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.pricingplanmanager.SubscriptionArgs.builder
     com.pulumi.aws.pricingplanmanager.Subscription(name,
         args(argsBuilder).build,

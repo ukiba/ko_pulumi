@@ -250,8 +250,8 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.AccountIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.AccountIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamBindingArgs.builder
     com.pulumi.gcp.billing.AccountIamBinding(name,
         args(argsBuilder).build,
@@ -501,8 +501,8 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.AccountIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.AccountIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamMemberArgs.builder
     com.pulumi.gcp.billing.AccountIamMember(name,
         args(argsBuilder).build,
@@ -752,8 +752,8 @@ object billing:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `organizations/my-org-id/roles/my-custom-role`.
    */
-  def AccountIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.AccountIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.AccountIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.AccountIamPolicyArgs.builder
     com.pulumi.gcp.billing.AccountIamPolicy(name,
         args(argsBuilder).build,
@@ -802,8 +802,8 @@ object billing:
      * }
      * </pre>
      */
-    inline def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicy(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyArgs.builder
       com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicy(args(argsBuilder).build,
@@ -845,8 +845,8 @@ object billing:
      * }
      * </pre>
      */
-    inline def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccountIamPolicyPlain(args: Endofunction[com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.billing.outputs.GetAccountIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.billing.inputs.GetAccountIamPolicyPlainArgs.builder
       com.pulumi.gcp.billing.BillingFunctions.getAccountIamPolicyPlain(args(argsBuilder).build,
@@ -867,8 +867,8 @@ object billing:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProject` you defined.
    */
-  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.BudgetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Budget(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.BudgetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.BudgetArgs.builder
     com.pulumi.gcp.billing.Budget(name,
         args(argsBuilder).build,
@@ -883,8 +883,8 @@ object billing:
    * * How-to Guides
    *     * [Enable, disable, or change billing for a project](https://cloud.google.com/billing/docs/how-to/modify-project)
    */
-  def ProjectInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.ProjectInfoArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectInfo(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.ProjectInfoArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.ProjectInfoArgs.builder
     com.pulumi.gcp.billing.ProjectInfo(name,
         args(argsBuilder).build,
@@ -939,8 +939,8 @@ object billing:
    * \$ pulumi import gcp:billing/subAccount:SubAccount default billingAccounts/{billing_account_id}
    * ```
    */
-  def SubAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.billing.SubAccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubAccount(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.billing.SubAccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.billing.SubAccountArgs.builder
     com.pulumi.gcp.billing.SubAccount(name,
         args(argsBuilder).build,

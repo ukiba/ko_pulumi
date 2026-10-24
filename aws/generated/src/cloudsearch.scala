@@ -9,8 +9,8 @@ object cloudsearch:
    * 
    * The provider waits for the domain to become `Active` when applying a configuration.
    */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cloudsearch.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudsearch.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloudsearch.DomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -24,8 +24,8 @@ object cloudsearch:
    * 
    * The provider waits for the domain service access policy to become `Active` when applying a configuration.
    */
-  def DomainServiceAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainServiceAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloudsearch.DomainServiceAccessPolicyArgs.builder
     com.pulumi.aws.cloudsearch.DomainServiceAccessPolicy(name,
         args(argsBuilder).build,

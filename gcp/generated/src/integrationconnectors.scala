@@ -13,8 +13,8 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs/createconnection)
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.integrationconnectors.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,8 +32,8 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs/create-endpoint-attachment)
    */
-  def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.integrationconnectors.EndpointAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.integrationconnectors.EndpointAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.EndpointAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -51,8 +51,8 @@ object integrationconnectors:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/integration-connectors/docs)
    */
-  def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.integrationconnectors.ManagedZoneArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.integrationconnectors.ManagedZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.integrationconnectors.ManagedZoneArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

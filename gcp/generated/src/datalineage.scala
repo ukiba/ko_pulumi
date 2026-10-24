@@ -18,8 +18,8 @@ object datalineage:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
    */
-  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.datalineage.ConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Config(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.datalineage.ConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.datalineage.ConfigArgs.builder
     com.pulumi.gcp.datalineage.Config(name,
         args(argsBuilder).build,
@@ -37,8 +37,8 @@ object datalineage:
      * 
      * To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    inline def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConfig(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigArgs.builder
       com.pulumi.gcp.datalineage.DatalineageFunctions.getConfig(args(argsBuilder).build,
@@ -49,8 +49,8 @@ object datalineage:
      * 
      * To get more information about Config, see [Official Documentation](https://docs.cloud.google.com/dataplex/docs/about-data-lineage#control-lineage-ingestion)
      */
-    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConfigPlain(args: Endofunction[com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.datalineage.outputs.GetConfigResult] =
       val argsBuilder = com.pulumi.gcp.datalineage.inputs.GetConfigPlainArgs.builder
       com.pulumi.gcp.datalineage.DatalineageFunctions.getConfigPlain(args(argsBuilder).build,

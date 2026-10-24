@@ -14,16 +14,16 @@ object appengine:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccount(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountArgs.builder
       com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccount(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to retrieve the default App Engine service account for the specified project. */
-    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultServiceAccountPlain(args: Endofunction[com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.appengine.outputs.GetDefaultServiceAccountResult] =
       val argsBuilder = com.pulumi.gcp.appengine.inputs.GetDefaultServiceAccountPlainArgs.builder
       com.pulumi.gcp.appengine.AppengineFunctions.getDefaultServiceAccountPlain(args(argsBuilder).build,
@@ -40,8 +40,8 @@ object appengine:
    * &gt; **Note:** All arguments marked as write-only values will not be stored in the state: `iap.oauth2_client_secret_wo`.
    * Read more about Write-only Arguments.
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.ApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationArgs.builder
     com.pulumi.gcp.appengine.Application(name,
         args(argsBuilder).build,
@@ -54,8 +54,8 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps#UrlDispatchRule)
    */
-  def ApplicationUrlDispatchRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApplicationUrlDispatchRules(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ApplicationUrlDispatchRulesArgs.builder
     com.pulumi.gcp.appengine.ApplicationUrlDispatchRules(name,
         args(argsBuilder).build,
@@ -70,8 +70,8 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard/python/mapping-custom-domains)
    */
-  def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.DomainMappingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.DomainMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.DomainMappingArgs.builder
     com.pulumi.gcp.appengine.DomainMapping(name,
         args(argsBuilder).build,
@@ -84,8 +84,8 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services)
    */
-  def EngineSplitTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.EngineSplitTrafficArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EngineSplitTraffic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.EngineSplitTrafficArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.EngineSplitTrafficArgs.builder
     com.pulumi.gcp.appengine.EngineSplitTraffic(name,
         args(argsBuilder).build,
@@ -101,8 +101,8 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard/python/creating-firewalls#creating_firewall_rules)
    */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.FirewallRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.FirewallRuleArgs.builder
     com.pulumi.gcp.appengine.FirewallRule(name,
         args(argsBuilder).build,
@@ -123,8 +123,8 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/flexible)
    */
-  def FlexibleAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FlexibleAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.FlexibleAppVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.FlexibleAppVersionArgs.builder
     com.pulumi.gcp.appengine.FlexibleAppVersion(name,
         args(argsBuilder).build,
@@ -137,8 +137,8 @@ object appengine:
    * 
    * * [API documentation](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services)
    */
-  def ServiceNetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceNetworkSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.ServiceNetworkSettingsArgs.builder
     com.pulumi.gcp.appengine.ServiceNetworkSettings(name,
         args(argsBuilder).build,
@@ -156,8 +156,8 @@ object appengine:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/appengine/docs/standard)
    */
-  def StandardAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def StandardAppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.appengine.StandardAppVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.appengine.StandardAppVersionArgs.builder
     com.pulumi.gcp.appengine.StandardAppVersion(name,
         args(argsBuilder).build,

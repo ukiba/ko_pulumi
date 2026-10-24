@@ -17,8 +17,8 @@ object contactcenterinsights:
    * * How-to Guides
    *     * [Configure analysis rules using the API](https://cloud.google.com/contact-center/insights/docs/analysis-rule)
    */
-  def AnalysisRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AnalysisRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AnalysisRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AnalysisRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AnalysisRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AnalysisRule(name,
         args(argsBuilder).build,
@@ -36,8 +36,8 @@ object contactcenterinsights:
    * * How-to Guides
    *     * [Configure assessment rules using the API](https://cloud.google.com/contact-center/insights/docs/assessment-rule)
    */
-  def AssessmentRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AssessmentRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AssessmentRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AssessmentRule(name,
         args(argsBuilder).build,
@@ -53,8 +53,8 @@ object contactcenterinsights:
    * * How-to Guides
    *     * [Configure auto labeling rules using the API](https://cloud.google.com/contact-center/insights/docs/auto-labeling-rule)
    */
-  def AutoLabelingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AutoLabelingRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutoLabelingRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.AutoLabelingRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.AutoLabelingRuleArgs.builder
     com.pulumi.gcp.contactcenterinsights.AutoLabelingRule(name,
         args(argsBuilder).build,
@@ -69,32 +69,32 @@ object contactcenterinsights:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/contact-center/insights/docs/cmek)
    */
-  def EncryptionSpec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.EncryptionSpecArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EncryptionSpec(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.EncryptionSpecArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.EncryptionSpecArgs.builder
     com.pulumi.gcp.contactcenterinsights.EncryptionSpec(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A single question to be scored by the Insights QA feature. */
-  def QaQuestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QaQuestion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaQuestionArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaQuestion(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A QaScorecard represents a collection of questions to be scored during analysis. */
-  def QaScorecard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaScorecardArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QaScorecard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaScorecardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaScorecardArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaScorecard(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A revision of a QaScorecard. */
-  def QaScorecardRevision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaScorecardRevisionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QaScorecardRevision(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.QaScorecardRevisionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.QaScorecardRevisionArgs.builder
     com.pulumi.gcp.contactcenterinsights.QaScorecardRevision(name,
         args(argsBuilder).build,
@@ -107,8 +107,8 @@ object contactcenterinsights:
    * 
    * * [API documentation](https://cloud.google.com/contact-center/insights/docs/reference/rest/v1/projects.locations.views)
    */
-  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.ViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def View(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.contactcenterinsights.ViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.contactcenterinsights.ViewArgs.builder
     com.pulumi.gcp.contactcenterinsights.View(name,
         args(argsBuilder).build,

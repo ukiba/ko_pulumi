@@ -15,8 +15,8 @@ object memcache:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/memcache/docs/creating-instances)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.memcache.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.memcache.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.memcache.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,16 +33,16 @@ object memcache:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/memcached/reference/rest/v1/projects.locations.instances). */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.memcache.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.memcache.MemcacheFunctions.getInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about the available instance. For more details refer the [API docs](https://cloud.google.com/memorystore/docs/memcached/reference/rest/v1/projects.locations.instances). */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.memcache.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.memcache.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.memcache.MemcacheFunctions.getInstancePlain(args(argsBuilder).build,

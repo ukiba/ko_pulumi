@@ -13,8 +13,8 @@ object organizations:
    * 
    * * [API documentation](https://cloud.google.com/access-approval/docs/reference/rest/v1/organizations)
    */
-  def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccessApprovalSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.AccessApprovalSettingsArgs.builder
     com.pulumi.gcp.organizations.AccessApprovalSettings(name,
         args(argsBuilder).build,
@@ -51,8 +51,8 @@ object organizations:
    * \$ pulumi import gcp:organizations/folder:Folder default folders/{{folder_id}}
    * ```
    */
-  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.FolderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Folder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.FolderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.FolderArgs.builder
     com.pulumi.gcp.organizations.Folder(name,
         args(argsBuilder).build,
@@ -578,8 +578,8 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.IAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.IAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMBindingArgs.builder
     com.pulumi.gcp.organizations.IAMBinding(name,
         args(argsBuilder).build,
@@ -598,8 +598,8 @@ object organizations:
    *  made available again. This means a deleted role that has been deleted for more than 7 days cannot be changed at all
    *  by the provider, and new roles cannot share that name.
    */
-  def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.IAMCustomRoleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IAMCustomRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.IAMCustomRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMCustomRoleArgs.builder
     com.pulumi.gcp.organizations.IAMCustomRole(name,
         args(argsBuilder).build,
@@ -1125,8 +1125,8 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.IAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.IAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMMemberArgs.builder
     com.pulumi.gcp.organizations.IAMMember(name,
         args(argsBuilder).build,
@@ -1652,8 +1652,8 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.IAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.IAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IAMPolicyArgs.builder
     com.pulumi.gcp.organizations.IAMPolicy(name,
         args(argsBuilder).build,
@@ -2179,8 +2179,8 @@ object organizations:
    * &gt; **Conditional IAM Bindings**: If you&#39;re importing a IAM binding with a condition block, make sure
    *  to include the title of condition, e.g. `terraform import google_organization_iam_binding.my_organization &#34;your-org-id roles/{{role_id}} condition-title&#34;`
    */
-  def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.IamAuditConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamAuditConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.IamAuditConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.IamAuditConfigArgs.builder
     com.pulumi.gcp.organizations.IamAuditConfig(name,
         args(argsBuilder).build,
@@ -2194,16 +2194,16 @@ object organizations:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get an active folder within GCP by `displayName` and `parent`. */
-    inline def getActiveFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getActiveFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetActiveFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetActiveFolderArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getActiveFolder(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get an active folder within GCP by `displayName` and `parent`. */
-    inline def getActiveFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getActiveFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetActiveFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetActiveFolderPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getActiveFolderPlain(args(argsBuilder).build,
@@ -2253,8 +2253,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getBillingAccount(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBillingAccount(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetBillingAccountResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetBillingAccountArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getBillingAccount(args(argsBuilder).build,
@@ -2304,8 +2304,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getBillingAccountPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBillingAccountPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetBillingAccountResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetBillingAccountPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getBillingAccountPlain(args(argsBuilder).build,
@@ -2352,8 +2352,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFolder(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFolderArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolder(args(argsBuilder).build,
@@ -2400,8 +2400,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFolderPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetFolderResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFolderPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolderPlain(args(argsBuilder).build,
@@ -2412,8 +2412,8 @@ object organizations:
      * [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v3/folders/list)
      * for more details.
      */
-    inline def getFolders(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFolders(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetFoldersResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFoldersArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFolders(args(argsBuilder).build,
@@ -2424,8 +2424,8 @@ object organizations:
      * [REST API](https://docs.cloud.google.com/resource-manager/reference/rest/v3/folders/list)
      * for more details.
      */
-    inline def getFoldersPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFoldersPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetFoldersResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetFoldersPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getFoldersPlain(args(argsBuilder).build,
@@ -2437,8 +2437,8 @@ object organizations:
      * 
      * **Note:** Please review the documentation of the resource that you will be using the datasource with. Some resources such as `gcp.projects.IAMPolicy` and others have limitations in their API methods which are noted on their respective page.
      */
-    inline def getIAMPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIAMPolicy(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIAMPolicyResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIAMPolicy(args(argsBuilder).build,
@@ -2450,8 +2450,8 @@ object organizations:
      * 
      * **Note:** Please review the documentation of the resource that you will be using the datasource with. Some resources such as `gcp.projects.IAMPolicy` and others have limitations in their API methods which are noted on their respective page.
      */
-    inline def getIAMPolicyPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIAMPolicyPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIAMPolicyResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIAMPolicyPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIAMPolicyPlain(args(argsBuilder).build,
@@ -2500,8 +2500,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIamCustomRole(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRoleArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRole(args(argsBuilder).build,
@@ -2550,8 +2550,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolePlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIamCustomRoleResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolePlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRolePlain(args(argsBuilder).build,
@@ -2596,8 +2596,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIamCustomRoles(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolesArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRoles(args(argsBuilder).build,
@@ -2642,8 +2642,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIamCustomRolesPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetIamCustomRolesResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetIamCustomRolesPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getIamCustomRolesPlain(args(argsBuilder).build,
@@ -2690,8 +2690,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getOrganization(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOrganization(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetOrganizationArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getOrganization(args(argsBuilder).build,
@@ -2738,8 +2738,8 @@ object organizations:
      * }
      * </pre>
      */
-    inline def getOrganizationPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOrganizationPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetOrganizationResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetOrganizationPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getOrganizationPlain(args(argsBuilder).build,
@@ -2750,8 +2750,8 @@ object organizations:
      * For more information see
      * [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects#Project)
      */
-    inline def getProject(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getProject(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetProjectArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getProject(args(argsBuilder).build,
@@ -2762,8 +2762,8 @@ object organizations:
      * For more information see
      * [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/projects#Project)
      */
-    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getProjectPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetProjectResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetProjectPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getProjectPlain(args(argsBuilder).build,
@@ -2774,8 +2774,8 @@ object organizations:
      * See [the official documentation](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
      * and [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/organizations/search).
      */
-    inline def getS(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getS(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.organizations.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetSArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getS(args(argsBuilder).build,
@@ -2786,8 +2786,8 @@ object organizations:
      * See [the official documentation](https://docs.cloud.google.com/resource-manager/docs/creating-managing-organization)
      * and [API](https://docs.cloud.google.com/resource-manager/reference/rest/v1/organizations/search).
      */
-    inline def getSPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSPlain(args: Endofunction[com.pulumi.gcp.organizations.inputs.GetSPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.organizations.outputs.GetSResult] =
       val argsBuilder = com.pulumi.gcp.organizations.inputs.GetSPlainArgs.builder
       com.pulumi.gcp.organizations.OrganizationsFunctions.getSPlain(args(argsBuilder).build,
@@ -2804,8 +2804,8 @@ object organizations:
    * * How-to Guides
    *     * [Introduction to the Organization Policy Service](https://docs.cloud.google.com/resource-manager/docs/organization-policy/overview)
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.PolicyArgs.builder
     com.pulumi.gcp.organizations.Policy(name,
         args(argsBuilder).build,
@@ -2834,8 +2834,8 @@ object organizations:
    * * How-to Guides
    *     * [Creating and managing projects](https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects)
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.ProjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.organizations.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2861,8 +2861,8 @@ object organizations:
    * 
    * * [API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services/generateServiceIdentity)
    */
-  def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.organizations.ServiceIdentityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceIdentity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.organizations.ServiceIdentityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.organizations.ServiceIdentityArgs.builder
     com.pulumi.gcp.organizations.ServiceIdentity(name,
         args(argsBuilder).build,

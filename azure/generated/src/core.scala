@@ -14,184 +14,184 @@ object core:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** This data source return the available Extended Locations for a specific Azure Region. */
-    inline def getExtendedLocations(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getExtendedLocations(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetExtendedLocationsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetExtendedLocationsArgs.builder
       com.pulumi.azure.core.CoreFunctions.getExtendedLocations(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** This data source return the available Extended Locations for a specific Azure Region. */
-    inline def getExtendedLocationsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getExtendedLocationsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetExtendedLocationsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetExtendedLocationsPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getExtendedLocationsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information of a specific physical location. */
-    inline def getLocation(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLocation(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetLocationArgs.builder
       com.pulumi.azure.core.CoreFunctions.getLocation(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information of a specific physical location. */
-    inline def getLocationPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLocationPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetLocationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetLocationResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetLocationPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getLocationPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Resource Group. */
-    inline def getResourceGroup(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getResourceGroup(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroup(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Resource Group. */
-    inline def getResourceGroupPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getResourceGroupPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourceGroupResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Resource Group Template Deployment. */
-    inline def getResourceGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getResourceGroupTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourceGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupTemplateDeployment(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Resource Group Template Deployment. */
-    inline def getResourceGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getResourceGroupTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourceGroupTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourceGroupTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourceGroupTemplateDeploymentPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about existing resources. */
-    inline def getResources(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getResources(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetResourcesResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourcesArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResources(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about existing resources. */
-    inline def getResourcesPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getResourcesPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetResourcesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetResourcesResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetResourcesPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getResourcesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Subscription. */
-    inline def getSubscription(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscription(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Subscription. */
-    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Subscription Template Deployment. */
-    inline def getSubscriptionTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionTemplateDeployment(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Subscription Template Deployment. */
-    inline def getSubscriptionTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionTemplateDeploymentPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about all the Subscriptions currently available. */
-    inline def getSubscriptions(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptions(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetSubscriptionsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionsArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptions(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about all the Subscriptions currently available. */
-    inline def getSubscriptionsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionsPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetSubscriptionsResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetSubscriptionsPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getSubscriptionsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Template Spec Version. */
-    inline def getTemplateSpecVersion(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTemplateSpecVersion(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetTemplateSpecVersionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTemplateSpecVersionArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTemplateSpecVersion(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Template Spec Version. */
-    inline def getTemplateSpecVersionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTemplateSpecVersionPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetTemplateSpecVersionResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTemplateSpecVersionPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTemplateSpecVersionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Tenant Template Deployment. */
-    inline def getTenantTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTenantTemplateDeployment(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetTenantTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTenantTemplateDeployment(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Tenant Template Deployment. */
-    inline def getTenantTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTenantTemplateDeploymentPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetTenantTemplateDeploymentResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetTenantTemplateDeploymentPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getTenantTemplateDeploymentPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentity(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentity(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing User Assigned Identity. */
-    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    @deprecated("azure.core.getUserAssignedIdentity has been deprecated in favor of azure.authorization.getUserAssignedIdentity") inline def getUserAssignedIdentityPlain(args: Endofunction[com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.core.outputs.GetUserAssignedIdentityResult] =
       val argsBuilder = com.pulumi.azure.core.inputs.GetUserAssignedIdentityPlainArgs.builder
       com.pulumi.azure.core.CoreFunctions.getUserAssignedIdentityPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Azure Custom Provider. */
-  def CustomProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.CustomProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CustomProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.CustomProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.CustomProviderArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -218,16 +218,16 @@ object core:
    * 
    * &gt; **Note:** While assigning the role to the existing/new Service Principal at the Tenant Scope, the user assigning role must already have the `Owner` role assigned at the Tenant Scope.
    */
-  def PortalTenantConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.PortalTenantConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PortalTenantConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.PortalTenantConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.core.PortalTenantConfigurationArgs.builder
     com.pulumi.azure.core.PortalTenantConfiguration(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure Cli. */
-  def ResourceDeploymentScriptAzureCli(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptAzureCliArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceDeploymentScriptAzureCli(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptAzureCliArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceDeploymentScriptAzureCliArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -244,8 +244,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Deployment Script of Azure PowerShell. */
-  def ResourceDeploymentScriptPowerShell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptPowerShellArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceDeploymentScriptPowerShell(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceDeploymentScriptPowerShellArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceDeploymentScriptPowerShellArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -268,8 +268,8 @@ object core:
    * 
    * &gt; **Note:** Version 2.72 and later of the Azure Provider include a Feature Toggle which can error if there are any Resources left within the Resource Group at deletion time. This Feature Toggle is disabled in 2.x but enabled by default from 3.0 onwards, and is intended to avoid the unintentional destruction of resources managed outside of Terraform (for example, provisioned by an ARM Template). See the Features block documentation for more information on Feature Toggles within Terraform.
    */
-  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -286,8 +286,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Resource Group. */
-  def ResourceGroupCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupCostManagementExportArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -297,8 +297,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Resource Group. */
-  def ResourceGroupCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupCostManagementViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupCostManagementViewArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -308,8 +308,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Assignment. */
-  def ResourceGroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -319,8 +319,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Group Policy Exemption. */
-  def ResourceGroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyExemptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -330,8 +330,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Group Policy Remediation. */
-  def ResourceGroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyRemediationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupPolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupPolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -345,8 +345,8 @@ object core:
    * 
    * &gt; **Note:** This resource will automatically attempt to delete resources deployed by the ARM Template when it is deleted. This behavior can be disabled in the provider `features` block by setting the `deleteNestedItemsDuringDeletion` field to `false` within the `templateDeployment` block.
    */
-  def ResourceGroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceGroupTemplateDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceGroupTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceGroupTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceGroupTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -363,8 +363,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Policy Assignment to a Resource. */
-  def ResourcePolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourcePolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -374,8 +374,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Policy Exemption. */
-  def ResourcePolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyExemptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourcePolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -385,8 +385,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Resource Policy Remediation. */
-  def ResourcePolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyRemediationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourcePolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourcePolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourcePolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -402,8 +402,8 @@ object core:
    * 
    * &gt; **Note:** Only Preview Features which have an `ApprovalType` of `AutoApproval` can be managed in Terraform, features which require manual approval by Service Teams are unsupported. [More information on Resource Provider Preview Features can be found in this document](https://docs.microsoft.com/rest/api/resources/features)
    */
-  def ResourceProviderFeatureRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceProviderFeatureRegistrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceProviderFeatureRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceProviderFeatureRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceProviderFeatureRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -421,8 +421,8 @@ object core:
    * 
    * &gt; **Note:** Adding or Removing a Preview Feature will re-register the Resource Provider.
    */
-  def ResourceProviderRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.ResourceProviderRegistrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceProviderRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.ResourceProviderRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.ResourceProviderRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -446,8 +446,8 @@ object core:
    * 
    * &gt; **NOTE:** When using this resource across tenants the `clientId` and `tenantId` of the `provider` config block should be for the home tenant details for the SPN / User or a permissions error will likely be encountered. See [the official documentation](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/programmatically-create-subscription) for more details.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -461,8 +461,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Cost Management Export for a Subscription. */
-  def SubscriptionCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionCostManagementExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionCostManagementExportArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -472,8 +472,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Cost Management View for a Subscription. */
-  def SubscriptionCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionCostManagementView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionCostManagementViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionCostManagementViewArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -483,8 +483,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Assignment. */
-  def SubscriptionPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -494,8 +494,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Policy Exemption. */
-  def SubscriptionPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyExemptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionPolicyExemption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyExemptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyExemptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -505,8 +505,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure Subscription Policy Remediation. */
-  def SubscriptionPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyRemediationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionPolicyRemediation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionPolicyRemediationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionPolicyRemediationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -516,8 +516,8 @@ object core:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Subscription Template Deployment. */
-  def SubscriptionTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.SubscriptionTemplateDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.SubscriptionTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.SubscriptionTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -542,8 +542,8 @@ object core:
    * 
    * &gt; **Note:** Tenant Template Deployments are always targeted at the Tenant in which the current User, Managed Identity, or Service Principal being used by Terraform is homed.
    */
-  def TenantTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.core.TenantTemplateDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TenantTemplateDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.core.TenantTemplateDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.core.TenantTemplateDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

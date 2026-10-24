@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object appautoscaling:
   /** Provides an Application Auto Scaling Policy resource. */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appautoscaling.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appautoscaling.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -16,8 +16,8 @@ object appautoscaling:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an Application Auto Scaling ScheduledAction resource. */
-  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appautoscaling.ScheduledActionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScheduledAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appautoscaling.ScheduledActionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.ScheduledActionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,8 +33,8 @@ object appautoscaling:
    * 
    * &gt; **NOTE:** The [Application Auto Scaling service automatically attempts to manage IAM Service-Linked Roles](https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles) when registering certain service namespaces for the first time. To manually manage this role, see the `aws.iam.ServiceLinkedRole` resource.
    */
-  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.appautoscaling.TargetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.appautoscaling.TargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.appautoscaling.TargetArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

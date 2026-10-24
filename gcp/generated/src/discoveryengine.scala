@@ -13,8 +13,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rpc/google.cloud.discoveryengine.v1alpha#aclconfigservice)
    */
-  def AclConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.AclConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AclConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.AclConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.AclConfigArgs.builder
     com.pulumi.gcp.discoveryengine.AclConfig(name,
         args(argsBuilder).build,
@@ -27,8 +27,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rpc/google.cloud.discoveryengine.v1#assistantservice)
    */
-  def Assistant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.AssistantArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Assistant(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.AssistantArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.AssistantArgs.builder
     com.pulumi.gcp.discoveryengine.Assistant(name,
         args(argsBuilder).build,
@@ -43,8 +43,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Vertex AI Conversation](https://cloud.google.com/dialogflow/cx/docs/concept/generative)
    */
-  def ChatEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.ChatEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ChatEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.ChatEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ChatEngineArgs.builder
     com.pulumi.gcp.discoveryengine.ChatEngine(name,
         args(argsBuilder).build,
@@ -58,8 +58,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.cmekConfigs)
    */
-  def CmekConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.CmekConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CmekConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.CmekConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.CmekConfigArgs.builder
     com.pulumi.gcp.discoveryengine.CmekConfig(name,
         args(argsBuilder).build,
@@ -74,8 +74,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Configure serving controls](https://cloud.google.com/gemini/enterprise/docs/configure-serving-controls)
    */
-  def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.ControlArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Control(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.ControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ControlArgs.builder
     com.pulumi.gcp.discoveryengine.Control(name,
         args(argsBuilder).build,
@@ -93,8 +93,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Introduction](https://cloud.google.com/agentspace/docs/introduction-to-connectors-and-data-stores)
    */
-  def DataConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.DataConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataConnectorArgs.builder
     com.pulumi.gcp.discoveryengine.DataConnector(name,
         args(argsBuilder).build,
@@ -111,8 +111,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a search data store](https://cloud.google.com/generative-ai-app-builder/docs/create-data-store-es)
    */
-  def DataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.DataStoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.DataStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.DataStoreArgs.builder
     com.pulumi.gcp.discoveryengine.DataStore(name,
         args(argsBuilder).build,
@@ -130,8 +130,8 @@ object discoveryengine:
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    inline def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDataStore(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoreArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStore(args(argsBuilder).build,
@@ -142,8 +142,8 @@ object discoveryengine:
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/get).
      */
-    inline def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDataStorePlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoreResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStorePlainArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStorePlain(args(argsBuilder).build,
@@ -154,8 +154,8 @@ object discoveryengine:
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    inline def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDataStores(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStores(args(argsBuilder).build,
@@ -166,24 +166,24 @@ object discoveryengine:
      * See [the official documentation](https://cloud.google.com/generative-ai-app-builder/docs/manage-data-stores)
      * and [API](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores/list).
      */
-    inline def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDataStoresPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetDataStoresResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetDataStoresPlainArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getDataStoresPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for searchengine */
-    inline def getSearchEngineIamPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSearchEngineIamPolicy(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.discoveryengine.outputs.GetSearchEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for searchengine */
-    inline def getSearchEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSearchEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.discoveryengine.outputs.GetSearchEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.discoveryengine.inputs.GetSearchEngineIamPolicyPlainArgs.builder
       com.pulumi.gcp.discoveryengine.DiscoveryengineFunctions.getSearchEngineIamPolicyPlain(args(argsBuilder).build,
@@ -196,8 +196,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.licenseConfigs)
    */
-  def LicenseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.LicenseConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LicenseConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.LicenseConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.LicenseConfigArgs.builder
     com.pulumi.gcp.discoveryengine.LicenseConfig(name,
         args(argsBuilder).build,
@@ -212,8 +212,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a Recommendation Engine](https://cloud.google.com/generative-ai-app-builder/docs/create-generic-recommendations-app)
    */
-  def RecommendationEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RecommendationEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.RecommendationEngineArgs.builder
     com.pulumi.gcp.discoveryengine.RecommendationEngine(name,
         args(argsBuilder).build,
@@ -228,8 +228,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Provide a schema for your data store](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema)
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SchemaArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SchemaArgs.builder
     com.pulumi.gcp.discoveryengine.Schema(name,
         args(argsBuilder).build,
@@ -244,8 +244,8 @@ object discoveryengine:
    * * How-to Guides
    *     * [Create a Search Engine](https://cloud.google.com/generative-ai-app-builder/docs/create-engine-es)
    */
-  def SearchEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SearchEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngine(name,
         args(argsBuilder).build,
@@ -563,8 +563,8 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SearchEngineIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamBindingArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamBinding(name,
         args(argsBuilder).build,
@@ -882,8 +882,8 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SearchEngineIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamMemberArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamMember(name,
         args(argsBuilder).build,
@@ -1201,8 +1201,8 @@ object discoveryengine:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SearchEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SearchEngineIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SearchEngineIamPolicyArgs.builder
     com.pulumi.gcp.discoveryengine.SearchEngineIamPolicy(name,
         args(argsBuilder).build,
@@ -1232,8 +1232,8 @@ object discoveryengine:
    * \$ pulumi import gcp:discoveryengine/servingConfig:ServingConfig default {{location}}/{{collection_id}}/{{engine_id}}/{{serving_config_id}}
    * ```
    */
-  def ServingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.ServingConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServingConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.ServingConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.ServingConfigArgs.builder
     com.pulumi.gcp.discoveryengine.ServingConfig(name,
         args(argsBuilder).build,
@@ -1247,8 +1247,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores.siteSearchEngine.sitemaps)
    */
-  def Sitemap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.SitemapArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Sitemap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.SitemapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.SitemapArgs.builder
     com.pulumi.gcp.discoveryengine.Sitemap(name,
         args(argsBuilder).build,
@@ -1262,8 +1262,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1/projects.locations.collections.dataStores.siteSearchEngine.targetSites)
    */
-  def TargetSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.TargetSiteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TargetSite(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.TargetSiteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.TargetSiteArgs.builder
     com.pulumi.gcp.discoveryengine.TargetSite(name,
         args(argsBuilder).build,
@@ -1276,8 +1276,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/gemini/enterprise/docs/reference/rest/v1/projects.locations.userStores)
    */
-  def UserStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.UserStoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserStore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.UserStoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.UserStoreArgs.builder
     com.pulumi.gcp.discoveryengine.UserStore(name,
         args(argsBuilder).build,
@@ -1290,8 +1290,8 @@ object discoveryengine:
    * 
    * * [API documentation](https://cloud.google.com/gemini/enterprise/docs/reference/rest/v1alpha/projects.locations.collections.engines.widgetConfigs)
    */
-  def WidgetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WidgetConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.discoveryengine.WidgetConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.discoveryengine.WidgetConfigArgs.builder
     com.pulumi.gcp.discoveryengine.WidgetConfig(name,
         args(argsBuilder).build,

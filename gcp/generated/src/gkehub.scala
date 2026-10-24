@@ -15,8 +15,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def Feature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Feature(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkehub.FeatureArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -331,8 +331,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FeatureIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FeatureIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkehub.FeatureIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -647,8 +647,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FeatureIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FeatureIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkehub.FeatureIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -963,8 +963,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FeatureIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FeatureIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.gkehub.FeatureIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -974,8 +974,8 @@ object gkehub:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Contains information about a GKEHub Feature Memberships. Feature Memberships configure GKEHub Features that apply to specific memberships rather than the project as a whole. The googleGkeHub is the Fleet API. */
-  def FeatureMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureMembershipArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FeatureMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FeatureMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.FeatureMembershipArgs.builder
     com.pulumi.gcp.gkehub.FeatureMembership(name,
         args(argsBuilder).build,
@@ -990,8 +990,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster to a Fleet](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.FleetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.FleetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.FleetArgs.builder
     com.pulumi.gcp.gkehub.Fleet(name,
         args(argsBuilder).build,
@@ -1005,48 +1005,48 @@ object gkehub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the details of a specific GKE Hub Feature. Use this data source to retrieve the feature&#39;s configuration and state. */
-    inline def getFeature(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFeature(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetFeatureResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getFeature(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the details of a specific GKE Hub Feature. Use this data source to retrieve the feature&#39;s configuration and state. */
-    inline def getFeaturePlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFeaturePlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetFeatureResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeaturePlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getFeaturePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for feature */
-    inline def getFeatureIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFeatureIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetFeatureIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for feature */
-    inline def getFeatureIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFeatureIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetFeatureIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetFeatureIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getFeatureIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the details of a specific GKE Hub Membership. Use this data source to retrieve the membership&#39;s configuration and state. */
-    inline def getMembership(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMembership(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembership(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the details of a specific GKE Hub Membership. Use this data source to retrieve the membership&#39;s configuration and state. */
-    inline def getMembershipPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMembershipPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipPlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipPlain(args(argsBuilder).build,
@@ -1057,8 +1057,8 @@ object gkehub:
      * 
      * A membership binding associates a GKE Hub membership with a scope, enabling the membership to participate in fleet-wide configurations and policies defined by the scope.
      */
-    inline def getMembershipBinding(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMembershipBinding(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipBindingResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipBindingArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBinding(args(argsBuilder).build,
@@ -1069,40 +1069,40 @@ object gkehub:
      * 
      * A membership binding associates a GKE Hub membership with a scope, enabling the membership to participate in fleet-wide configurations and policies defined by the scope.
      */
-    inline def getMembershipBindingPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMembershipBindingPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipBindingResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipBindingPlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipBindingPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for membership */
-    inline def getMembershipIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMembershipIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetMembershipIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for membership */
-    inline def getMembershipIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMembershipIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetMembershipIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetMembershipIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getMembershipIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for scope */
-    inline def getScopeIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getScopeIamPolicy(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.gkehub.outputs.GetScopeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for scope */
-    inline def getScopeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getScopeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.gkehub.outputs.GetScopeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.gkehub.inputs.GetScopeIamPolicyPlainArgs.builder
       com.pulumi.gcp.gkehub.GkehubFunctions.getScopeIamPolicyPlain(args(argsBuilder).build,
@@ -1117,8 +1117,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def Membership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Membership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipArgs.builder
     com.pulumi.gcp.gkehub.Membership(name,
         args(argsBuilder).build,
@@ -1133,8 +1133,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def MembershipBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MembershipBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipBinding(name,
         args(argsBuilder).build,
@@ -1446,8 +1446,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MembershipIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MembershipIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamBinding(name,
         args(argsBuilder).build,
@@ -1759,8 +1759,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MembershipIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MembershipIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamMemberArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamMember(name,
         args(argsBuilder).build,
@@ -2072,8 +2072,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MembershipIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MembershipIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipIamPolicyArgs.builder
     com.pulumi.gcp.gkehub.MembershipIamPolicy(name,
         args(argsBuilder).build,
@@ -2091,8 +2091,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def MembershipRbacRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipRbacRoleBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MembershipRbacRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.MembershipRbacRoleBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.MembershipRbacRoleBindingArgs.builder
     com.pulumi.gcp.gkehub.MembershipRbacRoleBinding(name,
         args(argsBuilder).build,
@@ -2107,8 +2107,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.NamespaceArgs.builder
     com.pulumi.gcp.gkehub.Namespace(name,
         args(argsBuilder).build,
@@ -2123,8 +2123,8 @@ object gkehub:
    * * How-to Guides
    *     * [Rollout Sequencing Overview](https://cloud.google.com/kubernetes-engine/docs/concepts/rollout-sequencing-custom-stages/about-rollout-sequencing)
    */
-  def RolloutSequence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RolloutSequence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.RolloutSequenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.RolloutSequenceArgs.builder
     com.pulumi.gcp.gkehub.RolloutSequence(name,
         args(argsBuilder).build,
@@ -2139,8 +2139,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Scope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeArgs.builder
     com.pulumi.gcp.gkehub.Scope(name,
         args(argsBuilder).build,
@@ -2445,8 +2445,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ScopeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScopeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamBindingArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamBinding(name,
         args(argsBuilder).build,
@@ -2751,8 +2751,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ScopeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScopeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamMemberArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamMember(name,
         args(argsBuilder).build,
@@ -3057,8 +3057,8 @@ object gkehub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ScopeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScopeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeIamPolicyArgs.builder
     com.pulumi.gcp.gkehub.ScopeIamPolicy(name,
         args(argsBuilder).build,
@@ -3073,8 +3073,8 @@ object gkehub:
    * * How-to Guides
    *     * [Registering a Cluster](https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster#register_cluster)
    */
-  def ScopeRbacRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeRbacRoleBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ScopeRbacRoleBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.gkehub.ScopeRbacRoleBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.gkehub.ScopeRbacRoleBindingArgs.builder
     com.pulumi.gcp.gkehub.ScopeRbacRoleBinding(name,
         args(argsBuilder).build,

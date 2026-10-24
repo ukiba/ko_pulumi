@@ -19,8 +19,8 @@ object extendedlocation:
    * \$ pulumi import azure:extendedlocation/customLocation:CustomLocation example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example-resources/providers/Microsoft.ExtendedLocation/customLocations/example-custom-location
    * ```
    */
-  def CustomLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.extendedlocation.CustomLocationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CustomLocation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.extendedlocation.CustomLocationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.extendedlocation.CustomLocationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -37,16 +37,16 @@ object extendedlocation:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Custom Location within an Extended Location. */
-    inline def getCustomLocation(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCustomLocation(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.extendedlocation.outputs.GetCustomLocationResult] =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.GetCustomLocationArgs.builder
       com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.getCustomLocation(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Custom Location within an Extended Location. */
-    inline def getCustomLocationPlain(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCustomLocationPlain(args: Endofunction[com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.extendedlocation.outputs.GetCustomLocationResult] =
       val argsBuilder = com.pulumi.azure.extendedlocation.inputs.GetCustomLocationPlainArgs.builder
       com.pulumi.azure.extendedlocation.ExtendedlocationFunctions.getCustomLocationPlain(args(argsBuilder).build,

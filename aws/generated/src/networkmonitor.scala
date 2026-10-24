@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object networkmonitor:
   /** Resource for managing an AWS Network Monitor Monitor. */
-  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.networkmonitor.MonitorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Monitor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkmonitor.MonitorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmonitor.MonitorArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,8 +20,8 @@ object networkmonitor:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Network Monitor Probe. */
-  def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.networkmonitor.ProbeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Probe(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.networkmonitor.ProbeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.networkmonitor.ProbeArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

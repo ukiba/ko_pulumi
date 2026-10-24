@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object shield:
   /** Resource for managing an AWS Shield Application Layer Automatic Response for automatic DDoS mitigation. */
-  def ApplicationLayerAutomaticResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApplicationLayerAutomaticResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ApplicationLayerAutomaticResponseArgs.builder
     com.pulumi.aws.shield.ApplicationLayerAutomaticResponse(name,
         args(argsBuilder).build,
@@ -18,8 +18,8 @@ object shield:
    * Resource for managing an AWS Shield DRT Access Log Bucket Association.
    * Up to 10 log buckets can be associated for DRT Access sharing with the Shield Response Team (SRT).
    */
-  def DrtAccessLogBucketAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DrtAccessLogBucketAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.DrtAccessLogBucketAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessLogBucketAssociation(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object shield:
    * Authorizes the Shield Response Team (SRT) using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks.
    * For more information see [Configure AWS SRT Support](https://docs.aws.amazon.com/waf/latest/developerguide/authorize-srt.html)
    */
-  def DrtAccessRoleArnAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DrtAccessRoleArnAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.DrtAccessRoleArnAssociationArgs.builder
     com.pulumi.aws.shield.DrtAccessRoleArnAssociation(name,
         args(argsBuilder).build,
@@ -40,8 +40,8 @@ object shield:
    * Resource for managing a AWS Shield Proactive Engagement.
    * Proactive engagement authorizes the Shield Response Team (SRT) to use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.
    */
-  def ProactiveEngagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.ProactiveEngagementArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProactiveEngagement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.ProactiveEngagementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ProactiveEngagementArgs.builder
     com.pulumi.aws.shield.ProactiveEngagement(name,
         args(argsBuilder).build,
@@ -51,8 +51,8 @@ object shield:
    * Enables AWS Shield Advanced for a specific AWS resource.
    * The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
    */
-  def Protection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.ProtectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Protection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.ProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.shield.ProtectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -73,8 +73,8 @@ object shield:
    * This resource grouping improves the accuracy of detection and reduces false positives. For more information see
    * [Managing AWS Shield Advanced protection groups](https://docs.aws.amazon.com/waf/latest/developerguide/manage-protection-group.html)
    */
-  def ProtectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.ProtectionGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProtectionGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.ProtectionGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.shield.ProtectionGroupArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -93,8 +93,8 @@ object shield:
    * 
    * Blog post: [AWS Shield Advanced now supports Health Based Detection](https://aws.amazon.com/about-aws/whats-new/2020/02/aws-shield-advanced-now-supports-health-based-detection/)
    */
-  def ProtectionHealthCheckAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProtectionHealthCheckAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.ProtectionHealthCheckAssociationArgs.builder
     com.pulumi.aws.shield.ProtectionHealthCheckAssociation(name,
         args(argsBuilder).build,
@@ -108,16 +108,16 @@ object shield:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing an AWS Shield Protection. */
-    inline def getProtection(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getProtection(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.shield.outputs.GetProtectionResult] =
       val argsBuilder = com.pulumi.aws.shield.inputs.GetProtectionArgs.builder
       com.pulumi.aws.shield.ShieldFunctions.getProtection(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing an AWS Shield Protection. */
-    inline def getProtectionPlain(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getProtectionPlain(args: Endofunction[com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.shield.outputs.GetProtectionResult] =
       val argsBuilder = com.pulumi.aws.shield.inputs.GetProtectionPlainArgs.builder
       com.pulumi.aws.shield.ShieldFunctions.getProtectionPlain(args(argsBuilder).build,
@@ -130,8 +130,8 @@ object shield:
    * 
    * &gt; Destruction of this resource will set `autoRenew` to `DISABLED`. Automatic renewal can only be disabled during the last 30 days of a subscription. To unsubscribe outside of this window, you must contact AWS Support. Set `skipDestroy` to `true` to skip modifying the `autoRenew` argument during destruction.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.shield.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.shield.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.shield.SubscriptionArgs.builder
     com.pulumi.aws.shield.Subscription(name,
         args(argsBuilder).build,

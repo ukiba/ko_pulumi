@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object arcmachine:
   /** Manages a Hybrid Compute Machine. */
-  def ArcMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arcmachine.ArcMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ArcMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arcmachine.ArcMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arcmachine.ArcMachineArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,32 +32,32 @@ object arcmachine:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Azure Arc machine. */
-    inline def get(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.arcmachine.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.GetArgs.builder
       com.pulumi.azure.arcmachine.ArcmachineFunctions.get(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure Arc machine. */
-    inline def getPlain(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.arcmachine.inputs.GetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.arcmachine.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.arcmachine.inputs.GetPlainArgs.builder
       com.pulumi.azure.arcmachine.ArcmachineFunctions.getPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Arc Machine Automanage Configuration Profile Assignment. */
-  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutomanageConfigurationAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.arcmachine.AutomanageConfigurationAssignmentArgs.builder
     com.pulumi.azure.arcmachine.AutomanageConfigurationAssignment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Hybrid Compute Machine Extension. */
-  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.arcmachine.ExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Extension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.arcmachine.ExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.arcmachine.ExtensionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

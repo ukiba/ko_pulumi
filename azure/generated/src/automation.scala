@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object automation:
   /** Manages an Automation Account. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.AccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.AccountArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,136 +32,136 @@ object automation:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Automation Account. */
-    inline def getAccount(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetAccountArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getAccount(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Account. */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getAccountPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation Bool Variable. */
-    inline def getBoolVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBoolVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetBoolVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetBoolVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getBoolVariable(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Bool Variable. */
-    inline def getBoolVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBoolVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetBoolVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetBoolVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getBoolVariablePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation Datetime Variable. */
-    inline def getDateTimeVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDateTimeVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetDateTimeVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetDateTimeVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getDateTimeVariable(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Datetime Variable. */
-    inline def getDateTimeVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDateTimeVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetDateTimeVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetDateTimeVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getDateTimeVariablePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation Int Variable. */
-    inline def getIntVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIntVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetIntVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetIntVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getIntVariable(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Int Variable. */
-    inline def getIntVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIntVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetIntVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetIntVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getIntVariablePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation Runbook. */
-    inline def getRunbook(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRunbook(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetRunbookResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetRunbookArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getRunbook(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Runbook. */
-    inline def getRunbookPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRunbookPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetRunbookResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetRunbookPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getRunbookPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation String Variable. */
-    inline def getStringVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariableArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getStringVariable(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariableArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetStringVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetStringVariableArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getStringVariable(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation String Variable. */
-    inline def getStringVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getStringVariablePlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetStringVariableResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetStringVariablePlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getStringVariablePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Automation Object Variable. */
-    inline def getVariableObject(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVariableObject(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetVariableObjectResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariableObjectArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariableObject(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Automation Object Variable. */
-    inline def getVariableObjectPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVariableObjectPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetVariableObjectResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariableObjectPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariableObjectPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get all variables in an Automation Account. */
-    inline def getVariables(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVariables(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.automation.outputs.GetVariablesResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariablesArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariables(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get all variables in an Automation Account. */
-    inline def getVariablesPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVariablesPlain(args: Endofunction[com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.automation.outputs.GetVariablesResult] =
       val argsBuilder = com.pulumi.azure.automation.inputs.GetVariablesPlainArgs.builder
       com.pulumi.azure.automation.AutomationFunctions.getVariablesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a boolean variable in Azure Automation */
-  def BoolVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.BoolVariableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BoolVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.BoolVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.BoolVariableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -171,8 +171,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Certificate. */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.CertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -182,8 +182,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection. */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -193,8 +193,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `Azure`. */
-  def ConnectionCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ConnectionCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ConnectionCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionCertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -204,8 +204,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureClassicCertificate`. */
-  def ConnectionClassicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ConnectionClassicCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionClassicCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ConnectionClassicCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionClassicCertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -215,8 +215,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Connection with type `AzureServicePrincipal`. */
-  def ConnectionServicePrincipal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ConnectionServicePrincipalArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionServicePrincipal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ConnectionServicePrincipalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionServicePrincipalArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -226,8 +226,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages anAutomation Connection Type. */
-  def ConnectionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ConnectionTypeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ConnectionTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ConnectionTypeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -237,8 +237,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Credential. */
-  def Credential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.CredentialArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Credential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.CredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.CredentialArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -248,8 +248,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a DateTime variable in Azure Automation */
-  def DateTimeVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.DateTimeVariableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DateTimeVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.DateTimeVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DateTimeVariableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -259,8 +259,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Configuration. */
-  def DscConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.DscConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DscConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.DscConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DscConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -277,8 +277,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation DSC Node Configuration. */
-  def DscNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.DscNodeConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DscNodeConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.DscNodeConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.DscNodeConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -288,16 +288,16 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker. */
-  def HybridRunbookWorker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HybridRunbookWorker(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.automation.HybridRunbookWorkerArgs.builder
     com.pulumi.azure.automation.HybridRunbookWorker(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Hybrid Runbook Worker Group. */
-  def HybridRunbookWorkerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HybridRunbookWorkerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.HybridRunbookWorkerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.HybridRunbookWorkerGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -307,8 +307,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a integer variable in Azure Automation */
-  def IntVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.IntVariableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IntVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.IntVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.IntVariableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -322,16 +322,16 @@ object automation:
    * 
    * &gt; **Note:** AzureRM provides this stand-alone azure.automation.JobSchedule and an inlined `jobSchedule` property in azurermRunbook to manage the job schedules. You can only make use of one of these methods to manage a job schedule.
    */
-  def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.JobScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.JobScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.automation.JobScheduleArgs.builder
     com.pulumi.azure.automation.JobSchedule(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Module. */
-  def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ModuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ModuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -341,8 +341,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Powershell 7.2 Module. */
-  def Powershell72Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.Powershell72ModuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Powershell72Module(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.Powershell72ModuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.Powershell72ModuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -359,8 +359,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Python3 Package. */
-  def Python3Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.Python3PackageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Python3Package(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.Python3PackageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.Python3PackageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -377,8 +377,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Runbook. */
-  def RunBook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.RunBookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RunBook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.RunBookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RunBookArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -395,8 +395,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runtime Environment. */
-  def RuntimeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RuntimeEnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -413,8 +413,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Package within an Automation Runtime Environment. */
-  def RuntimeEnvironmentPackage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentPackageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeEnvironmentPackage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.RuntimeEnvironmentPackageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.RuntimeEnvironmentPackageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -424,8 +424,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Automation Schedule. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.ScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.ScheduleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -439,8 +439,8 @@ object automation:
    * 
    * &gt; **Note:** The `azure.automation.SoftwareUpdateConfiguration` resource has been deprecated because the Azure Automation Update Management was retired on 2024-08-31 and has been shutdown on 2025-02-28. This resource will be removed in v5.0 of the AzureRM Provider. Please migrate to Azure Update Manager, and use the `azure.maintenance.Configuration` resource combined with the appropriate assignment resources instead. See https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/log-analytics-agent-based-azure-management-services-shut-down-starting-28-februa/4381853 for more information.
    */
-  def SoftwareUpdateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.SoftwareUpdateConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SoftwareUpdateConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.SoftwareUpdateConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.SoftwareUpdateConfigurationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -450,8 +450,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Source Control. */
-  def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.SourceControlArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SourceControl(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.SourceControlArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.SourceControlArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -461,8 +461,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a string variable in Azure Automation */
-  def StringVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.StringVariableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def StringVariable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.StringVariableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.StringVariableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -472,8 +472,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an object variable in Azure Automation */
-  def VariableObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.VariableObjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VariableObject(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.VariableObjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.VariableObjectArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -483,8 +483,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Wacher. */
-  def Watcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.WatcherArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Watcher(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.WatcherArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.WatcherArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -501,8 +501,8 @@ object automation:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Automation Runbook&#39;s Webhook. */
-  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.automation.WebhookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Webhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.automation.WebhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.automation.WebhookArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object devopsagent:
   /** Manages an AWS DevOps Agent Space. */
-  def AgentSpace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.devopsagent.AgentSpaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentSpace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.devopsagent.AgentSpaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.devopsagent.AgentSpaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

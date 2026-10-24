@@ -23,8 +23,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/composer/docs/latest/composer-overview)
      */
-    inline def getEnvironment(args: Endofunction[com.pulumi.gcp.composer.inputs.GetEnvironmentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEnvironment(args: Endofunction[com.pulumi.gcp.composer.inputs.GetEnvironmentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.composer.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetEnvironmentArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getEnvironment(args(argsBuilder).build,
@@ -40,8 +40,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/composer/docs/latest/composer-overview)
      */
-    inline def getEnvironmentPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetEnvironmentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEnvironmentPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetEnvironmentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.composer.outputs.GetEnvironmentResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetEnvironmentPlainArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getEnvironmentPlain(args(argsBuilder).build,
@@ -56,8 +56,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/composer/docs/composer-versions)
      */
-    inline def getImageVersions(args: Endofunction[com.pulumi.gcp.composer.inputs.GetImageVersionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getImageVersions(args: Endofunction[com.pulumi.gcp.composer.inputs.GetImageVersionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.composer.outputs.GetImageVersionsResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetImageVersionsArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getImageVersions(args(argsBuilder).build,
@@ -72,8 +72,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://docs.cloud.google.com/composer/docs/composer-versions)
      */
-    inline def getImageVersionsPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetImageVersionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getImageVersionsPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetImageVersionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.composer.outputs.GetImageVersionsResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetImageVersionsPlainArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getImageVersionsPlain(args(argsBuilder).build,
@@ -88,8 +88,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://clouddocs.devsite.corp.google.com/composer/docs/composer-3/use-kubernetes-pod-operator#secret-config)
      */
-    inline def getUserWorkloadsConfigMap(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUserWorkloadsConfigMap(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.composer.outputs.GetUserWorkloadsConfigMapResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getUserWorkloadsConfigMap(args(argsBuilder).build,
@@ -104,8 +104,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://clouddocs.devsite.corp.google.com/composer/docs/composer-3/use-kubernetes-pod-operator#secret-config)
      */
-    inline def getUserWorkloadsConfigMapPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUserWorkloadsConfigMapPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.composer.outputs.GetUserWorkloadsConfigMapResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetUserWorkloadsConfigMapPlainArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getUserWorkloadsConfigMapPlain(args(argsBuilder).build,
@@ -121,8 +121,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://clouddocs.devsite.corp.google.com/composer/docs/composer-3/use-kubernetes-pod-operator#secret-config)
      */
-    inline def getUserWorkloadsSecret(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUserWorkloadsSecret(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.composer.outputs.GetUserWorkloadsSecretResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getUserWorkloadsSecret(args(argsBuilder).build,
@@ -138,8 +138,8 @@ object composer:
      * * How-to Guides
      *     * [Official Documentation](https://clouddocs.devsite.corp.google.com/composer/docs/composer-3/use-kubernetes-pod-operator#secret-config)
      */
-    inline def getUserWorkloadsSecretPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUserWorkloadsSecretPlain(args: Endofunction[com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.composer.outputs.GetUserWorkloadsSecretResult] =
       val argsBuilder = com.pulumi.gcp.composer.inputs.GetUserWorkloadsSecretPlainArgs.builder
       com.pulumi.gcp.composer.ComposerFunctions.getUserWorkloadsSecretPlain(args(argsBuilder).build,
@@ -193,8 +193,8 @@ object composer:
    *     [Troubleshooting pages](https://docs.cloud.google.com/composer/docs/composer-3/troubleshooting-environment-creation)
    *     if you encounter problems.
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.composer.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.composer.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -211,8 +211,8 @@ object composer:
    * 
    * * [API documentation](https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments.userWorkloadsConfigMaps)
    */
-  def UserWorkloadsConfigMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsConfigMapArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserWorkloadsConfigMap(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsConfigMapArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.UserWorkloadsConfigMapArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -225,8 +225,8 @@ object composer:
    * User workloads Secret used by Airflow tasks that run with Kubernetes Executor
    * or KubernetesPodOperator. Intended for Managed Airflow (Gen 3) Environments.
    */
-  def UserWorkloadsSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsSecretArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserWorkloadsSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.composer.UserWorkloadsSecretArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.composer.UserWorkloadsSecretArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

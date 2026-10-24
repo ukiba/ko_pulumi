@@ -11,8 +11,8 @@ object redis:
    * 
    * &gt; **Note:** Redis version 4 is being retired and no longer supports creating new instances. Version 4 will be removed in a future release. [Redis Version 4 Retirement](https://learn.microsoft.com/azure/azure-cache-for-redis/cache-retired-features#important-upgrade-timelines)
    */
-  def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.CacheArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cache(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.CacheArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -29,8 +29,8 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy */
-  def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CacheAccessPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheAccessPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -40,8 +40,8 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Cache Access Policy Assignment */
-  def CacheAccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyAssignmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CacheAccessPolicyAssignment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.CacheAccessPolicyAssignmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.CacheAccessPolicyAssignmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -55,8 +55,8 @@ object redis:
    * 
    * &gt; **Note:** This resource has been deprecated in favor of azurerm_managed_redis.
    */
-  def EnterpriseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.EnterpriseClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnterpriseCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.EnterpriseClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.EnterpriseClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -77,8 +77,8 @@ object redis:
    * 
    * &gt; **Note:** This resource has been deprecated in favor of azurerm_managed_redis.
    */
-  def EnterpriseDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.EnterpriseDatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnterpriseDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.EnterpriseDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.EnterpriseDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -88,8 +88,8 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Firewall Rule associated with a Redis Cache. */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.FirewallRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.redis.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -99,8 +99,8 @@ object redis:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Redis Linked Server (ie Geo Location) */
-  def LinkedServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.redis.LinkedServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LinkedServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.redis.LinkedServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.redis.LinkedServerArgs.builder
     com.pulumi.azure.redis.LinkedServer(name,
         args(argsBuilder).build,
@@ -114,16 +114,16 @@ object redis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Redis Cache */
-    inline def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCache(args: Endofunction[com.pulumi.azure.redis.inputs.GetCacheArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCacheArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getCache(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Redis Cache */
-    inline def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCachePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetCachePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetCacheResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetCachePlainArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getCachePlain(args(argsBuilder).build,
@@ -134,8 +134,8 @@ object redis:
      * 
      * &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    inline def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabase(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabaseArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabase(args(argsBuilder).build,
@@ -146,8 +146,8 @@ object redis:
      * 
      * &gt; **Note:** This data source has been deprecated in favor of azurerm_managed_redis.
      */
-    inline def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEnterpriseDatabasePlain(args: Endofunction[com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.redis.outputs.GetEnterpriseDatabaseResult] =
       val argsBuilder = com.pulumi.azure.redis.inputs.GetEnterpriseDatabasePlainArgs.builder
       com.pulumi.azure.redis.RedisFunctions.getEnterpriseDatabasePlain(args(argsBuilder).build,

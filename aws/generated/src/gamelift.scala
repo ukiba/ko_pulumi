@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object gamelift:
   /** Provides a GameLift Alias resource. */
-  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.AliasArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Alias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.AliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.AliasArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,8 +23,8 @@ object gamelift:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Build resource. */
-  def Build(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.BuildArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Build(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.BuildArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.BuildArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -41,8 +41,8 @@ object gamelift:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a GameLift Fleet resource. */
-  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.FleetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Fleet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.FleetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.FleetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -59,8 +59,8 @@ object gamelift:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Game Server Group resource. */
-  def GameServerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.GameServerGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GameServerGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.GameServerGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.GameServerGroupArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -74,8 +74,8 @@ object gamelift:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Game Session Queue resource. */
-  def GameSessionQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.GameSessionQueueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GameSessionQueue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.GameSessionQueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.GameSessionQueueArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -92,8 +92,8 @@ object gamelift:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an GameLift Script resource. */
-  def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.gamelift.ScriptArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Script(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.gamelift.ScriptArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.gamelift.ScriptArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

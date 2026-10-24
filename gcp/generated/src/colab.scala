@@ -14,16 +14,16 @@ object colab:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for runtimetemplate */
-    inline def getRuntimeTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRuntimeTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.colab.outputs.GetRuntimeTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyArgs.builder
       com.pulumi.gcp.colab.ColabFunctions.getRuntimeTemplateIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for runtimetemplate */
-    inline def getRuntimeTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRuntimeTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.colab.outputs.GetRuntimeTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.colab.inputs.GetRuntimeTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.colab.ColabFunctions.getRuntimeTemplateIamPolicyPlain(args(argsBuilder).build,
@@ -38,8 +38,8 @@ object colab:
    * * How-to Guides
    *     * [Schedule a notebook run](https://cloud.google.com/colab/docs/schedule-notebook-run)
    */
-  def NotebookExecution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.NotebookExecutionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NotebookExecution(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.NotebookExecutionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.colab.NotebookExecutionArgs.builder
     com.pulumi.gcp.colab.NotebookExecution(name,
         args(argsBuilder).build,
@@ -54,8 +54,8 @@ object colab:
    * * How-to Guides
    *     * [Create a runtime](https://cloud.google.com/colab/docs/create-runtime)
    */
-  def Runtime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.RuntimeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Runtime(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.RuntimeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.colab.RuntimeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -75,8 +75,8 @@ object colab:
    * * How-to Guides
    *     * [Create a runtime template](https://cloud.google.com/colab/docs/create-runtime-template)
    */
-  def RuntimeTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -391,8 +391,8 @@ object colab:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RuntimeTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamBindingArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamBinding(name,
         args(argsBuilder).build,
@@ -704,8 +704,8 @@ object colab:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RuntimeTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamMemberArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamMember(name,
         args(argsBuilder).build,
@@ -1017,8 +1017,8 @@ object colab:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RuntimeTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuntimeTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.RuntimeTemplateIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.colab.RuntimeTemplateIamPolicyArgs.builder
     com.pulumi.gcp.colab.RuntimeTemplateIamPolicy(name,
         args(argsBuilder).build,
@@ -1033,8 +1033,8 @@ object colab:
    * * How-to Guides
    *     * [Schedule a notebook run](https://cloud.google.com/colab/docs/schedule-notebook-run)
    */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.colab.ScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.colab.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.colab.ScheduleArgs.builder
     com.pulumi.gcp.colab.Schedule(name,
         args(argsBuilder).build,

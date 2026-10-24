@@ -9,8 +9,8 @@ object workloadssap:
    * 
    * &gt; **Note:** Before using this resource, it&#39;s required to submit the request of registering the Resource Provider with Azure CLI `az provider register --namespace &#34;Microsoft.Workloads&#34;`. The Resource Provider can take a while to register, you can check the status by running `az provider show --namespace &#34;Microsoft.Workloads&#34; --query &#34;registrationState&#34;`. Once this outputs &#34;Registered&#34; the Resource Provider is available for use.
    */
-  def DiscoveryVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.workloadssap.DiscoveryVirtualInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DiscoveryVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.workloadssap.DiscoveryVirtualInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.workloadssap.DiscoveryVirtualInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -31,8 +31,8 @@ object workloadssap:
    * 
    * &gt; **Note:** Before using this resource, it&#39;s required to submit the request of registering the Resource Provider with Azure CLI `az provider register --namespace &#34;Microsoft.Workloads&#34;`. The Resource Provider can take a while to register, you can check the status by running `az provider show --namespace &#34;Microsoft.Workloads&#34; --query &#34;registrationState&#34;`. Once this outputs &#34;Registered&#34; the Resource Provider is available for use.
    */
-  def SingleNodeVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.workloadssap.SingleNodeVirtualInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SingleNodeVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.workloadssap.SingleNodeVirtualInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.workloadssap.SingleNodeVirtualInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -53,8 +53,8 @@ object workloadssap:
    * 
    * &gt; **Note:** Before using this resource, it&#39;s required to submit the request of registering the Resource Provider with Azure CLI `az provider register --namespace &#34;Microsoft.Workloads&#34;`. The Resource Provider can take a while to register, you can check the status by running `az provider show --namespace &#34;Microsoft.Workloads&#34; --query &#34;registrationState&#34;`. Once this outputs &#34;Registered&#34; the Resource Provider is available for use.
    */
-  def ThreeTierVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.workloadssap.ThreeTierVirtualInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ThreeTierVirtualInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.workloadssap.ThreeTierVirtualInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.workloadssap.ThreeTierVirtualInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -20,8 +20,8 @@ object certificateauthority:
    * (and run `pulumi up` to write the field to state) in order to destroy a CertificateAuthority.
    * It is recommended to not set this field (or set it to true) until you&#39;re ready to destroy.
    */
-  def Authority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Authority(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.AuthorityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.AuthorityArgs.builder
     com.pulumi.gcp.certificateauthority.Authority(name,
         args(argsBuilder).build,
@@ -38,8 +38,8 @@ object certificateauthority:
    * * How-to Guides
    *     * [Certificate Authority Service Overview](https://cloud.google.com/certificate-authority-service/docs/overview)
    */
-  def CaPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -605,8 +605,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaPoolIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamBinding(name,
         args(argsBuilder).build,
@@ -1169,8 +1169,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaPoolIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamMember(name,
         args(argsBuilder).build,
@@ -1733,8 +1733,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CaPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaPoolIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CaPoolIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CaPoolIamPolicy(name,
         args(argsBuilder).build,
@@ -1746,8 +1746,8 @@ object certificateauthority:
    * &gt; **Note:** The Certificate Authority that is referenced by this resource **must** be
    * `tier = &#34;ENTERPRISE&#34;`
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1767,8 +1767,8 @@ object certificateauthority:
    *     * [Official Documentation](https://cloud.google.com/certificate-authority-service)
    *     * [Understanding Certificate Templates](https://cloud.google.com/certificate-authority-service/docs/certificate-template)
    */
-  def CertificateTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CertificateTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2334,8 +2334,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CertificateTemplateIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamBindingArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamBinding(name,
         args(argsBuilder).build,
@@ -2898,8 +2898,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CertificateTemplateIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamMemberArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamMember(name,
         args(argsBuilder).build,
@@ -3462,8 +3462,8 @@ object certificateauthority:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def CertificateTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CertificateTemplateIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicyArgs.builder
     com.pulumi.gcp.certificateauthority.CertificateTemplateIamPolicy(name,
         args(argsBuilder).build,
@@ -3477,48 +3477,48 @@ object certificateauthority:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Get info about a Google CAS Certificate Authority. */
-    inline def getAuthority(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAuthority(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetAuthorityResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetAuthorityArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getAuthority(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get info about a Google CAS Certificate Authority. */
-    inline def getAuthorityPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAuthorityPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetAuthorityResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetAuthorityPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getAuthorityPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for capool */
-    inline def getCaPoolIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCaPoolIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetCaPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCaPoolIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for capool */
-    inline def getCaPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCaPoolIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetCaPoolIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCaPoolIamPolicyPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCaPoolIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for certificatetemplate */
-    inline def getCertificateTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCertificateTemplateIamPolicy(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.certificateauthority.outputs.GetCertificateTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCertificateTemplateIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for certificatetemplate */
-    inline def getCertificateTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCertificateTemplateIamPolicyPlain(args: Endofunction[com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.certificateauthority.outputs.GetCertificateTemplateIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.certificateauthority.inputs.GetCertificateTemplateIamPolicyPlainArgs.builder
       com.pulumi.gcp.certificateauthority.CertificateauthorityFunctions.getCertificateTemplateIamPolicyPlain(args(argsBuilder).build,

@@ -13,8 +13,8 @@ object outposts:
    * 
    * Because every argument of this resource is marked as forces-new, any change to the configuration results in destroying and re-creating the capacity task. Tasks that are already in a terminal state (`COMPLETED` or `CANCELLED`) are left in place on destroy and only removed from Terraform state; tasks still in flight are cancelled and Terraform waits for them to reach `CANCELLED`. If a task reaches the terminal state `FAILED` during `delete`, the provider tolerates the &#34;already in a terminal state&#34; error returned by `CancelCapacityTask` and considers the resource successfully destroyed. If a create operation produces a `FAILED` task, the resource is not written to Terraform state (the `failureReason` is surfaced in the diagnostic instead), so no follow-up destroy is required.
    */
-  def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.outposts.CapacityTaskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CapacityTask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.outposts.CapacityTaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.outposts.CapacityTaskArgs.builder
     com.pulumi.aws.outposts.CapacityTask(name,
         args(argsBuilder).build,
@@ -28,128 +28,128 @@ object outposts:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Information about a specific hardware asset in an Outpost. */
-    inline def getAsset(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAsset(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetAssetResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetAssetArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getAsset(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Information about a specific hardware asset in an Outpost. */
-    inline def getAssetPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAssetPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetAssetResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetAssetPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getAssetPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Information about hardware assets in an Outpost. */
-    inline def getAssets(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAssets(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetAssetsResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetAssetsArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getAssets(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Information about hardware assets in an Outpost. */
-    inline def getAssetsPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAssetsPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetAssetsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetAssetsResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetAssetsPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getAssetsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about an Outposts Outpost. */
-    inline def getOutpost(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOutpost(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetOutpostResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpost(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an Outposts Outpost. */
-    inline def getOutpostPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetOutpostResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Information about single Outpost Instance Type. */
-    inline def getOutpostInstanceType(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypeArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostInstanceType(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypeArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetOutpostInstanceTypeResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypeArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostInstanceType(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Information about single Outpost Instance Type. */
-    inline def getOutpostInstanceTypePlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostInstanceTypePlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetOutpostInstanceTypeResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypePlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostInstanceTypePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Information about Outposts Instance Types. */
-    inline def getOutpostInstanceTypes(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostInstanceTypes(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetOutpostInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostInstanceTypes(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Information about Outposts Instance Types. */
-    inline def getOutpostInstanceTypesPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostInstanceTypesPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetOutpostInstanceTypesResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostInstanceTypesPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostInstanceTypesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about multiple Outposts. */
-    inline def getOutposts(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOutposts(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetOutpostsResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostsArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutposts(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about multiple Outposts. */
-    inline def getOutpostsPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOutpostsPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetOutpostsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetOutpostsResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetOutpostsPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getOutpostsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about an Outposts Site. */
-    inline def getSite(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSiteArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSite(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSiteArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetSiteResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetSiteArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getSite(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about an Outposts Site. */
-    inline def getSitePlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSitePlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetSiteResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetSitePlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getSitePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about multiple Outposts Sites. */
-    inline def getSites(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSites(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outposts.outputs.GetSitesResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetSitesArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getSites(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about multiple Outposts Sites. */
-    inline def getSitesPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSitesPlain(args: Endofunction[com.pulumi.aws.outposts.inputs.GetSitesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outposts.outputs.GetSitesResult] =
       val argsBuilder = com.pulumi.aws.outposts.inputs.GetSitesPlainArgs.builder
       com.pulumi.aws.outposts.OutpostsFunctions.getSitesPlain(args(argsBuilder).build,

@@ -13,8 +13,8 @@ object sentinel:
    * 
    * Manages a Built-in Anomaly Alert Rule.
    */
-  def AlertRuleAnomalyBuiltIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleAnomalyBuiltInArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleAnomalyBuiltIn(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleAnomalyBuiltInArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleAnomalyBuiltInArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -24,16 +24,16 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Duplicated Anomaly Alert Rule. */
-  def AlertRuleAnomalyDuplicate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleAnomalyDuplicate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicateArgs.builder
     com.pulumi.azure.sentinel.AlertRuleAnomalyDuplicate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Fusion Alert Rule. */
-  @deprecated("calls deprecated com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder.name: the `name` is deprecated and will be removed in v5.0 version of the provider.") def AlertRuleFusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  @deprecated("calls deprecated com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder.name: the `name` is deprecated and will be removed in v5.0 version of the provider.") def AlertRuleFusion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleFusionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleFusionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -43,8 +43,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Machine Learning Behavior Analytics Alert Rule. */
-  def AlertRuleMachineLearningBehaviorAnalytics(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleMachineLearningBehaviorAnalyticsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleMachineLearningBehaviorAnalytics(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleMachineLearningBehaviorAnalyticsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleMachineLearningBehaviorAnalyticsArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -54,8 +54,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel MS Security Incident Alert Rule. */
-  def AlertRuleMsSecurityIncident(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleMsSecurityIncidentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleMsSecurityIncident(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleMsSecurityIncidentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleMsSecurityIncidentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -65,8 +65,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel NRT Alert Rule. */
-  def AlertRuleNrt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleNrtArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleNrt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleNrtArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleNrtArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -76,8 +76,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Scheduled Alert Rule. */
-  def AlertRuleScheduled(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleScheduledArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleScheduled(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleScheduledArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleScheduledArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -87,8 +87,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Threat Intelligence Alert Rule. */
-  def AlertRuleThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleThreatIntelligenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AlertRuleThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AlertRuleThreatIntelligenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AlertRuleThreatIntelligenceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -98,8 +98,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Automation Rule. */
-  @deprecated("azure.sentinel.AuthomationRule has been deprecated in favor of azure.sentinel.AutomationRule") def AuthomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AuthomationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  @deprecated("azure.sentinel.AuthomationRule has been deprecated in favor of azure.sentinel.AutomationRule") def AuthomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AuthomationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AuthomationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -109,8 +109,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Automation Rule. */
-  def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.AutomationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutomationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.AutomationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.AutomationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -120,8 +120,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AWS CloudTrail Data Connector. */
-  def DataConnectorAwsCloudTrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAwsCloudTrailArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorAwsCloudTrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAwsCloudTrailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorAwsCloudTrailArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -131,8 +131,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a AWS S3 Data Connector. */
-  def DataConnectorAwsS3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAwsS3Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorAwsS3(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAwsS3Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorAwsS3Args.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -142,8 +142,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Azure Active Directory Data Connector. */
-  def DataConnectorAzureActiveDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureActiveDirectoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorAzureActiveDirectory(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureActiveDirectoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorAzureActiveDirectoryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -157,8 +157,8 @@ object sentinel:
    * 
    * &gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
    */
-  def DataConnectorAzureAdvancedThreadProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureAdvancedThreadProtectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorAzureAdvancedThreadProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureAdvancedThreadProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorAzureAdvancedThreadProtectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -168,8 +168,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Azure Security Center Data Connector. */
-  def DataConnectorAzureSecurityCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureSecurityCenterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorAzureSecurityCenter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorAzureSecurityCenterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorAzureSecurityCenterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -179,8 +179,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Dynamics 365 Data Connector. */
-  def DataConnectorDynamics365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorDynamics365Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorDynamics365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorDynamics365Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorDynamics365Args.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -190,8 +190,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Iot Data Connector. */
-  def DataConnectorIot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorIotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorIot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorIotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorIotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -205,8 +205,8 @@ object sentinel:
    * 
    * &gt; **Note:** This resource requires that [Enterprise Mobility + Security E5](https://www.microsoft.com/en-us/microsoft-365/enterprise-mobility-security) is enabled on the tenant being connected to.
    */
-  def DataConnectorMicrosoftCloudAppSecurity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftCloudAppSecurityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorMicrosoftCloudAppSecurity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftCloudAppSecurityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorMicrosoftCloudAppSecurityArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -216,8 +216,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Defender Advanced Threat Protection Data Connector. */
-  def DataConnectorMicrosoftDefenderAdvancedThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftDefenderAdvancedThreatProtectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorMicrosoftDefenderAdvancedThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftDefenderAdvancedThreatProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorMicrosoftDefenderAdvancedThreatProtectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -227,8 +227,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Threat Intelligence Data Connector. */
-  def DataConnectorMicrosoftThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatIntelligenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorMicrosoftThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatIntelligenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatIntelligenceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -238,8 +238,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Threat Protection Data Connector. */
-  def DataConnectorMicrosoftThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatProtectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorMicrosoftThreatProtection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatProtectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorMicrosoftThreatProtectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -249,8 +249,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Office 365 Data Connector. */
-  def DataConnectorOffice365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOffice365Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorOffice365(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOffice365Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorOffice365Args.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -260,8 +260,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office 365 Project Data Connector. */
-  def DataConnectorOffice365Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOffice365ProjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorOffice365Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOffice365ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorOffice365ProjectArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -271,8 +271,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Office ATP Data Connector. */
-  def DataConnectorOfficeAtp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficeAtpArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorOfficeAtp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficeAtpArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorOfficeAtpArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -282,8 +282,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office IRM Data Connector. */
-  def DataConnectorOfficeIrm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficeIrmArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorOfficeIrm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficeIrmArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorOfficeIrmArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -293,8 +293,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Office Power BI Data Connector. */
-  def DataConnectorOfficePowerBi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficePowerBiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorOfficePowerBi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorOfficePowerBiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorOfficePowerBiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -304,8 +304,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Threat Intelligence Data Connector. */
-  def DataConnectorThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorThreatIntelligence(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -315,8 +315,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Threat Intelligence TAXII Data Connector. */
-  def DataConnectorThreatIntelligenceTaxii(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceTaxiiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataConnectorThreatIntelligenceTaxii(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceTaxiiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.DataConnectorThreatIntelligenceTaxiiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -326,16 +326,16 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Insights Sentinel Onboarding. */
-  def LogAnalyticsWorkspaceOnboarding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboardingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LogAnalyticsWorkspaceOnboarding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboardingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboardingArgs.builder
     com.pulumi.azure.sentinel.LogAnalyticsWorkspaceOnboarding(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Metadata. */
-  def Metadata(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.MetadataArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Metadata(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.MetadataArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.MetadataArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -352,64 +352,64 @@ object sentinel:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    inline def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRule(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRule(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule. */
-    inline def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRulePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRulePlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRulePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    inline def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomaly(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomaly(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Anomaly Alert Rule. */
-    inline def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRuleAnomalyPlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleAnomalyResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleAnomalyPlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleAnomalyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    inline def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplate(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplateArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplate(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Sentinel Alert Rule Template. */
-    inline def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAlertRuleTemplatePlain(args: Endofunction[com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.sentinel.outputs.GetAlertRuleTemplateResult] =
       val argsBuilder = com.pulumi.azure.sentinel.inputs.GetAlertRuleTemplatePlainArgs.builder
       com.pulumi.azure.sentinel.SentinelFunctions.getAlertRuleTemplatePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Sentinel Threat Intelligence Indicator. */
-  def ThreatIntelligenceIndicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.ThreatIntelligenceIndicatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ThreatIntelligenceIndicator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.ThreatIntelligenceIndicatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.sentinel.ThreatIntelligenceIndicatorArgs.builder
     com.pulumi.azure.sentinel.ThreatIntelligenceIndicator(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Watchlist. */
-  def Watchlist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.WatchlistArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Watchlist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.WatchlistArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.WatchlistArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -419,8 +419,8 @@ object sentinel:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Sentinel Watchlist Item. */
-  def WatchlistItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.sentinel.WatchlistItemArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WatchlistItem(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.sentinel.WatchlistItemArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.sentinel.WatchlistItemArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

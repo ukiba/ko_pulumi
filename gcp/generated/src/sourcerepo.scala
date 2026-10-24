@@ -15,8 +15,8 @@ object sourcerepo:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/source-repositories/)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -323,8 +323,8 @@ object sourcerepo:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamBindingArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamBinding(name,
         args(argsBuilder).build,
@@ -628,8 +628,8 @@ object sourcerepo:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamMemberArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamMember(name,
         args(argsBuilder).build,
@@ -933,8 +933,8 @@ object sourcerepo:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RepositoryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.sourcerepo.RepositoryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.sourcerepo.RepositoryIamPolicyArgs.builder
     com.pulumi.gcp.sourcerepo.RepositoryIamPolicy(name,
         args(argsBuilder).build,
@@ -953,8 +953,8 @@ object sourcerepo:
      * and
      * [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    inline def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRepository(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepository(args(argsBuilder).build,
@@ -966,24 +966,24 @@ object sourcerepo:
      * and
      * [API](https://cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos).
      */
-    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRepositoryPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryPlainArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicy(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for repository */
-    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRepositoryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.sourcerepo.outputs.GetRepositoryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.sourcerepo.inputs.GetRepositoryIamPolicyPlainArgs.builder
       com.pulumi.gcp.sourcerepo.SourcerepoFunctions.getRepositoryIamPolicyPlain(args(argsBuilder).build,

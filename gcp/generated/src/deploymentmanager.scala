@@ -19,8 +19,8 @@ object deploymentmanager:
    * than actually deploying an in-preview deployment (i.e. `preview=true` to
    * `preview=false`).
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.deploymentmanager.DeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.deploymentmanager.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.deploymentmanager.DeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

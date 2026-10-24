@@ -14,32 +14,32 @@ object bigqueryanalyticshub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for dataexchange */
-    inline def getDataExchangeIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDataExchangeIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetDataExchangeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getDataExchangeIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for dataexchange */
-    inline def getDataExchangeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDataExchangeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetDataExchangeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetDataExchangeIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getDataExchangeIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for listing */
-    inline def getListingIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getListingIamPolicy(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetListingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getListingIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for listing */
-    inline def getListingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getListingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.bigqueryanalyticshub.outputs.GetListingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.inputs.GetListingIamPolicyPlainArgs.builder
       com.pulumi.gcp.bigqueryanalyticshub.BigqueryanalyticshubFunctions.getListingIamPolicyPlain(args(argsBuilder).build,
@@ -54,8 +54,8 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/analytics-hub-introduction)
    */
-  def DataExchange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExchange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchange(name,
         args(argsBuilder).build,
@@ -367,8 +367,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExchangeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamBinding(name,
         args(argsBuilder).build,
@@ -680,8 +680,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExchangeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamMember(name,
         args(argsBuilder).build,
@@ -993,8 +993,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def DataExchangeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExchangeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeIamPolicy(name,
         args(argsBuilder).build,
@@ -1015,8 +1015,8 @@ object bigqueryanalyticshub:
    * &gt; **Note:** When importing the resource with `pulumi import`, provide the destination/subscriber&#39;s project and location
    * in the format projects/{{subscriber_project}}/locations/{{subscriber_location}}/subscriptions/{{subscription_id}}
    */
-  def DataExchangeSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExchangeSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.DataExchangeSubscription(name,
         args(argsBuilder).build,
@@ -1031,8 +1031,8 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/bigquery/docs/analytics-hub-introduction)
    */
-  def Listing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Listing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.Listing(name,
         args(argsBuilder).build,
@@ -1350,8 +1350,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ListingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamBindingArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamBinding(name,
         args(argsBuilder).build,
@@ -1669,8 +1669,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ListingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamMemberArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamMember(name,
         args(argsBuilder).build,
@@ -1988,8 +1988,8 @@ object bigqueryanalyticshub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ListingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ListingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicyArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingIamPolicy(name,
         args(argsBuilder).build,
@@ -2007,8 +2007,8 @@ object bigqueryanalyticshub:
    * &gt; **Note:** When importing the resource with `pulumi import`, provide the destination project and location
    * in the format projects/{{destination_project}}/locations/{{destination_location}}/subscriptions/{{subscription_id}}
    */
-  def ListingSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ListingSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.ListingSubscriptionArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.ListingSubscription(name,
         args(argsBuilder).build,
@@ -2026,8 +2026,8 @@ object bigqueryanalyticshub:
    * * How-to Guides
    *     * [Use query templates](https://docs.cloud.google.com/bigquery/docs/query-templates)
    */
-  def QueryTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueryTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.bigqueryanalyticshub.QueryTemplateArgs.builder
     com.pulumi.gcp.bigqueryanalyticshub.QueryTemplate(name,
         args(argsBuilder).build,

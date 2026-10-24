@@ -10,8 +10,8 @@ object lex:
    * Provides an Amazon Lex Bot resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def Bot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.BotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Bot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.BotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.BotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -24,8 +24,8 @@ object lex:
    * Provides an Amazon Lex Bot Alias resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def BotAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.BotAliasArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BotAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.BotAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.BotAliasArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -38,8 +38,8 @@ object lex:
    * Provides an Amazon Lex Intent resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.IntentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Intent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.IntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.IntentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -56,64 +56,64 @@ object lex:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Provides details about a specific Amazon Lex Bot. */
-    inline def getBot(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBot(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetBotResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotArgs.builder
       com.pulumi.aws.lex.LexFunctions.getBot(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Bot. */
-    inline def getBotPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBotPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetBotResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotPlainArgs.builder
       com.pulumi.aws.lex.LexFunctions.getBotPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Bot Alias. */
-    inline def getBotAlias(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBotAlias(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetBotAliasResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotAliasArgs.builder
       com.pulumi.aws.lex.LexFunctions.getBotAlias(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Bot Alias. */
-    inline def getBotAliasPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBotAliasPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetBotAliasResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetBotAliasPlainArgs.builder
       com.pulumi.aws.lex.LexFunctions.getBotAliasPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Intent. */
-    inline def getIntent(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIntent(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetIntentResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetIntentArgs.builder
       com.pulumi.aws.lex.LexFunctions.getIntent(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Intent. */
-    inline def getIntentPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIntentPlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetIntentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetIntentResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetIntentPlainArgs.builder
       com.pulumi.aws.lex.LexFunctions.getIntentPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific Amazon Lex Slot Type. */
-    inline def getSlotType(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypeArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSlotType(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypeArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.lex.outputs.GetSlotTypeResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetSlotTypeArgs.builder
       com.pulumi.aws.lex.LexFunctions.getSlotType(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific Amazon Lex Slot Type. */
-    inline def getSlotTypePlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSlotTypePlain(args: Endofunction[com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.lex.outputs.GetSlotTypeResult] =
       val argsBuilder = com.pulumi.aws.lex.inputs.GetSlotTypePlainArgs.builder
       com.pulumi.aws.lex.LexFunctions.getSlotTypePlain(args(argsBuilder).build,
@@ -123,8 +123,8 @@ object lex:
    * Provides an Amazon Lex Slot Type resource. For more information see
    * [Amazon Lex: How It Works](https://docs.aws.amazon.com/lex/latest/dg/how-it-works.html)
    */
-  def SlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.SlotTypeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.SlotTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.SlotTypeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -134,8 +134,8 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot. */
-  def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsBot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsBotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -152,8 +152,8 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Locale. */
-  def V2modelsBotLocale(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotLocaleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsBotLocale(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotLocaleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsBotLocaleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -163,16 +163,16 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Bot Version. */
-  def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsBotVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsBotVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.lex.V2modelsBotVersionArgs.builder
     com.pulumi.aws.lex.V2modelsBotVersion(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Intent. */
-  def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsIntentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsIntent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsIntentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsIntentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -182,8 +182,8 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot. */
-  def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsSlot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsSlotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -193,8 +193,8 @@ object lex:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an AWS Lex V2 Models Slot Type. */
-  def V2modelsSlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotTypeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2modelsSlotType(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.lex.V2modelsSlotTypeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.lex.V2modelsSlotTypeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -95,8 +95,8 @@ object netapp:
    * 
    * &gt; **Note:** When importing a NetApp account, the `active_directory.password` and `active_directory.server_root_ca_certificate` values *cannot* be retrieved from the Azure API and will need to be redeclared within the resource.
    */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.AccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.AccountArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -117,8 +117,8 @@ object netapp:
    * 
    * For more information about Azure NetApp Files Customer-Managed Keys feature, please refer to [Configure customer-managed keys for Azure NetApp Files volume encryption](https://learn.microsoft.com/en-us/azure/azure-netapp-files/configure-customer-managed-keys)
    */
-  def AccountEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.AccountEncryptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.AccountEncryptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.netapp.AccountEncryptionArgs.builder
     com.pulumi.azure.netapp.AccountEncryption(name,
         args(argsBuilder).build,
@@ -194,8 +194,8 @@ object netapp:
    * \$ pulumi import azure:netapp/backupPolicy:BackupPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/backupPolicies/backuppolicy1
    * ```
    */
-  def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.BackupPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.BackupPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.BackupPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -280,8 +280,8 @@ object netapp:
    * \$ pulumi import azure:netapp/backupVault:BackupVault example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/backupVaults/backupVault1
    * ```
    */
-  def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.BackupVaultArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackupVault(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.BackupVaultArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.BackupVaultArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -349,8 +349,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getAccount(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccount(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccount(args(argsBuilder).build,
@@ -401,24 +401,24 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccountPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetAccountResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing NetApp Account Encryption Resource. */
-    inline def getAccountEncryption(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccountEncryption(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetAccountEncryptionResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountEncryptionArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountEncryption(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NetApp Account Encryption Resource. */
-    inline def getAccountEncryptionPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccountEncryptionPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetAccountEncryptionResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetAccountEncryptionPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getAccountEncryptionPlain(args(argsBuilder).build,
@@ -470,8 +470,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getBackupPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBackupPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupPolicyArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupPolicy(args(argsBuilder).build,
@@ -523,8 +523,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getBackupPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBackupPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupPolicyPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupPolicyPlain(args(argsBuilder).build,
@@ -576,8 +576,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getBackupVault(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBackupVault(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupVaultArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupVault(args(argsBuilder).build,
@@ -629,8 +629,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBackupVaultPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetBackupVaultResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetBackupVaultPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getBackupVaultPlain(args(argsBuilder).build,
@@ -682,8 +682,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getPool(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPool(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetPoolArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getPool(args(argsBuilder).build,
@@ -735,8 +735,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getPoolPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPoolPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetPoolResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetPoolPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getPoolPlain(args(argsBuilder).build,
@@ -790,8 +790,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getSnapshot(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshot(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshot(args(argsBuilder).build,
@@ -845,8 +845,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPlain(args(argsBuilder).build,
@@ -904,8 +904,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getSnapshotPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotPolicy(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPolicyArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPolicy(args(argsBuilder).build,
@@ -963,8 +963,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getSnapshotPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSnapshotPolicyPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetSnapshotPolicyResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetSnapshotPolicyPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getSnapshotPolicyPlain(args(argsBuilder).build,
@@ -1017,8 +1017,8 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getVolume(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolume(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolume(args(argsBuilder).build,
@@ -1071,88 +1071,88 @@ object netapp:
      * 
      * * `Microsoft.NetApp` - 2026-01-01
      */
-    inline def getVolumePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing NetApp Files Volume Bucket. */
-    inline def getVolumeBucket(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeBucket(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeBucketResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeBucket(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NetApp Files Volume Bucket. */
-    inline def getVolumeBucketPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeBucketPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeBucketResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing NetApp Files Volume Bucket, including its bucket server configuration. */
-    inline def getVolumeBucketWithServer(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeBucketWithServer(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeBucketWithServerResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketWithServer(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing NetApp Files Volume Bucket, including its bucket server configuration. */
-    inline def getVolumeBucketWithServerPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeBucketWithServerPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeBucketWithServerResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeBucketWithServerPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeBucketWithServerPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for Oracle application. */
-    inline def getVolumeGroupOracle(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupOracle(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeGroupOracleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupOracleArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupOracle(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Application Volume Group for Oracle application. */
-    inline def getVolumeGroupOraclePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupOraclePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeGroupOracleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupOraclePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupOraclePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Application Volume Group for SAP HANA application. */
-    inline def getVolumeGroupSapHana(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupSapHana(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeGroupSapHanaResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupSapHana(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Application Volume Group for SAP HANA application. */
-    inline def getVolumeGroupSapHanaPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeGroupSapHanaPlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeGroupSapHanaResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeGroupSapHanaPlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeGroupSapHanaPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Volume Quota Rule. */
-    inline def getVolumeQuotaRule(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeQuotaRule(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.netapp.outputs.GetVolumeQuotaRuleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeQuotaRuleArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeQuotaRule(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Volume Quota Rule. */
-    inline def getVolumeQuotaRulePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVolumeQuotaRulePlain(args: Endofunction[com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.netapp.outputs.GetVolumeQuotaRuleResult] =
       val argsBuilder = com.pulumi.azure.netapp.inputs.GetVolumeQuotaRulePlainArgs.builder
       com.pulumi.azure.netapp.NetappFunctions.getVolumeQuotaRulePlain(args(argsBuilder).build,
@@ -1284,8 +1284,8 @@ object netapp:
    * \$ pulumi import azure:netapp/pool:Pool example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1
    * ```
    */
-  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.PoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Pool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.PoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.PoolArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1426,8 +1426,8 @@ object netapp:
    * \$ pulumi import azure:netapp/snapshot:Snapshot example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1/volumes/volume1/snapshots/snapshot1
    * ```
    */
-  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.SnapshotArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Snapshot(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.SnapshotArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.SnapshotArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1537,8 +1537,8 @@ object netapp:
    * \$ pulumi import azure:netapp/snapshotPolicy:SnapshotPolicy example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/snapshotPolicies/snapshotpolicy1
    * ```
    */
-  def SnapshotPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.SnapshotPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SnapshotPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.SnapshotPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.SnapshotPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1567,8 +1567,8 @@ object netapp:
    * \$ pulumi import azure:netapp/volume:Volume example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.NetApp/netAppAccounts/account1/capacityPools/pool1/volumes/volume1
    * ```
    */
-  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Volume(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1595,8 +1595,8 @@ object netapp:
    * 
    * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
    */
-  def VolumeBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeBucketArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1616,8 +1616,8 @@ object netapp:
    * 
    * &gt; **Note:** Buckets are supported on cool-access and large NetApp volumes. Buckets are not supported on cache volumes. Deleting the parent volume cascade-deletes its buckets.
    */
-  def VolumeBucketWithServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeBucketWithServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeBucketWithServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeBucketWithServerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1631,8 +1631,8 @@ object netapp:
    * 
    * &gt; **Note:** This feature is intended to be used for Oracle workloads only, with several requirements, please refer to [Understand Azure NetApp Files application volume group for Oracle](https://learn.microsoft.com/en-us/azure/azure-netapp-files/application-volume-oracle-introduction) document as the starting point to understand this feature before using it with Terraform.
    */
-  def VolumeGroupOracle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupOracleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeGroupOracle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupOracleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeGroupOracleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1646,8 +1646,8 @@ object netapp:
    * 
    * &gt; **Note:** This feature is intended to be used for SAP-HANA workloads only, with several requirements, please refer to [Understand Azure NetApp Files application volume group for SAP HANA](https://learn.microsoft.com/en-us/azure/azure-netapp-files/application-volume-group-introduction) document as the starting point to understand this feature before using it with Terraform.
    */
-  def VolumeGroupSapHana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupSapHanaArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeGroupSapHana(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeGroupSapHanaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeGroupSapHanaArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1657,8 +1657,8 @@ object netapp:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Volume Quota Rule. */
-  def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.netapp.VolumeQuotaRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VolumeQuotaRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.netapp.VolumeQuotaRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.netapp.VolumeQuotaRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

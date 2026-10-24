@@ -17,8 +17,8 @@ object clouddomains:
    * `terraform destroy`. Instead it will &#34;abandon&#34; the resource and remove it from state.
    * For information on deleting a registered domain, see https://cloud.google.com/domains/docs/delete-domain
    */
-  def Registration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.clouddomains.RegistrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Registration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.clouddomains.RegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.clouddomains.RegistrationArgs.builder
     com.pulumi.gcp.clouddomains.Registration(name,
         args(argsBuilder).build,

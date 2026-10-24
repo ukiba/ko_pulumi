@@ -11,8 +11,8 @@ object qldb:
    * 
    * &gt; **NOTE:** Deletion protection is enabled by default. To successfully delete this resource via this provider, `deletionProtection = false` must be applied before attempting deletion.
    */
-  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.qldb.LedgerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Ledger(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.qldb.LedgerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.LedgerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -36,24 +36,24 @@ object qldb:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    inline def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLedger(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedger(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to fetch information about a Quantum Ledger Database. */
-    inline def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLedgerPlain(args: Endofunction[com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.qldb.outputs.GetLedgerResult] =
       val argsBuilder = com.pulumi.aws.qldb.inputs.GetLedgerPlainArgs.builder
       com.pulumi.aws.qldb.QldbFunctions.getLedgerPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an AWS Quantum Ledger Database (QLDB) Stream resource */
-  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.qldb.StreamArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Stream(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.qldb.StreamArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qldb.StreamArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

@@ -17,8 +17,8 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Reservations](https://cloud.google.com/pubsub/lite/docs/reservations)
    */
-  def LiteReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.LiteReservationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LiteReservation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.LiteReservationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteReservationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -39,8 +39,8 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Subscriptions](https://cloud.google.com/pubsub/lite/docs/subscriptions)
    */
-  def LiteSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.LiteSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LiteSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.LiteSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -60,8 +60,8 @@ object pubsub:
    * * How-to Guides
    *     * [Managing Topics](https://cloud.google.com/pubsub/lite/docs/topics)
    */
-  def LiteTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.LiteTopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LiteTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.LiteTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.LiteTopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -78,16 +78,16 @@ object pubsub:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for schema */
-    inline def getSchemaIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSchemaIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSchemaIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for schema */
-    inline def getSchemaIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSchemaIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSchemaIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSchemaIamPolicyPlainArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSchemaIamPolicyPlain(args(argsBuilder).build,
@@ -98,8 +98,8 @@ object pubsub:
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getSubscription(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSubscription(args(argsBuilder).build,
@@ -110,8 +110,8 @@ object pubsub:
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionPlainArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionPlain(args(argsBuilder).build,
@@ -153,8 +153,8 @@ object pubsub:
      * }
      * </pre>
      */
-    inline def getSubscriptionIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetSubscriptionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicy(args(argsBuilder).build,
@@ -196,8 +196,8 @@ object pubsub:
      * }
      * </pre>
      */
-    inline def getSubscriptionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetSubscriptionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetSubscriptionIamPolicyPlainArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getSubscriptionIamPolicyPlain(args(argsBuilder).build,
@@ -208,8 +208,8 @@ object pubsub:
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getTopic(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getTopic(args(argsBuilder).build,
@@ -220,24 +220,24 @@ object pubsub:
      * the [official documentation](https://cloud.google.com/pubsub/docs/)
      * and [API](https://cloud.google.com/pubsub/docs/apis).
      */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicPlainArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getTopicPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for topic */
-    inline def getTopicIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTopicIamPolicy(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.pubsub.outputs.GetTopicIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for topic */
-    inline def getTopicIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTopicIamPolicyPlain(args: Endofunction[com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.pubsub.outputs.GetTopicIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.pubsub.inputs.GetTopicIamPolicyPlainArgs.builder
       com.pulumi.gcp.pubsub.PubsubFunctions.getTopicIamPolicyPlain(args(argsBuilder).build,
@@ -253,8 +253,8 @@ object pubsub:
    * * How-to Guides
    *     * [Creating and managing schemas](https://cloud.google.com/pubsub/docs/schemas)
    */
-  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schema(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.SchemaArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -562,8 +562,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SchemaIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamBindingArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamBinding(name,
         args(argsBuilder).build,
@@ -868,8 +868,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SchemaIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamMemberArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamMember(name,
         args(argsBuilder).build,
@@ -1174,8 +1174,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SchemaIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SchemaIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SchemaIamPolicyArgs.builder
     com.pulumi.gcp.pubsub.SchemaIamPolicy(name,
         args(argsBuilder).build,
@@ -1194,8 +1194,8 @@ object pubsub:
    * &gt; **Note:** You can retrieve the email of the Google Managed Pub/Sub Service Account used for forwarding
    * by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1448,8 +1448,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMBinding(name,
         args(argsBuilder).build,
@@ -1699,8 +1699,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMMember(name,
         args(argsBuilder).build,
@@ -1950,8 +1950,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def SubscriptionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.SubscriptionIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.SubscriptionIAMPolicy(name,
         args(argsBuilder).build,
@@ -1969,8 +1969,8 @@ object pubsub:
    * &gt; **Note:** You can retrieve the email of the Google Managed Pub/Sub Service Account used for forwarding
    * by using the `gcp.projects.ServiceIdentity` resource.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.TopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.pubsub.TopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2278,8 +2278,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TopicIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMBindingArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMBinding(name,
         args(argsBuilder).build,
@@ -2584,8 +2584,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TopicIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMMemberArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMMember(name,
         args(argsBuilder).build,
@@ -2890,8 +2890,8 @@ object pubsub:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TopicIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TopicIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.pubsub.TopicIAMPolicyArgs.builder
     com.pulumi.gcp.pubsub.TopicIAMPolicy(name,
         args(argsBuilder).build,

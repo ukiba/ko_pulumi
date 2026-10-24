@@ -13,8 +13,8 @@ object chronicle:
    * * How-to Guides
    *     * [BigQuery Export Overview](https://cloud.google.com/chronicle/docs/secops/bigquery-export-overview)
    */
-  def BigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BigQueryExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.BigQueryExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.BigQueryExportArgs.builder
     com.pulumi.gcp.chronicle.BigQueryExport(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def CaseCloseDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaseCloseDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.CaseCloseDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseCloseDefinition(name,
         args(argsBuilder).build,
@@ -45,8 +45,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def CaseStageDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaseStageDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.CaseStageDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseStageDefinition(name,
         args(argsBuilder).build,
@@ -61,8 +61,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def CaseTagDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CaseTagDefinition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.CaseTagDefinitionArgs.builder
     com.pulumi.gcp.chronicle.CaseTagDefinition(name,
         args(argsBuilder).build,
@@ -77,8 +77,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def CustomList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.CustomListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CustomList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.CustomListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.CustomListArgs.builder
     com.pulumi.gcp.chronicle.CustomList(name,
         args(argsBuilder).build,
@@ -93,8 +93,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def DashboardChart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DashboardChartArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DashboardChart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DashboardChartArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DashboardChartArgs.builder
     com.pulumi.gcp.chronicle.DashboardChart(name,
         args(argsBuilder).build,
@@ -109,8 +109,8 @@ object chronicle:
    * * How-to Guides
    *     * [Introduction to data RBAC](https://cloud.google.com/chronicle/docs/onboard/onboard-datarbac)
    */
-  def DataAccessLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DataAccessLabelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataAccessLabel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataAccessLabelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataAccessLabelArgs.builder
     com.pulumi.gcp.chronicle.DataAccessLabel(name,
         args(argsBuilder).build,
@@ -125,8 +125,8 @@ object chronicle:
    * * How-to Guides
    *     * [Introduction to data RBAC](https://cloud.google.com/chronicle/docs/onboard/onboard-datarbac)
    */
-  def DataAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DataAccessScopeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataAccessScope(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataAccessScopeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataAccessScopeArgs.builder
     com.pulumi.gcp.chronicle.DataAccessScope(name,
         args(argsBuilder).build,
@@ -141,8 +141,8 @@ object chronicle:
    * * How-to Guides
    *     * [Data Export Overview](https://cloud.google.com/chronicle/docs/secops/data-export-overview)
    */
-  def DataExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DataExportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataExport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataExportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataExportArgs.builder
     com.pulumi.gcp.chronicle.DataExport(name,
         args(argsBuilder).build,
@@ -157,8 +157,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def DataTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DataTableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataTable(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataTableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataTableArgs.builder
     com.pulumi.gcp.chronicle.DataTable(name,
         args(argsBuilder).build,
@@ -173,8 +173,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def DataTableRow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.DataTableRowArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataTableRow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.DataTableRowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.DataTableRowArgs.builder
     com.pulumi.gcp.chronicle.DataTableRow(name,
         args(argsBuilder).build,
@@ -189,8 +189,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentArgs.builder
     com.pulumi.gcp.chronicle.Environment(name,
         args(argsBuilder).build,
@@ -205,8 +205,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def EnvironmentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.EnvironmentGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.EnvironmentGroupArgs.builder
     com.pulumi.gcp.chronicle.EnvironmentGroup(name,
         args(argsBuilder).build,
@@ -221,8 +221,8 @@ object chronicle:
    * * How-to Guides
    *     * [Feed management overview](https://docs.cloud.google.com/chronicle/docs/administration/feed-management-overview)
    */
-  def Feed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.FeedArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Feed(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.FeedArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.FeedArgs.builder
     com.pulumi.gcp.chronicle.Feed(name,
         args(argsBuilder).build,
@@ -237,8 +237,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def FindingsRefinement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FindingsRefinement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementArgs.builder
     com.pulumi.gcp.chronicle.FindingsRefinement(name,
         args(argsBuilder).build,
@@ -253,8 +253,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def FindingsRefinementDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FindingsRefinementDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.FindingsRefinementDeploymentArgs.builder
     com.pulumi.gcp.chronicle.FindingsRefinementDeployment(name,
         args(argsBuilder).build,
@@ -269,8 +269,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def NativeDashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.NativeDashboardArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NativeDashboard(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.NativeDashboardArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.NativeDashboardArgs.builder
     com.pulumi.gcp.chronicle.NativeDashboard(name,
         args(argsBuilder).build,
@@ -286,8 +286,8 @@ object chronicle:
    * * How-to Guides
    *     * [Custom parsers overview](https://cloud.google.com/chronicle/docs/detection/custom-parsers-overview)
    */
-  def Parser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.ParserArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Parser(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.ParserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.ParserArgs.builder
     com.pulumi.gcp.chronicle.Parser(name,
         args(argsBuilder).build,
@@ -303,8 +303,8 @@ object chronicle:
    * * How-to Guides
    *     * [Custom parsers overview](https://cloud.google.com/chronicle/docs/detection/custom-parsers-overview)
    */
-  def ParserExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ParserExtension(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.ParserExtensionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.ParserExtensionArgs.builder
     com.pulumi.gcp.chronicle.ParserExtension(name,
         args(argsBuilder).build,
@@ -319,8 +319,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def ReferenceList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.ReferenceListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReferenceList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.ReferenceListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.ReferenceListArgs.builder
     com.pulumi.gcp.chronicle.ReferenceList(name,
         args(argsBuilder).build,
@@ -335,8 +335,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def Retrohunt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.RetrohuntArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Retrohunt(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.RetrohuntArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.RetrohuntArgs.builder
     com.pulumi.gcp.chronicle.Retrohunt(name,
         args(argsBuilder).build,
@@ -351,8 +351,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.RuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.RuleArgs.builder
     com.pulumi.gcp.chronicle.Rule(name,
         args(argsBuilder).build,
@@ -367,8 +367,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def RuleDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RuleDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.RuleDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.RuleDeploymentArgs.builder
     com.pulumi.gcp.chronicle.RuleDeployment(name,
         args(argsBuilder).build,
@@ -386,8 +386,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def SoarDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.SoarDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SoarDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.SoarDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.SoarDomainArgs.builder
     com.pulumi.gcp.chronicle.SoarDomain(name,
         args(argsBuilder).build,
@@ -402,8 +402,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def SoarNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.SoarNetworkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SoarNetwork(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.SoarNetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.SoarNetworkArgs.builder
     com.pulumi.gcp.chronicle.SoarNetwork(name,
         args(argsBuilder).build,
@@ -418,8 +418,8 @@ object chronicle:
    * * How-to Guides
    *     * [Google SecOps Guides](https://cloud.google.com/chronicle/docs/secops/secops-overview)
    */
-  def Watchlist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.chronicle.WatchlistArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Watchlist(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.chronicle.WatchlistArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.chronicle.WatchlistArgs.builder
     com.pulumi.gcp.chronicle.Watchlist(name,
         args(argsBuilder).build,

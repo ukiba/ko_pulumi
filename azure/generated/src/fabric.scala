@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object fabric:
   /** Manages a Fabric Capacity. */
-  def Capacity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.fabric.CapacityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Capacity(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.fabric.CapacityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.fabric.CapacityArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

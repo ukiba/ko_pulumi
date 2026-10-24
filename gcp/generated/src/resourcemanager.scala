@@ -13,8 +13,8 @@ object resourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/manage-applications)
    */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityArgs.builder
     com.pulumi.gcp.resourcemanager.Capability(name,
         args(argsBuilder).build,
@@ -30,8 +30,8 @@ object resourcemanager:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/resource-manager/docs/manage-applications)
    */
-  def CapabilityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CapabilityConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.CapabilityConfigArgs.builder
     com.pulumi.gcp.resourcemanager.CapabilityConfig(name,
         args(argsBuilder).build,
@@ -46,8 +46,8 @@ object resourcemanager:
    * * How-to Guides
    *     * [Create a Lien](https://docs.cloud.google.com/resource-manager/docs/project-liens)
    */
-  def Lien(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.resourcemanager.LienArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Lien(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.resourcemanager.LienArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.resourcemanager.LienArgs.builder
     com.pulumi.gcp.resourcemanager.Lien(name,
         args(argsBuilder).build,

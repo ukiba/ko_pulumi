@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object dataproc:
   /** Describes an autoscaling policy for Dataproc cluster autoscaler. */
-  def AutoscalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutoscalingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicy(name,
         args(argsBuilder).build,
@@ -320,8 +320,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AutoscalingPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutoscalingPolicyIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamBindingArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamBinding(name,
         args(argsBuilder).build,
@@ -633,8 +633,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AutoscalingPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutoscalingPolicyIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamMemberArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamMember(name,
         args(argsBuilder).build,
@@ -946,8 +946,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AutoscalingPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutoscalingPolicyIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.AutoscalingPolicyIamPolicy(name,
         args(argsBuilder).build,
@@ -963,8 +963,8 @@ object dataproc:
    * * How-to Guides
    *     * [Dataproc Serverless Batches Intro](https://cloud.google.com/dataproc-serverless/docs/overview)
    */
-  def Batch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.BatchArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Batch(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.BatchArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.BatchArgs.builder
     com.pulumi.gcp.dataproc.Batch(name,
         args(argsBuilder).build,
@@ -981,8 +981,8 @@ object dataproc:
    * `labels`,`cluster_config.worker_config.num_instances` and `cluster_config.preemptible_worker_config.num_instances` are non-updatable. Changing `cluster_config.worker_config.min_num_instances` will be ignored. Changing others will cause recreation of the
    * whole cluster!
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataproc.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1239,8 +1239,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ClusterIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMBindingArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMBinding(name,
         args(argsBuilder).build,
@@ -1494,8 +1494,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ClusterIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMMemberArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMMember(name,
         args(argsBuilder).build,
@@ -1749,8 +1749,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ClusterIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.ClusterIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.ClusterIAMPolicyArgs.builder
     com.pulumi.gcp.dataproc.ClusterIAMPolicy(name,
         args(argsBuilder).build,
@@ -1764,16 +1764,16 @@ object dataproc:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for autoscalingpolicy */
-    inline def getAutoscalingPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAutoscalingPolicyIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetAutoscalingPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for autoscalingpolicy */
-    inline def getAutoscalingPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAutoscalingPolicyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetAutoscalingPolicyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetAutoscalingPolicyIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getAutoscalingPolicyIamPolicyPlain(args(argsBuilder).build,
@@ -1816,8 +1816,8 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getClusterIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getClusterIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetClusterIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicy(args(argsBuilder).build,
@@ -1860,8 +1860,8 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getClusterIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getClusterIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetClusterIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetClusterIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getClusterIamPolicyPlain(args(argsBuilder).build,
@@ -1904,8 +1904,8 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicy(args(argsBuilder).build,
@@ -1948,88 +1948,88 @@ object dataproc:
      * }
      * </pre>
      */
-    inline def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getJobIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetJobIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetJobIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getJobIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for database */
-    inline def getMetastoreDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreDatabaseIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for database */
-    inline def getMetastoreDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreDatabaseIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreDatabaseIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreDatabaseIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreDatabaseIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for federation */
-    inline def getMetastoreFederationIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreFederationIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreFederationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for federation */
-    inline def getMetastoreFederationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreFederationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreFederationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreFederationIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreFederationIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get a Dataproc Metastore service from Google Cloud by its id and location. */
-    inline def getMetastoreService(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreService(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreService(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get a Dataproc Metastore service from Google Cloud by its id and location. */
-    inline def getMetastoreServicePlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreServicePlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServicePlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServicePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getMetastoreServiceIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreServiceIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getMetastoreServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getMetastoreTableIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreTableIamPolicy(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.dataproc.outputs.GetMetastoreTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for table */
-    inline def getMetastoreTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getMetastoreTableIamPolicyPlain(args: Endofunction[com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.dataproc.outputs.GetMetastoreTableIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.dataproc.inputs.GetMetastoreTableIamPolicyPlainArgs.builder
       com.pulumi.gcp.dataproc.DataprocFunctions.getMetastoreTableIamPolicyPlain(args(argsBuilder).build,
@@ -2044,8 +2044,8 @@ object dataproc:
    * * How-to Guides
    *     * [Dataproc Intro](https://cloud.google.com/dataproc/)
    */
-  def GdcApplicationEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.GdcApplicationEnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GdcApplicationEnvironment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.GdcApplicationEnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.GdcApplicationEnvironmentArgs.builder
     com.pulumi.gcp.dataproc.GdcApplicationEnvironment(name,
         args(argsBuilder).build,
@@ -2060,8 +2060,8 @@ object dataproc:
    * * How-to Guides
    *     * [Dataproc Intro](https://cloud.google.com/dataproc/)
    */
-  def GdcServiceInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.GdcServiceInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GdcServiceInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.GdcServiceInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.GdcServiceInstanceArgs.builder
     com.pulumi.gcp.dataproc.GdcServiceInstance(name,
         args(argsBuilder).build,
@@ -2076,8 +2076,8 @@ object dataproc:
    * * How-to Guides
    *     * [Dataproc Intro](https://cloud.google.com/dataproc/)
    */
-  def GdcSparkApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.GdcSparkApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GdcSparkApplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.GdcSparkApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.GdcSparkApplicationArgs.builder
     com.pulumi.gcp.dataproc.GdcSparkApplication(name,
         args(argsBuilder).build,
@@ -2089,8 +2089,8 @@ object dataproc:
    * 
    * &gt; **Note:** This resource does not support &#39;update&#39; and changing any attributes will cause the resource to be recreated.
    */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.JobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.JobArgs.builder
     com.pulumi.gcp.dataproc.Job(name,
         args(argsBuilder).build,
@@ -2344,8 +2344,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def JobIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMBindingArgs.builder
     com.pulumi.gcp.dataproc.JobIAMBinding(name,
         args(argsBuilder).build,
@@ -2599,8 +2599,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def JobIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMMemberArgs.builder
     com.pulumi.gcp.dataproc.JobIAMMember(name,
         args(argsBuilder).build,
@@ -2854,8 +2854,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def JobIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.JobIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.JobIAMPolicyArgs.builder
     com.pulumi.gcp.dataproc.JobIAMPolicy(name,
         args(argsBuilder).build,
@@ -3173,8 +3173,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreDatabaseIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreDatabaseIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamBinding(name,
         args(argsBuilder).build,
@@ -3492,8 +3492,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreDatabaseIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreDatabaseIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamMember(name,
         args(argsBuilder).build,
@@ -3811,16 +3811,16 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreDatabaseIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreDatabaseIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreDatabaseIamPolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A managed metastore federation. */
-  def MetastoreFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederation(name,
         args(argsBuilder).build,
@@ -4132,8 +4132,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreFederationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreFederationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamBinding(name,
         args(argsBuilder).build,
@@ -4445,8 +4445,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreFederationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreFederationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamMember(name,
         args(argsBuilder).build,
@@ -4758,8 +4758,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreFederationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreFederationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreFederationIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreFederationIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreFederationIamPolicy(name,
         args(argsBuilder).build,
@@ -4774,8 +4774,8 @@ object dataproc:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/dataproc-metastore/docs/overview)
    */
-  def MetastoreService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceArgs.builder
     com.pulumi.gcp.dataproc.MetastoreService(name,
         args(argsBuilder).build,
@@ -5087,8 +5087,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamBinding(name,
         args(argsBuilder).build,
@@ -5400,8 +5400,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamMember(name,
         args(argsBuilder).build,
@@ -5713,8 +5713,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreServiceIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -6038,8 +6038,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreTableIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreTableIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamBindingArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamBinding(name,
         args(argsBuilder).build,
@@ -6363,8 +6363,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreTableIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreTableIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamMemberArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamMember(name,
         args(argsBuilder).build,
@@ -6688,8 +6688,8 @@ object dataproc:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def MetastoreTableIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MetastoreTableIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.MetastoreTableIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.dataproc.MetastoreTableIamPolicyArgs.builder
     com.pulumi.gcp.dataproc.MetastoreTableIamPolicy(name,
         args(argsBuilder).build,
@@ -6705,8 +6705,8 @@ object dataproc:
    * * How-to Guides
    *     * [Dataproc Serverless Session Templates](https://cloud.google.com/dataproc-serverless/docs/guides/create-serverless-sessions-templates#create-dataproc-serverless-session-template)
    */
-  def SessionTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.SessionTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SessionTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.SessionTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataproc.SessionTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -6716,8 +6716,8 @@ object dataproc:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** A Workflow Template is a reusable workflow configuration. It defines a graph of jobs with information on where to run those jobs. */
-  def WorkflowTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.dataproc.WorkflowTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkflowTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.dataproc.WorkflowTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.dataproc.WorkflowTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

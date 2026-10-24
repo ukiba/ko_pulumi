@@ -17,8 +17,8 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      * You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    inline def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCertificate(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificateArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificateArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificate(args(argsBuilder).build,
@@ -28,8 +28,8 @@ object acm:
      * Use this data source to get the ARN of a certificate in AWS Certificate Manager (ACM).
      * You can reference the certificate by domain or tags without having to hard code the ARNs as input.
      */
-    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCertificatePlain(args: Endofunction[com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.acm.outputs.GetCertificateResult] =
       val argsBuilder = com.pulumi.aws.acm.inputs.GetCertificatePlainArgs.builder
       com.pulumi.aws.acm.AcmFunctions.getCertificatePlain(args(argsBuilder).build,
@@ -50,8 +50,8 @@ object acm:
    * 
    * Private certificates are issued by an ACM Private Certificate Authority, which can be created using `aws.acmpca.CertificateAuthority`. Private certificates created using this resource are eligible for managed renewal if they have been exported or associated with another AWS service. See [managed renewal documentation](https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html) for more information. By default, a certificate is valid for 395 days and the managed renewal process will start 60 days before expiration. To renew the certificate earlier than 60 days before expiration, configure `earlyRenewalDuration`.
    */
-  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.acm.CertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Certificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.acm.CertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.acm.CertificateArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -74,8 +74,8 @@ object acm:
    * 
    * &gt; **WARNING:** This resource implements a part of the validation workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
    */
-  def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.acm.CertificateValidationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CertificateValidation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.acm.CertificateValidationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.acm.CertificateValidationArgs.builder
     com.pulumi.aws.acm.CertificateValidation(name,
         args(argsBuilder).build,

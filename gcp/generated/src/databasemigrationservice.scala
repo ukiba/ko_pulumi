@@ -13,8 +13,8 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Database Migration](https://cloud.google.com/database-migration/docs/)
    */
-  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.ConnectionProfileArgs.builder
     com.pulumi.gcp.databasemigrationservice.ConnectionProfile(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Database Migration](https://cloud.google.com/database-migration/docs/)
    */
-  def MigrationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MigrationJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.MigrationJobArgs.builder
     com.pulumi.gcp.databasemigrationservice.MigrationJob(name,
         args(argsBuilder).build,
@@ -45,8 +45,8 @@ object databasemigrationservice:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/database-migration/docs/oracle-to-postgresql/create-private-connectivity-configuration)
    */
-  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrivateConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.databasemigrationservice.PrivateConnectionArgs.builder
     com.pulumi.gcp.databasemigrationservice.PrivateConnection(name,
         args(argsBuilder).build,

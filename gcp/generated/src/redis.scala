@@ -91,8 +91,8 @@ object redis:
    *           * Manually update `crossClusterReplicationConfig` field in the configuration file(s) for those clusters with the latest value from the state.
    *           * Execute `pulumi preview` once again. This should not generate any diff, confirming the configuration is in sync with the infrastructure.
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.redis.ClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.redis.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -120,8 +120,8 @@ object redis:
    * \$ pulumi import gcp:redis/clusterAclPolicy:ClusterAclPolicy default {{location}}/{{acl_policy_id}}
    * ```
    */
-  def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterAclPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.redis.ClusterAclPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.redis.ClusterAclPolicyArgs.builder
     com.pulumi.gcp.redis.ClusterAclPolicy(name,
         args(argsBuilder).build,
@@ -140,8 +140,8 @@ object redis:
    * If the corresponding forwarding rule is represented in your terraform configuration it is recommended to delete that
    * `gcp.compute.ForwardingRule` resource at the same time.
    */
-  def ClusterUserCreatedConnections(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClusterUserCreatedConnections(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.ClusterUserCreatedConnectionsArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -159,8 +159,8 @@ object redis:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/memorystore/docs/redis/)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.redis.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.redis.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.redis.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -177,48 +177,48 @@ object redis:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to get information about a Redis Cluster. For more details, see the [API documentation](https://cloud.google.com/memorystore/docs/cluster/reference/rest/v1/projects.locations.clusters). */
-    inline def getCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getCluster(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a Redis Cluster. For more details, see the [API documentation](https://cloud.google.com/memorystore/docs/cluster/reference/rest/v1/projects.locations.clusters). */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterPlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getClusterPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Google Cloud Redis Cluster ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/redis) or the [API documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest). */
-    inline def getClusterAclPolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getClusterAclPolicy(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetClusterAclPolicyResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterAclPolicyArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getClusterAclPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Google Cloud Redis Cluster ACL policy. For more information see the [official documentation](https://cloud.google.com/memorystore/docs/redis) or the [API documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest). */
-    inline def getClusterAclPolicyPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getClusterAclPolicyPlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetClusterAclPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetClusterAclPolicyResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetClusterAclPolicyPlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getClusterAclPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get info about a Google Cloud Redis instance. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get info about a Google Cloud Redis instance. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.redis.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.redis.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.redis.RedisFunctions.getInstancePlain(args(argsBuilder).build,

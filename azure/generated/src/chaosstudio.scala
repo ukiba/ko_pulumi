@@ -5,16 +5,16 @@ import com.pulumi.resources.CustomResourceOptions
 
 object chaosstudio:
   /** Manages a Chaos Studio Capability. */
-  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.chaosstudio.CapabilityArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Capability(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.chaosstudio.CapabilityArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.chaosstudio.CapabilityArgs.builder
     com.pulumi.azure.chaosstudio.Capability(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Chaos Studio Experiment. */
-  def Experiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.chaosstudio.ExperimentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Experiment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.chaosstudio.ExperimentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.chaosstudio.ExperimentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -28,8 +28,8 @@ object chaosstudio:
    * 
    * Manages a Chaos Studio Target.
    */
-  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.chaosstudio.TargetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Target(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.chaosstudio.TargetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.chaosstudio.TargetArgs.builder
     com.pulumi.azure.chaosstudio.Target(name,
         args(argsBuilder).build,

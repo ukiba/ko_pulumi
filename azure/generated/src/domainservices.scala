@@ -18,8 +18,8 @@ object domainservices:
      * 
      * &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    inline def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServiceArgs.builder
       com.pulumi.azure.domainservices.DomainservicesFunctions.getService(args(argsBuilder).build,
@@ -30,16 +30,16 @@ object domainservices:
      * 
      * &gt; **Note:** At present this data source only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
      */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.domainservices.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.domainservices.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.domainservices.DomainservicesFunctions.getServicePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Replica Set for an Active Directory Domain Service. */
-  def ReplicaSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.domainservices.ReplicaSetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReplicaSet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.domainservices.ReplicaSetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.domainservices.ReplicaSetArgs.builder
     com.pulumi.azure.domainservices.ReplicaSet(name,
         args(argsBuilder).build,
@@ -52,8 +52,8 @@ object domainservices:
    * 
    * &gt; **Note:** At present this resource only supports **User Forest** mode and _not_ **Resource Forest** mode. [Read more](https://docs.microsoft.com/azure/active-directory-domain-services/concepts-resource-forest) about the different operation modes for this service.
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.domainservices.ServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.domainservices.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.domainservices.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -70,8 +70,8 @@ object domainservices:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Active Directory Domain Service Trust. */
-  def ServiceTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.domainservices.ServiceTrustArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceTrust(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.domainservices.ServiceTrustArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.domainservices.ServiceTrustArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

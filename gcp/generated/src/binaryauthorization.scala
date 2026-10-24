@@ -15,8 +15,8 @@ object binaryauthorization:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/binary-authorization/)
    */
-  def Attestor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Attestor(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -324,8 +324,8 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AttestorIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamBindingArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamBinding(name,
         args(argsBuilder).build,
@@ -630,8 +630,8 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AttestorIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamMemberArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamMember(name,
         args(argsBuilder).build,
@@ -936,8 +936,8 @@ object binaryauthorization:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AttestorIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AttestorIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.AttestorIamPolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.AttestorIamPolicy(name,
         args(argsBuilder).build,
@@ -951,16 +951,16 @@ object binaryauthorization:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for attestor */
-    inline def getAttestorIamPolicy(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAttestorIamPolicy(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.binaryauthorization.outputs.GetAttestorIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyArgs.builder
       com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for attestor */
-    inline def getAttestorIamPolicyPlain(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAttestorIamPolicyPlain(args: Endofunction[com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.binaryauthorization.outputs.GetAttestorIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.binaryauthorization.inputs.GetAttestorIamPolicyPlainArgs.builder
       com.pulumi.gcp.binaryauthorization.BinaryauthorizationFunctions.getAttestorIamPolicyPlain(args(argsBuilder).build,
@@ -975,8 +975,8 @@ object binaryauthorization:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/binary-authorization/)
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.binaryauthorization.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.binaryauthorization.PolicyArgs.builder
     com.pulumi.gcp.binaryauthorization.Policy(name,
         args(argsBuilder).build,

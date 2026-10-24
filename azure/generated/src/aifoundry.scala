@@ -10,8 +10,8 @@ object aifoundry:
    * &gt; **Note:** Hub\u2011based projects are considered legacy and are not compatible with the new Foundry experience. Microsoft recommends using the new Microsoft Foundry resource, which should be provisioned using
    * `azure.cognitive.Account`.
    */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.aifoundry.HubArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.aifoundry.HubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.aifoundry.HubArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -33,8 +33,8 @@ object aifoundry:
    * &gt; **Note:** Hub\u2011based projects are considered legacy and are not compatible with the new Foundry experience. Microsoft recommends using the new Microsoft Foundry project resource, which should be provisioned using
    * `azure.cognitive.Account` and `azure.cognitive.AccountProject`.
    */
-  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.aifoundry.ProjectArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Project(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.aifoundry.ProjectArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.aifoundry.ProjectArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

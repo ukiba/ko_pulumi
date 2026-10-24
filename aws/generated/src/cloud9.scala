@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cloud9:
   /** Provides a Cloud9 EC2 Development Environment. */
-  def EnvironmentEC2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cloud9.EnvironmentEC2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentEC2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloud9.EnvironmentEC2Args.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cloud9.EnvironmentEC2Args.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,8 +23,8 @@ object cloud9:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an environment member to an AWS Cloud9 development environment. */
-  def EnvironmentMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cloud9.EnvironmentMembershipArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cloud9.EnvironmentMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cloud9.EnvironmentMembershipArgs.builder
     com.pulumi.aws.cloud9.EnvironmentMembership(name,
         args(argsBuilder).build,

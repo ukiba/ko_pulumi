@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object cfg:
   /** Manages an AWS Config Aggregate Authorization */
-  def AggregateAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.AggregateAuthorizationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AggregateAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.AggregateAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.AggregateAuthorizationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -20,8 +20,8 @@ object cfg:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an AWS Config Configuration Aggregator */
-  def ConfigurationAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.ConfigurationAggregatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConfigurationAggregator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.ConfigurationAggregatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.ConfigurationAggregatorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -47,8 +47,8 @@ object cfg:
    * successfully create or update. See also the
    * `aws.cfg.Recorder` resource.
    */
-  def ConformancePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.ConformancePackArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConformancePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.ConformancePackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.ConformancePackArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -62,8 +62,8 @@ object cfg:
    * 
    * &gt; **Note:** Delivery Channel requires a Configuration Recorder to be present. Use of `dependsOn` (as shown below) is recommended to avoid race conditions.
    */
-  def DeliveryChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.DeliveryChannelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DeliveryChannel(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.DeliveryChannelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.DeliveryChannelArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -77,8 +77,8 @@ object cfg:
    * 
    * &gt; **NOTE:** This resource must be created in the Organization master account or a delegated administrator account, and the Organization must have all features enabled. Every Organization account except those configured in the `excludedAccounts` argument must have a Configuration Recorder with proper IAM permissions before the Organization Conformance Pack will successfully create or update. See also the `aws.cfg.Recorder` resource.
    */
-  def OrganizationConformancePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.OrganizationConformancePackArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationConformancePack(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.OrganizationConformancePackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.OrganizationConformancePackArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -92,8 +92,8 @@ object cfg:
    * 
    * &gt; **NOTE:** This resource must be created in the Organization master account and rules will include the master account unless its ID is added to the `excludedAccounts` argument.
    */
-  def OrganizationCustomPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.OrganizationCustomPolicyRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationCustomPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.OrganizationCustomPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.OrganizationCustomPolicyRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -109,8 +109,8 @@ object cfg:
    * 
    * &gt; **NOTE:** The proper Lambda permission to allow the AWS Config service invoke the Lambda Function must be in place before the rule will successfully create or update. See also the `aws.lambda.Permission` resource.
    */
-  def OrganizationCustomRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.OrganizationCustomRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationCustomRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.OrganizationCustomRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.OrganizationCustomRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -126,8 +126,8 @@ object cfg:
    * 
    * &gt; **NOTE:** Every Organization account except those configured in the `excludedAccounts` argument must have a Configuration Recorder with proper IAM permissions before the rule will successfully create or update. See also the `aws.cfg.Recorder` resource.
    */
-  def OrganizationManagedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.OrganizationManagedRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationManagedRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.OrganizationManagedRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.OrganizationManagedRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -141,8 +141,8 @@ object cfg:
    * 
    * &gt; **Note:** _Starting_ the Configuration Recorder requires a delivery channel (while delivery channel creation requires Configuration Recorder). This is why `aws.cfg.RecorderStatus` is a separate resource.
    */
-  def Recorder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.RecorderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Recorder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.RecorderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.RecorderArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -156,8 +156,8 @@ object cfg:
    * 
    * &gt; **Note:** Starting Configuration Recorder requires a Delivery Channel to be present. Use of `dependsOn` (as shown below) is recommended to avoid race conditions.
    */
-  def RecorderStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.RecorderStatusArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RecorderStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.RecorderStatusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.RecorderStatusArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -171,8 +171,8 @@ object cfg:
    * 
    * &gt; **Note:** Config Remediation Configuration requires an existing Config Rule to be present.
    */
-  def RemediationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.RemediationConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RemediationConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.RemediationConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cfg.RemediationConfigurationArgs.builder
     com.pulumi.aws.cfg.RemediationConfiguration(name,
         args(argsBuilder).build,
@@ -182,8 +182,8 @@ object cfg:
    * Provides a resource to manage the AWS Config retention configuration.
    * The retention configuration defines the number of days that AWS Config stores historical information.
    */
-  def RetentionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.RetentionConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RetentionConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.RetentionConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.cfg.RetentionConfigurationArgs.builder
     com.pulumi.aws.cfg.RetentionConfiguration(name,
         args(argsBuilder).build,
@@ -194,8 +194,8 @@ object cfg:
    * 
    * &gt; **Note:** Config Rule requires an existing Configuration Recorder to be present. Use of `dependsOn` is recommended (as shown below) to avoid race conditions.
    */
-  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.cfg.RuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Rule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.cfg.RuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.cfg.RuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

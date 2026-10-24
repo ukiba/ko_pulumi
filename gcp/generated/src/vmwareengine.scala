@@ -13,8 +13,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.clusters)
    */
-  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.ClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Cluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.ClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -234,8 +234,8 @@ object vmwareengine:
    * \$ pulumi import gcp:vmwareengine/datastore:Datastore default {{location}}/{{name}}
    * ```
    */
-  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.DatastoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.DatastoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.DatastoreArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -251,8 +251,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies.externalAccessRules)
    */
-  def ExternalAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ExternalAccessRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ExternalAccessRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -268,8 +268,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.externalAddresses)
    */
-  def ExternalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAddressArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ExternalAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.ExternalAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.ExternalAddressArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -285,8 +285,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.vmwareEngineNetworks)
    */
-  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Network(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -302,8 +302,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/compute/docs/reference/rest/v1/networks/addPeering)
    */
-  def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPeeringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -319,8 +319,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies)
    */
-  def NetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NetworkPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.NetworkPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -336,8 +336,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds)
    */
-  def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.PrivateCloudArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrivateCloud(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.PrivateCloudArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.PrivateCloudArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -355,8 +355,8 @@ object vmwareengine:
    * 
    * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.subnets)
    */
-  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.vmwareengine.SubnetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subnet(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.vmwareengine.SubnetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.vmwareengine.SubnetArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -373,16 +373,16 @@ object vmwareengine:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to list announcements in a region. */
-    inline def getAnnouncements(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAnnouncements(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetAnnouncementsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getAnnouncements(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to list announcements in a region. */
-    inline def getAnnouncementsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAnnouncementsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetAnnouncementsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetAnnouncementsPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getAnnouncementsPlain(args(argsBuilder).build,
@@ -394,8 +394,8 @@ object vmwareengine:
      * To get more information about private cloud cluster, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.clusters)
      */
-    inline def getCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetClusterArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCluster(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetClusterArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetClusterArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getCluster(args(argsBuilder).build,
@@ -407,24 +407,24 @@ object vmwareengine:
      * To get more information about private cloud cluster, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.clusters)
      */
-    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetClusterPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getClusterPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetClusterPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetClusterResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetClusterPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getClusterPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Cloud VMware Engine Datastore. */
-    inline def getDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastoreArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatastore(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastoreArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetDatastoreResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetDatastoreArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getDatastore(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Cloud VMware Engine Datastore. */
-    inline def getDatastorePlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastorePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatastorePlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetDatastorePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetDatastoreResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetDatastorePlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getDatastorePlain(args(argsBuilder).build,
@@ -436,8 +436,8 @@ object vmwareengine:
      * To get more information about external address, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies.externalAccessRules)
      */
-    inline def getExternalAccessRule(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getExternalAccessRule(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetExternalAccessRuleResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRuleArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getExternalAccessRule(args(argsBuilder).build,
@@ -449,8 +449,8 @@ object vmwareengine:
      * To get more information about external address, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies.externalAccessRules)
      */
-    inline def getExternalAccessRulePlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getExternalAccessRulePlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetExternalAccessRuleResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetExternalAccessRulePlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getExternalAccessRulePlain(args(argsBuilder).build,
@@ -462,8 +462,8 @@ object vmwareengine:
      * To get more information about external address, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.externalAddresses)
      */
-    inline def getExternalAddress(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getExternalAddress(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetExternalAddressResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getExternalAddress(args(argsBuilder).build,
@@ -475,8 +475,8 @@ object vmwareengine:
      * To get more information about external address, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.externalAddresses)
      */
-    inline def getExternalAddressPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getExternalAddressPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetExternalAddressResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetExternalAddressPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getExternalAddressPlain(args(argsBuilder).build,
@@ -488,8 +488,8 @@ object vmwareengine:
      * To get more information about VMwareEngine Network, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.vmwareEngineNetworks)
      */
-    inline def getNetwork(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNetwork(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetwork(args(argsBuilder).build,
@@ -501,8 +501,8 @@ object vmwareengine:
      * To get more information about VMwareEngine Network, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.vmwareEngineNetworks)
      */
-    inline def getNetworkPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNetworkPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetNetworkResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetworkPlain(args(argsBuilder).build,
@@ -514,8 +514,8 @@ object vmwareengine:
      * To get more information about network peering, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPeerings)
      */
-    inline def getNetworkPeering(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNetworkPeering(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetNetworkPeeringResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetworkPeering(args(argsBuilder).build,
@@ -527,8 +527,8 @@ object vmwareengine:
      * To get more information about network peering, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPeerings)
      */
-    inline def getNetworkPeeringPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNetworkPeeringPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetNetworkPeeringResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkPeeringPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetworkPeeringPlain(args(argsBuilder).build,
@@ -540,8 +540,8 @@ object vmwareengine:
      * To get more information about network policy, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies)
      */
-    inline def getNetworkPolicy(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNetworkPolicy(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetNetworkPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetworkPolicy(args(argsBuilder).build,
@@ -553,8 +553,8 @@ object vmwareengine:
      * To get more information about network policy, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.networkPolicies)
      */
-    inline def getNetworkPolicyPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNetworkPolicyPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetNetworkPolicyResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNetworkPolicyPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNetworkPolicyPlain(args(argsBuilder).build,
@@ -566,8 +566,8 @@ object vmwareengine:
      * To get more information about private cloud NSX credentials, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds/showNsxCredentials)
      */
-    inline def getNsxCredentials(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNsxCredentials(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetNsxCredentialsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNsxCredentials(args(argsBuilder).build,
@@ -579,8 +579,8 @@ object vmwareengine:
      * To get more information about private cloud NSX credentials, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds/showNsxCredentials)
      */
-    inline def getNsxCredentialsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNsxCredentialsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetNsxCredentialsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetNsxCredentialsPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getNsxCredentialsPlain(args(argsBuilder).build,
@@ -592,8 +592,8 @@ object vmwareengine:
      * To get more information about private cloud, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds)
      */
-    inline def getPrivateCloud(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPrivateCloud(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetPrivateCloudResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getPrivateCloud(args(argsBuilder).build,
@@ -605,8 +605,8 @@ object vmwareengine:
      * To get more information about private cloud, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds)
      */
-    inline def getPrivateCloudPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPrivateCloudPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetPrivateCloudResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetPrivateCloudPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getPrivateCloudPlain(args(argsBuilder).build,
@@ -618,8 +618,8 @@ object vmwareengine:
      * To get more information about private cloud subnet, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.subnets)
      */
-    inline def getSubnet(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetSubnetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubnet(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetSubnetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetSubnetArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getSubnet(args(argsBuilder).build,
@@ -631,24 +631,24 @@ object vmwareengine:
      * To get more information about private cloud subnet, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds.subnets)
      */
-    inline def getSubnetPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetSubnetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubnetPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetSubnetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetSubnetResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetSubnetPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getSubnetPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to list upgrades for a Private Cloud. */
-    inline def getUpgrades(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetUpgradesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUpgrades(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetUpgradesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetUpgradesResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetUpgradesArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getUpgrades(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to list upgrades for a Private Cloud. */
-    inline def getUpgradesPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetUpgradesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUpgradesPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetUpgradesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetUpgradesResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetUpgradesPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getUpgradesPlain(args(argsBuilder).build,
@@ -660,8 +660,8 @@ object vmwareengine:
      * To get more information about private cloud Vcenter credentials, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds/showVcenterCredentials)
      */
-    inline def getVcenterCredentials(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVcenterCredentials(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.vmwareengine.outputs.GetVcenterCredentialsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getVcenterCredentials(args(argsBuilder).build,
@@ -673,8 +673,8 @@ object vmwareengine:
      * To get more information about private cloud Vcenter credentials, see:
      * * [API documentation](https://cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.privateClouds/showVcenterCredentials)
      */
-    inline def getVcenterCredentialsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVcenterCredentialsPlain(args: Endofunction[com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.vmwareengine.outputs.GetVcenterCredentialsResult] =
       val argsBuilder = com.pulumi.gcp.vmwareengine.inputs.GetVcenterCredentialsPlainArgs.builder
       com.pulumi.gcp.vmwareengine.VmwareengineFunctions.getVcenterCredentialsPlain(args(argsBuilder).build,

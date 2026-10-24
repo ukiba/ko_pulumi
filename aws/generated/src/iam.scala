@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object iam:
   /** Provides an IAM access key. This is a set of credentials that allow API requests to be made as an IAM user. */
-  def AccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.AccessKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccessKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.AccessKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.AccessKeyArgs.builder
     com.pulumi.aws.iam.AccessKey(name,
         args(argsBuilder).build,
@@ -19,8 +19,8 @@ object iam:
    * 
    * Manages the account alias for the AWS Account.
    */
-  def AccountAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.AccountAliasArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.AccountAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.AccountAliasArgs.builder
     com.pulumi.aws.iam.AccountAlias(name,
         args(argsBuilder).build,
@@ -33,8 +33,8 @@ object iam:
    * See more about [Account Password Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)
    * in the official AWS docs.
    */
-  def AccountPasswordPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.AccountPasswordPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountPasswordPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.AccountPasswordPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.AccountPasswordPolicyArgs.builder
     com.pulumi.aws.iam.AccountPasswordPolicy(name,
         args(argsBuilder).build,
@@ -45,8 +45,8 @@ object iam:
    * 
    * &gt; **NOTE on user management:** Using `aws.iam.GroupMembership` or `aws.iam.UserGroupMembership` resources in addition to manually managing user/group membership using the console may lead to configuration drift or conflicts. For this reason, it&#39;s recommended to either manage membership entirely with the provider or entirely within the AWS console.
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.GroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -65,8 +65,8 @@ object iam:
    * &gt; **Note:** `aws.iam.GroupMembership` will conflict with itself if used more than once with the same group. To non-exclusively manage the users in a group, see the
    * `aws.iam.UserGroupMembership` resource.
    */
-  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupMembershipArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.GroupMembershipArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -82,8 +82,8 @@ object iam:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the group.
    */
-  def GroupPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GroupPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.GroupPoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.GroupPoliciesExclusive(name,
         args(argsBuilder).build,
@@ -94,8 +94,8 @@ object iam:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def GroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GroupPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.GroupPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -109,8 +109,8 @@ object iam:
    * 
    * &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.PolicyAttachment` resource and will permanently show a difference if both are defined.
    */
-  def GroupPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GroupPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentArgs.builder
     com.pulumi.aws.iam.GroupPolicyAttachment(name,
         args(argsBuilder).build,
@@ -123,8 +123,8 @@ object iam:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the group.
    */
-  def GroupPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GroupPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.GroupPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.GroupPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
@@ -141,8 +141,8 @@ object iam:
      * This data source can be used to fetch information about IAM access keys of a
      * specific IAM user.
      */
-    inline def getAccessKeys(args: Endofunction[com.pulumi.aws.iam.inputs.GetAccessKeysArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccessKeys(args: Endofunction[com.pulumi.aws.iam.inputs.GetAccessKeysArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetAccessKeysResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetAccessKeysArgs.builder
       com.pulumi.aws.iam.IamFunctions.getAccessKeys(args(argsBuilder).build,
@@ -152,8 +152,8 @@ object iam:
      * This data source can be used to fetch information about IAM access keys of a
      * specific IAM user.
      */
-    inline def getAccessKeysPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetAccessKeysPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccessKeysPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetAccessKeysPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetAccessKeysResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetAccessKeysPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getAccessKeysPlain(args(argsBuilder).build,
@@ -164,8 +164,8 @@ object iam:
      * IAM group. By using this data source, you can reference IAM group
      * properties without having to hard code ARNs as input.
      */
-    inline def getGroup(args: Endofunction[com.pulumi.aws.iam.inputs.GetGroupArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.aws.iam.inputs.GetGroupArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetGroupArgs.builder
       com.pulumi.aws.iam.IamFunctions.getGroup(args(argsBuilder).build,
@@ -176,8 +176,8 @@ object iam:
      * IAM group. By using this data source, you can reference IAM group
      * properties without having to hard code ARNs as input.
      */
-    inline def getGroupPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetGroupPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetGroupPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getGroupPlain(args(argsBuilder).build,
@@ -188,8 +188,8 @@ object iam:
      * IAM instance profile. By using this data source, you can reference IAM
      * instance profile properties without having to hard code ARNs as input.
      */
-    inline def getInstanceProfile(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfileArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceProfile(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfileArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetInstanceProfileResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetInstanceProfileArgs.builder
       com.pulumi.aws.iam.IamFunctions.getInstanceProfile(args(argsBuilder).build,
@@ -200,8 +200,8 @@ object iam:
      * IAM instance profile. By using this data source, you can reference IAM
      * instance profile properties without having to hard code ARNs as input.
      */
-    inline def getInstanceProfilePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceProfilePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetInstanceProfileResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetInstanceProfilePlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getInstanceProfilePlain(args(argsBuilder).build,
@@ -212,8 +212,8 @@ object iam:
      * IAM instance profiles under a role. By using this data source, you can reference IAM
      * instance profile properties without having to hard code ARNs as input.
      */
-    inline def getInstanceProfiles(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceProfiles(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetInstanceProfilesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetInstanceProfilesArgs.builder
       com.pulumi.aws.iam.IamFunctions.getInstanceProfiles(args(argsBuilder).build,
@@ -224,8 +224,8 @@ object iam:
      * IAM instance profiles under a role. By using this data source, you can reference IAM
      * instance profile properties without having to hard code ARNs as input.
      */
-    inline def getInstanceProfilesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstanceProfilesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetInstanceProfilesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetInstanceProfilesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetInstanceProfilesPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getInstanceProfilesPlain(args(argsBuilder).build,
@@ -236,8 +236,8 @@ object iam:
      * IAM OpenID Connect provider. By using this data source, you can retrieve the
      * the resource information by either its `arn` or `url`.
      */
-    inline def getOpenIdConnectProvider(args: Endofunction[com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getOpenIdConnectProvider(args: Endofunction[com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetOpenIdConnectProviderResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderArgs.builder
       com.pulumi.aws.iam.IamFunctions.getOpenIdConnectProvider(args(argsBuilder).build,
@@ -248,8 +248,8 @@ object iam:
      * IAM OpenID Connect provider. By using this data source, you can retrieve the
      * the resource information by either its `arn` or `url`.
      */
-    inline def getOpenIdConnectProviderPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getOpenIdConnectProviderPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetOpenIdConnectProviderResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetOpenIdConnectProviderPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getOpenIdConnectProviderPlain(args(argsBuilder).build,
@@ -259,8 +259,8 @@ object iam:
      * This data source can be used to fetch information about a specific
      * IAM policy.
      */
-    inline def getPolicy(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPolicy(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPolicy(args(argsBuilder).build,
@@ -270,8 +270,8 @@ object iam:
      * This data source can be used to fetch information about a specific
      * IAM policy.
      */
-    inline def getPolicyPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPolicyPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetPolicyResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPolicyPlain(args(argsBuilder).build,
@@ -282,8 +282,8 @@ object iam:
      * 
      * Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
-    inline def getPolicyDocument(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPolicyDocument(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPolicyDocument(args(argsBuilder).build,
@@ -294,8 +294,8 @@ object iam:
      * 
      * Using this data source to generate policy documents is *optional*. It is also valid to use literal JSON strings in your configuration or to use the `file` interpolation function to read a raw JSON policy document from a file.
      */
-    inline def getPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPolicyDocumentPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetPolicyDocumentResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPolicyDocumentPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPolicyDocumentPlain(args(argsBuilder).build,
@@ -309,8 +309,8 @@ object iam:
      * 
      * &gt; **Note:** Correctly using this data source requires familiarity with various details of AWS Identity and Access Management, and how various AWS services integrate with it. For general information on the AWS IAM policy simulator, see [Testing IAM policies with the IAM policy simulator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html). This data source wraps the `iam:SimulatePrincipalPolicy` API action described on that page.
      */
-    inline def getPrincipalPolicySimulation(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPrincipalPolicySimulation(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetPrincipalPolicySimulationInvokeResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPrincipalPolicySimulation(args(argsBuilder).build,
@@ -324,8 +324,8 @@ object iam:
      * 
      * &gt; **Note:** Correctly using this data source requires familiarity with various details of AWS Identity and Access Management, and how various AWS services integrate with it. For general information on the AWS IAM policy simulator, see [Testing IAM policies with the IAM policy simulator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html). This data source wraps the `iam:SimulatePrincipalPolicy` API action described on that page.
      */
-    inline def getPrincipalPolicySimulationPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPrincipalPolicySimulationPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetPrincipalPolicySimulationInvokeResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetPrincipalPolicySimulationPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getPrincipalPolicySimulationPlain(args(argsBuilder).build,
@@ -336,8 +336,8 @@ object iam:
      * IAM role. By using this data source, you can reference IAM role
      * properties without having to hard code ARNs as input.
      */
-    inline def getRole(args: Endofunction[com.pulumi.aws.iam.inputs.GetRoleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRole(args: Endofunction[com.pulumi.aws.iam.inputs.GetRoleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRoleResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRoleArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRole(args(argsBuilder).build,
@@ -348,56 +348,56 @@ object iam:
      * IAM role. By using this data source, you can reference IAM role
      * properties without having to hard code ARNs as input.
      */
-    inline def getRolePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRolePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRoleResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the names of inline policies associated with an IAM role. */
-    inline def getRolePolicies(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRolePolicies(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolePoliciesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePoliciesArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePolicies(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the names of inline policies associated with an IAM role. */
-    inline def getRolePoliciesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRolePoliciesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePoliciesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRolePoliciesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePoliciesPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePoliciesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about the managed policies attached to an AWS IAM Role. */
-    inline def getRolePolicyAttachments(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRolePolicyAttachments(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolePolicyAttachmentsResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePolicyAttachments(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about the managed policies attached to an AWS IAM Role. */
-    inline def getRolePolicyAttachmentsPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRolePolicyAttachmentsPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRolePolicyAttachmentsResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolePolicyAttachmentsPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolePolicyAttachmentsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the ARNs and Names of IAM Roles. */
-    inline def getRoles(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRoles(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetRolesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolesArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRoles(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the ARNs and Names of IAM Roles. */
-    inline def getRolesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRolesPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetRolesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetRolesResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetRolesPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getRolesPlain(args(argsBuilder).build,
@@ -408,8 +408,8 @@ object iam:
      * IAM SAML provider. This will allow you to easily retrieve the metadata
      * document of an existing SAML provider.
      */
-    inline def getSamlProvider(args: Endofunction[com.pulumi.aws.iam.inputs.GetSamlProviderArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSamlProvider(args: Endofunction[com.pulumi.aws.iam.inputs.GetSamlProviderArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetSamlProviderResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetSamlProviderArgs.builder
       com.pulumi.aws.iam.IamFunctions.getSamlProvider(args(argsBuilder).build,
@@ -420,24 +420,24 @@ object iam:
      * IAM SAML provider. This will allow you to easily retrieve the metadata
      * document of an existing SAML provider.
      */
-    inline def getSamlProviderPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetSamlProviderPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSamlProviderPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetSamlProviderPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetSamlProviderResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetSamlProviderPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getSamlProviderPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to lookup information about IAM Server Certificates. */
-    inline def getServerCertificate(args: Endofunction[com.pulumi.aws.iam.inputs.GetServerCertificateArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServerCertificate(args: Endofunction[com.pulumi.aws.iam.inputs.GetServerCertificateArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetServerCertificateResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetServerCertificateArgs.builder
       com.pulumi.aws.iam.IamFunctions.getServerCertificate(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to lookup information about IAM Server Certificates. */
-    inline def getServerCertificatePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetServerCertificatePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServerCertificatePlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetServerCertificatePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetServerCertificateResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetServerCertificatePlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getServerCertificatePlain(args(argsBuilder).build,
@@ -448,8 +448,8 @@ object iam:
      * 
      * For some AWS resources, multiple types of principals are allowed in the same argument (e.g., IAM users and IAM roles). However, these arguments often do not allow assumed-role (i.e., STS, temporary credential) principals. Given an STS ARN, this data source provides the ARN for the source IAM role.
      */
-    inline def getSessionContext(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSessionContext(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetSessionContextResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetSessionContextArgs.builder
       com.pulumi.aws.iam.IamFunctions.getSessionContext(args(argsBuilder).build,
@@ -460,8 +460,8 @@ object iam:
      * 
      * For some AWS resources, multiple types of principals are allowed in the same argument (e.g., IAM users and IAM roles). However, these arguments often do not allow assumed-role (i.e., STS, temporary credential) principals. Given an STS ARN, this data source provides the ARN for the source IAM role.
      */
-    inline def getSessionContextPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSessionContextPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetSessionContextPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetSessionContextResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetSessionContextPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getSessionContextPlain(args(argsBuilder).build,
@@ -472,8 +472,8 @@ object iam:
      * IAM user. By using this data source, you can reference IAM user
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getUser(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUser(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUserArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUser(args(argsBuilder).build,
@@ -484,40 +484,40 @@ object iam:
      * IAM user. By using this data source, you can reference IAM user
      * properties without having to hard code ARNs or unique IDs as input.
      */
-    inline def getUserPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUserPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetUserResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUserPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUserPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information about a SSH public key associated with the specified IAM user. */
-    inline def getUserSshKey(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserSshKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUserSshKey(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserSshKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetUserSshKeyResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUserSshKeyArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUserSshKey(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information about a SSH public key associated with the specified IAM user. */
-    inline def getUserSshKeyPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserSshKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUserSshKeyPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUserSshKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetUserSshKeyResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUserSshKeyPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUserSshKeyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the ARNs and Names of IAM Users. */
-    inline def getUsers(args: Endofunction[com.pulumi.aws.iam.inputs.GetUsersArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getUsers(args: Endofunction[com.pulumi.aws.iam.inputs.GetUsersArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.iam.outputs.GetUsersResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUsersArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUsers(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the ARNs and Names of IAM Users. */
-    inline def getUsersPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUsersPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getUsersPlain(args: Endofunction[com.pulumi.aws.iam.inputs.GetUsersPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.iam.outputs.GetUsersResult] =
       val argsBuilder = com.pulumi.aws.iam.inputs.GetUsersPlainArgs.builder
       com.pulumi.aws.iam.IamFunctions.getUsersPlain(args(argsBuilder).build,
@@ -528,8 +528,8 @@ object iam:
    * 
    * &gt; **NOTE:** When managing instance profiles, remember that the `name` attribute must always be unique. This means that even if you have different `role` or `path` values, duplicating an existing instance profile `name` will lead to an `EntityAlreadyExists` error.
    */
-  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.InstanceProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.InstanceProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.InstanceProfileArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -546,8 +546,8 @@ object iam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM OpenID Connect provider. */
-  def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.OpenIdConnectProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OpenIdConnectProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.OpenIdConnectProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.OpenIdConnectProviderArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -565,8 +565,8 @@ object iam:
    * 
    * &gt; **NOTE:** The AWS account utilizing this resource must be an Organizations management account. Also, you must enable trusted access for AWS Identity and Access Management in AWS Organizations.
    */
-  def OrganizationsFeatures(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.OrganizationsFeaturesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationsFeatures(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.OrganizationsFeaturesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.OrganizationsFeaturesArgs.builder
     com.pulumi.aws.iam.OrganizationsFeatures(name,
         args(argsBuilder).build,
@@ -577,8 +577,8 @@ object iam:
    * 
    * &gt; **NOTE:** Creating this Terraform resource enables IAM Outbound Web Identity Federation and deleting this Terraform resource disables IAM Outbound Web Identity Federation.
    */
-  def OutboundWebIdentityFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OutboundWebIdentityFederation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.OutboundWebIdentityFederationArgs.builder
     com.pulumi.aws.iam.OutboundWebIdentityFederation(name,
         args(argsBuilder).build,
@@ -589,8 +589,8 @@ object iam:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -617,8 +617,8 @@ object iam:
    * 
    * &gt; **NOTE:** To ensure Pulumi correctly manages dependencies during updates, use a reference to the IAM resource when defining the `policyArn` for `aws.iam.PolicyAttachment`, rather than constructing the ARN directly. For example, use `policyArn = aws_iam_policy.example.arn` instead of `policyArn = &#34;arn:aws:iam::\${data.aws_caller_identity.current.account_id}:policy/Example&#34;`. Failing to do so may lead to errors like `DeleteConflict: Cannot delete a policy attached to entities` or `NoSuchEntity`.
    */
-  def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.PolicyAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.PolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.PolicyAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -636,8 +636,8 @@ object iam:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def Role(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.RoleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Role(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.RoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.RoleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -662,8 +662,8 @@ object iam:
    * 
    * &gt; Destruction of this resource means Pulumi will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the role.
    */
-  def RolePoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.RolePoliciesExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RolePoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.RolePoliciesExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.RolePoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.RolePoliciesExclusive(name,
         args(argsBuilder).build,
@@ -676,8 +676,8 @@ object iam:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def RolePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.RolePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RolePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.RolePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.RolePolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -693,8 +693,8 @@ object iam:
    * 
    * &gt; **NOTE:** For a given role, this resource is incompatible with using the `aws.iam.Role` resource `managedPolicyArns` argument. When using that argument and this resource, both will attempt to manage the role&#39;s managed policy attachments and Pulumi will show a permanent difference.
    */
-  def RolePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RolePolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentArgs.builder
     com.pulumi.aws.iam.RolePolicyAttachment(name,
         args(argsBuilder).build,
@@ -709,16 +709,16 @@ object iam:
    * 
    * &gt; Destruction of this resource means Pulumi will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the role.
    */
-  def RolePolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RolePolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.RolePolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.RolePolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM SAML provider. */
-  def SamlProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.SamlProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SamlProvider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.SamlProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.SamlProviderArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -735,8 +735,8 @@ object iam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM Security Token Service Preferences resource. */
-  def SecurityTokenServicePreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityTokenServicePreferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.SecurityTokenServicePreferencesArgs.builder
     com.pulumi.aws.iam.SecurityTokenServicePreferences(name,
         args(argsBuilder).build,
@@ -754,8 +754,8 @@ object iam:
    * For information about server certificates in IAM, see [Managing Server
    * Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in AWS Documentation.
    */
-  def ServerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.ServerCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.ServerCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.ServerCertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -772,8 +772,8 @@ object iam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an [IAM service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html). */
-  def ServiceLinkedRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.ServiceLinkedRoleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceLinkedRole(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.ServiceLinkedRoleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.ServiceLinkedRoleArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -787,8 +787,8 @@ object iam:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an IAM Service Specific Credential. */
-  def ServiceSpecificCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.ServiceSpecificCredentialArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceSpecificCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.ServiceSpecificCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.ServiceSpecificCredentialArgs.builder
     com.pulumi.aws.iam.ServiceSpecificCredential(name,
         args(argsBuilder).build,
@@ -799,16 +799,16 @@ object iam:
    * 
    * &gt; **Note:** All arguments including the certificate body will be stored in the raw state as plain-text.
    */
-  def SigningCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.SigningCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SigningCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.SigningCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.SigningCertificateArgs.builder
     com.pulumi.aws.iam.SigningCertificate(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Uploads an SSH public key and associates it with the specified IAM user. */
-  def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.SshKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SshKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.SshKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.SshKeyArgs.builder
     com.pulumi.aws.iam.SshKey(name,
         args(argsBuilder).build,
@@ -819,8 +819,8 @@ object iam:
    * 
    * &gt; *NOTE:* If policies are attached to the user via the `aws.iam.PolicyAttachment` resource and you are modifying the user `name` or `path`, the `forceDestroy` argument must be set to `true` and applied before attempting the operation otherwise you will encounter a `DeleteConflict` error. The `aws.iam.UserPolicyAttachment` resource (recommended) does not have this requirement.
    */
-  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def User(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.UserArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -844,8 +844,8 @@ object iam:
    * To exclusively manage the users in a group, see the
    * `aws.iam.GroupMembership` resource.
    */
-  def UserGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserGroupMembershipArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserGroupMembership(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserGroupMembershipArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.UserGroupMembershipArgs.builder
     com.pulumi.aws.iam.UserGroupMembership(name,
         args(argsBuilder).build,
@@ -856,8 +856,8 @@ object iam:
    * 
    * &gt; To reset an IAM User login password via this provider, you can use delete and recreate this resource or change any of the arguments.
    */
-  def UserLoginProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserLoginProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserLoginProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserLoginProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.UserLoginProfileArgs.builder
     com.pulumi.aws.iam.UserLoginProfile(name,
         args(argsBuilder).build,
@@ -870,8 +870,8 @@ object iam:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured inline policy assignments. It __will not__ delete the configured policies from the user.
    */
-  def UserPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserPoliciesExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserPoliciesExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserPoliciesExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.UserPoliciesExclusiveArgs.builder
     com.pulumi.aws.iam.UserPoliciesExclusive(name,
         args(argsBuilder).build,
@@ -882,8 +882,8 @@ object iam:
    * 
    * &gt; **NOTE:** We suggest using explicit JSON encoding or `aws.iam.getPolicyDocument` when assigning a value to `policy`. They seamlessly translate configuration to JSON, enabling you to maintain consistency within your configuration without the need for context switches. Also, you can sidestep potential complications arising from formatting discrepancies, whitespace inconsistencies, and other nuances inherent to JSON.
    */
-  def UserPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.UserPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -897,8 +897,8 @@ object iam:
    * 
    * &gt; **NOTE:** The usage of this resource conflicts with the `aws.iam.PolicyAttachment` resource and will permanently show a difference if both are defined.
    */
-  def UserPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserPolicyAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentArgs.builder
     com.pulumi.aws.iam.UserPolicyAttachment(name,
         args(argsBuilder).build,
@@ -911,8 +911,8 @@ object iam:
    * 
    * &gt; Destruction of this resource means Terraform will no longer manage reconciliation of the configured policy attachments. It **will not** detach the configured policies from the user.
    */
-  def UserPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UserPolicyAttachmentsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.iam.UserPolicyAttachmentsExclusiveArgs.builder
     com.pulumi.aws.iam.UserPolicyAttachmentsExclusive(name,
         args(argsBuilder).build,
@@ -926,8 +926,8 @@ object iam:
    *   To associate the virtual MFA device with a user and enable it, use the code returned in either `base32StringSeed` or `qrCodePng` to generate TOTP authentication codes.
    *   The authentication codes can then be used with the AWS CLI command [`aws iam enable-mfa-device`](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html) or the AWS API call [`EnableMFADevice`](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html).
    */
-  def VirtualMfaDevice(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.iam.VirtualMfaDeviceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMfaDevice(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.iam.VirtualMfaDeviceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.iam.VirtualMfaDeviceArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

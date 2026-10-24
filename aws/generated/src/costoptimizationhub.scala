@@ -9,16 +9,16 @@ object costoptimizationhub:
    * 
    * &gt; **TIP:** The Cost Optimization Hub only has a `us-east-1` endpoint. However, you can access the service globally with the AWS Provider from other regions. Other tools, such as the [AWS CLI](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/cost-optimization-hub/index.html), may require you to specify the `us-east-1` region when using the service.
    */
-  def EnrollmentStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.costoptimizationhub.EnrollmentStatusArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnrollmentStatus(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.costoptimizationhub.EnrollmentStatusArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.costoptimizationhub.EnrollmentStatusArgs.builder
     com.pulumi.aws.costoptimizationhub.EnrollmentStatus(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing AWS Cost Optimization Hub Preferences. */
-  def Preferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.costoptimizationhub.PreferencesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Preferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.costoptimizationhub.PreferencesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.costoptimizationhub.PreferencesArgs.builder
     com.pulumi.aws.costoptimizationhub.Preferences(name,
         args(argsBuilder).build,

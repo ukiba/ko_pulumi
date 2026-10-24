@@ -5,16 +5,16 @@ import com.pulumi.resources.CustomResourceOptions
 
 object s3tables:
   /** Resource for managing an Amazon S3 Tables Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3tables.NamespaceArgs.builder
     com.pulumi.aws.s3tables.Namespace(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table. */
-  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TableArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Table(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TableArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -31,8 +31,8 @@ object s3tables:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Bucket. */
-  def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TableBucket(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TableBucketArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -49,24 +49,24 @@ object s3tables:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Bucket Policy. */
-  def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TableBucketPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketPolicyArgs.builder
     com.pulumi.aws.s3tables.TableBucketPolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Tables Table Bucket Replication configuration. */
-  def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TableBucketReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableBucketReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3tables.TableBucketReplicationArgs.builder
     com.pulumi.aws.s3tables.TableBucketReplication(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon S3 Tables Table Policy. */
-  def TablePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TablePolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TablePolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TablePolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.s3tables.TablePolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -76,8 +76,8 @@ object s3tables:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Amazon S3 Tables Table Replication configuration. */
-  def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.s3tables.TableReplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TableReplication(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.s3tables.TableReplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.s3tables.TableReplicationArgs.builder
     com.pulumi.aws.s3tables.TableReplication(name,
         args(argsBuilder).build,

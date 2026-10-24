@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object servicebus:
   /** Manages a ServiceBus Namespace. */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -25,8 +25,8 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Namespace authorization Rule within a ServiceBus. */
-  def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NamespaceAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -42,8 +42,8 @@ object servicebus:
    * 
    * &gt; **Note:** This resource should only be used to create a Customer Managed Key for Service Bus Namespaces with System Assigned identities. The `customerManagedKey` block in `azure.servicebus.Namespace` should be used to create a Customer Managed Key for a Service Bus Namespace with a User Assigned identity.
    */
-  def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NamespaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.servicebus.NamespaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.servicebus.NamespaceCustomerManagedKey(name,
         args(argsBuilder).build,
@@ -54,8 +54,8 @@ object servicebus:
    * 
    * &gt; **Note:** Disaster Recovery Config is a Premium SKU only capability.
    */
-  def NamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NamespaceDisasterRecoveryConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.NamespaceDisasterRecoveryConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -65,8 +65,8 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Queue. */
-  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.QueueArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Queue(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.QueueArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.QueueArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -76,8 +76,8 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Authorization Rule for a ServiceBus Queue. */
-  def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.QueueAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def QueueAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.QueueAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.QueueAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -94,136 +94,136 @@ object servicebus:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    inline def getNamespace(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNamespace(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespace(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace. */
-    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNamespacePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespacePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespacePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace Authorization Rule. */
-    inline def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceAuthorizationRule(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ServiceBus Namespace Authorization Rule. */
-    inline def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNamespaceAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceAuthorizationRulePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Service Bus Disaster Recovery Config. */
-    inline def getNamespaceDisasterRecoveryConfig(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getNamespaceDisasterRecoveryConfig(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetNamespaceDisasterRecoveryConfigResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceDisasterRecoveryConfig(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Service Bus Disaster Recovery Config. */
-    inline def getNamespaceDisasterRecoveryConfigPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getNamespaceDisasterRecoveryConfigPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetNamespaceDisasterRecoveryConfigResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetNamespaceDisasterRecoveryConfigPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getNamespaceDisasterRecoveryConfigPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Service Bus Queue. */
-    inline def getQueue(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getQueue(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueue(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Service Bus Queue. */
-    inline def getQueuePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getQueuePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetQueueResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueuePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueuePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing ServiceBus Queue Authorisation Rule within a ServiceBus Queue. */
-    inline def getQueueAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getQueueAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetQueueAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueueAuthorizationRule(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ServiceBus Queue Authorisation Rule within a ServiceBus Queue. */
-    inline def getQueueAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getQueueAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetQueueAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetQueueAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getQueueAuthorizationRulePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing ServiceBus Subscription. */
-    inline def getSubscription(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSubscription(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetSubscriptionArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getSubscription(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing ServiceBus Subscription. */
-    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSubscriptionPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetSubscriptionResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetSubscriptionPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getSubscriptionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Service Bus Topic. */
-    inline def getTopic(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopic(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Service Bus Topic. */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicPlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about a ServiceBus Topic Authorization Rule within a ServiceBus Topic. */
-    inline def getTopicAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTopicAuthorizationRule(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.servicebus.outputs.GetTopicAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRuleArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicAuthorizationRule(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a ServiceBus Topic Authorization Rule within a ServiceBus Topic. */
-    inline def getTopicAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTopicAuthorizationRulePlain(args: Endofunction[com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.servicebus.outputs.GetTopicAuthorizationRuleResult] =
       val argsBuilder = com.pulumi.azure.servicebus.inputs.GetTopicAuthorizationRulePlainArgs.builder
       com.pulumi.azure.servicebus.ServicebusFunctions.getTopicAuthorizationRulePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a ServiceBus Subscription. */
-  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Subscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.SubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -233,8 +233,8 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Subscription Rule. */
-  def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SubscriptionRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.SubscriptionRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.SubscriptionRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -248,8 +248,8 @@ object servicebus:
    * 
    * &gt; **Note:** Topics can only be created in Namespaces with an SKU of `Standard` or higher.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.TopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.TopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -259,8 +259,8 @@ object servicebus:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a ServiceBus Topic authorization Rule within a ServiceBus Topic. */
-  def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.servicebus.TopicAuthorizationRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TopicAuthorizationRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.servicebus.TopicAuthorizationRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.servicebus.TopicAuthorizationRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -11,8 +11,8 @@ object mssql:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.DatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Database(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.DatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.DatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -29,8 +29,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Database Extended Auditing Policy. */
-  def DatabaseExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.DatabaseExtendedAuditingPolicy(name,
         args(argsBuilder).build,
@@ -41,16 +41,16 @@ object mssql:
    * 
    * &gt; **Note:** Database Vulnerability Assessment is currently only available for MS SQL databases.
    */
-  def DatabaseVulnerabilityAssessmentRuleBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaselineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DatabaseVulnerabilityAssessmentRuleBaseline(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaselineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaselineArgs.builder
     com.pulumi.azure.mssql.DatabaseVulnerabilityAssessmentRuleBaseline(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage an Azure SQL Elastic Pool. */
-  def ElasticPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ElasticPoolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ElasticPool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ElasticPoolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ElasticPoolArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -67,8 +67,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft Azure SQL Failover Group. */
-  def FailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.FailoverGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.FailoverGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.FailoverGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -85,8 +85,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage an Azure SQL Firewall Rule. */
-  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.FirewallRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.FirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.FirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -96,8 +96,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job. */
-  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Job(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.JobArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -107,8 +107,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Agent. */
-  def JobAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobAgentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobAgent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobAgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.JobAgentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -125,8 +125,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Credential. */
-  def JobCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobCredentialArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobCredential(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobCredentialArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.JobCredentialArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -136,16 +136,16 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Schedule. */
-  def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.JobScheduleArgs.builder
     com.pulumi.azure.mssql.JobSchedule(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Elastic Job Step. */
-  def JobStep(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobStepArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobStep(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobStepArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.JobStepArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -155,8 +155,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Job Target Group. */
-  def JobTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.JobTargetGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def JobTargetGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.JobTargetGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.JobTargetGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -170,8 +170,8 @@ object mssql:
    * 
    * &gt; **Note:** To mitigate the possibility of accidental data loss it is highly recommended that you use the `preventDestroy` lifecycle argument in your configuration file for this resource. For more information on the `preventDestroy` lifecycle argument please see the terraform documentation.
    */
-  def ManagedDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedDatabaseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedDatabase(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedDatabaseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ManagedDatabaseArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -194,8 +194,8 @@ object mssql:
    * 
    * &gt; **Note:** SQL Managed Instance needs permission to read Azure Active Directory when configuring the AAD administrator. [Read more about provisioning AAD administrators](https://learn.microsoft.com/azure/azure-sql/database/authentication-aad-configure?view=azuresql#provision-azure-ad-admin-sql-managed-instance).
    */
-  def ManagedInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ManagedInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -212,16 +212,16 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to set a user, group or service principal as the AAD Administrator for an Azure SQL Managed Instance. */
-  def ManagedInstanceActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministratorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceActiveDirectoryAdministrator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministratorArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceActiveDirectoryAdministrator(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Azure SQL Managed Instance Failover Group. */
-  def ManagedInstanceFailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceFailoverGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceFailoverGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceFailoverGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ManagedInstanceFailoverGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -231,16 +231,16 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Security Alert Policy for an MS SQL Managed Instance. */
-  def ManagedInstanceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicyArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceSecurityAlertPolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages Start Stop Schedules for an MS SQL Managed Instance. */
-  def ManagedInstanceStartStopSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceStartStopScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceStartStopSchedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceStartStopScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceStartStopScheduleArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceStartStopSchedule(name,
         args(argsBuilder).build,
@@ -253,16 +253,16 @@ object mssql:
    * 
    * &gt; **Note:** See [documentation](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-byok-overview) for important information on how handle lifecycle management of the keys to prevent data lockout.
    */
-  def ManagedInstanceTransparentDataEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceTransparentDataEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryptionArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceTransparentDataEncryption(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages the Vulnerability Assessment for an MS Managed Instance. */
-  def ManagedInstanceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ManagedInstanceVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.mssql.ManagedInstanceVulnerabilityAssessment(name,
         args(argsBuilder).build,
@@ -276,104 +276,104 @@ object mssql:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing SQL database. */
-    inline def getDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetDatabaseArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getDatabase(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing SQL database. */
-    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetDatabasePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getDatabasePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing SQL elastic pool. */
-    inline def getElasticPool(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getElasticPool(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetElasticPoolResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetElasticPoolArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getElasticPool(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing SQL elastic pool. */
-    inline def getElasticPoolPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getElasticPoolPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetElasticPoolResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetElasticPoolPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getElasticPoolPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Microsoft Azure SQL Failover Group. */
-    inline def getFailoverGroup(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFailoverGroup(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetFailoverGroupResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetFailoverGroupArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getFailoverGroup(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Microsoft Azure SQL Failover Group. */
-    inline def getFailoverGroupPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFailoverGroupPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetFailoverGroupResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetFailoverGroupPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getFailoverGroupPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Azure SQL Azure Managed Database. */
-    inline def getManagedDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDatabase(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetManagedDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedDatabaseArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedDatabase(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Azure SQL Azure Managed Database. */
-    inline def getManagedDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getManagedDatabasePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetManagedDatabaseResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedDatabasePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedDatabasePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Azure Managed Instance. */
-    inline def getManagedInstance(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getManagedInstance(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetManagedInstanceResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedInstanceArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Azure Managed Instance. */
-    inline def getManagedInstancePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getManagedInstancePlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetManagedInstanceResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetManagedInstancePlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getManagedInstancePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Server. */
-    inline def getServer(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServer(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.mssql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetServerArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getServer(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Microsoft SQL Server. */
-    inline def getServerPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServerPlain(args: Endofunction[com.pulumi.azure.mssql.inputs.GetServerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.mssql.outputs.GetServerResult] =
       val argsBuilder = com.pulumi.azure.mssql.inputs.GetServerPlainArgs.builder
       com.pulumi.azure.mssql.MssqlFunctions.getServerPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Allows you to manage an Azure SQL Outbound Firewall Rule. */
-  def OutboundFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.OutboundFirewallRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OutboundFirewallRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.OutboundFirewallRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.OutboundFirewallRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -383,8 +383,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Azure Database Server. */
-  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Server(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ServerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -401,8 +401,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server DNS Alias. */
-  def ServerDnsAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerDnsAliasArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerDnsAlias(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerDnsAliasArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.ServerDnsAliasArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -412,16 +412,16 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server Extended Auditing Policy. */
-  def ServerExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerExtendedAuditingPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerExtendedAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerExtendedAuditingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ServerExtendedAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.ServerExtendedAuditingPolicy(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a MS SQL Server Microsoft Support Auditing Policy. */
-  def ServerMicrosoftSupportAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerMicrosoftSupportAuditingPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicyArgs.builder
     com.pulumi.azure.mssql.ServerMicrosoftSupportAuditingPolicy(name,
         args(argsBuilder).build,
@@ -432,8 +432,8 @@ object mssql:
    * 
    * &gt; **Note:** Security Alert Policy is currently only available for MS SQL databases.
    */
-  def ServerSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerSecurityAlertPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerSecurityAlertPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerSecurityAlertPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ServerSecurityAlertPolicyArgs.builder
     com.pulumi.azure.mssql.ServerSecurityAlertPolicy(name,
         args(argsBuilder).build,
@@ -448,8 +448,8 @@ object mssql:
    * 
    * &gt; **Note:** See [documentation](https://docs.microsoft.com/azure/azure-sql/database/transparent-data-encryption-byok-overview) for important information on how handle lifecycle management of the keys to prevent data lockout.
    */
-  def ServerTransparentDataEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerTransparentDataEncryptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerTransparentDataEncryption(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerTransparentDataEncryptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ServerTransparentDataEncryptionArgs.builder
     com.pulumi.azure.mssql.ServerTransparentDataEncryption(name,
         args(argsBuilder).build,
@@ -462,16 +462,16 @@ object mssql:
    * 
    * &gt; **Note:** This resource cannot be used to enable the Express SQL Vulnerability Assessment configuration, to enable the express configuration, use `expressVulnerabilityAssessmentEnabled` in the `azure.mssql.Server` resource.
    */
-  def ServerVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.ServerVulnerabilityAssessmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerVulnerabilityAssessment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.ServerVulnerabilityAssessmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.mssql.ServerVulnerabilityAssessmentArgs.builder
     com.pulumi.azure.mssql.ServerVulnerabilityAssessment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine */
-  def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMachine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.VirtualMachineArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -485,8 +485,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine Availability Group Listener. */
-  def VirtualMachineAvailabilityGroupListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineAvailabilityGroupListenerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMachineAvailabilityGroupListener(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineAvailabilityGroupListenerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.VirtualMachineAvailabilityGroupListenerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -496,8 +496,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Microsoft SQL Virtual Machine Group. */
-  def VirtualMachineGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualMachineGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.VirtualMachineGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.VirtualMachineGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -514,8 +514,8 @@ object mssql:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Allows you to manage rules for allowing traffic between an Azure SQL server and a subnet of a virtual network. */
-  def VirtualNetworkRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.mssql.VirtualNetworkRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualNetworkRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.mssql.VirtualNetworkRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.mssql.VirtualNetworkRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

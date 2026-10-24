@@ -20,8 +20,8 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def AutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.AutokeyConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.AutokeyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.AutokeyConfigArgs.builder
     com.pulumi.gcp.kms.AutokeyConfig(name,
         args(argsBuilder).build,
@@ -43,8 +43,8 @@ object kms:
    * * How-to Guides
    *     * [Creating a key](https://cloud.google.com/kms/docs/creating-keys#create_a_key)
    */
-  def CryptoKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CryptoKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.CryptoKeyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -314,8 +314,8 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CryptoKeyIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMBindingArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMBinding(name,
         args(argsBuilder).build,
@@ -582,8 +582,8 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CryptoKeyIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMMemberArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMMember(name,
         args(argsBuilder).build,
@@ -850,8 +850,8 @@ object kms:
    * 
    * ## Import
    */
-  def CryptoKeyIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CryptoKeyIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyIAMPolicyArgs.builder
     com.pulumi.gcp.kms.CryptoKeyIAMPolicy(name,
         args(argsBuilder).build,
@@ -868,8 +868,8 @@ object kms:
    * * How-to Guides
    *     * [Creating a key Version](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions/create)
    */
-  def CryptoKeyVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CryptoKeyVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.CryptoKeyVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.CryptoKeyVersionArgs.builder
     com.pulumi.gcp.kms.CryptoKeyVersion(name,
         args(argsBuilder).build,
@@ -887,8 +887,8 @@ object kms:
    * * How-to Guides
    *     * [Creating a Ekm Connection](https://cloud.google.com/kms/docs/create-ekm-connection)
    */
-  def EkmConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EkmConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1478,8 +1478,8 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EkmConnectionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2069,8 +2069,8 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EkmConnectionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2660,8 +2660,8 @@ object kms:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EkmConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EkmConnectionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.EkmConnectionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.EkmConnectionIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2687,8 +2687,8 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def FolderKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FolderKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.FolderKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.FolderKajPolicyConfig(name,
         args(argsBuilder).build,
@@ -2707,8 +2707,8 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def KeyHandle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyHandleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyHandle(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyHandleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.KeyHandleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -2730,8 +2730,8 @@ object kms:
    * * How-to Guides
    *     * [Creating a key ring](https://cloud.google.com/kms/docs/creating-keys#create_a_key_ring)
    */
-  def KeyRing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyRingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyRing(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyRingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.kms.KeyRingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -3165,8 +3165,8 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyRingIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMBindingArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMBinding(name,
         args(argsBuilder).build,
@@ -3597,8 +3597,8 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyRingIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMMemberArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMMember(name,
         args(argsBuilder).build,
@@ -4029,8 +4029,8 @@ object kms:
    * 
    * ## Import
    */
-  def KeyRingIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyRingIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingIAMPolicyArgs.builder
     com.pulumi.gcp.kms.KeyRingIAMPolicy(name,
         args(argsBuilder).build,
@@ -4052,8 +4052,8 @@ object kms:
    * * How-to Guides
    *     * [Importing a key](https://cloud.google.com/kms/docs/importing-a-key)
    */
-  def KeyRingImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.KeyRingImportJobArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeyRingImportJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.KeyRingImportJobArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.KeyRingImportJobArgs.builder
     com.pulumi.gcp.kms.KeyRingImportJob(name,
         args(argsBuilder).build,
@@ -4074,8 +4074,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles).
      */
-    inline def getAutokeyConfig(args: Endofunction[com.pulumi.gcp.kms.inputs.GetAutokeyConfigArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAutokeyConfig(args: Endofunction[com.pulumi.gcp.kms.inputs.GetAutokeyConfigArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetAutokeyConfigResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetAutokeyConfigArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getAutokeyConfig(args(argsBuilder).build,
@@ -4089,8 +4089,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles).
      */
-    inline def getAutokeyConfigPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetAutokeyConfigPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAutokeyConfigPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetAutokeyConfigPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetAutokeyConfigResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetAutokeyConfigPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getAutokeyConfigPlain(args(argsBuilder).build,
@@ -4132,8 +4132,8 @@ object kms:
      * }
      * </pre>
      */
-    inline def getCryptoKeyIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetCryptoKeyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyIamPolicy(args(argsBuilder).build,
@@ -4175,8 +4175,8 @@ object kms:
      * }
      * </pre>
      */
-    inline def getCryptoKeyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetCryptoKeyIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyIamPolicyPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyIamPolicyPlain(args(argsBuilder).build,
@@ -4188,8 +4188,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions).
      */
-    inline def getCryptoKeyLatestVersion(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyLatestVersion(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetCryptoKeyLatestVersionResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyLatestVersion(args(argsBuilder).build,
@@ -4201,8 +4201,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions).
      */
-    inline def getCryptoKeyLatestVersionPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyLatestVersionPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetCryptoKeyLatestVersionResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyLatestVersionPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyLatestVersionPlain(args(argsBuilder).build,
@@ -4214,8 +4214,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions).
      */
-    inline def getCryptoKeyVersions(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyVersions(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetCryptoKeyVersionsResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyVersions(args(argsBuilder).build,
@@ -4227,8 +4227,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions).
      */
-    inline def getCryptoKeyVersionsPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeyVersionsPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetCryptoKeyVersionsResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeyVersionsPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeyVersionsPlain(args(argsBuilder).build,
@@ -4243,8 +4243,8 @@ object kms:
      * A CryptoKey is an interface to key material which can be used to encrypt and decrypt data. A CryptoKey belongs to a
      * Google Cloud KMS KeyRing.
      */
-    inline def getCryptoKeys(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeysArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeys(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeysArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetCryptoKeysResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeysArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeys(args(argsBuilder).build,
@@ -4259,24 +4259,24 @@ object kms:
      * A CryptoKey is an interface to key material which can be used to encrypt and decrypt data. A CryptoKey belongs to a
      * Google Cloud KMS KeyRing.
      */
-    inline def getCryptoKeysPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeysPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCryptoKeysPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetCryptoKeysPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetCryptoKeysResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetCryptoKeysPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getCryptoKeysPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for ekmconnection */
-    inline def getEkmConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEkmConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetEkmConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getEkmConnectionIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for ekmconnection */
-    inline def getEkmConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEkmConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetEkmConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetEkmConnectionIamPolicyPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getEkmConnectionIamPolicyPlain(args(argsBuilder).build,
@@ -4291,8 +4291,8 @@ object kms:
      * A CryptoKey is an interface to key material which can be used to encrypt and decrypt data. A CryptoKey belongs to a
      * Google Cloud KMS KeyRing.
      */
-    inline def getKMSCryptoKey(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSCryptoKey(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSCryptoKeyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSCryptoKey(args(argsBuilder).build,
@@ -4307,8 +4307,8 @@ object kms:
      * A CryptoKey is an interface to key material which can be used to encrypt and decrypt data. A CryptoKey belongs to a
      * Google Cloud KMS KeyRing.
      */
-    inline def getKMSCryptoKeyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSCryptoKeyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSCryptoKeyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSCryptoKeyPlain(args(argsBuilder).build,
@@ -4322,8 +4322,8 @@ object kms:
      * 
      * A CryptoKeyVersion represents an individual cryptographic key, and the associated key material.
      */
-    inline def getKMSCryptoKeyVersion(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSCryptoKeyVersion(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSCryptoKeyVersionResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSCryptoKeyVersion(args(argsBuilder).build,
@@ -4337,8 +4337,8 @@ object kms:
      * 
      * A CryptoKeyVersion represents an individual cryptographic key, and the associated key material.
      */
-    inline def getKMSCryptoKeyVersionPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSCryptoKeyVersionPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSCryptoKeyVersionResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSCryptoKeyVersionPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSCryptoKeyVersionPlain(args(argsBuilder).build,
@@ -4353,8 +4353,8 @@ object kms:
      * A KeyRing is a grouping of CryptoKeys for organizational purposes. A KeyRing belongs to a Google Cloud Platform Project
      * and resides in a specific location.
      */
-    inline def getKMSKeyRing(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSKeyRingArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSKeyRing(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSKeyRingArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSKeyRingResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSKeyRingArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSKeyRing(args(argsBuilder).build,
@@ -4369,8 +4369,8 @@ object kms:
      * A KeyRing is a grouping of CryptoKeys for organizational purposes. A KeyRing belongs to a Google Cloud Platform Project
      * and resides in a specific location.
      */
-    inline def getKMSKeyRingPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSKeyRingPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSKeyRingPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSKeyRingPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSKeyRingResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSKeyRingPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSKeyRingPlain(args(argsBuilder).build,
@@ -4388,8 +4388,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecret(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecret(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSSecretResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecret(args(argsBuilder).build,
@@ -4407,8 +4407,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecretPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecretPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSSecretResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretPlain(args(argsBuilder).build,
@@ -4426,8 +4426,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecretAsymmetric(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecretAsymmetric(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSSecretAsymmetricResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretAsymmetric(args(argsBuilder).build,
@@ -4445,8 +4445,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecretAsymmetricPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecretAsymmetricPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSSecretAsymmetricResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretAsymmetricPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretAsymmetricPlain(args(argsBuilder).build,
@@ -4466,8 +4466,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecretCiphertext(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecretCiphertext(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKMSSecretCiphertextResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretCiphertext(args(argsBuilder).build,
@@ -4487,8 +4487,8 @@ object kms:
      * logging output, plan output, or state output.  Please take care to secure your secret
      * data outside of resource definitions.
      */
-    inline def getKMSSecretCiphertextPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKMSSecretCiphertextPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKMSSecretCiphertextResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKMSSecretCiphertextPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKMSSecretCiphertextPlain(args(argsBuilder).build,
@@ -4502,8 +4502,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles).
      */
-    inline def getKeyHandle(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandleArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKeyHandle(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandleArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKeyHandleResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyHandleArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyHandle(args(argsBuilder).build,
@@ -4517,8 +4517,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles).
      */
-    inline def getKeyHandlePlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKeyHandlePlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKeyHandleResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyHandlePlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyHandlePlain(args(argsBuilder).build,
@@ -4532,8 +4532,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles/list).
      */
-    inline def getKeyHandles(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKeyHandles(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKeyHandlesResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyHandlesArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyHandles(args(argsBuilder).build,
@@ -4547,8 +4547,8 @@ object kms:
      * and
      * [API](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyHandles/list).
      */
-    inline def getKeyHandlesPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKeyHandlesPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyHandlesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKeyHandlesResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyHandlesPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyHandlesPlain(args(argsBuilder).build,
@@ -4590,8 +4590,8 @@ object kms:
      * }
      * </pre>
      */
-    inline def getKeyRingIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKeyRingIamPolicy(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKeyRingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyRingIamPolicy(args(argsBuilder).build,
@@ -4633,8 +4633,8 @@ object kms:
      * }
      * </pre>
      */
-    inline def getKeyRingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKeyRingIamPolicyPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKeyRingIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyRingIamPolicyPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyRingIamPolicyPlain(args(argsBuilder).build,
@@ -4648,8 +4648,8 @@ object kms:
      * 
      * A key ring organizes keys in a specific Google Cloud location and lets you manage access control on groups of keys. A key ring&#39;s name does not need to be unique across a Google Cloud project, but must be unique within a given location. After creation, a key ring cannot be deleted. Key rings don&#39;t incur any costs.
      */
-    inline def getKeyRings(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKeyRings(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.kms.outputs.GetKeyRingsResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyRingsArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyRings(args(argsBuilder).build,
@@ -4663,8 +4663,8 @@ object kms:
      * 
      * A key ring organizes keys in a specific Google Cloud location and lets you manage access control on groups of keys. A key ring&#39;s name does not need to be unique across a Google Cloud project, but must be unique within a given location. After creation, a key ring cannot be deleted. Key rings don&#39;t incur any costs.
      */
-    inline def getKeyRingsPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKeyRingsPlain(args: Endofunction[com.pulumi.gcp.kms.inputs.GetKeyRingsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.kms.outputs.GetKeyRingsResult] =
       val argsBuilder = com.pulumi.gcp.kms.inputs.GetKeyRingsPlainArgs.builder
       com.pulumi.gcp.kms.KmsFunctions.getKeyRingsPlain(args(argsBuilder).build,
@@ -4687,8 +4687,8 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def OrganizationKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def OrganizationKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.OrganizationKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.OrganizationKajPolicyConfig(name,
         args(argsBuilder).build,
@@ -4708,8 +4708,8 @@ object kms:
    * * How-to Guides
    *     * [Cloud KMS with Autokey](https://cloud.google.com/kms/docs/kms-with-autokey)
    */
-  def ProjectAutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectAutokeyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.ProjectAutokeyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectAutokeyConfig(name,
         args(argsBuilder).build,
@@ -4732,8 +4732,8 @@ object kms:
    * * How-to Guides
    *     * [Set default Key Access Justifications policy](https://cloud.google.com/assured-workloads/key-access-justifications/docs/set-default-policy)
    */
-  def ProjectKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ProjectKajPolicyConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.ProjectKajPolicyConfigArgs.builder
     com.pulumi.gcp.kms.ProjectKajPolicyConfig(name,
         args(argsBuilder).build,
@@ -4753,8 +4753,8 @@ object kms:
    * * How-to Guides
    *     * [Encrypting and decrypting data with a symmetric key](https://cloud.google.com/kms/docs/encrypt-decrypt)
    */
-  def SecretCiphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.kms.SecretCiphertextArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecretCiphertext(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.kms.SecretCiphertextArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.kms.SecretCiphertextArgs.builder
     com.pulumi.gcp.kms.SecretCiphertext(name,
         args(argsBuilder).build,

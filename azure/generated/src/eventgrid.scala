@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object eventgrid:
   /** Manages an EventGrid Domain */
-  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.DomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Domain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.DomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.DomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -25,8 +25,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Domain Topic */
-  def DomainTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.DomainTopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.DomainTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.DomainTopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -36,8 +36,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Event Subscription */
-  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.EventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.EventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -54,104 +54,104 @@ object eventgrid:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing EventGrid Domain */
-    inline def getDomain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDomain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetDomainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getDomain(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventGrid Domain */
-    inline def getDomainPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDomainPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetDomainResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetDomainPlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getDomainPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventGrid Domain Topic */
-    inline def getDomainTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainTopicArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDomainTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainTopicArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetDomainTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetDomainTopicArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getDomainTopic(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventGrid Domain Topic */
-    inline def getDomainTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainTopicPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDomainTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetDomainTopicPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetDomainTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetDomainTopicPlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getDomainTopicPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Event Grid Partner Namespace */
-    inline def getPartnerNamespace(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerNamespaceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPartnerNamespace(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerNamespaceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetPartnerNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetPartnerNamespaceArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getPartnerNamespace(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Event Grid Partner Namespace */
-    inline def getPartnerNamespacePlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerNamespacePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPartnerNamespacePlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerNamespacePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetPartnerNamespaceResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetPartnerNamespacePlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getPartnerNamespacePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventGrid Partner Registration */
-    inline def getPartnerRegistration(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPartnerRegistration(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetPartnerRegistrationResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getPartnerRegistration(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventGrid Partner Registration */
-    inline def getPartnerRegistrationPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPartnerRegistrationPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetPartnerRegistrationResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetPartnerRegistrationPlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getPartnerRegistrationPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Event Grid System Topic */
-    inline def getSystemTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetSystemTopicArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSystemTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetSystemTopicArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetSystemTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetSystemTopicArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getSystemTopic(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Event Grid System Topic */
-    inline def getSystemTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetSystemTopicPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSystemTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetSystemTopicPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetSystemTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetSystemTopicPlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getSystemTopicPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing EventGrid Topic */
-    inline def getTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetTopicArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTopic(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetTopicArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.eventgrid.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetTopicArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getTopic(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing EventGrid Topic */
-    inline def getTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetTopicPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTopicPlain(args: Endofunction[com.pulumi.azure.eventgrid.inputs.GetTopicPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.eventgrid.outputs.GetTopicResult] =
       val argsBuilder = com.pulumi.azure.eventgrid.inputs.GetTopicPlainArgs.builder
       com.pulumi.azure.eventgrid.EventgridFunctions.getTopicPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an EventGrid Namespace */
-  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Namespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.NamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -168,8 +168,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Namespace Topic. */
-  def NamespaceTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceTopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NamespaceTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.NamespaceTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.NamespaceTopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -179,8 +179,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Configuration. */
-  def PartnerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerConfigurationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PartnerConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerConfigurationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -194,8 +194,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid Partner Namespace. */
-  def PartnerNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerNamespaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PartnerNamespace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerNamespaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerNamespaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -212,8 +212,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid Partner Registration. */
-  def PartnerRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerRegistrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PartnerRegistration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.PartnerRegistrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.PartnerRegistrationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -230,8 +230,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Event Grid System Topic. */
-  def SystemTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SystemTopic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.SystemTopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -248,8 +248,8 @@ object eventgrid:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an EventGrid System Topic Event Subscription. */
-  def SystemTopicEventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SystemTopicEventSubscription(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.SystemTopicEventSubscriptionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -263,8 +263,8 @@ object eventgrid:
    * 
    * &gt; **Note:** at this time EventGrid Topics are only available in a limited number of regions.
    */
-  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.eventgrid.TopicArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Topic(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.eventgrid.TopicArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.eventgrid.TopicArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

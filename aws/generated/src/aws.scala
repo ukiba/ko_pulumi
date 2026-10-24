@@ -14,16 +14,16 @@ object aws:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Parses an ARN into its constituent parts. */
-    inline def getArn(args: Endofunction[com.pulumi.aws.inputs.GetArnArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getArn(args: Endofunction[com.pulumi.aws.inputs.GetArnArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetArnResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetArnArgs.builder
       com.pulumi.aws.AwsFunctions.getArn(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Parses an ARN into its constituent parts. */
-    inline def getArnPlain(args: Endofunction[com.pulumi.aws.inputs.GetArnPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getArnPlain(args: Endofunction[com.pulumi.aws.inputs.GetArnPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetArnResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetArnPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getArnPlain(args(argsBuilder).build,
@@ -42,8 +42,8 @@ object aws:
      * This is different from the `aws.getAvailabilityZones` (plural) data source,
      * which provides a list of the available zones.
      */
-    inline def getAvailabilityZone(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZoneArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilityZone(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZoneArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetAvailabilityZoneResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZoneArgs.builder
       com.pulumi.aws.AwsFunctions.getAvailabilityZone(args(argsBuilder).build,
@@ -62,8 +62,8 @@ object aws:
      * This is different from the `aws.getAvailabilityZones` (plural) data source,
      * which provides a list of the available zones.
      */
-    inline def getAvailabilityZonePlain(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilityZonePlain(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetAvailabilityZoneResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonePlainArgs.builder
       com.pulumi.aws.AwsFunctions.getAvailabilityZonePlain(args(argsBuilder).build,
@@ -79,8 +79,8 @@ object aws:
      * 
      * &gt; When [Local Zones](https://aws.amazon.com/about-aws/global-infrastructure/localzones/) are enabled in a region, by default the API and this data source include both Local Zones and Availability Zones. To return only Availability Zones, see the example section below.
      */
-    inline def getAvailabilityZones(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilityZones(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetAvailabilityZonesResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesArgs.builder
       com.pulumi.aws.AwsFunctions.getAvailabilityZones(args(argsBuilder).build,
@@ -96,24 +96,24 @@ object aws:
      * 
      * &gt; When [Local Zones](https://aws.amazon.com/about-aws/global-infrastructure/localzones/) are enabled in a region, by default the API and this data source include both Local Zones and Availability Zones. To return only Availability Zones, see the example section below.
      */
-    inline def getAvailabilityZonesPlain(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAvailabilityZonesPlain(args: Endofunction[com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetAvailabilityZonesResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetAvailabilityZonesPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getAvailabilityZonesPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the Account ID of the [AWS Billing and Cost Management Service Account](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2) for the purpose of permitting in S3 bucket policy. */
-    inline def getBillingServiceAccount(args: Endofunction[com.pulumi.aws.inputs.GetBillingServiceAccountArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getBillingServiceAccount(args: Endofunction[com.pulumi.aws.inputs.GetBillingServiceAccountArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetBillingServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetBillingServiceAccountArgs.builder
       com.pulumi.aws.AwsFunctions.getBillingServiceAccount(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the Account ID of the [AWS Billing and Cost Management Service Account](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2) for the purpose of permitting in S3 bucket policy. */
-    inline def getBillingServiceAccountPlain(args: Endofunction[com.pulumi.aws.inputs.GetBillingServiceAccountPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getBillingServiceAccountPlain(args: Endofunction[com.pulumi.aws.inputs.GetBillingServiceAccountPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetBillingServiceAccountResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetBillingServiceAccountPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getBillingServiceAccountPlain(args(argsBuilder).build,
@@ -123,8 +123,8 @@ object aws:
      * Use this data source to get the access to the effective Account ID, User ID, and ARN in
      * which this provider is authorized.
      */
-    inline def getCallerIdentity(args: Endofunction[com.pulumi.aws.inputs.GetCallerIdentityArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getCallerIdentity(args: Endofunction[com.pulumi.aws.inputs.GetCallerIdentityArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetCallerIdentityResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetCallerIdentityArgs.builder
       com.pulumi.aws.AwsFunctions.getCallerIdentity(args(argsBuilder).build,
@@ -134,8 +134,8 @@ object aws:
      * Use this data source to get the access to the effective Account ID, User ID, and ARN in
      * which this provider is authorized.
      */
-    inline def getCallerIdentityPlain(args: Endofunction[com.pulumi.aws.inputs.GetCallerIdentityPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getCallerIdentityPlain(args: Endofunction[com.pulumi.aws.inputs.GetCallerIdentityPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetCallerIdentityResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetCallerIdentityPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getCallerIdentityPlain(args(argsBuilder).build,
@@ -146,8 +146,8 @@ object aws:
      * 
      * With this data source, you can apply default tags to resources not _directly_ managed by a resource, such as the instances underneath an Auto Scaling group or the volumes created for an EC2 instance.
      */
-    inline def getDefaultTags(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultTags(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetDefaultTagsResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetDefaultTagsArgs.builder
       com.pulumi.aws.AwsFunctions.getDefaultTags(args(argsBuilder).build,
@@ -158,24 +158,24 @@ object aws:
      * 
      * With this data source, you can apply default tags to resources not _directly_ managed by a resource, such as the instances underneath an Auto Scaling group or the volumes created for an EC2 instance.
      */
-    inline def getDefaultTagsPlain(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDefaultTagsPlain(args: Endofunction[com.pulumi.aws.inputs.GetDefaultTagsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetDefaultTagsResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetDefaultTagsPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getDefaultTagsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the IP ranges of various AWS products and services. For more information about the contents of this data source and required JSON syntax if referencing a custom URL, see the [AWS IP Address Ranges documentation](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html). */
-    inline def getIpRanges(args: Endofunction[com.pulumi.aws.inputs.GetIpRangesArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getIpRanges(args: Endofunction[com.pulumi.aws.inputs.GetIpRangesArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetIpRangesResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetIpRangesArgs.builder
       com.pulumi.aws.AwsFunctions.getIpRanges(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the IP ranges of various AWS products and services. For more information about the contents of this data source and required JSON syntax if referencing a custom URL, see the [AWS IP Address Ranges documentation](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html). */
-    inline def getIpRangesPlain(args: Endofunction[com.pulumi.aws.inputs.GetIpRangesPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getIpRangesPlain(args: Endofunction[com.pulumi.aws.inputs.GetIpRangesPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetIpRangesResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetIpRangesPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getIpRangesPlain(args(argsBuilder).build,
@@ -185,8 +185,8 @@ object aws:
      * Use this data source to lookup information about the current AWS partition in
      * which the provider is working.
      */
-    inline def getPartition(args: Endofunction[com.pulumi.aws.inputs.GetPartitionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPartition(args: Endofunction[com.pulumi.aws.inputs.GetPartitionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetPartitionResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetPartitionArgs.builder
       com.pulumi.aws.AwsFunctions.getPartition(args(argsBuilder).build,
@@ -196,8 +196,8 @@ object aws:
      * Use this data source to lookup information about the current AWS partition in
      * which the provider is working.
      */
-    inline def getPartitionPlain(args: Endofunction[com.pulumi.aws.inputs.GetPartitionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPartitionPlain(args: Endofunction[com.pulumi.aws.inputs.GetPartitionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetPartitionResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetPartitionPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getPartitionPlain(args(argsBuilder).build,
@@ -211,8 +211,8 @@ object aws:
      * can be useful in a child module which is inheriting an AWS provider
      * configuration from its parent module.
      */
-    inline def getRegion(args: Endofunction[com.pulumi.aws.inputs.GetRegionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRegion(args: Endofunction[com.pulumi.aws.inputs.GetRegionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetRegionResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetRegionArgs.builder
       com.pulumi.aws.AwsFunctions.getRegion(args(argsBuilder).build,
@@ -226,56 +226,56 @@ object aws:
      * can be useful in a child module which is inheriting an AWS provider
      * configuration from its parent module.
      */
-    inline def getRegionPlain(args: Endofunction[com.pulumi.aws.inputs.GetRegionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRegionPlain(args: Endofunction[com.pulumi.aws.inputs.GetRegionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetRegionResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetRegionPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getRegionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides information about AWS Regions. Can be used to filter regions i.e., by Opt-In status or only regions enabled for current account. To get details like endpoint and description of each region the data source can be combined with the `aws.getRegion` data source. */
-    inline def getRegions(args: Endofunction[com.pulumi.aws.inputs.GetRegionsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRegions(args: Endofunction[com.pulumi.aws.inputs.GetRegionsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetRegionsArgs.builder
       com.pulumi.aws.AwsFunctions.getRegions(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides information about AWS Regions. Can be used to filter regions i.e., by Opt-In status or only regions enabled for current account. To get details like endpoint and description of each region the data source can be combined with the `aws.getRegion` data source. */
-    inline def getRegionsPlain(args: Endofunction[com.pulumi.aws.inputs.GetRegionsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRegionsPlain(args: Endofunction[com.pulumi.aws.inputs.GetRegionsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetRegionsResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetRegionsPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getRegionsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to compose and decompose AWS service DNS names. */
-    inline def getService(args: Endofunction[com.pulumi.aws.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.aws.inputs.GetServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetServiceArgs.builder
       com.pulumi.aws.AwsFunctions.getService(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to compose and decompose AWS service DNS names. */
-    inline def getServicePlain(args: Endofunction[com.pulumi.aws.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.aws.inputs.GetServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetServicePlainArgs.builder
       com.pulumi.aws.AwsFunctions.getServicePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to create a Service Principal Name for a service in a given region. Service Principal Names should always end in the standard global format: `{servicename}.amazonaws.com`. However, in some AWS partitions, AWS may expect a different format. */
-    inline def getServicePrincipal(args: Endofunction[com.pulumi.aws.inputs.GetServicePrincipalArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServicePrincipal(args: Endofunction[com.pulumi.aws.inputs.GetServicePrincipalArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.outputs.GetServicePrincipalResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetServicePrincipalArgs.builder
       com.pulumi.aws.AwsFunctions.getServicePrincipal(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to create a Service Principal Name for a service in a given region. Service Principal Names should always end in the standard global format: `{servicename}.amazonaws.com`. However, in some AWS partitions, AWS may expect a different format. */
-    inline def getServicePrincipalPlain(args: Endofunction[com.pulumi.aws.inputs.GetServicePrincipalPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicePrincipalPlain(args: Endofunction[com.pulumi.aws.inputs.GetServicePrincipalPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.outputs.GetServicePrincipalResult] =
       val argsBuilder = com.pulumi.aws.inputs.GetServicePrincipalPlainArgs.builder
       com.pulumi.aws.AwsFunctions.getServicePrincipalPlain(args(argsBuilder).build,
@@ -287,8 +287,8 @@ object aws:
    * construction to achieve fine-grained programmatic control over provider settings. See the
    * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
    */
-  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ProviderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Provider(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ProviderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ProviderArgs.builder
     com.pulumi.aws.Provider(name,
         args(argsBuilder).build,

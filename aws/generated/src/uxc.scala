@@ -13,8 +13,8 @@ object uxc:
    * 
    * &gt; **Note:** The UXC API does not provide a delete operation. Destroying this resource resets all customizations to their defaults: `accountColor` is set to `none`, and both `visibleRegions` and `visibleServices` are cleared to allow all regions and services.
    */
-  def AccountCustomizations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.uxc.AccountCustomizationsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccountCustomizations(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.uxc.AccountCustomizationsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.uxc.AccountCustomizationsArgs.builder
     com.pulumi.aws.uxc.AccountCustomizations(name,
         args(argsBuilder).build,

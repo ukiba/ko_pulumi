@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ces:
   /** Description */
-  def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.AgentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Agent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.AgentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.AgentArgs.builder
     com.pulumi.gcp.ces.Agent(name,
         args(argsBuilder).build,
@@ -19,8 +19,8 @@ object ces:
    * 
    * * [API documentation](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rest/v1/projects.locations.apps)
    */
-  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.AppArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def App(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.AppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.AppArgs.builder
     com.pulumi.gcp.ces.App(name,
         args(argsBuilder).build,
@@ -40,16 +40,16 @@ object ces:
    * your `gcp.ces.App` resource to prevent Terraform from detecting drift
    * and clearing the field on every plan.
    */
-  def AppRootAgentAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.AppRootAgentAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppRootAgentAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.AppRootAgentAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.AppRootAgentAssociationArgs.builder
     com.pulumi.gcp.ces.AppRootAgentAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def AppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.AppVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.AppVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.AppVersionArgs.builder
     com.pulumi.gcp.ces.AppVersion(name,
         args(argsBuilder).build,
@@ -61,8 +61,8 @@ object ces:
    * &gt; **Note:**  All arguments marked as write-only values will not be stored in the state: `instagram_credentials.auth_code_wo`, `whatsapp_credentials.auth_code_wo`, `whatsapp_credentials.pin_wo`.
    * Read more about Write-only Arguments.
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.DeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.DeploymentArgs.builder
     com.pulumi.gcp.ces.Deployment(name,
         args(argsBuilder).build,
@@ -78,24 +78,24 @@ object ces:
    * 
    * * [API documentation](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rest/v1beta/projects.locations.apps.evaluations)
    */
-  def Evaluation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.EvaluationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Evaluation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.EvaluationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.EvaluationArgs.builder
     com.pulumi.gcp.ces.Evaluation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** An example represents a sample conversation between the user and the agent(s). */
-  def Example(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.ExampleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Example(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.ExampleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.ExampleArgs.builder
     com.pulumi.gcp.ces.Example(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.GuardrailArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Guardrail(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.GuardrailArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.GuardrailArgs.builder
     com.pulumi.gcp.ces.Guardrail(name,
         args(argsBuilder).build,
@@ -113,8 +113,8 @@ object ces:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/customer-engagement-ai/docs)
    */
-  def SecuritySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.SecuritySettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecuritySettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.SecuritySettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.SecuritySettingsArgs.builder
     com.pulumi.gcp.ces.SecuritySettings(name,
         args(argsBuilder).build,
@@ -131,16 +131,16 @@ object ces:
    * 
    * Consequently, blocks like `openApiTool`, `mcpTool`, `connectorTool`, `remoteAgentTool`, and `systemTool` are marked as **read-only (output-only)** in this resource. They are populated by the server for reference purposes only (e.g., after importing an existing tool into your state) and **cannot** be configured in your Terraform HCL configuration.
    */
-  def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.ToolArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Tool(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.ToolArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.ToolArgs.builder
     com.pulumi.gcp.ces.Tool(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Description */
-  def Toolset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.ces.ToolsetArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Toolset(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.ces.ToolsetArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.ces.ToolsetArgs.builder
     com.pulumi.gcp.ces.Toolset(name,
         args(argsBuilder).build,

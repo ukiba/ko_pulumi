@@ -12,8 +12,8 @@ object servicenetworking:
    * and
    * [API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.connections).
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.servicenetworking.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.servicenetworking.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.servicenetworking.ConnectionArgs.builder
     com.pulumi.gcp.servicenetworking.Connection(name,
         args(argsBuilder).build,
@@ -26,8 +26,8 @@ object servicenetworking:
    * 
    * For more information see [the API](https://cloud.google.com/service-infrastructure/docs/service-networking/reference/rest/v1/services.projects.global.networks.peeredDnsDomains)
    */
-  def PeeredDnsDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.servicenetworking.PeeredDnsDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PeeredDnsDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.servicenetworking.PeeredDnsDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.servicenetworking.PeeredDnsDomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -43,15 +43,15 @@ object servicenetworking:
     //
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
-    inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getPeeredDnsDomain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainArgs.builder
       com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomain(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPeeredDnsDomainPlain(args: Endofunction[com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.servicenetworking.outputs.GetPeeredDnsDomainResult] =
       val argsBuilder = com.pulumi.gcp.servicenetworking.inputs.GetPeeredDnsDomainPlainArgs.builder
       com.pulumi.gcp.servicenetworking.ServicenetworkingFunctions.getPeeredDnsDomainPlain(args(argsBuilder).build,
@@ -96,8 +96,8 @@ object servicenetworking:
    * underlying VPC Service Controls configuration for the service
    * producer network.
    */
-  def VpcServiceControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VpcServiceControls(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.servicenetworking.VpcServiceControlsArgs.builder
     com.pulumi.gcp.servicenetworking.VpcServiceControls(name,
         args(argsBuilder).build,

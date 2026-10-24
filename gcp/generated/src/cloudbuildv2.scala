@@ -14,16 +14,16 @@ object cloudbuildv2:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudbuildv2.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyArgs.builder
       com.pulumi.gcp.cloudbuildv2.Cloudbuildv2Functions.getConnectionIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for connection */
-    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getConnectionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudbuildv2.outputs.GetConnectionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudbuildv2.inputs.GetConnectionIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudbuildv2.Cloudbuildv2Functions.getConnectionIamPolicyPlain(args(argsBuilder).build,
@@ -38,8 +38,8 @@ object cloudbuildv2:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/build/docs)
    */
-  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Connection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -354,8 +354,8 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -670,8 +670,8 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -986,8 +986,8 @@ object cloudbuildv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ConnectionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConnectionIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.ConnectionIAMPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1005,8 +1005,8 @@ object cloudbuildv2:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/build/docs)
    */
-  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.RepositoryArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Repository(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudbuildv2.RepositoryArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudbuildv2.RepositoryArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

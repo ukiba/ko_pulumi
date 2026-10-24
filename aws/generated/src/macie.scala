@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object macie:
   /** Provides a resource to manage an [AWS Macie Custom Data Identifier](https://docs.aws.amazon.com/macie/latest/APIReference/custom-data-identifiers-id.html). */
-  def CustomDataIdentifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.macie.CustomDataIdentifierArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def CustomDataIdentifier(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.macie.CustomDataIdentifierArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.macie.CustomDataIdentifierArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -23,8 +23,8 @@ object macie:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an [Amazon Macie Findings Filter](https://docs.aws.amazon.com/macie/latest/APIReference/findingsfilters-id.html). */
-  def FindingsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.macie.FindingsFilterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FindingsFilter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.macie.FindingsFilterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.macie.FindingsFilterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

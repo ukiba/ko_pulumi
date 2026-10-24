@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object customip:
   /** Manages a custom IPv4 prefix or custom IPv6 prefix. */
-  def Prefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.customip.PrefixArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Prefix(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.customip.PrefixArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.customip.PrefixArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

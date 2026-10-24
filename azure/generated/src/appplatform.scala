@@ -18,8 +18,8 @@ object appplatform:
      * 
      * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApp` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    inline def getSpringCloudApp(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSpringCloudApp(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.appplatform.outputs.GetSpringCloudAppResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudAppArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudApp(args(argsBuilder).build,
@@ -30,8 +30,8 @@ object appplatform:
      * 
      * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApp` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    inline def getSpringCloudAppPlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSpringCloudAppPlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appplatform.outputs.GetSpringCloudAppResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudAppPlainArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudAppPlain(args(argsBuilder).build,
@@ -42,8 +42,8 @@ object appplatform:
      * 
      * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudService` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    inline def getSpringCloudService(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSpringCloudService(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.appplatform.outputs.GetSpringCloudServiceResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudServiceArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudService(args(argsBuilder).build,
@@ -54,8 +54,8 @@ object appplatform:
      * 
      * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudService` data source is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
      */
-    inline def getSpringCloudServicePlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSpringCloudServicePlain(args: Endofunction[com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.appplatform.outputs.GetSpringCloudServiceResult] =
       val argsBuilder = com.pulumi.azure.appplatform.inputs.GetSpringCloudServicePlainArgs.builder
       com.pulumi.azure.appplatform.AppplatformFunctions.getSpringCloudServicePlain(args(argsBuilder).build,
@@ -68,8 +68,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudAccelerator` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAcceleratorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAcceleratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAcceleratorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -83,8 +83,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudActiveDeployment` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudActiveDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudActiveDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudActiveDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudActiveDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.appplatform.SpringCloudActiveDeploymentArgs.builder
     com.pulumi.azure.appplatform.SpringCloudActiveDeployment(name,
         args(argsBuilder).build,
@@ -97,8 +97,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApiPortal` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudApiPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApiPortalArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudApiPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApiPortalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudApiPortalArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -114,8 +114,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApiPortalCustomDomain` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudApiPortalCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApiPortalCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudApiPortalCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApiPortalCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudApiPortalCustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -129,8 +129,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApp` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAppArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -144,8 +144,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudAppCosmosDBAssociation` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudAppCosmosDBAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppCosmosDBAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudAppCosmosDBAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppCosmosDBAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAppCosmosDBAssociationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -161,8 +161,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudAppDynamicsApplicationPerformanceMonitoring` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudAppDynamicsApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudAppDynamicsApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAppDynamicsApplicationPerformanceMonitoringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -176,8 +176,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudAppMysqlAssociation` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudAppMysqlAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppMysqlAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudAppMysqlAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppMysqlAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAppMysqlAssociationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -191,8 +191,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudAppRedisAssociation` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudAppRedisAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppRedisAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudAppRedisAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudAppRedisAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudAppRedisAssociationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -208,8 +208,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApplicationInsightsApplicationPerformanceMonitoring` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudApplicationInsightsApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudApplicationInsightsApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudApplicationInsightsApplicationPerformanceMonitoringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -225,8 +225,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudApplicationLiveView` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudApplicationLiveView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApplicationLiveViewArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudApplicationLiveView(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudApplicationLiveViewArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudApplicationLiveViewArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -242,8 +242,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudBuildDeployment` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudBuildDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuildDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudBuildDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuildDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudBuildDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -259,8 +259,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudBuildPackBinding` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudBuildPackBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuildPackBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudBuildPackBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuildPackBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudBuildPackBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -276,8 +276,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudBuilder` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuilderArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudBuilder(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudBuilderArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudBuilderArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -299,8 +299,8 @@ object appplatform:
    * \$ pulumi import azure:appplatform/springCloudCertificate:SpringCloudCertificate example /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/resourcegroup1/providers/Microsoft.AppPlatform/spring/spring1/certificates/cert1
    * ```
    */
-  def SpringCloudCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudCertificateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -316,8 +316,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudConfigurationService` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudConfigurationService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudConfigurationServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudConfigurationService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudConfigurationServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudConfigurationServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -331,8 +331,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudConnection` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudConnectionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudConnection(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudConnectionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudConnectionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -346,8 +346,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudContainerDeployment` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudContainerDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudContainerDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudContainerDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudContainerDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudContainerDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -361,8 +361,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudCustomDomain` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudCustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -376,8 +376,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudCustomizedAccelerator` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudCustomizedAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCustomizedAcceleratorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudCustomizedAccelerator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudCustomizedAcceleratorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudCustomizedAcceleratorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -393,8 +393,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudDevToolPortal` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudDevToolPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudDevToolPortalArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudDevToolPortal(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudDevToolPortalArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudDevToolPortalArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -410,8 +410,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudDynatraceApplicationPerformanceMonitoring` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudDynatraceApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudDynatraceApplicationPerformanceMonitoringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudDynatraceApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudDynatraceApplicationPerformanceMonitoringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudDynatraceApplicationPerformanceMonitoringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -427,8 +427,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudElasticApplicationPerformanceMonitoring` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudElasticApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudElasticApplicationPerformanceMonitoringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudElasticApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudElasticApplicationPerformanceMonitoringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudElasticApplicationPerformanceMonitoringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -444,8 +444,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudGateway` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudGateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudGatewayArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -461,8 +461,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudGatewayCustomDomain` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudGatewayCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayCustomDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudGatewayCustomDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayCustomDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudGatewayCustomDomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -478,8 +478,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudGatewayRouteConfig` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudGatewayRouteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayRouteConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudGatewayRouteConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudGatewayRouteConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudGatewayRouteConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -495,8 +495,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudJavaDeployment` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudJavaDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudJavaDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudJavaDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudJavaDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudJavaDeploymentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -512,8 +512,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudNewRelicApplicationPerformanceMonitoring` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudNewRelicApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudNewRelicApplicationPerformanceMonitoringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudNewRelicApplicationPerformanceMonitoring(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudNewRelicApplicationPerformanceMonitoringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudNewRelicApplicationPerformanceMonitoringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -527,8 +527,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudService` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -549,8 +549,8 @@ object appplatform:
    * 
    * &gt; **Note:** Azure Spring Apps is now deprecated and will be retired on 2028-05-31 - as such the `azure.appplatform.SpringCloudStorage` resource is deprecated and will be removed in a future major version of the AzureRM Provider. See https://aka.ms/asaretirement for more information.
    */
-  def SpringCloudStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudStorageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SpringCloudStorage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.appplatform.SpringCloudStorageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.appplatform.SpringCloudStorageArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

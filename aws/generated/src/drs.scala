@@ -9,8 +9,8 @@ object drs:
    * 
    * &gt; **NOTE:** Your configuration must use the PIT policy shown in the basic configuration due to AWS rules. The only value that you can change is the `retentionDuration` of `ruleId` 3.
    */
-  def ReplicationConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ReplicationConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.drs.ReplicationConfigurationTemplateArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

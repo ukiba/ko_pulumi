@@ -16,8 +16,8 @@ object privilegedaccessmanager:
    *     * [How to create an Entitlement](https://cloud.google.com/iam/docs/pam-create-entitlements)
    *     * [Official Documentation](https://cloud.google.com/iam/docs/pam-overview)
    */
-  def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Entitlement(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.EntitlementArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Entitlement(name,
         args(argsBuilder).build,
@@ -39,8 +39,8 @@ object privilegedaccessmanager:
      * * How-to guides
      *   * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    inline def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEntitlement(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementArgs.builder
       com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlement(args(argsBuilder).build,
@@ -55,8 +55,8 @@ object privilegedaccessmanager:
      * * How-to guides
      *   * [Official documentation](https://cloud.google.com/iam/docs/pam-overview)
      */
-    inline def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEntitlementPlain(args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.privilegedaccessmanager.outputs.GetEntitlementResult] =
       val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.inputs.GetEntitlementPlainArgs.builder
       com.pulumi.gcp.privilegedaccessmanager.PrivilegedaccessmanagerFunctions.getEntitlementPlain(args(argsBuilder).build,
@@ -75,8 +75,8 @@ object privilegedaccessmanager:
    *     * [Configure Privileged Access Manager settings](https://cloud.google.com/iam/docs/pam-configure-settings)
    *     * [Official Documentation](https://cloud.google.com/iam/docs/pam-overview)
    */
-  def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.privilegedaccessmanager.SettingsArgs.builder
     com.pulumi.gcp.privilegedaccessmanager.Settings(name,
         args(argsBuilder).build,

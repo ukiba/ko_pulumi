@@ -17,8 +17,8 @@ object serviceusage:
    *     * [Managing Service Quota](https://cloud.google.com/service-usage/docs/manage-quota)
    *     * [REST API documentation](https://cloud.google.com/service-usage/docs/reference/rest/v1beta1/services.consumerQuotaMetrics.limits.consumerOverrides)
    */
-  def ConsumerQuotaOverride(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConsumerQuotaOverride(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.serviceusage.ConsumerQuotaOverrideArgs.builder
     com.pulumi.gcp.serviceusage.ConsumerQuotaOverride(name,
         args(argsBuilder).build,
@@ -48,8 +48,8 @@ object serviceusage:
    * \$ pulumi import gcp:serviceusage/v2ConsumerPolicy:V2ConsumerPolicy default {{parent}}/consumerPolicies/{{name}}
    * ```
    */
-  def V2ConsumerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def V2ConsumerPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.serviceusage.V2ConsumerPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

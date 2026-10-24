@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object databricks:
   /** Manages a Databricks Access Connector */
-  def AccessConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.databricks.AccessConnectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AccessConnector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.databricks.AccessConnectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.AccessConnectorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,56 +32,56 @@ object databricks:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Databricks Access Connector. */
-    inline def getAccessConnector(args: Endofunction[com.pulumi.azure.databricks.inputs.GetAccessConnectorArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAccessConnector(args: Endofunction[com.pulumi.azure.databricks.inputs.GetAccessConnectorArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.databricks.outputs.GetAccessConnectorResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetAccessConnectorArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getAccessConnector(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Databricks Access Connector. */
-    inline def getAccessConnectorPlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetAccessConnectorPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAccessConnectorPlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetAccessConnectorPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.databricks.outputs.GetAccessConnectorResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetAccessConnectorPlainArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getAccessConnectorPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information about an existing Databricks workspace. */
-    inline def getWorkspace(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspaceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspace(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspaceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.databricks.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetWorkspaceArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getWorkspace(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Databricks workspace. */
-    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspacePlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.databricks.outputs.GetWorkspaceResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetWorkspacePlainArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getWorkspacePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to access information on an existing Databricks Workspace private endpoint connection state. */
-    inline def getWorkspacePrivateEndpointConnection(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspacePrivateEndpointConnection(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.databricks.outputs.GetWorkspacePrivateEndpointConnectionResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getWorkspacePrivateEndpointConnection(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information on an existing Databricks Workspace private endpoint connection state. */
-    inline def getWorkspacePrivateEndpointConnectionPlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkspacePrivateEndpointConnectionPlain(args: Endofunction[com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.databricks.outputs.GetWorkspacePrivateEndpointConnectionResult] =
       val argsBuilder = com.pulumi.azure.databricks.inputs.GetWorkspacePrivateEndpointConnectionPlainArgs.builder
       com.pulumi.azure.databricks.DatabricksFunctions.getWorkspacePrivateEndpointConnectionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages a Databricks Virtual Network Peering */
-  def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.databricks.VirtualNetworkPeeringArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VirtualNetworkPeering(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.databricks.VirtualNetworkPeeringArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.VirtualNetworkPeeringArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -91,8 +91,8 @@ object databricks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
-  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Workspace(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.databricks.WorkspaceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -109,16 +109,16 @@ object databricks:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Databricks Workspace */
-  def WorkspaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkspaceCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceCustomerManagedKey(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Customer Managed Key for the Databricks Workspaces Root Databricks File System (DBFS) */
-  def WorkspaceRootDbfsCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkspaceRootDbfsCustomerManagedKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKeyArgs.builder
     com.pulumi.azure.databricks.WorkspaceRootDbfsCustomerManagedKey(name,
         args(argsBuilder).build,

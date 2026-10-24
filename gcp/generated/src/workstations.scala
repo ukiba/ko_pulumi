@@ -15,8 +15,8 @@ object workstations:
    * * How-to Guides
    *     * [Workstations](https://cloud.google.com/workstations/docs/)
    */
-  def Workstation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Workstation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationArgs.builder
     com.pulumi.gcp.workstations.Workstation(name,
         args(argsBuilder).build,
@@ -31,8 +31,8 @@ object workstations:
    * * How-to Guides
    *     * [Workstations](https://cloud.google.com/workstations/docs/)
    */
-  def WorkstationCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationClusterArgs.builder
     com.pulumi.gcp.workstations.WorkstationCluster(name,
         args(argsBuilder).build,
@@ -47,8 +47,8 @@ object workstations:
    * * How-to Guides
    *     * [Workstations](https://cloud.google.com/workstations/docs/)
    */
-  def WorkstationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfig(name,
         args(argsBuilder).build,
@@ -366,8 +366,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamBindingArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamBinding(name,
         args(argsBuilder).build,
@@ -685,8 +685,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamMemberArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamMember(name,
         args(argsBuilder).build,
@@ -1004,8 +1004,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationConfigIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationConfigIamPolicyArgs.builder
     com.pulumi.gcp.workstations.WorkstationConfigIamPolicy(name,
         args(argsBuilder).build,
@@ -1329,8 +1329,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamBindingArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamBinding(name,
         args(argsBuilder).build,
@@ -1654,8 +1654,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamMemberArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamMember(name,
         args(argsBuilder).build,
@@ -1979,8 +1979,8 @@ object workstations:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WorkstationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WorkstationIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.workstations.WorkstationIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.workstations.WorkstationIamPolicyArgs.builder
     com.pulumi.gcp.workstations.WorkstationIamPolicy(name,
         args(argsBuilder).build,
@@ -1994,32 +1994,32 @@ object workstations:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for workstationconfig */
-    inline def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workstationconfig */
-    inline def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkstationConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationConfigIamPolicyPlainArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationConfigIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    inline def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicy(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for workstation */
-    inline def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWorkstationIamPolicyPlain(args: Endofunction[com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.workstations.outputs.GetWorkstationIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.workstations.inputs.GetWorkstationIamPolicyPlainArgs.builder
       com.pulumi.gcp.workstations.WorkstationsFunctions.getWorkstationIamPolicyPlain(args(argsBuilder).build,

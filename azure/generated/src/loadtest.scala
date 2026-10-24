@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object loadtest:
   /** Manages a Load Test Service. */
-  def LoadTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.loadtest.LoadTestArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LoadTest(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.loadtest.LoadTestArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.loadtest.LoadTestArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -32,16 +32,16 @@ object loadtest:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about a Load Test Service. */
-    inline def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def get(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetArgs.builder
       com.pulumi.azure.loadtest.LoadtestFunctions.get(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about a Load Test Service. */
-    inline def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getPlain(args: Endofunction[com.pulumi.azure.loadtest.inputs.GetPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.loadtest.outputs.GetResult] =
       val argsBuilder = com.pulumi.azure.loadtest.inputs.GetPlainArgs.builder
       com.pulumi.azure.loadtest.LoadtestFunctions.getPlain(args(argsBuilder).build,

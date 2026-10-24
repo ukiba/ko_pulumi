@@ -15,8 +15,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an API organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org)
    */
-  def AddonsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.AddonsConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AddonsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.AddonsConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.AddonsConfigArgs.builder
     com.pulumi.gcp.apigee.AddonsConfig(name,
         args(argsBuilder).build,
@@ -43,8 +43,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/api:Api default {{org_id}}/{{name}}
    * ```
    */
-  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.ApiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.ApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.ApiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -62,8 +62,8 @@ object apigee:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://cloud.google.com/apigee/docs/api-platform/deploy/ui-deploy-overview)
    */
-  def ApiDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.ApiDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.ApiDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.ApiDeploymentArgs.builder
     com.pulumi.gcp.apigee.ApiDeployment(name,
         args(argsBuilder).build,
@@ -78,8 +78,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an API product](https://cloud.google.com/apigee/docs/api-platform/publish/what-api-product)
    */
-  def ApiProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.ApiProductArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiProduct(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.ApiProductArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.ApiProductArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -96,32 +96,32 @@ object apigee:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for environment */
-    inline def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicy(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for environment */
-    inline def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getEnvironmentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetEnvironmentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetEnvironmentIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getEnvironmentIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Get information about a Google Apigee Instance. */
-    inline def getInstance(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstanceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getInstance(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstanceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstanceArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getInstance(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Get information about a Google Apigee Instance. */
-    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getInstancePlain(args: Endofunction[com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigee.outputs.GetInstanceResult] =
       val argsBuilder = com.pulumi.gcp.apigee.inputs.GetInstancePlainArgs.builder
       com.pulumi.gcp.apigee.ApigeeFunctions.getInstancePlain(args(argsBuilder).build,
@@ -136,8 +136,8 @@ object apigee:
    * * How-to Guides
    *     * [Organizing client app ownership](https://cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership)
    */
-  def AppGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.AppGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.AppGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.AppGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -155,8 +155,8 @@ object apigee:
    * * How-to Guides
    *     * [Enable ControlPlane access](https://cloud.google.com/apigee/docs/hybrid/v1.14/install-enable-control-plane-access)
    */
-  def ControlPlaneAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.ControlPlaneAccessArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ControlPlaneAccess(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.ControlPlaneAccessArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.ControlPlaneAccessArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -176,8 +176,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a data collector](https://cloud.google.com/apigee/docs/api-platform/analytics/custom-reports)
    */
-  def DataCollector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.DataCollectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DataCollector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DataCollectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.DataCollectorArgs.builder
     com.pulumi.gcp.apigee.DataCollector(name,
         args(argsBuilder).build,
@@ -194,8 +194,8 @@ object apigee:
    * * How-to Guides
    *     * [Export analytics data](https://cloud.google.com/apigee/docs/api-platform/analytics/analytics-export)
    */
-  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.DatastoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Datastore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DatastoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.DatastoreArgs.builder
     com.pulumi.gcp.apigee.Datastore(name,
         args(argsBuilder).build,
@@ -210,8 +210,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a developer](https://cloud.google.com/apigee/docs/api-platform/publish/adding-developers-your-api-product)
    */
-  def Developer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.DeveloperArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Developer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DeveloperArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.DeveloperArgs.builder
     com.pulumi.gcp.apigee.Developer(name,
         args(argsBuilder).build,
@@ -229,8 +229,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a developer](https://cloud.google.com/apigee/docs/api-platform/publish/creating-apps-surface-your-api)
    */
-  def DeveloperApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.DeveloperAppArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DeveloperApp(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DeveloperAppArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.DeveloperAppArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -248,8 +248,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a DnsZone](https://cloud.google.com/apigee/docs/api-platform/get-started/create-dns)
    */
-  def DnsZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.DnsZoneArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DnsZone(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.DnsZoneArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.DnsZoneArgs.builder
     com.pulumi.gcp.apigee.DnsZone(name,
         args(argsBuilder).build,
@@ -266,8 +266,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EndpointAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EndpointAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EndpointAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EndpointAttachmentArgs.builder
     com.pulumi.gcp.apigee.EndpointAttachment(name,
         args(argsBuilder).build,
@@ -282,8 +282,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def EnvGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -301,8 +301,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def EnvGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvGroupAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvGroupAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvGroupAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvGroupAttachmentArgs.builder
     com.pulumi.gcp.apigee.EnvGroupAttachment(name,
         args(argsBuilder).build,
@@ -331,8 +331,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/envKeystore:EnvKeystore default {{env_id}}/{{name}}
    * ```
    */
-  def EnvKeystore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvKeystoreArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvKeystore(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvKeystoreArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvKeystoreArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -364,8 +364,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/envReferences:EnvReferences default {{env_id}}/{{name}}
    * ```
    */
-  def EnvReferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvReferencesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvReferences(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvReferencesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvReferencesArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -383,8 +383,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -402,8 +402,8 @@ object apigee:
    * * How-to Guides
    *     * [Enable Analytics Add-On](https://cloud.google.com/apigee/docs/api-platform/reference/manage-analytics-add-on)
    */
-  def EnvironmentAddonsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentAddonsConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentAddonsConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentAddonsConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentAddonsConfigArgs.builder
     com.pulumi.gcp.apigee.EnvironmentAddonsConfig(name,
         args(argsBuilder).build,
@@ -418,8 +418,8 @@ object apigee:
    * * How-to Guides
    *     * [Deploying an API proxy](https://cloud.google.com/apigee/docs/api-platform/deploy/ui-deploy-new#apigee-api)
    */
-  def EnvironmentApiRevisionDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentApiRevisionDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentApiRevisionDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentApiRevisionDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentApiRevisionDeploymentArgs.builder
     com.pulumi.gcp.apigee.EnvironmentApiRevisionDeployment(name,
         args(argsBuilder).build,
@@ -441,8 +441,8 @@ object apigee:
    * * How-to Guides
    *     * [Masking sensitive data](https://cloud.google.com/apigee/docs/api-platform/debug/masking-data)
    */
-  def EnvironmentDebugmask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentDebugmask(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentDebugmaskArgs.builder
     com.pulumi.gcp.apigee.EnvironmentDebugmask(name,
         args(argsBuilder).build,
@@ -747,8 +747,8 @@ object apigee:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EnvironmentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamBindingArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamBinding(name,
         args(argsBuilder).build,
@@ -1053,8 +1053,8 @@ object apigee:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EnvironmentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamMemberArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamMember(name,
         args(argsBuilder).build,
@@ -1359,8 +1359,8 @@ object apigee:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def EnvironmentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.EnvironmentIamPolicyArgs.builder
     com.pulumi.gcp.apigee.EnvironmentIamPolicy(name,
         args(argsBuilder).build,
@@ -1375,8 +1375,8 @@ object apigee:
    * * How-to Guides
    *     * [Using key value maps](https://cloud.google.com/apigee/docs/api-platform/cache/key-value-maps)
    */
-  def EnvironmentKeyvaluemaps(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentKeyvaluemaps(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1394,8 +1394,8 @@ object apigee:
    * * How-to Guides
    *     * [Using key value maps](https://cloud.google.com/apigee/docs/api-platform/cache/key-value-maps)
    */
-  def EnvironmentKeyvaluemapsEntries(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsEntriesArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EnvironmentKeyvaluemapsEntries(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsEntriesArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.EnvironmentKeyvaluemapsEntriesArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1427,8 +1427,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/flowhook:Flowhook default {{org_id}}/{{environment}}/{{flow_hook_point}}
    * ```
    */
-  def Flowhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.FlowhookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Flowhook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.FlowhookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.FlowhookArgs.builder
     com.pulumi.gcp.apigee.Flowhook(name,
         args(argsBuilder).build,
@@ -1443,8 +1443,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a runtime instance](https://cloud.google.com/apigee/docs/api-platform/get-started/create-instance)
    */
-  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.InstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Instance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.InstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.InstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1462,8 +1462,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def InstanceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.InstanceAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InstanceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.InstanceAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.InstanceAttachmentArgs.builder
     com.pulumi.gcp.apigee.InstanceAttachment(name,
         args(argsBuilder).build,
@@ -1492,8 +1492,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/keystoresAliasesKeyCertFile:KeystoresAliasesKeyCertFile default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
    * ```
    */
-  def KeystoresAliasesKeyCertFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeystoresAliasesKeyCertFile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFileArgs.builder
     com.pulumi.gcp.apigee.KeystoresAliasesKeyCertFile(name,
         args(argsBuilder).build,
@@ -1522,8 +1522,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/keystoresAliasesPkcs12:KeystoresAliasesPkcs12 default {{org_id}}/{{environment}}/{{keystore}}/{{alias}}
    * ```
    */
-  def KeystoresAliasesPkcs12(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesPkcs12Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeystoresAliasesPkcs12(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesPkcs12Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesPkcs12Args.builder
     com.pulumi.gcp.apigee.KeystoresAliasesPkcs12(name,
         args(argsBuilder).build,
@@ -1538,8 +1538,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating an environment](https://cloud.google.com/apigee/docs/api-platform/get-started/create-environment)
    */
-  def KeystoresAliasesSelfSignedCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def KeystoresAliasesSelfSignedCert(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCertArgs.builder
     com.pulumi.gcp.apigee.KeystoresAliasesSelfSignedCert(name,
         args(argsBuilder).build,
@@ -1554,8 +1554,8 @@ object apigee:
    * * How-to Guides
    *     * [Provisioning NAT IPs](https://cloud.google.com/apigee/docs/api-platform/security/nat-provisioning)
    */
-  def NatAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.NatAddressArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def NatAddress(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.NatAddressArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.NatAddressArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1574,8 +1574,8 @@ object apigee:
    *     * [Creating an API organization](https://cloud.google.com/apigee/docs/api-platform/get-started/create-org)
    *     * Setting a custom endpoint (required for data residency)
    */
-  def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.OrganizationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Organization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.OrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.OrganizationArgs.builder
     com.pulumi.gcp.apigee.Organization(name,
         args(argsBuilder).build,
@@ -1593,8 +1593,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating security actions](https://cloud.google.com/apigee/docs/api-security/security-actions-api#create-security-actions)
    */
-  def SecurityAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SecurityActionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityAction(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SecurityActionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SecurityActionArgs.builder
     com.pulumi.gcp.apigee.SecurityAction(name,
         args(argsBuilder).build,
@@ -1610,8 +1610,8 @@ object apigee:
    * * How-to Guides
    *     * [Create a SecurityFeedback](https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection#exclude-traffic-from-abuse-detection)
    */
-  def SecurityFeedback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SecurityFeedbackArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityFeedback(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SecurityFeedbackArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SecurityFeedbackArgs.builder
     com.pulumi.gcp.apigee.SecurityFeedback(name,
         args(argsBuilder).build,
@@ -1626,8 +1626,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a security monitoring condition](https://cloud.google.com/apigee/docs/api-security/security-scores#monitoring-conditions)
    */
-  def SecurityMonitoringCondition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SecurityMonitoringConditionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityMonitoringCondition(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SecurityMonitoringConditionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SecurityMonitoringConditionArgs.builder
     com.pulumi.gcp.apigee.SecurityMonitoringCondition(name,
         args(argsBuilder).build,
@@ -1642,8 +1642,8 @@ object apigee:
    * * How-to Guides
    *     * [Creating a security profile](https://cloud.google.com/apigee/docs/api-security/security-scores#security-profiles-v2)
    */
-  def SecurityProfileV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SecurityProfileV2Args.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityProfileV2(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SecurityProfileV2Args.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SecurityProfileV2Args.builder
     com.pulumi.gcp.apigee.SecurityProfileV2(name,
         args(argsBuilder).build,
@@ -1658,8 +1658,8 @@ object apigee:
    * * How-to Guides
    *     * [Sharedflows](https://cloud.google.com/apigee/docs/resources)
    */
-  def Sharedflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SharedflowArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Sharedflow(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SharedflowArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.SharedflowArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1691,8 +1691,8 @@ object apigee:
    * \$ pulumi import gcp:apigee/sharedflowDeployment:SharedflowDeployment default {{org_id}}/{{environment}}/{{sharedflow_id}}/{{revision}}/{{name}}
    * ```
    */
-  def SharedflowDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SharedflowDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SharedflowDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SharedflowDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SharedflowDeploymentArgs.builder
     com.pulumi.gcp.apigee.SharedflowDeployment(name,
         args(argsBuilder).build,
@@ -1707,8 +1707,8 @@ object apigee:
    * * How-to Guides
    *     * [Managing Spaces](https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/manage-spaces)
    */
-  def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SpaceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Space(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SpaceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigee.SpaceArgs.builder
     com.pulumi.gcp.apigee.Space(name,
         args(argsBuilder).build,
@@ -1723,8 +1723,8 @@ object apigee:
    * * How-to Guides
    *     * [Enable Synchronizer access](https://cloud.google.com/apigee/docs/hybrid/v1.8/synchronizer-access#enable-synchronizer-access)
    */
-  def SyncAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.SyncAuthorizationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SyncAuthorization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.SyncAuthorizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.SyncAuthorizationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1742,8 +1742,8 @@ object apigee:
    * * How-to Guides
    *     * [Load balancing across backend servers](https://cloud.google.com/apigee/docs/api-platform/deploy/load-balancing-across-backend-servers)
    */
-  def TargetServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigee.TargetServerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TargetServer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigee.TargetServerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.apigee.TargetServerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object apigateway:
   /** Provides a settings of an API Gateway Account. Settings is applied region-wide per `provider` block. */
-  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.AccountArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Account(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.AccountArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.AccountArgs.builder
     com.pulumi.aws.apigateway.Account(name,
         args(argsBuilder).build,
@@ -19,8 +19,8 @@ object apigateway:
    * 
    * &gt; **NOTE:** Since the API Gateway usage plans feature was launched on August 11, 2016, usage plans are now **required** to associate an API key with an API stage.
    */
-  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.ApiKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.ApiKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.ApiKeyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -44,78 +44,78 @@ object apigateway:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Data source for managing AWS API Gateway API Keys. */
-    inline def getApiKeys(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getApiKeys(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetApiKeysResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetApiKeysArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeys(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Data source for managing AWS API Gateway API Keys. */
-    inline def getApiKeysPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getApiKeysPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetApiKeysResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetApiKeysPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getApiKeysPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about a specific API Gateway Authorizer. */
-    inline def getAuthorizer(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAuthorizer(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetAuthorizerResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizerArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizer(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about a specific API Gateway Authorizer. */
-    inline def getAuthorizerPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAuthorizerPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetAuthorizerResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizerPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizerPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Provides details about multiple API Gateway Authorizers. */
-    inline def getAuthorizers(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAuthorizers(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetAuthorizersResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizersArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizers(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Provides details about multiple API Gateway Authorizers. */
-    inline def getAuthorizersPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAuthorizersPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetAuthorizersResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetAuthorizersPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getAuthorizersPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the custom domain name for use with AWS API Gateway. */
-    inline def getDomainName(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getDomainName(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetDomainNameResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetDomainNameArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainName(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the custom domain name for use with AWS API Gateway. */
-    inline def getDomainNamePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getDomainNamePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetDomainNameResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetDomainNamePlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getDomainNamePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
-    inline def getExport(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getExport(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getExport(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getExportPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetExportResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetExportPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getExportPlain(args(argsBuilder).build,
@@ -125,8 +125,8 @@ object apigateway:
      * Use this data source to get the name and value of a pre-existing API Key, for
      * example to supply credentials for a dependency microservice.
      */
-    inline def getKey(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getKey(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetKeyArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getKey(args(argsBuilder).build,
@@ -136,8 +136,8 @@ object apigateway:
      * Use this data source to get the name and value of a pre-existing API Key, for
      * example to supply credentials for a dependency microservice.
      */
-    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getKeyPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetKeyResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetKeyPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getKeyPlain(args(argsBuilder).build,
@@ -147,8 +147,8 @@ object apigateway:
      * Use this data source to get the ID of a Resource in API Gateway.
      * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
-    inline def getResource(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getResource(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetResourceArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getResource(args(argsBuilder).build,
@@ -158,8 +158,8 @@ object apigateway:
      * Use this data source to get the ID of a Resource in API Gateway.
      * To fetch the Resource, you must provide the REST API ID as well as the full path.
      */
-    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getResourcePlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetResourceResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetResourcePlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getResourcePlain(args(argsBuilder).build,
@@ -171,8 +171,8 @@ object apigateway:
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
      */
-    inline def getRestApi(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getRestApi(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetRestApiResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetRestApiArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApi(args(argsBuilder).build,
@@ -184,22 +184,22 @@ object apigateway:
      * As there is no unique name constraint on REST APIs this data source will
      * error if there is more than one match.
      */
-    inline def getRestApiPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getRestApiPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetRestApiResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetRestApiPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getRestApiPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
-    inline def getSdk(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSdk(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getSdk(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
-    inline def getSdkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSdkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetSdkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetSdkPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getSdkPlain(args(argsBuilder).build,
@@ -211,8 +211,8 @@ object apigateway:
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
      */
-    inline def getVpcLink(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getVpcLink(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.apigateway.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetVpcLinkArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLink(args(argsBuilder).build,
@@ -224,16 +224,16 @@ object apigateway:
      * As there is no unique name constraint on API Gateway VPC Links this data source will
      * error if there is more than one match.
      */
-    inline def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getVpcLinkPlain(args: Endofunction[com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.apigateway.outputs.GetVpcLinkResult] =
       val argsBuilder = com.pulumi.aws.apigateway.inputs.GetVpcLinkPlainArgs.builder
       com.pulumi.aws.apigateway.ApigatewayFunctions.getVpcLinkPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Provides an API Gateway Authorizer. */
-  def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.AuthorizerArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Authorizer(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.AuthorizerArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.AuthorizerArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -273,16 +273,16 @@ object apigateway:
    * \$ pulumi import aws:apigateway/basePathMapping:BasePathMapping example api.internal.example.com/base-path/abcde12345
    * ```
    */
-  def BasePathMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.BasePathMappingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BasePathMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.BasePathMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.BasePathMappingArgs.builder
     com.pulumi.aws.apigateway.BasePathMapping(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Client Certificate. */
-  def ClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.ClientCertificateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClientCertificate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.ClientCertificateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.ClientCertificateArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -303,24 +303,24 @@ object apigateway:
    * * For REST APIs that are configured via OpenAPI specification (`aws.apigateway.RestApi` resource `body` argument), no special dependency setup is needed beyond referencing the  `id` attribute of that resource unless additional resources have further customized the REST API.
    * * When the REST API configuration involves other resources (`aws.apigateway.Integration` resource), the dependency setup can be done with implicit resource references in the `triggers` argument or explicit resource references using the [resource `dependsOn` custom option](https://www.pulumi.com/docs/intro/concepts/resources/#dependson). The `triggers` argument should be preferred over `dependsOn`, since `dependsOn` can only capture dependency ordering and will not cause the resource to recreate (redeploy the REST API) with upstream configuration changes.
    */
-  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.DeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Deployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.DeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.DeploymentArgs.builder
     com.pulumi.aws.apigateway.Deployment(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a settings of an API Gateway Documentation Part. */
-  def DocumentationPart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.DocumentationPartArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DocumentationPart(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.DocumentationPartArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.DocumentationPartArgs.builder
     com.pulumi.aws.apigateway.DocumentationPart(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a resource to manage an API Gateway Documentation Version. */
-  def DocumentationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.DocumentationVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DocumentationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.DocumentationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.DocumentationVersionArgs.builder
     com.pulumi.aws.apigateway.DocumentationVersion(name,
         args(argsBuilder).build,
@@ -354,8 +354,8 @@ object apigateway:
    * from the validation resource where it will be available after the resource creation:
    * `regionalCertificateArn = aws_acm_certificate_validation.cert.certificate_arn`.
    */
-  def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.DomainNameArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainName(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.DomainNameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.DomainNameArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -369,8 +369,8 @@ object apigateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Creates a domain name access association resource between an access association source and a private custom domain name. */
-  def DomainNameAccessAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.DomainNameAccessAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainNameAccessAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.DomainNameAccessAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.DomainNameAccessAssociationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -384,8 +384,8 @@ object apigateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an HTTP Method Integration for an API Gateway Integration. */
-  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.IntegrationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Integration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.IntegrationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.IntegrationArgs.builder
     com.pulumi.aws.apigateway.Integration(name,
         args(argsBuilder).build,
@@ -397,24 +397,24 @@ object apigateway:
    * &gt; **Note:** Depends on having `aws.apigateway.Integration` inside your REST API. To ensure this
    * you might need to add an explicit `dependsOn` for clean runs.
    */
-  def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.IntegrationResponseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IntegrationResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.IntegrationResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.IntegrationResponseArgs.builder
     com.pulumi.aws.apigateway.IntegrationResponse(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a HTTP Method for an API Gateway Resource. */
-  def Method(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.MethodArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Method(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.MethodArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.MethodArgs.builder
     com.pulumi.aws.apigateway.Method(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an HTTP Method Response for an API Gateway Resource. More information about API Gateway method responses can be found in the [Amazon API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-settings-method-response.html). */
-  def MethodResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.MethodResponseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MethodResponse(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.MethodResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.MethodResponseArgs.builder
     com.pulumi.aws.apigateway.MethodResponse(name,
         args(argsBuilder).build,
@@ -425,16 +425,16 @@ object apigateway:
    * 
    * &gt; **NOTE:** We recommend using this resource in conjunction with the `aws.apigateway.Stage` resource instead of a stage managed by the `aws.apigateway.Deployment` resource optional `stageName` argument. Stages managed by the `aws.apigateway.Deployment` resource are recreated on redeployment and this resource will require a second apply to recreate the method settings.
    */
-  def MethodSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.MethodSettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MethodSettings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.MethodSettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.MethodSettingsArgs.builder
     com.pulumi.aws.apigateway.MethodSettings(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides a Model for a REST API Gateway. */
-  def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.ModelArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Model(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.ModelArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.ModelArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -444,8 +444,8 @@ object apigateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an API Gateway Request Validator. */
-  def RequestValidator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.RequestValidatorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RequestValidator(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.RequestValidatorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.RequestValidatorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -455,16 +455,16 @@ object apigateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Resource. */
-  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.ResourceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Resource(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.ResourceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.ResourceArgs.builder
     com.pulumi.aws.apigateway.Resource(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Gateway Response for a REST API Gateway. */
-  def Response(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.ResponseArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Response(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.ResponseArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.ResponseArgs.builder
     com.pulumi.aws.apigateway.Response(name,
         args(argsBuilder).build,
@@ -477,8 +477,8 @@ object apigateway:
    * 
    * &gt; **WARN:** When importing Open API Specifications with the `body` argument, by default the API Gateway REST API will be replaced with the Open API Specification thus removing any existing methods, resources, integrations, or endpoints. Endpoint mutations are asynchronous operations, and race conditions with DNS are possible. To overcome this limitation, use the `putRestApiMode` attribute and set it to `merge`.
    */
-  def RestApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.RestApiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestApi(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.RestApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.RestApiArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -499,8 +499,8 @@ object apigateway:
    * 
    * &gt; **Note:** Amazon API Gateway Version 1 resources are used for creating and deploying REST APIs. To create and deploy WebSocket and HTTP APIs, use Amazon API Gateway Version 2 resources.
    */
-  def RestApiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.RestApiPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestApiPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.RestApiPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.RestApiPolicyArgs.builder
     com.pulumi.aws.apigateway.RestApiPolicy(name,
         args(argsBuilder).build,
@@ -511,8 +511,8 @@ object apigateway:
    * 
    * &gt; **NOTE:** When importing an OpenAPI specification using the `body` argument, the `info.title` field updates the `name` of the `aws.apigateway.RestApi`. If the imported `title` differs from the configured `name`, Terraform will report the difference.
    */
-  def RestApiPut(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.RestApiPutArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RestApiPut(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.RestApiPutArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.RestApiPutArgs.builder
     com.pulumi.aws.apigateway.RestApiPut(name,
         args(argsBuilder).build,
@@ -579,8 +579,8 @@ object apigateway:
    * \$ pulumi import aws:apigateway/stage:Stage example 12345abcde/example
    * ```
    */
-  def Stage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.StageArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Stage(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.StageArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.StageArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match
@@ -604,8 +604,8 @@ object apigateway:
    * \$ pulumi import aws:apigateway/usagePlan:UsagePlan myusageplan &lt;usage_plan_id&gt;
    * ```
    */
-  def UsagePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.UsagePlanArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UsagePlan(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.UsagePlanArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.UsagePlanArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -622,8 +622,8 @@ object apigateway:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an API Gateway Usage Plan Key. */
-  def UsagePlanKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.UsagePlanKeyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UsagePlanKey(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.UsagePlanKeyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.apigateway.UsagePlanKeyArgs.builder
     com.pulumi.aws.apigateway.UsagePlanKey(name,
         args(argsBuilder).build,
@@ -635,8 +635,8 @@ object apigateway:
    * &gt; **Note:** Amazon API Gateway Version 1 VPC Links enable private integrations that connect REST APIs to private resources in a VPC.
    * To enable private integration for HTTP APIs, use the Amazon API Gateway Version 2 VPC Link resource.
    */
-  def VpcLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.apigateway.VpcLinkArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def VpcLink(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.apigateway.VpcLinkArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.apigateway.VpcLinkArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

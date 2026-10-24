@@ -9,8 +9,8 @@ object timestreaminfluxdb:
    * 
    * &gt; **NOTE:** This resource requires a subscription to [Timestream for InfluxDB Read Replicas (Add-On) on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-lftzfxtb5xlv4?applicationId=AWS-Marketplace-Console&amp;ref_=beagle&amp;sr=0-2).
    */
-  def DbCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DbCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.timestreaminfluxdb.DbClusterArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -27,8 +27,8 @@ object timestreaminfluxdb:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Resource for managing an Amazon Timestream for InfluxDB database instance. */
-  def DbInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DbInstance(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.timestreaminfluxdb.DbInstanceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

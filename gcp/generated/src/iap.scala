@@ -588,8 +588,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryAgentIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamBinding(name,
         args(argsBuilder).build,
@@ -1177,8 +1177,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryAgentIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamMember(name,
         args(argsBuilder).build,
@@ -1766,8 +1766,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryAgentIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryAgentIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryAgentIamPolicy(name,
         args(argsBuilder).build,
@@ -2355,8 +2355,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryEndpointIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamBinding(name,
         args(argsBuilder).build,
@@ -2944,8 +2944,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryEndpointIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamMember(name,
         args(argsBuilder).build,
@@ -3533,8 +3533,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryEndpointIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryEndpointIamPolicy(name,
         args(argsBuilder).build,
@@ -4110,8 +4110,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamBinding(name,
         args(argsBuilder).build,
@@ -4687,8 +4687,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamMember(name,
         args(argsBuilder).build,
@@ -5264,8 +5264,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryIamPolicy(name,
         args(argsBuilder).build,
@@ -5853,8 +5853,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryMcpServerIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryMcpServerIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamBindingArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamBinding(name,
         args(argsBuilder).build,
@@ -6442,8 +6442,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryMcpServerIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryMcpServerIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamMemberArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamMember(name,
         args(argsBuilder).build,
@@ -7031,8 +7031,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AgentRegistryMcpServerIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AgentRegistryMcpServerIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicyArgs.builder
     com.pulumi.gcp.iap.AgentRegistryMcpServerIamPolicy(name,
         args(argsBuilder).build,
@@ -7620,8 +7620,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamBinding(name,
         args(argsBuilder).build,
@@ -8209,8 +8209,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamMember(name,
         args(argsBuilder).build,
@@ -8798,8 +8798,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.AppEngineServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -9399,8 +9399,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineVersionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineVersionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamBindingArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamBinding(name,
         args(argsBuilder).build,
@@ -10000,8 +10000,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineVersionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineVersionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamMemberArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamMember(name,
         args(argsBuilder).build,
@@ -10601,8 +10601,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AppEngineVersionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AppEngineVersionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.AppEngineVersionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.AppEngineVersionIamPolicyArgs.builder
     com.pulumi.gcp.iap.AppEngineVersionIamPolicy(name,
         args(argsBuilder).build,
@@ -10616,288 +10616,288 @@ object iap:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for agentregistryagent */
-    inline def getAgentRegistryAgentIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryAgentIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryAgentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryAgentIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for agentregistryagent */
-    inline def getAgentRegistryAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryAgentIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryAgentIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryAgentIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryAgentIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for agentregistryendpoint */
-    inline def getAgentRegistryEndpointIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryEndpointIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryEndpointIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryEndpointIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for agentregistryendpoint */
-    inline def getAgentRegistryEndpointIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryEndpointIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryEndpointIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryEndpointIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryEndpointIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for agentregistry */
-    inline def getAgentRegistryIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for agentregistry */
-    inline def getAgentRegistryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for agentregistrymcpserver */
-    inline def getAgentRegistryMcpServerIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryMcpServerIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAgentRegistryMcpServerIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryMcpServerIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for agentregistrymcpserver */
-    inline def getAgentRegistryMcpServerIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAgentRegistryMcpServerIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAgentRegistryMcpServerIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAgentRegistryMcpServerIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAgentRegistryMcpServerIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for appengineservice */
-    inline def getAppEngineServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAppEngineServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAppEngineServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for appengineservice */
-    inline def getAppEngineServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAppEngineServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAppEngineServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for appengineversion */
-    inline def getAppEngineVersionIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAppEngineVersionIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetAppEngineVersionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for appengineversion */
-    inline def getAppEngineVersionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAppEngineVersionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetAppEngineVersionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetAppEngineVersionIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getAppEngineVersionIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for locationweb */
-    inline def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLocationWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getLocationWebIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for locationweb */
-    inline def getLocationWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLocationWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetLocationWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetLocationWebIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getLocationWebIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for tunneldestgroup */
-    inline def getTunnelDestGroupIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelDestGroupIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelDestGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelDestGroupIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for tunneldestgroup */
-    inline def getTunnelDestGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelDestGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelDestGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelDestGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelDestGroupIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for tunnel */
-    inline def getTunnelIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for tunnel */
-    inline def getTunnelIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for tunnelinstance */
-    inline def getTunnelInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelInstanceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetTunnelInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelInstanceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for tunnelinstance */
-    inline def getTunnelInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getTunnelInstanceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetTunnelInstanceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetTunnelInstanceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getTunnelInstanceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webbackendservice */
-    inline def getWebBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebBackendServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webbackendservice */
-    inline def getWebBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebBackendServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webcloudrunservice */
-    inline def getWebCloudRunServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebCloudRunServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebCloudRunServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebCloudRunServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webcloudrunservice */
-    inline def getWebCloudRunServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebCloudRunServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebCloudRunServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebCloudRunServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebCloudRunServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webforwardingruleservice */
-    inline def getWebForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebForwardingRuleServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webforwardingruleservice */
-    inline def getWebForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebForwardingRuleServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebForwardingRuleServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for web */
-    inline def getWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for web */
-    inline def getWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webregionbackendservice */
-    inline def getWebRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebRegionBackendServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionBackendServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webregionbackendservice */
-    inline def getWebRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebRegionBackendServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebRegionBackendServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionBackendServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionBackendServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webregionforwardingruleservice */
-    inline def getWebRegionForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebRegionForwardingRuleServiceIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebRegionForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionForwardingRuleServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webregionforwardingruleservice */
-    inline def getWebRegionForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebRegionForwardingRuleServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebRegionForwardingRuleServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebRegionForwardingRuleServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebRegionForwardingRuleServiceIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webtypeappengine */
-    inline def getWebTypeAppEngineIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebTypeAppEngineIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebTypeAppEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeAppEngineIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webtypeappengine */
-    inline def getWebTypeAppEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebTypeAppEngineIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebTypeAppEngineIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeAppEngineIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeAppEngineIamPolicyPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for webtypecompute */
-    inline def getWebTypeComputeIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getWebTypeComputeIamPolicy(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.iap.outputs.GetWebTypeComputeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeComputeIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for webtypecompute */
-    inline def getWebTypeComputeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getWebTypeComputeIamPolicyPlain(args: Endofunction[com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.iap.outputs.GetWebTypeComputeIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.iap.inputs.GetWebTypeComputeIamPolicyPlainArgs.builder
       com.pulumi.gcp.iap.IapFunctions.getWebTypeComputeIamPolicyPlain(args(argsBuilder).build,
@@ -11473,8 +11473,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LocationWebIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LocationWebIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamBindingArgs.builder
     com.pulumi.gcp.iap.LocationWebIamBinding(name,
         args(argsBuilder).build,
@@ -12050,8 +12050,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LocationWebIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LocationWebIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamMemberArgs.builder
     com.pulumi.gcp.iap.LocationWebIamMember(name,
         args(argsBuilder).build,
@@ -12627,8 +12627,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def LocationWebIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LocationWebIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.LocationWebIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.LocationWebIamPolicyArgs.builder
     com.pulumi.gcp.iap.LocationWebIamPolicy(name,
         args(argsBuilder).build,
@@ -12643,8 +12643,8 @@ object iap:
    * * How-to Guides
    *     * [Customizing IAP](https://cloud.google.com/iap/docs/customizing)
    */
-  def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.SettingsArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Settings(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.SettingsArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.iap.SettingsArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -12662,8 +12662,8 @@ object iap:
    * * How-to Guides
    *     * [Set up IAP TCP forwarding with an IP address or hostname in a Google Cloud or non-Google Cloud environment](https://cloud.google.com/iap/docs/tcp-by-host)
    */
-  def TunnelDestGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelDestGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroup(name,
         args(argsBuilder).build,
@@ -13252,8 +13252,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelDestGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelDestGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamBindingArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamBinding(name,
         args(argsBuilder).build,
@@ -13842,8 +13842,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelDestGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelDestGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamMemberArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamMember(name,
         args(argsBuilder).build,
@@ -14432,8 +14432,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelDestGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelDestGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelDestGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelDestGroupIamPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelDestGroupIamPolicy(name,
         args(argsBuilder).build,
@@ -14995,8 +14995,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamBindingArgs.builder
     com.pulumi.gcp.iap.TunnelIamBinding(name,
         args(argsBuilder).build,
@@ -15558,8 +15558,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamMemberArgs.builder
     com.pulumi.gcp.iap.TunnelIamMember(name,
         args(argsBuilder).build,
@@ -16121,8 +16121,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelIamPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelIamPolicy(name,
         args(argsBuilder).build,
@@ -16711,8 +16711,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelInstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelInstanceIAMBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMBindingArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMBinding(name,
         args(argsBuilder).build,
@@ -17301,8 +17301,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelInstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelInstanceIAMMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMMemberArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMMember(name,
         args(argsBuilder).build,
@@ -17891,8 +17891,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def TunnelInstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TunnelInstanceIAMPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.TunnelInstanceIAMPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.TunnelInstanceIAMPolicyArgs.builder
     com.pulumi.gcp.iap.TunnelInstanceIAMPolicy(name,
         args(argsBuilder).build,
@@ -18467,8 +18467,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamBinding(name,
         args(argsBuilder).build,
@@ -19043,8 +19043,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamMember(name,
         args(argsBuilder).build,
@@ -19619,8 +19619,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebBackendServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebBackendServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebBackendServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -20208,8 +20208,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebCloudRunServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebCloudRunServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamBinding(name,
         args(argsBuilder).build,
@@ -20797,8 +20797,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebCloudRunServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebCloudRunServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamMember(name,
         args(argsBuilder).build,
@@ -21386,8 +21386,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebCloudRunServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebCloudRunServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebCloudRunServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebCloudRunServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebCloudRunServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -21962,8 +21962,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebForwardingRuleServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebForwardingRuleServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamBinding(name,
         args(argsBuilder).build,
@@ -22538,8 +22538,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebForwardingRuleServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebForwardingRuleServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamMember(name,
         args(argsBuilder).build,
@@ -23114,8 +23114,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebForwardingRuleServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebForwardingRuleServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebForwardingRuleServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -23677,8 +23677,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebIamBindingArgs.builder
     com.pulumi.gcp.iap.WebIamBinding(name,
         args(argsBuilder).build,
@@ -24240,8 +24240,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebIamMemberArgs.builder
     com.pulumi.gcp.iap.WebIamMember(name,
         args(argsBuilder).build,
@@ -24803,8 +24803,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebIamPolicy(name,
         args(argsBuilder).build,
@@ -25392,8 +25392,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionBackendServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamBinding(name,
         args(argsBuilder).build,
@@ -25981,8 +25981,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionBackendServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamMember(name,
         args(argsBuilder).build,
@@ -26570,8 +26570,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionBackendServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebRegionBackendServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -27159,8 +27159,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionForwardingRuleServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionForwardingRuleServiceIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBindingArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamBinding(name,
         args(argsBuilder).build,
@@ -27748,8 +27748,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionForwardingRuleServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionForwardingRuleServiceIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMemberArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamMember(name,
         args(argsBuilder).build,
@@ -28337,8 +28337,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebRegionForwardingRuleServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebRegionForwardingRuleServiceIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebRegionForwardingRuleServiceIamPolicy(name,
         args(argsBuilder).build,
@@ -28913,8 +28913,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeAppEngingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeAppEngingIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamBindingArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamBinding(name,
         args(argsBuilder).build,
@@ -29489,8 +29489,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeAppEngingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeAppEngingIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamMemberArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamMember(name,
         args(argsBuilder).build,
@@ -30065,8 +30065,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeAppEngingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeAppEngingIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeAppEngingIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeAppEngingIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebTypeAppEngingIamPolicy(name,
         args(argsBuilder).build,
@@ -30628,8 +30628,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeComputeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeComputeIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamBindingArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamBinding(name,
         args(argsBuilder).build,
@@ -31191,8 +31191,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeComputeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeComputeIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamMemberArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamMember(name,
         args(argsBuilder).build,
@@ -31754,8 +31754,8 @@ object iap:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def WebTypeComputeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def WebTypeComputeIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.iap.WebTypeComputeIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.iap.WebTypeComputeIamPolicyArgs.builder
     com.pulumi.gcp.iap.WebTypeComputeIamPolicy(name,
         args(argsBuilder).build,

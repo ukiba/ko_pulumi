@@ -22,8 +22,8 @@ object cloudrun:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/run/docs/)
      */
-    inline def getLocations(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getLocations(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetLocationsArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getLocations(args(argsBuilder).build,
@@ -38,8 +38,8 @@ object cloudrun:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/run/docs/)
      */
-    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getLocationsPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetLocationsResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetLocationsPlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getLocationsPlain(args(argsBuilder).build,
@@ -51,8 +51,8 @@ object cloudrun:
      * For more information see the [official documentation](https://cloud.google.com/run/docs/) and
      * the [API](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services).
      */
-    inline def getService(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getService(args(argsBuilder).build,
@@ -64,24 +64,24 @@ object cloudrun:
      * For more information see the [official documentation](https://cloud.google.com/run/docs/) and
      * the [API](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.services).
      */
-    inline def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServicePlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServicePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicy(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudrun.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServiceIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for service */
-    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServiceIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudrun.outputs.GetServiceIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudrun.inputs.GetServiceIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudrun.CloudrunFunctions.getServiceIamPolicyPlain(args(argsBuilder).build,
@@ -96,8 +96,8 @@ object cloudrun:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/run/docs/mapping-custom-domains)
    */
-  def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudrun.DomainMappingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DomainMapping(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudrun.DomainMappingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudrun.DomainMappingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -412,8 +412,8 @@ object cloudrun:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudrun.IamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudrun.IamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudrun.IamBindingArgs.builder
     com.pulumi.gcp.cloudrun.IamBinding(name,
         args(argsBuilder).build,
@@ -725,8 +725,8 @@ object cloudrun:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudrun.IamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudrun.IamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudrun.IamMemberArgs.builder
     com.pulumi.gcp.cloudrun.IamMember(name,
         args(argsBuilder).build,
@@ -1038,8 +1038,8 @@ object cloudrun:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudrun.IamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def IamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudrun.IamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudrun.IamPolicyArgs.builder
     com.pulumi.gcp.cloudrun.IamPolicy(name,
         args(argsBuilder).build,
@@ -1057,8 +1057,8 @@ object cloudrun:
    * &gt; **Warning:** We recommend using the `gcp.cloudrunv2.Service` resource which offers a better
    * developer experience and broader support of Cloud Run features.
    */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudrun.ServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudrun.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudrun.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

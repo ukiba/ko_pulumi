@@ -14,8 +14,8 @@ object elasticbeanstalk:
    * This resource creates an application that has one configuration template named
    * `default`, and no application versions
    */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -44,8 +44,8 @@ object elasticbeanstalk:
    * when attempting to delete an Application Version while it is still in use by a different environment.
    * To work around this you can either create each environment in a separate AWS account or create your `aws.elasticbeanstalk.ApplicationVersion` resources with a unique names in your Elastic Beanstalk Application. For example &amp;lt;revision&amp;gt;-&amp;lt;environment&amp;gt;.
    */
-  def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApplicationVersion(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ApplicationVersionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -66,8 +66,8 @@ object elasticbeanstalk:
    * a specific application and are used to deploy different versions of the
    * application with the same configuration settings.
    */
-  def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ConfigurationTemplate(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.ConfigurationTemplateArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -84,48 +84,48 @@ object elasticbeanstalk:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieve information about an Elastic Beanstalk Application. */
-    inline def getApplication(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getApplication(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getApplication(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieve information about an Elastic Beanstalk Application. */
-    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getApplicationPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetApplicationResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetApplicationPlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getApplicationPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the ID of an [elastic beanstalk hosted zone](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region). */
-    inline def getHostedZone(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getHostedZone(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetHostedZoneResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZoneArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getHostedZone(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the ID of an [elastic beanstalk hosted zone](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region). */
-    inline def getHostedZonePlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getHostedZonePlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetHostedZoneResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetHostedZonePlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getHostedZonePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get the name of a elastic beanstalk solution stack. */
-    inline def getSolutionStack(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getSolutionStack(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.elasticbeanstalk.outputs.GetSolutionStackResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getSolutionStack(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get the name of a elastic beanstalk solution stack. */
-    inline def getSolutionStackPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getSolutionStackPlain(args: Endofunction[com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.elasticbeanstalk.outputs.GetSolutionStackResult] =
       val argsBuilder = com.pulumi.aws.elasticbeanstalk.inputs.GetSolutionStackPlainArgs.builder
       com.pulumi.aws.elasticbeanstalk.ElasticbeanstalkFunctions.getSolutionStackPlain(args(argsBuilder).build,
@@ -139,8 +139,8 @@ object elasticbeanstalk:
    * Environments are often things such as `development`, `integration`, or
    * `production`.
    */
-  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Environment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.elasticbeanstalk.EnvironmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

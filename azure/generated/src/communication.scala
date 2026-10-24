@@ -14,24 +14,24 @@ object communication:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Use this data source to access information about an existing Communication Service. */
-    inline def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getService(args: Endofunction[com.pulumi.azure.communication.inputs.GetServiceArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServiceArgs.builder
       com.pulumi.azure.communication.CommunicationFunctions.getService(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to access information about an existing Communication Service. */
-    inline def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getServicePlain(args: Endofunction[com.pulumi.azure.communication.inputs.GetServicePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.azure.communication.outputs.GetServiceResult] =
       val argsBuilder = com.pulumi.azure.communication.inputs.GetServicePlainArgs.builder
       com.pulumi.azure.communication.CommunicationFunctions.getServicePlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
   /** Manages an Email Communication Service. */
-  def EmailService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.communication.EmailServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EmailService(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.communication.EmailServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -48,8 +48,8 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain. */
-  def EmailServiceDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EmailServiceDomain(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceDomainArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -66,8 +66,8 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages an Email Communication Service Domain Sender Username. */
-  def EmailServiceDomainSenderUsername(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainSenderUsernameArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def EmailServiceDomainSenderUsername(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.communication.EmailServiceDomainSenderUsernameArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.EmailServiceDomainSenderUsernameArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -77,8 +77,8 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Communication Service. */
-  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.communication.ServiceArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Service(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.communication.ServiceArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.azure.communication.ServiceArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -95,8 +95,8 @@ object communication:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a communication service email domain association. */
-  def ServiceEmailDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceEmailDomainAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.azure.communication.ServiceEmailDomainAssociationArgs.builder
     com.pulumi.azure.communication.ServiceEmailDomainAssociation(name,
         args(argsBuilder).build,

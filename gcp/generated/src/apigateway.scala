@@ -18,8 +18,8 @@ object apigateway:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/api-gateway/docs/quickstart)
    */
-  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Api(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiArgs.builder
     com.pulumi.gcp.apigateway.Api(name,
         args(argsBuilder).build,
@@ -37,8 +37,8 @@ object apigateway:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/api-gateway/docs/creating-api-config)
    */
-  def ApiConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigArgs.builder
     com.pulumi.gcp.apigateway.ApiConfig(name,
         args(argsBuilder).build,
@@ -350,8 +350,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiConfigIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamBindingArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamBinding(name,
         args(argsBuilder).build,
@@ -663,8 +663,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiConfigIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamMemberArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamMember(name,
         args(argsBuilder).build,
@@ -976,8 +976,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiConfigIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiConfigIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiConfigIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.ApiConfigIamPolicy(name,
         args(argsBuilder).build,
@@ -1288,8 +1288,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamBindingArgs.builder
     com.pulumi.gcp.apigateway.ApiIamBinding(name,
         args(argsBuilder).build,
@@ -1600,8 +1600,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamMemberArgs.builder
     com.pulumi.gcp.apigateway.ApiIamMember(name,
         args(argsBuilder).build,
@@ -1912,8 +1912,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def ApiIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ApiIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.ApiIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.ApiIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.ApiIamPolicy(name,
         args(argsBuilder).build,
@@ -1931,8 +1931,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiConfigIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getApiConfigIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetApiConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicy(args(argsBuilder).build,
@@ -1943,8 +1943,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getApiConfigIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetApiConfigIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiConfigIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiConfigIamPolicyPlain(args(argsBuilder).build,
@@ -1955,8 +1955,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getApiIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetApiIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicy(args(argsBuilder).build,
@@ -1967,8 +1967,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getApiIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getApiIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetApiIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetApiIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getApiIamPolicyPlain(args(argsBuilder).build,
@@ -1979,8 +1979,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getGatewayIamPolicy(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.apigateway.outputs.GetGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicy(args(argsBuilder).build,
@@ -1991,8 +1991,8 @@ object apigateway:
      * &gt; **Warning:** This datasource is in beta, and should be used with the terraform-provider-google-beta provider.
      * See Provider Versions for more details on beta resources.
      */
-    inline def getGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getGatewayIamPolicyPlain(args: Endofunction[com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.apigateway.outputs.GetGatewayIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.apigateway.inputs.GetGatewayIamPolicyPlainArgs.builder
       com.pulumi.gcp.apigateway.ApigatewayFunctions.getGatewayIamPolicyPlain(args(argsBuilder).build,
@@ -2010,8 +2010,8 @@ object apigateway:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/api-gateway/docs/quickstart)
    */
-  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Gateway(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayArgs.builder
     com.pulumi.gcp.apigateway.Gateway(name,
         args(argsBuilder).build,
@@ -2329,8 +2329,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamBindingArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamBinding(name,
         args(argsBuilder).build,
@@ -2648,8 +2648,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamMemberArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamMember(name,
         args(argsBuilder).build,
@@ -2967,8 +2967,8 @@ object apigateway:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def GatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.apigateway.GatewayIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.apigateway.GatewayIamPolicyArgs.builder
     com.pulumi.gcp.apigateway.GatewayIamPolicy(name,
         args(argsBuilder).build,

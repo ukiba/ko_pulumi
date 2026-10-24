@@ -11,8 +11,8 @@ object autoscaling:
    * 
    * &gt; **NOTE on Auto Scaling groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
-  def Attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.AttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Attachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.AttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.AttachmentArgs.builder
     com.pulumi.aws.autoscaling.Attachment(name,
         args(argsBuilder).build,
@@ -29,8 +29,8 @@ object autoscaling:
      * The Auto Scaling groups data source allows access to the list of AWS
      * ASGs within a specific region. This will allow you to pass a list of Auto Scaling groups to other resources.
      */
-    inline def getAmiIds(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAmiIds(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.autoscaling.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getAmiIds(args(argsBuilder).build,
@@ -40,24 +40,24 @@ object autoscaling:
      * The Auto Scaling groups data source allows access to the list of AWS
      * ASGs within a specific region. This will allow you to pass a list of Auto Scaling groups to other resources.
      */
-    inline def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAmiIdsPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.autoscaling.outputs.GetAmiIdsResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetAmiIdsPlainArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getAmiIdsPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Use this data source to get information on an existing Auto Scaling group. */
-    inline def getGroup(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getGroup(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.autoscaling.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetGroupArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getGroup(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Use this data source to get information on an existing Auto Scaling group. */
-    inline def getGroupPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getGroupPlain(args: Endofunction[com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.autoscaling.outputs.GetGroupResult] =
       val argsBuilder = com.pulumi.aws.autoscaling.inputs.GetGroupPlainArgs.builder
       com.pulumi.aws.autoscaling.AutoscalingFunctions.getGroupPlain(args(argsBuilder).build,
@@ -130,8 +130,8 @@ object autoscaling:
    * Troubleshooting](https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-troubleshooting.html)
    * for more information.
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.GroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.GroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -155,8 +155,8 @@ object autoscaling:
    * `aws.autoscaling.Group`,
    * but take care to not duplicate those hooks with this resource.
    */
-  def LifecycleHook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.LifecycleHookArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def LifecycleHook(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.LifecycleHookArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.LifecycleHookArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -170,8 +170,8 @@ object autoscaling:
    * the `notifications` map to a [Notification Configuration](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeNotificationConfigurations.html) inside Amazon Web
    * Services, and are applied to each Auto Scaling group you supply.
    */
-  def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.NotificationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Notification(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.NotificationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.NotificationArgs.builder
     com.pulumi.aws.autoscaling.Notification(name,
         args(argsBuilder).build,
@@ -186,8 +186,8 @@ object autoscaling:
    * or [dynamic](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html)
    * (policy-based) scaling.
    */
-  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.PolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Policy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.PolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.autoscaling.PolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -197,8 +197,8 @@ object autoscaling:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Provides an AutoScaling Schedule resource. */
-  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.ScheduleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Schedule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.ScheduleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.ScheduleArgs.builder
     com.pulumi.aws.autoscaling.Schedule(name,
         args(argsBuilder).build,
@@ -211,8 +211,8 @@ object autoscaling:
    * 
    * &gt; **NOTE:** This tagging resource does not use the provider `ignoreTags` configuration.
    */
-  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.TagArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Tag(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.TagArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.TagArgs.builder
     com.pulumi.aws.autoscaling.Tag(name,
         args(argsBuilder).build,
@@ -223,8 +223,8 @@ object autoscaling:
    * 
    * &gt; **NOTE on Auto Scaling groups, Attachments and Traffic Source Attachments:** Pulumi provides standalone Attachment (for attaching Classic Load Balancers and Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target groups) and Traffic Source Attachment (for attaching Load Balancers and VPC Lattice target groups) resources and an Auto Scaling group resource with `loadBalancers`, `targetGroupArns` and `trafficSource` attributes. Do not use the same traffic source in more than one of these resources. Doing so will cause a conflict of attachments. A `lifecycle` configuration block can be used to suppress differences if necessary.
    */
-  def TrafficSourceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TrafficSourceAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.autoscaling.TrafficSourceAttachmentArgs.builder
     com.pulumi.aws.autoscaling.TrafficSourceAttachment(name,
         args(argsBuilder).build,

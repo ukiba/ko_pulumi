@@ -7,8 +7,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object ram:
   /** Manages an AWS RAM (Resource Access Manager) Permission. */
-  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.PermissionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Permission(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.PermissionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ram.PermissionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -37,8 +37,8 @@ object ram:
    * - Organization and Organizational Unit principals cannot be used.
    * - For AWS Account ID principals, a resource share invitation is sent and must be accepted before resources become available. See the `aws.ram.ResourceShareAccepter` resource to accept these invitations.
    */
-  def PrincipalAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.PrincipalAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PrincipalAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.PrincipalAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ram.PrincipalAssociationArgs.builder
     com.pulumi.aws.ram.PrincipalAssociation(name,
         args(argsBuilder).build,
@@ -52,16 +52,16 @@ object ram:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    inline def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getResourceShare(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceShareArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceShareArgs.builder
       com.pulumi.aws.ram.RamFunctions.getResourceShare(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** `aws.ram.ResourceShare` Retrieve information about a RAM Resource Share. */
-    inline def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getResourceSharePlain(args: Endofunction[com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.aws.ram.outputs.GetResourceShareResult] =
       val argsBuilder = com.pulumi.aws.ram.inputs.GetResourceSharePlainArgs.builder
       com.pulumi.aws.ram.RamFunctions.getResourceSharePlain(args(argsBuilder).build,
@@ -72,16 +72,16 @@ object ram:
    * 
    * &gt; *NOTE:* Certain AWS resources (e.g., EC2 Subnets) can only be shared in an AWS account that is a member of an AWS Organizations organization with organization-wide Resource Access Manager functionality enabled. See the [Resource Access Manager User Guide](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html) and AWS service specific documentation for additional information.
    */
-  def ResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.ResourceAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.ResourceAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ram.ResourceAssociationArgs.builder
     com.pulumi.aws.ram.ResourceAssociation(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** Manages a Resource Access Manager (RAM) Resource Share. To associate principals with the share, see the `aws.ram.PrincipalAssociation` resource. To associate resources with the share, see the `aws.ram.ResourceAssociation` resource. */
-  def ResourceShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.ResourceShareArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceShare(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.ResourceShareArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.ram.ResourceShareArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -102,8 +102,8 @@ object ram:
    * 
    * &gt; **Note:** If both AWS accounts are in the same Organization and [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), this resource is not necessary as RAM Resource Share invitations are not used.
    */
-  def ResourceShareAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.ResourceShareAccepterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceShareAccepter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.ResourceShareAccepterArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ram.ResourceShareAccepterArgs.builder
     com.pulumi.aws.ram.ResourceShareAccepter(name,
         args(argsBuilder).build,
@@ -118,8 +118,8 @@ object ram:
    * 
    * &gt; **NOTE:** This resource cannot be used in conjunction with `aws.ram.PrincipalAssociation` or `aws.ram.ResourceAssociation` for the same resource share. Using them together will cause persistent drift and conflicts.
    */
-  def ResourceShareAssociationsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ResourceShareAssociationsExclusive(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ram.ResourceShareAssociationsExclusiveArgs.builder
     com.pulumi.aws.ram.ResourceShareAssociationsExclusive(name,
         args(argsBuilder).build,
@@ -130,8 +130,8 @@ object ram:
    * 
    * &gt; **NOTE:** Use this resource to manage resource sharing within your organization, **not** the `aws.organizations.Organization` resource with `ram.amazonaws.com` configured in `awsServiceAccessPrincipals`.
    */
-  def SharingWithOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.ram.SharingWithOrganizationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SharingWithOrganization(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.ram.SharingWithOrganizationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.aws.ram.SharingWithOrganizationArgs.builder
     com.pulumi.aws.ram.SharingWithOrganization(name,
         args(argsBuilder).build,

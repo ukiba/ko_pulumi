@@ -15,8 +15,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/data-transfer-essentials/docs/create-resources)
    */
-  def Destination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.DestinationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Destination(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.DestinationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.DestinationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -34,8 +34,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview)
    */
-  def GatewayAdvertisedRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.GatewayAdvertisedRouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewayAdvertisedRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.GatewayAdvertisedRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.GatewayAdvertisedRouteArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -53,8 +53,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview)
    */
-  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.GroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Group(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.GroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.GroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -72,8 +72,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview)
    */
-  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Hub(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.HubArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -381,8 +381,8 @@ object networkconnectivity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def HubIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HubIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamBindingArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamBinding(name,
         args(argsBuilder).build,
@@ -687,8 +687,8 @@ object networkconnectivity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def HubIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HubIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamMemberArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamMember(name,
         args(argsBuilder).build,
@@ -993,8 +993,8 @@ object networkconnectivity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def HubIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def HubIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.HubIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networkconnectivity.HubIamPolicyArgs.builder
     com.pulumi.gcp.networkconnectivity.HubIamPolicy(name,
         args(argsBuilder).build,
@@ -1009,8 +1009,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Use internal ranges](https://cloud.google.com/vpc/docs/create-use-internal-ranges)
    */
-  def InternalRange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.InternalRangeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InternalRange(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.InternalRangeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.InternalRangeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1028,8 +1028,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://docs.cloud.google.com/data-transfer-essentials/docs/create-resources)
    */
-  def MulticloudDataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.MulticloudDataTransferConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MulticloudDataTransferConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.MulticloudDataTransferConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.MulticloudDataTransferConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1046,16 +1046,16 @@ object networkconnectivity:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for hub */
-    inline def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicy(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyArgs.builder
       com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for hub */
-    inline def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getHubIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networkconnectivity.outputs.GetHubIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networkconnectivity.inputs.GetHubIamPolicyPlainArgs.builder
       com.pulumi.gcp.networkconnectivity.NetworkconnectivityFunctions.getHubIamPolicyPlain(args(argsBuilder).build,
@@ -1070,8 +1070,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Use policy-based routes](https://cloud.google.com/vpc/docs/use-policy-based-routes#api)
    */
-  def PolicyBasedRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.PolicyBasedRouteArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def PolicyBasedRoute(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.PolicyBasedRouteArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.PolicyBasedRouteArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1089,8 +1089,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Access regional Google APIs through endpoints](https://cloud.google.com/vpc/docs/access-regional-google-apis-endpoints)
    */
-  def RegionalEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.RegionalEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def RegionalEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.RegionalEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.RegionalEndpointArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1109,8 +1109,8 @@ object networkconnectivity:
    *     * [About Service Connection Policies](https://cloud.google.com/vpc/docs/about-service-connection-policies#service-policies)
    *     * [About Service Connectivity Automation](https://cloud.google.com/vpc/docs/about-service-connectivity-automation)
    */
-  def ServiceConnectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.ServiceConnectionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServiceConnectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.ServiceConnectionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.ServiceConnectionPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1128,8 +1128,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Official Documentation](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview)
    */
-  def Spoke(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.SpokeArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Spoke(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.SpokeArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.SpokeArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -1147,8 +1147,8 @@ object networkconnectivity:
    * * How-to Guides
    *     * [Official Documentation](https://docs.cloud.google.com/sdk/gcloud/reference/network-connectivity/transports)
    */
-  def Transport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networkconnectivity.TransportArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Transport(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networkconnectivity.TransportArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networkconnectivity.TransportArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

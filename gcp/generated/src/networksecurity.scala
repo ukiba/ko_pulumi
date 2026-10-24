@@ -15,8 +15,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Use AddressGroups](https://cloud.google.com/vpc/docs/use-address-groups-firewall-policies)
    */
-  def AddressGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AddressGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AddressGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -73,8 +73,8 @@ object networksecurity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AddressGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AddressGroupIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AddressGroupIamBindingArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -131,8 +131,8 @@ object networksecurity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AddressGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AddressGroupIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AddressGroupIamMemberArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -189,8 +189,8 @@ object networksecurity:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def AddressGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AddressGroupIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AddressGroupIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AddressGroupIamPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -209,8 +209,8 @@ object networksecurity:
    * 
    * * [API documentation](https://cloud.google.com/traffic-director/docs/reference/network-security/rest/v1beta1/projects.locations.authorizationPolicies)
    */
-  def AuthorizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AuthorizationPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AuthorizationPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AuthorizationPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AuthorizationPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -226,8 +226,8 @@ object networksecurity:
    * 
    * * [API documentation](https://cloud.google.com/load-balancing/docs/reference/network-security/rest/v1beta1/projects.locations.authzPolicies)
    */
-  def AuthzPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def AuthzPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.AuthzPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.AuthzPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -243,8 +243,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Backend mTLS](https://cloud.google.com/load-balancing/docs/backend-authenticated-tls-backend-mtls#backend-authentication-config)
    */
-  def BackendAuthenticationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.BackendAuthenticationConfigArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def BackendAuthenticationConfig(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.BackendAuthenticationConfigArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.BackendAuthenticationConfigArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -262,8 +262,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Service Security](https://cloud.google.com/traffic-director/docs/security-use-cases)
    */
-  def ClientTlsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.ClientTlsPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ClientTlsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.ClientTlsPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.ClientTlsPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -281,8 +281,8 @@ object networksecurity:
    * * How-to Guides
    *     * [DNS Threat Detector](https://cloud.google.com/dns/docs/threat-detection)
    */
-  def DnsThreatDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.DnsThreatDetectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def DnsThreatDetector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.DnsThreatDetectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.DnsThreatDetectorArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -309,8 +309,8 @@ object networksecurity:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProjectId` you defined.
    */
-  def FirewallEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.FirewallEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FirewallEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.FirewallEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.FirewallEndpointArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -338,8 +338,8 @@ object networksecurity:
    * Your account must have the `serviceusage.services.use` permission on the
    * `billingProjectId` you defined.
    */
-  def FirewallEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.FirewallEndpointAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FirewallEndpointAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.FirewallEndpointAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.FirewallEndpointAssociationArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -355,8 +355,8 @@ object networksecurity:
    * 
    * * [API documentation](https://cloud.google.com/secure-web-proxy/docs/reference/network-security/rest/v1/projects.locations.gatewaySecurityPolicies)
    */
-  def GatewaySecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.GatewaySecurityPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewaySecurityPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.GatewaySecurityPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.GatewaySecurityPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -373,8 +373,8 @@ object networksecurity:
    * 
    * * [API documentation](https://cloud.google.com/secure-web-proxy/docs/reference/network-security/rest/v1/projects.locations.gatewaySecurityPolicies.rules)
    */
-  def GatewaySecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.GatewaySecurityPolicyRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def GatewaySecurityPolicyRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.GatewaySecurityPolicyRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.GatewaySecurityPolicyRuleArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -389,8 +389,8 @@ object networksecurity:
    * internal passthrough load balancer. Deployments are always part of a
    * global deployment group which represents a global intercept service.
    */
-  def InterceptDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InterceptDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptDeploymentArgs.builder
     com.pulumi.gcp.networksecurity.InterceptDeployment(name,
         args(argsBuilder).build,
@@ -401,8 +401,8 @@ object networksecurity:
    * into a single global intercept service. Consumers can connect this service
    * using an endpoint group.
    */
-  def InterceptDeploymentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptDeploymentGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InterceptDeploymentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptDeploymentGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptDeploymentGroupArgs.builder
     com.pulumi.gcp.networksecurity.InterceptDeploymentGroup(name,
         args(argsBuilder).build,
@@ -415,8 +415,8 @@ object networksecurity:
    * - A security profile that points to the endpoint group.
    * - A firewall rule that references the security profile (group).
    */
-  def InterceptEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptEndpointGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InterceptEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptEndpointGroupArgs.builder
     com.pulumi.gcp.networksecurity.InterceptEndpointGroup(name,
         args(argsBuilder).build,
@@ -431,8 +431,8 @@ object networksecurity:
    * To enable intercept, the user must also create a network firewall policy
    * containing intercept rules and associate it with the network.
    */
-  def InterceptEndpointGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def InterceptEndpointGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociationArgs.builder
     com.pulumi.gcp.networksecurity.InterceptEndpointGroupAssociation(name,
         args(argsBuilder).build,
@@ -450,8 +450,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Mirroring deployment overview](https://cloud.google.com/network-security-integration/docs/out-of-band/deployments-overview)
    */
-  def MirroringDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringDeploymentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MirroringDeployment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringDeploymentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringDeploymentArgs.builder
     com.pulumi.gcp.networksecurity.MirroringDeployment(name,
         args(argsBuilder).build,
@@ -468,8 +468,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Mirroring deployment group overview](https://cloud.google.com/network-security-integration/docs/out-of-band/deployment-groups-overview)
    */
-  def MirroringDeploymentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringDeploymentGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MirroringDeploymentGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringDeploymentGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringDeploymentGroupArgs.builder
     com.pulumi.gcp.networksecurity.MirroringDeploymentGroup(name,
         args(argsBuilder).build,
@@ -481,8 +481,8 @@ object networksecurity:
    * Endpoints are always part of a global endpoint group which represents a
    * global &#34;mirroring broker&#34; service.
    */
-  def MirroringEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MirroringEndpoint(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpoint(name,
         args(argsBuilder).build,
@@ -501,8 +501,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Mirroring endpoint group overview](https://cloud.google.com/network-security-integration/docs/out-of-band/endpoint-groups-overview)
    */
-  def MirroringEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MirroringEndpointGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointGroupArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpointGroup(name,
         args(argsBuilder).build,
@@ -523,8 +523,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Mirroring endpoint group association overview](https://cloud.google.com/network-security-integration/docs/out-of-band/endpoint-groups-overview#mirroring-endpoint-group-association)
    */
-  def MirroringEndpointGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def MirroringEndpointGroupAssociation(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociationArgs.builder
     com.pulumi.gcp.networksecurity.MirroringEndpointGroupAssociation(name,
         args(argsBuilder).build,
@@ -538,16 +538,16 @@ object networksecurity:
     //     value foo exposes a flexible type in its inferred result type com.pulumi.core.Output[(String)?]. Consider annotating the type explicitly
 
     /** Retrieves the current IAM policy data for projectaddressgroup */
-    inline def getAddressGroupIamPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAddressGroupIamPolicy(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for projectaddressgroup */
-    inline def getAddressGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAddressGroupIamPolicyPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupIamPolicyPlainArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupIamPolicyPlain(args(argsBuilder).build,
@@ -562,8 +562,8 @@ object networksecurity:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/firewall/docs/about-address-groups)
      */
-    inline def getAddressGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getAddressGroups(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupsResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroups(args(argsBuilder).build,
@@ -578,8 +578,8 @@ object networksecurity:
      * * How-to Guides
      *     * [Official Documentation](https://cloud.google.com/firewall/docs/about-address-groups)
      */
-    inline def getAddressGroupsPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getAddressGroupsPlain(args: Endofunction[com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.networksecurity.outputs.GetAddressGroupsResult] =
       val argsBuilder = com.pulumi.gcp.networksecurity.inputs.GetAddressGroupsPlainArgs.builder
       com.pulumi.gcp.networksecurity.NetworksecurityFunctions.getAddressGroupsPlain(args(argsBuilder).build,
@@ -597,8 +597,8 @@ object networksecurity:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://cloud.google.com/secure-access-connect/docs/overview)
    */
-  def SacAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.SacAttachmentArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SacAttachment(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.SacAttachmentArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.SacAttachmentArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -619,8 +619,8 @@ object networksecurity:
    * * How-to Guides
    *     * [QUICKSTART_TITLE](https://cloud.google.com/secure-access-connect/docs/overview)
    */
-  def SacRealm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.SacRealmArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SacRealm(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.SacRealmArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.SacRealmArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -638,8 +638,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Create and manage security profiles](https://cloud.google.com/firewall/docs/configure-security-profiles)
    */
-  def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityProfile(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.SecurityProfileArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.SecurityProfileArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -658,8 +658,8 @@ object networksecurity:
    *     * [Create and manage security profile groups](https://cloud.google.com/firewall/docs/configure-security-profile-groups)
    *     * [Security profile groups overview](https://cloud.google.com/firewall/docs/about-security-profile-groups)
    */
-  def SecurityProfileGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.SecurityProfileGroupArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def SecurityProfileGroup(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.SecurityProfileGroupArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.SecurityProfileGroupArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -677,8 +677,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Use ServerTlsPolicy](https://cloud.google.com/load-balancing/docs/mtls)
    */
-  def ServerTlsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.ServerTlsPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def ServerTlsPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.ServerTlsPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.ServerTlsPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -696,8 +696,8 @@ object networksecurity:
    * * How-to Guides
    *     * [Use TlsInspectionPolicy](https://cloud.google.com/secure-web-proxy/docs/tls-inspection-overview)
    */
-  def TlsInspectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.TlsInspectionPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def TlsInspectionPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.TlsInspectionPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.TlsInspectionPolicyArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -710,16 +710,16 @@ object networksecurity:
    * A Mirroring Collector is a logical representation of an appliance that collects
    * mirrored traffic.
    */
-  def UllMirroringCollector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UllMirroringCollector(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringCollectorArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringCollector(name,
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /** UllMirroringCollectorRule is a resource that defines what traffic should be mirrored. */
-  def UllMirroringCollectorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UllMirroringCollectorRule(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringCollectorRuleArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringCollectorRule(name,
         args(argsBuilder).build,
@@ -729,8 +729,8 @@ object networksecurity:
    * A Mirroring Engine is a logical representation of the underlying infrastructure
    * that is used to manage and monitor the ULL Mirroring setup.
    */
-  def UllMirroringEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringEngineArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UllMirroringEngine(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.UllMirroringEngineArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.networksecurity.UllMirroringEngineArgs.builder
     com.pulumi.gcp.networksecurity.UllMirroringEngine(name,
         args(argsBuilder).build,
@@ -745,8 +745,8 @@ object networksecurity:
    * * How-to Guides
    *     * Use UrlLists
    */
-  def UrlList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.networksecurity.UrlListArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def UrlList(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.networksecurity.UrlListArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.networksecurity.UrlListArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)

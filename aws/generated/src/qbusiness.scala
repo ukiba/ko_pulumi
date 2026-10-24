@@ -5,8 +5,8 @@ import com.pulumi.resources.CustomResourceOptions
 
 object qbusiness:
   /** Provides a Q Business Application resource. */
-  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.aws.qbusiness.ApplicationArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Application(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.qbusiness.ApplicationArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.aws.qbusiness.ApplicationArgs.builder
     argsBuilder = args(argsBuilder)
     conf.logicalName2tagName(name) match

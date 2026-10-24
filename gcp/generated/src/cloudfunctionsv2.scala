@@ -18,8 +18,8 @@ object cloudfunctionsv2:
      * 
      * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions).
      */
-    inline def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFunction(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionArgs.builder
       com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunction(args(argsBuilder).build,
@@ -30,24 +30,24 @@ object cloudfunctionsv2:
      * 
      * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions).
      */
-    inline def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFunctionPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionPlainArgs.builder
       com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionPlain(args(argsBuilder).build,
           invokeOptions(InvokeOptions.builder).build)
 
     /** Retrieves the current IAM policy data for function */
-    inline def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicy(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOutputOptions.Builder] = identity):
         com.pulumi.core.Output[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyArgs.builder
       com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicy(args(argsBuilder).build,
           invokeOptions(InvokeOutputOptions.Builder()).build)
 
     /** Retrieves the current IAM policy data for function */
-    inline def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.Builder] = scala.Predef.identity,
-        invokeOptions: Endofunction[InvokeOptions.Builder] = scala.Predef.identity):
+    inline def getFunctionIamPolicyPlain(args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.Builder] = identity,
+        invokeOptions: Endofunction[InvokeOptions.Builder] = identity):
         java.util.concurrent.CompletableFuture[com.pulumi.gcp.cloudfunctionsv2.outputs.GetFunctionIamPolicyResult] =
       val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.inputs.GetFunctionIamPolicyPlainArgs.builder
       com.pulumi.gcp.cloudfunctionsv2.Cloudfunctionsv2Functions.getFunctionIamPolicyPlain(args(argsBuilder).build,
@@ -60,8 +60,8 @@ object cloudfunctionsv2:
    * 
    * * [API documentation](https://cloud.google.com/functions/docs/reference/rest/v2beta/projects.locations.functions)
    */
-  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def Function(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionArgs.Builder] = identity)(using conf: KoPulumiConf) =
     var argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionArgs.builder
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
@@ -376,8 +376,8 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamBindingArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FunctionIamBinding(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamBindingArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamBindingArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamBinding(name,
         args(argsBuilder).build,
@@ -689,8 +689,8 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamMemberArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FunctionIamMember(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamMemberArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamMemberArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamMember(name,
         args(argsBuilder).build,
@@ -1002,8 +1002,8 @@ object cloudfunctionsv2:
    * &gt; **Custom Roles** If you&#39;re importing a IAM resource with a custom role, make sure to use the
    *  full name of the custom role, e.g. `[projects/my-project|organizations/my-org]/roles/my-custom-role`.
    */
-  def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
-      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicyArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
+  def FunctionIamPolicy(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicyArgs.Builder] = identity)(using conf: KoPulumiConf) =
     val argsBuilder = com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicyArgs.builder
     com.pulumi.gcp.cloudfunctionsv2.FunctionIamPolicy(name,
         args(argsBuilder).build,
