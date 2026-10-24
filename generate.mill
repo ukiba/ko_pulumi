@@ -334,7 +334,8 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         val argsBuilderType = builderOf(argsType)
 
         val nameSetter = methodOf(argsBuilderType, "name", stringType)
-        val tagsSetter = methodOf(argsBuilderType, "tags", outputStringMapType)
+        // see KoPulumiConf.logicalName2tagName for gcp
+        val tagsSetter = if packageName == "gcp" then None else methodOf(argsBuilderType, "tags", outputStringMapType)
         val tagsGetter = methodOf(argsType, "tags")
 
         val clsDoc = scaladocOf(clsElem, indent = "  ")

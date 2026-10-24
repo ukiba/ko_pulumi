@@ -19,13 +19,6 @@ object workflows:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
     com.pulumi.gcp.workflows.Workflow(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)

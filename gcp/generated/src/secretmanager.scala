@@ -15,16 +15,9 @@ object secretmanager:
    */
   def RegionalSecret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.RegionalSecretArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    var argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretArgs.builder
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
+    val argsBuilder = com.pulumi.gcp.secretmanager.RegionalSecretArgs.builder
     com.pulumi.gcp.secretmanager.RegionalSecret(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -1830,16 +1823,9 @@ object secretmanager:
    */
   def Secret(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.secretmanager.SecretArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    var argsBuilder = com.pulumi.gcp.secretmanager.SecretArgs.builder
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
+    val argsBuilder = com.pulumi.gcp.secretmanager.SecretArgs.builder
     com.pulumi.gcp.secretmanager.Secret(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**

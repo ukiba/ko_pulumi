@@ -16,8 +16,12 @@ type Endofunction[A] = Function1[A, A]  // TODO this does not belong here
 case class KoPulumiConf(
   defaultProtect: Boolean = false,
 
-  // logicalName is the first argument to resource class constructor
+  // propagate the logical name (the first argument of the resource class constructor) to the physical name
   logicalName2physicalName: String => Option[String] = _ => None,
+
+  // propagate the logical name to the `Name` tag
+  // ignored for gcp, whose map-valued `tags` reference existing Resource Manager tag keys,
+  // e.g. `tagKeys/{tag_key_id}`, where `tag_key_id` is a numeric id that GCP assigns
   logicalName2tagName     : String => Option[String] = _ => None,
 
   // avoid com.pulumi.exceptions.MissingRequiredPropertyException: Missing required property 'family when constructing 'TaskDefinitionArgs'

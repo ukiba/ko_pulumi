@@ -31,16 +31,9 @@ object workstations:
    */
   def WorkstationCluster(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.workstations.WorkstationClusterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    var argsBuilder = com.pulumi.gcp.workstations.WorkstationClusterArgs.builder
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
+    val argsBuilder = com.pulumi.gcp.workstations.WorkstationClusterArgs.builder
     com.pulumi.gcp.workstations.WorkstationCluster(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**

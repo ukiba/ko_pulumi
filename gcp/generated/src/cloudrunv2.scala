@@ -122,15 +122,8 @@ object cloudrunv2:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
     com.pulumi.gcp.cloudrunv2.Job(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -1096,15 +1089,8 @@ object cloudrunv2:
     conf.logicalName2physicalName(name) match
       case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
       case None               =>
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
     com.pulumi.gcp.cloudrunv2.Service(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**

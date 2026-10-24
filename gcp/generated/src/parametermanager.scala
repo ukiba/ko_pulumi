@@ -18,16 +18,9 @@ object parametermanager:
    */
   def Parameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.ParameterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    var argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
+    val argsBuilder = com.pulumi.gcp.parametermanager.ParameterArgs.builder
     com.pulumi.gcp.parametermanager.Parameter(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
@@ -169,16 +162,9 @@ object parametermanager:
    */
   def RegionalParameter(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = scala.Predef.identity)
       (args: Endofunction[com.pulumi.gcp.parametermanager.RegionalParameterArgs.Builder] = scala.Predef.identity)(using conf: KoPulumiConf) =
-    var argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
-    argsBuilder = args(argsBuilder)
-    conf.logicalName2tagName(name) match
-      case Some(tagName) =>
-        argsBuilder = argsBuilder.tags:
-          transformOptOutputMap(argsBuilder.build.tags, map =>
-              if map.contains("Name") then map else map + ("Name" -> tagName))
-      case None =>
+    val argsBuilder = com.pulumi.gcp.parametermanager.RegionalParameterArgs.builder
     com.pulumi.gcp.parametermanager.RegionalParameter(name,
-        argsBuilder.build,
+        args(argsBuilder).build,
         resourceOptions(CustomResourceOptions.builder.protect(conf.defaultProtect)).build)
 
   /**
