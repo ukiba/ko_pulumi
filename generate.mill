@@ -16,7 +16,6 @@ import javax.tools.{ToolProvider, DiagnosticCollector, Diagnostic, JavaFileObjec
 import java.nio.file.{Path, Files}
 import java.nio.charset.StandardCharsets.UTF_8
 import java.io.File.pathSeparator
-import java.io.Writer
 import java.util.Locale.ENGLISH
 
 class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpath: Seq[String]):
@@ -29,9 +28,20 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       throw IllegalStateException("packages with the same last component: " +
           collisions.map(_.map(_.mkString(".")).toSeq.sorted.mkString(", ")).toSeq.sorted.mkString("; "))
 
-    val written = (writePackageFiles(packageMembers) ++ writeSyntaxFiles(packageMembers)).sorted
+    // rendered in memory before writing, so that a failure does not leave a mix of new and old files
+    val contents = renderPackageFiles(packageMembers) ++ renderSyntaxFiles(packageMembers)
+    val written = contents.map(writeIfChanged).sorted
     deleteStaleFiles(written)
     written
+
+  // unchanged files are not rewritten, so that their mtime is kept and editors don't see them as changed
+  def writeIfChanged(file: Path, content: String): Path =
+    if !(Files.isRegularFile(file) && Files.readString(file) == content) then  // UTF_8
+      Option(file.getParent).foreach: parentDir =>
+        if !Files.isDirectory(parentDir) then  // createDirectories throws if a symlink to a directory
+          Files.createDirectories(parentDir)
+      Files.writeString(file, content)  // UTF_8
+    file
 
   // delete *.scala files no longer generated, e.g. for a removed package or an emptied split range.
   // directories are left, so that an editor with a deleted file open is not confused
@@ -45,7 +55,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
 
   // the key is package components
   def scan(srcRoot: Path): Map[Seq[String], Vector[Member]] =
-    def isJavaFile(path: Path) = !Files.isDirectory(path) && path.getFileName.toString.toLowerCase.endsWith(".java")
+    def isJavaFile(path: Path) = Files.isRegularFile(path) && path.getFileName.toString.toLowerCase.endsWith(".java")
     val files = Using.resource(Files.walk(srcRoot))(_.toScala(Seq).filter(isJavaFile).sorted)
 
     // Vector since List append performs bad with thousands of classes
@@ -95,7 +105,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
           errors.take(maxShown).mkString("\n") + (if errors.size > maxShown then "\n..." else ""))
 
   // one file per package
-  def writePackageFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[Path] =
+  def renderPackageFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
     packageMembers.toSeq.map: (packageComps, members) =>
       val scalaFile = dstRoot.resolve(s"${packageComps.last}.scala")
 
@@ -105,20 +115,17 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
         else
           ""
 
-      Using.resource(newWriter(scalaFile)): writer =>
-        writer.append(s"""
-          |package jp.ukiba.ko_pulumi
-          |package $packageName
-          |$importCustomResourceOptions
-          |
-          |object ${packageComps.last}:
-          |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
-        writer.append(members.map(_.text).mkString("\n"))
+      val header = s"""
+        |package jp.ukiba.ko_pulumi
+        |package $packageName
+        |$importCustomResourceOptions
+        |
+        |object ${packageComps.last}:
+        |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
+      (scalaFile, header + members.map(_.text).mkString("\n"))
 
-      scalaFile
-
-  // support `jp.ukiba.ko_pulumi.$packageName.all.*`
-  def writeSyntaxFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[Path] =
+  // support `jp.ukiba.ko_pulumi.$packageName.syntax.all.*`
+  def renderSyntaxFiles(packageMembers: Map[Seq[String], Vector[Member]]): Seq[(Path, String)] =
     case class ExtMethod(cls: String, method: String)
     object ExtMethod:
       given Ordering[ExtMethod] = Ordering.by(e => (e.cls, e.method))
@@ -161,28 +168,23 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
     val splitFiles = splitConfs.filter(conf => exportedExtMethods.exists(conf.contains)).map: conf =>
       (conf = conf, file = dstRoot.resolve(conf.fileName))
 
-    Using.Manager: use =>
-      val mainWriter = use(newWriter(`all.scala`))
-      val splitWriters = splitFiles.map: file =>
-        (conf = file.conf, writer = use(newWriter(file.file)))
+    val header = s"""
+      |package jp.ukiba.ko_pulumi.$packageName.syntax.all
+      |
+      |import jp.ukiba.ko_pulumi
+      |
+      |""".stripMargin.dropWhile(_ == '\n')  // drop the leading empty line
 
-      (mainWriter +: splitWriters.map(_.writer)).foreach: writer =>
-        writer.append(s"""
-          |package jp.ukiba.ko_pulumi.$packageName.syntax.all
-          |
-          |import jp.ukiba.ko_pulumi
-          |
-          |""".stripMargin.dropWhile(_ == '\n'))  // drop the leading empty line
+    val mainContent = header + exportedFuncs.toSeq.sorted.map: func =>
+      s"export ko_pulumi.$packageName.$func\n"
+    .mkString
 
-      exportedFuncs.toSeq.sorted.foreach: func =>
-        mainWriter.append(s"export ko_pulumi.$packageName.$func\n")
+    val splitContents = splitFiles.map: (conf, file) =>
+      (file, header + exportedExtMethods.filter(conf.contains).toSeq.sorted.map: extMethod =>
+        s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n"
+      .mkString)
 
-      splitWriters.foreach: writer =>
-        exportedExtMethods.filter(writer.conf.contains).toSeq.sorted.foreach: extMethod =>
-          writer.writer.append(s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n")
-    .get  // rethrow, since Using.Manager returns Try
-
-    `all.scala` +: splitFiles.map(_.file)
+    (`all.scala`, mainContent) +: splitContents
 
   sealed trait Member:
     def text: String
@@ -565,10 +567,3 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       s"/** ${outLines.head} */\n$indent"
     else
       s"${outLines.mkString(s"/**\n$indent * ", s"\n$indent * ", s"\n$indent */")}\n$indent"
-
-  def newWriter(file: Path): Writer =
-    Option(file.getParent).foreach: parentDir =>
-      if !Files.isDirectory(parentDir) then  // createDirectories throws if a symlink to a directory
-        Files.createDirectories(parentDir)
-
-    Files.newBufferedWriter(file)  // UTF_8
