@@ -106,6 +106,9 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       SplitConf(('k', 'o'), "syntax/all_k.scala"),
       SplitConf(('p', 't'), "syntax/all_p.scala"),
       SplitConf(('u', 'z'), "syntax/all_u.scala"),
+      // uppercase letters and `_`, e.g. iam PolicyDocumentArgs.Builder.Statement
+      // not all_A.scala, which collides with all_a.scala on case-insensitive file systems
+      SplitConf(('A', '_'), "syntax/all_nonlowercase.scala"),
     )
 
     val `all.scala` = dstRoot.resolve(s"syntax/all.scala")
@@ -147,6 +150,7 @@ class PulumiProviderAdapterGenerator(dstRoot: Path, packageName: String, classpa
       splitWriters.foreach: writer =>
         exportedExtMethods.filter(writer.conf.contains).toSeq.sorted.foreach: extMethod =>
           writer.writer.append(s"export ko_pulumi.$packageName.${extMethod.cls}.${extMethod.method}\n")
+    .get  // rethrow, since Using.Manager returns Try
 
     `all.scala` +: splitFiles.map(_.file)
 
