@@ -28,15 +28,19 @@ def pomSettingsBase = PomSettings(
 trait ScalaModuleEx extends ScalaModule:
   def scalaVersion = "3.10.0"
   def scalacOptions = Seq(
-    "-Yexplicit-nulls",          // make `AnyRef` non-nullable; null safety
-    "-Wsafe-init",               // avoid the type system to be unsound with respect to null
-    "-language:strictEquality",  // disable cross-type `==` unless CanEqual evidence exists
-    "-preview",        // enable language features and APIs that will be standardized in future minor release
+    "-Wunused:all",
+
+    "-preview",        // enable language features and APIs that will be standardized in a future minor release
     "-source:future",  // forward source-compatibility (proactive breakage detector)
 
+    "-language:strictEquality",  // disable cross-type `==` unless CanEqual evidence exists
+    "-Yexplicit-nulls",          // make `AnyRef` non-nullable
+    "-Wsafe-init",               // enable `Access non-initialized value` warning, null soundness
+    "-Wimplausible-patterns",    // Warn if comparison with a pattern value looks like it might always fail
+    "-Wvalue-discard",           // enable `discarded non-Unit value` warning
     "-Wnonunit-statement",       // enable `A pure expression does nothing in statement position` warning
 
-    // the default settings from https://scastie.scala-lang.org
+    // the defaults of https://scastie.scala-lang.org
     "-deprecation",
     "-feature",
     "-unchecked",
