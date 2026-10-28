@@ -305,6 +305,24 @@ object sagemaker:
         args(argsBuilder).build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
+  /** Provides a SageMaker AI Inference Component resource. An inference component is a SageMaker AI hosting object that you can use to deploy a model to an endpoint. You can optimize resource utilization by tailoring how the required CPU cores, accelerators, and memory are allocated. You can deploy multiple inference components to an endpoint, where each inference component contains one model and the resource utilization needs for that individual model. */
+  inline def InferenceComponent(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder] = identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.sagemaker.InferenceComponentArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    argsBuilder = args(argsBuilder)
+    conf.logicalName2tagName(name) match
+      case Some(tagName) =>
+        argsBuilder = argsBuilder.tags:
+          transformOptOutputMap(argsBuilder.build.tags, map =>
+              if map.contains("Name") then map else map + ("Name" -> tagName))
+      case None =>
+    com.pulumi.aws.sagemaker.InferenceComponent(name,
+        argsBuilder.build,
+        resourceOptions(conf.customResourceOptionsBuilder).build)
+
   /** Manage an Amazon SageMaker labeling job. */
   inline def LabelingJob(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
       (args: Endofunction[com.pulumi.aws.sagemaker.LabelingJobArgs.Builder] = identity)(using conf: KoPulumiConf) =

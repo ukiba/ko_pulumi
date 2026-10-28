@@ -32,6 +32,17 @@ object directoryservice:
         argsBuilder.build,
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
+  /** Manages a single configurable setting for an AWS Directory Service directory, such as enabling or disabling a TLS protocol version. */
+  inline def DirectorySetting(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.directoryservice.DirectorySettingArgs.Builder] = identity)(using conf: KoPulumiConf) =
+    var argsBuilder = com.pulumi.aws.directoryservice.DirectorySettingArgs.builder
+    conf.logicalName2physicalName(name) match
+      case Some(physicalName) => argsBuilder = argsBuilder.name(physicalName)
+      case None               =>
+    com.pulumi.aws.directoryservice.DirectorySetting(name,
+        args(argsBuilder).build,
+        resourceOptions(conf.customResourceOptionsBuilder).build)
+
   object DirectoryserviceFunctions:
     /** Get attributes of AWS Directory Service directory (SimpleAD, Managed AD, AD Connector). It&#39;s especially useful to refer AWS Managed AD or on-premise AD in AD Connector configuration. */
     inline def getDirectory(args: Endofunction[com.pulumi.aws.directoryservice.inputs.GetDirectoryArgs.Builder] = identity,

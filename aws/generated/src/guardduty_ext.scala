@@ -15,7 +15,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.DetectorFeatureArgs.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block for features`EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
+     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING`, `RUNTIME_MONITORING` or `RDS_LOGIN_EVENTS`. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `status` instead. See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorFeatureAdditionalConfigurationArgs.Builder]*):
@@ -54,7 +54,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.MemberDetectorFeatureArgs.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block. See below.
+     * @param additionalConfigurations Additional feature configuration block. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `status` instead. See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureAdditionalConfigurationArgs.Builder]*):
@@ -75,7 +75,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.OrganizationConfigurationFeatureArgs.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
+     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`, or `RDS_LOGIN_EVENTS`. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `autoEnable` instead.  See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureAdditionalConfigurationArgs.Builder]*):
@@ -143,7 +143,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.DetectorFeatureState.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block for features`EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
+     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING`, `RUNTIME_MONITORING` or `RDS_LOGIN_EVENTS`. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `status` instead. See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.DetectorFeatureAdditionalConfigurationArgs.Builder]*):
@@ -219,7 +219,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureState.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block. See below.
+     * @param additionalConfigurations Additional feature configuration block. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `status` instead. See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.MemberDetectorFeatureAdditionalConfigurationArgs.Builder]*):
@@ -287,7 +287,7 @@ object guardduty_ext:
 
   extension (builder: com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureState.Builder)
     /**
-     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`. See below.
+     * @param additionalConfigurations Additional feature configuration block for features `EKS_RUNTIME_MONITORING` or `RUNTIME_MONITORING`, or `RDS_LOGIN_EVENTS`. If omitted, Terraform does not track changes to additional configurations that AWS manages for the feature. Removing a previously declared `additionalConfiguration` block leaves the setting unchanged in AWS; to change a setting, update its `autoEnable` instead.  See below.
      * @return builder
      */
     inline def additionalConfigurations(args: Endofunction[com.pulumi.aws.guardduty.inputs.OrganizationConfigurationFeatureAdditionalConfigurationArgs.Builder]*):

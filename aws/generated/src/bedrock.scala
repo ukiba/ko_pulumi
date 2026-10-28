@@ -569,6 +569,20 @@ object bedrock:
         resourceOptions(conf.customResourceOptionsBuilder).build)
 
   /**
+   * Resource for managing an Amazon Bedrock Enforced Guardrail Configuration.
+   * 
+   * This resource configures an enforced guardrail that is applied across all Bedrock inference calls in the configured region.
+   * 
+   * &gt; Enforced guardrail configuration is configured per AWS region. To avoid overwriting settings, this resource should not be defined in multiple configurations.
+   */
+  inline def EnforcedGuardrailConfiguration(name: String, resourceOptions: Endofunction[CustomResourceOptions.Builder] = identity)
+      (args: Endofunction[com.pulumi.aws.bedrock.EnforcedGuardrailConfigurationArgs.Builder] = identity)(using conf: KoPulumiConf) =
+    val argsBuilder = com.pulumi.aws.bedrock.EnforcedGuardrailConfigurationArgs.builder
+    com.pulumi.aws.bedrock.EnforcedGuardrailConfiguration(name,
+        args(argsBuilder).build,
+        resourceOptions(conf.customResourceOptionsBuilder).build)
+
+  /**
    * Manages an Amazon Bedrock evaluation job. An evaluation job assesses model or knowledge base performance using either automated metrics or human workers.
    * 
    * &gt; **Note:** Amazon Bedrock does not support permanently deleting an evaluation job. Destroying this resource stops the job (if it is still running) using the [StopEvaluationJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_StopEvaluationJob.html) API, then removes it from Terraform state. Set `skipDestroy` to leave the job in its current state instead.

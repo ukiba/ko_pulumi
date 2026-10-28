@@ -287,6 +287,15 @@ object arcregionswitch_ext:
       builder.rdsPromoteReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param rdsSwitchoverReadReplicaConfig Configuration for switching over RDS read replicas. See `rdsSwitchoverReadReplicaConfig` Block for details.
+     * @return builder
+     */
+    inline def rdsSwitchoverReadReplicaConfig(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigArgs.Builder]):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepArgs.Builder =
+      val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigArgs.builder
+      builder.rdsSwitchoverReadReplicaConfig(args(argsBuilder).build)
+
+    /**
      * @param regionSwitchPlanConfigs Configuration for executing a nested region switch plan. See `regionSwitchPlanConfig` Block for details.
      * @return builder
      */
@@ -615,6 +624,15 @@ object arcregionswitch_ext:
       builder.rdsPromoteReadReplicaConfigs(args.map(_(argsBuilder).build)*)
 
     /**
+     * @param rdsSwitchoverReadReplicaConfig Configuration for switching over RDS read replicas. See `rdsSwitchoverReadReplicaConfig` Block for details.
+     * @return builder
+     */
+    inline def rdsSwitchoverReadReplicaConfig(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigArgs.Builder]):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepArgs.Builder =
+      val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigArgs.builder
+      builder.rdsSwitchoverReadReplicaConfig(args(argsBuilder).build)
+
+    /**
      * @param regionSwitchPlanConfigs Configuration for executing a nested region switch plan. See `regionSwitchPlanConfig` Block for details.
      * @return builder
      */
@@ -785,6 +803,16 @@ object arcregionswitch_ext:
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepNeptuneGlobalDatabaseConfigUngracefulArgs.builder
       builder.ungracefuls(args.map(_(argsBuilder).build)*)
 
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigArgs.Builder)
+    /**
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.rds_switchover_read_replica_config.ungraceful` Block for details.
+     * @return builder
+     */
+    inline def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigUngracefulArgs.Builder]):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRdsSwitchoverReadReplicaConfigUngracefulArgs.builder
+      builder.ungraceful(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigArgs.Builder)
     /**
      * @param recordSets Configuration block for record sets. See `recordSet` Block for details.
@@ -794,6 +822,16 @@ object arcregionswitch_ext:
         com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepParallelConfigStepRoute53HealthCheckConfigRecordSetArgs.builder
       builder.recordSets(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigArgs.Builder)
+    /**
+     * @param ungraceful Ungraceful behavior configuration. See `workflow.step.rds_switchover_read_replica_config.ungraceful` Block for details.
+     * @return builder
+     */
+    inline def ungraceful(args: Endofunction[com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigUngracefulArgs.Builder]):
+        com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRdsSwitchoverReadReplicaConfigUngracefulArgs.builder
+      builder.ungraceful(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.arcregionswitch.inputs.PlanWorkflowStepRoute53HealthCheckConfigArgs.Builder)
     /**

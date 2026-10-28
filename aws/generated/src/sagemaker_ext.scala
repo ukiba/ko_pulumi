@@ -398,6 +398,48 @@ object sagemaker_ext:
       val argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.builder
       builder.warmStartConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder)
+    /**
+     * @param deploymentConfig Deployment configuration for the inference component, which controls the rollout strategy and rollback behavior. This directive applies only when the inference component is **updated** \u2014 the `CreateInferenceComponent` API does not accept it, so it has no effect on initial creation. It is not returned by the API and is therefore not refreshed into state or verified on import. See `deploymentConfig` Block.
+     * @return builder
+     */
+    inline def deploymentConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.builder
+      builder.deploymentConfig(args(argsBuilder).build)
+
+    /**
+     * @param runtimeConfig Runtime settings for a model that is deployed with an inference component. See `runtimeConfig` Block.
+     * @return builder
+     */
+    inline def runtimeConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.builder
+      builder.runtimeConfig(args(argsBuilder).build)
+
+    /**
+     * @param specification Details about the resources to deploy with this inference component. Exactly one of `specification` or `specifications` must be configured. See `specification` and `specifications` Block.
+     * @return builder
+     */
+    inline def specification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.builder
+      builder.specification(args(argsBuilder).build)
+
+    /**
+     * @param specifications List of specification objects for the inference component, one per instance type. At least two blocks are required; configure `specification` instead to deploy to a single instance type. Exactly one of `specification` or `specifications` must be configured. See `specification` and `specifications` Block.
+     * @return builder
+     */
+    inline def specifications(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.builder
+      builder.specifications(args.map(_(argsBuilder).build)*)
+
+    inline def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.InferenceComponentArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.sagemaker.LabelingJobArgs.Builder)
     /**
      * @param humanTaskConfig Configuration information required for human workers to complete a labeling task. Fields are documented below.
@@ -3002,6 +3044,182 @@ object sagemaker_ext:
         com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.sagemaker.inputs.HyperParameterTuningJobWarmStartConfigParentHyperParameterTuningJobArgs.builder
       builder.parentHyperParameterTuningJobs(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.Builder)
+    /**
+     * @param autoRollbackConfiguration Automatic rollback configuration. See `autoRollbackConfiguration` Block.
+     * @return builder
+     */
+    inline def autoRollbackConfiguration(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationArgs.builder
+      builder.autoRollbackConfiguration(args(argsBuilder).build)
+
+    /**
+     * @param rollingUpdatePolicy Rolling deployment strategy. See `rollingUpdatePolicy` Block.
+     * @return builder
+     */
+    inline def rollingUpdatePolicy(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyArgs.builder
+      builder.rollingUpdatePolicy(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationArgs.Builder)
+    /**
+     * @param alarms List of CloudWatch alarms that trigger rollback. See `alarms` Block.
+     * @return builder
+     */
+    inline def alarms(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationAlarmArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigAutoRollbackConfigurationAlarmArgs.builder
+      builder.alarms(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyArgs.Builder)
+    /**
+     * @param maximumBatchSize Batch size for each rolling step. See `maximumBatchSize` and `rollbackMaximumBatchSize` Block.
+     * @return builder
+     */
+    inline def maximumBatchSize(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyMaximumBatchSizeArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyMaximumBatchSizeArgs.builder
+      builder.maximumBatchSize(args(argsBuilder).build)
+
+    /**
+     * @param rollbackMaximumBatchSize Batch size for a rollback. See `maximumBatchSize` and `rollbackMaximumBatchSize` Block.
+     * @return builder
+     */
+    inline def rollbackMaximumBatchSize(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyRollbackMaximumBatchSizeArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigRollingUpdatePolicyRollbackMaximumBatchSizeArgs.builder
+      builder.rollbackMaximumBatchSize(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.Builder)
+    /**
+     * @param placementStatuses Placement status of the inference component copies across instance types. See below.
+     * @return builder
+     */
+    inline def placementStatuses(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigPlacementStatusArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigPlacementStatusArgs.builder
+      builder.placementStatuses(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder)
+    /**
+     * @param computeResourceRequirements Compute resources allocated to run a model. See `computeResourceRequirements` Block.
+     * @return builder
+     */
+    inline def computeResourceRequirements(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationComputeResourceRequirementsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationComputeResourceRequirementsArgs.builder
+      builder.computeResourceRequirements(args(argsBuilder).build)
+
+    /**
+     * @param container Container that provides the runtime environment for a model. See `container` Block.
+     * @return builder
+     */
+    inline def container(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerArgs.builder
+      builder.container(args(argsBuilder).build)
+
+    /**
+     * @param dataCacheConfig Settings that affect how the inference component caches data. See `dataCacheConfig` Block.
+     * @return builder
+     */
+    inline def dataCacheConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationDataCacheConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationDataCacheConfigArgs.builder
+      builder.dataCacheConfig(args(argsBuilder).build)
+
+    /**
+     * @param schedulingConfig Scheduling configuration for placing inference component copies. See `schedulingConfig` Block.
+     * @return builder
+     */
+    inline def schedulingConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigArgs.builder
+      builder.schedulingConfig(args(argsBuilder).build)
+
+    /**
+     * @param startupParameters Settings that take effect while the model container starts up. See `startupParameters` Block.
+     * @return builder
+     */
+    inline def startupParameters(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationStartupParametersArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationStartupParametersArgs.builder
+      builder.startupParameters(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerArgs.Builder)
+    /**
+     * @param containerMetricsConfig Configuration for container metrics scraping. See `containerMetricsConfig` Block.
+     * @return builder
+     */
+    inline def containerMetricsConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigArgs.builder
+      builder.containerMetricsConfig(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigArgs.Builder)
+    /**
+     * @param metricsEndpoint Metrics endpoint configuration. See `metricsEndpoint` Block.
+     * @return builder
+     */
+    inline def metricsEndpoint(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigMetricsEndpointArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationContainerContainerMetricsConfigMetricsEndpointArgs.builder
+      builder.metricsEndpoint(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigArgs.Builder)
+    /**
+     * @param availabilityZoneBalance Configuration for balancing copies across Availability Zones. See `availabilityZoneBalance` Block.
+     * @return builder
+     */
+    inline def availabilityZoneBalance(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigAvailabilityZoneBalanceArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigArgs.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationSchedulingConfigAvailabilityZoneBalanceArgs.builder
+      builder.availabilityZoneBalance(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder)
+    /**
+     * @param deploymentConfig Deployment configuration for the inference component, which controls the rollout strategy and rollback behavior. This directive applies only when the inference component is **updated** \u2014 the `CreateInferenceComponent` API does not accept it, so it has no effect on initial creation. It is not returned by the API and is therefore not refreshed into state or verified on import. See `deploymentConfig` Block.
+     * @return builder
+     */
+    inline def deploymentConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentDeploymentConfigArgs.builder
+      builder.deploymentConfig(args(argsBuilder).build)
+
+    /**
+     * @param runtimeConfig Runtime settings for a model that is deployed with an inference component. See `runtimeConfig` Block.
+     * @return builder
+     */
+    inline def runtimeConfig(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentRuntimeConfigArgs.builder
+      builder.runtimeConfig(args(argsBuilder).build)
+
+    /**
+     * @param specification Details about the resources to deploy with this inference component. Exactly one of `specification` or `specifications` must be configured. See `specification` and `specifications` Block.
+     * @return builder
+     */
+    inline def specification(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.builder
+      builder.specification(args(argsBuilder).build)
+
+    /**
+     * @param specifications List of specification objects for the inference component, one per instance type. At least two blocks are required; configure `specification` instead to deploy to a single instance type. Exactly one of `specification` or `specifications` must be configured. See `specification` and `specifications` Block.
+     * @return builder
+     */
+    inline def specifications(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.Builder]*):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder =
+      def argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentSpecificationArgs.builder
+      builder.specifications(args.map(_(argsBuilder).build)*)
+
+    inline def timeouts(args: Endofunction[com.pulumi.aws.sagemaker.inputs.InferenceComponentTimeoutsArgs.Builder]):
+        com.pulumi.aws.sagemaker.inputs.InferenceComponentState.Builder =
+      val argsBuilder = com.pulumi.aws.sagemaker.inputs.InferenceComponentTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.sagemaker.inputs.LabelingJobHumanTaskConfigArgs.Builder)
     /**

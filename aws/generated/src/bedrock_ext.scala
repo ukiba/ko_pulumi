@@ -776,6 +776,25 @@ object bedrock_ext:
       val argsBuilder = com.pulumi.aws.bedrock.inputs.CustomModelVpcConfigArgs.builder
       builder.vpcConfig(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.bedrock.EnforcedGuardrailConfigurationArgs.Builder)
+    /**
+     * @param modelEnforcement Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models. See `modelEnforcement` Block below.
+     * @return builder
+     */
+    inline def modelEnforcement(args: Endofunction[com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationModelEnforcementArgs.Builder]):
+        com.pulumi.aws.bedrock.EnforcedGuardrailConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationModelEnforcementArgs.builder
+      builder.modelEnforcement(args(argsBuilder).build)
+
+    /**
+     * @param selectiveContentGuarding Selective content guarding controls for enforced guardrails. See `selectiveContentGuarding` Block below.
+     * @return builder
+     */
+    inline def selectiveContentGuarding(args: Endofunction[com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationSelectiveContentGuardingArgs.Builder]):
+        com.pulumi.aws.bedrock.EnforcedGuardrailConfigurationArgs.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationSelectiveContentGuardingArgs.builder
+      builder.selectiveContentGuarding(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.bedrock.EvaluationJobArgs.Builder)
     /**
      * @param evaluationConfig Configuration for either an automated or human-based evaluation job. See `evaluationConfig` Block below.
@@ -6302,6 +6321,25 @@ object bedrock_ext:
         com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigArgs.Builder =
       def argsBuilder = com.pulumi.aws.bedrock.inputs.CustomModelValidationDataConfigValidatorArgs.builder
       builder.validators(args.map(_(argsBuilder).build)*)
+
+  extension (builder: com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationState.Builder)
+    /**
+     * @param modelEnforcement Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models. See `modelEnforcement` Block below.
+     * @return builder
+     */
+    inline def modelEnforcement(args: Endofunction[com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationModelEnforcementArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationModelEnforcementArgs.builder
+      builder.modelEnforcement(args(argsBuilder).build)
+
+    /**
+     * @param selectiveContentGuarding Selective content guarding controls for enforced guardrails. See `selectiveContentGuarding` Block below.
+     * @return builder
+     */
+    inline def selectiveContentGuarding(args: Endofunction[com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationSelectiveContentGuardingArgs.Builder]):
+        com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationState.Builder =
+      val argsBuilder = com.pulumi.aws.bedrock.inputs.EnforcedGuardrailConfigurationSelectiveContentGuardingArgs.builder
+      builder.selectiveContentGuarding(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.bedrock.inputs.EvaluationJobEvaluationConfigArgs.Builder)
     /**

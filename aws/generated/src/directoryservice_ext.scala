@@ -21,6 +21,12 @@ object directoryservice_ext:
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectoryVpcSettingsArgs.builder
       builder.vpcSettings(args(argsBuilder).build)
 
+  extension (builder: com.pulumi.aws.directoryservice.DirectorySettingArgs.Builder)
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectorySettingTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.DirectorySettingArgs.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectorySettingTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
+
   extension (builder: com.pulumi.aws.directoryservice.IpRouteArgs.Builder)
     inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.IpRouteTimeoutsArgs.Builder]):
         com.pulumi.aws.directoryservice.IpRouteArgs.Builder =
@@ -63,6 +69,12 @@ object directoryservice_ext:
         com.pulumi.aws.directoryservice.SharedDirectoryArgs.Builder =
       val argsBuilder = com.pulumi.aws.directoryservice.inputs.SharedDirectoryTargetArgs.builder
       builder.target(args(argsBuilder).build)
+
+  extension (builder: com.pulumi.aws.directoryservice.inputs.DirectorySettingState.Builder)
+    inline def timeouts(args: Endofunction[com.pulumi.aws.directoryservice.inputs.DirectorySettingTimeoutsArgs.Builder]):
+        com.pulumi.aws.directoryservice.inputs.DirectorySettingState.Builder =
+      val argsBuilder = com.pulumi.aws.directoryservice.inputs.DirectorySettingTimeoutsArgs.builder
+      builder.timeouts(args(argsBuilder).build)
 
   extension (builder: com.pulumi.aws.directoryservice.inputs.DirectoryState.Builder)
     /**

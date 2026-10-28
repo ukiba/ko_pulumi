@@ -518,6 +518,7 @@ export ko_pulumi.aws.arcregionswitch_ext.neptuneGlobalDatabaseConfigs
 export ko_pulumi.aws.arcregionswitch_ext.parallelConfigs
 export ko_pulumi.aws.arcregionswitch_ext.rdsCreateCrossRegionReadReplicaConfigs
 export ko_pulumi.aws.arcregionswitch_ext.rdsPromoteReadReplicaConfigs
+export ko_pulumi.aws.arcregionswitch_ext.rdsSwitchoverReadReplicaConfig
 export ko_pulumi.aws.arcregionswitch_ext.recordSets
 export ko_pulumi.aws.arcregionswitch_ext.regionAndRoutingControls
 export ko_pulumi.aws.arcregionswitch_ext.regionEventSourceMappings
@@ -891,6 +892,7 @@ export ko_pulumi.aws.bedrock_ext.metadatas
 export ko_pulumi.aws.bedrock_ext.microsoftOauth2ProviderConfig
 export ko_pulumi.aws.bedrock_ext.model
 export ko_pulumi.aws.bedrock_ext.modelConfig
+export ko_pulumi.aws.bedrock_ext.modelEnforcement
 export ko_pulumi.aws.bedrock_ext.modelMapping
 export ko_pulumi.aws.bedrock_ext.modelSource
 export ko_pulumi.aws.bedrock_ext.models
@@ -983,6 +985,7 @@ export ko_pulumi.aws.bedrock_ext.schema
 export ko_pulumi.aws.bedrock_ext.secretsManager
 export ko_pulumi.aws.bedrock_ext.seedUrls
 export ko_pulumi.aws.bedrock_ext.segmentationConfiguration
+export ko_pulumi.aws.bedrock_ext.selectiveContentGuarding
 export ko_pulumi.aws.bedrock_ext.selfManagedConfiguration
 export ko_pulumi.aws.bedrock_ext.selfManagedLatticeResource
 export ko_pulumi.aws.bedrock_ext.semanticChunkingConfiguration
@@ -1359,6 +1362,13 @@ export ko_pulumi.aws.cloudwatch_ext.warmUpConfiguration
 export ko_pulumi.aws.cloudwatchomni_ext.encryptionConfiguration
 export ko_pulumi.aws.cloudwatchomni_ext.identityCenterConfiguration
 export ko_pulumi.aws.cloudwatchomni_ext.identityProviderConfiguration
+export ko_pulumi.aws.cloudwatchomni_ext.principal
+export ko_pulumi.aws.cloudwatchomni_ext.principalAttributes
+export ko_pulumi.aws.cloudwatchomni_ext.resources
+export ko_pulumi.aws.cloudwatchomni_ext.rowScopeGroups
+export ko_pulumi.aws.cloudwatchomni_ext.rowScopes
+export ko_pulumi.aws.cloudwatchomni_ext.scopedActions
+export ko_pulumi.aws.cloudwatchomni_ext.timeouts
 export ko_pulumi.aws.codeartifact_ext.externalConnections
 export ko_pulumi.aws.codeartifact_ext.upstreams
 export ko_pulumi.aws.codebuild_ext.artifacts
@@ -3962,6 +3972,7 @@ export ko_pulumi.aws.sagemaker_ext.asyncInferenceConfig
 export ko_pulumi.aws.sagemaker_ext.autoParameters
 export ko_pulumi.aws.sagemaker_ext.autoRollbackConfiguration
 export ko_pulumi.aws.sagemaker_ext.autotune
+export ko_pulumi.aws.sagemaker_ext.availabilityZoneBalance
 export ko_pulumi.aws.sagemaker_ext.baseModel
 export ko_pulumi.aws.sagemaker_ext.baseline
 export ko_pulumi.aws.sagemaker_ext.batchTransformInput
@@ -3984,9 +3995,12 @@ export ko_pulumi.aws.sagemaker_ext.cognitoConfig
 export ko_pulumi.aws.sagemaker_ext.cognitoMemberDefinition
 export ko_pulumi.aws.sagemaker_ext.collectionConfig
 export ko_pulumi.aws.sagemaker_ext.collectionConfigurations
+export ko_pulumi.aws.sagemaker_ext.computeResourceRequirements
 export ko_pulumi.aws.sagemaker_ext.config
 export ko_pulumi.aws.sagemaker_ext.constraintsResource
+export ko_pulumi.aws.sagemaker_ext.container
 export ko_pulumi.aws.sagemaker_ext.containerConfig
+export ko_pulumi.aws.sagemaker_ext.containerMetricsConfig
 export ko_pulumi.aws.sagemaker_ext.containers
 export ko_pulumi.aws.sagemaker_ext.continuousParameterRangeSpecification
 export ko_pulumi.aws.sagemaker_ext.continuousParameterRanges
@@ -3998,6 +4012,7 @@ export ko_pulumi.aws.sagemaker_ext.customFileSystems
 export ko_pulumi.aws.sagemaker_ext.customImages
 export ko_pulumi.aws.sagemaker_ext.customPosixUserConfig
 export ko_pulumi.aws.sagemaker_ext.dataAttributes
+export ko_pulumi.aws.sagemaker_ext.dataCacheConfig
 export ko_pulumi.aws.sagemaker_ext.dataCaptureConfig
 export ko_pulumi.aws.sagemaker_ext.dataCatalogConfig
 export ko_pulumi.aws.sagemaker_ext.dataQualityAppSpecification
@@ -4072,6 +4087,7 @@ export ko_pulumi.aws.sagemaker_ext.managedInstanceScaling
 export ko_pulumi.aws.sagemaker_ext.maximumBatchSize
 export ko_pulumi.aws.sagemaker_ext.memberDefinitions
 export ko_pulumi.aws.sagemaker_ext.metricDefinitions
+export ko_pulumi.aws.sagemaker_ext.metricsEndpoint
 export ko_pulumi.aws.sagemaker_ext.mlflowConfig
 export ko_pulumi.aws.sagemaker_ext.modelAccessConfig
 export ko_pulumi.aws.sagemaker_ext.modelDataSource
@@ -4102,6 +4118,7 @@ export ko_pulumi.aws.sagemaker_ext.parameterRanges
 export ko_pulumi.aws.sagemaker_ext.parentHyperParameterTuningJobs
 export ko_pulumi.aws.sagemaker_ext.pipelineDefinitionS3Location
 export ko_pulumi.aws.sagemaker_ext.placementSpecifications
+export ko_pulumi.aws.sagemaker_ext.placementStatuses
 export ko_pulumi.aws.sagemaker_ext.primaryContainer
 export ko_pulumi.aws.sagemaker_ext.productionVariants
 export ko_pulumi.aws.sagemaker_ext.profilerConfig
@@ -4123,12 +4140,14 @@ export ko_pulumi.aws.sagemaker_ext.retryStrategy
 export ko_pulumi.aws.sagemaker_ext.rollbackMaximumBatchSize
 export ko_pulumi.aws.sagemaker_ext.rollingUpdatePolicy
 export ko_pulumi.aws.sagemaker_ext.routingConfigs
+export ko_pulumi.aws.sagemaker_ext.runtimeConfig
 export ko_pulumi.aws.sagemaker_ext.s3DataSource
 export ko_pulumi.aws.sagemaker_ext.s3DataSources
 export ko_pulumi.aws.sagemaker_ext.s3Output
 export ko_pulumi.aws.sagemaker_ext.s3Presign
 export ko_pulumi.aws.sagemaker_ext.s3StorageConfig
 export ko_pulumi.aws.sagemaker_ext.scheduleConfig
+export ko_pulumi.aws.sagemaker_ext.schedulingConfig
 export ko_pulumi.aws.sagemaker_ext.securityConfig
 export ko_pulumi.aws.sagemaker_ext.serverlessConfig
 export ko_pulumi.aws.sagemaker_ext.serverlessJobConfig
@@ -4142,6 +4161,9 @@ export ko_pulumi.aws.sagemaker_ext.sourceIpConfig
 export ko_pulumi.aws.sagemaker_ext.spaceSettings
 export ko_pulumi.aws.sagemaker_ext.spaceSharingSettings
 export ko_pulumi.aws.sagemaker_ext.spaceStorageSettings
+export ko_pulumi.aws.sagemaker_ext.specification
+export ko_pulumi.aws.sagemaker_ext.specifications
+export ko_pulumi.aws.sagemaker_ext.startupParameters
 export ko_pulumi.aws.sagemaker_ext.statisticsResource
 export ko_pulumi.aws.sagemaker_ext.stoppingCondition
 export ko_pulumi.aws.sagemaker_ext.stoppingConditions
